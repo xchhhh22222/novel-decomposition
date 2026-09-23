@@ -1,0 +1,4 @@
+interface:
+  display_name: "小说 DNA 总控"
+  short_description: "统筹拆书证据、逐章情绪、专项候选与开书索引工作流"
+  default_prompt: "使用 $novel-dna-orchestrator 统筹这批小说的章节情绪覆盖、专项拆解和 DNA 总索引。"

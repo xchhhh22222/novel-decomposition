@@ -1,0 +1,13 @@
+interface:
+  display_name: "小说开篇横向拆解器"
+  short_description: "横向拆解前3/5/10/20章的读者进入、卖点验证、承诺回收与续读驱动"
+  default_prompt: |
+    使用 $novel-opening-miner 横向拆解指定书单的开篇，并输出 per_book、nearest_neighbors、clusters、qa、handoff 五类结果。只使用 orchestrator 允许的书籍、章节与来源；所有输出保持 candidate-only，禁止 active/deprecated，禁止修改正式素材库，最终必须通过 scripts/validate_outputs.py。
+
+    核心观察窗口为前 3 / 5 / 10 / 20 章，且是累计 checkpoint，不是四份章节摘要。核心对象包括：entry、protagonist_establishment、premise_exposure、golden_finger_reveal、conflict_activation、promise_setup、selling_point_proof、stakes_escalation、first_payoff、continuation_driver、information_pacing、opening_compression。
+
+    golden_finger_reveal 必须区分 appearance → understanding → validation → first_proof_or_payoff；不把 acquisition 直接当 selling-point proof。明确 summary ≠ opening analysis、hook ≠ opening、burst ≠ payoff、battle ≠ conflict activation、exposition ≠ premise exposure、cliffhanger ≠ continuation driver、character description ≠ protagonist establishment、event density ≠ pacing quality。
+
+    first_payoff 必须绑定已有 prior object；continuation_driver 必须来自未决问题、目标、风险、承诺或状态变化；information pacing 只记录可观察披露效果，不猜作者意图；opening compression 只能输出 candidate observation，禁止 score/grade/tier。相邻 plotline、chapter-emotion、character-function、golden-finger、worldbuilding、cultivation、arc-structure、plot-mechanism 只能作为 interface/evidence，不复制其正式业务对象。
+
+    缺证据时保留 partial、UNKNOWN、not_yet、gap 或 HOLD；validator 失败时不得补造 proof、伪造 payoff、强行补齐 GF 四阶段、删除 UNKNOWN 或添加评分字段来绕过。全部目标书完成单书 QA 后才允许 nearest-neighbor / clustering；跨书比较开篇运行结构，不按系统流、穿越、退婚、学院或第一章打怪等表面标签聚类。最终运行 scripts/validate_outputs.py 并交给人工审核，不自动入库。

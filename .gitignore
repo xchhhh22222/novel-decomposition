@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Local environments and secrets
+.env
+.env.*
+*.key
+*.pem
+credentials*
+secrets*
+
+# Raw or copyrighted source texts
+*.epub
+*.mobi
+*.azw3
+*.pdf
+*.txt
+*.doc
+*.docx
+raw/
+source/
+sources/
+chapters/
+plain/
+
+# Local outputs
+.runs/
+tmp/
+temp/
+output/
+outputs/
+*.log
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

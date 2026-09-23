@@ -1,0 +1,5 @@
+interface:
+  display_name: "小说 DNA 拆解套件"
+  short_description: "统一运行十个小说 DNA 拆解模块并输出可审计候选"
+  default_prompt: >-
+    使用 $novel-dna-mining-suite 按总控冻结的输入包拆解指定书单。先按模块读取包内 references，再运行 scripts/validate.py 分派对应 validator。保持 candidate-only、结构化 evidence_refs、UNKNOWN/gap/HOLD、per_book/gap completion manifest 和跨书阶段门；章节情绪只服从包内唯一 canonical schema；不要修改正式素材库。

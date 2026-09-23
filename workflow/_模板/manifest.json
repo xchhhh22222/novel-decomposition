@@ -1,0 +1,16 @@
+{
+  "schema_version": "拆解_v1.3",
+  "batch_id": "BATCH_YYYYMMDD_名称",
+  "status": "received",
+  "created_at": "",
+  "source_books": [],
+  "source_scope": "",
+  "chapter_ranges": [],
+  "known_gaps": [],
+  "input_root": "01_完整拆解",
+  "candidate_root": "02_迁移候选",
+  "review_root": "03_审核回执",
+  "migration_root": "04_迁移记录",
+  "target_library": "<SHARED_LIBRARY_ROOT>",
+  "notes": ""
+}

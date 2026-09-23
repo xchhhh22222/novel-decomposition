@@ -1,0 +1,7 @@
+interface:
+  display_name: "番茄素材整理器"
+  short_description: "整理商业网文素材，构建低 token 本地检索与调用记录"
+  default_prompt: "使用 $fanqie-material-curator 整理这批小说素材并更新本地检索索引。"
+
+policy:
+  allow_implicit_invocation: true

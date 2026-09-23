@@ -1,0 +1,4 @@
+interface:
+  display_name: "逐章读者情绪拆解器"
+  short_description: "批量提取逐章读者情绪、承诺兑现与节奏审计候选"
+  default_prompt: "使用 $novel-chapter-emotion-miner，基于总控允许的书籍和章节范围，批量生成逐章读者情绪覆盖，完成单书节奏 QA，并交付可追溯的 candidate 候选。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "小说创造规划"
+  short_description: "融合实时榜单与素材库，规划原创长篇新书"
+  default_prompt: "使用 $novel-creation-planner 根据我的题材与偏好，完成扫榜取样、三套开书方案和推荐案的前300章滚动规划。"

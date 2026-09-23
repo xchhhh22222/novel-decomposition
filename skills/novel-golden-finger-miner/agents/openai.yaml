@@ -1,0 +1,4 @@
+interface:
+  display_name: "金手指横向拆解器"
+  short_description: "横向拆解多本小说的金手指机制、成长循环与情绪兑现"
+  default_prompt: "使用 $novel-golden-finger-miner 横向拆解指定书单的金手指，并输出母型、子型与变体候选。"

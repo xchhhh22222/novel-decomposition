@@ -1,0 +1,13 @@
+interface:
+  display_name: "剧情线横向拆解器"
+  short_description: "横向拆解多本小说的剧情线生命周期、父子线结构与兑现回收"
+  default_prompt: |
+    使用 $novel-plotline-miner 横向拆解指定书单的剧情线，并输出 per_book、nearest_neighbors、clusters、qa、handoff 五类结果。只使用 orchestrator 允许的书籍、章节和来源；所有输出保持 candidate-only，禁止 active/deprecated，禁止修改正式素材库，最终必须通过 scripts/validate_outputs.py。
+
+    每条剧情线严格追踪完整 lifecycle：触发 → 目标 → 阻力 → 节点 → 选择 → 代价 → 兑现 → 状态变化 → 下一入口。事件序列 ≠ plotline，章节摘要 ≠ plotline，人物出场线 ≠ plotline，升级记录 ≠ plotline，连续战斗 ≠ plotline。node 必须真正改变线路状态；choice 必须有真实取舍空间；cost 必须是可观察且由选择或推进造成的代价。
+
+    普通结果 ≠ payoff。payoff 必须对应 prior goal、promise 或 unresolved question；升级、击杀、胜利、资源到账不能自动算 payoff。state_change 与 next_entry 必须独立记录，不能从 payoff 自动推断。lifecycle 必须区分成功兑现、失败、放弃、暂缓、转向等状态，不能把它们揉成一个 closed。
+
+    父子线分别追踪：child paid ≠ parent paid；child failed ≠ parent failed；parent paused ≠ child 自动 paused；禁止自引用与循环。character-function、arc-structure、plot-mechanism、opening、cultivation、worldbuilding、golden-finger、chapter-emotion 只能作为 interface/evidence，不复制它们的正式业务对象。
+
+    缺证据时保留 partial、UNKNOWN、gap 或 HOLD；不得补造 trigger、伪造 choice/cost/payoff、删除 UNKNOWN 或强行闭合线路来通过校验。全部目标书完成单书 QA 后，才允许 nearest-neighbor 与 clustering。完成后运行 scripts/validate_outputs.py，校验失败就修复真实结构或保留缺口，不绕过 validator。

@@ -1,0 +1,5 @@
+interface:
+  display_name: "修炼成长系统横向拆解器"
+  short_description: "横向拆解多本小说的公共修炼、境界、构筑、战力、技能、资源与权限"
+  default_prompt: >-
+    使用 $novel-cultivation-system-miner，只使用 orchestrator 允许的书籍、章节和来源，横向提取成长系统运行机制。必须把成长信息拆成八层：通用修炼体系、境界体系、主角构筑、金手指接口、实际战力、技能熟练度、装备资源、身份权限，不得混成单一“战力”。严格区分境界与实际战力、获得技能与掌握技能、熟练度与境界、资源/装备到账与永久自身成长、权限与修炼等级；击杀、越级、短时 buff、装备加成、规则克制和环境优势不能自动证明正式突破。正式境界变化必须有直接证据；证据不足保留 partial、UNKNOWN、gap 或 HOLD。golden-finger、worldbuilding、plotline 只能作为 interface/reference，不重复输出它们的正式业务分析；不得根据书名、简介或题材常识补境界体系。所有结果保持 candidate-only，禁止 active/deprecated，禁止修改正式素材库。全部目标书完成单书 QA 后，才允许生成 nearest-neighbor 与 clustering。最终交付 per_book、nearest_neighbors、clusters、qa、handoff，并通过 scripts/validate_outputs.py；validator 失败时不得补造境界、伪造技能掌握或删除 UNKNOWN 来强行过检。
