@@ -133,7 +133,7 @@ def valid_plan() -> dict:
         "creation_mode": "greenfield",
         "plan_mode": "full",
         "brief": {},
-        "shared_library_root": "D:/shared/novel-material-library",
+        "shared_library_root": str(Path.cwd().resolve()),
         "market_evidence": {"as_of": "2026-09-19", "sources": ["ranking"], "samples": samples, "signals": signals, "coverage_status": "complete", "bias_notes": []},
         "library_usage": {"formal_card_ids": ["CARD:1"], "dna_candidate_ids": ["DNA:1", "CS:SYSTEM:001"], "gaps": []},
         "material_dispatch": {
