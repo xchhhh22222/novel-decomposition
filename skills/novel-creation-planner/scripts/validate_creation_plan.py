@@ -122,6 +122,41 @@ GAP_ORDER_FIELDS = {
     "acceptance_evidence",
     "forbidden_patterns",
 }
+DISPATCH_FIELDS = {
+    "status",
+    "slots",
+    "source_concentration_risks",
+    "compatibility_checks",
+    "stop_reason",
+}
+DISPATCH_SLOT_FIELDS = {
+    "slot_id",
+    "role",
+    "required",
+    "wave",
+    "modules",
+    "component_types",
+    "query_groups",
+    "target_candidates",
+    "source_strategy",
+    "selected_refs",
+    "rejected_refs",
+    "gap_reason",
+}
+DISPATCH_REF_FIELDS = {
+    "material_id",
+    "material_kind",
+    "module",
+    "record_id",
+    "qa_status",
+}
+COMPATIBILITY_FIELDS = {
+    "check_id",
+    "materials",
+    "dimension",
+    "result",
+    "reason",
+}
 
 
 def require_keys(errors: list[str], value: Any, keys: set[str], where: str) -> None:
@@ -158,6 +193,11 @@ def main() -> int:
     if not isinstance(data, dict):
         print(json.dumps({"ok": False, "errors": errors}, ensure_ascii=False, indent=2))
         return 1
+    schema_version = data.get("schema_version")
+    if schema_version not in {1, 2}:
+        errors.append("schema_version must be 1 or 2")
+    if schema_version == 2 and "material_dispatch" not in data:
+        errors.append("schema_version 2 requires material_dispatch")
     if data.get("status") != "candidate":
         errors.append("plan.status must remain candidate until user confirmation")
     creation_mode = data.get("creation_mode")
@@ -180,6 +220,93 @@ def main() -> int:
                 errors.append(f"library_usage.{key} must be a list")
         if not any(library_usage.get(key) for key in ("formal_card_ids", "dna_candidate_ids", "gaps")):
             errors.append("library_usage must contain a material reference or an explicit gap")
+
+
+    if schema_version == 2:
+        dispatch = data.get("material_dispatch")
+        require_keys(errors, dispatch, DISPATCH_FIELDS, "material_dispatch")
+        if isinstance(dispatch, dict):
+            if dispatch.get("status") not in {"complete", "partial", "hold"}:
+                errors.append("material_dispatch.status must be complete, partial, or hold")
+            slots = dispatch.get("slots")
+            if not isinstance(slots, list) or not slots:
+                errors.append("material_dispatch.slots must be a non-empty list")
+            else:
+                slot_ids: set[str] = set()
+                for index, slot in enumerate(slots):
+                    where = f"material_dispatch.slots[{index}]"
+                    require_keys(errors, slot, DISPATCH_SLOT_FIELDS, where)
+                    if not isinstance(slot, dict):
+                        continue
+                    slot_id = slot.get("slot_id")
+                    if is_empty(slot_id):
+                        errors.append(f"{where}.slot_id cannot be empty")
+                    elif str(slot_id) in slot_ids:
+                        errors.append(f"{where}.slot_id must be unique")
+                    else:
+                        slot_ids.add(str(slot_id))
+                    if is_empty(slot.get("role")):
+                        errors.append(f"{where}.role cannot be empty")
+                    if not isinstance(slot.get("required"), bool):
+                        errors.append(f"{where}.required must be boolean")
+                    if slot.get("wave") not in {1, 2, 3, 4}:
+                        errors.append(f"{where}.wave must be 1..4")
+                    for field in ("modules", "component_types", "query_groups", "selected_refs", "rejected_refs"):
+                        if not isinstance(slot.get(field), list):
+                            errors.append(f"{where}.{field} must be a list")
+                    target_candidates = slot.get("target_candidates")
+                    if not isinstance(target_candidates, int) or not 1 <= target_candidates <= 12:
+                        errors.append(f"{where}.target_candidates must be an integer 1..12")
+                    if slot.get("source_strategy") not in {"cross_book", "same_source_bundle", "either"}:
+                        errors.append(f"{where}.source_strategy is invalid")
+                    selected_refs = slot.get("selected_refs")
+                    if isinstance(selected_refs, list):
+                        for ref_index, ref in enumerate(selected_refs):
+                            ref_where = f"{where}.selected_refs[{ref_index}]"
+                            require_keys(errors, ref, DISPATCH_REF_FIELDS, ref_where)
+                            if not isinstance(ref, dict):
+                                continue
+                            for field in DISPATCH_REF_FIELDS:
+                                if is_empty(ref.get(field)):
+                                    errors.append(f"{ref_where}.{field} cannot be empty")
+                            kind = ref.get("material_kind")
+                            if kind not in {"formal_card", "dna_record", "dna_component"}:
+                                errors.append(f"{ref_where}.material_kind is invalid")
+                            material_id = str(ref.get("material_id") or "")
+                            if isinstance(library_usage, dict) and material_id:
+                                if kind == "formal_card":
+                                    allowed = set(map(str, library_usage.get("formal_card_ids", [])))
+                                    if material_id not in allowed:
+                                        errors.append(f"{ref_where}.material_id absent from library_usage.formal_card_ids")
+                                elif kind in {"dna_record", "dna_component"}:
+                                    allowed = set(map(str, library_usage.get("dna_candidate_ids", [])))
+                                    if material_id not in allowed:
+                                        errors.append(f"{ref_where}.material_id absent from library_usage.dna_candidate_ids")
+                            if kind == "dna_component" and is_empty(ref.get("record_id")):
+                                errors.append(f"{ref_where}: dna_component requires source record_id")
+                    if slot.get("required") and not slot.get("selected_refs") and is_empty(slot.get("gap_reason")):
+                        errors.append(f"{where}: required slot needs selected_refs or gap_reason")
+            risks = dispatch.get("source_concentration_risks")
+            if not isinstance(risks, list):
+                errors.append("material_dispatch.source_concentration_risks must be a list")
+            checks = dispatch.get("compatibility_checks")
+            if not isinstance(checks, list):
+                errors.append("material_dispatch.compatibility_checks must be a list")
+            else:
+                for index, check in enumerate(checks):
+                    where = f"material_dispatch.compatibility_checks[{index}]"
+                    require_keys(errors, check, COMPATIBILITY_FIELDS, where)
+                    if not isinstance(check, dict):
+                        continue
+                    if not isinstance(check.get("materials"), list) or len(check.get("materials", [])) < 2:
+                        errors.append(f"{where}.materials must contain at least two material ids")
+                    if check.get("result") not in {"PASS", "HOLD", "FAIL"}:
+                        errors.append(f"{where}.result must be PASS, HOLD, or FAIL")
+                    for field in ("check_id", "dimension", "reason"):
+                        if is_empty(check.get(field)):
+                            errors.append(f"{where}.{field} cannot be empty")
+            if dispatch.get("status") in {"complete", "partial"} and is_empty(dispatch.get("stop_reason")):
+                errors.append("material_dispatch.stop_reason is required for complete/partial status")
 
     evidence = data.get("market_evidence")
     sample_ids: set[str] = set()
