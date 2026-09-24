@@ -127,15 +127,47 @@ def valid_plan() -> dict:
             }
         )
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "plan_id": "PLAN:TEST",
         "status": "candidate",
         "creation_mode": "greenfield",
         "plan_mode": "full",
         "brief": {},
-        "shared_library_root": "D:/shared/novel-material-library",
+        "shared_library_root": str(Path.cwd().resolve()),
         "market_evidence": {"as_of": "2026-09-19", "sources": ["ranking"], "samples": samples, "signals": signals, "coverage_status": "complete", "bias_notes": []},
-        "library_usage": {"formal_card_ids": ["CARD:1"], "dna_candidate_ids": ["DNA:1"], "gaps": []},
+        "library_usage": {"formal_card_ids": ["CARD:1"], "dna_candidate_ids": ["DNA:1", "CS:SYSTEM:001"], "gaps": []},
+        "material_dispatch": {
+            "status": "complete",
+            "slots": [
+                {
+                    "slot_id": "SLOT:PRIMARY_SYSTEM",
+                    "role": "primary_system",
+                    "required": True,
+                    "wave": 1,
+                    "modules": ["cultivation_system"],
+                    "component_types": ["cultivation_system"],
+                    "query_groups": ["growth validation"],
+                    "target_candidates": 5,
+                    "source_strategy": "cross_book",
+                    "selected_refs": [
+                        {
+                            "material_id": "CS:SYSTEM:001",
+                            "material_kind": "dna_component",
+                            "module": "cultivation_system",
+                            "record_id": "CS:BOOK:BOOK_01",
+                            "component_type": "cultivation_system",
+                            "book_id": "BOOK_01",
+                            "qa_status": "PASS",
+                        }
+                    ],
+                    "rejected_refs": [],
+                    "gap_reason": "",
+                }
+            ],
+            "source_concentration_risks": [],
+            "compatibility_checks": [],
+            "stop_reason": "core slots covered",
+        },
         "concept_options": [
             concept("A", "SIG:A", "formal_card_ids", "CARD:1"),
             concept("B", "SIG:B", "dna_candidate_ids", "DNA:1"),
@@ -202,6 +234,24 @@ def main() -> int:
         sample["analyzed_chapters"] = [1, 2, 3]
         sample["opening_analysis"] = {"first_scene": "partial"}
     cases.append(("fewer than six complete opening samples cannot recommend", too_few_analyzed, False))
+
+    legacy = copy.deepcopy(base)
+    legacy["schema_version"] = 1
+    legacy.pop("material_dispatch", None)
+    cases.append(("schema v1 backward compatibility", legacy, True))
+
+    missing_dispatch = copy.deepcopy(base)
+    missing_dispatch.pop("material_dispatch")
+    cases.append(("schema v2 requires material dispatch", missing_dispatch, False))
+
+    empty_required_slot = copy.deepcopy(base)
+    empty_required_slot["material_dispatch"]["slots"][0]["selected_refs"] = []
+    empty_required_slot["material_dispatch"]["slots"][0]["gap_reason"] = ""
+    cases.append(("required dispatch slot needs selection or gap", empty_required_slot, False))
+
+    orphan_component = copy.deepcopy(base)
+    orphan_component["material_dispatch"]["slots"][0]["selected_refs"][0]["material_id"] = "CS:SYSTEM:UNKNOWN"
+    cases.append(("dispatch component must be in library usage", orphan_component, False))
 
     failures = []
     for name, payload, should_pass in cases:

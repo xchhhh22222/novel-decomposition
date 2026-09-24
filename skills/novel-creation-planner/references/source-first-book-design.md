@@ -1,6 +1,6 @@
-# 素材先行的开书组装 V1.4
+# 素材先行的开书组装 V1.1
 
-用于从共享素材库主动提出新书方向。V1.4 的核心变化是：**来源书不必整包继承，创作时可以按组件跨书重组。**
+用于从共享素材库主动提出新书方向。V1.1 不直接“搜一堆素材然后拼”，而是先建立素材槽位并按 Wave 1→4 调度。来源书不必整包继承，但每个被选中的组件都必须保留来源与兼容前提。
 
 ## 输入分别取证
 
@@ -10,6 +10,12 @@
 4. `DNA素材/04_修炼体系`：优先读取 schema_version 2 的 `cultivation_systems / system_relations / techniques / artifacts / resource_assets`。
 5. `DNA素材/05_人物功能与标签` 及人物个体卡。
 6. `DNA素材/08_篇章结构`、高潮脉络与章节情绪。
+
+## 调度前置
+
+先读取 `material-dispatch.md`。至少建立：world_premise、primary_system、golden_finger、first_major_climax 四个骨架槽位；其它槽位按任务需要开启。
+
+第一次检索只为每槽保留少量候选，不追求“库里有什么全看一遍”。
 
 ## 组装流程
 
