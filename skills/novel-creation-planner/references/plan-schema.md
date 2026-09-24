@@ -210,3 +210,55 @@ material_support
 ```powershell
 python -X utf8 scripts/validate_creation_plan.py <plan.json>
 ```
+
+
+## V1.2 附属规划产物
+
+V1.2 不把 Top10/3本前20章的全部结构证据和前100章倒推脊柱硬塞进主 plan JSON。保存完整开书包时，推荐同目录额外保存：
+
+```text
+<plan-package>/
+├─ plan.json
+├─ market_benchmark.json
+├─ climax_backplan.json
+└─ deep_dive/
+   ├─ <sample_id>_chapter_structure_1_20.jsonl
+   └─ ...
+```
+
+主 `plan.json` 继续使用现有 creation-plan 契约，并可额外加入不会破坏旧 validator 的引用字段：
+
+```json
+{
+  "v12_artifacts": {
+    "market_benchmark": {
+      "benchmark_id": "MK:...",
+      "path": "market_benchmark.json",
+      "status": "complete"
+    },
+    "climax_backplan": {
+      "backplan_id": "BP:...",
+      "path": "climax_backplan.json",
+      "status": "complete"
+    }
+  }
+}
+```
+
+### market_benchmark.json
+
+正式字段与完成门见 `market-benchmark.md`。机器校验：
+
+```powershell
+python -X utf8 scripts/validate_v12_artifacts.py benchmark market_benchmark.json
+```
+
+### climax_backplan.json
+
+正式字段与完成门见 `climax-backplanning.md`。机器校验：
+
+```powershell
+python -X utf8 scripts/validate_v12_artifacts.py climax climax_backplan.json
+```
+
+这两个附属包属于创造项目证据与规划，不得写回共享拆书库的来源 `per_book`。

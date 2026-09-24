@@ -109,8 +109,10 @@
   "cost": "赢了也付出的代价",
   "irreversible_change": "高潮结束后回不到之前的什么状态",
   "next_stage_seed": "如何自然推出下一阶段",
+  "previous_climax_dependency": "第一个高潮写 ROOT；后续高潮写由上一高潮的什么结果推出",
   "material_refs": [],
-  "benchmark_lesson_ids": []
+  "benchmark_lesson_ids": [],
+  "backward_beats": []
 }
 ```
 
@@ -210,3 +212,50 @@
 - 小剧情能回到阶段目标或高潮前置条件；
 - 第二高潮由第一高潮后果推出；
 - 不复制对标书具体事件链。
+
+
+## 14. 保存契约
+
+需要落盘时，`climax_backplan.json` 顶层至少为：
+
+```json
+{
+  "schema_version": 1,
+  "backplan_id": "BP:...",
+  "status": "complete",
+  "horizon_chapters": 100,
+  "target_major_climax_count": 2,
+  "benchmark_lesson_ids": [],
+  "faction_pool": [],
+  "strategic_targets": [],
+  "major_climaxes": [],
+  "story_spine_1_100": [],
+  "future_climax_seeds": []
+}
+```
+
+### faction_pool
+
+每个势力至少保存：
+
+`faction_id / name / role / controlled_assets_or_permissions / core_interest / available_leverage / stage_entry`
+
+### major_climaxes
+
+默认完整模式要求2个高潮；每个高潮：
+
+- 引用一个真实存在的 `strategic_target_id`；
+- 完整模式至少有2个有利益动机的 competing factions；
+- 有 `previous_climax_dependency`，第一个写 `ROOT`，第二个必须说明由第一高潮什么后果推出；
+- 内嵌4—8个 `backward_beats`；
+- benchmark lesson 引用只能来自顶层 `benchmark_lesson_ids`。
+
+### story_spine_1_100
+
+至少6个阶段节点，每个节点必须指向某个 `climax_link`，说明该段究竟在为哪个大高潮服务。
+
+校验：
+
+```powershell
+python -X utf8 scripts/validate_v12_artifacts.py climax climax_backplan.json
+```

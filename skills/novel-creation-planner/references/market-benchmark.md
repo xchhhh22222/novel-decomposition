@@ -186,3 +186,36 @@ deep_dive_status
 - 三书选择理由是结构优势，不是内容相似。
 
 市场对标不足不禁止继续使用素材库构思，但必须标记“市场结构验证不完整”。
+
+
+## 10. 保存契约
+
+需要落盘时，`market_benchmark.json` 顶层至少为：
+
+```json
+{
+  "schema_version": 1,
+  "benchmark_id": "MK:YYYYMMDD:都市高武",
+  "status": "complete",
+  "category": "都市高武",
+  "snapshot_at": "YYYY-MM-DD",
+  "selection_rule": "structural_learning_not_similarity",
+  "top10": [],
+  "selected_deep_dives": [],
+  "structural_lessons": []
+}
+```
+
+其中：
+
+- `top10` 必须恰好10条，rank 为1—10；
+- `selected_deep_dives` 必须恰好3条；
+- `deep_dive_status=pass` 时必须真实覆盖1—20章，并提供20条 `chapter_structures`；
+- `status=complete` 时至少6本 Top10 样本完整分析1—10章，并且3本深拆都完成1—20章；
+- `selection_rule` 必须固定为 `structural_learning_not_similarity`。
+
+校验：
+
+```powershell
+python -X utf8 scripts/validate_v12_artifacts.py benchmark market_benchmark.json
+```

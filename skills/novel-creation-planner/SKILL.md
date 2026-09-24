@@ -20,6 +20,7 @@ description: V1.2 市场结构学习 + 素材调度 + 高潮倒推型小说创�
 - 需要规划前300章：读取 [references/architecture-300.md](references/architecture-300.md)。
 - 需要三案比较、原创性、兼容性、债务和素材覆盖审核：读取 [references/audit-and-output.md](references/audit-and-output.md)。
 - 需要落盘机器可检验的计划包：读取 [references/plan-schema.md](references/plan-schema.md)，并运行 `scripts/validate_creation_plan.py`。
+- 保存 V1.2 市场对标包或高潮倒推包时，分别运行 `python scripts/validate_v12_artifacts.py benchmark <market_benchmark.json>` 与 `python scripts/validate_v12_artifacts.py climax <climax_backplan.json>`。
 - **需要从素材库选材、决定先查什么/查多少/何时停止：必须读取 [references/material-dispatch.md](references/material-dispatch.md)。**
 - 需要定位、迁移或复用跨书素材库：读取 [references/shared-library.md](references/shared-library.md)。
 - **需要设计战略目标物、前100章两个大高潮并反推：必须读取 [references/climax-backplanning.md](references/climax-backplanning.md)。**
@@ -102,11 +103,11 @@ description: V1.2 市场结构学习 + 素材调度 + 高潮倒推型小说创�
 
 ## 完成标准
 
-- 市场样本带平台、榜单、日期、来源和访问边界；合格正文样本通常不少于6本，否则标记偏差。
+- 市场样本带平台、榜单、日期、来源和访问边界；Top10 排名位置全部保留，合格前10章正文样本通常不少于6本，否则标记偏差；完整 V1.2 对标还要求3本深拆至前20章。
 - 市场证据必须包含新书榜前10名清单、逐书前10章下载状态、逐书开篇卡和横向信号矩阵；不能只有排名、书名、简介或标签。
 - 三案在核心承诺、金手指、人物关系、冲突、资源、制度或长线问题中至少四项实质不同。
 - 推荐案必须回答“Top10 学到了什么结构、3本为什么入选、前三章为什么追读、第一高潮怎样兑现、第二高潮怎样由第一高潮后果推出”。默认优先把前100章两次大高潮做实；300章/百万字规划在用户要求且素材足够时再展开。
 - 推荐案的金手指必须有名称、输入、处理、输出、限制、代价、失败状态、克制方式和阶段成长；世界观必须有时代前提、核心危机、具体核心势力及利益冲突、资源循环和普通人接口；修炼部分必须明确 1～N 套体系、各自境界验证、兼修/冲突关系，以及核心功法/法宝/资源的适配。
 - 只有用户要求七阶段或前300章规划时，七个阶段才逐一包含目标、冲突、成长、资源、人物、情绪兑现、主线进展、疲劳刷新和不可逆状态变化。
-- 输出真实使用的素材ID、市场信号、原创重设、弃用理由、债务账本、风险和待确认项。
+- 输出真实使用的素材ID、市场结构 lesson、素材来源、原创重设、弃用理由、战略目标物、两个高潮的倒推锚点、债务账本、风险和待确认项。
 - 素材缺口订单只描述所需功能、阶段、情绪和验收标准，不指定照搬某本书。
