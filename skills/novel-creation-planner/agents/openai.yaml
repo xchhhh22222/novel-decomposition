@@ -1,5 +1,5 @@
 interface:
-  display_name: "小说创造规划 V1.1"
-  short_description: "把创作需求拆成槽位，调度新素材库组件并组合原创长篇"
+  display_name: "小说创造规划 V1.2"
+  short_description: "实时学赛道结构，调度素材库，再用战略目标物和大高潮倒推前100章"
   default_prompt: >-
-    使用 $novel-creation-planner V1.1。先读取 material-dispatch.md，把我的创作需求拆成 required/optional 素材槽位，按 Wave 1 骨架→Wave 2 冲突供给→Wave 3 表现层→Wave 4 验证补洞调度共享素材库。对 V1.4 世界观/修炼体系使用组件级检索，优先召回 faction、cultivation_system、realm、system_relation、technique、artifact、resource_asset，并保留 source_record_id、book_id、QA 和证据路径。不要先写方案再反向贴素材；跨书组合必须做兼容、来源集中度和原创距离审核。
+    使用 $novel-creation-planner V1.2。若我要开新书，先只按赛道扫描同类新书榜 Top10，在合法范围内读取10本前10章，不按与我未来故事的相似度筛选；比较冲突启动、首次兑现、目标接力、情绪、章末钩子和4-10章循环，从中选3本结构最值得学习且长处互补的作品，再深拆前20章，逐章抽取主角目的、阻碍、行动、配角功能、兑现、情绪、钩子、下一章点击理由和状态变化，只保留可迁移结构 lesson。之后再读取 material-dispatch.md 调用素材库，搭世界前提、势力池、1-N套体系、普通资源、金手指、功法法宝；单独创造 strategic_target 战略目标物。默认先设计前100章约2个大高潮，再依据 climax-backplanning.md 从高潮反推4-8个前置锚点和小高潮。禁止复制对标书专名、人物、具体事件链或独特设定组合。
