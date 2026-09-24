@@ -407,7 +407,7 @@ def main() -> int:
                         "why": why,
                         "usage_status": usage_status(row, value),
                         "summary": result_summary(module, value),
-                        "evidence_refs": value.get("evidence_refs", row.get("evidence_refs", [])),
+                        "evidence_refs": value.get("evidence_refs") or value.get("direct_evidence_refs") or row.get("evidence_refs", []),
                     }
                     results.append(result)
                 continue
