@@ -41,6 +41,298 @@ CLUSTER_DECISIONS = {
     "HOLD",
 }
 HANDOFF_ACTIONS = {"保留", "合并候选", "拆分候选", "补证据", "暂缓"}
+SYSTEM_TYPES = {"body", "energy", "spirit", "bloodline", "summoning", "artifact", "hybrid", "other", "UNKNOWN"}
+SYSTEM_RELATION_TYPES = {"parallel", "exclusive", "complementary", "convertible", "counter", "dependency", "hybrid", "UNKNOWN"}
+TECHNIQUE_CATEGORIES = {"cultivation_manual", "combat_art", "movement", "secret_art", "spirit_art", "body_art", "support", "forbidden", "other", "UNKNOWN"}
+ARTIFACT_CATEGORIES = {"weapon", "armor", "artifact", "spirit_item", "technology", "space_item", "support_item", "special_item", "other", "UNKNOWN"}
+RESOURCE_KINDS = {"medicine", "material", "currency", "points", "core", "consumable", "training_resource", "other", "UNKNOWN"}
+V2_AFFECTED_LAYERS = {"system", "realm", "build", "technique", "artifact", "combat_power", "resource", "permission"}
+
+
+def validate_v2_realm_system(realm_system: Any, prefix: str, errors: list[str]) -> None:
+    if not isinstance(realm_system, dict):
+        errors.append(f"{prefix}.realm_system must be an object")
+        return
+    required = {"realm_order", "transition_events", "break_conditions", "realm_limits", "unknowns"}
+    missing = sorted(required - set(realm_system))
+    if missing:
+        errors.append(f"{prefix}.realm_system missing fields: {', '.join(missing)}")
+    for field in ("realm_order", "transition_events", "break_conditions", "realm_limits"):
+        if field in realm_system and not isinstance(realm_system.get(field), list):
+            errors.append(f"{prefix}.realm_system.{field} must be a list")
+    if "unknowns" in realm_system and not string_list(realm_system.get("unknowns")):
+        errors.append(f"{prefix}.realm_system.unknowns must be a list of strings")
+
+    realm_ids: set[str] = set()
+    for index, realm in enumerate(realm_system.get("realm_order", []) if isinstance(realm_system.get("realm_order"), list) else []):
+        item_prefix = f"{prefix}.realm_system.realm_order[{index}]"
+        if not isinstance(realm, dict):
+            errors.append(f"{item_prefix} must be an object")
+            continue
+        for field in ("realm_id", "name_in_book", "order", "stage_difference", "direct_evidence_refs"):
+            if field not in realm:
+                errors.append(f"{item_prefix} missing {field}")
+        realm_id = realm.get("realm_id")
+        if not nonempty_string(realm_id):
+            errors.append(f"{item_prefix}.realm_id must be non-empty")
+        elif realm_id in realm_ids:
+            errors.append(f"{item_prefix}: duplicate realm_id={realm_id}")
+        else:
+            realm_ids.add(realm_id)
+        if not nonempty_string(realm.get("name_in_book")):
+            errors.append(f"{item_prefix}.name_in_book must be non-empty")
+        if not isinstance(realm.get("order"), int):
+            errors.append(f"{item_prefix}.order must be an integer")
+        if not nonempty_string(realm.get("stage_difference")):
+            errors.append(f"{item_prefix}.stage_difference must be non-empty or UNKNOWN")
+        if not ref_list(realm.get("direct_evidence_refs"), allow_empty=True):
+            errors.append(f"{item_prefix}.direct_evidence_refs has invalid structure")
+
+    for index, event in enumerate(realm_system.get("transition_events", []) if isinstance(realm_system.get("transition_events"), list) else []):
+        item_prefix = f"{prefix}.realm_system.transition_events[{index}]"
+        if not isinstance(event, dict):
+            errors.append(f"{item_prefix} must be an object")
+            continue
+        required_event = {"event_id", "person_id", "before", "trigger_or_condition", "after", "change_type", "direct_evidence_refs", "costs_or_risks", "unknowns"}
+        missing = sorted(required_event - set(event))
+        if missing:
+            errors.append(f"{item_prefix} missing fields: {', '.join(missing)}")
+        if event.get("change_type") not in REALM_CHANGE_TYPES:
+            errors.append(f"{item_prefix}.change_type must be formal_realm_change/UNKNOWN")
+        if not nonempty_string(event.get("before")):
+            errors.append(f"{item_prefix}.before must be non-empty or UNKNOWN")
+        if not nonempty_string(event.get("trigger_or_condition")):
+            errors.append(f"{item_prefix}.trigger_or_condition must be non-empty")
+        refs = event.get("direct_evidence_refs")
+        if not ref_list(refs, allow_empty=event.get("change_type") != "formal_realm_change"):
+            errors.append(f"{item_prefix}.direct_evidence_refs has invalid structure")
+        if event.get("change_type") == "formal_realm_change":
+            if not nonempty_string(event.get("after")) or event.get("after") == "UNKNOWN":
+                errors.append(f"{item_prefix}.after must be determined for formal_realm_change")
+            if not ref_list(refs):
+                errors.append(f"{item_prefix}: formal realm change requires direct_evidence_refs")
+        elif nonempty_string(event.get("after")) and event.get("after") != "UNKNOWN":
+            errors.append(f"{item_prefix}: UNKNOWN realm change cannot declare a determined after realm")
+        if not string_list(event.get("costs_or_risks")):
+            errors.append(f"{item_prefix}.costs_or_risks must be a list of strings")
+        if not string_list(event.get("unknowns")):
+            errors.append(f"{item_prefix}.unknowns must be a list of strings")
+
+
+def validate_v2_per_book(row: dict[str, Any], path: Path, line: int, errors: list[str]) -> None:
+    required = {
+        "book_id", "title", "chapters_covered", "shared_foundations", "cultivation_systems",
+        "system_relations", "techniques", "artifacts", "resource_assets", "protagonist_build",
+        "golden_finger_interfaces", "actual_combat_power", "skill_proficiency", "identity_permissions",
+        "milestones", "emotion_overlay_links", "growth_fatigue_risks", "source_numbering_notes",
+    }
+    add_missing(errors, path, line, row, required)
+    for field in ("title", "chapters_covered"):
+        if field in row and not nonempty_string(row.get(field)):
+            errors.append(f"{path}:{line}: {field} must be non-empty")
+
+    if not isinstance(row.get("shared_foundations"), dict):
+        errors.append(f"{path}:{line}: shared_foundations must be an object")
+
+    list_fields = (
+        "cultivation_systems", "system_relations", "techniques", "artifacts", "resource_assets",
+        "golden_finger_interfaces", "emotion_overlay_links", "growth_fatigue_risks", "source_numbering_notes",
+    )
+    for field in list_fields:
+        if field in row and not isinstance(row.get(field), list):
+            errors.append(f"{path}:{line}: {field} must be a list")
+
+    systems = row.get("cultivation_systems", [])
+    if isinstance(systems, list) and not systems:
+        errors.append(f"{path}:{line}: schema_version=2 per_book requires at least one evidenced cultivation_system; use gap otherwise")
+
+    system_ids: set[str] = set()
+    for index, system in enumerate(systems if isinstance(systems, list) else []):
+        prefix = f"{path}:{line}: cultivation_systems[{index}]"
+        if not isinstance(system, dict):
+            errors.append(f"{prefix} must be an object")
+            continue
+        required_system = {
+            "system_id", "name_in_book", "system_type", "population_scope", "entry_condition",
+            "energy_or_power_source", "training_method", "growth_loop", "realm_system",
+            "resource_requirements", "validation_methods", "combat_expression", "strengths",
+            "hard_limits", "evidence_refs", "unknowns",
+        }
+        missing = sorted(required_system - set(system))
+        if missing:
+            errors.append(f"{prefix} missing fields: {', '.join(missing)}")
+        system_id = system.get("system_id")
+        if not nonempty_string(system_id):
+            errors.append(f"{prefix}.system_id must be non-empty")
+        elif system_id in system_ids:
+            errors.append(f"{prefix}: duplicate system_id={system_id}")
+        else:
+            system_ids.add(system_id)
+        if system.get("system_type") not in SYSTEM_TYPES:
+            errors.append(f"{prefix}.system_type is not controlled")
+        for field in ("resource_requirements", "validation_methods", "strengths", "hard_limits"):
+            if not string_list(system.get(field)):
+                errors.append(f"{prefix}.{field} must be a list of strings")
+        if not ref_list(system.get("evidence_refs")):
+            errors.append(f"{prefix}.evidence_refs must be non-empty")
+        if not string_list(system.get("unknowns")):
+            errors.append(f"{prefix}.unknowns must be a list of strings")
+        validate_v2_realm_system(system.get("realm_system"), prefix, errors)
+
+    relations = row.get("system_relations", [])
+    if isinstance(relations, list) and len(system_ids) < 2 and relations:
+        errors.append(f"{path}:{line}: system_relations must be empty when fewer than two systems exist")
+    for index, relation in enumerate(relations if isinstance(relations, list) else []):
+        prefix = f"{path}:{line}: system_relations[{index}]"
+        if not isinstance(relation, dict):
+            errors.append(f"{prefix} must be an object")
+            continue
+        required_relation = {
+            "relation_id", "system_a", "system_b", "relation_type", "can_dual_cultivate",
+            "shared_resources", "exclusive_or_competing_resources", "conversion_rule",
+            "power_mapping_or_validation", "synergy_or_conflict", "evidence_refs", "unknowns",
+        }
+        missing = sorted(required_relation - set(relation))
+        if missing:
+            errors.append(f"{prefix} missing fields: {', '.join(missing)}")
+        if relation.get("system_a") not in system_ids or relation.get("system_b") not in system_ids:
+            errors.append(f"{prefix}: relation must reference local system_ids")
+        if relation.get("system_a") == relation.get("system_b"):
+            errors.append(f"{prefix}: system_a and system_b must differ")
+        if relation.get("relation_type") not in SYSTEM_RELATION_TYPES:
+            errors.append(f"{prefix}.relation_type is not controlled")
+        if relation.get("can_dual_cultivate") not in {True, False, "UNKNOWN"}:
+            errors.append(f"{prefix}.can_dual_cultivate must be true/false/UNKNOWN")
+        for field in ("shared_resources", "exclusive_or_competing_resources"):
+            if not string_list(relation.get(field)):
+                errors.append(f"{prefix}.{field} must be a list of strings")
+        if not ref_list(relation.get("evidence_refs")):
+            errors.append(f"{prefix}.evidence_refs must be non-empty")
+        if not string_list(relation.get("unknowns")):
+            errors.append(f"{prefix}.unknowns must be a list of strings")
+
+    def validate_components(field: str, id_key: str, category_key: str, allowed: set[str]) -> set[str]:
+        ids: set[str] = set()
+        items = row.get(field, [])
+        for index, item in enumerate(items if isinstance(items, list) else []):
+            prefix = f"{path}:{line}: {field}[{index}]"
+            if not isinstance(item, dict):
+                errors.append(f"{prefix} must be an object")
+                continue
+            item_id = item.get(id_key)
+            if not nonempty_string(item_id):
+                errors.append(f"{prefix}.{id_key} must be non-empty")
+            elif item_id in ids:
+                errors.append(f"{prefix}: duplicate {id_key}={item_id}")
+            else:
+                ids.add(item_id)
+            if item.get(category_key) not in allowed:
+                errors.append(f"{prefix}.{category_key} is not controlled")
+            compatible = item.get("compatible_system_ids")
+            if not string_list(compatible):
+                errors.append(f"{prefix}.compatible_system_ids must be a list of strings")
+            else:
+                foreign = [sid for sid in compatible if sid not in system_ids]
+                if foreign:
+                    errors.append(f"{prefix}: unknown compatible_system_ids={', '.join(foreign)}")
+            if not ref_list(item.get("evidence_refs")):
+                errors.append(f"{prefix}.evidence_refs must be non-empty")
+            if not string_list(item.get("unknowns")):
+                errors.append(f"{prefix}.unknowns must be a list of strings")
+        return ids
+
+    technique_ids = validate_components("techniques", "technique_id", "category", TECHNIQUE_CATEGORIES)
+    artifact_ids = validate_components("artifacts", "artifact_id", "category", ARTIFACT_CATEGORIES)
+    validate_components("resource_assets", "resource_id", "resource_kind", RESOURCE_KINDS)
+
+    for index, resource in enumerate(row.get("resource_assets", []) if isinstance(row.get("resource_assets"), list) else []):
+        if isinstance(resource, dict) and not isinstance(resource.get("permanent_self_change_proven"), bool):
+            errors.append(f"{path}:{line}: resource_assets[{index}].permanent_self_change_proven must be boolean")
+
+    build = row.get("protagonist_build")
+    if not isinstance(build, dict):
+        errors.append(f"{path}:{line}: protagonist_build must be an object")
+    else:
+        for sid in build.get("system_ids", []) if isinstance(build.get("system_ids"), list) else []:
+            if sid not in system_ids:
+                errors.append(f"{path}:{line}: protagonist_build references unknown system_id={sid}")
+        for tid in build.get("technique_ids", []) if isinstance(build.get("technique_ids"), list) else []:
+            if tid not in technique_ids:
+                errors.append(f"{path}:{line}: protagonist_build references unknown technique_id={tid}")
+        for aid in build.get("artifact_ids", []) if isinstance(build.get("artifact_ids"), list) else []:
+            if aid not in artifact_ids:
+                errors.append(f"{path}:{line}: protagonist_build references unknown artifact_id={aid}")
+
+    interfaces = row.get("golden_finger_interfaces")
+    if isinstance(interfaces, list):
+        for index, item in enumerate(interfaces):
+            prefix = f"{path}:{line}: golden_finger_interfaces[{index}]"
+            if not isinstance(item, dict):
+                errors.append(f"{prefix} must be an object")
+                continue
+            if item.get("affected_layer") not in V2_AFFECTED_LAYERS:
+                errors.append(f"{prefix}.affected_layer is not controlled")
+            if not ref_list(item.get("evidence_refs")):
+                errors.append(f"{prefix}.evidence_refs must be non-empty")
+            if not string_list(item.get("unknowns")):
+                errors.append(f"{prefix}.unknowns must be a list of strings")
+
+    power = row.get("actual_combat_power")
+    if not isinstance(power, dict):
+        errors.append(f"{path}:{line}: actual_combat_power must be an object")
+    else:
+        validate_actual_power(power, path, line, errors)
+        for index, event in enumerate(power.get("assessment_events", []) if isinstance(power.get("assessment_events"), list) else []):
+            if isinstance(event, dict):
+                sid = event.get("system_id")
+                if sid is not None and sid not in system_ids:
+                    errors.append(f"{path}:{line}: actual_combat_power.assessment_events[{index}] references unknown system_id={sid}")
+
+    proficiency = row.get("skill_proficiency")
+    if not isinstance(proficiency, dict):
+        errors.append(f"{path}:{line}: skill_proficiency must be an object")
+    else:
+        events = proficiency.get("skill_events")
+        if not isinstance(events, list):
+            errors.append(f"{path}:{line}: skill_proficiency.skill_events must be a list")
+        else:
+            for index, event in enumerate(events):
+                prefix = f"{path}:{line}: skill_proficiency.skill_events[{index}]"
+                if not isinstance(event, dict):
+                    errors.append(f"{prefix} must be an object")
+                    continue
+                if event.get("technique_id") not in technique_ids:
+                    errors.append(f"{prefix}: technique_id must reference techniques")
+                if not isinstance(event.get("state_transitions"), list):
+                    errors.append(f"{prefix}.state_transitions must be a list")
+                if not ref_list(event.get("evidence_refs")):
+                    errors.append(f"{prefix}.evidence_refs must be non-empty")
+                if not string_list(event.get("unknowns")):
+                    errors.append(f"{prefix}.unknowns must be a list of strings")
+                for tindex, transition in enumerate(event.get("state_transitions", []) if isinstance(event.get("state_transitions"), list) else []):
+                    tprefix = f"{prefix}.state_transitions[{tindex}]"
+                    if not isinstance(transition, dict):
+                        errors.append(f"{tprefix} must be an object")
+                        continue
+                    if transition.get("from_state") not in SKILL_STATES or transition.get("to_state") not in SKILL_STATES:
+                        errors.append(f"{tprefix}: skill state is not controlled")
+                    if transition.get("to_state") in {"mastered", "proficient", "evolved"} and not nonempty_string(transition.get("visible_validation")):
+                        errors.append(f"{tprefix}: advanced state requires visible_validation")
+                    if not ref_list(transition.get("evidence_refs")):
+                        errors.append(f"{tprefix}.evidence_refs must be non-empty")
+                    if not string_list(transition.get("unknowns")):
+                        errors.append(f"{tprefix}.unknowns must be a list of strings")
+
+    validate_permissions(row.get("identity_permissions"), path, line, errors)
+
+    milestones = row.get("milestones")
+    if not isinstance(milestones, dict):
+        errors.append(f"{path}:{line}: milestones must be an object")
+    else:
+        for field in ("first_system_display", "first_direct_realm_change", "first_technique_validation", "first_artifact_validation", "first_cross_system_relation_validation"):
+            if field not in milestones or not isinstance(milestones.get(field), dict):
+                errors.append(f"{path}:{line}: milestones.{field} must be an object")
+
 ENVELOPE = {
     "record_type",
     "schema_version",
@@ -139,8 +431,8 @@ def validate_envelope(
     add_missing(errors, path, line, row, ENVELOPE)
     if row.get("record_type") != kind:
         errors.append(f"{path}:{line}: record_type must be {kind!r}")
-    if row.get("schema_version") != 1:
-        errors.append(f"{path}:{line}: schema_version must be 1")
+    if row.get("schema_version") not in {1, 2}:
+        errors.append(f"{path}:{line}: schema_version must be 1 or 2")
     record_id = row.get("record_id")
     if not nonempty_string(record_id):
         errors.append(f"{path}:{line}: record_id must be a non-empty string")
@@ -423,6 +715,9 @@ def validate_interfaces(interfaces: Any, path: Path, line: int, errors: list[str
 
 
 def validate_per_book(row: dict[str, Any], path: Path, line: int, errors: list[str]) -> None:
+    if row.get("schema_version") == 2:
+        validate_v2_per_book(row, path, line, errors)
+        return
     required = {
         "book_id", "title", "chapters_covered", "universal_system", "realm_system", "protagonist_build",
         "golden_finger_interfaces", "actual_combat_power", "skill_proficiency", "equipment_resources",
@@ -504,10 +799,18 @@ def validate_qa(row: dict[str, Any], path: Path, line: int, errors: list[str]) -
     if not nonempty_string(row.get("scope")):
         errors.append(f"{path}:{line}: scope must be non-empty")
     checks = row.get("checks")
-    required_checks = {
-        "coverage", "evidence_traceability", "universal_vs_realm_boundary", "realm_direct_evidence",
-        "skill_state_boundary", "combat_power_boundary", "resource_permission_boundary", "interface_boundary", "cross_book_gate",
-    }
+    required_checks = (
+        {
+            "coverage", "evidence_traceability", "source_only_extraction", "multi_system_boundary",
+            "realm_ownership", "system_relation_integrity", "technique_artifact_boundary",
+            "combat_power_boundary", "resource_permission_boundary", "interface_boundary", "cross_book_gate",
+        }
+        if row.get("schema_version") == 2
+        else {
+            "coverage", "evidence_traceability", "universal_vs_realm_boundary", "realm_direct_evidence",
+            "skill_state_boundary", "combat_power_boundary", "resource_permission_boundary", "interface_boundary", "cross_book_gate",
+        }
+    )
     if not isinstance(checks, dict):
         errors.append(f"{path}:{line}: checks must be an object")
     else:

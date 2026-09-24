@@ -1,5 +1,5 @@
 interface:
-  display_name: "世界观运行机制横向拆解器"
-  short_description: "横向拆解多本小说的世界规则、资源制度、冲突生成与地图信息扩展"
+  display_name: "世界观与势力生态横向拆解器 V1.4"
+  short_description: "拆解世界规则、具体势力、资源控制、制度冲突、地图与信息结构"
   default_prompt: >-
-    使用 $novel-worldbuilding-miner 横向提取指定书单中、且仅限 orchestrator 允许的书籍、章节与来源的世界观运行机制。核心链为“规则 → 稀缺 → 利益/制度 → 冲突 → 剧情入口 → 读者情绪”。不要把背景名词、组织名、地图名或种族名本身当作机制；缺环时保留 partial、UNKNOWN 或 gap；不得根据书名、简介或题材补造世界观。emotion overlay 只能引用，不能新造 reader-emotion 字段。金手指、修炼体系、人物功能、主线等只能作为接口或 evidence，不得越界输出其它专项的正式卡。所有结果保持 candidate-only，禁止 active/deprecated，禁止修改正式素材库。全部目标书完成单书抽取和 QA 后，才允许生成 nearest-neighbor 与 clustering。最终交付 per_book、nearest_neighbors、clusters、qa、handoff，并通过 scripts/validate_outputs.py；validator 失败时不得为了过检补造世界规则或偷偷改 unknowns、evidence 或其它字段。
+    使用 $novel-worldbuilding-miner V1.4，只使用 orchestrator 允许的书籍、章节和来源。不要把“都市高武”等题材标签当成完整世界观；除规则→稀缺→制度/利益→冲突→剧情入口外，必须识别有证据的 factions，逐个记录其公开角色、实际利益、控制资源/区域/信息/权限、招募和内部层级、已证实关系、冲突来源及主角接口。只有组织名而没有持续行动或控制证据时不得补成高置信势力。一本书只确认一两个势力也可以，不为模板完整自动补官方、学校、军方、世家、财团。所有结果 candidate-only，禁止跨书污染；跨书组合只由创造层生成新的候选世界。

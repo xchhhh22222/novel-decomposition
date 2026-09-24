@@ -5,8 +5,8 @@
 | 总控与总索引 | `references/core/` | `horizontal-specialist-contract.md`、`integration-and-qa.md`、`library-layout.md` | `scripts/core/validate_chapter_emotions.py`、`build_master_index.py` |
 | 章节情绪 | `references/specialists/chapter-emotion-miner/` | `references/core/chapter-emotion-schema.md` + specialist adapter | `scripts/specialists/chapter-emotion-miner/validate_outputs.py` |
 | 金手指 | `references/specialists/golden-finger-miner/` | `golden-finger-schema.md`、`clustering-and-qa.md` | `scripts/specialists/golden-finger-miner/validate_outputs.py` |
-| 世界观 | `references/specialists/worldbuilding-miner/` | `schema.md`、`clustering-and-qa.md` | 同名 specialist validator |
-| 修炼体系 | `references/specialists/cultivation-system-miner/` | `schema.md`、`clustering-and-qa.md` | 同名 specialist validator |
+| 世界观（规则 + factions 势力生态） | `references/specialists/worldbuilding-miner/` | `schema.md`、`clustering-and-qa.md` | 同名 specialist validator |
+| 修炼体系（1～N systems + 境界/功法/法宝/资源） | `references/specialists/cultivation-system-miner/` | `schema.md`、`clustering-and-qa.md` | 同名 specialist validator |
 | 人物功能 | `references/specialists/character-function-miner/` | `schema.md`、`clustering-and-qa.md` | 同名 specialist validator |
 | 主线与支线 | `references/specialists/plotline-miner/` | `schema.md`、`clustering-and-qa.md` | 同名 specialist validator |
 | 开篇 | `references/specialists/opening-miner/` | `schema.md`、`clustering-and-qa.md` | 同名 specialist validator |

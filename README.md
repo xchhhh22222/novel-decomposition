@@ -2,9 +2,9 @@
 
 一套用于长篇网文拆解、专项提取、证据审计、素材迁移和开书组装的 Codex Skills 与工作流。
 
-当前版本：**拆解 V1.3**
+当前版本：**拆解 V1.4**
 
-## V1.3 的核心思路
+## V1.4 的核心思路
 
 完整拆解与可迁移素材分层保存：
 
@@ -23,6 +23,8 @@ DNA 候选库 / 原子套路卡 / 开书母型
 - 整书总结、完整人物弧和长线剧情保留在证据层。
 - 正式套路卡严格执行“一卡一机制”。
 - 人物卡、大故事线、金手指和世界观优先进入 DNA 候选库，不强行改造成套路卡。
+- V1.4 将世界与成长系统组件化：世界观新增 `factions` 势力生态；修炼体系支持来源书实际存在的 1～N 套 system、独立境界、功法、法宝/装备、资源与体系关系。
+- 拆书层只还原单书来源事实；创造层允许跨书选择组件重新组合，但组合结果必须标为新书候选，不能写回来源记录。
 - 所有结论必须回指章节或已审核证据，模型记忆不能写成来源。
 
 ## 目录
@@ -40,8 +42,8 @@ skills/
   novel-character-function-miner/        # 人物剧情功能
   novel-character-card-miner/            # 女主/长线反派人物卡
   novel-golden-finger-miner/              # 金手指机制
-  novel-worldbuilding-miner/              # 世界观
-  novel-cultivation-system-miner/         # 修炼体系
+  novel-worldbuilding-miner/              # 世界规则 + factions 势力生态
+  novel-cultivation-system-miner/         # 多修炼体系 + 境界/功法/法宝/资源
   novel-plotline-miner/                   # 主线与支线
   novel-opening-miner/                    # 开篇结构
   novel-arc-structure-miner/              # 篇章阶段、大小高潮与大故事线

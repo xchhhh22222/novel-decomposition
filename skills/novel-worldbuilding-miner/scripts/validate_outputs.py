@@ -30,6 +30,68 @@ CLUSTER_DECISIONS = {
     "HOLD",
 }
 HANDOFF_ACTIONS = {"保留", "合并候选", "拆分候选", "补证据", "暂缓"}
+FACTION_TYPES = {"official", "military", "academy", "family", "corporation", "guild", "religion", "race", "underground", "regional", "other", "UNKNOWN"}
+FACTION_RELATION_TYPES = {"ally", "rival", "enemy", "dependency", "trade", "oversight", "UNKNOWN"}
+
+
+def validate_factions(row: dict[str, Any], path: Path, line: int, errors: list[str]) -> None:
+    factions = row.get("factions")
+    if not isinstance(factions, list):
+        errors.append(f"{path}:{line}: factions must be a list")
+        return
+
+    faction_ids: set[str] = set()
+    for index, faction in enumerate(factions):
+        prefix = f"{path}:{line}: factions[{index}]"
+        if not isinstance(faction, dict):
+            errors.append(f"{prefix} must be an object")
+            continue
+        required = {
+            "faction_id", "name_in_book", "faction_type", "public_role", "actual_interest",
+            "controlled_resources", "controlled_territories_or_access", "controlled_information_or_rules",
+            "recruitment_or_entry", "internal_hierarchy", "relations", "conflict_sources",
+            "protagonist_interface", "evidence_refs", "unknowns",
+        }
+        missing = sorted(required - set(faction))
+        if missing:
+            errors.append(f"{prefix} missing fields: {', '.join(missing)}")
+        faction_id = faction.get("faction_id")
+        if not nonempty_string(faction_id):
+            errors.append(f"{prefix}.faction_id must be non-empty")
+        elif faction_id in faction_ids:
+            errors.append(f"{prefix}: duplicate faction_id={faction_id}")
+        else:
+            faction_ids.add(faction_id)
+        if faction.get("faction_type") not in FACTION_TYPES:
+            errors.append(f"{prefix}.faction_type is not controlled")
+        for field in (
+            "controlled_resources", "controlled_territories_or_access", "controlled_information_or_rules",
+            "recruitment_or_entry", "internal_hierarchy", "relations", "conflict_sources",
+        ):
+            if field in faction and not isinstance(faction.get(field), list):
+                errors.append(f"{prefix}.{field} must be a list")
+        if not ref_list(faction.get("evidence_refs")):
+            errors.append(f"{prefix}.evidence_refs must be non-empty")
+        if not string_list(faction.get("unknowns")):
+            errors.append(f"{prefix}.unknowns must be a list of strings")
+
+    for index, faction in enumerate(factions):
+        if not isinstance(faction, dict):
+            continue
+        for rindex, relation in enumerate(faction.get("relations", []) if isinstance(faction.get("relations"), list) else []):
+            prefix = f"{path}:{line}: factions[{index}].relations[{rindex}]"
+            if not isinstance(relation, dict):
+                errors.append(f"{prefix} must be an object")
+                continue
+            if relation.get("target_faction_id") not in faction_ids:
+                errors.append(f"{prefix}: target_faction_id must reference a local faction")
+            if relation.get("relation_type") not in FACTION_RELATION_TYPES:
+                errors.append(f"{prefix}.relation_type is not controlled")
+            if not nonempty_string(relation.get("observable_basis")):
+                errors.append(f"{prefix}.observable_basis must be non-empty")
+            if not ref_list(relation.get("evidence_refs")):
+                errors.append(f"{prefix}.evidence_refs must be non-empty")
+
 ENVELOPE = {
     "record_type",
     "schema_version",
@@ -150,8 +212,8 @@ def validate_envelope(
     add_missing(errors, path, line, row, ENVELOPE)
     if row.get("record_type") != kind:
         errors.append(f"{path}:{line}: record_type must be {kind!r}")
-    if row.get("schema_version") != 1:
-        errors.append(f"{path}:{line}: schema_version must be 1")
+    if row.get("schema_version") not in {1, 2}:
+        errors.append(f"{path}:{line}: schema_version must be 1 or 2")
     record_id = row.get("record_id")
     if not nonempty_string(record_id):
         errors.append(f"{path}:{line}: record_id must be a non-empty string")
@@ -212,7 +274,11 @@ def validate_per_book(row: dict[str, Any], path: Path, line: int, errors: list[s
         "fatigue_risks",
         "source_numbering_notes",
     }
+    if row.get("schema_version") == 2:
+        required.add("factions")
     add_missing(errors, path, line, row, required)
+    if row.get("schema_version") == 2:
+        validate_factions(row, path, line, errors)
     for field in ("title", "chapters_covered", "world_core_premise", "ordinary_life_state"):
         if field in row and not nonempty_string(row.get(field)):
             errors.append(f"{path}:{line}: {field} must be a non-empty string")
@@ -360,6 +426,8 @@ def validate_qa(row: dict[str, Any], path: Path, line: int, errors: list[str]) -
         "emotion_overlay_reference",
         "cross_book_gate",
     }
+    if row.get("schema_version") == 2:
+        required_checks.add("faction_structure")
     if not isinstance(checks, dict):
         errors.append(f"{path}:{line}: checks must be an object")
     else:

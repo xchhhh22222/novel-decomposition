@@ -31,3 +31,10 @@ python "<novel-creation-planner>/scripts/search_dna_candidates.py" --library "<�
 移动正式库前先审计所有引用、索引内路径、工具脚本和项目配置。优先采用“复制到公共目录 → 只读审计 → 修改调用方 → 前向检索测试 → 用户确认后停用旧库”，不要直接剪切。市场样本与拆书候选不得并入正式 active 卡目录。
 
 每本小说只保存自身状态：总纲、世界观、人物、章节、伏笔、成长时间线和素材调用记录；跨书套路卡、BOOK DNA 与拆书证据只保存在公共资产目录。
+
+
+## V1.4 组件检索约定
+
+创造层检索 `03_世界观` 时，优先区分规则链与 `factions`；检索 `04_修炼体系` 时，优先读取 `schema_version: 2` 的 `cultivation_systems`、`system_relations`、`techniques`、`artifacts`、`resource_assets`。
+
+跨书组合时必须保留每个组件的来源 `book_id / record_id / chapters_covered / qa_status`。组合后的新设定属于创作项目，不得回写共享库中的来源 `per_book`。
