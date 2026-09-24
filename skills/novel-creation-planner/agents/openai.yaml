@@ -1,4 +1,5 @@
 interface:
-  display_name: "小说创造规划"
-  short_description: "融合实时榜单与素材库，规划原创长篇新书"
-  default_prompt: "使用 $novel-creation-planner 根据我的题材与偏好，完成扫榜取样、三套开书方案和推荐案的前300章滚动规划。"
+  display_name: "小说创造规划 V1.1"
+  short_description: "把创作需求拆成槽位，调度新素材库组件并组合原创长篇"
+  default_prompt: >-
+    使用 $novel-creation-planner V1.1。先读取 material-dispatch.md，把我的创作需求拆成 required/optional 素材槽位，按 Wave 1 骨架→Wave 2 冲突供给→Wave 3 表现层→Wave 4 验证补洞调度共享素材库。对 V1.4 世界观/修炼体系使用组件级检索，优先召回 faction、cultivation_system、realm、system_relation、technique、artifact、resource_asset，并保留 source_record_id、book_id、QA 和证据路径。不要先写方案再反向贴素材；跨书组合必须做兼容、来源集中度和原创距离审核。
