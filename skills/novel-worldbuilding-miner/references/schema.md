@@ -1,4 +1,4 @@
-# 世界观横向拆解专项输出契约
+# 世界观横向拆解专项输出契约 V1.4
 
 ## 1. 权威关系与统一 envelope
 
@@ -13,7 +13,7 @@
 ```json
 {
   "record_type": "per_book|nearest_neighbor|cluster|qa|handoff|gap",
-  "schema_version": 1,
+  "schema_version": 2,
   "record_id": "WB:<TYPE>:<STABLE_ID>",
   "status": "candidate",
   "book_id": "BOOK_01",
@@ -72,6 +72,45 @@
 5. `evidence_refs` 只引用真实章节、阶段或既有 overlay 记录；
 6. 具体专名、人物名和地图名只在证据定位需要时出现，不参与母型命名。
 
+## 2.5 V1.4 势力组件 `factions`
+
+`factions` 用于回答“这个世界有哪些真正能持续行动的势力、各自控制什么、为什么冲突”，不是组织名词表。
+
+```json
+{
+  "faction_id": "WB:FACTION:001",
+  "name_in_book": "原书势力名",
+  "faction_type": "official|military|academy|family|corporation|guild|religion|race|underground|regional|other|UNKNOWN",
+  "public_role": "公开职能或社会身份",
+  "actual_interest": "已被证据支持的核心利益或目标",
+  "controlled_resources": [],
+  "controlled_territories_or_access": [],
+  "controlled_information_or_rules": [],
+  "recruitment_or_entry": [],
+  "internal_hierarchy": [],
+  "relations": [
+    {
+      "target_faction_id": "WB:FACTION:002",
+      "relation_type": "ally|rival|enemy|dependency|trade|oversight|UNKNOWN",
+      "observable_basis": "由什么行动、制度、资源或冲突证明",
+      "evidence_refs": ["BOOK_01:CHAPTER:0010"]
+    }
+  ],
+  "conflict_sources": [],
+  "protagonist_interface": "主角如何进入、受益、受限、合作或被针对",
+  "evidence_refs": ["BOOK_01:CHAPTER:0005"],
+  "unknowns": []
+}
+```
+
+硬规则：
+
+1. 至少有资源控制、制度权限、领地/入口、信息控制、招募、持续行动或稳定利益之一的证据；
+2. 只有组织名、校名、公司名、家族名或种族名不足以建立高置信 faction；
+3. `relations.target_faction_id` 必须引用同一本 `per_book` 已存在 faction；
+4. 不按“都市高武”常识自动补官方、学校、军方、世家或财团；
+5. 跨书拼装势力结构属于创造层，不得写回来源书。
+
 ## 3. `per_book` 单书记录
 
 每本目标书必须有一条 `record_type: per_book`，或在无法核验时有一条 `record_type: gap`；同一目标书不能两者并存。
@@ -81,7 +120,7 @@
 ```json
 {
   "record_type": "per_book",
-  "schema_version": 1,
+  "schema_version": 2,
   "record_id": "WB:BOOK:BOOK_01",
   "status": "candidate",
   "book_id": "BOOK_01",
@@ -89,6 +128,7 @@
   "chapters_covered": "1-120",
   "world_core_premise": "世界核心异常或基础前提及其证据",
   "ordinary_life_state": "普通人的日常如何被该前提改变",
+  "factions": [],
   "rule_chains": [],
   "institution_and_interest_patterns": [],
   "resource_circuits": [],
@@ -118,7 +158,8 @@
 
 专项字段含义：
 
-- `institution_and_interest_patterns` 记录利益主体、组织、制度、阶层和流动方式，但不输出人物功能卡；
+- `factions` 逐个保存有持续行动能力的势力、资源/权限控制与已证实关系；
+- `institution_and_interest_patterns` 记录跨势力的制度、阶层和利益模式，不替代具体 faction；
 - `resource_circuits` 记录世界资源的产生、分配、获取、消耗和回流，但不输出修炼资源循环母型；
 - `threat_generators` 记录规则如何持续生产敌人、风险或压力，而不是罗列敌人名单；
 - `map_expansion_patterns` 记录区域、权限和冲突层级如何改变；
@@ -136,7 +177,7 @@
 ```json
 {
   "record_type": "gap",
-  "schema_version": 1,
+  "schema_version": 2,
   "record_id": "WB:GAP:BOOK_01",
   "status": "candidate",
   "book_id": "BOOK_01",
@@ -159,7 +200,7 @@
 ```json
 {
   "record_type": "nearest_neighbor",
-  "schema_version": 1,
+  "schema_version": 2,
   "record_id": "WB:NEIGHBOR:001",
   "status": "candidate",
   "book_ids": ["BOOK_01", "BOOK_02"],
@@ -167,6 +208,7 @@
   "comparison_dimensions": {
     "rule_engine": "相同或不同的规则发动方式",
     "scarcity_and_resource_flow": "稀缺与资源循环的相似和差异",
+    "faction_ecology": "势力控制资源/权限的方式与关系网络",
     "institutions_and_power": "制度、组织和阶层流动",
     "conflict_generation": "持续冲突的生成方式",
     "plot_entry_and_map": "进入核心剧情和扩展地图的方式",
@@ -193,7 +235,7 @@
 ```json
 {
   "record_type": "cluster",
-  "schema_version": 1,
+  "schema_version": 2,
   "record_id": "WB:CLUSTER:001",
   "status": "candidate",
   "book_ids": ["BOOK_01", "BOOK_02"],
@@ -221,7 +263,7 @@
 ```json
 {
   "record_type": "qa",
-  "schema_version": 1,
+  "schema_version": 2,
   "record_id": "WB:QA:BOOK_01:1-120",
   "status": "candidate",
   "book_id": "BOOK_01",
@@ -230,6 +272,7 @@
     "coverage": "PASS|HOLD|FAIL",
     "evidence_traceability": "PASS|HOLD|FAIL",
     "causal_chain": "PASS|HOLD|FAIL",
+    "faction_structure": "PASS|HOLD|FAIL",
     "boundary_check": "PASS|HOLD|FAIL",
     "emotion_overlay_reference": "PASS|HOLD|FAIL",
     "cross_book_gate": "PASS|HOLD|FAIL"
@@ -251,7 +294,7 @@ QA 只报告证据和阻断，不反向修改源章节或世界观记录。覆�
 ```json
 {
   "record_type": "handoff",
-  "schema_version": 1,
+  "schema_version": 2,
   "record_id": "WB:HANDOFF:001",
   "status": "candidate",
   "book_ids": ["BOOK_01"],
