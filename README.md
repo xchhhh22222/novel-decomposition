@@ -49,7 +49,7 @@ skills/
   novel-arc-structure-miner/              # 篇章阶段、大小高潮与大故事线
   novel-plot-mechanism-miner/             # 剧情机制
   fanqie-material-curator/                # 素材入库、去重、索引与调用
-  novel-creation-planner/                 # 从拆书素材组装原创开书方案
+  novel-creation-planner/                 # V1.2 实时赛道结构学习 + 素材调度 + 高潮倒推
   novel-writer/                           # 小说项目、章纲、正文和资料同步总控
   novel-growth-timeline/                  # 成长、收益、爽点与关系节奏账本
   nova-white-dialogue/                    # 都市高武对白生成、重写与审核
@@ -62,7 +62,7 @@ skills/
 2. 用 `novel-dna-orchestrator` 规划专项顺序和证据合同。
 3. 用对应 specialist Skill 生成候选记录。
 4. 用 `fanqie-material-curator` 完成原子化、查重、审核和迁移。
-5. 用 `novel-creation-planner` 将通过审核的组件重组为原创开书候选。
+5. 用 `novel-creation-planner` 先研究同赛道新书榜结构，再调度素材库，并从战略目标物/大高潮反推前100章。
 6. 用 `novel-writer` 管理章纲、工作稿、正式正文和资料同步边界。
 7. 用 `novel-growth-timeline` 审计成长收益与情绪兑现节奏。
 8. 按任务需要调用 `nova-white-dialogue` 或 `nova-plus-novel` 完成对白和长篇连续性工作。
