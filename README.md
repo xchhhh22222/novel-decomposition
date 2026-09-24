@@ -1,6 +1,6 @@
 # 小说拆解
 
-一套用于长篇网文拆解、专项提取、证据审计、素材迁移和开书组装的 Codex Skills 与工作流。
+一套用于长篇网文拆解、专项提取、证据审计、素材迁移、开书组装、正文创作与连续性维护的 Codex Skills 与工作流。
 
 当前版本：**拆解 V1.4**
 
@@ -50,6 +50,10 @@ skills/
   novel-plot-mechanism-miner/             # 剧情机制
   fanqie-material-curator/                # 素材入库、去重、索引与调用
   novel-creation-planner/                 # 从拆书素材组装原创开书方案
+  novel-writer/                           # 小说项目、章纲、正文和资料同步总控
+  novel-growth-timeline/                  # 成长、收益、爽点与关系节奏账本
+  nova-white-dialogue/                    # 都市高武对白生成、重写与审核
+  nova-plus-novel/                        # 长篇小说连续性规划、写作与修订
 ```
 
 ## 使用建议
@@ -59,6 +63,9 @@ skills/
 3. 用对应 specialist Skill 生成候选记录。
 4. 用 `fanqie-material-curator` 完成原子化、查重、审核和迁移。
 5. 用 `novel-creation-planner` 将通过审核的组件重组为原创开书候选。
+6. 用 `novel-writer` 管理章纲、工作稿、正式正文和资料同步边界。
+7. 用 `novel-growth-timeline` 审计成长收益与情绪兑现节奏。
+8. 按任务需要调用 `nova-white-dialogue` 或 `nova-plus-novel` 完成对白和长篇连续性工作。
 
 Skills 可按需复制到 Codex Skills 目录：
 

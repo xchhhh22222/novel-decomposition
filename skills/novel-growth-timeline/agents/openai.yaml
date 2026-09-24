@@ -1,0 +1,4 @@
+interface:
+  display_name: 小说成长与情绪节奏
+  short_description: 跟踪战力、爽点与关系兑现间隔
+  default_prompt: 使用已确认章节建立成长与情绪仪表盘，告诉我距上次战力提升、战力验证、强爽点和恋爱/关系推进分别过去了几章，并建议下一章主要兑现什么。
