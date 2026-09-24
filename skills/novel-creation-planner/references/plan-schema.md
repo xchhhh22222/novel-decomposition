@@ -1,4 +1,4 @@
-# 创造计划机器契约
+# 创造计划机器契约 V1.1
 
 只有用户要求保存计划包时才落盘 JSON。所有未确认计划保持 `status: candidate`。
 
@@ -6,7 +6,7 @@
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "plan_id": "PLAN_...",
   "status": "candidate",
   "creation_mode": "greenfield",
@@ -26,6 +26,13 @@
     "dna_candidate_ids": [],
     "gaps": []
   },
+  "material_dispatch": {
+    "status": "complete",
+    "slots": [],
+    "source_concentration_risks": [],
+    "compatibility_checks": [],
+    "stop_reason": ""
+  },
   "concept_options": [],
   "recommendation": {"concept_id": "A", "outcome": "RECOMMEND"},
   "architecture_concept_id": "A",
@@ -39,9 +46,73 @@
 
 `preliminary` 模式允许 `architecture_300: []`，但必须填写 `longline_engine_summary`。`full` 模式必须提供七阶段结构。正文样本少于6本时使用 `coverage_status: partial`，并在 `bias_notes` 明确偏差。
 
-`creation_mode` 只允许 `greenfield / existing_project`。`greenfield` 不得引用当前工作目录中的小说资料；`existing_project` 必须记录用户明确指定的项目。`shared_library_root` 使用共享素材库绝对路径，不得用当前小说目录的相对 `素材库/` 冒充公共库。
+`schema_version: 2` 是 novel-creation-planner V1.1 的当前写入版本；V1 仅用于兼容旧计划。`creation_mode` 只允许 `greenfield / existing_project`。`greenfield` 不得引用当前工作目录中的小说资料；`existing_project` 必须记录用户明确指定的项目。`shared_library_root` 使用共享素材库绝对路径，不得用当前小说目录的相对 `素材库/` 冒充公共库。
 
 `market_evidence.samples` 固定保留榜单前10名，每项至少包含 `sample_id / rank / title / content_status / analyzed_chapters / opening_analysis`。`content_status=pass` 时必须实际分析第1—10章，并在 `opening_analysis` 保存前三章爆点与第4—10章持续性证据；不能用简介或书名代填。至少6本 pass 才允许 `RECOMMEND`。`market_evidence.signals` 每项包含 `signal_id / signal_type / claim / evidence_sample_ids`，其中证据样本 ID 必须真实存在于 `samples`。每案的 `market_signal_ids` 只能引用这个信号集合。
+
+## 素材调度记录 V1.1
+
+`schema_version: 2` 必须包含 `material_dispatch`。旧版 `schema_version: 1` 计划仍可由 validator 读取。
+
+```json
+{
+  "material_dispatch": {
+    "status": "complete|partial|hold",
+    "slots": [
+      {
+        "slot_id": "SLOT:PRIMARY_SYSTEM",
+        "role": "primary_system",
+        "required": true,
+        "wave": 1,
+        "modules": ["cultivation_system"],
+        "component_types": ["cultivation_system"],
+        "query_groups": ["低门槛成长 实战验证"],
+        "target_candidates": 5,
+        "source_strategy": "cross_book|same_source_bundle|either",
+        "selected_refs": [
+          {
+            "material_id": "CS:SYSTEM:001",
+            "material_kind": "formal_card|dna_record|dna_component",
+            "module": "cultivation_system",
+            "record_id": "CS:BOOK:BOOK_01",
+            "component_type": "cultivation_system",
+            "book_id": "BOOK_01",
+            "qa_status": "PASS"
+          }
+        ],
+        "rejected_refs": [],
+        "gap_reason": ""
+      }
+    ],
+    "source_concentration_risks": [],
+    "compatibility_checks": [
+      {
+        "check_id": "COMPAT:001",
+        "materials": ["CS:SYSTEM:001", "CS:ARTIFACT:003"],
+        "dimension": "resource_interface",
+        "result": "PASS|HOLD|FAIL",
+        "reason": "为何可接或为何冲突"
+      }
+    ],
+    "stop_reason": "停止继续检索的原因"
+  }
+}
+```
+
+硬规则：
+
+- required 槽位必须至少有一个 `selected_refs`，或者明确填写 `gap_reason`；
+- `wave` 只能为 1—4；
+- `target_candidates` 为 1—12；
+- `material_kind=formal_card` 的 `material_id` 必须出现在顶层 `library_usage.formal_card_ids`；
+- `dna_record / dna_component` 必须出现在 `library_usage.dna_candidate_ids`；
+- component 级引用必须保留 `record_id`，不得只有孤立 component_id；
+- `source_concentration_risks` 用于记录核心组件过度集中到同一来源书；
+- `compatibility_checks` 只记录创造层的适配判断，不反向修改来源书；
+- `complete / partial` 必须提供非空 `stop_reason`，说明为何停止继续检索。
+
+`library_usage.dna_candidate_ids` 在 V1.1 中既可保存记录 ID，也可保存被实际采用的 component ID；其完整来源链保存在 `material_dispatch.slots[].selected_refs`。
+
 
 ## 三案
 
