@@ -1,9 +1,9 @@
 ---
 name: novel-dna-mining-suite
-description: V1.4 小说 DNA 拆解套件，统一编排章节情绪、金手指、世界规则与势力生态、多修炼体系/境界/功法/法宝/资源、人物功能、主支线、开篇、篇章结构、剧情机制与总索引；所有专项保持来源可追溯、candidate-only。
+description: V1.5 小说 DNA 拆解套件，统一编排章节情绪、金手指、世界规则与势力生态、多修炼体系/境界/功法/法宝/资源、人物功能、女主个体卡、长线反派卡、主支线、开篇、篇章结构、剧情机制与总索引；所有专项保持来源可追溯、candidate-only。
 ---
 
-# 小说 DNA 拆解套件 V1.4
+# 小说 DNA 拆解套件 V1.5
 
 这是一个独立迁移包，入口负责路由和边界，详细规则按需读取 `references/`。不要把候选直接写成正式套路卡，也不要修改源章节或正式素材库。
 
@@ -14,7 +14,8 @@ description: V1.4 小说 DNA 拆解套件，统一编排章节情绪、金手指
 - 金手指：读取 `references/specialists/golden-finger-miner/`。
 - 世界观：V1.4 同时拆世界规则与 `factions` 势力生态。
 - 修炼体系：V1.4 按来源实际存在数量拆 `cultivation_systems / system_relations / techniques / artifacts / resource_assets`，不预设体系数量。
-- 人物功能、主支线、开篇、篇章结构、剧情机制：按模块读取对应 specialist 目录的 `guidance.md`、`schema.md` 和 `clustering-and-qa.md`。
+- 人物功能、主支线、开篇、篇章结构、剧情机制：按模块读取对应 specialist 目录的 guidance/schema/QA。
+- **人物个体卡为 V1.5 必跑派生层**：每本书在人物功能完成后，额外调用 `novel-character-card-miner`；女主/关键女性写 heroine_character 或明确 gap，长线反派写 long_arc_villain 或明确 gap。禁止用人物功能标签冒充人物个体卡。
 - 统一校验：运行 `python scripts/validate.py --specialty <slug> --kind <kind> ...`；该入口只分派包内 validator，不依赖外部 Skill。
 
 ## 统一不变量
@@ -30,4 +31,8 @@ description: V1.4 小说 DNA 拆解套件，统一编排章节情绪、金手指
 
 ## 交付顺序
 
-先完成章节事实与情绪覆盖，再运行单书专项；全部目标书完成单书 QA 后才能跨书比较。最后用 `scripts/core/build_master_index.py` 构建导航索引，索引只引用路径和 ID，不复制长内容。
+先完成章节事实与情绪覆盖，再运行单书专项；人物功能完成后必须补人物个体卡派生层：heroine 与 long_arc_villain。每本书即使没有合格对象，也必须写 checked_no_qualifying / insufficient_evidence gap，不能留空让总控误以为未检查。
+
+全部目标书完成单书 QA 后才能跨书比较。最后用 scripts/core/build_master_index.py 构建导航索引，索引只引用路径和 ID，不复制长内容。
+
+V1.5 单书完成门新增：heroine view 有卡或 gap；long_arc_villain view 有卡或 gap；人读报告必须单列女主/关键女性与长线反派的可用性。缺任一视图不得标 COMPLETE_SINGLE_BOOK。
