@@ -10,6 +10,7 @@ description: 从多个有证据的剧情实例中提取可重复运行的剧情�
 - 单书抽取：先读取 [references/schema.md](references/schema.md)。
 - 横向近邻、聚类与 QA：再读取 [references/clustering-and-qa.md](references/clustering-and-qa.md)。
 - 结构校验：运行 `python scripts/validate_outputs.py <jsonl或目录> --kind <per_book|nearest_neighbor|cluster|qa|handoff|gap>`；跨书必须额外提供 `--expected-books`、`--all-books-complete` 和 `--completion-manifest <per_book/gap.jsonl>`。
+- 深度校验：单书机制验收必须再运行 `python scripts/audit_depth.py <mechanism_depth_audit.json>`，检查不同 arc 的因果发动机是否被压缩成一个万能机制。
 
 ## 单一职责
 

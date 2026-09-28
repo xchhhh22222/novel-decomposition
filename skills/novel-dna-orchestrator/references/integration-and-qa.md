@@ -12,7 +12,7 @@
 
 ### G2 章节情绪
 
-通过条件：目标范围每章一条；主情绪、情绪对象、期待来源、兑现级别、可见证据、章末余味齐全。确实没有兑现时允许写“继续蓄压”。按章或批次隔离QA：PASS计入可用覆盖，HOLD/FAIL只计入记录总数，不支持高置信聚合。
+通过条件：目标范围每章一条；主情绪、情绪对象、期待来源、兑现级别、可见证据、章末余味齐全；schema validator、RAW_ENDING、FIELD_ECHO、NORMALIZED_TEMPLATE、ANALYSIS_VS_SUMMARY 与 SOL SOURCE_CONTRADICTION_SAMPLE 全部通过。确实没有兑现时允许写“继续蓄压”。按章或批次隔离QA：PASS计入可用覆盖，HOLD/FAIL只计入记录总数，不支持高置信聚合。
 
 ### G3 专项包
 
@@ -52,6 +52,8 @@
 3. 总索引是导航，不复制长内容；每项使用路径或ID指回原文件。
 4. 总索引重建不得修改源文件。
 5. 任务清单必须显式区分目标范围、排除章节和源文缺章；不得从自由文本静默猜测后覆盖清单。
+6. `canonical / per_book / qa / handoff` 任一仍为 HOLD 或等待人工复核时，manifest 不得写 PASS。人工 override 必须同时记录 `manual_review: PASS`、`reviewer: SOL` 和非空 `reason`，并先统一所有状态文件；运行 `scripts/validate_module_status_consistency.py` 复验。
+7. batch accepted commit 必须区分 `content_acceptance_commit` 与 `latest_corrective_commit`，不得用一次共享 metadata commit 冒充多本书的内容接受时间。
 
 ## 冷启动验收
 

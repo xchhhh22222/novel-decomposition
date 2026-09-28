@@ -62,6 +62,17 @@ canonical 记录不因本文件而追加统一派生 envelope。派生 QA、gap�
 
 所有检查均从 canonical 逐章字段派生，不能为了检测方便增加情绪字段。
 
+### 3.0 语义硬门
+
+Schema PASS 只证明结构合法，不能代替以下语义门：
+
+- `RAW_ENDING_EXTRACTION_RISK`：七个分析字段与原文章末 1—3 句比较；单章至少三个字段高度复用同一末句即 flag，全书至少 10% 章节命中即 FAIL。
+- `FIELD_ECHO_RISK` / `ANALYSIS_VS_SUMMARY`：同一事件摘要只换字段后缀，不能视为独立的对象、压力、转折、余震和余味；全书至少十章命中即 FAIL。
+- `NORMALIZED_TEMPLATE_SKELETON`：归一化章节号、标题、人物、数字、引号内容和专名后，同骨架连续至少五章或全书至少十章即风险；覆盖至少 20% 章节即 FAIL。
+- `SOURCE_CONTRADICTION_SAMPLE`：Sol 至少人工对照 `max(10, 总章数10%)`，并覆盖第1章、开篇窗口末章、每个 arc 转折和末章；任一明确反事实即 FAIL。缺少复核文件为 `SOURCE_SAMPLE_REVIEW_REQUIRED`，不是 PASS。
+
+`unique count` 只能作为诊断。`hook_type` 属于受控分类，重复合法；`notes` 的通用来源说明重复也不能单独触发硬失败。
+
 ### 3.1 读者情绪边界
 
 检查 `main_reader_emotion`、`secondary_reader_emotions`、情绪对象和兑现证据是否描述读者被引导经历的东西，而不是只描述角色状态。

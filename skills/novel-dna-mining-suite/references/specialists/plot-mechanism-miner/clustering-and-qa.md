@@ -44,6 +44,10 @@ QA 只能读取 orchestrator 冻结的批次包，以及其中允许的章节、
 
 ## 3. 第一层：单书 mechanism candidate QA
 
+### 3.0 MECHANISM DEPTH / RECALL AUDIT
+
+结构 validator 之外必须由 Sol 反查不同 arc 中反复工作的因果发动机，至少区分公开评价重定价、资源再投资、信息差、关系冲突、组织权限、能力副作用和战斗环境约束。若多个 arc 的启动条件、资源流、约束、决策或状态变化显著不同，却全部压成“压力→验证→资源→更大压力”一条万能机制，标记 `MECHANISM_OVERCOMPRESSION_RISK` 并 FAIL。审计不要求凑机制数量；证据不足时保留 `not_independent` 或 `insufficient_evidence` 及理由。
+
 ### 3.1 实例覆盖与来源
 
 检查：

@@ -1,9 +1,9 @@
 ---
 name: novel-dna-mining-suite
-description: V1.5 小说 DNA 拆解套件，统一编排章节情绪、金手指、世界规则与势力生态、多修炼体系/境界/功法/法宝/资源、人物功能、女主个体卡、长线反派卡、主支线、开篇、篇章结构、剧情机制与总索引；所有专项保持来源可追溯、candidate-only。
+description: V1.5.1 小说 DNA 拆解套件，统一编排章节情绪、金手指、世界规则与势力生态、多修炼体系/境界/功法/法宝/资源、人物功能、女主个体卡、长线反派卡、主支线、开篇、篇章结构、剧情机制与总索引；所有专项保持来源可追溯、candidate-only。
 ---
 
-# 小说 DNA 拆解套件 V1.5
+# 小说 DNA 拆解套件 V1.5.1
 
 这是一个独立迁移包，入口负责路由和边界，详细规则按需读取 `references/`。不要把候选直接写成正式套路卡，也不要修改源章节或正式素材库。
 
@@ -17,6 +17,7 @@ description: V1.5 小说 DNA 拆解套件，统一编排章节情绪、金手指
 - 人物功能、主支线、开篇、篇章结构、剧情机制：按模块读取对应 specialist 目录的 guidance/schema/QA。
 - **人物个体卡为 V1.5 必跑派生层**：每本书在人物功能完成后，额外调用 `novel-character-card-miner`；女主/关键女性写 heroine_character 或明确 gap，长线反派写 long_arc_villain 或明确 gap。禁止用人物功能标签冒充人物个体卡。
 - 统一校验：运行 `python scripts/validate.py --specialty <slug> --kind <kind> ...`；该入口只分派包内 validator，不依赖外部 Skill。
+- V1.5.1 语义门：章节情绪结构校验后运行包内 `scripts/specialists/chapter-emotion-miner/audit_semantics.py`；剧情线运行 `audit_recall.py`；剧情机制运行 `audit_depth.py`；manifest 落盘前运行 `scripts/core/validate_module_status_consistency.py`。
 
 ## 统一不变量
 
@@ -26,6 +27,7 @@ description: V1.5 小说 DNA 拆解套件，统一编排章节情绪、金手指
 - 单书覆盖必须是每本恰好一条 `per_book` 或 `gap`；跨书 `nearest_neighbor/cluster` 必须提供 `--expected-books`、`--all-books-complete` 和 `--completion-manifest`。
 - `arcs[]` 与 `mechanisms[]` 分别承载一本书的多个篇章阶段和多个剧情机制，不能只保留代表性单条记录。
 - 章节情绪 canonical 记录不得追加派生 envelope；情绪 validator 必须同时检查包内权威 validator 的契约一致性。
+- schema PASS 不能替代 semantic PASS；unique count 只作诊断，缺少 SOL 源文抽样为 `SOURCE_SAMPLE_REVIEW_REQUIRED`。
 - 未获得用户明确授权，不落盘到正式素材库；默认输出目录和写入归属见 `references/core/library-layout.md`。
 - 拆书层禁止跨书拼装来源事实；跨书拼装只能由创造层生成新的【新书候选】，不得回写来源 `per_book`。
 

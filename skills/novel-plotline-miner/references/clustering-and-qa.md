@@ -58,6 +58,10 @@ QA 的目标不是把章节事件串得更长，而是确认：
 
 ## 3. 第一层：单书线路识别 QA
 
+### 3.0 PLOTLINE_RECALL_AUDIT
+
+validator 不只检查“已写线路是否合法”，还必须要求一份 Sol 复核的召回审计。审计从 arc、character-function、villain card、promise ledger、重复具名冲突和反复出现的组织反向寻找候选。某对象跨至少两个 arc，且具有独立目标、独立阻力和独立状态变化时，必须记录为线路，或由 Sol 写出 `not_independent` 的证据理由。不能以“已有一条总主线”替代召回检查，也不以增加线路数量为目标。
+
 ### 3.1 输入范围与来源冻结
 
 开始单书 QA 前必须确认：

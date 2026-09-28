@@ -1,0 +1,27 @@
+{
+  "raw_ending_extraction": {
+    "chapters": 12,
+    "ending": "卡片已经开启，卡片消失后出现果实。",
+    "copied_field_count": 6,
+    "expected_gate": "RAW_ENDING_GATE",
+    "expected_status": "FAIL"
+  },
+  "normalized_template": {
+    "chapters": 12,
+    "fixed_suffix": "获得可观察的情绪推进，同时带来公开评价、资源限制、能力边界或更高战斗风险。",
+    "expected_gate": "NORMALIZED_TEMPLATE_GATE",
+    "expected_status": "FAIL"
+  },
+  "source_contradiction": {
+    "chapter": 1,
+    "source_fact": "江离说开启，卡片随即消失并出现果实。",
+    "analysis_claim": "卡片仍未开启。",
+    "manual_result": "FAIL",
+    "expected_gate": "SOURCE_CONTRADICTION_GATE",
+    "expected_status": "FAIL"
+  },
+  "allowed_repetition": {
+    "hook_type": "风险升级",
+    "notes": "依据完整正文提炼"
+  }
+}

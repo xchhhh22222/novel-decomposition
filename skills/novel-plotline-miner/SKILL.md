@@ -10,6 +10,7 @@ description: 从有证据的章节和阶段事实中，横向拆解具体剧情�
 - 单书抽取：先读取 [references/schema.md](references/schema.md)。
 - 横向近邻、聚类与 QA：再读取 [references/clustering-and-qa.md](references/clustering-and-qa.md)。
 - 结构校验：运行 `python scripts/validate_outputs.py <jsonl或目录> --kind <per_book|nearest_neighbor|cluster|qa|handoff|gap>`；跨书必须额外提供 `--expected-books`、`--all-books-complete` 和 `--completion-manifest <per_book/gap.jsonl>`。
+- 召回校验：单书验收还必须运行 `python scripts/audit_recall.py <plotline_recall_audit.json>`；没有从 arc、人物功能、反派卡、承诺账本、重复冲突和重复组织反查，不得宣称线路完整。
 
 ## 单一职责
 

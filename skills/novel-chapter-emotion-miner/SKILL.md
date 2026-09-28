@@ -10,6 +10,7 @@ description: 从已通过QA的章节事实中提取逐章读者情绪覆盖，�
 - canonical 逐章记录：先读取 [references/schema.md](references/schema.md)，其字段唯一服从总控的 `chapter-emotion-schema.md`。
 - 承诺追踪、节奏审计与横向候选：再读取 [references/clustering-and-qa.md](references/clustering-and-qa.md)。
 - 结构校验：运行 `python scripts/validate_outputs.py <jsonl> --kind canonical --expected-book <BOOK_ID> --expected-range <起章-止章>`；跨书派生记录另加 `--all-books-complete`、`--expected-books` 和 `--completion-manifest`。
+- 语义硬门：结构校验通过后必须运行 `python scripts/audit_semantics.py <chapter_emotion.jsonl> --source-file <完整源书> --source-review <SOL抽样复核.json>`。没有 SOL 抽样文件只能得到 `SOURCE_SAMPLE_REVIEW_REQUIRED`，不得完成 G2。
 
 ## 单一任务
 
@@ -77,6 +78,10 @@ BOOK DNA、书名、简介和模型记忆只能作为导航，不能独立支撑
 8. `pressure_level` 只比较同一本书的相邻章节，不跨书比较绝对强度。
 9. `source_fingerprint` 能生成时使用真实 SHA-256；无法生成时写 `UNAVAILABLE`，并在批次 QA 中说明原因，不能伪造。
 10. 章节记录必须保持 `(book_id, chapter)` 与 `record_id` 唯一；章节标题混乱时以 `chapter_ref` 作为稳定锚点。
+11. 七个分析字段不得把原文章末 1—3 句批量复制成伪分析；单章三个以上字段复用同一末句即命中风险，全书命中达到 10% 时硬失败。
+12. `emotion_object / pressure_source / turning_point / aftermath / ending_aftertaste` 必须承担不同分析职责；同一事件摘要只换固定后缀不算五项分析，全书十章以上命中时失败。
+13. 模板检查必须先归一化章节号、标题、数字、引号内容和实体占位，再查连续五章或全书十章以上的同骨架；命中章节达到 20% 时硬失败。
+14. 字段 unique count 只能作为诊断，不得作为 semantic PASS。`hook_type` 分类重复与通用 `notes` 重复本身不是失败证据。
 
 ## 运行流程
 
@@ -100,6 +105,8 @@ BOOK DNA、书名、简介和模型记忆只能作为导航，不能独立支撑
 - 证据检查：每条记录能回到章节或阶段位置，HOLD/FAIL 不计入可用覆盖；
 - 承诺一致性检查：开启、延迟、回收的名称、证据和章节窗口可追踪；
 - 角色心情隔离检查：不能用角色状态字段代替读者情绪字段。
+- 语义独立性检查：同时通过 RAW_ENDING、FIELD_ECHO、NORMALIZED_TEMPLATE、ANALYSIS_VS_SUMMARY 四个门。
+- 源文矛盾抽样：由 Sol 至少复核 `max(10, 总章数10%)`，并强制纳入第1章、开篇窗口末章、每个 arc 转折和末章；一个明确反事实即整书 FAIL。
 
 ### 4. 承诺账本
 
@@ -168,7 +175,7 @@ BOOK DNA、书名、简介和模型记忆只能作为导航，不能独立支撑
 6. HOLD/FAIL、UNKNOWN 和 `UNAVAILABLE` 被如实隔离；
 7. 交付包包含 `per_book`、`nearest_neighbors`、`clusters`、`qa`、`handoff`；
 8. 所有专项产物均保持 `candidate`，没有擅自写入正式素材库；
-9. 运行验证脚本并通过人工抽查；至少用两本差异明显的书确认“相同的情绪运行方式”和“只是表面情绪词相同”的情况能够区分。
+9. 结构验证、语义硬门和 SOL 源文抽样全部通过；至少用两本差异明显的书确认“相同的情绪运行方式”和“只是表面情绪词相同”的情况能够区分。
 
 ## 与后续专项的接口
 
