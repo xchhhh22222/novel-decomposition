@@ -23,5 +23,24 @@
   "allowed_repetition": {
     "hook_type": "风险升级",
     "notes": "依据完整正文提炼"
+  },
+  "short_punctuation_ending": {
+    "chapter_text": "正文有效结尾。\n”\n……\n！",
+    "expected_last_sentence": "正文有效结尾。"
+  },
+  "entity_normalization": {
+    "entities": [
+      "张三",
+      "李四",
+      "王五",
+      "欧阳倩"
+    ],
+    "samples": [
+      "张三发现风险后必须重新选择",
+      "李四发现风险后必须重新选择",
+      "王五发现风险后必须重新选择",
+      "欧阳倩发现风险后必须重新选择"
+    ],
+    "expected_skeleton": "<ENTITY>发现风险后必须重新选择"
   }
 }
