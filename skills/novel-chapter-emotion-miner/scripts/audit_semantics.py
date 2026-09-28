@@ -95,13 +95,83 @@ def parse_source(path: Path) -> dict[int, str]:
     return chapters
 
 
+def meaningful_text(value: str, minimum: int = 4) -> bool:
+    """Return True only for text with enough semantic characters to compare."""
+    return len(MEANINGFUL_CHAR_RE.findall(value)) >= minimum
+
+
 def final_sentences(chapter_text: str, count: int = 3) -> list[str]:
     lines = [line.strip() for line in chapter_text.splitlines()]
     lines = [line for line in lines if line and not line.startswith("章节更新时间") and set(line) != {"—"}]
     sentences: list[str] = []
     for line in lines:
-        sentences.extend(piece.strip() for piece in SENTENCE_RE.findall(line) if piece.strip())
+        for piece in SENTENCE_RE.findall(line):
+            piece = piece.strip()
+            # Ignore quote marks, ellipses, decorative punctuation and other
+            # fragments too short to carry narrative meaning. These used to
+            # create false RAW_ENDING matches such as a lone Chinese quote.
+            if meaningful_text(piece):
+                sentences.append(piece)
     return sentences[-count:]
+
+
+def _collect_entities(value: Any, parent_key: str = "") -> set[str]:
+    entities: set[str] = set()
+    if isinstance(value, dict):
+        for key, item in value.items():
+            entities.update(_collect_entities(item, str(key)))
+    elif isinstance(value, list):
+        for item in value:
+            entities.update(_collect_entities(item, parent_key))
+    elif isinstance(value, str) and parent_key in ENTITY_VALUE_KEYS:
+        candidate = value.strip()
+        if 2 <= len(candidate) <= 16 and candidate not in GENERIC_ENTITY_VALUES and meaningful_text(candidate, 2):
+            entities.add(candidate)
+    return entities
+
+
+def load_entities(paths: Iterable[Path], explicit: Iterable[str]) -> list[str]:
+    """Load known Chinese/person/entity names conservatively.
+
+    Entity normalization is opt-in: callers should pass character-card,
+    character-function, or a curated entity file. We do not guess Chinese
+    names from arbitrary prose because false positives would erase semantics.
+    """
+    entities = {
+        item.strip()
+        for item in explicit
+        if isinstance(item, str)
+        and 2 <= len(item.strip()) <= 16
+        and item.strip() not in GENERIC_ENTITY_VALUES
+        and meaningful_text(item.strip(), 2)
+    }
+    for path in paths:
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8-sig")
+        parsed = False
+        try:
+            value = json.loads(text)
+            entities.update(_collect_entities(value))
+            parsed = True
+        except json.JSONDecodeError:
+            records: list[Any] = []
+            try:
+                records = [json.loads(line) for line in text.splitlines() if line.strip()]
+                parsed = bool(records)
+            except json.JSONDecodeError:
+                parsed = False
+            if parsed:
+                for record in records:
+                    entities.update(_collect_entities(record))
+        if not parsed:
+            for line in text.splitlines():
+                candidate = line.strip()
+                if 2 <= len(candidate) <= 16 and candidate not in GENERIC_ENTITY_VALUES and meaningful_text(candidate, 2):
+                    entities.add(candidate)
+    # Replace longer names first so a short alias cannot partially consume a
+    # longer canonical entity name.
+    return sorted(entities, key=lambda item: (-len(item), item))
 
 
 def source_candidates(sentences: list[str]) -> list[str]:
@@ -174,20 +244,26 @@ def field_echo_flags(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return flags
 
 
-def skeleton(value: str, title: str = "") -> str:
+def skeleton(value: str, title: str = "", entities: Iterable[str] = ()) -> str:
     value = stripped_analysis(value, title)
-    # Long quoted/event payloads and variable CJK spans are reduced while
-    # retaining stable connective phrases that reveal a template.
+    # Normalize known Chinese/person/entity names supplied by the caller. This
+    # catches templates that only swap 张三/李四/王五 while preserving all
+    # non-entity Chinese text. Unknown Chinese spans are deliberately retained.
+    for entity in entities:
+        if entity:
+            value = value.replace(entity, "<ENTITY>")
+    # Long quoted/event payloads and variable ASCII identifiers are reduced
+    # while retaining stable connective phrases that reveal a template.
     value = re.sub(r"<QUOTE>", "<ENTITY>", value)
     value = re.sub(r"[A-Za-z_]+", "<ENTITY>", value)
     return value
 
 
-def clusters_for_field(rows: list[dict[str, Any]], field: str) -> list[list[int]]:
+def clusters_for_field(rows: list[dict[str, Any]], field: str, entities: Iterable[str] = ()) -> list[list[int]]:
     clusters: list[tuple[str, list[int]]] = []
     for row in rows:
         chapter = row.get("chapter")
-        value = skeleton(text_value(row.get(field)), str(row.get("chapter_title", "")))
+        value = skeleton(text_value(row.get(field)), str(row.get("chapter_title", "")), entities)
         if not value or not isinstance(chapter, int):
             continue
         placed = False
@@ -213,10 +289,10 @@ def has_consecutive_run(chapters: Iterable[int], minimum: int = 5) -> bool:
     return len(values) >= minimum and minimum <= 1
 
 
-def template_flags(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def template_flags(rows: list[dict[str, Any]], entities: Iterable[str] = ()) -> list[dict[str, Any]]:
     flags: list[dict[str, Any]] = []
     for field in TEMPLATE_FIELDS:
-        for members in clusters_for_field(rows, field):
+        for members in clusters_for_field(rows, field, entities):
             if len(members) >= 10 or has_consecutive_run(members, 5):
                 flags.append({"field": field, "chapters": members, "count": len(members), "consecutive_5": has_consecutive_run(members, 5)})
     return flags
@@ -276,14 +352,17 @@ def main() -> int:
     parser.add_argument("emotion_file", type=Path)
     parser.add_argument("--source-file", type=Path, required=True, help="Full source book used to compare chapter endings.")
     parser.add_argument("--source-review", type=Path, help="SOL manual source-sample review JSON.")
+    parser.add_argument("--entity-file", type=Path, action="append", default=[], help="Optional JSON/JSONL/text file containing known character/entity names. Repeatable.")
+    parser.add_argument("--entity", action="append", default=[], help="Optional explicit entity name to normalize in template detection. Repeatable.")
     parser.add_argument("--output", type=Path, help="Optional JSON report path.")
     args = parser.parse_args()
 
     rows = read_jsonl(args.emotion_file)
     sources = parse_source(args.source_file)
+    entities = load_entities(args.entity_file, args.entity)
     raw_flags = raw_ending_flags(rows, sources)
     echo_flags = field_echo_flags(rows)
-    template_hits = template_flags(rows)
+    template_hits = template_flags(rows, entities)
     total = len(rows)
     raw_hard = len(raw_flags) >= max(1, math.ceil(total * 0.10))
     echo_hard = len(echo_flags) >= 10
@@ -312,6 +391,8 @@ def main() -> int:
             "source_review_errors": source_errors,
             "unique_counts": {field: len({text_value(row.get(field)) for row in rows}) for field in RAW_FIELDS},
             "unique_counts_are_diagnostic_only": True,
+            "entity_normalization_count": len(entities),
+            "entity_normalization_entities": entities,
         },
         "ok": all(status == "PASS" for status in gates.values()),
     }
