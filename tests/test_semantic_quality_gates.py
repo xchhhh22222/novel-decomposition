@@ -95,6 +95,20 @@ class SemanticQualityGateTests(unittest.TestCase):
         result = self.run_audit(rows, [f"本章以不同动作{chapter}结束。" for chapter in range(1, 13)], review(12))
         self.assertEqual(result["gates"][case["expected_gate"]], case["expected_status"])
 
+    def test_short_punctuation_endings_are_ignored(self):
+        module = load_module()
+        case = FIXTURES["short_punctuation_ending"]
+        self.assertEqual(module.final_sentences(case["chapter_text"]), [case["expected_last_sentence"]])
+
+    def test_known_chinese_entities_normalize_to_one_skeleton(self):
+        module = load_module()
+        case = FIXTURES["entity_normalization"]
+        skeletons = {
+            module.skeleton(sample, entities=case["entities"])
+            for sample in case["samples"]
+        }
+        self.assertEqual(skeletons, {case["expected_skeleton"]})
+
     def test_manual_source_contradiction_fails(self):
         case = FIXTURES["source_contradiction"]
         rows = [base_row(chapter) for chapter in range(1, 13)]
