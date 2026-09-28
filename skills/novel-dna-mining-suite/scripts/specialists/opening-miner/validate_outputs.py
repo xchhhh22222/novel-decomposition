@@ -952,7 +952,8 @@ def validate_cluster(row: dict[str, Any], path: Path, line: int, errors: list[st
     add_missing(errors, path, line, row, required)
     book_ids = row.get("book_ids")
     if isinstance(book_ids, list):
-        if len(set(book_ids)) < 2:
+        singleton_decisions = {"new_candidate", "insufficient_evidence", "unclustered", "HOLD"}
+        if len(set(book_ids)) < 2 and row.get("merge_decision") not in singleton_decisions:
             errors.append(f"{path}:{line}: cluster requires at least two distinct book_ids")
         if row.get("supporting_book_count") != len(set(book_ids)):
             errors.append(f"{path}:{line}: supporting_book_count must match unique book_ids")

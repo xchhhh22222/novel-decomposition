@@ -486,7 +486,7 @@
 }
 ```
 
-`shared_operation` 必须描述开篇怎样运行，不能只写“系统流”“退婚开局”“学院考试”或其它题材皮肤。单书候选不能自动升级为高频母型。
+`shared_operation` 必须描述开篇怎样运行，不能只写“系统流”“退婚开局”“学院考试”或其它题材皮肤。单书候选只能用于 `new_candidate`、`insufficient_evidence`、`unclustered` 或 `HOLD`，其 `supporting_book_count` 必须为 `1`，且不能自动升级为高频母型。
 
 ## 9. `qa` 与 `handoff` 记录
 
