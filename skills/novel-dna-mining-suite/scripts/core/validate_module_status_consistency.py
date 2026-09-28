@@ -26,6 +26,24 @@ def json_values(value: Any) -> Iterable[str]:
         yield value
 
 
+def module_status_values(value: Any, path: tuple[str, ...] = ()) -> Iterable[str]:
+    """Yield module-review values while excluding legitimate cross-book holds."""
+    if isinstance(value, dict):
+        for key, item in value.items():
+            normalized = str(key).lower().replace("-", "_")
+            if "cross_book" in normalized:
+                continue
+            yield from module_status_values(item, path + (normalized,))
+    elif isinstance(value, list):
+        for item in value:
+            yield from module_status_values(item, path)
+    elif isinstance(value, str):
+        normalized = value.lower().replace("-", "_")
+        if ("cross_book" in normalized or "跨书" in value) and HOLD_RE.search(value):
+            return
+        yield value
+
+
 def load_json_or_jsonl(path: Path) -> list[Any]:
     text = path.read_text(encoding="utf-8-sig")
     try:
@@ -46,7 +64,7 @@ def main() -> int:
     errors: list[str] = []
     hold_files: list[str] = []
     for path in args.status_files:
-        values = [text for record in load_json_or_jsonl(path) for text in json_values(record)]
+        values = [text for record in load_json_or_jsonl(path) for text in module_status_values(record)]
         if any(HOLD_RE.search(value) for value in values):
             hold_files.append(str(path))
     manifest_values = list(json_values(manifest))

@@ -12,6 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "skills" / "novel-chapter-emotion-miner" / "scripts" / "audit_semantics.py"
+STATUS_SCRIPT = ROOT / "skills" / "novel-dna-orchestrator" / "scripts" / "validate_module_status_consistency.py"
 FIXTURES = json.loads((ROOT / "tests" / "fixtures" / "semantic_qa_cases.json").read_text(encoding="utf-8"))
 
 
@@ -116,6 +117,46 @@ class SemanticQualityGateTests(unittest.TestCase):
         status, errors, _details = module.audit_source_review(None, [base_row(chapter) for chapter in range(1, 13)])
         self.assertEqual(status, "SOURCE_SAMPLE_REVIEW_REQUIRED")
         self.assertTrue(errors)
+
+    def test_cross_book_hold_does_not_block_single_book_module_pass(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest = root / "manifest.json"
+            status = root / "status.json"
+            manifest.write_text(json.dumps({"module_status": {"02": "PASS_WITH_EXPLICIT_GAPS"}}), encoding="utf-8")
+            status.write_text(json.dumps({
+                "qa_status": "PASS",
+                "review_outcome": "PASS_WITH_EXPLICIT_GAPS",
+                "checks": {"activation_and_limits": "PASS", "cross_book_gate": "HOLD"},
+                "blocked_by": ["cross_book HOLD_FOR_SOURCE_10"],
+            }), encoding="utf-8")
+            completed = subprocess.run(
+                [sys.executable, str(STATUS_SCRIPT), str(manifest), str(status)],
+                text=True,
+                encoding="utf-8",
+                capture_output=True,
+            )
+            result = json.loads(completed.stdout)
+            self.assertEqual(result["status"], "PASS")
+
+    def test_real_module_hold_still_blocks_manifest_pass(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest = root / "manifest.json"
+            status = root / "status.json"
+            manifest.write_text(json.dumps({"module_status": {"02": "PASS_WITH_EXPLICIT_GAPS"}}), encoding="utf-8")
+            status.write_text(json.dumps({
+                "qa_status": "HOLD",
+                "checks": {"activation_and_limits": "HOLD", "cross_book_gate": "HOLD"},
+            }), encoding="utf-8")
+            completed = subprocess.run(
+                [sys.executable, str(STATUS_SCRIPT), str(manifest), str(status)],
+                text=True,
+                encoding="utf-8",
+                capture_output=True,
+            )
+            result = json.loads(completed.stdout)
+            self.assertEqual(result["status"], "FAIL")
 
 
 if __name__ == "__main__":
