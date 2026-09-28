@@ -44,6 +44,44 @@ QUOTE_RE = re.compile(r"[“\"『「](.*?)[”\"』」]")
 NUMBER_RE = re.compile(r"\d+(?:\.\d+)?")
 CHAPTER_NUMBER_RE = re.compile(r"第\s*\d+\s*章")
 SPACE_RE = re.compile(r"\s+")
+MEANINGFUL_CHAR_RE = re.compile(r"[A-Za-z0-9\u3400-\u9fff]")
+# Use a private-use character while normalizing so the later ASCII-token pass
+# cannot rewrite the placeholder itself.
+ENTITY_SENTINEL = "\ue000"
+ENTITY_VALUE_KEYS = frozenset(
+    {
+        "character_id",
+        "character_name",
+        "canonical_name",
+        "display_name",
+        "entity",
+        "entity_name",
+        "person",
+        "actor",
+        "actor_name",
+        "protagonist",
+        "heroine",
+        "villain",
+        "antagonist",
+    }
+)
+GENERIC_ENTITY_VALUES = frozenset(
+    {
+        "UNKNOWN",
+        "NONE",
+        "N/A",
+        "NA",
+        "null",
+        "未知",
+        "无",
+        "不适用",
+        "主角",
+        "女主",
+        "反派",
+        "敌人",
+        "队友",
+    }
+)
 BOILERPLATE_RE = re.compile(
     r"(?:正文结尾证据|本章具体对象|本章门槛变化|本章末可见状态|下一章关注|"
     r"具体余震证据|围绕|读者等待|所代表的状态改变|显示的资源/认知门槛|"
