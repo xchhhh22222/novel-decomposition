@@ -204,11 +204,13 @@ def raw_ending_flags(rows: list[dict[str, Any]], sources: dict[int, str]) -> lis
 
 def stripped_analysis(value: str, title: str = "") -> str:
     value = BOILERPLATE_RE.sub("", value)
+    # Replace the literal title before number normalization so titles that
+    # contain digits still collapse as a whole.
+    if title:
+        value = value.replace(title, "<TITLE>")
     value = QUOTE_RE.sub("<QUOTE>", value)
     value = CHAPTER_NUMBER_RE.sub("<CH>", value)
     value = NUMBER_RE.sub("<NUM>", value)
-    if title:
-        value = value.replace(title, "<TITLE>")
     return SPACE_RE.sub("", value)
 
 
@@ -246,17 +248,20 @@ def field_echo_flags(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 def skeleton(value: str, title: str = "", entities: Iterable[str] = ()) -> str:
     value = stripped_analysis(value, title)
+    # Protect internal placeholders with a non-ASCII sentinel before the
+    # generic ASCII pass. Otherwise <QUOTE>/<TITLE> can recursively become
+    # <<ENTITY>>, weakening stable skeleton comparison.
+    value = re.sub(r"<(?:QUOTE|TITLE|CH|NUM)>", ENTITY_SENTINEL, value)
     # Normalize known Chinese/person/entity names supplied by the caller. This
     # catches templates that only swap 张三/李四/王五 while preserving all
     # non-entity Chinese text. Unknown Chinese spans are deliberately retained.
     for entity in entities:
         if entity:
-            value = value.replace(entity, "<ENTITY>")
-    # Long quoted/event payloads and variable ASCII identifiers are reduced
-    # while retaining stable connective phrases that reveal a template.
-    value = re.sub(r"<QUOTE>", "<ENTITY>", value)
-    value = re.sub(r"[A-Za-z_]+", "<ENTITY>", value)
-    return value
+            value = value.replace(entity, ENTITY_SENTINEL)
+    # Variable ASCII identifiers are reduced while stable Chinese connective
+    # phrases remain available for template comparison.
+    value = re.sub(r"[A-Za-z_]+", ENTITY_SENTINEL, value)
+    return value.replace(ENTITY_SENTINEL, "<ENTITY>")
 
 
 def clusters_for_field(rows: list[dict[str, Any]], field: str, entities: Iterable[str] = ()) -> list[list[int]]:
