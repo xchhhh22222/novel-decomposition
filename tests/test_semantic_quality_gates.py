@@ -109,6 +109,12 @@ class SemanticQualityGateTests(unittest.TestCase):
         }
         self.assertEqual(skeletons, {case["expected_skeleton"]})
 
+    def test_character_id_is_loaded_from_entity_records(self):
+        module = load_module()
+        entities = module._collect_entities({"character_id": "楚月", "title": "楚月｜前线验证者"})
+        self.assertIn("楚月", entities)
+        self.assertNotIn("楚月｜前线验证者", entities)
+
     def test_manual_source_contradiction_fails(self):
         case = FIXTURES["source_contradiction"]
         rows = [base_row(chapter) for chapter in range(1, 13)]
