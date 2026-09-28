@@ -66,9 +66,9 @@ canonical 记录不因本文件而追加统一派生 envelope。派生 QA、gap�
 
 Schema PASS 只证明结构合法，不能代替以下语义门：
 
-- `RAW_ENDING_EXTRACTION_RISK`：七个分析字段与原文章末 1—3 句比较；单章至少三个字段高度复用同一末句即 flag，全书至少 10% 章节命中即 FAIL。
+- `RAW_ENDING_EXTRACTION_RISK`：七个分析字段与原文章末 1—3 个**有效**句子比较；纯标点、孤立引号、省略号和少于4个有效字符的碎片先过滤；单章至少三个字段高度复用同一末句即 flag，全书至少 10% 章节命中即 FAIL。
 - `FIELD_ECHO_RISK` / `ANALYSIS_VS_SUMMARY`：同一事件摘要只换字段后缀，不能视为独立的对象、压力、转折、余震和余味；全书至少十章命中即 FAIL。
-- `NORMALIZED_TEMPLATE_SKELETON`：归一化章节号、标题、人物、数字、引号内容和专名后，同骨架连续至少五章或全书至少十章即风险；覆盖至少 20% 章节即 FAIL。
+- `NORMALIZED_TEMPLATE_SKELETON`：归一化章节号、标题、数字、引号内容和专名后，同骨架连续至少五章或全书至少十章即风险；覆盖至少 20% 章节即 FAIL。中文人物/实体只使用已知实体表归一化：通过 `--entity-file` 读取人物卡/人物功能/人工实体列表，或通过 `--entity` 显式传入；禁止用宽泛中文正则猜人名，以免抹掉真正语义。
 - `SOURCE_CONTRADICTION_SAMPLE`：Sol 至少人工对照 `max(10, 总章数10%)`，并覆盖第1章、开篇窗口末章、每个 arc 转折和末章；任一明确反事实即 FAIL。缺少复核文件为 `SOURCE_SAMPLE_REVIEW_REQUIRED`，不是 PASS。
 
 `unique count` 只能作为诊断。`hook_type` 属于受控分类，重复合法；`notes` 的通用来源说明重复也不能单独触发硬失败。
