@@ -1,9 +1,9 @@
 ---
 name: novel-dna-orchestrator
-description: V1.6.2 小说 DNA 中控：在 V1.6.1 Derived Material Contract 之上新增 route/output、completion status、cluster eligibility 三个批次硬门；HOLD 只留 inventory，不得进入 nearest_neighbor/cluster。
+description: V1.6.3 小说 DNA 中控：在 V1.6.2 批次门上继续加固 UNKNOWN 语义、Combat PASS 最低条件与 batch 汇总一致性；防止“格式 PASS、语义不够”和陈旧 HOLD 统计进入聚类。
 ---
 
-# 小说 DNA 拆书总控 V1.6.2
+# 小说 DNA 拆书总控 V1.6.3
 
 ## 目标
 
@@ -34,6 +34,8 @@ V1.6 的核心变化：**不是每一本来源都默认完整跑 01—09。**
 - **Derived Material V1.6.1**：若路由包含 ability_assets / dungeon_rule_assets / relationship_engine_assets / charismatic_antagonist_assets / combat_expression_assets，必须读取 [references/derived-material-contract.md](references/derived-material-contract.md)，禁止代理自由发明字段。
 - **Derived 校验**：运行 `python scripts/validate_derived_materials.py --root <material-library-root> --books <BOOK_ID,...>`；未 PASS 不得进入 supplemental full recluster。
 - **V1.6.2 批次一致性门**：读取 [references/supplemental-batch-gates.md](references/supplemental-batch-gates.md)，运行 `python scripts/validate_supplemental_batch.py --root <material-library-root> --batch-dir batch/<BATCH_ID> --books <BOOK_ID,...>`；route/output、manifest/batch status、cluster eligibility 任一不可解释时禁止聚类。
+- **V1.6.3 Combat 语义门**：存在 `combat_expression_assets` 时，额外运行 `python scripts/validate_combat_semantics.py --root <material-library-root> --books <BOOK_ID,...>`；UNKNOWN 必须是字面值，PASS 核心字段不得 UNKNOWN，且 cost/limit/counterplay 至少一项有证据。
+- **V1.6.3 Batch Summary 门**：`validate_supplemental_batch.py` 还必须对账 `batch-status.derived_hold_records` 与五类 controlled derived 的真实 HOLD 总数，并核对 `derived_totals`。
 - **聚类资格**：五类 controlled derived record 只有 `qa_status=PASS` 才能进入 nearest_neighbor / KEEP_SEPARATE / cluster；`qa_status=HOLD` 只保留 inventory。若某个需要重聚类的 view `eligible=0 && records>0`，则 `full_recluster_ready=false`。
 - **修复历史 V1.6 supplemental 输出**：读取 [references/derived-normalization-playbook.md](references/derived-normalization-playbook.md)；默认只做 normalization，不重拆正文，不新增资产。
 - **路由校验**：运行 `python scripts/validate_source_routes.py <source_routes.jsonl>`；未 PASS 不得派发 specialist。
@@ -80,7 +82,7 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 8. 市场等级、研究价值、拆解范围、证据置信度是四个不同字段；缺少榜单数据时使用 `UNGRADED`，不得以拆解深度冒充市场评级。
 9. 写入前说明准确路径、操作类型、内容范围和覆盖风险并取得授权。总索引默认只读预览；带 `--output` 才落盘。
 
-## 总控工作流 V1.6.2
+## 总控工作流 V1.6.3
 
 1. **盘点来源**：列出新 TXT、现有 BOOK_ID、重复来源和源文范围。
 2. **路由**：为每本来源生成 source_route，判断 FULL_DNA / SUPPLEMENTAL_MATERIAL、purpose、target_specialties、derived_views、excluded_specialties。
@@ -92,14 +94,15 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 6. **专项 QA**：每个 specialist 继续执行自己的 schema/validator/semantic gate，证据不足保留 UNKNOWN/gap/HOLD。
 7. **派生视图**：按 profile 生成 ability / dungeon / heroine / relationship / antagonist / combat-expression 等被授权 view；其中五类 V1.6.1 受控 derived view 必须严格使用 canonical contract，没有证据则明确 UNKNOWN/gap。
 8. **Derived 机器门**：检查字段白名单、record_id、精确 evidence ref、nested array、duplicate ID、manifest count；禁止只用人工 contract check 冒充 dedicated validator。
-9. **批次一致性门**：对账 source_route.derived_views 与真实 derived outputs；对账 manifest.status 与 batch-status；生成 controlled derived 的 eligible/held ID 列表。
-10. **单源完成判定**：
+9. **Combat 语义门**：若存在 combat_expression_assets，检查 UNKNOWN canonicalization、PASS 核心字段、constraint 最低证据与 unknowns 污染；未 PASS 不得聚类。
+10. **批次一致性门**：对账 source_route.derived_views 与真实 derived outputs；对账 manifest.status 与 batch-status；生成 controlled derived 的 eligible/held ID 列表。
+11. **单源完成判定**：
    - FULL_DNA → COMPLETE_SINGLE_BOOK；
    - SUPPLEMENTAL → COMPLETE_SUPPLEMENTAL_SOURCE / _WITH_HOLDS / BLOCKED。
-11. **批次聚类**：等该批 supplemental 来源完成后，只对受影响专项开启新的 full recluster；禁止 append 到旧 cluster。
-12. **lineage**：新 run 与上一历史 run 比较 stable / split / merge / moved / disappeared / new。
-13. **总索引**：区分 primary_full_dna 与 supplemental_material；candidate 与 active 继续分层。
-14. **正式入库**：只有单独 promotion 流程可以写 active。
+12. **批次聚类**：等该批 supplemental 来源完成后，只对受影响专项开启新的 full recluster；禁止 append 到旧 cluster。
+13. **lineage**：新 run 与上一历史 run 比较 stable / split / merge / moved / disappeared / new。
+14. **总索引**：区分 primary_full_dna 与 supplemental_material；candidate 与 active 继续分层。
+15. **正式入库**：只有单独 promotion 流程可以写 active。
 
 ## 多代理约束
 
@@ -108,7 +111,7 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 - 同一本书的阶段聚合必须等待对应章节事实完成；横向聚类必须等待全部目标书的同类专项包完成。
 - 失败分片只重跑其负责范围，不重做已通过的书籍。
 
-## 完成标准 V1.6.2
+## 完成标准 V1.6.3
 
 ### FULL_DNA
 - 明确章节范围、QA、证据置信度；
@@ -124,7 +127,8 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 - target_specialty 有 per_book/gap；
 - derived_views 有卡/记录或明确 gap；
 - 五类受控 derived view 若存在，必须 `DERIVED_MATERIAL_CONTRACT_V1_6_1=PASS`；
-- 必须通过 `SUPPLEMENTAL_BATCH_CONSISTENCY_V1_6_2`；route/output 与 manifest/batch status 必须一致；
+- 若存在 combat_expression_assets，必须 `COMBAT_SEMANTIC_GATE_V1_6_3=PASS`；
+- 必须通过 `SUPPLEMENTAL_BATCH_CONSISTENCY_V1_6_3`；route/output、manifest/batch status、derived totals 与 HOLD totals 必须一致；
 - 聚类输入必须使用 batch gate 输出的 `eligible_record_ids`，不得把 HOLD 记录送入 clustering；
 - 被授权专项的 validator / semantic gate 通过；
 - excluded_specialties 不被误判为缺失；
