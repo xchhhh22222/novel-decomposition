@@ -1,4 +1,4 @@
-# 来源角色与拆解路由 V1.6.1
+# 来源角色与拆解路由 V1.6.2
 
 本文件只定义“中控如何决定一本来源书要拆什么”，不替代 01—09 specialist 自己的 guidance / schema / QA。
 
@@ -214,3 +214,27 @@ derived-material-contract.md
 ```
 
 新批次必须直接产出 canonical V1.6.1。旧 V1.6 批次允许做一次纯 normalization；不能为了通过 schema 重写原始含义。
+
+
+## 9. V1.6.2 路由输出闭环
+
+`source_route.derived_views` 不再只是“计划字段”，而是 derived output 的授权白名单。
+
+批次完成时必须检查：
+
+```text
+route declared views
+↔ actual */derived/*.json|*.jsonl
+↔ manifest derived declarations
+```
+
+允许：
+- route view 有实际文件；
+- route view 因证据不足形成 manifest 明确 0-record checked gap。
+
+禁止：
+- 产生未出现在 route 的 derived 文件；
+- route 声明了 view，但既没有文件也没有 checked gap；
+- 用“profile 默认会生成”替代 source_route 的显式授权。
+
+对历史 V1.6/V1.6.1 批次，如果能从原批准任务证明某 derived view 确实被授权但 route 漏记，可以只补 metadata；必须在 reconciliation 报告中说明，不改素材语义。

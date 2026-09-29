@@ -128,3 +128,25 @@ DEDICATED_DERIVED_VALIDATOR = NOT_AVAILABLE
 不再满足 V1.6.1 的最终 derived gate。
 
 对于 V1.6 历史批次，应先执行 normalization，不要求重新拆书；若无法仅靠已有 derived/per_book/QA 安全补齐字段，标记 `NORMALIZATION_SOURCE_EVIDENCE_REQUIRED` 并只做最小证据回查。
+
+
+## V1.6.2 Supplemental Batch Gates
+
+V1.6.1 derived schema PASS 后仍不得直接进入 G4。
+
+必须继续：
+
+```text
+SOURCE_ROUTING_GATE_V1_6_1
+→ DERIVED_MATERIAL_CONTRACT_V1_6_1
+→ ROUTE_OUTPUT_CONSISTENCY_GATE
+→ COMPLETION_STATUS_CONSISTENCY_GATE
+→ CLUSTER_ELIGIBILITY_GATE
+→ full_recluster_ready
+```
+
+具体规则读取 `supplemental-batch-gates.md`。
+
+controlled derived 的 HOLD 不属于聚类输入。聚类执行器必须使用 machine gate 给出的 `eligible_record_ids`；不能从目录全量读取后再口头声称“已过滤”。
+
+若某个需要重聚类的 controlled view 全部 HOLD，`full_recluster_ready=false`，不得宣称完整 supplemental full recluster 已准备完成。

@@ -1,4 +1,4 @@
-# 总索引、阶段门与验收 V1.6
+# 总索引、阶段门与验收 V1.6.2
 
 ## 阶段门
 
@@ -169,3 +169,31 @@ DEDICATED_DERIVED_VALIDATOR = NOT_AVAILABLE
 不再满足 V1.6.1 的最终 derived gate。
 
 对于 V1.6 历史批次，应先执行 normalization，不要求重新拆书；若无法仅靠已有 derived/per_book/QA 安全补齐字段，标记 `NORMALIZATION_SOURCE_EVIDENCE_REQUIRED` 并只做最小证据回查。
+
+
+## V1.6.2 Supplemental Batch Gates
+
+在 V1.6.1 Derived Material Gate 后新增：
+
+```text
+ROUTE_OUTPUT_CONSISTENCY_GATE
+COMPLETION_STATUS_CONSISTENCY_GATE
+CLUSTER_ELIGIBILITY_GATE
+```
+
+运行：
+
+```bash
+python scripts/core/validate_supplemental_batch.py \
+  --root <material-library-root> \
+  --batch-dir batch/<BATCH_ID> \
+  --books <BOOK_ID,...>
+```
+
+规则：
+- actual derived output 必须 route-authorized；
+- controlled HOLD 必须反映为 WITH_HOLDS；
+- manifest 与 batch-status 必须一致；
+- qa_status=PASS 才可进入 nearest_neighbor/cluster；
+- qa_status=HOLD 只保留 inventory；
+- 某需要重聚类 view 的 eligible=0 时 full_recluster_ready=false。
