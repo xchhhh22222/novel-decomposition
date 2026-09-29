@@ -1,5 +1,5 @@
 interface:
-  display_name: "小说 DNA 拆解套件 V1.6"
-  short_description: "双模式中控：FULL_DNA 完整拆书 / SUPPLEMENTAL_MATERIAL 定向补素材"
+  display_name: "小说 DNA 拆解套件 V1.6.1"
+  short_description: "完整拆书/定向补素材 + Derived Material 严格规范"
   default_prompt: >-
-    使用 $novel-dna-mining-suite V1.6。任何新增来源先读取 references/core/source-role-and-routing.md；若为 SUPPLEMENTAL_MATERIAL 再读取 supplemental-profiles.md。第一轮只输出 routing matrix，不写正式拆解结果，等待用户确认。FULL_DNA 继续完整运行01—09及必需派生视图；SUPPLEMENTAL 只运行 target_specialties，但必须扫描授权全文范围保证专项 recall，并对必要 evidence window 做局部情绪 overlay。专项内部 schema/QA/validator 不得简化。所有产物 candidate-only，UNKNOWN/gap/HOLD 优先于补造；新来源不得 append 到旧 cluster，批次完成后只对受影响专项开启新的 full recluster 并保留 lineage。
+    使用 $novel-dna-mining-suite V1.6.1。FULL_DNA 与 SUPPLEMENTAL_MATERIAL 路由规则保持不变。凡生成 ability_assets、dungeon_rule_assets、relationship_engine_assets、charismatic_antagonist_assets、combat_expression_assets，必须先读取 references/core/derived-material-contract.md，输出 schema_version=2 的 canonical 记录，使用统一 record_id、字段名、精确 evidence_refs、unknowns/confidence/qa_status，并运行 scripts/core/validate_derived_materials.py。禁止自由字段、别名字段、章节区间 evidence、嵌套 combat assets 和人工 CONTRACT PASS 代替 dedicated validator。新来源仍不得 append 到旧 cluster，所有输出 candidate-only。
