@@ -335,8 +335,11 @@ def manifest_counts(root: Path, book_id: str) -> tuple[dict[str, int], list[str]
             continue
         view = item.get("view")
         records = item.get("records")
-        if view in VIEW_SPECS and isinstance(records, int):
-            counts[view] = records
+        if view in VIEW_SPECS:
+            if not isinstance(records, int):
+                errors.append(f"{path}: derived view {view} requires integer records count")
+            else:
+                counts[view] = records
     return counts, errors
 
 
@@ -367,7 +370,9 @@ def validate_book(root: Path, book_id: str, seen_ids: set[str]) -> tuple[dict[st
             continue
 
         counts[view] = len(rows)
-        if manifest_expected is not None and manifest_expected != len(rows):
+        if manifest_expected is None:
+            errors.append(f"{path}: canonical derived file exists but manifest count is missing")
+        elif manifest_expected != len(rows):
             errors.append(
                 f"{path}: manifest records={manifest_expected} != actual records={len(rows)}"
             )
