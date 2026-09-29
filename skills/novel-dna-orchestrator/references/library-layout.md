@@ -1,3 +1,20 @@
+# V1.6 来源角色补充
+
+继续使用 `BOOK_xxx` ID，不引入 SUPP_ 前缀。新增来源通过 manifest/source_route 区分：
+
+- `source_role: primary_full_dna | supplemental_material`
+- `extraction_mode: FULL_DNA | SUPPLEMENTAL_MATERIAL`
+- `purpose[]`
+- `target_specialties[]`
+- `derived_views[]`
+- `excluded_specialties[]`
+- `chapter_scope`
+- `full_book_dna`
+
+Supplemental 只创建实际运行的专项目录，禁止用空目录伪装九专项覆盖。
+
+---
+
 # 小说 DNA 素材层级与存放位置
 
 ## 设计原则
