@@ -1,6 +1,24 @@
-# 总索引、阶段门与验收
+# 总索引、阶段门与验收 V1.6
 
 ## 阶段门
+
+### G-1 路由门
+
+所有新增来源在 G0 前必须先完成 source_route。
+
+FULL_DNA：
+- 九专项全部授权；
+- full_book_dna=true。
+
+SUPPLEMENTAL_MATERIAL：
+- purpose 非空；
+- target_specialties 非空真子集；
+- excluded_specialties 与 target_specialties 互斥且并集覆盖九专项；
+- derived_views 显式；
+- chapter_scope 显式；
+- 用户已经确认 routing matrix。
+
+未通过 G-1，不得开始写 per_book / derived 正式输出。
 
 ### G0 证据盘点
 
@@ -12,7 +30,11 @@
 
 ### G2 章节情绪
 
-通过条件：目标范围每章一条；主情绪、情绪对象、期待来源、兑现级别、可见证据、章末余味齐全；schema validator、RAW_ENDING、FIELD_ECHO、NORMALIZED_TEMPLATE、ANALYSIS_VS_SUMMARY 与 SOL SOURCE_CONTRADICTION_SAMPLE 全部通过。确实没有兑现时允许写“继续蓄压”。按章或批次隔离QA：PASS计入可用覆盖，HOLD/FAIL只计入记录总数，不支持高置信聚合。
+FULL_DNA：目标范围每章一条 canonical emotion；主情绪、情绪对象、期待来源、兑现级别、可见证据、章末余味齐全；schema validator、RAW_ENDING、FIELD_ECHO、NORMALIZED_TEMPLATE、ANALYSIS_VS_SUMMARY 与 SOL SOURCE_CONTRADICTION_SAMPLE 全部通过。确实没有兑现时允许写“继续蓄压”。
+
+SUPPLEMENTAL_MATERIAL：只有当 chapter_emotion 被列入 target_specialties 时才要求完整 G2；否则允许只为关键首次展示、兑现、关系转折生成局部 emotion overlay。局部 overlay 不能伪装成全章 emotion coverage。
+
+按章或批次隔离QA：PASS计入可用覆盖，HOLD/FAIL只计入记录总数，不支持高置信聚合。
 
 ### G3 专项包
 
@@ -55,6 +77,41 @@
 5. 任务清单必须显式区分目标范围、排除章节和源文缺章；不得从自由文本静默猜测后覆盖清单。
 6. `canonical / per_book / qa / handoff` 任一仍为 HOLD 或等待人工复核时，manifest 不得写 PASS。人工 override 必须同时记录 `manual_review: PASS`、`reviewer: SOL` 和非空 `reason`，并先统一所有状态文件；运行 `scripts/validate_module_status_consistency.py` 复验。
 7. batch accepted commit 必须区分 `content_acceptance_commit` 与 `latest_corrective_commit`，不得用一次共享 metadata commit 冒充多本书的内容接受时间。
+
+## V1.6 完成门
+
+### FULL_DNA 完成门
+
+沿用完整主书规则：
+- 九专项均有 per_book/gap；
+- 01 全章 canonical emotion 通过；
+- heroine / long_arc_villain 有卡或明确 gap；
+- 各必需 QA/validator 通过；
+- 可标 COMPLETE_SINGLE_BOOK。
+
+### SUPPLEMENTAL_MATERIAL 完成门
+
+只检查 source_route 授权范围：
+- 每个 target_specialty 有完整 per_book/gap；
+- 对应 derived_views 已生成或明确 gap；
+- chapter_scope 的全文扫描/授权范围 recall 有证据；
+- 对应 specialist validator / semantic audit 通过；
+- excluded_specialties 未被误写成“缺失失败”；
+- 输出仍为 candidate-only。
+
+允许：
+- COMPLETE_SUPPLEMENTAL_SOURCE
+- COMPLETE_SUPPLEMENTAL_SOURCE_WITH_HOLDS
+- BLOCKED
+
+禁止把 supplemental COMPLETE 解释为九维完整拆书。
+
+### 新来源后的聚类
+
+新增来源不得 append 到旧 cluster。只对受影响专项开启新的 full recluster run，但该专项内部仍必须完成：
+`per_book/gap completeness → nearest_neighbors → KEEP_SEPARATE → clusters → QA → handoff → lineage`。
+
+旧 run 作为历史快照保留。
 
 ## 冷启动验收
 

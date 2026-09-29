@@ -1,4 +1,4 @@
-# 小说 DNA 素材层级与存放位置
+# 小说 DNA 素材层级与存放位置 V1.6
 
 ## 设计原则
 
@@ -33,6 +33,49 @@
 
 `03_世界观` 至 `09_剧情机制` 与 `02_金手指` 使用同一层级约定：单书包进入 `per_book/`，跨书近邻与聚类进入 `candidate/`，质量报告进入 `qa/`。机器可读 `handoff` 可以放在 `candidate/` 下或专项根目录，但不得放入 `per_book/` 冒充单书证据。总索引按 `record_type` 区分这些记录，而不是把目录中的所有 candidate 状态文件都计作聚类候选。
 
+## V1.6 来源角色
+
+同一 `BOOK_xxx` ID 体系继续使用，但每本新来源必须通过 metadata 区分：
+
+- `source_role: primary_full_dna`
+- `source_role: supplemental_material`
+
+并记录：
+
+- `extraction_mode`
+- `purpose[]`
+- `target_specialties[]`
+- `derived_views[]`
+- `excluded_specialties[]`
+- `chapter_scope`
+- `full_book_dna`
+
+SUPPLEMENTAL 只创建真正运行的专项目录；不要为了目录齐全创建七个空专项。
+
+例如能力补充书：
+
+```text
+books/BOOK_010/
+├─ 00_给用户看的专项素材报告.md
+├─ 02_金手指/
+│  ├─ per_book/
+│  ├─ derived/ability_assets.jsonl
+│  └─ qa/
+├─ 04_修炼体系/
+│  ├─ per_book/
+│  ├─ derived/combat_asset_inventory.json
+│  ├─ derived/combat_expression_assets.json
+│  ├─ derived/non_protagonist_combat_coverage.json
+│  └─ qa/
+├─ 09_剧情机制/
+│  ├─ per_book/
+│  └─ qa/
+├─ manifest.json
+└─ qa/
+```
+
+未运行专项由 source_route 的 `excluded_specialties` 解释，不以空目录表示。
+
 ## 状态分层
 
 - `evidence`：原文、章节事实、经确认的阶段事实。
@@ -41,6 +84,16 @@
 - `deprecated`：保留来源链但不再调用。
 
 目录位置不能代替状态字段。每条候选仍需在 frontmatter 或 JSON 记录中声明 `status`。
+
+## source_route 建议位置
+
+每批新增来源建议在任务根目录保存：
+
+```text
+00_任务清单/source_routes.jsonl
+```
+
+每本一条。正式拆解前先运行 routing validator；路由修改应在正式 per_book 输出前完成。
 
 ## 任务清单字段
 

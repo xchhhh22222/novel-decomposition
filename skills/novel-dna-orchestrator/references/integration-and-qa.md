@@ -1,3 +1,16 @@
+# V1.6 路由覆盖说明
+
+本文件旧版完整拆书门仅对 `FULL_DNA` 强制成立。对 `SUPPLEMENTAL_MATERIAL`，以 `source-role-and-routing.md` 为更高优先级：
+
+- 先通过 routing gate；
+- 只检查 target_specialties；
+- 未授权专项不算缺失；
+- 不强制逐章 emotion，除非 chapter_emotion 被授权；否则只做必要局部 overlay；
+- supplemental 完成状态为 COMPLETE_SUPPLEMENTAL_SOURCE / _WITH_HOLDS / BLOCKED；
+- 新来源不得 append 到旧 cluster，只对受影响专项启动新的 full recluster。
+
+---
+
 # 总索引、阶段门与验收
 
 ## 阶段门
