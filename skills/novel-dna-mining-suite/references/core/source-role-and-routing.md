@@ -1,4 +1,4 @@
-# 来源角色与拆解路由 V1.6
+# 来源角色与拆解路由 V1.6.1
 
 本文件只定义“中控如何决定一本来源书要拆什么”，不替代 01—09 specialist 自己的 guidance / schema / QA。
 
@@ -190,3 +190,27 @@ SUPPLEMENTAL 使用：
 不能因为未运行 excluded_specialties 而降级。
 
 但任何 target_specialty 缺输出、缺 evidence、validator FAIL 或关键未处理 HOLD，都必须反映在最终状态中。
+
+
+## 8. Derived Material V1.6.1 附加门
+
+如果 source_route.derived_views 包含以下任一：
+
+- ability_assets
+- dungeon_rule_assets
+- relationship_engine_assets
+- charismatic_antagonist_assets
+- combat_expression_assets
+
+则该来源即使父专项 validator 已 PASS，也不能直接进入聚类。
+
+必须继续：
+
+```text
+derived-material-contract.md
+→ canonical normalization
+→ validate_derived_materials.py
+→ DERIVED_MATERIAL_CONTRACT_V1_6_1=PASS
+```
+
+新批次必须直接产出 canonical V1.6.1。旧 V1.6 批次允许做一次纯 normalization；不能为了通过 schema 重写原始含义。
