@@ -1,6 +1,7 @@
 name: derived-contract-ci
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - "skills/novel-dna-mining-suite/**"
@@ -9,6 +10,7 @@ on:
       - "README.md"
   push:
     branches:
+      - "main"
       - "v1.6.1-derived-contract"
     paths:
       - "skills/novel-dna-mining-suite/**"
