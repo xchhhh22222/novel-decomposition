@@ -11,6 +11,7 @@ description: V1.6 小说 DNA 拆解套件：保留完整主书 FULL_DNA 流程�
 
 - **任何新增来源书开始前，必须先读取 `references/core/source-role-and-routing.md`，确定 `FULL_DNA` 或 `SUPPLEMENTAL_MATERIAL`。**
 - **若为 SUPPLEMENTAL_MATERIAL，再读取 `references/core/supplemental-profiles.md` 选择 Profile；未经用户确认 routing matrix，不开始正式拆解。**
+- 路由落盘后先运行 `python scripts/core/validate_source_routes.py <source_routes.jsonl>`；SOURCE_ROUTING_GATE_V1_6 未 PASS 时禁止开始拆解。
 - 总控、输入包、目录、阶段门和总索引：读取 `references/core/`。
 - 章节情绪：读取 `references/specialists/chapter-emotion-miner/`，canonical 章节字段唯一服从 `references/core/chapter-emotion-schema.md`。
 - 金手指：读取 `references/specialists/golden-finger-miner/`。
