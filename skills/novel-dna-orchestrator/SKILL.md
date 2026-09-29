@@ -33,6 +33,7 @@ V1.6 的核心变化：**不是每一本来源都默认完整跑 01—09。**
 - **SUPPLEMENTAL_MATERIAL**：只调度 source_route.target_specialties；未授权专项不得自动补跑。
 - **Derived Material V1.6.1**：若路由包含 ability_assets / dungeon_rule_assets / relationship_engine_assets / charismatic_antagonist_assets / combat_expression_assets，必须读取 [references/derived-material-contract.md](references/derived-material-contract.md)，禁止代理自由发明字段。
 - **Derived 校验**：运行 `python scripts/validate_derived_materials.py --root <material-library-root> --books <BOOK_ID,...>`；未 PASS 不得进入 supplemental full recluster。
+- **修复历史 V1.6 supplemental 输出**：读取 [references/derived-normalization-playbook.md](references/derived-normalization-playbook.md)；默认只做 normalization，不重拆正文，不新增资产。
 - **路由校验**：运行 `python scripts/validate_source_routes.py <source_routes.jsonl>`；未 PASS 不得派发 specialist。
 - **初始化目录、任务清单或总索引**：读取 [references/library-layout.md](references/library-layout.md) 与 [references/integration-and-qa.md](references/integration-and-qa.md)。
 - **补逐章情绪层或审计节奏**：读取 [references/chapter-emotion-schema.md](references/chapter-emotion-schema.md) 与 [references/integration-and-qa.md](references/integration-and-qa.md)。
