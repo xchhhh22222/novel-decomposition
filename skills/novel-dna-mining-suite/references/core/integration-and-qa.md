@@ -125,3 +125,47 @@ SUPPLEMENTAL_MATERIAL：只有当 chapter_emotion 被列入 target_specialties �
 6. 至少重设触发、人物、资源、场景、兑现、后果中的三项，避免复制参考书。
 
 无法完成时，记录是哪个横向库或情绪字段缺失，而不是用模型记忆补齐。
+
+
+## V1.6.1 Derived Material Gate
+
+当 source_route.derived_views 包含以下任一视图：
+
+- ability_assets
+- dungeon_rule_assets
+- relationship_engine_assets
+- charismatic_antagonist_assets
+- combat_expression_assets
+
+则在单源 COMPLETE 与批次 recluster 之间增加硬门：
+
+```text
+parent specialist validator PASS
+→ derived canonical normalization
+→ validate_derived_materials.py
+→ DERIVED_MATERIAL_CONTRACT_V1_6_1 = PASS
+→ 才允许进入 full recluster
+```
+
+机器门至少检查：
+
+- schema_version=2；
+- canonical record_id；
+- 字段白名单；
+- 历史别名禁止；
+- 精确章节 evidence refs；
+- unknowns/confidence 关系；
+- combat assets 一维数组；
+- duplicate record IDs；
+- manifest derived record counts 与实际文件一致。
+
+仅有：
+
+```text
+DERIVED_CONTRACT_CHECK = PASS
+DEDICATED_DERIVED_VALIDATOR = NOT_AVAILABLE
+```
+
+不再满足 V1.6.1 的最终 derived gate。
+
+对于 V1.6 历史批次，应先执行 normalization，不要求重新拆书；若无法仅靠已有 derived/per_book/QA 安全补齐字段，标记 `NORMALIZATION_SOURCE_EVIDENCE_REQUIRED` 并只做最小证据回查。
