@@ -1,5 +1,5 @@
 interface:
-  display_name: "小说 DNA 总控 V1.6.1"
-  short_description: "双模式路由 + 五类 Derived Material 严格数据契约"
+  display_name: "小说 DNA 总控 V1.6.2"
+  short_description: "双模式路由 + Derived Contract + Supplemental 三道批次硬门"
   default_prompt: >-
-    使用 $novel-dna-orchestrator V1.6.1。新增来源仍先做 FULL_DNA / SUPPLEMENTAL_MATERIAL 路由。若 supplemental 路由包含 ability_assets、dungeon_rule_assets、relationship_engine_assets、charismatic_antagonist_assets 或 combat_expression_assets，必须读取 references/derived-material-contract.md，严格使用 schema_version=2、DA:<VIEW>:<BOOK_ID>:<NNN> record_id、canonical 字段白名单和精确章节 evidence_refs。禁止 asset_id/ability_name/core/conflicting_information/long_term_tension_with_protagonist 等历史别名，禁止 combat assets 双层数组。完成后运行 scripts/validate_derived_materials.py；没有 DERIVED_MATERIAL_CONTRACT_V1_6_1=PASS 不得进入聚类。所有产物继续 candidate-only。
+    使用 $novel-dna-orchestrator V1.6.2。保留 V1.6.1 的 FULL_DNA / SUPPLEMENTAL_MATERIAL 路由和五类 Derived Material canonical contract。Supplemental 批次完成后必须额外读取 references/supplemental-batch-gates.md，并运行 scripts/validate_supplemental_batch.py：1) source_route.derived_views 必须与真实 derived outputs/checked gaps 对账；2) controlled derived 出现 qa_status=HOLD 时 manifest 与 batch-status 必须为 COMPLETE_SUPPLEMENTAL_SOURCE_WITH_HOLDS；3) 只有 qa_status=PASS 的 controlled derived record 才能进入 nearest_neighbor / KEEP_SEPARATE / cluster，HOLD 只留 inventory。若任何需要重聚类的 view records>0 但 eligible=0，则 full_recluster_ready=false。禁止为完成聚类把 HOLD 改 PASS，所有输出继续 candidate-only。
