@@ -53,6 +53,7 @@ def build(
     batch_status: str | None = None,
     route_views: list[str] | None = None,
     extra_view_file: bool = False,
+    derived_hold_records: int | None = None,
 ) -> None:
     book = "BOOK_010"
     batch = root / "batch" / "TEST"
@@ -107,9 +108,20 @@ def build(
         },
     }
     (b / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False), encoding="utf-8")
+    actual_holds = sum(1 for qa in qas if qa == "HOLD")
     (batch / "batch-status.json").write_text(
         json.dumps(
-            {"books": {book: batch_status or manifest_status}},
+            {
+                "books": {book: batch_status or manifest_status},
+                "derived_totals": {
+                    "ability_assets": len(rows),
+                    "dungeon_rule_assets": 0,
+                    "relationship_engine_assets": 0,
+                    "charismatic_antagonist_assets": 0,
+                    "combat_expression_assets": 0,
+                },
+                "derived_hold_records": actual_holds if derived_hold_records is None else derived_hold_records,
+            },
             ensure_ascii=False,
         ),
         encoding="utf-8",
@@ -188,7 +200,19 @@ def main() -> int:
         if code == 0 or result["completion_status_consistency_gate"]["status"] != "FAIL":
             failures.append("batch/manifest status mismatch must fail")
 
-    print(json.dumps({"ok": not failures, "cases": 5, "failures": failures}, ensure_ascii=False, indent=2))
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        build(
+            root,
+            qas=["PASS", "HOLD"],
+            manifest_status="COMPLETE_SUPPLEMENTAL_SOURCE_WITH_HOLDS",
+            derived_hold_records=99,
+        )
+        code, result = run_case(root)
+        if code == 0 or result["batch_summary_consistency_gate"]["status"] != "FAIL":
+            failures.append("stale derived_hold_records must fail")
+
+    print(json.dumps({"ok": not failures, "cases": 6, "failures": failures}, ensure_ascii=False, indent=2))
     return 0 if not failures else 1
 
 
