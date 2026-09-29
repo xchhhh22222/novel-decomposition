@@ -1,9 +1,9 @@
 ---
 name: novel-dna-mining-suite
-description: V1.6 小说 DNA 拆解套件：保留完整主书 FULL_DNA 流程，并新增 SUPPLEMENTAL_MATERIAL 中控路由；先判断一本来源为什么入库，再只调用被授权的专项与派生视图。所有专项继续来源可追溯、candidate-only。
+description: V1.6.1 小说 DNA 拆解套件：保留 FULL_DNA / SUPPLEMENTAL_MATERIAL 双模式，并对补充素材的五类 derived views 强制统一字段、ID、证据引用、计数与 dedicated validator；所有专项继续来源可追溯、candidate-only。
 ---
 
-# 小说 DNA 拆解套件 V1.6
+# 小说 DNA 拆解套件 V1.6.1
 
 这是一个独立迁移包，入口负责路由和边界，详细规则按需读取 `references/`。不要把候选直接写成正式套路卡，也不要修改源章节或正式素材库。
 
@@ -11,6 +11,7 @@ description: V1.6 小说 DNA 拆解套件：保留完整主书 FULL_DNA 流程�
 
 - **任何新增来源书开始前，必须先读取 `references/core/source-role-and-routing.md`，确定 `FULL_DNA` 或 `SUPPLEMENTAL_MATERIAL`。**
 - **若为 SUPPLEMENTAL_MATERIAL，再读取 `references/core/supplemental-profiles.md` 选择 Profile；未经用户确认 routing matrix，不开始正式拆解。**
+- **凡 source_route.derived_views 命中 ability_assets / dungeon_rule_assets / relationship_engine_assets / charismatic_antagonist_assets / combat_expression_assets，必须同时读取 `references/core/derived-material-contract.md`；该契约优先于 profile 中的旧“推荐字段”。**
 - 路由落盘后先运行 `python scripts/core/validate_source_routes.py <source_routes.jsonl>`；SOURCE_ROUTING_GATE_V1_6 未 PASS 时禁止开始拆解。
 - 总控、输入包、目录、阶段门和总索引：读取 `references/core/`。
 - 章节情绪：读取 `references/specialists/chapter-emotion-miner/`，canonical 章节字段唯一服从 `references/core/chapter-emotion-schema.md`。
@@ -20,6 +21,7 @@ description: V1.6 小说 DNA 拆解套件：保留完整主书 FULL_DNA 流程�
 - 人物功能、主支线、开篇、篇章结构、剧情机制：按模块读取对应 specialist 目录的 guidance/schema/QA。
 - **人物个体卡为 V1.5 必跑派生层**：每本书在人物功能完成后，额外调用 `novel-character-card-miner`；女主/关键女性写 heroine_character 或明确 gap，长线反派写 long_arc_villain 或明确 gap。禁止用人物功能标签冒充人物个体卡。
 - 统一校验：运行 `python scripts/validate.py --specialty <slug> --kind <kind> ...`；该入口只分派包内 validator，不依赖外部 Skill。
+- V1.6.1 Derived 硬门：运行 `python scripts/core/validate_derived_materials.py --root <material-library-root> --books <BOOK_ID,...>`；未得到 `DERIVED_MATERIAL_CONTRACT_V1_6_1=PASS`，不得宣称 supplemental 批次可进入聚类。
 - V1.5.1 语义门：章节情绪结构校验后运行包内 `scripts/specialists/chapter-emotion-miner/audit_semantics.py`；剧情线运行 `audit_recall.py`；剧情机制运行 `audit_depth.py`；manifest 落盘前运行 `scripts/core/validate_module_status_consistency.py`。\n- V1.5.2 语义加固：RAW_ENDING 过滤纯标点/过短尾句；模板骨架支持从人物卡、人物功能或显式实体表读取已知中文实体并归一化为 `<ENTITY>`，避免仅替换人名绕过模板检测。
 
 ## 统一不变量
@@ -31,6 +33,8 @@ description: V1.6 小说 DNA 拆解套件：保留完整主书 FULL_DNA 流程�
 - BOOK_ID 继续使用 BOOK_010、BOOK_011...；用 source_role / extraction_mode 区分补充来源，避免破坏现有脚本。
 - 输入必须由总控冻结：`batch_id`、`specialty`、`book_ids`、`allowed_sources`、`chapter_ranges`、`emotion_overlay_paths`、`output_root`、`forbidden_outputs`、`known_gaps`。
 - 派生记录固定 `status: candidate`；不得生成 `active`、`deprecated` 或正式素材卡。
+- V1.6.1 五类补充 derived view 禁止自由字段：只能使用 `derived-material-contract.md` 的 canonical 字段；禁止 `asset_id/ability_name/core/conflicting_information/long_term_tension_with_protagonist` 等历史别名继续流入新结果。
+- Derived `evidence_refs` 必须是精确章节引用 `BOOK_xxx:CHAPTER:nnnn`；章节区间只写 `chapter_span`，不得把 `ch16-57` 或 `BOOK_xxx:CHAPTER:0001-1002` 当 evidence ref。
 - 每条抽象结论必须带结构化 `evidence_refs`；证据不足保留 `UNKNOWN`、`partial`、`gap` 或 `HOLD`。
 - 单书覆盖必须是每本恰好一条 `per_book` 或 `gap`；跨书 `nearest_neighbor/cluster` 必须提供 `--expected-books`、`--all-books-complete` 和 `--completion-manifest`。
 - `arcs[]` 与 `mechanisms[]` 分别承载一本书的多个篇章阶段和多个剧情机制，不能只保留代表性单条记录。
@@ -71,6 +75,7 @@ description: V1.6 小说 DNA 拆解套件：保留完整主书 FULL_DNA 流程�
 → 用户确认
 → 授权专项全文扫描
 → 专项 per_book / derived / QA
+→ V1.6.1 derived validator
 → COMPLETE_SUPPLEMENTAL_SOURCE
 ```
 
@@ -88,6 +93,8 @@ SUPPLEMENTAL_MATERIAL：
 - `COMPLETE_SUPPLEMENTAL_SOURCE`
 - `COMPLETE_SUPPLEMENTAL_SOURCE_WITH_HOLDS`
 - `BLOCKED`
+
+若 source_route 包含 V1.6.1 五类受控 derived view，则 COMPLETE 之前额外要求 `DERIVED_MATERIAL_CONTRACT_V1_6_1=PASS`；仅有人工 `DERIVED_CONTRACT_CHECK=PASS` 不再足够。
 
 SUPPLEMENTAL 的 COMPLETE 只代表“本次授权专项完整”，不得表述为“九维完整拆书”。
 
