@@ -12,7 +12,7 @@ description: V1.6.1 小说 DNA 拆解套件：保留 FULL_DNA / SUPPLEMENTAL_MAT
 - **任何新增来源书开始前，必须先读取 `references/core/source-role-and-routing.md`，确定 `FULL_DNA` 或 `SUPPLEMENTAL_MATERIAL`。**
 - **若为 SUPPLEMENTAL_MATERIAL，再读取 `references/core/supplemental-profiles.md` 选择 Profile；未经用户确认 routing matrix，不开始正式拆解。**
 - **凡 source_route.derived_views 命中 ability_assets / dungeon_rule_assets / relationship_engine_assets / charismatic_antagonist_assets / combat_expression_assets，必须同时读取 `references/core/derived-material-contract.md`；该契约优先于 profile 中的旧“推荐字段”。**
-- 路由落盘后先运行 `python scripts/core/validate_source_routes.py <source_routes.jsonl>`；SOURCE_ROUTING_GATE_V1_6 未 PASS 时禁止开始拆解。
+- 路由落盘后先运行 `python scripts/core/validate_source_routes.py <source_routes.jsonl>`；SOURCE_ROUTING_GATE_V1_6_1 未 PASS 时禁止开始拆解。
 - 总控、输入包、目录、阶段门和总索引：读取 `references/core/`。
 - 章节情绪：读取 `references/specialists/chapter-emotion-miner/`，canonical 章节字段唯一服从 `references/core/chapter-emotion-schema.md`。
 - 金手指：读取 `references/specialists/golden-finger-miner/`。
