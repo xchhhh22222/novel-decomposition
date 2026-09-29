@@ -1,3 +1,11 @@
+# V1.6 路由范围覆盖
+
+专项 completion manifest 的 expected-books 必须来自“当前专项实际被路由到的来源集合”，而不是整批所有来源。Supplemental 未被授权到某专项时，不得把它记成该专项缺书。
+
+专项内部 evidence / UNKNOWN / QA / candidate-only 规则不变。
+
+---
+
 # 横向专项代理契约
 
 ## 单一职责
