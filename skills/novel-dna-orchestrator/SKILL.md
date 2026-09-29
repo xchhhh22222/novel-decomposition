@@ -31,6 +31,7 @@ V1.6 的核心变化：**不是每一本来源都默认完整跑 01—09。**
 - **新增来源第一步**：读取 [references/source-role-and-routing.md](references/source-role-and-routing.md) 与 [references/supplemental-profiles.md](references/supplemental-profiles.md)，先输出 routing matrix，未经用户确认不得写正式拆解结果。
 - **FULL_DNA**：沿用旧完整主书流程。
 - **SUPPLEMENTAL_MATERIAL**：只调度 source_route.target_specialties；未授权专项不得自动补跑。
+- **路由校验**：运行 `python scripts/validate_source_routes.py <source_routes.jsonl>`；未 PASS 不得派发 specialist。
 - **初始化目录、任务清单或总索引**：读取 [references/library-layout.md](references/library-layout.md) 与 [references/integration-and-qa.md](references/integration-and-qa.md)。
 - **补逐章情绪层或审计节奏**：读取 [references/chapter-emotion-schema.md](references/chapter-emotion-schema.md) 与 [references/integration-and-qa.md](references/integration-and-qa.md)。
 - **只校验情绪覆盖文件**：运行 `scripts/validate_chapter_emotions.py <jsonl> --expected-book <BOOK_ID> --expected-range <起章-止章>`。草稿确需保留HOLD/FAIL时额外使用 `--allow-nonpass`，但该结果不能通过G2。
