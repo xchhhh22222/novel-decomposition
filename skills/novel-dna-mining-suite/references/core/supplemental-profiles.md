@@ -96,7 +96,7 @@ Profiles 只帮助中控选择已有 specialist 和 derived views，不替代 sp
 
 默认 derived_views：
 - heroine_character
-- relationship_engine
+- relationship_engine_assets
 
 语义要求（机器字段名以 derived-material-contract.md 为准）：
 - independent_goal
