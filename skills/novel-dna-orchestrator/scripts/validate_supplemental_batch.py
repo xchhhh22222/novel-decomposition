@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""V1.6.2 batch-level consistency and clustering eligibility gates.
+"""V1.6.3 batch-level consistency, summary integrity, and clustering eligibility gates.
 
 Checks three things that V1.6.1 intentionally did not enforce:
 1) source_route.derived_views matches real derived outputs/gaps;
@@ -153,6 +153,7 @@ def main() -> int:
 
     route_errors: list[str] = []
     status_errors: list[str] = []
+    summary_errors: list[str] = []
     eligibility_errors: list[str] = []
     per_book: dict[str, Any] = {}
     per_view_totals: dict[str, dict[str, Any]] = {
@@ -292,8 +293,40 @@ def main() -> int:
     if extra_routes:
         route_errors.append(f"source_routes contains unexpected books for this validation scope: {', '.join(extra_routes)}")
 
+    actual_hold_total = sum(stats["held"] for stats in per_view_totals.values())
+    declared_hold_total = batch_status.get("derived_hold_records")
+    if not isinstance(declared_hold_total, int):
+        summary_errors.append(
+            f"{batch_status_path}: derived_hold_records must be an integer"
+        )
+    elif declared_hold_total != actual_hold_total:
+        summary_errors.append(
+            f"{batch_status_path}: derived_hold_records={declared_hold_total} "
+            f"!= actual controlled HOLD total={actual_hold_total}"
+        )
+
+    declared_totals = batch_status.get("derived_totals")
+    if not isinstance(declared_totals, dict):
+        summary_errors.append(
+            f"{batch_status_path}: derived_totals must be an object"
+        )
+    else:
+        for view, stats in sorted(per_view_totals.items()):
+            expected = stats["records"]
+            actual = declared_totals.get(view)
+            if not isinstance(actual, int):
+                summary_errors.append(
+                    f"{batch_status_path}: derived_totals.{view} must be an integer"
+                )
+            elif actual != expected:
+                summary_errors.append(
+                    f"{batch_status_path}: derived_totals.{view}={actual} "
+                    f"!= actual records={expected}"
+                )
+
     route_status = "PASS" if not route_errors else "FAIL"
     completion_status = "PASS" if not status_errors else "FAIL"
+    summary_status = "PASS" if not summary_errors else "FAIL"
 
     blocked_views: list[str] = []
     mixed_views: list[str] = []
@@ -316,13 +349,15 @@ def main() -> int:
     full_recluster_ready = (
         route_status == "PASS"
         and completion_status == "PASS"
+        and summary_status == "PASS"
         and eligibility_status == "PASS"
         and not blocked_views
     )
 
     result = {
-        "gate": "SUPPLEMENTAL_BATCH_CONSISTENCY_V1_6_2",
-        "status": "PASS" if route_status == completion_status == eligibility_status == "PASS" else "FAIL",
+        "gate": "SUPPLEMENTAL_BATCH_CONSISTENCY_V1_6_3",
+        "legacy_gate_base": "V1.6.2 route/status/eligibility + V1.6.3 summary integrity",
+        "status": "PASS" if route_status == completion_status == summary_status == eligibility_status == "PASS" else "FAIL",
         "route_output_consistency_gate": {
             "status": route_status,
             "errors": route_errors,
@@ -330,6 +365,12 @@ def main() -> int:
         "completion_status_consistency_gate": {
             "status": completion_status,
             "errors": status_errors,
+        },
+        "batch_summary_consistency_gate": {
+            "status": summary_status,
+            "errors": summary_errors,
+            "declared_hold_records": declared_hold_total,
+            "actual_hold_records": actual_hold_total,
         },
         "cluster_eligibility_gate": {
             "status": eligibility_status,
@@ -342,7 +383,7 @@ def main() -> int:
         },
         "full_recluster_ready": full_recluster_ready,
         "per_book": per_book,
-        "ok": route_status == completion_status == eligibility_status == "PASS",
+        "ok": route_status == completion_status == summary_status == eligibility_status == "PASS",
     }
 
     rendered = json.dumps(result, ensure_ascii=False, indent=2)
