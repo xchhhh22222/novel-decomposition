@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate V1.6 source routing records before any decomposition writes."""
+"""Validate V1.6.1 source routing records before any decomposition writes."""
 
 from __future__ import annotations
 
@@ -23,6 +23,23 @@ SPECIALTIES = {
 }
 MODES = {"FULL_DNA", "SUPPLEMENTAL_MATERIAL"}
 ROLES = {"primary_full_dna", "supplemental_material"}
+DERIVED_VIEWS = {
+    "ability_assets",
+    "combat_expression_assets",
+    "combat_asset_inventory",
+    "non_protagonist_combat_coverage",
+    "dungeon_rule_assets",
+    "heroine_character",
+    "relationship_engine_assets",
+    "long_arc_villain",
+    "charismatic_antagonist_assets",
+    "faction_character_interface",
+    "climax_map",
+    "major_storyline",
+}
+DEPRECATED_DERIVED_VIEWS = {
+    "relationship_engine": "relationship_engine_assets",
+}
 BOOK_RE = re.compile(r"^BOOK_\d{3,}$")
 
 
@@ -100,7 +117,16 @@ def validate_record(record: dict[str, Any], index: int) -> list[str]:
     purpose = as_set(record["purpose"], "purpose", errors, where)
     target = as_set(record["target_specialties"], "target_specialties", errors, where)
     excluded = as_set(record["excluded_specialties"], "excluded_specialties", errors, where)
-    as_set(record["derived_views"], "derived_views", errors, where)
+    derived = as_set(record["derived_views"], "derived_views", errors, where)
+    deprecated = sorted(derived & set(DEPRECATED_DERIVED_VIEWS))
+    for name in deprecated:
+        errors.append(
+            f"{where}.derived_views uses deprecated {name!r}; "
+            f"use {DEPRECATED_DERIVED_VIEWS[name]!r}"
+        )
+    unknown_derived = sorted(derived - DERIVED_VIEWS - set(DEPRECATED_DERIVED_VIEWS))
+    if unknown_derived:
+        errors.append(f"{where}.derived_views unknown: {', '.join(unknown_derived)}")
     if not isinstance(record["known_gaps"], list):
         errors.append(f"{where}.known_gaps must be a list")
     if not purpose:
@@ -145,7 +171,7 @@ def validate_record(record: dict[str, Any], index: int) -> list[str]:
 def main() -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
-    parser = argparse.ArgumentParser(description="Validate V1.6 source_routes JSON/JSONL.")
+    parser = argparse.ArgumentParser(description="Validate V1.6.1 source_routes JSON/JSONL.")
     parser.add_argument("routes", type=Path)
     args = parser.parse_args()
 
@@ -166,7 +192,7 @@ def main() -> int:
             seen.add(bid)
 
     result = {
-        "gate": "SOURCE_ROUTING_GATE_V1_6",
+        "gate": "SOURCE_ROUTING_GATE_V1_6_1",
         "status": "PASS" if not errors else "FAIL",
         "records": len(records),
         "errors": errors,
