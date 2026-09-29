@@ -28,7 +28,7 @@ V1.6 的核心变化：**不是每一本来源都默认完整跑 01—09。**
 
 ## 模式路由
 
-- **新增来源第一步**：读取 sibling suite 的 `references/core/source-role-and-routing.md` 与 `supplemental-profiles.md`，先输出 routing matrix，未经用户确认不得写正式拆解结果。
+- **新增来源第一步**：读取 [references/source-role-and-routing.md](references/source-role-and-routing.md) 与 [references/supplemental-profiles.md](references/supplemental-profiles.md)，先输出 routing matrix，未经用户确认不得写正式拆解结果。
 - **FULL_DNA**：沿用旧完整主书流程。
 - **SUPPLEMENTAL_MATERIAL**：只调度 source_route.target_specialties；未授权专项不得自动补跑。
 - **初始化目录、任务清单或总索引**：读取 [references/library-layout.md](references/library-layout.md) 与 [references/integration-and-qa.md](references/integration-and-qa.md)。
