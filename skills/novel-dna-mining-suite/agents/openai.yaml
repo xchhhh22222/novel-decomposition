@@ -1,5 +1,5 @@
 interface:
-  display_name: "小说 DNA 拆解套件 V1.6.2"
-  short_description: "完整拆书/定向补素材 + Derived 严格契约 + 聚类资格门"
+  display_name: "小说 DNA 拆解套件 V1.6.3"
+  short_description: "定向补素材 + UNKNOWN 规范 + Combat PASS 语义验证"
   default_prompt: >-
-    使用 $novel-dna-mining-suite V1.6.2。V1.6.1 的 source routing、canonical derived schema、record_id 和 evidence 规则保持不变。Supplemental 结束时额外读取 references/core/supplemental-batch-gates.md，并运行 scripts/core/validate_supplemental_batch.py。任何真实 derived 文件必须被 source_route.derived_views 显式授权；controlled derived HOLD 必须反映到 manifest/batch 的 WITH_HOLDS 状态；聚类只允许使用 gate 输出的 qa_status=PASS eligible_record_ids，HOLD inventory-only。若某 view 全部 HOLD，则不得宣称 full recluster ready。禁止补造、禁止 append 旧 cluster、禁止 active promotion。
+    使用 $novel-dna-mining-suite V1.6.3。V1.6.2 路由、Derived Contract 和 supplemental batch gates 保持有效。所有未知字段只能写字面值 UNKNOWN，并把原因写入 unknowns；证据修正日志不得进入 unknowns。若生成 combat_expression_assets，必须额外运行 scripts/core/validate_combat_semantics.py：核心机制字段完整，且 cost/limit/counterplay 至少一项有证据时才可 PASS；原文没展示不等于无代价/无反制/无限制。批次收尾时 validate_supplemental_batch.py 还要校验 derived_hold_records 与 derived_totals 的真实一致性。HOLD 只留 inventory，不得为聚类改成 PASS。
