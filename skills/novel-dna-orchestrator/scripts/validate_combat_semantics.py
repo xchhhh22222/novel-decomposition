@@ -45,14 +45,13 @@ COMBAT_FIELDS = (
     "compatible_system",
     "user_archetype",
 )
-NONCANONICAL_UNKNOWN_PREFIXES = (
-    "UNKNOWN——",
-    "UNKNOWN—",
-    "UNKNOWN（",
-    "UNKNOWN(",
-    "未知",
-    "不适用/未知",
-    "不适用（未知",
+NONCANONICAL_UNKNOWN_RE = re.compile(
+    r"^(?:"
+    r"UNKNOWN(?:\\s|[:：—－-]|[（(])"
+    r"|未知(?:\\s|[:：—－-]|[（(]|$)"
+    r"|不适用[\\/／]未知(?:\\s|[:：—－-]|[（(]|$)"
+    r"|不适用[（(]\\s*未知"
+    r")"
 )
 ABSENCE_ONLY_RE = re.compile(
     r"^(?:无|没有|无需|无直接代价|无直接消耗).*"
@@ -74,7 +73,9 @@ def unknown_like(value: Any) -> bool:
     if not isinstance(value, str):
         return False
     text = value.strip()
-    return any(text.startswith(prefix) for prefix in NONCANONICAL_UNKNOWN_PREFIXES)
+    if text == UNKNOWN:
+        return False
+    return bool(NONCANONICAL_UNKNOWN_RE.search(text))
 
 
 def is_unknown(value: Any) -> bool:
