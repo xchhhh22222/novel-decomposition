@@ -1,4 +1,4 @@
-# Derived Material Contract V1.6.1
+# Derived Material Contract V1.6.3
 
 本契约只规范 V1.6 新增的 5 类补充素材派生视图，不改 01—09 specialist 的 canonical schema。
 
@@ -530,3 +530,78 @@ DERIVED_SCHEMA_VALIDATION = PASS
 ```
 
 在 V1.6.1 以后，不再允许仅用“人工 DERIVED_CONTRACT_CHECK=PASS”替代 dedicated validator。
+
+## V1.6.3 语义加固：UNKNOWN 与 Combat PASS
+
+### 1. UNKNOWN 必须是字面值
+
+当一个 canonical 字段无法由现有证据确认时，字段值必须严格为：
+
+```text
+UNKNOWN
+```
+
+禁止把解释混进字段值：
+
+```text
+UNKNOWN——原文未展示……
+UNKNOWN（未说明）
+未知
+不适用/未知
+```
+
+原因写进 `unknowns[]`，并尽量使用字段名前缀：
+
+```json
+"cost": "UNKNOWN",
+"unknowns": ["cost：原文未给出明确消耗"]
+```
+
+`unknowns[]` 只保存当前素材尚未确认的事实，不保存证据迁移日志。诸如 `EVIDENCE_CORRECTION / old_ref / new_ref` 必须放进 backfill/refinement report。
+
+### 2. 不得从“没写”推导“没有”
+
+以下推理禁止：
+
+```text
+原文未展示代价 → cost = 无
+原文未展示反制 → counterplay = 无
+原文未说明限制 → limit = 无限制
+```
+
+只有正文存在积极证据支持“无需消耗 / 自动无代价 / 不可反制 / 无限制”等结论，才允许写为已知值；否则必须 `UNKNOWN`。
+
+### 3. Combat PASS 最低语义门
+
+`combat_expression_assets` 一条记录只有满足以下条件才允许 `qa_status=PASS`：
+
+- 以下核心字段全部不是 `UNKNOWN`：
+  - asset_name
+  - function_slot
+  - trigger
+  - operation
+  - action_pattern
+  - output
+  - combat_role
+  - visual_expression
+- `cost / limit / counterplay` 三个约束字段中至少一个有正文支持的真实信息；三者全为 `UNKNOWN` 时必须 HOLD；
+- `input / range / combination_interface / compatible_system / user_archetype` 可以 UNKNOWN；
+- `unknowns` 非空时 `confidence` 不得 HIGH。
+
+PASS 的含义是“已足以进行跨书机制比较”，不是“所有字段 100% 完整”。
+
+### 4. 机器门
+
+当批次包含 combat_expression_assets 时，除了 `validate_derived_materials.py`，还必须运行：
+
+```bash
+python scripts/validate_combat_semantics.py --root <material-library-root> --books <BOOK_ID,...>
+```
+
+必须得到：
+
+```text
+COMBAT_SEMANTIC_GATE_V1_6_3 = PASS
+```
+
+否则 combat PASS record 不得进入聚类。
