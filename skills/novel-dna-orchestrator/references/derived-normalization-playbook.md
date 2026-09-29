@@ -1,4 +1,4 @@
-# Derived Normalization Playbook V1.6.1
+# Derived Normalization Playbook V1.6.2
 
 用于把 V1.6 已存在的 supplemental derived outputs 迁移到 V1.6.1 canonical contract。
 
@@ -199,3 +199,34 @@ Normalization 完成后仍然：
 - 不覆盖历史 run。
 
 只有人工审核通过后，才允许开启受影响专项的 full recluster。
+
+
+## 12. V1.6.2 批次一致性收尾
+
+Normalization 结束后不能只停在 `validate_derived_materials.py=PASS`。
+
+还必须运行：
+
+```bash
+python scripts/validate_supplemental_batch.py \
+  --root <nova-material-library-root> \
+  --batch-dir batch/<BATCH_ID> \
+  --books <BOOK_ID,...>
+```
+
+并处理三个结果：
+
+1. ROUTE_OUTPUT_CONSISTENCY_GATE
+   - source_route.derived_views 与真实 derived 文件/明确 gap 对账；
+   - 历史漏 route 只有在原任务确实授权时才允许 metadata reconciliation。
+
+2. COMPLETION_STATUS_CONSISTENCY_GATE
+   - 任一 controlled derived record HOLD → manifest.status 必须 WITH_HOLDS；
+   - batch-status 与 manifest.status 完全一致。
+
+3. CLUSTER_ELIGIBILITY_GATE
+   - PASS record 可聚类；
+   - HOLD record inventory-only；
+   - 某 view records>0 且 eligible=0 → full_recluster_ready=false。
+
+Normalization report 必须保存该 gate 输出或其路径。
