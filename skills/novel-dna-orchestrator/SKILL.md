@@ -1,9 +1,9 @@
 ---
 name: novel-dna-orchestrator
-description: V1.6 小说 DNA 中控：先判断新增来源是 FULL_DNA 还是 SUPPLEMENTAL_MATERIAL，再按 purpose 路由到已有专项；统筹证据、QA、派生视图、专项聚类与总索引，不代替专项拆解，也不直接把 candidate 写成 active。
+description: V1.6.1 小说 DNA 中控：保留 FULL_DNA / SUPPLEMENTAL_MATERIAL 路由，并对五类 supplemental derived views 强制统一字段、ID、证据、计数和 dedicated validator；统筹 QA 与聚类门，不把 candidate 写成 active。
 ---
 
-# 小说 DNA 拆书总控 V1.6
+# 小说 DNA 拆书总控 V1.6.1
 
 ## 目标
 
@@ -31,6 +31,8 @@ V1.6 的核心变化：**不是每一本来源都默认完整跑 01—09。**
 - **新增来源第一步**：读取 [references/source-role-and-routing.md](references/source-role-and-routing.md) 与 [references/supplemental-profiles.md](references/supplemental-profiles.md)，先输出 routing matrix，未经用户确认不得写正式拆解结果。
 - **FULL_DNA**：沿用旧完整主书流程。
 - **SUPPLEMENTAL_MATERIAL**：只调度 source_route.target_specialties；未授权专项不得自动补跑。
+- **Derived Material V1.6.1**：若路由包含 ability_assets / dungeon_rule_assets / relationship_engine_assets / charismatic_antagonist_assets / combat_expression_assets，必须读取 [references/derived-material-contract.md](references/derived-material-contract.md)，禁止代理自由发明字段。
+- **Derived 校验**：运行 `python scripts/validate_derived_materials.py --root <material-library-root> --books <BOOK_ID,...>`；未 PASS 不得进入 supplemental full recluster。
 - **路由校验**：运行 `python scripts/validate_source_routes.py <source_routes.jsonl>`；未 PASS 不得派发 specialist。
 - **初始化目录、任务清单或总索引**：读取 [references/library-layout.md](references/library-layout.md) 与 [references/integration-and-qa.md](references/integration-and-qa.md)。
 - **补逐章情绪层或审计节奏**：读取 [references/chapter-emotion-schema.md](references/chapter-emotion-schema.md) 与 [references/integration-and-qa.md](references/integration-and-qa.md)。
@@ -75,7 +77,7 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 8. 市场等级、研究价值、拆解范围、证据置信度是四个不同字段；缺少榜单数据时使用 `UNGRADED`，不得以拆解深度冒充市场评级。
 9. 写入前说明准确路径、操作类型、内容范围和覆盖风险并取得授权。总索引默认只读预览；带 `--output` 才落盘。
 
-## 总控工作流 V1.6
+## 总控工作流 V1.6.1
 
 1. **盘点来源**：列出新 TXT、现有 BOOK_ID、重复来源和源文范围。
 2. **路由**：为每本来源生成 source_route，判断 FULL_DNA / SUPPLEMENTAL_MATERIAL、purpose、target_specialties、derived_views、excluded_specialties。
@@ -85,14 +87,15 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
    - FULL_DNA：完整 01—09 + 必要派生视图；
    - SUPPLEMENTAL：只运行 target_specialties；全文扫描授权范围保证 recall。
 6. **专项 QA**：每个 specialist 继续执行自己的 schema/validator/semantic gate，证据不足保留 UNKNOWN/gap/HOLD。
-7. **派生视图**：按 profile 生成 ability / dungeon / heroine / relationship / antagonist / combat-expression 等被授权 view；没有证据则明确 gap。
-8. **单源完成判定**：
+7. **派生视图**：按 profile 生成 ability / dungeon / heroine / relationship / antagonist / combat-expression 等被授权 view；其中五类 V1.6.1 受控 derived view 必须严格使用 canonical contract，没有证据则明确 UNKNOWN/gap。
+8. **Derived 机器门**：检查字段白名单、record_id、精确 evidence ref、nested array、duplicate ID、manifest count；禁止只用人工 contract check 冒充 dedicated validator。
+9. **单源完成判定**：
    - FULL_DNA → COMPLETE_SINGLE_BOOK；
    - SUPPLEMENTAL → COMPLETE_SUPPLEMENTAL_SOURCE / _WITH_HOLDS / BLOCKED。
-9. **批次聚类**：等该批 supplemental 来源完成后，只对受影响专项开启新的 full recluster；禁止 append 到旧 cluster。
-10. **lineage**：新 run 与上一历史 run 比较 stable / split / merge / moved / disappeared / new。
-11. **总索引**：区分 primary_full_dna 与 supplemental_material；candidate 与 active 继续分层。
-12. **正式入库**：只有单独 promotion 流程可以写 active。
+10. **批次聚类**：等该批 supplemental 来源完成后，只对受影响专项开启新的 full recluster；禁止 append 到旧 cluster。
+11. **lineage**：新 run 与上一历史 run 比较 stable / split / merge / moved / disappeared / new。
+12. **总索引**：区分 primary_full_dna 与 supplemental_material；candidate 与 active 继续分层。
+13. **正式入库**：只有单独 promotion 流程可以写 active。
 
 ## 多代理约束
 
@@ -101,7 +104,7 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 - 同一本书的阶段聚合必须等待对应章节事实完成；横向聚类必须等待全部目标书的同类专项包完成。
 - 失败分片只重跑其负责范围，不重做已通过的书籍。
 
-## 完成标准 V1.6
+## 完成标准 V1.6.1
 
 ### FULL_DNA
 - 明确章节范围、QA、证据置信度；
@@ -116,6 +119,7 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 - 每个 target_specialty 在授权范围内完成 recall；
 - target_specialty 有 per_book/gap；
 - derived_views 有卡/记录或明确 gap；
+- 五类受控 derived view 若存在，必须 `DERIVED_MATERIAL_CONTRACT_V1_6_1=PASS`；
 - 被授权专项的 validator / semantic gate 通过；
 - excluded_specialties 不被误判为缺失；
 - 输出 candidate-only；
