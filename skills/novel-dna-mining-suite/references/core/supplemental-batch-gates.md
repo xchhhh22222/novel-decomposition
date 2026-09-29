@@ -1,4 +1,4 @@
-# Supplemental Batch Gates V1.6.2
+# Supplemental Batch Gates V1.6.3
 
 V1.6.2 在 V1.6.1 derived schema gate 之后新增三个批次级硬门。目的不是扩大拆解范围，而是阻止“格式合法但状态/路由/聚类资格不一致”的数据进入横向聚类。
 
@@ -173,3 +173,75 @@ TARGETED_DERIVED_EVIDENCE_BACKFILL
 - recluster run id。
 
 禁止只写“已过滤 HOLD”而不保存具体 ID 列表。
+
+
+## 8. V1.6.3 BATCH_SUMMARY_CONSISTENCY_GATE
+
+V1.6.2 已能对账 route/status/eligibility，但第一次真实 backfill 暴露了一个新问题：
+
+```text
+supplemental-consistency 中真实 HOLD = 25
+batch-status.derived_hold_records 仍残留旧值 82
+```
+
+因此 V1.6.3 增加批次汇总硬门。
+
+`batch-status.json` 必须满足：
+
+- `derived_hold_records` 为整数；
+- `derived_hold_records` 等于五类 controlled derived records 的真实 HOLD 总数；
+- `derived_totals.<view>` 必须等于该 view 的真实 records 数；
+- 任一 stale total 都使 batch consistency FAIL；
+- 不允许手工复制上一次运行的统计值。
+
+机器输出增加：
+
+```text
+BATCH_SUMMARY_CONSISTENCY_GATE = PASS / FAIL
+```
+
+并记录：
+
+- declared_hold_records
+- actual_hold_records
+
+V1.6.3 的 full_recluster_ready 需要同时满足：
+
+- route/output PASS
+- completion status PASS
+- batch summary PASS
+- cluster eligibility PASS
+- 没有 BLOCKED_ZERO_ELIGIBLE view
+
+---
+
+## 9. V1.6.3 Combat Semantic Gate
+
+当批次存在 `combat_expression_assets` 时，schema PASS 不足以代表可聚类。
+
+必须额外运行：
+
+```bash
+python scripts/validate_combat_semantics.py \
+  --root <material-library-root> \
+  --books <BOOK_ID,...>
+```
+
+只有：
+
+```text
+COMBAT_SEMANTIC_GATE_V1_6_3 = PASS
+```
+
+才允许把 `qa_status=PASS` 的 combat record 交给 cluster eligibility。
+
+该门强制：
+
+- UNKNOWN 字段必须严格等于 `UNKNOWN`；
+- UNKNOWN 原因进入 `unknowns[]`；
+- evidence correction 日志不得污染 `unknowns[]`；
+- combat PASS 的核心机制字段必须完整；
+- cost/limit/counterplay 至少一个必须有证据；
+- “原文没写代价”不得推导成“无代价”。
+
+这一步专门防止“validator PASS，但语义上其实不够 PASS”。
