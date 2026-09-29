@@ -1,6 +1,9 @@
-# Supplemental Material Profiles V1.6
+# Supplemental Material Profiles V1.6.1
 
 Profiles 只帮助中控选择已有 specialist 和 derived views，不替代 specialist 内部契约。
+
+**V1.6.1 重要覆盖：**以下 Profile 中凡涉及 `ability_assets / dungeon_rule_assets / relationship_engine_assets / charismatic_antagonist_assets / combat_expression_assets`，字段、record_id、evidence_refs、文件结构和 QA 状态一律服从 `derived-material-contract.md`。本文件中的字段清单只表达“要分析什么”，不再允许各代理自定义字段名。
+
 
 ## PROFILE_ABILITY_GOLDEN_FINGER
 
@@ -15,7 +18,7 @@ Profiles 只帮助中控选择已有 specialist 和 derived views，不替代 sp
 - ability_assets
 - combat_expression_assets
 
-推荐字段：
+语义要求（机器字段名以 derived-material-contract.md 为准）：
 - ability_core
 - trigger
 - input
@@ -58,7 +61,7 @@ Profiles 只帮助中控选择已有 specialist 和 derived views，不替代 sp
 默认 derived_views：
 - dungeon_rule_assets
 
-推荐字段：
+语义要求（机器字段名以 derived-material-contract.md 为准）：
 - entry_condition
 - surface_rules
 - hidden_rules
@@ -95,7 +98,7 @@ Profiles 只帮助中控选择已有 specialist 和 derived views，不替代 sp
 - heroine_character
 - relationship_engine
 
-推荐字段：
+语义要求（机器字段名以 derived-material-contract.md 为准）：
 - independent_goal
 - resource_domain
 - faction
@@ -133,7 +136,7 @@ Profiles 只帮助中控选择已有 specialist 和 derived views，不替代 sp
 - long_arc_villain
 - charismatic_antagonist_assets
 
-推荐字段：
+语义要求（机器字段名以 derived-material-contract.md 为准）：
 - goal
 - values
 - resource_domain
@@ -187,7 +190,7 @@ Profiles 只帮助中控选择已有 specialist 和 derived views，不替代 sp
 - 设施
 - 战术组合
 
-推荐字段：
+语义要求（机器字段名以 derived-material-contract.md 为准）：
 - function_slot
 - trigger
 - input
