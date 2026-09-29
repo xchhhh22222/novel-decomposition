@@ -1,11 +1,24 @@
 ---
 name: novel-dna-orchestrator
-description: 统筹批量小说拆解成果、逐章读者情绪、横向专项候选、大小高潮脉络、人物个体卡与小说 DNA 总索引。用户要求规划或维护拆书流水线、补章节情绪层、提取高潮脉络、汇总人物候选或把拆书结果整理成可辅助开书的索引时使用；不代替专项元素拆解，也不直接把候选写成正式套路卡。
+description: V1.6 小说 DNA 中控：先判断新增来源是 FULL_DNA 还是 SUPPLEMENTAL_MATERIAL，再按 purpose 路由到已有专项；统筹证据、QA、派生视图、专项聚类与总索引，不代替专项拆解，也不直接把 candidate 写成 active。
 ---
 
-# 小说 DNA 拆书总控
+# 小说 DNA 拆书总控 V1.6
 
 ## 目标
+
+V1.6 的核心变化：**不是每一本来源都默认完整跑 01—09。**
+
+新增来源先回答：
+
+```text
+这本书为什么进入 Nova？
+→ 它要补哪个素材缺口？
+→ 应调用哪些 specialist？
+→ 哪些专项明确不运行？
+```
+
+完整主书继续走 FULL_DNA；素材增强来源走 SUPPLEMENTAL_MATERIAL。专项内部 schema/QA 不因中控路由而放宽。
 
 把已有或新增的拆书证据组织成可追溯的四层系统：
 
@@ -15,6 +28,9 @@ description: 统筹批量小说拆解成果、逐章读者情绪、横向专项�
 
 ## 模式路由
 
+- **新增来源第一步**：读取 sibling suite 的 `references/core/source-role-and-routing.md` 与 `supplemental-profiles.md`，先输出 routing matrix，未经用户确认不得写正式拆解结果。
+- **FULL_DNA**：沿用旧完整主书流程。
+- **SUPPLEMENTAL_MATERIAL**：只调度 source_route.target_specialties；未授权专项不得自动补跑。
 - **初始化目录、任务清单或总索引**：读取 [references/library-layout.md](references/library-layout.md) 与 [references/integration-and-qa.md](references/integration-and-qa.md)。
 - **补逐章情绪层或审计节奏**：读取 [references/chapter-emotion-schema.md](references/chapter-emotion-schema.md) 与 [references/integration-and-qa.md](references/integration-and-qa.md)。
 - **只校验情绪覆盖文件**：运行 `scripts/validate_chapter_emotions.py <jsonl> --expected-book <BOOK_ID> --expected-range <起章-止章>`。草稿确需保留HOLD/FAIL时额外使用 `--allow-nonpass`，但该结果不能通过G2。
@@ -40,7 +56,9 @@ description: 统筹批量小说拆解成果、逐章读者情绪、横向专项�
 | 篇章结构 | `novel-arc-structure-miner` | `08_篇章结构/` | G1 与阶段边界证据 |
 | 剧情机制 | `novel-plot-mechanism-miner` | `09_剧情机制/` | G1；可引用已完成的线路/阶段接口 |
 
-推荐顺序为 `G1 → 逐章情绪 → 八个横向专项的单书包 → 人物个体卡(heroine/long_arc_villain)派生视图 → 各专项横向近邻/聚类 → 总索引`。八个横向专项的单书抽取可并行，但跨书聚类必须等待该专项所有目标书均有且仅有一条 `per_book` 或 `gap` 完成声明。逐章情绪是节奏主轴，不替代世界观、人物、线路或机制证据；其它专项也不得反向改写 canonical 章节情绪记录。
+FULL_DNA 推荐顺序仍为 `G1 → 逐章情绪 → 八个横向专项的单书包 → 人物个体卡(heroine/long_arc_villain)派生视图 → 各专项横向近邻/聚类 → 总索引`。
+
+SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必要局部 emotion overlay → target_specialties per_book/derived/QA → 批次结束后受影响专项 full recluster`。跨书聚类只等待“本专项实际路由到的来源集合”，不是等待整批所有书。
 
 开书复用另加三类**派生视图**，不改上述八专项 canonical schema：`novel-arc-structure-miner` 的 `climax-map.md` 从 arc、线路、情绪证据提取大小高潮因果脉络，并用 `major-storyline.md` 单独提取一条完整大故事线的对抗推进、主角收益、反派计划受损与下一线入口；`novel-character-card-miner` 将女主、长线反派分成两个有行为证据的个体候选库，与人物功能专项互补。三类视图都保留已拆章节范围、QA、证据引用和 `candidate/UNKNOWN` 状态；旧书尚未补齐这些派生视图时，总索引必须标缺口，开书总控不得假装已有完整人物库或全书高潮图。
 
@@ -56,16 +74,24 @@ description: 统筹批量小说拆解成果、逐章读者情绪、横向专项�
 8. 市场等级、研究价值、拆解范围、证据置信度是四个不同字段；缺少榜单数据时使用 `UNGRADED`，不得以拆解深度冒充市场评级。
 9. 写入前说明准确路径、操作类型、内容范围和覆盖风险并取得授权。总索引默认只读预览；带 `--output` 才落盘。
 
-## 总控工作流
+## 总控工作流 V1.6
 
-1. **盘点**：列出书单、现有章节范围、QA状态、BOOK DNA、缺失的情绪层和专项层。
-2. **冻结证据范围**：为本批任务记录书籍ID、来源路径、章节范围和已知缺口；不静默扩大范围。
-3. **补逐章情绪**：按章节事实生成情绪覆盖记录，不覆盖原章节拆解。优先补前五章，再补全书。
-4. **派发专项**：向每个专项代理提供同一书单、允许读取的证据层、输出目录和禁止越界项。并发数量服从当前可用代理槽位，不写死代理数。人物功能完成后必须继续派发 `novel-character-card-miner`，分别产出 heroine 与 long_arc_villain；无合格角色也要写明确 gap。
-5. **汇收候选**：检查专项记录的来源、原子性、置信度、相近母型和 `UNKNOWN`。
-6. **建立总索引**：把书籍、逐章情绪覆盖、专项候选、正式卡和缺口放入同一张导航表，但不把候选混成正式事实。
-7. **人工决策**：需要合并、拆分、升级为正式素材或改变库结构时，列出待定决策点。
-8. **正式入库**：用户确认后，交给 `fanqie-material-curator` 做 `NEW / MERGE / SPLIT / HOLD` 与索引重建。
+1. **盘点来源**：列出新 TXT、现有 BOOK_ID、重复来源和源文范围。
+2. **路由**：为每本来源生成 source_route，判断 FULL_DNA / SUPPLEMENTAL_MATERIAL、purpose、target_specialties、derived_views、excluded_specialties。
+3. **先审 routing matrix**：只展示路由，不写正式拆解结果；等待用户确认。
+4. **冻结证据范围**：确认 source file、chapter_scope、allowed_sources、known_gaps。
+5. **按路由派发**：
+   - FULL_DNA：完整 01—09 + 必要派生视图；
+   - SUPPLEMENTAL：只运行 target_specialties；全文扫描授权范围保证 recall。
+6. **专项 QA**：每个 specialist 继续执行自己的 schema/validator/semantic gate，证据不足保留 UNKNOWN/gap/HOLD。
+7. **派生视图**：按 profile 生成 ability / dungeon / heroine / relationship / antagonist / combat-expression 等被授权 view；没有证据则明确 gap。
+8. **单源完成判定**：
+   - FULL_DNA → COMPLETE_SINGLE_BOOK；
+   - SUPPLEMENTAL → COMPLETE_SUPPLEMENTAL_SOURCE / _WITH_HOLDS / BLOCKED。
+9. **批次聚类**：等该批 supplemental 来源完成后，只对受影响专项开启新的 full recluster；禁止 append 到旧 cluster。
+10. **lineage**：新 run 与上一历史 run 比较 stable / split / merge / moved / disappeared / new。
+11. **总索引**：区分 primary_full_dna 与 supplemental_material；candidate 与 active 继续分层。
+12. **正式入库**：只有单独 promotion 流程可以写 active。
 
 ## 多代理约束
 
@@ -74,14 +100,27 @@ description: 统筹批量小说拆解成果、逐章读者情绪、横向专项�
 - 同一本书的阶段聚合必须等待对应章节事实完成；横向聚类必须等待全部目标书的同类专项包完成。
 - 失败分片只重跑其负责范围，不重做已通过的书籍。
 
-## 完成标准
+## 完成标准 V1.6
 
-- 每本纳入统筹的书都有明确章节范围、QA状态和证据置信度。
-- 每个已覆盖章节都有一条情绪记录，或被明确列入缺口清单。
-- 每个专项候选都有书籍来源、章节证据、母型近邻和状态。
-- 每本书的 heroine_character 与 long_arc_villain 派生视图都有卡或明确 gap；不得以人物功能记录代替。
-- 总索引能区分 `evidence / candidate / active / deprecated`。
-- 随机选择一个开书需求时，能够从索引找到金手指、情绪节奏和相关候选，而不必读取全部原文。
+### FULL_DNA
+- 明确章节范围、QA、证据置信度；
+- 01 全章 emotion 或明确缺口；
+- 02—09 每专项 per_book/gap；
+- heroine_character / long_arc_villain 有卡或 gap；
+- 必需 validator / semantic gate 通过；
+- 可标 COMPLETE_SINGLE_BOOK。
+
+### SUPPLEMENTAL_MATERIAL
+- source_route 已确认；
+- 每个 target_specialty 在授权范围内完成 recall；
+- target_specialty 有 per_book/gap；
+- derived_views 有卡/记录或明确 gap；
+- 被授权专项的 validator / semantic gate 通过；
+- excluded_specialties 不被误判为缺失；
+- 输出 candidate-only；
+- 最终只可标 COMPLETE_SUPPLEMENTAL_SOURCE / _WITH_HOLDS / BLOCKED。
+
+任何模式都不得因为“想让库更丰富”而用模型记忆补造来源事实。
 
 ## 三类派生库的验收
 
