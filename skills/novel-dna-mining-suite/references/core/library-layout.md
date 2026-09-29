@@ -128,3 +128,24 @@ books/BOOK_010/
 - 专项代理只写自身目录下的 `per_book/` 和 `candidate/`。
 - 总控只写任务清单、总索引和缺口表。
 - `套路素材/` 只由正式入库流程写入。
+
+
+## V1.6.1 Derived canonical layout
+
+五类受控 supplemental derived view 固定路径：
+
+```text
+02_金手指/derived/ability_assets.jsonl
+03_世界观/derived/dungeon_rule_assets.jsonl
+04_修炼体系/derived/combat_expression_assets.json
+05_人物功能与标签/derived/relationship_engine_assets.jsonl
+05_人物功能与标签/derived/charismatic_antagonist_assets.jsonl
+```
+
+不得因代理不同改名为 `ability.jsonl`、`relationship_engines.jsonl` 或其它临时文件名。
+
+combat_expression_assets.json 顶层必须是 schema_version=2 的 collection，`assets` 为一维数组并带 `asset_count`。
+
+其余四类为 JSONL，一行一条 derived_asset。
+
+具体字段与 ID 服从 `derived-material-contract.md`。Manifest 的 `outputs.derived_views[].records` 必须等于 canonical 文件实际条数。

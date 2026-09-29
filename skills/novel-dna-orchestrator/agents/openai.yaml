@@ -1,5 +1,5 @@
 interface:
-  display_name: "小说 DNA 总控 V1.6"
-  short_description: "先路由来源角色，再调度完整拆书或定向素材扩充"
+  display_name: "小说 DNA 总控 V1.6.1"
+  short_description: "双模式路由 + 五类 Derived Material 严格数据契约"
   default_prompt: >-
-    使用 $novel-dna-orchestrator V1.6。新增 TXT 先盘点、去重、分配 BOOK_ID，并判断 FULL_DNA 或 SUPPLEMENTAL_MATERIAL；先给出 purpose / target_specialties / derived_views / excluded_specialties 的 routing matrix，用户确认前不写正式拆解。确认后只调度授权 specialist；supplemental 的完成门只检查授权专项，不要求九专项齐全。批次结束后只对受影响专项 full recluster，禁止把新记录直接插入旧 cluster。
+    使用 $novel-dna-orchestrator V1.6.1。新增来源仍先做 FULL_DNA / SUPPLEMENTAL_MATERIAL 路由。若 supplemental 路由包含 ability_assets、dungeon_rule_assets、relationship_engine_assets、charismatic_antagonist_assets 或 combat_expression_assets，必须读取 references/derived-material-contract.md，严格使用 schema_version=2、DA:<VIEW>:<BOOK_ID>:<NNN> record_id、canonical 字段白名单和精确章节 evidence_refs。禁止 asset_id/ability_name/core/conflicting_information/long_term_tension_with_protagonist 等历史别名，禁止 combat assets 双层数组。完成后运行 scripts/validate_derived_materials.py；没有 DERIVED_MATERIAL_CONTRACT_V1_6_1=PASS 不得进入聚类。所有产物继续 candidate-only。

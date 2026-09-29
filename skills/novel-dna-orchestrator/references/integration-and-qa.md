@@ -84,3 +84,47 @@
 ## 人物与大故事线派生库
 
 总索引增加 `heroine_cards`、`long_arc_villain_cards`、`major_storyline_cards` 及各自路径。零张时必须区分 `未回填`、`已检查但无合格对象`、`证据不足`，不能只写数字零。女主卡检查独立目标与有代价的行动；长线反派卡检查至少两次有因果连续性的交锋与策略变化；大故事线卡检查目标对抗、反派计划、主角收益、收束状态、下一线入口和逐边证据。派生 QA 不得抬高原章节事实 QA。
+
+
+## V1.6.1 Derived Material Gate
+
+当 source_route.derived_views 包含以下任一视图：
+
+- ability_assets
+- dungeon_rule_assets
+- relationship_engine_assets
+- charismatic_antagonist_assets
+- combat_expression_assets
+
+则在单源 COMPLETE 与批次 recluster 之间增加硬门：
+
+```text
+parent specialist validator PASS
+→ derived canonical normalization
+→ validate_derived_materials.py
+→ DERIVED_MATERIAL_CONTRACT_V1_6_1 = PASS
+→ 才允许进入 full recluster
+```
+
+机器门至少检查：
+
+- schema_version=2；
+- canonical record_id；
+- 字段白名单；
+- 历史别名禁止；
+- 精确章节 evidence refs；
+- unknowns/confidence 关系；
+- combat assets 一维数组；
+- duplicate record IDs；
+- manifest derived record counts 与实际文件一致。
+
+仅有：
+
+```text
+DERIVED_CONTRACT_CHECK = PASS
+DEDICATED_DERIVED_VALIDATOR = NOT_AVAILABLE
+```
+
+不再满足 V1.6.1 的最终 derived gate。
+
+对于 V1.6 历史批次，应先执行 normalization，不要求重新拆书；若无法仅靠已有 derived/per_book/QA 安全补齐字段，标记 `NORMALIZATION_SOURCE_EVIDENCE_REQUIRED` 并只做最小证据回查。
