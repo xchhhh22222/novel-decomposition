@@ -2,9 +2,9 @@
 
 一套用于长篇网文拆解、专项提取、证据审计、素材迁移、开书组装、正文创作与连续性维护的 Codex Skills 与工作流。
 
-当前版本：**拆解 V1.6.1**
+当前版本：**拆解 V1.6.2**
 
-## V1.6.1 的核心思路
+## V1.6.2 的核心思路
 
 完整拆解与可迁移素材分层保存：
 
@@ -29,6 +29,7 @@ DNA 候选库 / 原子套路卡 / 开书母型
 - **V1.6 升级中控路由**：新增 `FULL_DNA` 与 `SUPPLEMENTAL_MATERIAL` 两种来源角色。完整主书继续跑01—09；素材增强来源先说明 purpose，再只调用被授权的专项与 derived views。Supplemental 仍需扫描授权全文范围保证 recall，但不再被强制要求逐章情绪和九专项齐全。
 - **V1.6 新增专项素材 Profiles**：能力/金手指、副本规则、多女主关系、魅力反派、战斗表现等来源可以定向拆解；新来源不得直接 append 到旧 cluster，只对受影响专项启动新的 full recluster 并保留 lineage。
 - **V1.6.1 加固 Derived Material Contract**：ability / dungeon / relationship / charismatic antagonist / combat expression 五类补充素材统一为 schema_version=2，统一 `DA:<VIEW>:<BOOK_ID>:<NNN>` ID、字段白名单、精确章节 evidence、manifest 计数和 dedicated validator；历史别名、章节区间 evidence、combat 双层数组会直接 FAIL。
+- **V1.6.2 加固 Supplemental 批次门**：新增 route/output 一致性、manifest/batch completion status 一致性、cluster eligibility 三个机器 gate；受控 derived 只有 `qa_status=PASS` 才能进入 nearest_neighbor/cluster，HOLD 只留 inventory；某 view 全部 HOLD 时禁止宣称 full recluster ready。
 - 拆书层只还原单书来源事实；创造层允许跨书选择组件重新组合，但组合结果必须标为新书候选，不能写回来源记录。
 - 所有结论必须回指章节或已审核证据，模型记忆不能写成来源。
 
@@ -65,7 +66,7 @@ skills/
 
 1. 将完整拆解包放入 `workflow/_模板/` 复制出的新批次目录。
 2. 用 `novel-dna-orchestrator` 先给新来源做 FULL_DNA / SUPPLEMENTAL_MATERIAL 路由；用户确认 routing matrix 后再执行。
-3. 用对应 specialist Skill 生成候选记录；Supplemental 只跑 target_specialties，但专项内部 QA 不降级。若生成五类 V1.6.1 受控 derived view，必须额外通过 `validate_derived_materials.py`。
+3. 用对应 specialist Skill 生成候选记录；Supplemental 只跑 target_specialties，但专项内部 QA 不降级。若生成五类受控 derived view，先通过 `validate_derived_materials.py`，再通过 `validate_supplemental_batch.py` 对账 route/output、状态和聚类资格。
 4. 用 `fanqie-material-curator` 完成原子化、查重、审核和迁移。
 5. 用 `novel-creation-planner` 先研究同赛道新书榜结构，再调度素材库，并从战略目标物/大高潮反推前100章。
 6. 用 `novel-writer` 管理章纲、工作稿、正式正文和资料同步边界。
