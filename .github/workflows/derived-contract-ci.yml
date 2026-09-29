@@ -12,6 +12,7 @@ on:
     branches:
       - "main"
       - "v1.6.1-derived-contract"
+      - "v1.6.2-supplemental-gates"
     paths:
       - "skills/novel-dna-mining-suite/**"
       - "skills/novel-dna-orchestrator/**"
@@ -30,9 +31,13 @@ jobs:
         run: python skills/novel-dna-mining-suite/scripts/core/test_validate_derived_materials.py
       - name: Source route validator regression
         run: python skills/novel-dna-mining-suite/scripts/core/test_validate_source_routes_v161.py
+      - name: Supplemental batch gates regression
+        run: python skills/novel-dna-mining-suite/scripts/core/test_validate_supplemental_batch.py
       - name: Compile validators
         run: |
           python -m py_compile skills/novel-dna-mining-suite/scripts/core/validate_derived_materials.py
           python -m py_compile skills/novel-dna-mining-suite/scripts/core/validate_source_routes.py
+          python -m py_compile skills/novel-dna-mining-suite/scripts/core/validate_supplemental_batch.py
           python -m py_compile skills/novel-dna-orchestrator/scripts/validate_derived_materials.py
           python -m py_compile skills/novel-dna-orchestrator/scripts/validate_source_routes.py
+          python -m py_compile skills/novel-dna-orchestrator/scripts/validate_supplemental_batch.py
