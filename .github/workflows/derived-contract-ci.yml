@@ -1,0 +1,36 @@
+name: derived-contract-ci
+
+on:
+  pull_request:
+    paths:
+      - "skills/novel-dna-mining-suite/**"
+      - "skills/novel-dna-orchestrator/**"
+      - "VERSION"
+      - "README.md"
+  push:
+    branches:
+      - "v1.6.1-derived-contract"
+    paths:
+      - "skills/novel-dna-mining-suite/**"
+      - "skills/novel-dna-orchestrator/**"
+      - "VERSION"
+      - "README.md"
+
+jobs:
+  validate-derived-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Derived material validator regression
+        run: python skills/novel-dna-mining-suite/scripts/core/test_validate_derived_materials.py
+      - name: Source route validator regression
+        run: python skills/novel-dna-mining-suite/scripts/core/test_validate_source_routes_v161.py
+      - name: Compile validators
+        run: |
+          python -m py_compile skills/novel-dna-mining-suite/scripts/core/validate_derived_materials.py
+          python -m py_compile skills/novel-dna-mining-suite/scripts/core/validate_source_routes.py
+          python -m py_compile skills/novel-dna-orchestrator/scripts/validate_derived_materials.py
+          python -m py_compile skills/novel-dna-orchestrator/scripts/validate_source_routes.py
