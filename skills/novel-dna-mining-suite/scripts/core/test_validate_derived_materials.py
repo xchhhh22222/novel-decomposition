@@ -49,7 +49,7 @@ def combat(book: str) -> dict:
     return row
 
 
-def write_fixture(root: Path, *, bad_alias: bool = False, nested: bool = False, bad_ref: bool = False) -> None:
+def write_fixture(root: Path, *, bad_alias: bool = False, nested: bool = False, bad_ref: bool = False, missing_manifest: bool = False) -> None:
     book = "BOOK_010"
     b = root / "books" / book
     (b / "02_金手指" / "derived").mkdir(parents=True)
@@ -78,14 +78,13 @@ def write_fixture(root: Path, *, bad_alias: bool = False, nested: bool = False, 
         json.dumps(collection, ensure_ascii=False), encoding="utf-8"
     )
 
-    manifest = {
-        "outputs": {
-            "derived_views": [
-                {"view": "ability_assets", "records": 1},
-                {"view": "combat_expression_assets", "records": 1},
-            ]
-        }
-    }
+    derived_views = [
+        {"view": "ability_assets", "records": 1},
+        {"view": "combat_expression_assets", "records": 1},
+    ]
+    if missing_manifest:
+        derived_views = [{"view": "ability_assets", "records": 1}]
+    manifest = {"outputs": {"derived_views": derived_views}}
     (b / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False), encoding="utf-8")
 
 
@@ -108,6 +107,7 @@ def main() -> int:
         ("legacy alias rejected", {"bad_alias": True}, False),
         ("nested combat assets rejected", {"nested": True}, False),
         ("range evidence rejected", {"bad_ref": True}, False),
+        ("missing manifest count rejected", {"missing_manifest": True}, False),
     ]
     failures = [name for name, args, expected in cases if run_case(**args) != expected]
     print(json.dumps({"ok": not failures, "cases": len(cases), "failures": failures}, ensure_ascii=False, indent=2))
