@@ -75,6 +75,14 @@ def main() -> int:
 
     bad = record(cost="UNKNOWN——原文未展示代价", unknowns=["cost：原文未展示代价"])
     cases.append(("prefixed UNKNOWN rejected", bad, False))
+    legit = record()
+    legit["limit"] = "未知技能无法探测，只能等BOSS主动使用时获取情报"
+    cases.append(("legitimate 未知-prefixed prose accepted", legit, True))
+
+    bad = record()
+    bad["limit"] = "未知：原文未说明限制"
+    bad["unknowns"] = ["limit：原文未说明限制"]
+    cases.append(("Chinese unknown token with punctuation rejected", bad, False))
 
     bad = record(cost="UNKNOWN", limit="UNKNOWN", counterplay="UNKNOWN",
                  unknowns=["cost：未知", "limit：未知", "counterplay：未知"])
