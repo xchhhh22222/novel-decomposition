@@ -38,6 +38,7 @@ V1.6 的核心变化：**不是每一本来源都默认完整跑 01—09。**
 - **V1.6.3 Batch Summary 门**：`validate_supplemental_batch.py` 还必须对账 `batch-status.derived_hold_records` 与五类 controlled derived 的真实 HOLD 总数，并核对 `derived_totals`。
 - **聚类资格**：五类 controlled derived record 只有 `qa_status=PASS` 才能进入 nearest_neighbor / KEEP_SEPARATE / cluster；`qa_status=HOLD` 只保留 inventory。若某个需要重聚类的 view `eligible=0 && records>0`，则 `full_recluster_ready=false`。
 - **修复历史 V1.6 supplemental 输出**：读取 [references/derived-normalization-playbook.md](references/derived-normalization-playbook.md)；默认只做 normalization，不重拆正文，不新增资产。
+- **Combat HOLD 补强/收口**：读取 [references/combat-evidence-backfill.md](references/combat-evidence-backfill.md)；Evidence Backfill 与 Semantic Refinement 必须分两阶段，不能把“找到更多证据”直接等同于 PASS。
 - **路由校验**：运行 `python scripts/validate_source_routes.py <source_routes.jsonl>`；未 PASS 不得派发 specialist。
 - **初始化目录、任务清单或总索引**：读取 [references/library-layout.md](references/library-layout.md) 与 [references/integration-and-qa.md](references/integration-and-qa.md)。
 - **补逐章情绪层或审计节奏**：读取 [references/chapter-emotion-schema.md](references/chapter-emotion-schema.md) 与 [references/integration-and-qa.md](references/integration-and-qa.md)。
