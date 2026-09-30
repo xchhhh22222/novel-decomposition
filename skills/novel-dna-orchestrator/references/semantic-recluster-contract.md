@@ -1,6 +1,6 @@
-# V1.6.5 跨书语义重聚类可靠性契约
+# V1.6.6 跨书语义重聚类可靠性契约
 
-本契约约束所有 FULL_DNA / SUPPLEMENTAL_MATERIAL 的跨书 full recluster。V1.6.5 在 V1.6.4 基础上新增两个核心要求：
+本契约约束所有 FULL_DNA / SUPPLEMENTAL_MATERIAL 的跨书 full recluster。V1.6.6 在 V1.6.5 基础上继续修复两个问题：**不能把关键词原子化伪装成语义裁决**，也不能把同一人物/机制在多个 projection unit 中重复算成多个独立创作参考。V1.6.5 的两个核心要求仍保留：
 
 1. **禁止把 `actual_operation` 原文完全相同当作语义等价的必要条件**；
 2. **historical whole-record → fine-grained unit 的 lineage 必须支持 1→N 映射，不能因为候选多于 1 个就自动 HOLD。**
@@ -282,3 +282,101 @@ python skills/novel-dna-mining-suite/scripts/core/validate_semantic_recluster.py
 - lineage 是否足够可信。
 
 人工未批准前保持 candidate-only。
+
+
+## 14. V1.6.6：机制原子只能用于召回/描述，不能直接决定 support
+
+`MECHANISM_ATOM_RULES`、关键词 substring、规则化 atom mapping 可以用于：
+
+- mechanism-signature retrieval；
+- candidate blocking；
+- 生成候选结构标签；
+- 辅助解释。
+
+但**不得仅因为两边共享若干 atom 就判 MERGE/SUBTYPE**。
+
+每一条接受的 support edge 必须额外存在：
+
+`decision_audit.semantic_mechanism_claim`
+
+至少包含：
+
+- `adjudication_method=evidence_grounded_semantic_review | hybrid_structured_semantic_review`
+- `claim`：一句可读的共同机制说明；
+- `shared_causal_structure=[...]`：至少两步因果/操作链；
+- `variation_boundary={...}`
+- 左右独立 `evidence_refs`
+
+同时必须：
+
+- `mechanism_atom_rules_used_for_decision=false`
+- `semantic_adjudication_independent_of_atom_rules=true`
+
+含义是：atom/关键词可以把 pair 召回，但最终是否“同机制”，必须根据左右证据和结构化因果链单独审核。
+
+新增：
+
+`qa/semantic-false-positive-audit.json`
+
+至少包含：
+
+- `status`
+- `accepted_support_edges_inspected`
+- `atom_rule_only_support_pairs=[]`
+- `unresolved_false_positive_pairs=[]`
+- `method`
+
+只有空列表才能 PASS。
+
+## 15. V1.6.6：人物功能多 projection 不得重复膨胀参考库
+
+人物功能里同一个人/同一机制可能同时投影到：
+
+- narrative_function
+- function_combination
+- function_transition
+- replaceability
+- protagonist_interface
+- relationship_function
+
+这些 unit 可以保留各自 QA 和局部视图，但如果它们跨书后产生**相同 book set + 相同 reusable mechanism invariants**，不能把它们当成多个独立“创作参考”。
+
+必须建立 projection alias 层：
+
+- 一个 canonical reusable mechanism reference 标 `reference_projection_role=PRIMARY`；
+- 其它重复视图标 `reference_projection_role=ALIAS`；
+- alias 必须写 `projection_alias_of=<semantic_reference_id>`；
+- PRIMARY 必须有稳定 `semantic_reference_id`。
+
+Cluster 与 equivalent pair 都适用。
+
+新增独立 gate：
+
+`REFERENCE_PROJECTION_DEDUP_GATE`
+
+它必须检测：
+
+- 相同 book set；
+- 相同 `mechanism|...` invariants；
+- 但来自不同 `unit_group` 的重复 projection。
+
+每组只允许一个 PRIMARY，其余全部 alias。
+
+目标是避免同一“验证→准入”机制因为 narrative_function / replaceability / protagonist_interface 等视图不同，在素材库里被误算成 5 个独立套路。
+
+## 16. V1.6.6 强制机器门
+
+V1.6.6 full recluster 必须通过：
+
+- RETRIEVAL_RECALL_AUDIT
+- KEYWORD_ONLY_CLUSTER_DECISIONS
+- SEMANTIC_PARAPHRASE_EQUIVALENCE_GATE
+- SEMANTIC_FALSE_NEGATIVE_AUDIT
+- SEMANTIC_ADJUDICATION_INDEPENDENCE_GATE
+- REFERENCE_PROJECTION_DEDUP_GATE
+- HARDCODED_CLUSTER_MEMBERSHIP
+- CLUSTER_GLOBAL_COHERENCE_GATE
+- LINKED_CONTEXT_DEDUP_GATE
+- LINEAGE_NAMESPACE_COMPATIBILITY_GATE
+
+人工审核前仍保持 Planner HOLD / HOLD / NOT_RUN。
