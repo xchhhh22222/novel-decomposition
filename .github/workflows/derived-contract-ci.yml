@@ -15,6 +15,7 @@ on:
       - "v1.6.2-supplemental-gates"
       - "v1.6.3-semantic-hold-gates"
       - "v1.6.4-semantic-recluster-reliability"
+      - "v1.6.5-semantic-equivalence-lineage"
     paths:
       - "skills/novel-dna-mining-suite/**"
       - "skills/novel-dna-orchestrator/**"
