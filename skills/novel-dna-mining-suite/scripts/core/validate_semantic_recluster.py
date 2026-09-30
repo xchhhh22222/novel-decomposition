@@ -151,11 +151,21 @@ def validate_paraphrase_review(
     if review.get("raw_text_equality_required") is not False:
         errors.append(f"{rid}: paraphrase review must state raw_text_equality_required=false")
     if review.get("method") not in {
-        "structured_operation_signature",
         "evidence_grounded_structured_paraphrase",
-        "canonical_mechanism_signature",
+        "primary_object_mechanism_alignment",
+        "controlled_structural_paraphrase",
     }:
         errors.append(f"{rid}: unsupported paraphrase review method")
+    if review.get("keyword_hint_used_as_support") is not False:
+        errors.append(f"{rid}: paraphrase review must state keyword_hint_used_as_support=false")
+    if review.get("linked_context_only_support") is not False:
+        errors.append(f"{rid}: paraphrase review must state linked_context_only_support=false")
+    if review.get("adjudication_source") not in {
+        "primary_object_semantic_review",
+        "controlled_structural_alignment",
+        "frozen_semantic_review",
+    }:
+        errors.append(f"{rid}: paraphrase review requires a non-keyword adjudication_source")
     fields = review.get("signature_fields_compared")
     if not isinstance(fields, list) or not MIN_SIGNATURE_FIELDS.issubset(set(map(str, fields))):
         errors.append(
