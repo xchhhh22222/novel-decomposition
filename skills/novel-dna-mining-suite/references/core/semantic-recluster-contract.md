@@ -234,7 +234,20 @@ python skills/novel-dna-orchestrator/scripts/validate_semantic_recluster.py <RUN
 - PLANNER_FINAL_MATERIAL_GATE=HOLD
 - ACTIVE_PROMOTION=NOT_RUN
 
-## 14. 人工审核
+## 14. Cluster ID / run identity 不得语义碰撞
+
+如果一次 auditfix 会重新计算 cluster membership，则不得让“同一个 cluster_id”在旧 reviewed source 与新结果中指向不同 member set / mechanism。
+
+例如旧 `...:CF:001` 被撤回为 equivalent-pair-only 后，新产生的另一组成员不能再次复用同一个 `...:CF:001` 并假装是同一对象。
+
+至少采用一种方式：
+
+- 新建新的 semantic run ID / output directory；或
+- cluster ID 使用稳定 semantic fingerprint，并在 membership/核心机制改变时生成新 ID。
+
+旧 run 保持只读，由 lineage 显式连接。人工报告中必须区分 `reviewed_source_cluster_id` 与 `current_cluster_id`。
+
+## 15. 人工审核
 
 机器 PASS 只表示已知算法捷径被挡住。
 
