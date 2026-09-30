@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""V1.6.5 semantic recluster reliability gate.
+"""V1.6.6 semantic recluster reliability gate.
 
 This validator independently checks the cross-book run artifacts for:
 - multi-route retrieval recall;
 - non-keyword, non-retrieval-score support;
 - paraphrase-equivalence adjudication that never requires raw operation text equality;
+- provenance isolation: keyword/lexicon atoms may retrieve candidates but cannot supply accepted semantic support;
+- primary-object support: linked context may corroborate but cannot by itself create equivalence;
 - false-negative review for structurally/semantically suspicious KEEP_SEPARATE pairs;
 - cluster-global coherence without single-link bridge chaining;
 - linked-context dedup;
@@ -193,7 +195,7 @@ def main() -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
 
-    parser = argparse.ArgumentParser(description="Validate V1.6.5 semantic recluster reliability gates.")
+    parser = argparse.ArgumentParser(description="Validate V1.6.6 semantic recluster reliability gates.")
     parser.add_argument("run_dir", type=Path, help="Cross-book recluster run directory")
     parser.add_argument("--output", type=Path, help="Optional JSON result path")
     args = parser.parse_args()
@@ -209,6 +211,7 @@ def main() -> int:
         ("lineage", "lineage-namespace-validation.json"),
         ("dedup", "linked-context-dedup-validation.json"),
         ("false_negative", "semantic-false-negative-audit.json"),
+        ("provenance", "mechanism-signature-provenance.json"),
     ):
         try:
             artifacts[key] = load_json(qa / filename)
@@ -221,6 +224,7 @@ def main() -> int:
     lineage = artifacts["lineage"]
     dedup = artifacts["dedup"]
     false_negative = artifacts["false_negative"]
+    provenance = artifacts["provenance"]
 
     nearest: list[dict[str, Any]] = []
     clusters: list[dict[str, Any]] = []
@@ -296,6 +300,28 @@ def main() -> int:
                 dims = audit.get("non_keyword_support_dimensions") or audit.get("structural_support_dimensions")
                 if not isinstance(dims, list) or not dims:
                     keyword_errors.append(f"{rid}: non-keyword structural support dimensions are required")
+                support_provenance = audit.get("support_provenance")
+                if not isinstance(support_provenance, dict):
+                    paraphrase_errors.append(f"{rid}: support_provenance is required")
+                else:
+                    if support_provenance.get("keyword_hint_used_as_support") is not False:
+                        paraphrase_errors.append(f"{rid}: keyword/lexicon hints may not supply semantic support")
+                    if support_provenance.get("linked_context_only_support") is not False:
+                        paraphrase_errors.append(f"{rid}: linked-context-only support is forbidden")
+                    primary = support_provenance.get("primary_unit_support")
+                    if not isinstance(primary, dict):
+                        paraphrase_errors.append(f"{rid}: primary_unit_support is required")
+                    else:
+                        for side in ("left", "right"):
+                            refs = primary.get(side)
+                            if not isinstance(refs, list) or not refs:
+                                paraphrase_errors.append(f"{rid}: primary_unit_support.{side} must be non-empty")
+                    if support_provenance.get("semantic_adjudication_method") not in {
+                        "evidence_grounded_primary_object_paraphrase",
+                        "controlled_structural_alignment",
+                        "frozen_semantic_review",
+                    }:
+                        paraphrase_errors.append(f"{rid}: unsupported semantic_adjudication_method")
             paraphrase_errors.extend(validate_paraphrase_review(rid, decision, row, require_review=True))
         elif decision in KEEP_SEPARATE_DECISIONS and suspicious:
             suspicious_rejected += 1
@@ -326,6 +352,22 @@ def main() -> int:
     if candidate_count != suspicious_rejected:
         false_negative_errors.append(
             f"suspicious_rejected_pair_count mismatch: artifact={candidate_count}, actual={suspicious_rejected}"
+        )
+
+    provenance_errors: list[str] = []
+    if provenance.get("status") != "PASS":
+        provenance_errors.append("mechanism-signature provenance audit status must be PASS")
+    if provenance.get("keyword_hints_used_for_support") != []:
+        provenance_errors.append("keyword_hints_used_for_support must be an explicit empty list")
+    if provenance.get("linked_context_only_support_edges") != []:
+        provenance_errors.append("linked_context_only_support_edges must be an explicit empty list")
+    if provenance.get("accepted_support_edge_count") != len(accepted_edges):
+        provenance_errors.append(
+            f"accepted_support_edge_count mismatch: artifact={provenance.get('accepted_support_edge_count')}, actual={len(accepted_edges)}"
+        )
+    if provenance.get("primary_object_supported_edge_count") != len(accepted_edges):
+        provenance_errors.append(
+            "every accepted support edge must have bilateral primary-object support"
         )
 
     equivalent_pair_errors: list[str] = []
@@ -467,6 +509,25 @@ def main() -> int:
             basis = row.get("resolution_basis")
             if not isinstance(basis, list) or not basis:
                 lineage_errors.append(f"{rid}: RESOLVED migration requires resolution_basis")
+            by_id = {
+                str(item.get("unit_id")): item
+                for item in candidates
+                if isinstance(item, dict) and item.get("unit_id")
+            }
+            for unit_id in map(str, resolved):
+                item = by_id.get(unit_id)
+                if not item:
+                    continue
+                link_basis = set(map(str, item.get("resolution_basis") or []))
+                exact_identity = bool(link_basis.intersection({"exact_unit_identity", "source_internal_identity"}))
+                evidence_and_semantics = {
+                    "book_scoped_evidence_overlap",
+                    "mechanism_signature_correspondence",
+                }.issubset(link_basis)
+                if not (exact_identity or evidence_and_semantics):
+                    lineage_errors.append(
+                        f"{rid}:{unit_id}: resolved lineage link requires exact internal identity or BOTH evidence overlap and mechanism-signature correspondence; broad source_record/book match is candidate generation only"
+                    )
         if len(candidates) > 1 and row.get("candidate_multiplicity_blocked_resolution") is True:
             lineage_errors.append(f"{rid}: multiple candidates may not block resolution by themselves")
 
@@ -477,6 +538,7 @@ def main() -> int:
         + keyword_errors
         + paraphrase_errors
         + false_negative_errors
+        + provenance_errors
         + equivalent_pair_errors
         + cluster_errors
         + dedup_errors
@@ -485,7 +547,7 @@ def main() -> int:
     )
 
     result = {
-        "gate": "SEMANTIC_RECLUSTER_RELIABILITY_V1_6_5",
+        "gate": "SEMANTIC_RECLUSTER_RELIABILITY_V1_6_6",
         "status": "PASS" if not all_errors else "FAIL",
         "checks": {
             "ARTIFACT_PARSE": {"status": gate(file_errors + parse_errors), "errors": file_errors + parse_errors},
@@ -504,6 +566,16 @@ def main() -> int:
                 "inspected_support_edges": len(accepted_edges),
                 "equivalent_pair_records": len(equivalent_pairs),
                 "method": "support must be grounded in an evidence-backed structured mechanism signature; raw operation-text equality is forbidden as a required condition",
+            },
+            "MECHANISM_SIGNATURE_PROVENANCE_GATE": {
+                "status": gate(provenance_errors),
+                "count": len(provenance_errors),
+                "violations": provenance_errors,
+                "method": "accepted support must be grounded in bilateral primary objects; keyword/lexicon atoms and linked context are retrieval/corroboration only",
+            },
+            "LINKED_CONTEXT_SUPPORT_ISOLATION_GATE": {
+                "status": gate([e for e in provenance_errors if "linked" in e.lower()] + [e for e in paraphrase_errors if "linked-context" in e.lower()]),
+                "method": "linked context may corroborate a primary-unit mechanism but may not create a support edge by itself",
             },
             "SEMANTIC_FALSE_NEGATIVE_AUDIT": {
                 "status": gate(false_negative_errors),
