@@ -16,6 +16,7 @@ on:
       - "v1.6.3-semantic-hold-gates"
       - "v1.6.4-semantic-recluster-reliability"
       - "v1.6.5-semantic-equivalence-lineage"
+      - "v1.6.6-semantic-adjudication-reference-dedup"
     paths:
       - "skills/novel-dna-mining-suite/**"
       - "skills/novel-dna-orchestrator/**"
