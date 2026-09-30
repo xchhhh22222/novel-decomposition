@@ -15,7 +15,8 @@
 
 1. lexical retrieval：字符 bigram / token cosine 等只负责召回；
 2. controlled-structural blocking：共享受控结构事实、枚举字段、schema-compatible slots；
-3. operation/structural blocking：共享输入、处理链、角色接口、权限、目标、输出、因果链、失败边界等运行结构。
+3. operation/structural blocking：共享输入、处理链、角色接口、权限、目标、输出、因果链、失败边界等运行结构；
+4. mechanism-signature blocking：先把 unit 证据抽成结构化 mechanism signature，再按操作链/目标/效果等核心槽位召回不同措辞的疑似等价 pair。
 
 默认 lexical top-k 不低于 8；若专项规模允许，应 exhaustive 扫描全部跨书 schema-compatible pair 的结构 blocking。
 
