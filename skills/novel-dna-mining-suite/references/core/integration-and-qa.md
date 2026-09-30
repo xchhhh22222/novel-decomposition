@@ -197,3 +197,10 @@ python scripts/core/validate_supplemental_batch.py \
 - qa_status=PASS 才可进入 nearest_neighbor/cluster；
 - qa_status=HOLD 只保留 inventory；
 - 某需要重聚类 view 的 eligible=0 时 full_recluster_ready=false。
+
+
+## V1.6.4 Semantic Reclustering Reliability Gate
+
+任何 G4 full recluster 在候选输出后、人工审核前，必须读取 `semantic-recluster-contract.md` 并运行 `validate_semantic_recluster.py`。lexical retrieval 只能负责召回，不能用 tiny top-k 覆盖全空间；MERGE/SUBTYPE 需要独立非关键词结构支持；cluster 必须有全成员共同的非泛化 invariant；3+ member cluster 必须做 bridge/chaining audit；linked context 必须去重；lineage 跨 ID namespace 时必须显式 migration map。
+
+若 RETRIEVAL_RECALL_AUDIT、KEYWORD_ONLY_CLUSTER_DECISIONS、HARDCODED_CLUSTER_MEMBERSHIP、CLUSTER_GLOBAL_COHERENCE_GATE、LINKED_CONTEXT_DEDUP_GATE 或 LINEAGE_NAMESPACE_COMPATIBILITY_GATE 任一失败，G4 不得 PASS，Planner gates 保持 HOLD，active promotion 不运行。
