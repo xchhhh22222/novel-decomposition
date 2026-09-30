@@ -204,3 +204,17 @@ python scripts/core/validate_supplemental_batch.py \
 任何 G4 full recluster 在候选输出后、人工审核前，必须读取 `semantic-recluster-contract.md` 并运行 `validate_semantic_recluster.py`。lexical retrieval 只能负责召回，不能用 tiny top-k 覆盖全空间；MERGE/SUBTYPE 需要独立非关键词结构支持；cluster 必须有全成员共同的非泛化 invariant；3+ member cluster 必须做 bridge/chaining audit；linked context 必须去重；lineage 跨 ID namespace 时必须显式 migration map。
 
 若 RETRIEVAL_RECALL_AUDIT、KEYWORD_ONLY_CLUSTER_DECISIONS、HARDCODED_CLUSTER_MEMBERSHIP、CLUSTER_GLOBAL_COHERENCE_GATE、LINKED_CONTEXT_DEDUP_GATE 或 LINEAGE_NAMESPACE_COMPATIBILITY_GATE 任一失败，G4 不得 PASS，Planner gates 保持 HOLD，active promotion 不运行。
+
+
+## V1.6.5 Paraphrase Equivalence / False-Negative Gate
+
+V1.6.4 只防“乱合并”还不够；V1.6.5 同时防“过度拆散”。
+
+- 禁止把 `actual_operation` / `relational_operation` / `combined_operation` 的 raw text 完全一致作为 MERGE/SUBTYPE 必要条件。
+- 所有 controlled/operation structural near-match 以及 semantic-concept near-match，都必须进入 evidence-grounded structured mechanism signature 审核。
+- KEEP_SEPARATE 必须写出具体 semantic difference / critical conflict；若 paraphrase review 认为 EQUIVALENT/SUBTYPE，则不得继续 KEEP_SEPARATE。
+- 接受的 support edge 同步写 `candidate/equivalent_pairs.jsonl`，保留共同机制、左右变体和独立 evidence，供 Planner/创作层人工选择参考；pair-level 等价不强制一定组成 cluster。
+- 新增 `qa/semantic-false-negative-audit.json`；`potential_equivalent_rejections` 和 `unresolved_false_negative_pairs` 必须为空。
+- historical whole-record → fine-unit lineage 必须支持 1→N；候选多于一个时继续按 source locator / internal identity / evidence / mechanism signature 消歧，不能因为 `len(candidates)>1` 直接 HOLD。
+
+上述任一 gate FAIL 时 G4 不得通过，Planner 继续 HOLD，active promotion 不运行。
