@@ -1,6 +1,6 @@
 ---
 name: novel-dna-mining-suite
-description: V1.6.6 小说 DNA 拆解套件：新增 mechanism-signature provenance 与 linked-context support isolation；关键词/词典 atom 只做召回，primary object 才能供应语义支持，lineage resolved link 也必须有成员级语义证据。
+description: V1.6.6 小说 DNA 拆解套件：新增 semantic adjudication independence 与 projection reference dedup；关键词 atom 只能召回，不能直接决定 support。
 ---
 
 # 小说 DNA 拆解套件 V1.6.6
@@ -25,7 +25,7 @@ description: V1.6.6 小说 DNA 拆解套件：新增 mechanism-signature provena
 - V1.6.2 批次硬门：读取 `references/core/supplemental-batch-gates.md`，运行 `python scripts/core/validate_supplemental_batch.py --root <material-library-root> --batch-dir batch/<BATCH_ID> --books <BOOK_ID,...>`；必须对账 route/output、manifest/batch status，并输出 cluster eligible/held IDs。
 - V1.6.3 Combat 语义门：存在 combat_expression_assets 时运行 `python scripts/core/validate_combat_semantics.py --root <material-library-root> --books <BOOK_ID,...>`；UNKNOWN 只能写字面值 `UNKNOWN`，PASS 核心字段不得 UNKNOWN，且 cost/limit/counterplay 至少一项有证据。
 - V1.6.3 Batch Summary 门：批次 validator 同时核对 `derived_hold_records` 与真实 HOLD 总数、`derived_totals` 与真实 records；陈旧汇总直接 FAIL。
-- V1.6.6 Semantic Reclustering 门：任何 full recluster 必须读取 `references/core/semantic-recluster-contract.md`。自动关键词/词典 mechanism atom 只能作为 retrieval hint；MERGE/SUBTYPE 必须有 bilateral primary-object support provenance，linked context 只能 corroborate。接受 pair 继续写 `candidate/equivalent_pairs.jsonl`；lineage 的 source_record/book match 只做候选生成，resolved link 必须有 exact internal identity 或 evidence overlap + mechanism correspondence。运行 `python scripts/core/validate_semantic_recluster.py <RUN_DIR>`，十项 gate 全 PASS 后才可交人工审核。
+- V1.6.6 Semantic Reclustering 门：任何 full recluster 必须读取 `references/core/semantic-recluster-contract.md`。机制 atom/substring 只负责召回；MERGE/SUBTYPE 必须有独立 evidence-grounded semantic mechanism claim。相同机制在 narrative_function / replaceability / protagonist_interface 等不同 projection 中重复出现时，必须一条 PRIMARY reusable reference + 其它 ALIAS；运行 `python scripts/core/validate_semantic_recluster.py <RUN_DIR>`，十项 gate 全 PASS 后才可交人工审核。
 - V1.5.1 语义门：章节情绪结构校验后运行包内 `scripts/specialists/chapter-emotion-miner/audit_semantics.py`；剧情线运行 `audit_recall.py`；剧情机制运行 `audit_depth.py`；manifest 落盘前运行 `scripts/core/validate_module_status_consistency.py`。\n- V1.5.2 语义加固：RAW_ENDING 过滤纯标点/过短尾句；模板骨架支持从人物卡、人物功能或显式实体表读取已知中文实体并归一化为 `<ENTITY>`，避免仅替换人名绕过模板检测。
 
 ## 统一不变量
