@@ -2,9 +2,9 @@
 
 一套用于长篇网文拆解、专项提取、证据审计、素材迁移、开书组装、正文创作与连续性维护的 Codex Skills 与工作流。
 
-当前版本：**拆解 V1.6.3**
+当前版本：**拆解 V1.6.4**
 
-## V1.6.3 的核心思路
+## V1.6.4 的核心思路
 
 完整拆解与可迁移素材分层保存：
 
@@ -31,6 +31,7 @@ DNA 候选库 / 原子套路卡 / 开书母型
 - **V1.6.1 加固 Derived Material Contract**：ability / dungeon / relationship / charismatic antagonist / combat expression 五类补充素材统一为 schema_version=2，统一 `DA:<VIEW>:<BOOK_ID>:<NNN>` ID、字段白名单、精确章节 evidence、manifest 计数和 dedicated validator；历史别名、章节区间 evidence、combat 双层数组会直接 FAIL。
 - **V1.6.2 加固 Supplemental 批次门**：新增 route/output 一致性、manifest/batch completion status 一致性、cluster eligibility 三个机器 gate；受控 derived 只有 `qa_status=PASS` 才能进入 nearest_neighbor/cluster，HOLD 只留 inventory；某 view 全部 HOLD 时禁止宣称 full recluster ready。
 - **V1.6.3 加固语义 HOLD 门**：未知字段必须严格写 `UNKNOWN`，原因进入 `unknowns[]`；combat PASS 的核心机制字段不得 UNKNOWN，且 `cost/limit/counterplay` 至少一项有证据；禁止从“原文没写”反推“无代价/无反制/无限制”。批次收尾还会校验 `derived_hold_records` 和 `derived_totals`，避免旧统计残留。
+- **V1.6.4 加固跨书语义重聚类**：禁止把 lexical top-2 当完整候选空间；候选召回必须联合 lexical、受控结构 blocking 和 operation/structural blocking，并做 expanded-K recall audit。MERGE/SUBTYPE 必须有独立于关键词的结构证据；三成员以上簇必须通过全局共同不变量与 bridge/chaining 审核；linked context 先去重；历史 cluster 与 fine-grained unit 的 lineage 必须通过显式 migration map，禁止跨命名空间 raw-ID intersection。新增独立 `validate_semantic_recluster.py` 机器门。
 - 拆书层只还原单书来源事实；创造层允许跨书选择组件重新组合，但组合结果必须标为新书候选，不能写回来源记录。
 - 所有结论必须回指章节或已审核证据，模型记忆不能写成来源。
 
