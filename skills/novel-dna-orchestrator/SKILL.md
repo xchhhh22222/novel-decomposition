@@ -1,9 +1,9 @@
 ---
 name: novel-dna-orchestrator
-description: V1.6.5 小说 DNA 中控：在 V1.6.4 基础上新增语义同义改写等价审计与 1→N lineage 映射；禁止 raw actual_operation 文本相等成为必要条件，并输出可供创作复用的 equivalent pairs。
+description: V1.6.6 小说 DNA 中控：在 V1.6.5 基础上禁止关键词 atom 规则直接充当语义裁决，并新增跨 unit-group projection alias 去重，避免同一机制重复膨胀创作参考。
 ---
 
-# 小说 DNA 拆书总控 V1.6.5
+# 小说 DNA 拆书总控 V1.6.6
 
 ## 目标
 
@@ -36,7 +36,7 @@ V1.6 的核心变化：**不是每一本来源都默认完整跑 01—09。**
 - **V1.6.2 批次一致性门**：读取 [references/supplemental-batch-gates.md](references/supplemental-batch-gates.md)，运行 `python scripts/validate_supplemental_batch.py --root <material-library-root> --batch-dir batch/<BATCH_ID> --books <BOOK_ID,...>`；route/output、manifest/batch status、cluster eligibility 任一不可解释时禁止聚类。
 - **V1.6.3 Combat 语义门**：存在 `combat_expression_assets` 时，额外运行 `python scripts/validate_combat_semantics.py --root <material-library-root> --books <BOOK_ID,...>`；UNKNOWN 必须是字面值，PASS 核心字段不得 UNKNOWN，且 cost/limit/counterplay 至少一项有证据。
 - **V1.6.3 Batch Summary 门**：`validate_supplemental_batch.py` 还必须对账 `batch-status.derived_hold_records` 与五类 controlled derived 的真实 HOLD 总数，并核对 `derived_totals`。
-- **V1.6.5 跨书语义重聚类门**：任何 full recluster 必须读取 [references/semantic-recluster-contract.md](references/semantic-recluster-contract.md)。除 V1.6.4 的多路召回、cluster-global coherence、linked-context dedup 外，新增 paraphrase-equivalence 与 semantic false-negative gate：禁止把 `actual_operation` 原文完全相同当作等价必要条件；所有结构/operation 疑似近邻必须用 evidence-grounded mechanism signature 做同义改写等价审核。历史 whole-record → fine-unit lineage 必须支持 1→N migration。运行 `python scripts/validate_semantic_recluster.py <run-dir>`，八项 gate 全 PASS 后才可交人工审核。
+- **V1.6.6 跨书语义重聚类门**：任何 full recluster 必须读取 [references/semantic-recluster-contract.md](references/semantic-recluster-contract.md)。关键词/atom/signature 规则只可用于召回与描述；接受 MERGE/SUBTYPE 必须额外有 evidence-grounded semantic mechanism claim，并明确 `mechanism_atom_rules_used_for_decision=false`。人物功能等多 projection 若产生相同 book set + reusable mechanism invariants，必须一主多 alias，禁止重复算作独立创作参考。运行 `python scripts/validate_semantic_recluster.py <run-dir>`，十项 gate 全 PASS 后才可交人工审核。
 - **聚类资格**：五类 controlled derived record 只有 `qa_status=PASS` 才能进入 nearest_neighbor / KEEP_SEPARATE / cluster；`qa_status=HOLD` 只保留 inventory。若某个需要重聚类的 view `eligible=0 && records>0`，则 `full_recluster_ready=false`。
 - **修复历史 V1.6 supplemental 输出**：读取 [references/derived-normalization-playbook.md](references/derived-normalization-playbook.md)；默认只做 normalization，不重拆正文，不新增资产。
 - **Combat HOLD 补强/收口**：读取 [references/combat-evidence-backfill.md](references/combat-evidence-backfill.md)；Evidence Backfill 与 Semantic Refinement 必须分两阶段，不能把“找到更多证据”直接等同于 PASS。
@@ -84,7 +84,7 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 8. 市场等级、研究价值、拆解范围、证据置信度是四个不同字段；缺少榜单数据时使用 `UNGRADED`，不得以拆解深度冒充市场评级。
 9. 写入前说明准确路径、操作类型、内容范围和覆盖风险并取得授权。总索引默认只读预览；带 `--output` 才落盘。
 
-## 总控工作流 V1.6.5
+## 总控工作流 V1.6.6
 
 1. **盘点来源**：列出新 TXT、现有 BOOK_ID、重复来源和源文范围。
 2. **路由**：为每本来源生成 source_route，判断 FULL_DNA / SUPPLEMENTAL_MATERIAL、purpose、target_specialties、derived_views、excluded_specialties。
@@ -101,7 +101,7 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 11. **单源完成判定**：
    - FULL_DNA → COMPLETE_SINGLE_BOOK；
    - SUPPLEMENTAL → COMPLETE_SUPPLEMENTAL_SOURCE / _WITH_HOLDS / BLOCKED。
-12. **批次聚类**：等该批 supplemental 来源完成后，只对受影响专项开启新的 full recluster；禁止 append 到旧 cluster。任何 recluster 必须遵守 V1.6.5 `semantic-recluster-contract.md`：多路召回、expanded-K、结构化 mechanism signature、paraphrase-equivalence、false-negative audit、equivalent-pair 参考池、全簇共同不变量、bridge/chaining 审计、linked-context 去重与 1→N lineage migration map。
+12. **批次聚类**：等该批 supplemental 来源完成后，只对受影响专项开启新的 full recluster；禁止 append 到旧 cluster。任何 recluster 必须遵守 V1.6.6 `semantic-recluster-contract.md`：多路召回、expanded-K、结构化 mechanism signature、paraphrase-equivalence、false-negative audit、equivalent-pair 参考池、全簇共同不变量、bridge/chaining 审计、linked-context 去重与 1→N lineage migration map。
 13. **lineage**：新 run 与上一历史 run 比较 stable / split / merge / moved / disappeared / new；若历史 member ID 与新 fine-grained unit ID 不在同一命名空间，必须先生成显式 historical-member → fine-unit migration map，支持一个 historical member 对应多个 fine units；禁止 raw ID intersection，也禁止因候选多于 1 个就自动 unresolved。
 14. **总索引**：区分 primary_full_dna 与 supplemental_material；candidate 与 active 继续分层。
 15. **正式入库**：只有单独 promotion 流程可以写 active。
@@ -113,7 +113,7 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 - 同一本书的阶段聚合必须等待对应章节事实完成；横向聚类必须等待全部目标书的同类专项包完成。
 - 失败分片只重跑其负责范围，不重做已通过的书籍。
 
-## 完成标准 V1.6.5
+## 完成标准 V1.6.6
 
 ### FULL_DNA
 - 明确章节范围、QA、证据置信度；
