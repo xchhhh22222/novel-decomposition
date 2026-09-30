@@ -150,3 +150,10 @@ SOURCE_ROUTING_GATE_V1_6_1
 controlled derived 的 HOLD 不属于聚类输入。聚类执行器必须使用 machine gate 给出的 `eligible_record_ids`；不能从目录全量读取后再口头声称“已过滤”。
 
 若某个需要重聚类的 controlled view 全部 HOLD，`full_recluster_ready=false`，不得宣称完整 supplemental full recluster 已准备完成。
+
+
+## V1.6.4 Semantic Reclustering Reliability Gate
+
+任何 G4 full recluster 在候选输出后、人工审核前，必须读取 `semantic-recluster-contract.md` 并运行 `validate_semantic_recluster.py`。lexical retrieval 只能负责召回，不能用 tiny top-k 覆盖全空间；MERGE/SUBTYPE 需要独立非关键词结构支持；cluster 必须有全成员共同的非泛化 invariant；3+ member cluster 必须做 bridge/chaining audit；linked context 必须去重；lineage 跨 ID namespace 时必须显式 migration map。
+
+若 RETRIEVAL_RECALL_AUDIT、KEYWORD_ONLY_CLUSTER_DECISIONS、HARDCODED_CLUSTER_MEMBERSHIP、CLUSTER_GLOBAL_COHERENCE_GATE、LINKED_CONTEXT_DEDUP_GATE 或 LINEAGE_NAMESPACE_COMPATIBILITY_GATE 任一失败，G4 不得 PASS，Planner gates 保持 HOLD，active promotion 不运行。
