@@ -47,7 +47,7 @@ def build_valid_run(root: Path) -> None:
     qa = root / "qa"
     write_json(qa / "retrieval-recall-audit.json", {
         "status": "PASS",
-        "candidate_generation_modes": ["lexical", "controlled_structural", "operation_structural"],
+        "candidate_generation_modes": ["lexical", "controlled_structural", "operation_structural", "mechanism_signature"],
         "lexical_top_k": 8,
         "expanded_lexical_top_k": 16,
         "unresolved_missed_support_edges": [],
