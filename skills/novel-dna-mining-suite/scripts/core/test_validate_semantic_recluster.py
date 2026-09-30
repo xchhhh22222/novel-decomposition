@@ -25,7 +25,10 @@ def write_jsonl(path: Path, rows: list[dict]) -> None:
 def support_review(result: str = "SUBTYPE") -> dict:
     return {
         "reviewed": True,
-        "method": "structured_operation_signature",
+        "method": "evidence_grounded_structured_paraphrase",
+        "adjudication_source": "primary_object_semantic_review",
+        "keyword_hint_used_as_support": False,
+        "linked_context_only_support": False,
         "raw_text_equality_required": False,
         "signature_fields_compared": [
             "actor_or_role",
@@ -52,6 +55,14 @@ def build_valid_run(root: Path) -> None:
         "expanded_lexical_top_k": 16,
         "unresolved_missed_support_edges": [],
         "unexplained_uncovered_units": [],
+    })
+    write_json(qa / "mechanism-signature-provenance.json", {
+        "status": "PASS",
+        "accepted_support_edge_count": 1,
+        "primary_object_supported_edge_count": 1,
+        "keyword_hints_used_for_support": [],
+        "linked_context_only_support_edges": [],
+        "method": "keyword/lexicon atoms retrieve only; accepted support is bilateral primary-object evidence",
     })
     write_json(qa / "semantic-false-negative-audit.json", {
         "status": "PASS",
@@ -89,8 +100,8 @@ def build_valid_run(root: Path) -> None:
         "record_id": "MIG:001",
         "historical_member_id": "OLD:BOOK_001",
         "candidate_fine_units": [
-            {"unit_id": "U:A"},
-            {"unit_id": "U:B"},
+            {"unit_id": "U:A", "resolution_basis": ["book_scoped_evidence_overlap", "mechanism_signature_correspondence"]},
+            {"unit_id": "U:B", "resolution_basis": ["source_internal_identity"]},
         ],
         "resolved_fine_unit_ids": ["U:A", "U:B"],
         "migration_status": "RESOLVED",
@@ -114,6 +125,16 @@ def build_valid_run(root: Path) -> None:
             "non_keyword_support_dimensions": ["protagonist_interface"],
             "raw_operation_text_equality_required": False,
             "exact_raw_text_match_used_as_required_condition": False,
+            "support_provenance": {
+                "keyword_hint_used_as_support": False,
+                "linked_context_only_support": False,
+                "semantic_adjudication_method": "evidence_grounded_primary_object_paraphrase",
+                "primary_unit_support": {
+                    "left": ["U:A#primary.actual_operation", "EV:A"],
+                    "right": ["U:B#primary.actual_operation", "EV:B"],
+                },
+                "corroborating_linked_context": {"left": [], "right": []},
+            },
             "paraphrase_equivalence_review": support_review(),
         },
     }])
@@ -179,6 +200,42 @@ class SemanticReclusterValidatorTests(unittest.TestCase):
             code, result = self.run_validator(run)
             self.assertNotEqual(code, 0)
             self.assertEqual(result["checks"]["RETRIEVAL_RECALL_AUDIT"]["status"], "FAIL")
+
+    def test_keyword_hint_cannot_supply_support(self):
+        with tempfile.TemporaryDirectory() as td:
+            run = Path(td) / "run"
+            build_valid_run(run)
+            p = run / "05_人物功能" / "candidate" / "nearest_neighbors.jsonl"
+            row = json.loads(p.read_text(encoding="utf-8").strip())
+            row["decision_audit"]["support_provenance"]["keyword_hint_used_as_support"] = True
+            write_jsonl(p, [row])
+            code, result = self.run_validator(run)
+            self.assertNotEqual(code, 0)
+            self.assertEqual(result["checks"]["SEMANTIC_PARAPHRASE_EQUIVALENCE_GATE"]["status"], "FAIL")
+
+    def test_linked_context_only_support_fails(self):
+        with tempfile.TemporaryDirectory() as td:
+            run = Path(td) / "run"
+            build_valid_run(run)
+            p = run / "05_人物功能" / "candidate" / "nearest_neighbors.jsonl"
+            row = json.loads(p.read_text(encoding="utf-8").strip())
+            row["decision_audit"]["support_provenance"]["linked_context_only_support"] = True
+            write_jsonl(p, [row])
+            code, result = self.run_validator(run)
+            self.assertNotEqual(code, 0)
+            self.assertEqual(result["checks"]["LINKED_CONTEXT_SUPPORT_ISOLATION_GATE"]["status"], "FAIL")
+
+    def test_provenance_artifact_must_match_support_count(self):
+        with tempfile.TemporaryDirectory() as td:
+            run = Path(td) / "run"
+            build_valid_run(run)
+            p = run / "qa" / "mechanism-signature-provenance.json"
+            data = json.loads(p.read_text(encoding="utf-8"))
+            data["primary_object_supported_edge_count"] = 0
+            write_json(p, data)
+            code, result = self.run_validator(run)
+            self.assertNotEqual(code, 0)
+            self.assertEqual(result["checks"]["MECHANISM_SIGNATURE_PROVENANCE_GATE"]["status"], "FAIL")
 
     def test_raw_text_equality_requirement_fails(self):
         with tempfile.TemporaryDirectory() as td:
@@ -262,6 +319,18 @@ class SemanticReclusterValidatorTests(unittest.TestCase):
             code, result = self.run_validator(run)
             self.assertNotEqual(code, 0)
             self.assertEqual(result["checks"]["SEMANTIC_FALSE_NEGATIVE_AUDIT"]["status"], "FAIL")
+
+    def test_lineage_source_record_plus_evidence_alone_is_not_enough(self):
+        with tempfile.TemporaryDirectory() as td:
+            run = Path(td) / "run"
+            build_valid_run(run)
+            p = run / "10_总索引" / "historical-member-migration-map.jsonl"
+            row = json.loads(p.read_text(encoding="utf-8").strip())
+            row["candidate_fine_units"][0]["resolution_basis"] = ["source_record_id", "book_scoped_evidence_overlap"]
+            write_jsonl(p, [row])
+            code, result = self.run_validator(run)
+            self.assertNotEqual(code, 0)
+            self.assertEqual(result["checks"]["LINEAGE_NAMESPACE_COMPATIBILITY_GATE"]["status"], "FAIL")
 
     def test_cluster_without_global_invariant_fails(self):
         with tempfile.TemporaryDirectory() as td:
