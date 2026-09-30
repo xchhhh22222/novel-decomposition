@@ -26,7 +26,7 @@ from typing import Any, Iterable
 SUPPORT_DECISIONS = {"MERGE", "SUBTYPE", "merge_candidate", "subtype_candidate"}
 KEEP_SEPARATE_DECISIONS = {"KEEP_SEPARATE", "keep_separate"}
 HOLD_DECISIONS = {"HOLD", "hold"}
-REQUIRED_RETRIEVAL_MODES = {"lexical", "controlled_structural", "operation_structural"}
+REQUIRED_RETRIEVAL_MODES = {"lexical", "controlled_structural", "operation_structural", "mechanism_signature"}
 PARAPHRASE_RESULTS_SUPPORT = {"EQUIVALENT", "SUBTYPE", "MERGE", "MECHANISM_EQUIVALENT"}
 PARAPHRASE_RESULTS_REJECT = {"NOT_EQUIVALENT", "DIFFERENT"}
 PARAPHRASE_RESULTS_HOLD = {"HOLD", "UNRESOLVED"}
