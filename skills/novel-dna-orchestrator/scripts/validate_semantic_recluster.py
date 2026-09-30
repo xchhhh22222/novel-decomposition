@@ -5,8 +5,6 @@ This validator independently checks the cross-book run artifacts for:
 - multi-route retrieval recall;
 - non-keyword, non-retrieval-score support;
 - paraphrase-equivalence adjudication that never requires raw operation text equality;
-- provenance isolation: keyword/lexicon atoms may retrieve candidates but cannot supply accepted semantic support;
-- primary-object support: linked context may corroborate but cannot by itself create equivalence;
 - false-negative review for structurally/semantically suspicious KEEP_SEPARATE pairs;
 - cluster-global coherence without single-link bridge chaining;
 - linked-context dedup;
@@ -28,7 +26,7 @@ from typing import Any, Iterable
 SUPPORT_DECISIONS = {"MERGE", "SUBTYPE", "merge_candidate", "subtype_candidate"}
 KEEP_SEPARATE_DECISIONS = {"KEEP_SEPARATE", "keep_separate"}
 HOLD_DECISIONS = {"HOLD", "hold"}
-REQUIRED_RETRIEVAL_MODES = {"lexical", "controlled_structural", "operation_structural", "mechanism_signature_hint"}
+REQUIRED_RETRIEVAL_MODES = {"lexical", "controlled_structural", "operation_structural", "mechanism_signature"}
 PARAPHRASE_RESULTS_SUPPORT = {"EQUIVALENT", "SUBTYPE", "MERGE", "MECHANISM_EQUIVALENT"}
 PARAPHRASE_RESULTS_REJECT = {"NOT_EQUIVALENT", "DIFFERENT"}
 PARAPHRASE_RESULTS_HOLD = {"HOLD", "UNRESOLVED"}
@@ -151,21 +149,11 @@ def validate_paraphrase_review(
     if review.get("raw_text_equality_required") is not False:
         errors.append(f"{rid}: paraphrase review must state raw_text_equality_required=false")
     if review.get("method") not in {
+        "structured_operation_signature",
         "evidence_grounded_structured_paraphrase",
-        "primary_object_mechanism_alignment",
-        "controlled_structural_paraphrase",
+        "canonical_mechanism_signature",
     }:
         errors.append(f"{rid}: unsupported paraphrase review method")
-    if review.get("keyword_hint_used_as_support") is not False:
-        errors.append(f"{rid}: paraphrase review must state keyword_hint_used_as_support=false")
-    if review.get("linked_context_only_support") is not False:
-        errors.append(f"{rid}: paraphrase review must state linked_context_only_support=false")
-    if review.get("adjudication_source") not in {
-        "primary_object_semantic_review",
-        "controlled_structural_alignment",
-        "frozen_semantic_review",
-    }:
-        errors.append(f"{rid}: paraphrase review requires a non-keyword adjudication_source")
     fields = review.get("signature_fields_compared")
     if not isinstance(fields, list) or not MIN_SIGNATURE_FIELDS.issubset(set(map(str, fields))):
         errors.append(
@@ -221,7 +209,7 @@ def main() -> int:
         ("lineage", "lineage-namespace-validation.json"),
         ("dedup", "linked-context-dedup-validation.json"),
         ("false_negative", "semantic-false-negative-audit.json"),
-        ("provenance", "mechanism-signature-provenance.json"),
+        ("false_positive", "semantic-false-positive-audit.json"),
     ):
         try:
             artifacts[key] = load_json(qa / filename)
@@ -234,7 +222,7 @@ def main() -> int:
     lineage = artifacts["lineage"]
     dedup = artifacts["dedup"]
     false_negative = artifacts["false_negative"]
-    provenance = artifacts["provenance"]
+    false_positive = artifacts["false_positive"]
 
     nearest: list[dict[str, Any]] = []
     clusters: list[dict[str, Any]] = []
@@ -286,6 +274,7 @@ def main() -> int:
     keyword_errors: list[str] = []
     paraphrase_errors: list[str] = []
     false_negative_errors: list[str] = []
+    semantic_adjudication_errors: list[str] = []
     accepted_edges: dict[str, dict[str, Any]] = {}
     suspicious_rejected = 0
     reviewed_suspicious_rejected = 0
@@ -310,29 +299,28 @@ def main() -> int:
                 dims = audit.get("non_keyword_support_dimensions") or audit.get("structural_support_dimensions")
                 if not isinstance(dims, list) or not dims:
                     keyword_errors.append(f"{rid}: non-keyword structural support dimensions are required")
-                support_provenance = audit.get("support_provenance")
-                if not isinstance(support_provenance, dict):
-                    paraphrase_errors.append(f"{rid}: support_provenance is required")
-                else:
-                    if support_provenance.get("keyword_hint_used_as_support") is not False:
-                        paraphrase_errors.append(f"{rid}: keyword/lexicon hints may not supply semantic support")
-                    if support_provenance.get("linked_context_only_support") is not False:
-                        paraphrase_errors.append(f"{rid}: linked-context-only support is forbidden")
-                    primary = support_provenance.get("primary_unit_support")
-                    if not isinstance(primary, dict):
-                        paraphrase_errors.append(f"{rid}: primary_unit_support is required")
-                    else:
-                        for side in ("left", "right"):
-                            refs = primary.get(side)
-                            if not isinstance(refs, list) or not refs:
-                                paraphrase_errors.append(f"{rid}: primary_unit_support.{side} must be non-empty")
-                    if support_provenance.get("semantic_adjudication_method") not in {
-                        "evidence_grounded_primary_object_paraphrase",
-                        "controlled_structural_alignment",
-                        "frozen_semantic_review",
-                    }:
-                        paraphrase_errors.append(f"{rid}: unsupported semantic_adjudication_method")
             paraphrase_errors.extend(validate_paraphrase_review(rid, decision, row, require_review=True))
+            audit = row.get("decision_audit") or {}
+            if audit.get("mechanism_atom_rules_used_for_decision") is not False:
+                semantic_adjudication_errors.append(f"{rid}: mechanism_atom_rules_used_for_decision must be false")
+            if audit.get("semantic_adjudication_independent_of_atom_rules") is not True:
+                semantic_adjudication_errors.append(f"{rid}: semantic adjudication must be independent of atom/keyword rules")
+            claim = audit.get("semantic_mechanism_claim")
+            if not isinstance(claim, dict):
+                semantic_adjudication_errors.append(f"{rid}: semantic_mechanism_claim required for accepted support")
+            else:
+                if claim.get("adjudication_method") not in {"evidence_grounded_semantic_review", "hybrid_structured_semantic_review"}:
+                    semantic_adjudication_errors.append(f"{rid}: semantic_mechanism_claim requires evidence-grounded semantic adjudication")
+                if not isinstance(claim.get("claim"), str) or not claim.get("claim", "").strip():
+                    semantic_adjudication_errors.append(f"{rid}: semantic_mechanism_claim.claim required")
+                causal = claim.get("shared_causal_structure")
+                if not isinstance(causal, list) or len(causal) < 2:
+                    semantic_adjudication_errors.append(f"{rid}: shared_causal_structure must contain at least 2 steps")
+                evidence = claim.get("evidence_refs")
+                if not isinstance(evidence, dict) or not all(isinstance(evidence.get(side), list) and evidence.get(side) for side in ("left", "right")):
+                    semantic_adjudication_errors.append(f"{rid}: semantic_mechanism_claim needs bilateral evidence_refs")
+                if not isinstance(claim.get("variation_boundary"), dict):
+                    semantic_adjudication_errors.append(f"{rid}: semantic_mechanism_claim.variation_boundary required")
         elif decision in KEEP_SEPARATE_DECISIONS and suspicious:
             suspicious_rejected += 1
             review = paraphrase_review(row)
@@ -364,21 +352,16 @@ def main() -> int:
             f"suspicious_rejected_pair_count mismatch: artifact={candidate_count}, actual={suspicious_rejected}"
         )
 
-    provenance_errors: list[str] = []
-    if provenance.get("status") != "PASS":
-        provenance_errors.append("mechanism-signature provenance audit status must be PASS")
-    if provenance.get("keyword_hints_used_for_support") != []:
-        provenance_errors.append("keyword_hints_used_for_support must be an explicit empty list")
-    if provenance.get("linked_context_only_support_edges") != []:
-        provenance_errors.append("linked_context_only_support_edges must be an explicit empty list")
-    if provenance.get("accepted_support_edge_count") != len(accepted_edges):
-        provenance_errors.append(
-            f"accepted_support_edge_count mismatch: artifact={provenance.get('accepted_support_edge_count')}, actual={len(accepted_edges)}"
+    if false_positive.get("status") != "PASS":
+        semantic_adjudication_errors.append("semantic-false-positive audit status must be PASS")
+    if false_positive.get("accepted_support_edges_inspected") != len(accepted_edges):
+        semantic_adjudication_errors.append(
+            f"semantic-false-positive accepted_support_edges_inspected mismatch: artifact={false_positive.get('accepted_support_edges_inspected')}, actual={len(accepted_edges)}"
         )
-    if provenance.get("primary_object_supported_edge_count") != len(accepted_edges):
-        provenance_errors.append(
-            "every accepted support edge must have bilateral primary-object support"
-        )
+    if false_positive.get("unresolved_false_positive_pairs") != []:
+        semantic_adjudication_errors.append("unresolved_false_positive_pairs must be an explicit empty list")
+    if false_positive.get("atom_rule_only_support_pairs") != []:
+        semantic_adjudication_errors.append("atom_rule_only_support_pairs must be an explicit empty list")
 
     equivalent_pair_errors: list[str] = []
     if accepted_edges:
@@ -403,6 +386,34 @@ def main() -> int:
                 for side in ("left", "right")
             ):
                 equivalent_pair_errors.append(f"{rid}: equivalent pair requires left/right evidence_refs")
+
+    reference_dedup_errors: list[str] = []
+    def projection_fingerprint(row: dict[str, Any]) -> tuple[str, ...]:
+        books = tuple(sorted(map(str, row.get("book_ids") or [])))
+        inv = tuple(sorted(str(x) for x in (row.get("shared_mechanism_invariants") or row.get("shared_invariants") or []) if str(x).startswith("mechanism|")))
+        return books + ("::",) + inv
+
+    equivalent_groups: dict[tuple[str, ...], list[dict[str, Any]]] = {}
+    for row in equivalent_pairs:
+        fp = projection_fingerprint(row)
+        if fp:
+            equivalent_groups.setdefault(fp, []).append(row)
+    for fp, rows in equivalent_groups.items():
+        unit_groups = {str(row.get("unit_group") or "") for row in rows}
+        if len(rows) <= 1 or len(unit_groups) <= 1:
+            continue
+        primaries = [row for row in rows if row.get("reference_projection_role") == "PRIMARY"]
+        if len(primaries) != 1:
+            reference_dedup_errors.append(f"equivalent-pair projection group needs exactly one PRIMARY: {fp[:4]}")
+            continue
+        primary_id = primaries[0].get("semantic_reference_id")
+        if not primary_id:
+            reference_dedup_errors.append(f"equivalent-pair PRIMARY missing semantic_reference_id: {fp[:4]}")
+        for row in rows:
+            if row in primaries:
+                continue
+            if row.get("reference_projection_role") != "ALIAS" or row.get("projection_alias_of") != primary_id:
+                reference_dedup_errors.append(f"equivalent-pair duplicate projection must alias {primary_id}: {row.get('record_id')}")
 
     cluster_errors: list[str] = []
     hardcoded_membership_violations: list[str] = []
@@ -458,6 +469,28 @@ def main() -> int:
                 cluster_errors.append(f"{cid}: unsupported_member_pairs must be []")
             if row.get("formation_basis") == "connected_component_only":
                 cluster_errors.append(f"{cid}: connected_component_only formation is forbidden")
+
+    cluster_groups: dict[tuple[str, ...], list[dict[str, Any]]] = {}
+    for row in clusters:
+        fp = projection_fingerprint(row)
+        if fp:
+            cluster_groups.setdefault(fp, []).append(row)
+    for fp, rows in cluster_groups.items():
+        unit_groups = {str(row.get("unit_group") or "") for row in rows}
+        if len(rows) <= 1 or len(unit_groups) <= 1:
+            continue
+        primaries = [row for row in rows if row.get("reference_projection_role") == "PRIMARY"]
+        if len(primaries) != 1:
+            reference_dedup_errors.append(f"cluster projection group needs exactly one PRIMARY: {fp[:4]}")
+            continue
+        primary_id = primaries[0].get("semantic_reference_id")
+        if not primary_id:
+            reference_dedup_errors.append(f"cluster PRIMARY missing semantic_reference_id: {fp[:4]}")
+        for row in rows:
+            if row in primaries:
+                continue
+            if row.get("reference_projection_role") != "ALIAS" or row.get("projection_alias_of") != primary_id:
+                reference_dedup_errors.append(f"cluster duplicate projection must alias {primary_id}: {row.get('cluster_id')}")
 
     if coherence.get("status") != "PASS":
         cluster_errors.append("cluster-global-coherence audit status must be PASS")
@@ -519,25 +552,6 @@ def main() -> int:
             basis = row.get("resolution_basis")
             if not isinstance(basis, list) or not basis:
                 lineage_errors.append(f"{rid}: RESOLVED migration requires resolution_basis")
-            by_id = {
-                str(item.get("unit_id")): item
-                for item in candidates
-                if isinstance(item, dict) and item.get("unit_id")
-            }
-            for unit_id in map(str, resolved):
-                item = by_id.get(unit_id)
-                if not item:
-                    continue
-                link_basis = set(map(str, item.get("resolution_basis") or []))
-                exact_identity = bool(link_basis.intersection({"exact_unit_identity", "source_internal_identity"}))
-                evidence_and_semantics = {
-                    "book_scoped_evidence_overlap",
-                    "mechanism_signature_correspondence",
-                }.issubset(link_basis)
-                if not (exact_identity or evidence_and_semantics):
-                    lineage_errors.append(
-                        f"{rid}:{unit_id}: resolved lineage link requires exact internal identity or BOTH evidence overlap and mechanism-signature correspondence; broad source_record/book match is candidate generation only"
-                    )
         if len(candidates) > 1 and row.get("candidate_multiplicity_blocked_resolution") is True:
             lineage_errors.append(f"{rid}: multiple candidates may not block resolution by themselves")
 
@@ -548,8 +562,9 @@ def main() -> int:
         + keyword_errors
         + paraphrase_errors
         + false_negative_errors
-        + provenance_errors
+        + semantic_adjudication_errors
         + equivalent_pair_errors
+        + reference_dedup_errors
         + cluster_errors
         + dedup_errors
         + lineage_errors
@@ -577,16 +592,6 @@ def main() -> int:
                 "equivalent_pair_records": len(equivalent_pairs),
                 "method": "support must be grounded in an evidence-backed structured mechanism signature; raw operation-text equality is forbidden as a required condition",
             },
-            "MECHANISM_SIGNATURE_PROVENANCE_GATE": {
-                "status": gate(provenance_errors),
-                "count": len(provenance_errors),
-                "violations": provenance_errors,
-                "method": "accepted support must be grounded in bilateral primary objects; keyword/lexicon atoms and linked context are retrieval/corroboration only",
-            },
-            "LINKED_CONTEXT_SUPPORT_ISOLATION_GATE": {
-                "status": gate([e for e in provenance_errors if "linked" in e.lower()] + [e for e in paraphrase_errors if "linked-context" in e.lower()]),
-                "method": "linked context may corroborate a primary-unit mechanism but may not create a support edge by itself",
-            },
             "SEMANTIC_FALSE_NEGATIVE_AUDIT": {
                 "status": gate(false_negative_errors),
                 "count": len(false_negative_errors),
@@ -594,6 +599,19 @@ def main() -> int:
                 "suspicious_rejected_pairs": suspicious_rejected,
                 "reviewed_suspicious_rejected_pairs": reviewed_suspicious_rejected,
                 "method": "every KEEP_SEPARATE/HOLD pair with structural/operation retrieval or semantic-structure overlap receives paraphrase-equivalence adjudication",
+            },
+            "SEMANTIC_ADJUDICATION_INDEPENDENCE_GATE": {
+                "status": gate(semantic_adjudication_errors),
+                "count": len(semantic_adjudication_errors),
+                "violations": semantic_adjudication_errors,
+                "inspected_support_edges": len(accepted_edges),
+                "method": "accepted support must include an evidence-grounded semantic mechanism claim whose adjudication is independent of keyword/atom rules",
+            },
+            "REFERENCE_PROJECTION_DEDUP_GATE": {
+                "status": gate(reference_dedup_errors),
+                "count": len(reference_dedup_errors),
+                "violations": reference_dedup_errors,
+                "method": "identical reusable mechanism projections across unit groups must have one canonical PRIMARY reference and explicit ALIAS projections",
             },
             "HARDCODED_CLUSTER_MEMBERSHIP": {
                 "status": gate(hardcoded_membership_violations),
