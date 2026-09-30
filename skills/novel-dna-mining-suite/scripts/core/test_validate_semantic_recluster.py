@@ -50,7 +50,7 @@ def build_valid_run(root: Path) -> None:
     qa = root / "qa"
     write_json(qa / "retrieval-recall-audit.json", {
         "status": "PASS",
-        "candidate_generation_modes": ["lexical", "controlled_structural", "operation_structural", "mechanism_signature"],
+        "candidate_generation_modes": ["lexical", "controlled_structural", "operation_structural", "mechanism_signature_hint"],
         "lexical_top_k": 8,
         "expanded_lexical_top_k": 16,
         "unresolved_missed_support_edges": [],
@@ -105,7 +105,7 @@ def build_valid_run(root: Path) -> None:
         ],
         "resolved_fine_unit_ids": ["U:A", "U:B"],
         "migration_status": "RESOLVED",
-        "resolution_basis": ["book_id", "source_path", "evidence_overlap", "mechanism_signature"],
+        "resolution_basis": ["book_id", "source_path", "evidence_overlap", "mechanism_signature_hint"],
         "candidate_multiplicity_blocked_resolution": False,
     }])
     write_jsonl(root / "05_人物功能" / "candidate" / "nearest_neighbors.jsonl", [{
