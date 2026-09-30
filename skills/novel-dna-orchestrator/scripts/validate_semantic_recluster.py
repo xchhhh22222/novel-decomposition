@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""V1.6.5 semantic recluster reliability gate.
+"""V1.6.6 semantic recluster reliability gate.
 
 This validator independently checks the cross-book run artifacts for:
 - multi-route retrieval recall;
@@ -193,7 +193,7 @@ def main() -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
 
-    parser = argparse.ArgumentParser(description="Validate V1.6.5 semantic recluster reliability gates.")
+    parser = argparse.ArgumentParser(description="Validate V1.6.6 semantic recluster reliability gates.")
     parser.add_argument("run_dir", type=Path, help="Cross-book recluster run directory")
     parser.add_argument("--output", type=Path, help="Optional JSON result path")
     args = parser.parse_args()
@@ -209,6 +209,7 @@ def main() -> int:
         ("lineage", "lineage-namespace-validation.json"),
         ("dedup", "linked-context-dedup-validation.json"),
         ("false_negative", "semantic-false-negative-audit.json"),
+        ("false_positive", "semantic-false-positive-audit.json"),
     ):
         try:
             artifacts[key] = load_json(qa / filename)
@@ -221,6 +222,7 @@ def main() -> int:
     lineage = artifacts["lineage"]
     dedup = artifacts["dedup"]
     false_negative = artifacts["false_negative"]
+    false_positive = artifacts["false_positive"]
 
     nearest: list[dict[str, Any]] = []
     clusters: list[dict[str, Any]] = []
@@ -272,6 +274,7 @@ def main() -> int:
     keyword_errors: list[str] = []
     paraphrase_errors: list[str] = []
     false_negative_errors: list[str] = []
+    semantic_adjudication_errors: list[str] = []
     accepted_edges: dict[str, dict[str, Any]] = {}
     suspicious_rejected = 0
     reviewed_suspicious_rejected = 0
@@ -297,6 +300,27 @@ def main() -> int:
                 if not isinstance(dims, list) or not dims:
                     keyword_errors.append(f"{rid}: non-keyword structural support dimensions are required")
             paraphrase_errors.extend(validate_paraphrase_review(rid, decision, row, require_review=True))
+            audit = row.get("decision_audit") or {}
+            if audit.get("mechanism_atom_rules_used_for_decision") is not False:
+                semantic_adjudication_errors.append(f"{rid}: mechanism_atom_rules_used_for_decision must be false")
+            if audit.get("semantic_adjudication_independent_of_atom_rules") is not True:
+                semantic_adjudication_errors.append(f"{rid}: semantic adjudication must be independent of atom/keyword rules")
+            claim = audit.get("semantic_mechanism_claim")
+            if not isinstance(claim, dict):
+                semantic_adjudication_errors.append(f"{rid}: semantic_mechanism_claim required for accepted support")
+            else:
+                if claim.get("adjudication_method") not in {"evidence_grounded_semantic_review", "hybrid_structured_semantic_review"}:
+                    semantic_adjudication_errors.append(f"{rid}: semantic_mechanism_claim requires evidence-grounded semantic adjudication")
+                if not isinstance(claim.get("claim"), str) or not claim.get("claim", "").strip():
+                    semantic_adjudication_errors.append(f"{rid}: semantic_mechanism_claim.claim required")
+                causal = claim.get("shared_causal_structure")
+                if not isinstance(causal, list) or len(causal) < 2:
+                    semantic_adjudication_errors.append(f"{rid}: shared_causal_structure must contain at least 2 steps")
+                evidence = claim.get("evidence_refs")
+                if not isinstance(evidence, dict) or not all(isinstance(evidence.get(side), list) and evidence.get(side) for side in ("left", "right")):
+                    semantic_adjudication_errors.append(f"{rid}: semantic_mechanism_claim needs bilateral evidence_refs")
+                if not isinstance(claim.get("variation_boundary"), dict):
+                    semantic_adjudication_errors.append(f"{rid}: semantic_mechanism_claim.variation_boundary required")
         elif decision in KEEP_SEPARATE_DECISIONS and suspicious:
             suspicious_rejected += 1
             review = paraphrase_review(row)
@@ -328,6 +352,17 @@ def main() -> int:
             f"suspicious_rejected_pair_count mismatch: artifact={candidate_count}, actual={suspicious_rejected}"
         )
 
+    if false_positive.get("status") != "PASS":
+        semantic_adjudication_errors.append("semantic-false-positive audit status must be PASS")
+    if false_positive.get("accepted_support_edges_inspected") != len(accepted_edges):
+        semantic_adjudication_errors.append(
+            f"semantic-false-positive accepted_support_edges_inspected mismatch: artifact={false_positive.get('accepted_support_edges_inspected')}, actual={len(accepted_edges)}"
+        )
+    if false_positive.get("unresolved_false_positive_pairs") != []:
+        semantic_adjudication_errors.append("unresolved_false_positive_pairs must be an explicit empty list")
+    if false_positive.get("atom_rule_only_support_pairs") != []:
+        semantic_adjudication_errors.append("atom_rule_only_support_pairs must be an explicit empty list")
+
     equivalent_pair_errors: list[str] = []
     if accepted_edges:
         equivalent_by_comparison = {
@@ -351,6 +386,34 @@ def main() -> int:
                 for side in ("left", "right")
             ):
                 equivalent_pair_errors.append(f"{rid}: equivalent pair requires left/right evidence_refs")
+
+    reference_dedup_errors: list[str] = []
+    def projection_fingerprint(row: dict[str, Any]) -> tuple[str, ...]:
+        books = tuple(sorted(map(str, row.get("book_ids") or [])))
+        inv = tuple(sorted(str(x) for x in (row.get("shared_mechanism_invariants") or row.get("shared_invariants") or []) if str(x).startswith("mechanism|")))
+        return books + ("::",) + inv
+
+    equivalent_groups: dict[tuple[str, ...], list[dict[str, Any]]] = {}
+    for row in equivalent_pairs:
+        fp = projection_fingerprint(row)
+        if fp:
+            equivalent_groups.setdefault(fp, []).append(row)
+    for fp, rows in equivalent_groups.items():
+        unit_groups = {str(row.get("unit_group") or "") for row in rows}
+        if len(rows) <= 1 or len(unit_groups) <= 1:
+            continue
+        primaries = [row for row in rows if row.get("reference_projection_role") == "PRIMARY"]
+        if len(primaries) != 1:
+            reference_dedup_errors.append(f"equivalent-pair projection group needs exactly one PRIMARY: {fp[:4]}")
+            continue
+        primary_id = primaries[0].get("semantic_reference_id")
+        if not primary_id:
+            reference_dedup_errors.append(f"equivalent-pair PRIMARY missing semantic_reference_id: {fp[:4]}")
+        for row in rows:
+            if row in primaries:
+                continue
+            if row.get("reference_projection_role") != "ALIAS" or row.get("projection_alias_of") != primary_id:
+                reference_dedup_errors.append(f"equivalent-pair duplicate projection must alias {primary_id}: {row.get('record_id')}")
 
     cluster_errors: list[str] = []
     hardcoded_membership_violations: list[str] = []
@@ -406,6 +469,28 @@ def main() -> int:
                 cluster_errors.append(f"{cid}: unsupported_member_pairs must be []")
             if row.get("formation_basis") == "connected_component_only":
                 cluster_errors.append(f"{cid}: connected_component_only formation is forbidden")
+
+    cluster_groups: dict[tuple[str, ...], list[dict[str, Any]]] = {}
+    for row in clusters:
+        fp = projection_fingerprint(row)
+        if fp:
+            cluster_groups.setdefault(fp, []).append(row)
+    for fp, rows in cluster_groups.items():
+        unit_groups = {str(row.get("unit_group") or "") for row in rows}
+        if len(rows) <= 1 or len(unit_groups) <= 1:
+            continue
+        primaries = [row for row in rows if row.get("reference_projection_role") == "PRIMARY"]
+        if len(primaries) != 1:
+            reference_dedup_errors.append(f"cluster projection group needs exactly one PRIMARY: {fp[:4]}")
+            continue
+        primary_id = primaries[0].get("semantic_reference_id")
+        if not primary_id:
+            reference_dedup_errors.append(f"cluster PRIMARY missing semantic_reference_id: {fp[:4]}")
+        for row in rows:
+            if row in primaries:
+                continue
+            if row.get("reference_projection_role") != "ALIAS" or row.get("projection_alias_of") != primary_id:
+                reference_dedup_errors.append(f"cluster duplicate projection must alias {primary_id}: {row.get('cluster_id')}")
 
     if coherence.get("status") != "PASS":
         cluster_errors.append("cluster-global-coherence audit status must be PASS")
@@ -477,7 +562,9 @@ def main() -> int:
         + keyword_errors
         + paraphrase_errors
         + false_negative_errors
+        + semantic_adjudication_errors
         + equivalent_pair_errors
+        + reference_dedup_errors
         + cluster_errors
         + dedup_errors
         + lineage_errors
@@ -485,7 +572,7 @@ def main() -> int:
     )
 
     result = {
-        "gate": "SEMANTIC_RECLUSTER_RELIABILITY_V1_6_5",
+        "gate": "SEMANTIC_RECLUSTER_RELIABILITY_V1_6_6",
         "status": "PASS" if not all_errors else "FAIL",
         "checks": {
             "ARTIFACT_PARSE": {"status": gate(file_errors + parse_errors), "errors": file_errors + parse_errors},
@@ -512,6 +599,19 @@ def main() -> int:
                 "suspicious_rejected_pairs": suspicious_rejected,
                 "reviewed_suspicious_rejected_pairs": reviewed_suspicious_rejected,
                 "method": "every KEEP_SEPARATE/HOLD pair with structural/operation retrieval or semantic-structure overlap receives paraphrase-equivalence adjudication",
+            },
+            "SEMANTIC_ADJUDICATION_INDEPENDENCE_GATE": {
+                "status": gate(semantic_adjudication_errors),
+                "count": len(semantic_adjudication_errors),
+                "violations": semantic_adjudication_errors,
+                "inspected_support_edges": len(accepted_edges),
+                "method": "accepted support must include an evidence-grounded semantic mechanism claim whose adjudication is independent of keyword/atom rules",
+            },
+            "REFERENCE_PROJECTION_DEDUP_GATE": {
+                "status": gate(reference_dedup_errors),
+                "count": len(reference_dedup_errors),
+                "violations": reference_dedup_errors,
+                "method": "identical reusable mechanism projections across unit groups must have one canonical PRIMARY reference and explicit ALIAS projections",
             },
             "HARDCODED_CLUSTER_MEMBERSHIP": {
                 "status": gate(hardcoded_membership_violations),
