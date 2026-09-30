@@ -63,6 +63,13 @@ def build_valid_run(root: Path) -> None:
         "unresolved_false_negative_pairs": [],
         "method": "review every suspicious rejected pair using structured operation signatures",
     })
+    write_json(qa / "semantic-false-positive-audit.json", {
+        "status": "PASS",
+        "accepted_support_edges_inspected": 1,
+        "atom_rule_only_support_pairs": [],
+        "unresolved_false_positive_pairs": [],
+        "method": "independent evidence-grounded semantic mechanism claims for every accepted edge",
+    })
     write_json(qa / "cluster-global-coherence.json", {
         "status": "PASS",
         "unsupported_clusters": [],
@@ -114,6 +121,15 @@ def build_valid_run(root: Path) -> None:
             "non_keyword_support_dimensions": ["protagonist_interface"],
             "raw_operation_text_equality_required": False,
             "exact_raw_text_match_used_as_required_condition": False,
+            "mechanism_atom_rules_used_for_decision": False,
+            "semantic_adjudication_independent_of_atom_rules": True,
+            "semantic_mechanism_claim": {
+                "adjudication_method": "evidence_grounded_semantic_review",
+                "claim": "Both sides verify uncertain information before granting an operational entry or resource.",
+                "shared_causal_structure": ["verify uncertain information", "grant operational access/resource"],
+                "variation_boundary": {"left": "official task permission", "right": "vanguard team permission"},
+                "evidence_refs": {"left": ["EV:A"], "right": ["EV:B"]},
+            },
             "paraphrase_equivalence_review": support_review(),
         },
     }])
