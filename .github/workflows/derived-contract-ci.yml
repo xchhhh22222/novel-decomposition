@@ -14,6 +14,7 @@ on:
       - "v1.6.1-derived-contract"
       - "v1.6.2-supplemental-gates"
       - "v1.6.3-semantic-hold-gates"
+      - "v1.6.4-semantic-recluster-reliability"
     paths:
       - "skills/novel-dna-mining-suite/**"
       - "skills/novel-dna-orchestrator/**"
@@ -36,6 +37,8 @@ jobs:
         run: python skills/novel-dna-mining-suite/scripts/core/test_validate_supplemental_batch.py
       - name: Combat semantic gate regression
         run: python skills/novel-dna-mining-suite/scripts/core/test_validate_combat_semantics.py
+      - name: Semantic recluster reliability regression
+        run: python skills/novel-dna-mining-suite/scripts/core/test_validate_semantic_recluster.py
       - name: Compile validators
         run: |
           python -m py_compile skills/novel-dna-mining-suite/scripts/core/validate_derived_materials.py
@@ -46,3 +49,5 @@ jobs:
           python -m py_compile skills/novel-dna-orchestrator/scripts/validate_source_routes.py
           python -m py_compile skills/novel-dna-orchestrator/scripts/validate_supplemental_batch.py
           python -m py_compile skills/novel-dna-orchestrator/scripts/validate_combat_semantics.py
+          python -m py_compile skills/novel-dna-mining-suite/scripts/core/validate_semantic_recluster.py
+          python -m py_compile skills/novel-dna-orchestrator/scripts/validate_semantic_recluster.py
