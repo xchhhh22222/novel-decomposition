@@ -1,246 +1,218 @@
-# V1.6.5 跨书语义重聚类可靠性契约
+# V1.6.6 跨书语义重聚类可靠性契约
 
-本契约约束所有 FULL_DNA / SUPPLEMENTAL_MATERIAL 的跨书 full recluster。V1.6.5 在 V1.6.4 基础上新增两个核心要求：
+V1.6.6 继续保留 V1.6.5 的多路召回、paraphrase-equivalence、equivalent-pair、cluster-global coherence、linked-context dedup 和 1→N lineage，但新增两条硬边界：
 
-1. **禁止把 `actual_operation` 原文完全相同当作语义等价的必要条件**；
-2. **historical whole-record → fine-grained unit 的 lineage 必须支持 1→N 映射，不能因为候选多于 1 个就自动 HOLD。**
+1. **关键词/词典归一化只能做 retrieval hint，不能换个名字后继续决定语义支持。**
+2. **linked context 只能辅助说明 primary unit，不能因为外围关联记录碰巧含有同样词，就把两个 primary units 判成等价。**
 
-目标不是“尽量少聚类”，也不是“尽量多聚类”，而是在可追溯证据下尽量发现真正可复用的同机制与变体，给后续写书提供更多可靠参考。
+目标是同时避免 false negative 和 false positive，并保留真正可用于写书的“同机制不同实现”参考。
 
-## 1. Retrieval 只负责召回，不负责裁决
+## 1. 四路召回仍然保留
 
-禁止把单一 lexical top-2/top-3 当作完整候选空间。
+candidate generation 至少是：
 
-候选集合至少是以下三路并集：
+- lexical
+- controlled_structural
+- operation_structural
+- mechanism_signature_hint
 
-1. lexical retrieval：字符 bigram / token cosine 等只负责召回；
-2. controlled-structural blocking：共享受控结构事实、枚举字段、schema-compatible slots；
-3. operation/structural blocking：共享输入、处理链、角色接口、权限、目标、输出、因果链、失败边界等运行结构；
-4. mechanism-signature blocking：先把 unit 证据抽成结构化 mechanism signature，再按操作链/目标/效果等核心槽位召回不同措辞的疑似等价 pair。
+其中 mechanism-signature 的自动词典/substring/规则归一化只能作为 **hint signature**，职责是找疑似 pair。
 
-默认 lexical top-k 不低于 8；若专项规模允许，应 exhaustive 扫描全部跨书 schema-compatible pair 的结构 blocking。
+不得把 hint atom 直接称作已证实的 mechanism invariant。
 
-同时必须做 expanded-K 审计，例如 K=8 与 K=16/32。扩大 K 新发现大量可接受 support edge 时，RETRIEVAL_RECALL_AUDIT 不得 PASS。
+## 2. 强制区分 hint signature 与 adjudicated signature
 
-## 2. 关键词只能找“疑似 pair”，不能决定语义等价
+每个 unit 必须区分：
 
-关键词、substring normalization、embedding/cosine、字符重合度、题材标签，都只能用于：
+- `primary_object_signature_hint`
+- `linked_context_signature_hint`
+- `adjudicated_primary_mechanism`
 
-- candidate retrieval；
-- near-miss / suspicious pair 标记；
-- 人读解释。
+前两者可以由关键词、词典、规则、embedding 或其它 deterministic normalizer 产生，只负责召回。
 
-它们不能直接决定 MERGE/SUBTYPE，也不能直接决定 KEEP_SEPARATE。
+`adjudicated_primary_mechanism` 才能参与 MERGE/SUBTYPE。它必须来自：
 
-任何候选 pair 一旦出现下列任一信号，都必须进入 **paraphrase-equivalence adjudication**：
+- primary source object 自身的结构化字段；
+- controlled structural alignment；
+- 或冻结的 evidence-grounded semantic review。
 
-- controlled_structural retrieval；
-- operation_structural retrieval；
-- `same_structure`；
-- `same_semantic_operation`；
-- `partial_semantic_operation`；
-- 其它明确的结构近似信号。
+禁止：
 
-不得因为“原句不同”直接淘汰。
+`MECHANISM_ATOM_RULES + substring match → shared atoms → SUBTYPE`
 
-## 3. 语义等价必须比较结构化 mechanism signature
+这种闭环。
 
-每个需要语义裁决的 pair 必须构造并比较可证据化的 `mechanism_signature`。至少包含：
+## 3. Primary object 必须是语义支持主体
 
-- `actor_or_role`：谁/什么角色在执行；
-- `trigger_or_input`：由什么条件、信息、资源或事件触发；
-- `operation_chain`：真正发生的操作链；
-- `target_or_object`：作用对象；
-- `output_or_effect`：产生什么结果、权限、资源、状态变化；
-- `constraints_or_boundary`：代价、限制、失败条件、不可替代边界；
-- `evidence_refs`：左右双方各自证据。
+对于 fine-grained unit，primary object 是 `source_internal_object` 指向的那一条 canonical object。
 
-**允许不同措辞映射到同一个结构化 mechanism signature。**
+例如人物功能的：
 
-例如：
+- function_combination
+- narrative_function
+- replaceability
+- protagonist_interface
 
-- A：先现场验证主角提供的信息，再由有权限的队长开放岗位、任务许可和路线准入；
-- B：由先锋队长验证路线判断，再通过编队权限、清场能力和行动许可开放团队入口；
+各自只能先用自己的 primary object 建立核心机制。
 
-两者原文不同，但都可能抽象为：
+linked function / relationship / transition / protagonist interface 可以作为 context，但不能单独供应：
 
-`authority_holder → verify information/route → grant operational access/resources`
+- shared operation-chain invariant；
+- shared target invariant；
+- shared effect invariant；
+- MERGE/SUBTYPE support。
 
-这类 pair 必须进入语义等价/子型审核，不能因为 raw text 不相同而自动 KEEP_SEPARATE。
+如果去掉 linked context 后，primary objects 本身无法证明同一核心机制，则该 pair 不能因为 linked context 相似而进入 SUBTYPE/MERGE。
 
-## 4. Raw-text equality 只能是“加分证据”，不能是必要条件
+## 4. 每条接受边必须写 support provenance
 
-每条 MERGE/SUBTYPE 的 `decision_audit` 必须显式满足：
+MERGE/SUBTYPE 的 `decision_audit.support_provenance` 至少包含：
 
-- `retrieval_score_used_for_decision=false`
-- `keyword_count_used_for_decision=false`
-- `raw_operation_text_equality_required=false`
-- `exact_raw_text_match_used_as_required_condition=false`
-- `structural_support_independent_of_keyword=true`
-- `non_keyword_support_dimensions=[...]`
-- `paraphrase_equivalence_review={...}`
+- `keyword_hint_used_as_support=false`
+- `linked_context_only_support=false`
+- `semantic_adjudication_method`
+- `primary_unit_support.left=[...]`
+- `primary_unit_support.right=[...]`
+- `corroborating_linked_context.left=[...]`
+- `corroborating_linked_context.right=[...]`
 
-`paraphrase_equivalence_review` 至少包含：
+`primary_unit_support` 必须明确到 primary object 的字段/证据，不得只给整个 comparison unit 的总 evidence_refs。
+
+允许的 semantic adjudication method：
+
+- `evidence_grounded_primary_object_paraphrase`
+- `controlled_structural_alignment`
+- `frozen_semantic_review`
+
+## 5. Paraphrase review 必须独立于 keyword hints
+
+`paraphrase_equivalence_review` 必须至少包含：
 
 - `reviewed=true`
-- `method=structured_operation_signature | evidence_grounded_structured_paraphrase | canonical_mechanism_signature`
+- `method=evidence_grounded_structured_paraphrase | primary_object_mechanism_alignment | controlled_structural_paraphrase`
+- `adjudication_source=primary_object_semantic_review | controlled_structural_alignment | frozen_semantic_review`
+- `keyword_hint_used_as_support=false`
+- `linked_context_only_support=false`
 - `raw_text_equality_required=false`
-- `signature_fields_compared=[...]`
-- `shared_mechanism_invariants=[...]`
-- `critical_conflicts=[...]`
-- `semantic_differences=[...]`
+- `signature_fields_compared`
+- `shared_mechanism_invariants`
+- `critical_conflicts`
+- `semantic_differences`
 - `result=EQUIVALENT | SUBTYPE | NOT_EQUIVALENT | HOLD`
-- 左右两侧独立 `evidence_refs`
+- 左右 primary evidence
 
-若 review 结论为 EQUIVALENT/SUBTYPE，则最终 pair 不得仍是 KEEP_SEPARATE。
-若 review 结论为 HOLD，则最终 pair 不得强制 KEEP_SEPARATE。
-若 review 结论为 NOT_EQUIVALENT，则必须写出具体冲突或机制差异。
+关键词、substring atom、词典 atom 可以触发该 review，但不能决定 review.result。
 
-## 5. 必须做 Semantic False-Negative Audit
+## 6. 新增 mechanism-signature provenance audit
 
-新增：
+必须输出：
 
-`qa/semantic-false-negative-audit.json`
+`qa/mechanism-signature-provenance.json`
 
 至少包含：
 
 - `status`
-- `exact_raw_text_equality_required=false`
-- `paraphrase_equivalence_supported=true`
-- `suspicious_rejected_pair_count`
-- `reviewed_suspicious_rejected_pairs`
-- `potential_equivalent_rejections=[]`
-- `unresolved_false_negative_pairs=[]`
+- `accepted_support_edge_count`
+- `primary_object_supported_edge_count`
+- `keyword_hints_used_for_support=[]`
+- `linked_context_only_support_edges=[]`
 - `method`
 
-所有“结构/operation 上疑似接近、最终却 KEEP_SEPARATE/HOLD”的 pair 必须被复核。
+只有每一条 accepted support edge 都有 bilateral primary-object support 才可 PASS。
 
-只有：
+## 7. 新增 linked-context support isolation gate
 
-`potential_equivalent_rejections=[]`
+linked context 允许：
 
-且
+- 扩展 variation boundary；
+- 补充人物关系/阶段/风险解释；
+- 帮助人工理解为什么两个 primary mechanisms 在剧情中作用相似。
 
-`unresolved_false_negative_pairs=[]`
+linked context 不允许：
 
-才能 PASS。
+- 给 primary object 补出它本身不存在的核心 operation；
+- 用其它 function 的“验证/保护/准入”词把当前 function_combination 伪装成同机制；
+- 让不同阶段、不同行为主体的外围记录共同凑出 support threshold。
 
-## 6. 等价 pair 本身就是可复用素材
+输出必须保证：
 
-V1.6.5 不要求只有“形成 cluster”才算有价值。
+`linked_context_only_support_edges=[]`
 
-每条被接受的 MERGE/SUBTYPE support edge 都必须同步写入：
+## 8. Equivalent pair 仍然优先保留
+
+被接受的 MERGE/SUBTYPE 仍写：
 
 `candidate/equivalent_pairs.jsonl`
 
-记录至少包含：
+但其中 `shared_mechanism_signature` 必须来自 adjudicated primary mechanism，而不是 hint atom intersection。
 
-- `comparison_id`
-- 左右 `unit_ids`
-- `shared_mechanism_signature`
-- `shared_mechanism_invariants`
-- `variation_boundary`
-- 左右独立 `evidence_refs`
-- `decision`
+equivalent pair 是创作参考层，cluster 是更高层归纳；pair 不强制成 cluster。
 
-这样后续写书时，可以看到：
+## 9. Cluster 继续要求 complete-link
 
-“同一个机制在不同书里有哪些实现变体”。
+保留：
 
-**等价 pair 是参考池；cluster 是更高一层的全局归纳。**
+- complete-link all-pair support；
+- cluster-global invariant；
+- 3+ member bridge/chaining audit；
+- candidate-only；
+- 不设置 cluster 数量 KPI。
 
-不得为了“成簇”而牺牲 pair-level 的可解释参考。
+新增要求：
 
-## 7. Cluster 继续要求全局一致性
+cluster-global invariant 必须来自每个 member 的 primary object adjudicated mechanism。linked context 不能供应 cluster-global 核心 invariant。
 
-禁止仅用 connected components / single-link 把 A-B、B-C 自动组成 A-B-C。
+## 10. False-negative audit 不能和同一关键词规则自证
 
-每个 cluster 必须：
+`qa/semantic-false-negative-audit.json` 仍要求：
 
-- 所有 member pair 都有可接受 support edge；
-- 至少一个非泛化 `cluster_global_invariant` 被全部成员独立证据支持；
-- 3+ member 必须通过 bridge/chaining audit；
-- 不能仅依赖 `identity_bound`、same schema、same role label 等泛化 token。
+- suspicious rejected pairs 全覆盖；
+- potential_equivalent_rejections=[];
+- unresolved_false_negative_pairs=[]。
 
-Pair 可以语义等价而暂不成 cluster；这是允许且推荐的保守状态。
+但 V1.6.6 禁止“用同一套 keyword atom 先生成 signature，再用相同 atom 判断 NOT_EQUIVALENT，然后称独立复核”。
 
-## 8. linked context 必须去重
+false-negative review 必须记录 non-keyword adjudication provenance。
 
-canonicalization 前，linked function / relationship / interface 等上下文必须按：
+## 11. Lineage 的 source-record match 只负责找候选
 
-`structured identity + canonical payload`
+historical whole-record → fine unit 可以 1→N，但：
 
-去重。
+- `book_id`
+- `source_record_id`
+- `source_path`
 
-完全重复只保留一次；同 identity 不同 payload 必须报告 conflict。
+只能用于 candidate generation。
 
-## 9. NEW 不能表示“没有完全相同原文”
+每个 `resolved_fine_unit_id` 必须满足以下之一：
 
-一个 unit 只有在：
+1. exact unit/internal identity；或
+2. **同时**具备：
+   - book-scoped/member-level evidence overlap；
+   - non-generic mechanism-signature correspondence。
 
-1. 多路 retrieval 完成；
-2. expanded-K audit 完成；
-3. suspicious/near-miss pair 的 paraphrase-equivalence review 完成；
-4. 没有 MERGE/SUBTYPE support；
-5. 没有 unresolved false-negative；
+禁止仅因为：
 
-之后，才可标 NEW/unclustered。
+`same source_record_id + same book + 共用某一章 evidence`
 
-## 10. Lineage 必须支持 historical 1→N fine-unit migration
+就把该书下所有 narrative_function / relationship_function / transition / replaceability / interface 都标 RESOLVED。
 
-历史 run 常见 whole-record member，新 run 常见 fine-grained unit。两者不能 raw ID intersection，也不能要求 historical member 只能对应恰好一个新 unit。
+每条 resolved candidate 必须在自己的 `resolution_basis` 中体现上述条件。
 
-必须支持：
+## 12. Lineage 事件在映射不可信时保持 HOLD
 
-`historical_member → [fine_unit_1, fine_unit_2, ...]`
+若 historical member 无法落到具有 member-level evidence + mechanism correspondence 的 fine unit，则保持 unresolved/HOLD。
 
-依据至少组合以下信息：
+不得为了降低 unresolved 数量而扩大一对多映射。
 
-- book_id；
-- source path / source record id；
-- source internal identity；
-- evidence overlap；
-- semantic structural correspondence；
-- mechanism signature correspondence。
+`disappeared / moved / new / stable` 只有在对应 resolved links 满足 V1.6.6 link-resolution gate 后才可作为确定 lineage。
 
-候选多于 1 个本身**不是** unresolved 的理由。
+## 13. V1.6.6 独立 validator
 
-`qa/lineage-namespace-validation.json` 至少包含：
-
-- `one_to_many_mapping_supported=true`
-- `candidate_multiplicity_is_not_resolution_blocker=true`
-- `unresolved_due_to_multiple_candidates_count=0`
-- `historical_member_count`
-- `migration_mapping_records`
-- `resolved_mapping_records`
-- `resolved_fine_unit_link_count`
-- `lineage_decisions_using_raw_id_intersection=0`
-- `direct_cross_namespace_id_intersections=0`
-- `unresolved_mapping_errors=[]`
-- `status`
-
-每条 migration record 可以有多个 `resolved_fine_unit_ids`。
-
-若仍 unresolved，必须说明真正缺失的是哪一种证据，而不能写“因为候选不止一个”。
-
-## 11. 禁止 hardcoded QA 数字
-
-HARDCODED_CLUSTER_MEMBERSHIP、KEYWORD_ONLY_CLUSTER_DECISIONS、false-negative count、lineage unresolved count 等，不得写死后 PASS。
-
-validator 必须从实际 pair / cluster / migration artifacts 重新计算。
-
-## 12. 强制 V1.6.5 独立机器门
-
-每个 full recluster 在最终人工审核前必须运行：
+最终必须运行：
 
 ```bash
 python skills/novel-dna-orchestrator/scripts/validate_semantic_recluster.py <RUN_DIR>
-```
-
-或 suite 镜像：
-
-```bash
-python skills/novel-dna-mining-suite/scripts/core/validate_semantic_recluster.py <RUN_DIR>
 ```
 
 必须通过：
@@ -248,37 +220,29 @@ python skills/novel-dna-mining-suite/scripts/core/validate_semantic_recluster.py
 - RETRIEVAL_RECALL_AUDIT
 - KEYWORD_ONLY_CLUSTER_DECISIONS
 - SEMANTIC_PARAPHRASE_EQUIVALENCE_GATE
+- MECHANISM_SIGNATURE_PROVENANCE_GATE
+- LINKED_CONTEXT_SUPPORT_ISOLATION_GATE
 - SEMANTIC_FALSE_NEGATIVE_AUDIT
 - HARDCODED_CLUSTER_MEMBERSHIP
 - CLUSTER_GLOBAL_COHERENCE_GATE
 - LINKED_CONTEXT_DEDUP_GATE
 - LINEAGE_NAMESPACE_COMPATIBILITY_GATE
 
-任一 FAIL 时：
+任一失败：
 
-- `PLANNER_PROVISIONAL_USE=HOLD`
-- `PLANNER_FINAL_MATERIAL_GATE=HOLD`
-- `ACTIVE_PROMOTION=NOT_RUN`
+- PLANNER_PROVISIONAL_USE=HOLD
+- PLANNER_FINAL_MATERIAL_GATE=HOLD
+- ACTIVE_PROMOTION=NOT_RUN
 
-## 13. 人工审核边界
+## 14. 人工审核
 
-机器 PASS 只表示：
+机器 PASS 只表示已知算法捷径被挡住。
 
-- 没有已知的 retrieval 漏召回结构；
-- 没有关键词直接决策；
-- 没有 exact raw text 必须相同的假语义门；
-- 没有明显 false-negative near-miss 遗漏；
-- cluster 全局一致；
-- lineage namespace 处理可审计。
+人工必须抽查：
 
-机器 PASS 不代表用户已经批准 cluster。
+- equivalent pair 的左右 primary objects 是否真的同机制；
+- linked context 是否只是 corroboration；
+- cluster-global invariant 是否来自所有 member 自身；
+- lineage resolved links 是否真的对应旧 member 的细粒度后继。
 
-人工仍需检查：
-
-- shared mechanism signature 是否真的是“同机制”而不是过度抽象；
-- variation boundary 是否足以让写书时产生多个不同实现；
-- 哪些 equivalent pair 值得作为创作参考；
-- cluster 是否值得进入正式素材层；
-- lineage 是否足够可信。
-
-人工未批准前保持 candidate-only。
+人工批准前保持 candidate-only。
