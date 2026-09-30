@@ -1,9 +1,9 @@
 ---
 name: novel-dna-mining-suite
-description: V1.6.3 小说 DNA 拆解套件：在 V1.6.2 批次门上继续加固 UNKNOWN canonicalization、Combat PASS 语义门与 batch HOLD/total 汇总一致性。
+description: V1.6.4 小说 DNA 拆解套件：新增跨书语义重聚类可靠性契约与独立 validator，禁止 tiny lexical top-k、关键词决策、single-link 链式成簇和跨命名空间 raw-ID lineage。
 ---
 
-# 小说 DNA 拆解套件 V1.6.3
+# 小说 DNA 拆解套件 V1.6.4
 
 这是一个独立迁移包，入口负责路由和边界，详细规则按需读取 `references/`。不要把候选直接写成正式套路卡，也不要修改源章节或正式素材库。
 
@@ -25,6 +25,7 @@ description: V1.6.3 小说 DNA 拆解套件：在 V1.6.2 批次门上继续加�
 - V1.6.2 批次硬门：读取 `references/core/supplemental-batch-gates.md`，运行 `python scripts/core/validate_supplemental_batch.py --root <material-library-root> --batch-dir batch/<BATCH_ID> --books <BOOK_ID,...>`；必须对账 route/output、manifest/batch status，并输出 cluster eligible/held IDs。
 - V1.6.3 Combat 语义门：存在 combat_expression_assets 时运行 `python scripts/core/validate_combat_semantics.py --root <material-library-root> --books <BOOK_ID,...>`；UNKNOWN 只能写字面值 `UNKNOWN`，PASS 核心字段不得 UNKNOWN，且 cost/limit/counterplay 至少一项有证据。
 - V1.6.3 Batch Summary 门：批次 validator 同时核对 `derived_hold_records` 与真实 HOLD 总数、`derived_totals` 与真实 records；陈旧汇总直接 FAIL。
+- V1.6.4 Semantic Reclustering 门：任何 full recluster 必须读取 `references/core/semantic-recluster-contract.md`，执行多路召回 + expanded-K recall audit、非关键词结构证据、cluster-global invariant/bridge audit、linked-context dedup 与 lineage migration map；运行 `python scripts/core/validate_semantic_recluster.py <RUN_DIR>`，未 PASS 不得宣称 NEW/MERGE/SUBTYPE/lineage 可靠。
 - V1.5.1 语义门：章节情绪结构校验后运行包内 `scripts/specialists/chapter-emotion-miner/audit_semantics.py`；剧情线运行 `audit_recall.py`；剧情机制运行 `audit_depth.py`；manifest 落盘前运行 `scripts/core/validate_module_status_consistency.py`。\n- V1.5.2 语义加固：RAW_ENDING 过滤纯标点/过短尾句；模板骨架支持从人物卡、人物功能或显式实体表读取已知中文实体并归一化为 `<ENTITY>`，避免仅替换人名绕过模板检测。
 
 ## 统一不变量
