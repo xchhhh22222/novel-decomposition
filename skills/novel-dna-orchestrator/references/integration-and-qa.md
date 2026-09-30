@@ -171,3 +171,15 @@ V1.6.4 只防“乱合并”还不够；V1.6.5 同时防“过度拆散”。
 - historical whole-record → fine-unit lineage 必须支持 1→N；候选多于一个时继续按 source locator / internal identity / evidence / mechanism signature 消歧，不能因为 `len(candidates)>1` 直接 HOLD。
 
 上述任一 gate FAIL 时 G4 不得通过，Planner 继续 HOLD，active promotion 不运行。
+
+
+## V1.6.6 Semantic Provenance / Primary-Object Isolation Gate
+
+V1.6.5 能防 raw-text equality false negative，但仍要防“换一个关键词词典后继续自动判等价”和 linked-context 污染。
+
+- keyword / substring / lexicon mechanism atoms 仅作 retrieval hints，产物必须标为 `mechanism_signature_hint`。
+- accepted MERGE/SUBTYPE 必须有 `decision_audit.support_provenance`，左右 primary source object 均提供独立 support；`keyword_hint_used_as_support=false`、`linked_context_only_support=false`。
+- linked context 只能 corroborate，不得补出 primary object 自身没有的 core operation/target/effect。
+- 必须输出 `qa/mechanism-signature-provenance.json`，且 `keyword_hints_used_for_support=[]`、`linked_context_only_support_edges=[]`、primary-object-supported edge count 与 accepted edge count 相等。
+- Lineage 中 book/source_record/path 只做 candidate generation。每个 resolved fine-unit link 必须有 exact internal identity，或同时有 member-level evidence overlap 与 mechanism-signature correspondence；共用一章 evidence 不能把整本书的所有 fine units 一次性 resolve。
+- `MECHANISM_SIGNATURE_PROVENANCE_GATE` 或 `LINKED_CONTEXT_SUPPORT_ISOLATION_GATE` 任一失败时，G4 不得 PASS，Planner 继续 HOLD。
