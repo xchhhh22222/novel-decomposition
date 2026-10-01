@@ -110,3 +110,12 @@ V1.6.3 若存在 combat_expression_assets，还要求 `COMBAT_SEMANTIC_GATE_V1_6
 
 SUPPLEMENTAL 的 COMPLETE 只代表“本次授权专项完整”，不得表述为“九维完整拆书”。
 
+## V1.7.0 Staged Mechanism Family Discovery
+
+新跨书机制 run 必须读取 `references/core/mechanism-family-contract.md`，并使用 `scripts/core/validate_mechanism_family_pipeline.py`。默认流程是 mechanism card、readiness、小规模 pair calibration、family pilot、boundary stress、分批 expansion；不是一次性 full semantic clustering。每个成员逐条对 family minimum definition 检验，ANALOGOUS 不进入 membership，`UNCLUSTERED` 与 `HOLD` 保留。
+
+只有 stable family 可读取 `references/core/cross-domain-ontology-contract.md` 并运行 `scripts/core/validate_cross_domain_ontology.py`。跨域 identity、structural analogy 与 composition 分开记录，composition 永不改变 family membership。
+
+当前验证范围只有 `relationship_engine`、`GF_CORE`、`plotline_progression_engine`。`GF_ABILITY`、其它人物 projection 与其它模块都是 `CALIBRATION_REQUIRED`。`semantic-recluster-contract.md` 与对应 validator 继续用于 V1.6.x legacy regression；新 run 不得复用旧 cluster ID 或 membership 作为 RMF 语义证据。
+
+

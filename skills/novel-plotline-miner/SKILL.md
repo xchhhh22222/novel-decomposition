@@ -279,3 +279,12 @@ description: 从有证据的章节和阶段事实中，横向拆解具体剧情�
 14. 本文件不偷偷形成完整 schema，不提前冻结 lifecycle 枚举或 parent-child 字段结构。
 
 本文件冻结剧情线专项的职责、九段生命周期、证据边界、父子线概念、相邻分工、输入输出原则和运行流程；具体记录字段、生命周期枚举、父子线结构、聚类规则和 QA 脚本以当前 references 与 scripts 为准。
+
+## V1.7.0 plotline progression family 接入
+
+`plotline_progression_engine = FAMILY_DISCOVERY_VALIDATED`。九段 `nine_stage_lifecycle` 继续作为证据层；新增/保留 `progression_engine` 作为比较层，用 3–6 个因果步骤回答当前状态怎样产生下一阶段。比较必须先看 progression engine，再回到 lifecycle 核验，不能因两条线都考试、比赛、调查、复仇、战斗或升级而判同机制。
+
+pair 至少比较 initiating goal/pressure、resistance generator、protagonist action pattern、state change、next-entry generation、progression loop 与 termination condition，并分开保存 `mechanism_core_layer`、`downstream_effect_layer`、`transfer_dimension`。最终都变强、成名或完成复仇不能反推 SAME。
+
+新的 family run 遵循总控 mechanism-family contract：小样本校准、最多 2–3 个 hypothesis、边界压力测试、逐成员 definition test、分批 expansion 与人工停止。其它剧情对象或其它模块不会因本 lane 已验证而自动获得通过状态。
+

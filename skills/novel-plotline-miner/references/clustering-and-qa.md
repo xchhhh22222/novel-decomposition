@@ -336,3 +336,12 @@ QA 结果应回填 `schema.md` 规定的 `qa` 记录字段，不新增平行字�
 后续 validator 只应检查可结构化的硬约束，例如字段存在、状态和枚举、证据引用、九段结构、payoff 前置对象、before/after、父子线自引用和循环、`HIGH` 与关键 `UNKNOWN`、cross-book completion gate 等。复杂语义判断仍需证据审阅和人工 QA。
 
 本文件只冻结剧情线专项的 QA、生命周期一致性、父子线边界、节奏疲劳和跨书比较规则，不创建正式素材，不修改 schema，不提供具体书籍线路事实，也不替代其它专项的业务判断。
+
+## 10. V1.7.0 progression_engine family QA
+
+正式区分 `nine_stage_lifecycle` evidence layer 与 `progression_engine` comparison layer。后者必须有 3–6 个因果步骤，明确目标/压力、阻力生成、行动、状态改变、下一入口生成、循环与终止；核心缺失时 `HOLD_CORE_UNKNOWN`。
+
+pair 只允许 `SAME_MECHANISM | SUBTYPE | ANALOGOUS | DIFFERENT | HOLD`，并分别记录 mechanism core、downstream effect、transfer dimension。共享题材标签、战斗、调查、考试、资源或最终成长只能用于召回或 false-positive stress，不能决定 SAME/SUBTYPE。
+
+Family 每个成员单独对 minimum definition 检验。next-entry generation 与 termination 不清楚的卡不能成为稳定正成员；ANALOGOUS 只进入 reference layer；表面相似但推进发动机不同的案例必须成为 negative boundary 或 DIFFERENT。
+

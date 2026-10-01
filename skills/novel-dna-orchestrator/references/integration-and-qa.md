@@ -183,3 +183,14 @@ V1.6.5 能防 raw-text equality false negative，但仍要防“换一个关键�
 - 必须输出 `qa/mechanism-signature-provenance.json`，且 `keyword_hints_used_for_support=[]`、`linked_context_only_support_edges=[]`、primary-object-supported edge count 与 accepted edge count 相等。
 - Lineage 中 book/source_record/path 只做 candidate generation。每个 resolved fine-unit link 必须有 exact internal identity，或同时有 member-level evidence overlap 与 mechanism-signature correspondence；共用一章 evidence 不能把整本书的所有 fine units 一次性 resolve。
 - `MECHANISM_SIGNATURE_PROVENANCE_GATE` 或 `LINKED_CONTEXT_SUPPORT_ISOLATION_GATE` 任一失败时，G4 不得 PASS，Planner 继续 HOLD。
+
+## V1.7.0 Staged Reusable Mechanism Family Gate
+
+新 run 的 G4 默认由 `mechanism-family-contract.md` 接管，不再第一次面对整个 domain 就执行 full semantic recluster。必须依次记录 `MECHANISM_CARD_EXTRACTION`、`READINESS_NORMALIZATION`、`PAIR_CALIBRATION`、`FAMILY_PILOT`、`BOUNDARY_STRESS_TEST` 与分批 `DOMAIN_EXPANSION`。任何跳级、超规模、缺失人工停止点或以 single-link chaining 自动吸收成员的 run 都置为 HOLD。
+
+初次 calibration 默认 30–50 cards（源数据不足则全取），pair 10–15 个，family hypothesis 最多 2–3 个，stress 每 family 默认 5–10 个且不得为 0，expansion 每批 25–50 cards。数量只是 safety limits，不是 coverage/family-count KPI。未匹配对象允许 `UNCLUSTERED`，未知核心机制保留 `HOLD_CORE_UNKNOWN`。
+
+完成 pair、family pilot、stress、每一批 expansion 后必须 `STOP_FOR_HUMAN_REVIEW`。进入 `DOMAIN_FULL` 还要求至少一次成功 expansion、family definition 无重大漂移和 `APPROVE_DOMAIN_FULL`。`FULL_LIBRARY` 与 promotion 另需独立人工批准。任一核心 gate FAIL 时强制 `PIPELINE_STATUS=HOLD`、`DOMAIN_FULL=NOT_RUN`、`FULL_LIBRARY=NOT_RUN`、`ACTIVE_PROMOTION=NOT_RUN`。
+
+跨 domain 仅允许 stable family 按 `cross-domain-ontology-contract.md` 比较。identity 与 composition 必须分离；composition 不改变 identity 或 membership；positive support、negative boundary、structural analogy、composition reference 必须使用独立 provenance 数组。
+

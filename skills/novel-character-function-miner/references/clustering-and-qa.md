@@ -322,3 +322,14 @@ QA 结果应回填 `schema.md` 规定的 `qa` 记录字段，不新增平行字�
 后续 validator 只应检查可结构化的硬约束，例如字段存在、状态、证据引用、阶段门、`HIGH` 与关键 `UNKNOWN` 的冲突、before/trigger/after 是否完整等。复杂语义判断仍需证据审阅和人工 QA。
 
 本文件只冻结人物功能专项的 QA、重复疲劳和跨书比较规则，不创建正式素材，不修改 schema，不提供人物事实，也不替代其它专项的业务判断。
+
+## 10. V1.7.0 relationship_engine family QA
+
+`relationship_engine = FAMILY_DISCOVERY_VALIDATED`；其它人物 projection = `CALIBRATION_REQUIRED`。旧 nearest-neighbor/cluster 输出仅用于 legacy regression，新的 family run 以总控 mechanism-family contract 为准。
+
+每张 relationship card 的 core QA 逐项检查：`source_actor_sides` 原样可追溯；`functional_roles` 是行动/权限抽象而非身份别名；trigger、至少三步 operation chain、target、result 和具体 `failure_or_stop_condition` 成立；`primary_engine_evidence_refs` 足以独立证明机制；`corroborating_relation_evidence_refs` 未被用于补出核心链。核心项未知则 `HOLD_CORE_UNKNOWN`，外围未知允许 `READY_WITH_BOUNDARY`。
+
+pair 只能给出 `SAME_MECHANISM | SUBTYPE | ANALOGOUS | DIFFERENT | HOLD`，且分别写 `mechanism_core_layer`、`downstream_effect_layer`、`transfer_dimension`。同为导师、保护者、竞争者、同样帮助主角或同样开放资源都不能单独证明 SAME。
+
+每个 projection 还需通过 duplication gate：`CORROBORATING_VIEW` 不进入 member pool；`INDEPENDENT_MECHANISM` 必须有自己的 primary evidence 与完整因果链。ANALOGOUS 保留在创作参考层并强制 `membership=false`。
+

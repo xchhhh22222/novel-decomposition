@@ -1,3 +1,7 @@
+# LEGACY V1.6.x COMPATIBILITY CONTRACT
+
+> v1.7.0 新 run 默认不再以旧 full semantic recluster 为首选架构。本契约仅用于 historical run validation、legacy regression 与 backward compatibility。新 run 必须遵循 `mechanism-family-contract.md` 的 staged reusable mechanism family discovery。旧 complete-link、cluster namespace 与 membership 不得转成新 RMF family 的语义答案。
+
 # V1.6.6 跨书语义重聚类可靠性契约
 
 V1.6.6 继续保留 V1.6.5 的多路召回、paraphrase-equivalence、equivalent-pair、cluster-global coherence、linked-context dedup 和 1→N lineage，但新增两条硬边界：
@@ -259,3 +263,4 @@ python skills/novel-dna-orchestrator/scripts/validate_semantic_recluster.py <RUN
 - lineage resolved links 是否真的对应旧 member 的细粒度后继。
 
 人工批准前保持 candidate-only。
+

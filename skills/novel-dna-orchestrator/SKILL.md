@@ -142,3 +142,14 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 ## 三类派生库的验收
 
 盘点及总索引必须分别显示女主人物卡、长线反派卡、大故事线卡的可用数量和缺口。不得用 `05_人物功能与标签/per_book` 的功能记录冒充个体卡，也不得用 `08_篇章结构/per_book` 的阶段结局冒充完整大故事线。三类卡均由对应专项 Skill 负责，默认是 `candidate`；跨书比较要等各目标书完成本类视图或给出明确 gap，未回填的旧书显示 `未回填`。
+
+## V1.7.0 默认跨书机制架构
+
+新的跨书机制研究必须完整读取 [references/mechanism-family-contract.md](references/mechanism-family-contract.md)。只有已经稳定的 domain family 才可进一步读取 [references/cross-domain-ontology-contract.md](references/cross-domain-ontology-contract.md)。V1.6.x `semantic-recluster-contract.md` 保留为 legacy compatibility，不再是新 run 默认路径。
+
+默认顺序固定为：单书证据 → mechanism card → readiness normalization → 10–15 个代表 pair 校准 → 最多 2–3 个 family hypotheses → boundary stress → 25–50 张卡一批的 domain expansion。每个校准、pilot、stress、expansion 阶段完成后都必须 `STOP_FOR_HUMAN_REVIEW`；`DOMAIN_FULL`、`FULL_LIBRARY` 与 promotion 分别需要显式人工批准。
+
+总控不得把 retrieval similarity、关键词、embedding 邻域、旧 cluster membership 或 connected components 当作 SAME/SUBTYPE/family membership。所有成员必须逐条通过 family definition test；ANALOGOUS 进入 reference layer，`UNCLUSTERED` 与 `HOLD` 都是合法结果。未获批准时保持 `PLANNER_PROVISIONAL_USE=HOLD`、`PLANNER_FINAL_MATERIAL_GATE=HOLD`、`ACTIVE_PROMOTION=NOT_RUN`。
+
+当前仅 `relationship_engine`、`GF_CORE`、`plotline_progression_engine` 为 `FAMILY_DISCOVERY_VALIDATED`。`GF_ABILITY`、其它人物 projection 与其它拆书模块均为 `CALIBRATION_REQUIRED`。
+

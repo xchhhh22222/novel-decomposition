@@ -81,3 +81,12 @@ BOOK DNA是导航，不是免核验的最终证据。关键字段不能只引用
 - 每个聚类都有最近邻比较、母型判断、变体边界和来源书数。
 - 单书来源默认保留为 `candidate`，不得冒充高频成熟母型。
 - 输出通过脚本结构校验，并能交给总控生成总索引。
+
+## V1.7.0 mechanism family comparison lanes
+
+金手指必须拆成两个独立 lane：`GF_CORE = FAMILY_DISCOVERY_VALIDATED`，`GF_ABILITY = CALIBRATION_REQUIRED`。普通 family discovery 禁止比较 whole-book core system 与 single ability；只有另行批准的 cross-granularity ontology research 才能引用二者，且仍不得因此改变 membership。
+
+GF_CORE card 和 pair 的核心链固定比较 `input/resource → conversion_process → output → growth_loop → limitation/cost`。相同能力名、效果名、成长目的或最终变强都只是 surface/downstream，不能直接证明 SAME。每个 pair 还必须分开记录 `mechanism_core_layer`、`downstream_effect_layer` 和 `transfer_dimension`。
+
+新 run 使用总控 mechanism-family contract 的小样本阶段门、逐成员 definition test、negative boundary 与人工停止点。GF_ABILITY 在完成自己的 card calibration、pair calibration、family pilot 和 stress test 前不得执行 family discovery。
+

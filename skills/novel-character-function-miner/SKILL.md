@@ -252,3 +252,14 @@ description: 从有证据的章节行为、选择、资源流、信息流、冲�
 12. 本文件不偷偷形成完整 schema，不替后续 schema 文件预先冻结字段表。
 
 本文件冻结人物功能专项的职责、证据边界、相邻分工、输入输出原则和运行流程；具体记录字段、聚类结构、QA 规则和验证脚本以当前 references 与 scripts 为准。
+
+## V1.7.0 mechanism family 接入范围
+
+本专项目前只有 `relationship_engine` comparison lane 已完成 Pilot，状态为 `FAMILY_DISCOVERY_VALIDATED`。`relationship_function`、`narrative_function`、`function_combination`、`protagonist_interface`、`replaceability`、`transition` 及其它人物 projection 均为 `CALIBRATION_REQUIRED`，不得借用 relationship_engine 的通过状态直接扩展。
+
+relationship mechanism card 必须同时保存原始 `source_actor_sides` 与比较用 `functional_roles`，二者不得互相覆盖；还必须保存 trigger/input、operation chain、target、result、具体 stop condition、`primary_engine_evidence_refs` 与 `corroborating_relation_evidence_refs`。primary engine 必须由前者自身成立，后者只能佐证。人物姓名、称谓、导师/保护者/竞争者等身份标签不能替代 functional role。
+
+同一关系的多个 projection 在进入 comparison pool 前必须声明 `projection_semantic_role`：`PRIMARY_MECHANISM`、`CORROBORATING_VIEW`、`INDEPENDENT_MECHANISM` 或 `HOLD`。只有独立机制可作为另一张卡；corroborating view 不得重复计为 member。
+
+跨书新 run 读取总控 `mechanism-family-contract.md`，按 mechanism card → readiness → pair calibration → family pilot → boundary stress → expansion 执行。不得继续以角色称谓或旧 cluster membership 直接聚类。
+

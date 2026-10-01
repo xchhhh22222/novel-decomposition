@@ -112,3 +112,12 @@
 - 是否把产物累积误写成系统规则升级。
 
 任何核心规则无法核实的记录改为 `HOLD`，不为凑齐16本而补造。
+
+## V1.7.0 GF_CORE family QA
+
+`GF_CORE` 与 `GF_ABILITY` 是隔离的 comparison lanes；前者为 `FAMILY_DISCOVERY_VALIDATED`，后者为 `CALIBRATION_REQUIRED`。lane 混用是硬失败，不得用共享“能力/成长”词汇绕过。
+
+GF_CORE pair 逐项比较 trigger、input/resource、conversion process、output、growth loop 与 limitation/cost，并强制区分 mechanism core、downstream effect 与 transfer dimension。核心输入、转换、循环或关键限制未知时使用 `HOLD_CORE_UNKNOWN`；不影响运行链的起源、终极上限或未读结局属于 peripheral unknown，可 `READY_WITH_BOUNDARY`。
+
+Family membership 逐卡检验 minimum definition。相同名称、相同效果、相同成长结果、相同反馈形状只能生成 retrieval candidate。ANALOGOUS 必须 `membership=false`；无法进入已有 family 的卡允许 `UNCLUSTERED`；不得为覆盖率或 family 数量强行归入。
+
