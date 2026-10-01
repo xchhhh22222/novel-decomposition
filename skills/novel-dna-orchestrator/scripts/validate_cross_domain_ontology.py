@@ -133,6 +133,24 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
     gates["STABLE_FAMILY_INPUT_ONLY_GATE"] = _gate(errors)
 
     errors = []
+    for pair in pairs:
+        if not isinstance(pair, Mapping):
+            continue
+        left_id = pair.get("left_family_id")
+        right_id = pair.get("right_family_id")
+        left_family = family_by_id.get(left_id, {})
+        right_family = family_by_id.get(right_id, {})
+        left_signature = signature_by_id.get(left_id, {})
+        right_signature = signature_by_id.get(right_id, {})
+        left_domain = left_family.get("domain") or left_signature.get("domain")
+        right_domain = right_family.get("domain") or right_signature.get("domain")
+        if not _nonempty(left_domain) or not _nonempty(right_domain):
+            errors.append(f"{pair.get('pair_id')}: both family domains are required")
+        elif left_domain == right_domain:
+            errors.append(f"{pair.get('pair_id')}: ontology identity pair must cross domains")
+    gates["CROSS_DOMAIN_PAIR_GATE"] = _gate(errors)
+
+    errors = []
     for family_id, family in family_by_id.items():
         if family.get("family_status") != "STABLE":
             continue
@@ -230,6 +248,113 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
 
     errors = []
     for concept in concepts:
+        if not isinstance(concept, Mapping) or concept.get("status") != "PASS":
+            continue
+        concept_id = concept.get("ontology_id")
+        realization_ids = {
+            value if isinstance(value, str) else value.get("family_id")
+            for value in _list(concept.get("domain_realizations"))
+            if isinstance(value, (str, Mapping))
+        }
+        for pair_id in _list(concept.get("positive_support_pair_ids")):
+            pair = pair_by_id.get(pair_id)
+            if pair is None:
+                errors.append(f"{concept_id}: unknown positive support pair {pair_id}")
+                continue
+            if pair.get("identity_relation") not in {"META_EQUIVALENT", "META_SPECIALIZATION_CANDIDATE"}:
+                errors.append(f"{concept_id}: pair {pair_id} relation cannot be positive support")
+            left_id = pair.get("left_family_id")
+            right_id = pair.get("right_family_id")
+            left_family = family_by_id.get(left_id)
+            right_family = family_by_id.get(right_id)
+            if not left_family or left_family.get("family_status") != "STABLE":
+                errors.append(f"{concept_id}: positive pair {pair_id} left family is not STABLE")
+            if not right_family or right_family.get("family_status") != "STABLE":
+                errors.append(f"{concept_id}: positive pair {pair_id} right family is not STABLE")
+            left_domain = (left_family or {}).get("domain") or signature_by_id.get(left_id, {}).get("domain")
+            right_domain = (right_family or {}).get("domain") or signature_by_id.get(right_id, {}).get("domain")
+            if not left_domain or not right_domain or left_domain == right_domain:
+                errors.append(f"{concept_id}: positive pair {pair_id} must cross domains")
+            if left_id not in realization_ids or right_id not in realization_ids:
+                errors.append(f"{concept_id}: positive pair {pair_id} families must appear in domain_realizations")
+    gates["ONTOLOGY_POSITIVE_SUPPORT_GATE"] = _gate(errors)
+
+    errors = []
+    for concept in concepts:
+        if not isinstance(concept, Mapping) or concept.get("status") != "PASS":
+            continue
+        concept_id = concept.get("ontology_id")
+        realizations = _list(concept.get("domain_realizations"))
+        realization_ids: List[str] = []
+        realization_domains: set[str] = set()
+        for value in realizations:
+            family_id = value if isinstance(value, str) else value.get("family_id") if isinstance(value, Mapping) else None
+            declared_domain = value.get("domain") if isinstance(value, Mapping) else None
+            if not isinstance(family_id, str) or family_id not in family_by_id:
+                errors.append(f"{concept_id}: unknown domain realization {family_id}")
+                continue
+            family = family_by_id[family_id]
+            signature = signature_by_id.get(family_id, {})
+            family_domain = family.get("domain")
+            signature_domain = signature.get("domain")
+            if family.get("family_status") != "STABLE":
+                errors.append(f"{concept_id}: realization {family_id} is not STABLE")
+            if not family_domain or not signature_domain or family_domain != signature_domain:
+                errors.append(f"{concept_id}: realization {family_id} family/signature domain mismatch")
+            if declared_domain is not None and declared_domain != family_domain:
+                errors.append(f"{concept_id}: realization {family_id} declared domain mismatch")
+            realization_ids.append(family_id)
+            if family_domain:
+                realization_domains.add(str(family_domain))
+        if len(set(realization_ids)) < 2:
+            errors.append(f"{concept_id}: PASS ontology needs at least two family realizations")
+        if len(realization_domains) < 2:
+            errors.append(f"{concept_id}: PASS ontology needs at least two distinct domains")
+        for pair_id in _list(concept.get("positive_support_pair_ids")):
+            pair = pair_by_id.get(pair_id)
+            if pair and ({pair.get("left_family_id"), pair.get("right_family_id")} - set(realization_ids)):
+                errors.append(f"{concept_id}: positive support families are not fully covered by realizations")
+    gates["DOMAIN_REALIZATION_GATE"] = _gate(errors)
+
+    errors = []
+    for concept in concepts:
+        if not isinstance(concept, Mapping):
+            continue
+        concept_id = concept.get("ontology_id")
+        roles = {
+            "positive": set(_list(concept.get("positive_support_pair_ids"))),
+            "negative": set(_list(concept.get("negative_boundary_pair_ids"))),
+            "analogy": set(_list(concept.get("structural_analogy_pair_ids"))),
+            "composition": set(_list(concept.get("composition_reference_pair_ids"))),
+        }
+        names = list(roles)
+        for index, left_name in enumerate(names):
+            for right_name in names[index + 1:]:
+                overlap = roles[left_name] & roles[right_name]
+                if overlap:
+                    errors.append(f"{concept_id}: provenance roles {left_name}/{right_name} overlap: {sorted(overlap)}")
+        for pair_id in roles["negative"]:
+            pair = pair_by_id.get(pair_id)
+            if pair is None:
+                errors.append(f"{concept_id}: unknown negative boundary pair {pair_id}")
+            elif pair.get("identity_relation") not in {"DISTINCT", "HOLD"}:
+                errors.append(f"{concept_id}: pair {pair_id} is incompatible with negative-boundary role")
+        for pair_id in roles["analogy"]:
+            pair = pair_by_id.get(pair_id)
+            if pair is None:
+                errors.append(f"{concept_id}: unknown structural analogy pair {pair_id}")
+            elif pair.get("identity_relation") != "STRUCTURAL_ANALOGY":
+                errors.append(f"{concept_id}: pair {pair_id} is not STRUCTURAL_ANALOGY")
+        for pair_id in roles["composition"]:
+            pair = pair_by_id.get(pair_id)
+            if pair is None:
+                errors.append(f"{concept_id}: unknown composition reference pair {pair_id}")
+            elif pair.get("composition_relation") in {None, "NONE", "HOLD"}:
+                errors.append(f"{concept_id}: pair {pair_id} has no usable composition relation")
+    gates["ONTOLOGY_PROVENANCE_INTEGRITY_GATE"] = _gate(errors)
+
+    errors = []
+    for concept in concepts:
         if not isinstance(concept, Mapping):
             continue
         positives = set(_list(concept.get("positive_support_pair_ids")))
@@ -263,9 +388,18 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
     errors = []
     before = document.get("family_membership_before")
     after = document.get("family_membership_after")
-    if before is not None or after is not None:
-        if before != after:
-            errors.append("family membership changed during ontology work")
+    if concepts or compositions:
+        if not isinstance(before, Mapping) or not isinstance(after, Mapping):
+            errors.append("ontology work requires family_membership_before and family_membership_after snapshots")
+        else:
+            missing_before = set(family_by_id) - set(before)
+            missing_after = set(family_by_id) - set(after)
+            if missing_before:
+                errors.append(f"family_membership_before missing families: {sorted(missing_before)}")
+            if missing_after:
+                errors.append(f"family_membership_after missing families: {sorted(missing_after)}")
+            if before != after:
+                errors.append("family membership changed during ontology work")
     for concept in concepts:
         if isinstance(concept, Mapping) and not _nonempty(concept.get("why_this_is_not_a_family_merge")):
             errors.append(f"{concept.get('ontology_id')}: family-merge explanation required")
@@ -283,6 +417,47 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
         if link.get("identity_effect") not in {None, "NONE"}:
             errors.append(f"{link.get('link_id')}: composition cannot change identity")
     gates["COMPOSITION_NO_MEMBERSHIP_EFFECT_GATE"] = _gate(errors)
+
+    errors = []
+    required_link_fields = {
+        "link_id",
+        "source_family_id",
+        "target_family_id",
+        "source_output",
+        "target_trigger_or_input",
+        "bridge_condition",
+        "composition_relation",
+        "membership_effect",
+        "identity_effect",
+    }
+    for link in compositions:
+        if not isinstance(link, Mapping):
+            errors.append("composition link must be an object")
+            continue
+        link_id = link.get("link_id")
+        missing = sorted(required_link_fields - set(link))
+        if missing:
+            errors.append(f"{link_id}: missing composition fields: {', '.join(missing)}")
+        source_id = link.get("source_family_id")
+        target_id = link.get("target_family_id")
+        source_family = family_by_id.get(source_id)
+        target_family = family_by_id.get(target_id)
+        if not source_family or source_family.get("family_status") != "STABLE":
+            errors.append(f"{link_id}: source family must exist and be STABLE")
+        if not target_family or target_family.get("family_status") != "STABLE":
+            errors.append(f"{link_id}: target family must exist and be STABLE")
+        if source_id == target_id:
+            errors.append(f"{link_id}: source and target families must differ")
+        if link.get("composition_relation") in {None, "NONE", "HOLD"}:
+            errors.append(f"{link_id}: composition relation must be directional or bidirectional")
+        if link.get("membership_effect") != "NONE":
+            errors.append(f"{link_id}: membership_effect must be NONE")
+        if link.get("identity_effect") != "NONE":
+            errors.append(f"{link_id}: identity_effect must be NONE")
+        for field in ("source_output", "target_trigger_or_input", "bridge_condition"):
+            if not _nonempty(link.get(field)):
+                errors.append(f"{link_id}: {field} must be non-empty")
+    gates["COMPOSITION_LINK_INTEGRITY_GATE"] = _gate(errors)
 
     failed = [name for name, gate in gates.items() if gate["status"] == "FAIL"]
     status = "PASS" if not failed else "HOLD"

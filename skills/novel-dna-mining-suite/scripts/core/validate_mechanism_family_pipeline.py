@@ -35,6 +35,42 @@ VALIDATED_LANES = {
     ("golden_finger", "GF_CORE"),
     ("plotline", "plotline_progression_engine"),
 }
+CALIBRATION_CATEGORIES = {
+    "OBVIOUS_SAME",
+    "PARAPHRASE_EQUIVALENT",
+    "SAME_SURFACE_DIFFERENT_MECHANISM",
+    "LIKELY_SUBTYPE",
+    "ANALOGOUS",
+    "DIFFERENT",
+    "BOUNDARY_OR_HOLD",
+}
+CALIBRATION_DECISIONS = {
+    "OBVIOUS_SAME": {"SAME_MECHANISM"},
+    "PARAPHRASE_EQUIVALENT": {"SAME_MECHANISM"},
+    "SAME_SURFACE_DIFFERENT_MECHANISM": {"DIFFERENT", "ANALOGOUS"},
+    "LIKELY_SUBTYPE": {"SUBTYPE"},
+    "ANALOGOUS": {"ANALOGOUS"},
+    "DIFFERENT": {"DIFFERENT"},
+    "BOUNDARY_OR_HOLD": {"HOLD", "DIFFERENT", "ANALOGOUS"},
+}
+MANDATORY_PREDECESSORS = {
+    "MECHANISM_CARD_EXTRACTION": [],
+    "READINESS_NORMALIZATION": ["MECHANISM_CARD_EXTRACTION"],
+    "PAIR_CALIBRATION": ["MECHANISM_CARD_EXTRACTION", "READINESS_NORMALIZATION"],
+    "FAMILY_PILOT": ["MECHANISM_CARD_EXTRACTION", "READINESS_NORMALIZATION", "PAIR_CALIBRATION"],
+    "BOUNDARY_STRESS_TEST": ["MECHANISM_CARD_EXTRACTION", "READINESS_NORMALIZATION", "PAIR_CALIBRATION", "FAMILY_PILOT"],
+    "DOMAIN_EXPANSION": ["MECHANISM_CARD_EXTRACTION", "READINESS_NORMALIZATION", "PAIR_CALIBRATION", "FAMILY_PILOT", "BOUNDARY_STRESS_TEST"],
+    "DOMAIN_FULL": ["MECHANISM_CARD_EXTRACTION", "READINESS_NORMALIZATION", "PAIR_CALIBRATION", "FAMILY_PILOT", "BOUNDARY_STRESS_TEST", "DOMAIN_EXPANSION"],
+    "CROSS_DOMAIN_ONTOLOGY": ["MECHANISM_CARD_EXTRACTION", "READINESS_NORMALIZATION", "PAIR_CALIBRATION", "FAMILY_PILOT", "BOUNDARY_STRESS_TEST", "DOMAIN_EXPANSION", "DOMAIN_FULL"],
+    "FULL_LIBRARY": ["MECHANISM_CARD_EXTRACTION", "READINESS_NORMALIZATION", "PAIR_CALIBRATION", "FAMILY_PILOT", "BOUNDARY_STRESS_TEST", "DOMAIN_EXPANSION", "DOMAIN_FULL"],
+}
+HISTORY_REVIEW_STAGES = {
+    "PAIR_CALIBRATION",
+    "FAMILY_PILOT",
+    "BOUNDARY_STRESS_TEST",
+    "DOMAIN_EXPANSION",
+    "DOMAIN_FULL",
+}
 CARD_FIELDS = {
     "card_id",
     "domain",
@@ -124,6 +160,65 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
     gates: Dict[str, Dict[str, Any]] = {}
 
     errors: List[str] = []
+    history = _list(document.get("stage_history"))
+    seen: Dict[str, List[Mapping[str, Any]]] = {}
+    previous_rank = -1
+    expansion_ids: set[str] = set()
+    for index, entry in enumerate(history):
+        if not isinstance(entry, Mapping):
+            errors.append(f"stage_history[{index}] must be an object")
+            continue
+        stage = entry.get("stage")
+        if stage not in STAGES:
+            errors.append(f"stage_history[{index}] has invalid stage {stage}")
+            continue
+        rank = STAGES.index(stage)
+        if rank < previous_rank:
+            errors.append(f"stage_history[{index}] is out of stage order")
+        previous_rank = max(previous_rank, rank)
+        if entry.get("status") != "PASS":
+            errors.append(f"stage_history[{index}] predecessor status must be PASS")
+        if not _nonempty(entry.get("artifact_id")):
+            errors.append(f"stage_history[{index}] requires artifact_id")
+        seen.setdefault(stage, []).append(entry)
+        if stage != "DOMAIN_EXPANSION" and len(seen[stage]) > 1:
+            errors.append(f"stage {stage} may not be duplicated")
+        if stage == "DOMAIN_EXPANSION":
+            batch_id = entry.get("batch_id") or entry.get("artifact_id")
+            if not _nonempty(batch_id):
+                errors.append(f"stage_history[{index}] expansion requires batch_id or artifact_id")
+            elif str(batch_id) in expansion_ids:
+                errors.append(f"duplicate DOMAIN_EXPANSION artifact/batch id: {batch_id}")
+            else:
+                expansion_ids.add(str(batch_id))
+    for predecessor in MANDATORY_PREDECESSORS.get(str(phase), []):
+        entries = seen.get(predecessor, [])
+        if not entries:
+            errors.append(f"{phase} missing mandatory predecessor {predecessor}")
+            continue
+        if predecessor in HISTORY_REVIEW_STAGES:
+            if not any(entry.get("human_review") == "APPROVED" for entry in entries):
+                errors.append(f"{predecessor} predecessor requires APPROVED human review")
+    if phase == "DOMAIN_FULL":
+        approved_expansions = [
+            entry for entry in seen.get("DOMAIN_EXPANSION", [])
+            if entry.get("status") == "PASS" and entry.get("human_review") == "APPROVED"
+        ]
+        if not approved_expansions:
+            errors.append("DOMAIN_FULL requires an approved DOMAIN_EXPANSION history record")
+        declared_count = controls.get("successful_expansion_count")
+        if declared_count is not None and declared_count != len(approved_expansions):
+            errors.append("successful_expansion_count does not match approved expansion history")
+    if phase == "FULL_LIBRARY":
+        approved_domain_full = [
+            entry for entry in seen.get("DOMAIN_FULL", [])
+            if entry.get("status") == "PASS" and entry.get("human_review") == "APPROVED"
+        ]
+        if not approved_domain_full:
+            errors.append("FULL_LIBRARY requires an approved DOMAIN_FULL history record")
+    gates["STAGE_TRANSITION_GATE"] = _gate(errors)
+
+    errors = []
     card_by_id: Dict[str, Mapping[str, Any]] = {}
     for index, card in enumerate(cards):
         if not isinstance(card, Mapping):
@@ -146,6 +241,20 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
         if not isinstance(card.get("source_primary_object"), Mapping) or not card.get("source_primary_object"):
             errors.append(f"{card_id}: source_primary_object must be non-empty")
     gates["MECHANISM_CARD_SCHEMA_GATE"] = _gate(errors)
+
+    errors = []
+    approvals = set(_list(controls.get("human_approvals")))
+    lanes = {
+        (str(card.get("domain")), str(card.get("comparison_lane")))
+        for card in cards
+        if isinstance(card, Mapping) and card.get("domain") and card.get("comparison_lane")
+    }
+    if phase in {"DOMAIN_EXPANSION", "DOMAIN_FULL", "FULL_LIBRARY"}:
+        for domain, lane in sorted(lanes):
+            approval = f"APPROVE_LANE_VALIDATION:{domain}:{lane}"
+            if (domain, lane) not in VALIDATED_LANES and approval not in approvals:
+                errors.append(f"{domain}/{lane} is CALIBRATION_REQUIRED and lacks {approval}")
+    gates["VALIDATED_SCOPE_GATE"] = _gate(errors)
 
     errors = []
     for card in cards:
@@ -251,18 +360,21 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
             errors.append(f"{pair.get('pair_id')}: SUBTYPE requires transfer_dimension")
         if pair.get("selection_basis") in {"RANDOM_ONLY", "KEYWORD_ONLY", "EMBEDDING_ONLY"}:
             errors.append(f"{pair.get('pair_id')}: unrepresentative selection basis")
-    categories = set(_list(controls.get("pair_coverage_categories")))
-    required_categories = {
-        "OBVIOUS_SAME",
-        "PARAPHRASE_EQUIVALENT",
-        "SAME_SURFACE_DIFFERENT_MECHANISM",
-        "LIKELY_SUBTYPE",
-        "ANALOGOUS",
-        "DIFFERENT",
-        "BOUNDARY_OR_HOLD",
+        category = pair.get("calibration_category")
+        if category not in CALIBRATION_CATEGORIES:
+            errors.append(f"{pair.get('pair_id')}: invalid or missing calibration_category")
+        elif pair.get("decision") not in CALIBRATION_DECISIONS[category]:
+            errors.append(f"{pair.get('pair_id')}: decision is incompatible with calibration_category {category}")
+    derived_categories = {
+        pair.get("calibration_category")
+        for pair in pairs
+        if isinstance(pair, Mapping) and pair.get("calibration_category") in CALIBRATION_CATEGORIES
     }
-    if phase == "PAIR_CALIBRATION" and not required_categories.issubset(categories):
-        errors.append("pair calibration does not cover all required categories")
+    declared_categories = set(_list(controls.get("pair_coverage_categories")))
+    if phase == "PAIR_CALIBRATION" and not CALIBRATION_CATEGORIES.issubset(derived_categories):
+        errors.append("pair calibration real records do not cover all required categories")
+    if declared_categories and declared_categories != derived_categories:
+        errors.append("pair_coverage_categories summary does not match categories derived from real pairs")
     gates["PAIR_CALIBRATION_GATE"] = _gate(errors)
 
     errors = []
@@ -363,12 +475,89 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
         for pair in pairs
         if isinstance(pair, Mapping) and isinstance(pair.get("pair_id"), str)
     }
-    approvals = set(_list(controls.get("human_approvals")))
+    for family in families:
+        if not isinstance(family, Mapping):
+            continue
+        fid = family.get("family_id")
+        same = _ids(_list(family.get("same_members")))
+        subtypes = _ids(_list(family.get("subtype_members")))
+        positive_members = same | subtypes
+        analogous = _ids(_list(family.get("analogous_references")))
+        hold = _ids(_list(family.get("hold_boundary_references")))
+        if same & subtypes:
+            errors.append(f"{fid}: same_members and subtype_members overlap")
+        for member_id in sorted(positive_members):
+            if member_id not in card_by_id:
+                errors.append(f"{fid}: positive member does not exist: {member_id}")
+        if positive_members & analogous:
+            errors.append(f"{fid}: analogous reference appears in positive membership")
+        if positive_members & hold:
+            errors.append(f"{fid}: HOLD reference appears in positive membership")
+        canonical = family.get("canonical_member_id")
+        tests = {
+            test.get("member_id"): test.get("result")
+            for test in _list(family.get("member_definition_tests"))
+            if isinstance(test, Mapping)
+        }
+        if canonical is not None:
+            if canonical not in card_by_id or canonical not in positive_members:
+                errors.append(f"{fid}: canonical member must exist in positive membership")
+            if tests.get(canonical) not in {"PASS_SAME", "PASS_SUBTYPE"}:
+                errors.append(f"{fid}: canonical member lacks an independent PASS definition test")
+
+        positive_pairs = set(_list(family.get("positive_support_pair_ids")))
+        negative_pairs = set(_list(family.get("negative_boundary_pair_ids")))
+        analogy_pairs = set(_list(family.get("structural_analogy_pair_ids")))
+        if positive_pairs & (negative_pairs | analogy_pairs):
+            errors.append(f"{fid}: positive pair provenance overlaps a boundary/analogy role")
+        if negative_pairs & analogy_pairs:
+            errors.append(f"{fid}: negative and structural-analogy provenance overlap")
+        for pair_id in positive_pairs:
+            pair = pair_by_id.get(pair_id)
+            if pair is None:
+                errors.append(f"{fid}: nonexistent positive support pair {pair_id}")
+                continue
+            decision = pair.get("decision")
+            subtype_allowed = decision == "SUBTYPE" and pair.get("family_support_role") == "SUBTYPE_SUPPORT"
+            if decision != "SAME_MECHANISM" and not subtype_allowed:
+                errors.append(f"{fid}: pair {pair_id} is not valid positive family support")
+            pair_members = {pair.get("left_card_id"), pair.get("right_card_id")}
+            if not (pair_members & positive_members):
+                errors.append(f"{fid}: pair {pair_id} does not reference this family's positive members")
+        for pair_id in negative_pairs:
+            pair = pair_by_id.get(pair_id)
+            if pair is None:
+                errors.append(f"{fid}: nonexistent negative boundary pair {pair_id}")
+                continue
+            left_id = pair.get("left_card_id")
+            right_id = pair.get("right_card_id")
+            left_positive = left_id in positive_members or left_id == canonical
+            right_positive = right_id in positive_members or right_id == canonical
+            if left_positive == right_positive:
+                errors.append(f"{fid}: negative pair {pair_id} must connect one positive member to one outside candidate")
+            if pair.get("decision") not in {"ANALOGOUS", "DIFFERENT", "HOLD"}:
+                errors.append(f"{fid}: pair {pair_id} judgment is incompatible with negative-boundary role")
+        for pair_id in analogy_pairs:
+            pair = pair_by_id.get(pair_id)
+            if pair is None:
+                errors.append(f"{fid}: nonexistent structural analogy pair {pair_id}")
+                continue
+            explicit_role = pair.get("family_support_role") == "STRUCTURAL_ANALOGY"
+            if pair.get("decision") != "ANALOGOUS" and not explicit_role:
+                errors.append(f"{fid}: pair {pair_id} is not a structural analogy")
+    gates["FAMILY_PROVENANCE_INTEGRITY_GATE"] = _gate(errors)
+
+    errors = []
     for family in families:
         if not isinstance(family, Mapping) or family.get("family_status") != "STABLE":
             continue
         fid = family.get("family_id")
         members = _ids(_list(family.get("same_members")) + _list(family.get("subtype_members")))
+        tests = {
+            test.get("member_id"): test.get("result")
+            for test in _list(family.get("member_definition_tests"))
+            if isinstance(test, Mapping)
+        }
         books = {
             card_by_id[mid].get("source_primary_object", {}).get("book_id")
             for mid in members
@@ -386,12 +575,21 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
             right = card_by_id.get(pair.get("right_card_id"), {})
             left_book = left.get("source_primary_object", {}).get("book_id") if isinstance(left.get("source_primary_object"), Mapping) else None
             right_book = right.get("source_primary_object", {}).get("book_id") if isinstance(right.get("source_primary_object"), Mapping) else None
-            if left_book and right_book and left_book != right_book:
+            pair_members = {pair.get("left_card_id"), pair.get("right_card_id")}
+            if pair_members.issubset(members) and left_book and right_book and left_book != right_book:
                 pattern_a = True
                 break
         canonical = family.get("canonical_member_id")
         subtypes = _ids(_list(family.get("subtype_members")))
-        pattern_b = bool(canonical and len(subtypes) >= 2 and len(books) >= 2 and family.get("boundary_stress_passed") is True)
+        canonical_valid = canonical in members and canonical in card_by_id and tests.get(canonical) in {"PASS_SAME", "PASS_SUBTYPE"}
+        subtype_tests_valid = len(subtypes) >= 2 and all(tests.get(member) == "PASS_SUBTYPE" for member in subtypes)
+        pattern_b = bool(
+            canonical_valid
+            and subtype_tests_valid
+            and len(books) >= 2
+            and family.get("boundary_stress_passed") is True
+            and _list(family.get("hard_invariants"))
+        )
         if not (pattern_a or pattern_b):
             exception = f"APPROVE_HOLD_FAMILY_EXCEPTION:{fid}"
             if exception not in approvals:
@@ -434,8 +632,6 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
         if not isinstance(batch_size, int) or not 25 <= batch_size <= 50:
             errors.append("domain expansion batch must contain 25-50 cards")
     if phase == "DOMAIN_FULL":
-        if controls.get("successful_expansion_count", 0) < 1:
-            errors.append("DOMAIN_FULL requires a successful expansion")
         if controls.get("major_definition_drift") is True:
             errors.append("DOMAIN_FULL blocked by major definition drift")
         if "APPROVE_DOMAIN_FULL" not in approvals:

@@ -40,6 +40,8 @@ PLANNER_FINAL_MATERIAL_GATE = HOLD
 ACTIVE_PROMOTION = NOT_RUN
 ```
 
+Every run persists an auditable `stage_history`. Each completed predecessor records `stage`, `status=PASS`, a non-empty `artifact_id`, and `human_review=APPROVED` when that stage has a review stop. Stages must remain in legal order; only `DOMAIN_EXPANSION` may repeat, and every expansion requires a unique artifact or batch ID. `DOMAIN_FULL` requires a real approved expansion history record, not a naked success counter. `FULL_LIBRARY` requires an approved `DOMAIN_FULL` history record. `CROSS_DOMAIN_ONTOLOGY` remains optional.
+
 ## 2. Default scale safety limits
 
 These are safety defaults, not KPIs:
@@ -124,6 +126,8 @@ other decomposition modules = CALIBRATION_REQUIRED
 
 A shared contract does not validate an unpiloted lane. Ordinary family discovery must not compare objects across lanes or granularities. In particular, `GF_CORE` and `GF_ABILITY` remain separate. Cross-granularity analysis requires an explicitly approved ontology research run and still cannot assign family membership across lanes.
 
+A `CALIBRATION_REQUIRED` lane may execute through `BOUNDARY_STRESS_TEST`. It cannot enter `DOMAIN_EXPANSION`, `DOMAIN_FULL`, or `FULL_LIBRARY` until the run records `APPROVE_LANE_VALIDATION:<domain>:<lane>`.
+
 ### 4.1 Relationship engine specialization
 
 A relationship card also preserves `source_actor_sides`, `functional_roles`, `primary_engine_evidence_refs`, and `corroborating_relation_evidence_refs`. Source identities and functional abstractions must not overwrite each other. Names, titles, and social labels are not functional roles by themselves.
@@ -176,6 +180,8 @@ Every review separates:
 - `downstream_effect_layer`: what it eventually produces; downstream similarity cannot prove SAME;
 - `transfer_dimension`: for SUBTYPE, what may vary and what invariant must remain.
 
+Every calibration pair also records one real `calibration_category`: `OBVIOUS_SAME`, `PARAPHRASE_EQUIVALENT`, `SAME_SURFACE_DIFFERENT_MECHANISM`, `LIKELY_SUBTYPE`, `ANALOGOUS`, `DIFFERENT`, or `BOUNDARY_OR_HOLD`. Coverage is derived from pair records; a control-summary claim cannot replace or contradict those records.
+
 `SAME_MECHANISM` requires the same core causal chain while allowing different names, prose, setting skin, institutions, professions, and resource labels. `SUBTYPE` requires a common core plus a stable, describable, transferable variation. `ANALOGOUS` preserves creative reference value while explicitly remaining outside membership. `DIFFERENT` means the transformation semantics differ. `HOLD` preserves unresolved core evidence rather than forcing coverage.
 
 Keywords, dictionaries, substrings, embeddings, and structural signatures are `CANDIDATE_RETRIEVAL_ONLY`. They never decide a pair relation or membership.
@@ -225,6 +231,8 @@ OUTSIDE_ANALOGOUS
 OUTSIDE_DIFFERENT
 HOLD
 ```
+
+All family provenance is referentially checked. SAME/SUBTYPE/canonical member IDs must exist and pass their own definition tests. Positive-support pairs must exist, use SAME or an explicitly marked subtype-support role, and reference the family's own positive members. Negative-boundary pairs must connect a positive/canonical member to an outside candidate with a compatible judgment. Structural-analogy pairs must exist and be ANALOGOUS or explicitly carry that role. Provenance roles do not overlap.
 
 Membership is based on the minimum definition, hard invariants, negative boundary, and known-conflict audit. It is never inferred from graph connectivity. Thus `A SAME B` and `B SAME C` do not admit C unless C independently passes the family definition.
 
