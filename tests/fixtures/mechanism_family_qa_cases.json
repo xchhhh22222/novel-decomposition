@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.7.0",
+  "cases": [
+    {
+      "case_id": "MF-01",
+      "description": "Different wording, same mechanism",
+      "left_lane": "relationship_engine",
+      "right_lane": "relationship_engine",
+      "decision": "SAME_MECHANISM",
+      "mechanism_core_layer": "recognized evidence updates trust and opens conditional access on both sides",
+      "downstream_effect_layer": "one opens a task and one opens a team slot",
+      "transfer_dimension": "surface wording may vary",
+      "membership": true,
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "MF-02",
+      "description": "Same keyword, different mechanism",
+      "left_lane": "relationship_engine",
+      "right_lane": "relationship_engine",
+      "decision": "DIFFERENT",
+      "mechanism_core_layer": "one verifies eligibility while the other coerces compliance",
+      "downstream_effect_layer": "both mention access",
+      "transfer_dimension": "none",
+      "surface_only_same": true,
+      "membership": false,
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "MF-03",
+      "description": "Shared core, stable variation",
+      "left_lane": "GF_CORE",
+      "right_lane": "GF_CORE",
+      "decision": "SUBTYPE",
+      "mechanism_core_layer": "external resource is converted into bounded growth capacity",
+      "downstream_effect_layer": "both increase cultivation",
+      "transfer_dimension": {
+        "variable": [
+          "resource form",
+          "conversion rate"
+        ],
+        "invariant": [
+          "external resource conversion",
+          "bounded output"
+        ]
+      },
+      "membership": true,
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "MF-04",
+      "description": "Useful analogy, different mechanism",
+      "left_lane": "relationship_engine",
+      "right_lane": "relationship_engine",
+      "decision": "ANALOGOUS",
+      "mechanism_core_layer": "protection changes exposure while trust verification changes eligibility",
+      "downstream_effect_layer": "both help the protagonist proceed",
+      "transfer_dimension": "creative analogy only",
+      "membership": false,
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "MF-05",
+      "description": "Core unknown",
+      "left_lane": "GF_CORE",
+      "right_lane": "GF_CORE",
+      "decision": "HOLD",
+      "mechanism_core_layer": "conversion rule is unknown",
+      "downstream_effect_layer": "growth is observed",
+      "transfer_dimension": "unknown",
+      "core_unknown": true,
+      "membership": false,
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "MF-06",
+      "description": "Peripheral unknown does not force hold",
+      "left_lane": "plotline_progression_engine",
+      "right_lane": "plotline_progression_engine",
+      "decision": "SAME_MECHANISM",
+      "mechanism_core_layer": "completed task reveals a higher-pressure task and repeats",
+      "downstream_effect_layer": "status rises",
+      "transfer_dimension": "ultimate ending unknown",
+      "peripheral_unknown": true,
+      "comparison_readiness": "READY_WITH_BOUNDARY",
+      "membership": true,
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "MF-07",
+      "description": "Linked context cannot provide support",
+      "left_lane": "relationship_engine",
+      "right_lane": "relationship_engine",
+      "decision": "SAME_MECHANISM",
+      "mechanism_core_layer": "primary objects do not establish a shared chain",
+      "downstream_effect_layer": "linked notes share a trust word",
+      "transfer_dimension": "none",
+      "semantic_support": "LINKED_CONTEXT_ONLY",
+      "membership": true,
+      "expected_status": "HOLD"
+    },
+    {
+      "case_id": "MF-08",
+      "description": "Projection duplication",
+      "left_lane": "relationship_engine",
+      "right_lane": "relationship_engine",
+      "decision": "ANALOGOUS",
+      "mechanism_core_layer": "second record is only another view of the first relation",
+      "downstream_effect_layer": "same scene is described twice",
+      "transfer_dimension": "none",
+      "projection_semantic_role": "CORROBORATING_VIEW",
+      "membership": false,
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "MF-09",
+      "description": "Single-link chaining trap",
+      "left_lane": "relationship_engine",
+      "right_lane": "relationship_engine",
+      "decision": "SAME_MECHANISM",
+      "mechanism_core_layer": "A and B align, but C fails the family minimum transformation",
+      "downstream_effect_layer": "all eventually gain access",
+      "transfer_dimension": "none",
+      "family_members": [
+        "A",
+        "B"
+      ],
+      "expected_outside_member": "C",
+      "membership": false,
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "MF-10",
+      "description": "Same downstream result",
+      "left_lane": "GF_CORE",
+      "right_lane": "GF_CORE",
+      "decision": "DIFFERENT",
+      "mechanism_core_layer": "one exchanges currency while the other harvests risk exposure",
+      "downstream_effect_layer": "both obtain resources",
+      "transfer_dimension": "none",
+      "decision_basis": "MECHANISM_CORE",
+      "membership": false,
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "MF-11",
+      "description": "GF lane violation",
+      "left_lane": "GF_CORE",
+      "right_lane": "GF_ABILITY",
+      "decision": "HOLD",
+      "mechanism_core_layer": "whole-system core cannot be paired with a single ability",
+      "downstream_effect_layer": "both may increase combat power",
+      "transfer_dimension": "cross-granularity research required",
+      "membership": false,
+      "expected_status": "HOLD"
+    },
+    {
+      "case_id": "MF-12",
+      "description": "Plotline surface similarity",
+      "left_lane": "plotline_progression_engine",
+      "right_lane": "plotline_progression_engine",
+      "decision": "DIFFERENT",
+      "mechanism_core_layer": "ranking produces resources in one line; examination grants institutional identity in the other",
+      "downstream_effect_layer": "both use examinations",
+      "transfer_dimension": "none",
+      "surface_only_same": true,
+      "membership": false,
+      "expected_status": "PASS"
+    }
+  ]
+}
+

@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.7.0",
+  "cases": [
+    {
+      "case_id": "ONTO-A",
+      "description": "Gatekeeper families share a nontrivial parent",
+      "identity_relation": "META_SPECIALIZATION_CANDIDATE",
+      "composition_relation": "NONE",
+      "family_status": "STABLE",
+      "abstract_core": "recognized evidence updates an authorized appraisal which conditionally changes access eligibility",
+      "state_variable_changed": "access eligibility",
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "ONTO-B",
+      "description": "Similar topology changes different state variables",
+      "identity_relation": "STRUCTURAL_ANALOGY",
+      "composition_relation": "NONE",
+      "family_status": "STABLE",
+      "abstract_core": "evidence resolves uncertainty and creates a next entry",
+      "state_variable_changed": "actionable knowledge",
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "ONTO-C",
+      "description": "GF output feeds plotline input without identity",
+      "identity_relation": "DISTINCT",
+      "composition_relation": "LEFT_CAN_FEED_RIGHT",
+      "family_status": "STABLE",
+      "abstract_core": "converted growth resource can satisfy a later task requirement",
+      "state_variable_changed": "resource availability",
+      "membership_effect": "NONE",
+      "identity_basis": "MECHANISM_SEMANTICS",
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "ONTO-D",
+      "description": "HOLD family cannot support ontology",
+      "identity_relation": "META_SPECIALIZATION_CANDIDATE",
+      "composition_relation": "NONE",
+      "family_status": "HOLD",
+      "abstract_core": "recognized evidence changes access eligibility",
+      "state_variable_changed": "access eligibility",
+      "positive_support": true,
+      "expected_status": "HOLD"
+    },
+    {
+      "case_id": "ONTO-E",
+      "description": "Trivial feedback-loop parent",
+      "identity_relation": "META_SPECIALIZATION_CANDIDATE",
+      "composition_relation": "NONE",
+      "family_status": "STABLE",
+      "abstract_core": "feedback loop",
+      "state_variable_changed": "credibility",
+      "expected_status": "HOLD"
+    },
+    {
+      "case_id": "ONTO-F",
+      "description": "Mixed provenance array is invalid",
+      "identity_relation": "STRUCTURAL_ANALOGY",
+      "composition_relation": "NONE",
+      "family_status": "STABLE",
+      "abstract_core": "validated observations update actionable knowledge",
+      "state_variable_changed": "actionable knowledge",
+      "source_pair_ids_mixed": true,
+      "expected_status": "HOLD"
+    }
+  ]
+}
+
