@@ -2,9 +2,33 @@
 
 一套用于长篇网文拆解、专项提取、证据审计、素材迁移、开书组装、正文创作与连续性维护的 Codex Skills 与工作流。
 
-当前版本：**拆解 V1.6.6**
+当前版本：**拆解 V1.7.0**
 
-## V1.6.6 的核心思路
+## V1.7.0 的核心思路
+
+跨书研究的默认架构从一次性 `full semantic reclustering` 升级为 `staged reusable mechanism family discovery`：
+
+```text
+单书证据
+→ mechanism card
+→ readiness normalization
+→ 小规模 pair calibration
+→ 小规模 family pilot
+→ boundary stress test
+→ 分批 domain expansion
+→ 人工批准后的 domain full
+→ 可选 cross-domain ontology
+→ 人工批准后的 full-library expansion
+```
+
+- 新 domain/lane 先使用 30–50 张卡（不足则全取），再校准 10–15 个代表 pair；第一次最多提出 2–3 个 family hypothesis，允许为 0。
+- family member 逐条通过 minimum definition；禁止 single-link chaining。`ANALOGOUS` 只进入创作参考层，`UNCLUSTERED` 和 `HOLD` 均为合法结果。
+- pair、family pilot、boundary stress、每批 expansion 后都必须停止人工审核；`DOMAIN_FULL`、`FULL_LIBRARY` 和 promotion 各自需要显式批准。
+- 当前仅 `relationship_engine`、`GF_CORE`、`plotline_progression_engine` 已通过 family-discovery Pilot；`GF_ABILITY`、其它人物 projection 与其它拆书模块仍需单独 calibration。
+- 跨 domain ontology 只接受 stable family；identity、structural analogy 与 composition 分离，composition 不改变 family membership。
+- V1.6.x semantic recluster contract、complete-link validator 与全部 regression 继续保留为 legacy compatibility，但旧 cluster membership 不再作为新 RMF family 的答案。
+
+## 单书拆解与 V1.6.6 兼容层
 
 完整拆解与可迁移素材分层保存：
 
@@ -34,6 +58,7 @@ DNA 候选库 / 原子套路卡 / 开书母型
 - **V1.6.4 加固跨书语义重聚类**：禁止把 lexical top-2 当完整候选空间；候选召回必须联合 lexical、受控结构 blocking 和 operation/structural blocking，并做 expanded-K recall audit。MERGE/SUBTYPE 必须有独立于关键词的结构证据；三成员以上簇必须通过全局共同不变量与 bridge/chaining 审核；linked context 先去重；历史 cluster 与 fine-grained unit 的 lineage 必须通过显式 migration map，禁止跨命名空间 raw-ID intersection。
 - **V1.6.5 修复语义 false negative**：禁止把 `actual_operation` 原文完全一致当作语义等价的必要条件；结构/operation 疑似 pair 必须基于 evidence-grounded mechanism signature 做 paraphrase-equivalence 审核。接受的 MERGE/SUBTYPE 同时写入 `equivalent_pairs.jsonl`，保留“同一机制的不同实现”作为创作参考；KEEP_SEPARATE 必须有明确结构差异或冲突。Lineage 支持 historical whole-record → 1..N fine units，候选多于一个不能自动成为 unresolved。
 - **V1.6.6 修复 semantic provenance / context leakage**：自动词典、substring、规则 atom 只能用于候选召回，不能换名后直接决定 SUBTYPE；每条 accepted edge 必须由左右 primary source object 自身提供 evidence-grounded support。人物功能等模块的 linked context 只能佐证，不能把外围 function/transition/interface 的词拼成当前 unit 的核心机制。Lineage 中 book/source_record/evidence overlap 只能缩小候选集，resolved link 需 exact internal identity 或 evidence overlap + mechanism correspondence。独立 validator 新增 `MECHANISM_SIGNATURE_PROVENANCE_GATE` 与 `LINKED_CONTEXT_SUPPORT_ISOLATION_GATE`。
+- **V1.7.0 固化 staged mechanism-family architecture**：新增 mechanism card/readiness、五类 pair judgment、family minimum definition、逐成员测试、negative boundary、scale/human-review gate、独立 RMF namespace 与 cross-domain ontology/composition 隔离验证器。
 - 拆书层只还原单书来源事实；创造层允许跨书选择组件重新组合，但组合结果必须标为新书候选，不能写回来源记录。
 - 所有结论必须回指章节或已审核证据，模型记忆不能写成来源。
 
@@ -70,7 +95,7 @@ skills/
 
 1. 将完整拆解包放入 `workflow/_模板/` 复制出的新批次目录。
 2. 用 `novel-dna-orchestrator` 先给新来源做 FULL_DNA / SUPPLEMENTAL_MATERIAL 路由；用户确认 routing matrix 后再执行。
-3. 用对应 specialist Skill 生成候选记录；Supplemental 只跑 target_specialties，但专项内部 QA 不降级。若生成五类受控 derived view，先通过 `validate_derived_materials.py`；存在 combat 时再通过 `validate_combat_semantics.py`；最后用 `validate_supplemental_batch.py` 对账 route/output、状态、HOLD totals 与聚类资格。
+3. 用对应 specialist Skill 生成候选记录；Supplemental 只跑 target_specialties，但专项内部 QA 不降级。若生成五类受控 derived view，先通过 `validate_derived_materials.py`；存在 combat 时再通过 `validate_combat_semantics.py`；最后用 `validate_supplemental_batch.py` 对账 route/output、状态、HOLD totals 与候选资格。新的跨书机制研究再按 `mechanism-family-contract.md` 的 staged gate 单独启动。
 4. 用 `fanqie-material-curator` 完成原子化、查重、审核和迁移。
 5. 用 `novel-creation-planner` 先研究同赛道新书榜结构，再调度素材库，并从战略目标物/大高潮反推前100章。
 6. 用 `novel-writer` 管理章纲、工作稿、正式正文和资料同步边界。
@@ -93,3 +118,4 @@ Skills 可按需复制到 Codex Skills 目录：
 - 不复制原作人物、专名、标志性表达或完整事件链作为原创素材。
 - 不上传私人素材库、账号信息、密钥、Cookie 或本机绝对路径配置。
 - 示例中的 `candidate` 和 `HOLD` 不代表已进入正式调用池。
+
