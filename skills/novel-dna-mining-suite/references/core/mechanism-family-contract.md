@@ -42,6 +42,17 @@ ACTIVE_PROMOTION = NOT_RUN
 
 Every run persists an auditable `stage_history`. Each completed predecessor records `stage`, `status=PASS`, a non-empty `artifact_id`, and `human_review=APPROVED` when that stage has a review stop. Stages must remain in legal order; only `DOMAIN_EXPANSION` may repeat, and every expansion requires a unique artifact or batch ID. `DOMAIN_FULL` requires a real approved expansion history record, not a naked success counter. `FULL_LIBRARY` requires an approved `DOMAIN_FULL` history record. `CROSS_DOMAIN_ONTOLOGY` remains optional.
 
+### 1.1 Stage artifact scope
+
+`STAGE_TRANSITION_GATE` proves that predecessors exist. `STAGE_ARTIFACT_SCOPE_GATE` separately proves that the current artifact does not claim semantics belonging to a later stage.
+
+- `PAIR_CALIBRATION` may contain pair records and draft family previews only. Preview families use `family_status=HYPOTHESIS|HOLD`. Any preliminary boundary material must declare `boundary_analysis_status=PREVIEW_ONLY_NOT_STAGE_GATE_EVIDENCE`. It cannot emit `STABLE`, claim `boundary_stress_passed=true`, or record completed `FAMILY_PILOT` / `BOUNDARY_STRESS_TEST` stages.
+- `FAMILY_PILOT` may contain hypotheses, HOLD families, and candidate member-definition tests. It cannot claim `boundary_stress_passed=true`, completed boundary stress, or domain expansion.
+- `BOUNDARY_STRESS_TEST` is the first stage at which a family may become `STABLE`. A STABLE family must also pass the independent stable-family gate and record `boundary_stress_passed=true`.
+- `DOMAIN_EXPANSION` requires approved `PAIR_CALIBRATION`, `FAMILY_PILOT`, and `BOUNDARY_STRESS_TEST` history. Later stages may carry forward an already stable family, but no earlier-stage run may emit operational STABLE status.
+
+The phase name, stage history, and emitted artifact semantics must therefore agree; a correct predecessor list does not excuse a later-stage claim inside an earlier-stage document.
+
 ## 2. Default scale safety limits
 
 These are safety defaults, not KPIs:
@@ -287,5 +298,20 @@ DOMAIN_FULL = NOT_RUN
 FULL_LIBRARY = NOT_RUN
 ACTIVE_PROMOTION = NOT_RUN
 ```
+
+### 8.1 Validation binding
+
+Every mechanism-family validation report binds the PASS/HOLD result to the artifacts that were actually read. It records at least:
+
+```text
+validator_skill_commit
+validator_source_sha256
+validated_run_id
+validated_run_document_sha256
+validated_pair_artifact_sha256
+validation_execution_id
+```
+
+The validator hashes raw file bytes when invoked from the CLI. When called as a library without file bytes, it hashes canonical JSON and records the hash mode. A separately supplied pair JSON/JSONL artifact must contain the same records as the run document. `--verify-report <old-report.json>` compares the old binding with the current validator, run document, run ID, and pair artifact; any stale or mismatched binding fails `VALIDATION_BINDING_GATE`. A previous PASS report is not reusable after artifact mutation.
 
 The default domain-full method remains retrieval hints followed by independent definition tests. It must not default to an N×N semantic graph. Full-library work means combining validated domain family libraries, incremental expansion, normalized signatures, ontology relations, and composition links—not loading the entire library into one clustering pass.

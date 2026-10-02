@@ -149,6 +149,8 @@ SUPPLEMENTAL_MATERIAL 改为 `routing gate → 授权专项全文扫描 → 必�
 
 默认顺序固定为：单书证据 → mechanism card → readiness normalization → 10–15 个代表 pair 校准 → 最多 2–3 个 family hypotheses → boundary stress → 25–50 张卡一批的 domain expansion。每个校准、pilot、stress、expansion 阶段完成后都必须 `STOP_FOR_HUMAN_REVIEW`；`DOMAIN_FULL`、`FULL_LIBRARY` 与 promotion 分别需要显式人工批准。
 
+当前 artifact 只能表达当前阶段已经获得的语义：`PAIR_CALIBRATION` 的 family 只能是 `HYPOTHESIS|HOLD`，边界分析只能标为 `PREVIEW_ONLY_NOT_STAGE_GATE_EVIDENCE`；`FAMILY_PILOT` 也不得声称 boundary stress 已通过。只有 `BOUNDARY_STRESS_TEST` 及其 stable-family gate 同时通过后才能首次产生 `STABLE`。validator 报告必须绑定 run 文档、pair artifact、validator commit/source hash 和 execution ID；产物变更后不得复用旧 PASS。
+
 总控不得把 retrieval similarity、关键词、embedding 邻域、旧 cluster membership 或 connected components 当作 SAME/SUBTYPE/family membership。所有成员必须逐条通过 family definition test；ANALOGOUS 进入 reference layer，`UNCLUSTERED` 与 `HOLD` 都是合法结果。未获批准时保持 `PLANNER_PROVISIONAL_USE=HOLD`、`PLANNER_FINAL_MATERIAL_GATE=HOLD`、`ACTIVE_PROMOTION=NOT_RUN`。
 
 当前仅 `relationship_engine`、`GF_CORE`、`plotline_progression_engine` 为 `FAMILY_DISCOVERY_VALIDATED`。`GF_ABILITY`、其它人物 projection 与其它拆书模块均为 `CALIBRATION_REQUIRED`。

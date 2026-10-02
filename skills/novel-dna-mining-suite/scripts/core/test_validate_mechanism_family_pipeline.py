@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import copy
 import importlib.util
 import json
 import unittest
@@ -44,6 +45,36 @@ class PortableMechanismFamilyRegression(unittest.TestCase):
         self.assertEqual("NOT_RUN", report["runtime"]["DOMAIN_FULL"])
         self.assertEqual("NOT_RUN", report["runtime"]["FULL_LIBRARY"])
         self.assertEqual("NOT_RUN", report["runtime"]["ACTIVE_PROMOTION"])
+
+    def test_stage_scope_rejects_stable_family_during_pair_calibration(self):
+        document = {
+            "phase": "PAIR_CALIBRATION",
+            "next_state": "STOP_FOR_HUMAN_REVIEW",
+            "stage_history": [],
+            "cards": [],
+            "pairs": [],
+            "families": [{"family_id": "RMF:TEST:abcdef12", "family_status": "STABLE"}],
+            "run_controls": {"pair_coverage_categories": []},
+        }
+        report = validator.validate_document(document)
+        self.assertEqual("FAIL", report["gates"]["STAGE_ARTIFACT_SCOPE_GATE"]["status"])
+
+    def test_validation_binding_detects_mutated_document(self):
+        document = {
+            "run_id": "PORTABLE-BINDING-TEST",
+            "phase": "PAIR_CALIBRATION",
+            "next_state": "STOP_FOR_HUMAN_REVIEW",
+            "stage_history": [],
+            "cards": [],
+            "pairs": [],
+            "families": [],
+            "run_controls": {"pair_coverage_categories": []},
+        }
+        accepted = validator.validate_document(document)
+        mutated = copy.deepcopy(document)
+        mutated["run_id"] = "PORTABLE-BINDING-TEST-MUTATED"
+        report = validator.validate_document(mutated, expected_validation_report=accepted)
+        self.assertEqual("FAIL", report["gates"]["VALIDATION_BINDING_GATE"]["status"])
 
     def test_mirror_matches_orchestrator(self):
         self.assertEqual(SCRIPT.read_bytes(), ORCHESTRATOR.read_bytes())

@@ -104,6 +104,7 @@ def valid_pair_document():
         "BOUNDARY_OR_HOLD",
     ]
     return {
+        "run_id": "TEST-MECHANISM-FAMILY-RUN",
         "phase": "PAIR_CALIBRATION",
         "next_state": "STOP_FOR_HUMAN_REVIEW",
         "stage_history": stage_history_for("PAIR_CALIBRATION"),
@@ -180,9 +181,16 @@ class MechanismFamilyValidatorTests(unittest.TestCase):
             "HUMAN_REVIEW_STOP_GATE",
             "LEGACY_CLUSTER_ISOLATION_GATE",
             "FAMILY_ID_NAMESPACE_GATE",
+            "STAGE_ARTIFACT_SCOPE_GATE",
+            "VALIDATION_BINDING_GATE",
         }
         self.assertEqual("PASS", report["pipeline_status"], report)
         self.assertTrue(required.issubset(report["gates"]))
+        self.assertEqual("TEST-MECHANISM-FAMILY-RUN", report["validated_run_id"])
+        self.assertRegex(report["validated_run_document_sha256"], r"^[0-9a-f]{64}$")
+        self.assertRegex(report["validated_pair_artifact_sha256"], r"^[0-9a-f]{64}$")
+        self.assertRegex(report["validator_source_sha256"], r"^[0-9a-f]{64}$")
+        self.assertRegex(report["validation_execution_id"], r"^[0-9a-f-]{36}$")
 
     def test_fixture_cases_cover_contract_boundaries(self):
         self.assertEqual(12, len(FIXTURES["cases"]))
@@ -232,6 +240,7 @@ class MechanismFamilyValidatorTests(unittest.TestCase):
         document["stage_history"] = stage_history_for("BOUNDARY_STRESS_TEST")
         family = family_record()
         family["family_status"] = "STABLE"
+        family["boundary_stress_passed"] = True
         family["stress_case_count"] = 5
         document["families"] = [family]
         report = validator.validate_document(document)
@@ -356,6 +365,118 @@ class MechanismFamilyValidatorTests(unittest.TestCase):
             calibration_pair["decision"] = "SAME_MECHANISM"
         report = validator.validate_document(document)
         self.assertEqual("FAIL", report["gates"]["PAIR_CALIBRATION_GATE"]["status"])
+
+    def test_pair_calibration_cannot_emit_stable_family(self):
+        document = valid_pair_document()
+        family = family_record()
+        family["family_status"] = "STABLE"
+        document["families"] = [family]
+        report = validator.validate_document(document)
+        self.assertEqual("FAIL", report["gates"]["STAGE_ARTIFACT_SCOPE_GATE"]["status"])
+
+        operational = valid_pair_document()
+        operational_family = family_record()
+        operational_family["operational_status"] = "STABLE"
+        operational["families"] = [operational_family]
+        report = validator.validate_document(operational)
+        self.assertEqual("FAIL", report["gates"]["STAGE_ARTIFACT_SCOPE_GATE"]["status"])
+
+    def test_pair_calibration_cannot_claim_boundary_stress_passed(self):
+        document = valid_pair_document()
+        family = family_record()
+        family["boundary_stress_passed"] = True
+        family["boundary_analysis_status"] = "PREVIEW_ONLY_NOT_STAGE_GATE_EVIDENCE"
+        document["families"] = [family]
+        report = validator.validate_document(document)
+        self.assertEqual("FAIL", report["gates"]["STAGE_ARTIFACT_SCOPE_GATE"]["status"])
+
+    def test_family_pilot_cannot_claim_boundary_stress_passed(self):
+        document = valid_pair_document()
+        document["phase"] = "FAMILY_PILOT"
+        document["stage_history"] = stage_history_for("FAMILY_PILOT")
+        family = family_record()
+        family["boundary_stress_passed"] = True
+        document["families"] = [family]
+        report = validator.validate_document(document)
+        self.assertEqual("FAIL", report["gates"]["STAGE_ARTIFACT_SCOPE_GATE"]["status"])
+
+    def test_early_stage_cannot_claim_later_stage_completion(self):
+        document = valid_pair_document()
+        document["stage_history"].append(
+            {
+                "stage": "FAMILY_PILOT",
+                "status": "PASS",
+                "artifact_id": "premature-family-pilot",
+                "human_review": "APPROVED",
+            }
+        )
+        report = validator.validate_document(document)
+        self.assertEqual("FAIL", report["gates"]["STAGE_ARTIFACT_SCOPE_GATE"]["status"])
+
+        pilot = valid_pair_document()
+        pilot["phase"] = "FAMILY_PILOT"
+        pilot["stage_history"] = stage_history_for("FAMILY_PILOT")
+        pilot["run_controls"]["domain_expansion"] = True
+        report = validator.validate_document(pilot)
+        self.assertEqual("FAIL", report["gates"]["STAGE_ARTIFACT_SCOPE_GATE"]["status"])
+
+    def test_pair_calibration_allows_explicit_preview_hypothesis(self):
+        document = valid_pair_document()
+        family = family_record()
+        family["boundary_analysis_status"] = "PREVIEW_ONLY_NOT_STAGE_GATE_EVIDENCE"
+        family["preview_boundary_case_count"] = 2
+        document["families"] = [family]
+        report = validator.validate_document(document)
+        self.assertEqual("PASS", report["pipeline_status"], report)
+
+    def test_boundary_stress_may_emit_stable_family_after_approved_predecessors(self):
+        document = valid_pair_document()
+        document["phase"] = "BOUNDARY_STRESS_TEST"
+        document["stage_history"] = stage_history_for("BOUNDARY_STRESS_TEST")
+        family = family_record()
+        family["family_status"] = "STABLE"
+        family["boundary_stress_passed"] = True
+        family["stress_case_count"] = 5
+        document["families"] = [family]
+        report = validator.validate_document(document)
+        self.assertEqual("PASS", report["pipeline_status"], report)
+
+    def test_validation_binding_rejects_stale_run_and_pair_hashes(self):
+        document = valid_pair_document()
+        accepted_report = validator.validate_document(document)
+
+        stale_run = copy.deepcopy(document)
+        stale_run["cards"][0]["resulting_state"] = "mutated after validation"
+        report = validator.validate_document(stale_run, expected_validation_report=accepted_report)
+        self.assertEqual("FAIL", report["gates"]["VALIDATION_BINDING_GATE"]["status"])
+        self.assertIn(
+            "stale or mismatched validation binding: validated_run_document_sha256",
+            report["gates"]["VALIDATION_BINDING_GATE"]["errors"],
+        )
+
+        stale_pair = copy.deepcopy(document)
+        stale_pair["pairs"][0]["reason"] = "pair artifact mutated after validation"
+        report = validator.validate_document(stale_pair, expected_validation_report=accepted_report)
+        self.assertEqual("FAIL", report["gates"]["VALIDATION_BINDING_GATE"]["status"])
+        self.assertIn(
+            "stale or mismatched validation binding: validated_pair_artifact_sha256",
+            report["gates"]["VALIDATION_BINDING_GATE"]["errors"],
+        )
+
+    def test_external_pair_artifact_must_match_embedded_pairs(self):
+        document = valid_pair_document()
+        external_pairs = copy.deepcopy(document["pairs"])
+        external_pairs[0]["reason"] = "external artifact diverges from embedded pair"
+        report = validator.validate_document(
+            document,
+            pair_artifact_bytes=json.dumps(external_pairs).encode("utf-8"),
+            pair_artifact_records=external_pairs,
+        )
+        self.assertEqual("FAIL", report["gates"]["VALIDATION_BINDING_GATE"]["status"])
+        self.assertIn(
+            "external pair artifact records do not match run document pairs",
+            report["gates"]["VALIDATION_BINDING_GATE"]["errors"],
+        )
 
     def test_validator_mirror_is_byte_identical(self):
         self.assertEqual(SCRIPT.read_bytes(), MIRROR.read_bytes())

@@ -27,6 +27,7 @@
 - 当前仅 `relationship_engine`、`GF_CORE`、`plotline_progression_engine` 已通过 family-discovery Pilot；`GF_ABILITY`、其它人物 projection 与其它拆书模块仍需单独 calibration。
 - 跨 domain ontology 只接受 stable family；identity、structural analogy 与 composition 分离，composition 不改变 family membership。
 - V1.6.x semantic recluster contract、complete-link validator 与全部 regression 继续保留为 legacy compatibility，但旧 cluster membership 不再作为新 RMF family 的答案。
+- V1.7.0 mechanism-family validator 额外执行 stage artifact scope 与 validation binding：早期阶段不得输出 `STABLE` 或伪称 boundary stress 完成；报告绑定实际 run、pair artifact、validator commit/source hash 与 execution ID，artifact 变更后旧 PASS 失效。
 
 ## 单书拆解与 V1.6.6 兼容层
 

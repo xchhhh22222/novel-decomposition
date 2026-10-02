@@ -4,9 +4,12 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
+import subprocess
 import sys
+import uuid
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Mapping, Sequence
 
@@ -119,6 +122,16 @@ REVIEW_STOP_STAGES = {
     "BOUNDARY_STRESS_TEST",
     "DOMAIN_EXPANSION",
 }
+PREVIEW_BOUNDARY_STATUS = "PREVIEW_ONLY_NOT_STAGE_GATE_EVIDENCE"
+VALID_FAMILY_STATUSES = {"HYPOTHESIS", "HOLD", "STABLE"}
+BINDING_FIELDS = {
+    "validator_skill_commit",
+    "validator_source_sha256",
+    "validated_run_id",
+    "validated_run_document_sha256",
+    "validated_pair_artifact_sha256",
+    "validation_execution_id",
+}
 
 
 def _nonempty(value: Any) -> bool:
@@ -151,13 +164,92 @@ def _ids(values: Iterable[Any]) -> set[str]:
     return result
 
 
-def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
+def _canonical_json_bytes(value: Any) -> bytes:
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+
+
+def _sha256(value: bytes) -> str:
+    return hashlib.sha256(value).hexdigest()
+
+
+def _validator_skill_commit() -> str:
+    source = Path(__file__).resolve()
+    for parent in source.parents:
+        if not (parent / ".git").exists():
+            continue
+        try:
+            completed = subprocess.run(
+                ["git", "-C", str(parent), "rev-parse", "HEAD"],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+        except (OSError, subprocess.CalledProcessError):
+            break
+        commit = completed.stdout.strip().lower()
+        if re.fullmatch(r"[0-9a-f]{40}", commit):
+            return commit
+    return "UNAVAILABLE_PORTABLE_CONTEXT"
+
+
+def _validation_binding(
+    document: Mapping[str, Any],
+    *,
+    run_document_bytes: bytes | None = None,
+    pair_artifact_bytes: bytes | None = None,
+) -> Dict[str, Any]:
+    source_bytes = Path(__file__).read_bytes()
+    run_bytes = run_document_bytes if run_document_bytes is not None else _canonical_json_bytes(document)
+    pair_bytes = pair_artifact_bytes if pair_artifact_bytes is not None else _canonical_json_bytes(_list(document.get("pairs")))
+    return {
+        "validator_skill_commit": _validator_skill_commit(),
+        "validator_source_sha256": _sha256(source_bytes),
+        "validated_run_id": document.get("run_id"),
+        "validated_run_document_sha256": _sha256(run_bytes),
+        "validated_run_document_hash_mode": "RAW_FILE_BYTES" if run_document_bytes is not None else "CANONICAL_JSON",
+        "validated_pair_artifact_sha256": _sha256(pair_bytes),
+        "validated_pair_artifact_hash_mode": "RAW_FILE_BYTES" if pair_artifact_bytes is not None else "EMBEDDED_PAIRS_CANONICAL_JSON",
+        "validation_execution_id": str(uuid.uuid4()),
+    }
+
+
+def _binding_errors(expected_report: Mapping[str, Any], actual_binding: Mapping[str, Any]) -> List[str]:
+    errors: List[str] = []
+    missing = sorted(BINDING_FIELDS - set(expected_report))
+    if missing:
+        errors.append(f"validation report missing binding fields: {', '.join(missing)}")
+        return errors
+    for field in (
+        "validator_skill_commit",
+        "validator_source_sha256",
+        "validated_run_id",
+        "validated_run_document_sha256",
+        "validated_pair_artifact_sha256",
+    ):
+        if expected_report.get(field) != actual_binding.get(field):
+            errors.append(f"stale or mismatched validation binding: {field}")
+    return errors
+
+
+def validate_document(
+    document: Mapping[str, Any],
+    *,
+    run_document_bytes: bytes | None = None,
+    pair_artifact_bytes: bytes | None = None,
+    pair_artifact_records: Sequence[Any] | None = None,
+    expected_validation_report: Mapping[str, Any] | None = None,
+) -> Dict[str, Any]:
     cards = _list(document.get("cards"))
     pairs = _list(document.get("pairs"))
     families = _list(document.get("families"))
     controls = document.get("run_controls") if isinstance(document.get("run_controls"), Mapping) else {}
     phase = document.get("phase")
     gates: Dict[str, Dict[str, Any]] = {}
+    binding = _validation_binding(
+        document,
+        run_document_bytes=run_document_bytes,
+        pair_artifact_bytes=pair_artifact_bytes,
+    )
 
     errors: List[str] = []
     history = _list(document.get("stage_history"))
@@ -217,6 +309,71 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
         if not approved_domain_full:
             errors.append("FULL_LIBRARY requires an approved DOMAIN_FULL history record")
     gates["STAGE_TRANSITION_GATE"] = _gate(errors)
+
+    errors = []
+    phase_rank = STAGES.index(phase) if phase in STAGES else None
+    boundary_rank = STAGES.index("BOUNDARY_STRESS_TEST")
+    if phase_rank is not None:
+        for entry in history:
+            if not isinstance(entry, Mapping) or entry.get("stage") not in STAGES:
+                continue
+            history_stage = str(entry.get("stage"))
+            if STAGES.index(history_stage) > phase_rank:
+                errors.append(f"{phase} artifact cannot claim completed later stage {history_stage}")
+        for family in families:
+            if not isinstance(family, Mapping):
+                continue
+            fid = family.get("family_id")
+            family_status = family.get("family_status")
+            if family_status not in VALID_FAMILY_STATUSES:
+                errors.append(f"{fid}: invalid family_status {family_status}")
+                continue
+            if phase_rank < boundary_rank and family_status == "STABLE":
+                errors.append(f"{fid}: {phase} cannot emit a STABLE family")
+            if phase_rank < boundary_rank and family.get("operational_status") == "STABLE":
+                errors.append(f"{fid}: {phase} cannot claim operational STABLE status")
+            if phase in {"PAIR_CALIBRATION", "FAMILY_PILOT"} and family.get("boundary_stress_passed") is True:
+                errors.append(f"{fid}: {phase} cannot claim boundary_stress_passed=true")
+            boundary_preview_fields = {
+                "boundary_analysis_status",
+                "preview_boundary_case_count",
+                "stress_case_count",
+                "boundary_stress_cases",
+                "boundary_test_results",
+            }
+            has_boundary_preview = any(field in family for field in boundary_preview_fields)
+            if phase == "PAIR_CALIBRATION" and has_boundary_preview:
+                if family.get("boundary_analysis_status") != PREVIEW_BOUNDARY_STATUS:
+                    errors.append(
+                        f"{fid}: PAIR_CALIBRATION boundary commentary must be marked {PREVIEW_BOUNDARY_STATUS}"
+                    )
+            if phase_rank >= boundary_rank and family_status == "STABLE":
+                if family.get("boundary_stress_passed") is not True:
+                    errors.append(f"{fid}: STABLE family requires boundary_stress_passed=true")
+        if phase_rank < STAGES.index("FAMILY_PILOT"):
+            if document.get("family_pilot_completed") is True or controls.get("family_pilot_completed") is True:
+                errors.append(f"{phase} cannot claim FAMILY_PILOT completion")
+        if phase_rank < boundary_rank:
+            if document.get("boundary_stress_passed") is True or controls.get("boundary_stress_passed") is True:
+                errors.append(f"{phase} cannot claim BOUNDARY_STRESS_TEST completion")
+        if phase_rank < STAGES.index("DOMAIN_EXPANSION"):
+            declared_expansion_count = controls.get("successful_expansion_count")
+            expansion_claimed = (
+                document.get("domain_expansion_completed") is True
+                or controls.get("domain_expansion") is True
+                or (declared_expansion_count is not None and declared_expansion_count != 0)
+            )
+            if expansion_claimed:
+                errors.append(f"{phase} cannot claim DOMAIN_EXPANSION completion")
+    if phase == "DOMAIN_EXPANSION":
+        for required_stage in ("PAIR_CALIBRATION", "FAMILY_PILOT", "BOUNDARY_STRESS_TEST"):
+            approved = any(
+                entry.get("status") == "PASS" and entry.get("human_review") == "APPROVED"
+                for entry in seen.get(required_stage, [])
+            )
+            if not approved:
+                errors.append(f"DOMAIN_EXPANSION requires approved {required_stage}")
+    gates["STAGE_ARTIFACT_SCOPE_GATE"] = _gate(errors)
 
     errors = []
     card_by_id: Dict[str, Mapping[str, Any]] = {}
@@ -680,9 +837,22 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
             errors.append(f"{fid}: changed definition requires a new family ID")
     gates["FAMILY_ID_NAMESPACE_GATE"] = _gate(errors)
 
+    errors = []
+    if pair_artifact_records is not None:
+        if _canonical_json_bytes(list(pair_artifact_records)) != _canonical_json_bytes(pairs):
+            errors.append("external pair artifact records do not match run document pairs")
+    declared_binding = document.get("validation_binding_expectations")
+    if isinstance(declared_binding, Mapping):
+        expected_pair_hash = declared_binding.get("validated_pair_artifact_sha256")
+        if expected_pair_hash is not None and expected_pair_hash != binding["validated_pair_artifact_sha256"]:
+            errors.append("declared pair artifact hash does not match validated pair artifact")
+    if expected_validation_report is not None:
+        errors.extend(_binding_errors(expected_validation_report, binding))
+    gates["VALIDATION_BINDING_GATE"] = _gate(errors)
+
     failed = [name for name, gate in gates.items() if gate["status"] == "FAIL"]
     status = "PASS" if not failed else "HOLD"
-    return {
+    report = {
         "schema_version": "1.7.0",
         "pipeline_status": status,
         "gates": gates,
@@ -694,6 +864,8 @@ def validate_document(document: Mapping[str, Any]) -> Dict[str, Any]:
             "ACTIVE_PROMOTION": "NOT_RUN",
         },
     }
+    report.update(binding)
+    return report
 
 
 def validate_calibration_case(case: Mapping[str, Any]) -> Dict[str, Any]:
@@ -736,13 +908,43 @@ def _load(path: Path) -> Mapping[str, Any]:
     return value
 
 
+def _load_pair_records(path: Path) -> List[Any]:
+    text = path.read_text(encoding="utf-8")
+    try:
+        value = json.loads(text)
+    except json.JSONDecodeError:
+        value = [json.loads(line) for line in text.splitlines() if line.strip()]
+    if isinstance(value, Mapping):
+        value = value.get("pairs")
+    if not isinstance(value, list):
+        raise ValueError("pair artifact must be a JSON array, a document with pairs[], or JSONL")
+    return value
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("input", type=Path)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--pair-artifact", type=Path)
+    parser.add_argument(
+        "--verify-report",
+        type=Path,
+        help="Reject a previously generated report when its artifact bindings no longer match this input.",
+    )
     args = parser.parse_args(argv)
     try:
-        report = validate_document(_load(args.input))
+        run_document_bytes = args.input.read_bytes()
+        document = _load(args.input)
+        pair_artifact_bytes = args.pair_artifact.read_bytes() if args.pair_artifact else None
+        pair_artifact_records = _load_pair_records(args.pair_artifact) if args.pair_artifact else None
+        expected_report = _load(args.verify_report) if args.verify_report else None
+        report = validate_document(
+            document,
+            run_document_bytes=run_document_bytes,
+            pair_artifact_bytes=pair_artifact_bytes,
+            pair_artifact_records=pair_artifact_records,
+            expected_validation_report=expected_report,
+        )
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         report = {
             "schema_version": "1.7.0",
@@ -755,6 +957,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "FULL_LIBRARY": "NOT_RUN",
                 "ACTIVE_PROMOTION": "NOT_RUN",
             },
+            "validator_skill_commit": _validator_skill_commit(),
+            "validator_source_sha256": _sha256(Path(__file__).read_bytes()),
+            "validated_run_id": None,
+            "validated_run_document_sha256": None,
+            "validated_pair_artifact_sha256": None,
+            "validation_execution_id": str(uuid.uuid4()),
         }
     rendered = json.dumps(report, ensure_ascii=False, indent=2)
     if args.output:
