@@ -1,9 +1,9 @@
 ---
 name: novel-dna-mining-suite
-description: V1.6.6 小说 DNA 拆解套件：新增 mechanism-signature provenance 与 linked-context support isolation；关键词/词典 atom 只做召回，primary object 才能供应语义支持，lineage resolved link 也必须有成员级语义证据。
+description: V1.7.0 小说 DNA 拆解与可复用机制族发现套件：保留 V1.6.x 拆解/语义回归，同时将新跨书聚类正式切换为 staged mechanism-family discovery；pair calibration、family pilot、boundary stress、domain expansion、DOMAIN_FULL、可选 cross-domain ontology 与 FULL_LIBRARY 均有独立人审门。
 ---
 
-# 小说 DNA 拆解套件 V1.6.6
+# 小说 DNA 拆解套件 V1.7.0
 
 这是一个独立迁移包，入口负责路由和边界，详细规则按需读取 `references/`。不要把候选直接写成正式套路卡，也不要修改源章节或正式素材库。
 
@@ -26,6 +26,7 @@ description: V1.6.6 小说 DNA 拆解套件：新增 mechanism-signature provena
 - V1.6.3 Combat 语义门：存在 combat_expression_assets 时运行 `python scripts/core/validate_combat_semantics.py --root <material-library-root> --books <BOOK_ID,...>`；UNKNOWN 只能写字面值 `UNKNOWN`，PASS 核心字段不得 UNKNOWN，且 cost/limit/counterplay 至少一项有证据。
 - V1.6.3 Batch Summary 门：批次 validator 同时核对 `derived_hold_records` 与真实 HOLD 总数、`derived_totals` 与真实 records；陈旧汇总直接 FAIL。
 - V1.6.6 Semantic Reclustering 门：任何 full recluster 必须读取 `references/core/semantic-recluster-contract.md`。自动关键词/词典 mechanism atom 只能作为 retrieval hint；MERGE/SUBTYPE 必须有 bilateral primary-object support provenance，linked context 只能 corroborate。接受 pair 继续写 `candidate/equivalent_pairs.jsonl`；lineage 的 source_record/book match 只做候选生成，resolved link 必须有 exact internal identity 或 evidence overlap + mechanism correspondence。运行 `python scripts/core/validate_semantic_recluster.py <RUN_DIR>`，十项 gate 全 PASS 后才可交人工审核。
+- **V1.7.0 Mechanism Family 主流程：任何新的跨书机制族研究必须先读取 `references/core/mechanism-family-contract.md` 与 `references/core/mechanism-family-workflow.md`。默认执行 `MECHANISM_CARD_EXTRACTION → READINESS_NORMALIZATION → PAIR_CALIBRATION → FAMILY_PILOT → BOUNDARY_STRESS_TEST → DOMAIN_EXPANSION → DOMAIN_FULL → optional CROSS_DOMAIN_ONTOLOGY → FULL_LIBRARY`；禁止用 one-shot full semantic clustering、connected components、single-link 或 embedding graph 直接决定 membership。**
 - V1.5.1 语义门：章节情绪结构校验后运行包内 `scripts/specialists/chapter-emotion-miner/audit_semantics.py`；剧情线运行 `audit_recall.py`；剧情机制运行 `audit_depth.py`；manifest 落盘前运行 `scripts/core/validate_module_status_consistency.py`。\n- V1.5.2 语义加固：RAW_ENDING 过滤纯标点/过短尾句；模板骨架支持从人物卡、人物功能或显式实体表读取已知中文实体并归一化为 `<ENTITY>`，避免仅替换人名绕过模板检测。
 
 ## 统一不变量
@@ -112,12 +113,51 @@ SUPPLEMENTAL 的 COMPLETE 只代表“本次授权专项完整”，不得表述
 
 ## V1.7.0 Staged Mechanism Family Discovery
 
-新跨书机制 run 必须读取 `references/core/mechanism-family-contract.md`，并使用 `scripts/core/validate_mechanism_family_pipeline.py`。默认流程是 mechanism card、readiness、小规模 pair calibration、family pilot、boundary stress、分批 expansion；不是一次性 full semantic clustering。每个成员逐条对 family minimum definition 检验，ANALOGOUS 不进入 membership，`UNCLUSTERED` 与 `HOLD` 保留。
+新跨书机制 run 的规范入口是：
 
-阶段产物不得提前声称后续语义：pair calibration 只允许 `HYPOTHESIS|HOLD` family preview，且预览边界分析必须写明 `PREVIEW_ONLY_NOT_STAGE_GATE_EVIDENCE`；family pilot 不得声称 boundary stress 通过；只有 boundary stress 阶段通过 stable-family gate 后才能首次产生 `STABLE`。validator 报告绑定 run、pair artifact 与 validator provenance，产物变化后必须重新验证，不能复用旧 PASS。
+- `references/core/mechanism-family-contract.md`：语义与阶段契约；
+- `references/core/mechanism-family-workflow.md`：从输入冻结到 promotion 的完整执行 SOP；
+- `scripts/core/validate_mechanism_family_pipeline.py`：阶段与 provenance validator；
+- stable family 的跨域工作再读取 `references/core/cross-domain-ontology-contract.md` 并运行 `scripts/core/validate_cross_domain_ontology.py`。
 
-只有 stable family 可读取 `references/core/cross-domain-ontology-contract.md` 并运行 `scripts/core/validate_cross_domain_ontology.py`。跨域 identity、structural analogy 与 composition 分开记录，composition 永不改变 family membership。
+标准阶段：
 
-当前验证范围只有 `relationship_engine`、`GF_CORE`、`plotline_progression_engine`。`GF_ABILITY`、其它人物 projection 与其它模块都是 `CALIBRATION_REQUIRED`。`semantic-recluster-contract.md` 与对应 validator 继续用于 V1.6.x legacy regression；新 run 不得复用旧 cluster ID 或 membership 作为 RMF 语义证据。
+```text
+MECHANISM_CARD_EXTRACTION
+→ READINESS_NORMALIZATION
+→ PAIR_CALIBRATION
+→ FAMILY_PILOT
+→ BOUNDARY_STRESS_TEST
+→ DOMAIN_EXPANSION
+→ DOMAIN_FULL
+→ optional CROSS_DOMAIN_ONTOLOGY
+→ FULL_LIBRARY
+→ explicit APPROVE_PROMOTION
+```
 
+执行纪律：
+
+- pair calibration 先校准判断，不直接产 STABLE；
+- family pilot 只验证少量假设；
+- boundary stress 是首次允许 STABLE 的阶段；
+- 新卡对冻结 family 做独立 definition test，不走 N×N 图聚类；
+- `card count != independent implementation count`，parent/child、projection、copy output、同一因果 episode 不得重复计支持；
+- ANALOGOUS 永不进入 membership；HOLD/UNCLUSTERED 永远允许存在；
+- 每个 pair/pilot/boundary/expansion 关键阶段均有人审 STOP；
+- ontology 的 identity 与 composition 分离，composition 永不改变 family membership；
+- FULL_LIBRARY 组合已验证 domain assets，不重新全库聚类；
+- validator PASS 不能替代人工 semantic approval。
+
+当前已通过完整 staged 流程验证的 lane：
+
+```text
+relationship_engine
+GF_CORE
+GF_ABILITY
+plotline_progression_engine
+```
+
+其它人物 projection 与其它 decomposition modules 仍为 `CALIBRATION_REQUIRED`，必须从 pair calibration 开始独立验证。
+
+`semantic-recluster-contract.md` 与其 validator 继续只用于 V1.6.x legacy regression；新 RMF run 不得继承旧 cluster ID、旧 membership 或 graph connectivity 作为答案。
 
