@@ -10,6 +10,33 @@ from pathlib import Path
 from typing import Any
 
 
+def _load_mechanism_package_ids(root: str) -> dict[str, set[str]] | None:
+    """Best-effort load of a mechanism package for reference-closure checks.
+
+    Returns ids by kind plus ``never_assignable`` (held + dropped assets), or
+    None when the package cannot be read (format checks still apply).
+    """
+    try:
+        base = Path(root)
+        manifest = json.loads((base / "manifest.json").read_text(encoding="utf-8"))
+        families_doc = json.loads((base / "stable-families.json").read_text(encoding="utf-8"))
+        held_doc = json.loads((base / "held-families.json").read_text(encoding="utf-8"))
+        links = [json.loads(l) for l in (base / "composition-links.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+        recipes = [json.loads(l) for l in (base / "composition-recipes.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+    except (OSError, ValueError):
+        return None
+    families = {f["family_id"] for f in families_doc.get("families", []) if isinstance(f, dict) and f.get("family_id")}
+    links = {l["link_id"] for l in links if isinstance(l, dict) and l.get("link_id")}
+    recipes = {r["recipe_id"] for r in recipes if isinstance(r, dict) and r.get("recipe_id")}
+    never = {h["family_id"] for h in held_doc.get("held_families", []) if isinstance(h, dict) and h.get("family_id")}
+    for entry in manifest.get("excluded_assets") or []:
+        if isinstance(entry, dict):
+            if entry.get("asset_id"):
+                never.add(entry["asset_id"])
+            never.update(a for a in entry.get("asset_ids") or [] if isinstance(a, str))
+    return {"family": families, "recipe": recipes, "link": links, "never_assignable": never}
+
+
 PHASES = ("1-3", "4-10", "11-30", "31-60", "61-120", "121-200", "201-300")
 PLAN_FIELDS = {
     "schema_version",
@@ -208,6 +235,14 @@ def main() -> int:
         errors.append("shared_library_root must be a non-empty absolute path")
     elif not Path(shared_library_root).is_absolute():
         errors.append("shared_library_root must be an absolute path")
+    # Optional RMF mechanism library root (separate trust layer; see references/mechanism-library.md).
+    # Absent field => legacy behaviour, fully backward compatible.
+    mechanism_library_root = data.get("mechanism_library_root")
+    if mechanism_library_root is not None:
+        if not isinstance(mechanism_library_root, str) or not mechanism_library_root.strip():
+            errors.append("mechanism_library_root must be a non-empty absolute path when provided")
+        elif not Path(mechanism_library_root).is_absolute():
+            errors.append("mechanism_library_root must be an absolute path")
     plan_mode = data.get("plan_mode")
     if plan_mode not in {"preliminary", "full"}:
         errors.append("plan_mode must be preliminary or full")
@@ -220,6 +255,42 @@ def main() -> int:
                 errors.append(f"library_usage.{key} must be a list")
         if not any(library_usage.get(key) for key in ("formal_card_ids", "dna_candidate_ids", "gaps")):
             errors.append("library_usage must contain a material reference or an explicit gap")
+        # Optional RMF mechanism-layer references. Absent keys => legacy behaviour.
+        import re as _re
+        _mech_key_patterns = {
+            "mechanism_family_ids": _re.compile(r"^RMF:[A-Z0-9_]+:[a-f0-9]{8,64}$"),
+            "composition_recipe_ids": _re.compile(r"^REC-\d{3}$"),
+            "composition_link_ids": _re.compile(r"^CL-\d{3}$"),
+        }
+        mech_ids_present = False
+        for key, pattern in _mech_key_patterns.items():
+            if key not in library_usage:
+                continue
+            mech_ids_present = True
+            value = library_usage.get(key)
+            if not isinstance(value, list):
+                errors.append(f"library_usage.{key} must be a list")
+                continue
+            for item in value:
+                if not isinstance(item, str) or not pattern.match(item):
+                    errors.append(f"library_usage.{key} contains a malformed id: {item!r}")
+        if mech_ids_present:
+            if not mechanism_library_root:
+                errors.append("library_usage mechanism ids require plan.mechanism_library_root")
+            elif isinstance(mechanism_library_root, str) and Path(mechanism_library_root).is_absolute():
+                _mech_ids_by_kind = {
+                    "mechanism_family_ids": "family",
+                    "composition_recipe_ids": "recipe",
+                    "composition_link_ids": "link",
+                }
+                _pkg_ok = _load_mechanism_package_ids(mechanism_library_root)
+                if isinstance(_pkg_ok, dict):
+                    for key, kind in _mech_ids_by_kind.items():
+                        for item in library_usage.get(key) or []:
+                            if isinstance(item, str) and item not in _pkg_ok[kind]:
+                                errors.append(f"library_usage.{key} references an asset missing from the mechanism package: {item}")
+                            elif isinstance(item, str) and item in _pkg_ok["never_assignable"]:
+                                errors.append(f"library_usage.{key} references a held/dropped asset: {item}")
 
 
     if schema_version == 2:
@@ -257,7 +328,7 @@ def main() -> int:
                     target_candidates = slot.get("target_candidates")
                     if not isinstance(target_candidates, int) or not 1 <= target_candidates <= 12:
                         errors.append(f"{where}.target_candidates must be an integer 1..12")
-                    if slot.get("source_strategy") not in {"cross_book", "same_source_bundle", "either"}:
+                    if slot.get("source_strategy") not in {"cross_book", "same_source_bundle", "either", "mechanism_library"}:
                         errors.append(f"{where}.source_strategy is invalid")
                     selected_refs = slot.get("selected_refs")
                     if isinstance(selected_refs, list):
@@ -270,9 +341,20 @@ def main() -> int:
                                 if is_empty(ref.get(field)):
                                     errors.append(f"{ref_where}.{field} cannot be empty")
                             kind = ref.get("material_kind")
-                            if kind not in {"formal_card", "dna_record", "dna_component"}:
-                                errors.append(f"{ref_where}.material_kind is invalid")
                             material_id = str(ref.get("material_id") or "")
+                            mechanism_kinds = {"mechanism_family", "composition_recipe", "composition_link"}
+                            if kind not in {"formal_card", "dna_record", "dna_component"} | mechanism_kinds:
+                                errors.append(f"{ref_where}.material_kind is invalid")
+                            if kind in mechanism_kinds:
+                                if not mechanism_library_root:
+                                    errors.append(f"{ref_where}: {kind} requires plan.mechanism_library_root")
+                                if isinstance(library_usage, dict) and material_id:
+                                    bucket = {"mechanism_family": "mechanism_family_ids",
+                                               "composition_recipe": "composition_recipe_ids",
+                                               "composition_link": "composition_link_ids"}[kind]
+                                    allowed_mech = set(map(str, library_usage.get(bucket, [])))
+                                    if material_id not in allowed_mech:
+                                        errors.append(f"{ref_where}.material_id absent from library_usage.{bucket}")
                             if isinstance(library_usage, dict) and material_id:
                                 if kind == "formal_card":
                                     allowed = set(map(str, library_usage.get("formal_card_ids", [])))

@@ -96,6 +96,16 @@ V1.1 禁止“把整个素材库都读一遍再想故事”。
 
 正式套路卡代表经过审核的“原子机制”；DNA candidate/per_book 代表来源书中的结构与证据。两者不能混成同一种可信度。
 
+## 3b. Wave 0 — 机制引擎选择（可选，需 `mechanism_library_root`）
+
+配置了 `mechanism_library_root` 时，在 Wave 1 之前先执行 [mechanism-library.md](mechanism-library.md) 的 Wave 0：
+
+1. `scripts/search_mechanism_library.py --library "$mechanism_library_root" --query "<用户需求>"` 召回 2–4 个 RMF families / composition recipes；
+2. 选定一个主 story engine，提取其 bridge conditions / preconditions / failure modes；
+3. 把机制输出转成下面的素材槽位需求（如 `golden_finger_core` 需要可支配、可消耗、规则可知的输入），再进入 Wave 1 由 DNA/素材库找具体实现。
+
+机制层决定故事怎么跑（HOW THE STORY RUNS），素材库决定故事由什么构成（WHAT THE STORY IS MADE OF）；两层不得混用同一 root，也不得把 RMF family 伪装成正式套路卡。未配置 `mechanism_library_root` 时跳过本节，直接 Wave 1。
+
 ## 4. 四波调度
 
 ### Wave 1：骨架召回

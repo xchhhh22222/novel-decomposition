@@ -13,6 +13,7 @@
   "plan_mode": "preliminary",
   "brief": {},
   "shared_library_root": "",
+  "mechanism_library_root": "",
   "market_evidence": {
     "as_of": "YYYY-MM-DD",
     "sources": [],
@@ -24,7 +25,10 @@
   "library_usage": {
     "formal_card_ids": [],
     "dna_candidate_ids": [],
-    "gaps": []
+    "gaps": [],
+    "mechanism_family_ids": [],
+    "composition_recipe_ids": [],
+    "composition_link_ids": []
   },
   "material_dispatch": {
     "status": "complete",
@@ -112,6 +116,14 @@
 - `complete / partial` 必须提供非空 `stop_reason`，说明为何停止继续检索。
 
 `library_usage.dna_candidate_ids` 在 V1.1 中既可保存记录 ID，也可保存被实际采用的 component ID；其完整来源链保存在 `material_dispatch.slots[].selected_refs`。
+
+### Mechanism Library 扩展（可选，向后兼容）
+
+`mechanism_library_root` 指向版本化 RMF 机制库 package（见 [mechanism-library.md](mechanism-library.md)），与 `shared_library_root` 是不同可信层，缺省时旧计划行为完全不变。提供时：
+
+- `library_usage.mechanism_family_ids[]`（`RMF:<DOMAIN>:<hash>`）、`composition_recipe_ids[]`（`REC-###`）、`composition_link_ids[]`（`CL-###`）必须引用 package 内真实存在的资产；held / dropped 资产（如 `REC-008`）不可引用；
+- `material_dispatch.slots[].selected_refs[].material_kind` 新增合法值 `mechanism_family / composition_recipe / composition_link`，其 `material_id` 必须登记在对应 `library_usage.*_ids`；`source_strategy` 新增 `mechanism_library`；
+- 引用闭环校验同上：方案级与槽位级 mechanism 引用必须是顶层 `library_usage` 对应数组的子集。
 
 
 ## 三案

@@ -22,6 +22,7 @@ description: V1.2 市场结构学习 + 素材调度 + 高潮倒推型小说创�
 - 需要落盘机器可检验的计划包：读取 [references/plan-schema.md](references/plan-schema.md)，并运行 `scripts/validate_creation_plan.py`。
 - 保存 V1.2 市场对标包或高潮倒推包时，分别运行 `python scripts/validate_v12_artifacts.py benchmark <market_benchmark.json>` 与 `python scripts/validate_v12_artifacts.py climax <climax_backplan.json>`。
 - **需要从素材库选材、决定先查什么/查多少/何时停止：必须读取 [references/material-dispatch.md](references/material-dispatch.md)。**
+- 配置了 `mechanism_library_root` 时，先用 [references/mechanism-library.md](references/mechanism-library.md) 做 Wave 0 机制引擎选择（`scripts/search_mechanism_library.py`），再进入素材调度；未配置则完全按旧流程运行。
 - 需要定位、迁移或复用跨书素材库：读取 [references/shared-library.md](references/shared-library.md)。
 - **需要设计战略目标物、前100章两个大高潮并反推：必须读取 [references/climax-backplanning.md](references/climax-backplanning.md)。**
 - 需要纯素材先行的备用模式：读取 [references/source-first-book-design.md](references/source-first-book-design.md)。

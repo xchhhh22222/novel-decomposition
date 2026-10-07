@@ -19,6 +19,10 @@
 3. 已确认的公共资产目录；
 4. 都不存在时停止正式检索并请求路径，不得自动把当前小说的 `素材库/` 当成公共库。
 
+### 与 mechanism_library_root 的关系（双层素材架构）
+
+`shared_library_root` 只负责具体世界素材（per-book DNA / formal cards / derived）。可复用机制层（RMF stable families / composition links / recipes）由独立的 `mechanism_library_root` 提供，见 [mechanism-library.md](mechanism-library.md)。两个 root 语义不同、可信层不同，禁止互相冒充：不得把 mechanism package 塞进 shared root，也不得把 shared root 当 mechanism root。未配置 `mechanism_library_root` 时 planner 行为不变。
+
 运行命令必须传入绝对路径：
 
 ```powershell
