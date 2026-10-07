@@ -1,5 +1,5 @@
 interface:
-  display_name: "小说 DNA 拆解套件 V1.6.3"
-  short_description: "定向补素材 + UNKNOWN 规范 + Combat PASS 语义验证"
+  display_name: "小说 DNA 拆解套件 V1.7.0"
+  short_description: "Staged mechanism-family discovery + V1.6.x 拆解兼容"
   default_prompt: >-
-    使用 $novel-dna-mining-suite V1.6.3。V1.6.2 路由、Derived Contract 和 supplemental batch gates 保持有效。所有未知字段只能写字面值 UNKNOWN，并把原因写入 unknowns；证据修正日志不得进入 unknowns。若生成 combat_expression_assets，必须额外运行 scripts/core/validate_combat_semantics.py：核心机制字段完整，且 cost/limit/counterplay 至少一项有证据时才可 PASS；原文没展示不等于无代价/无反制/无限制。批次收尾时 validate_supplemental_batch.py 还要校验 derived_hold_records 与 derived_totals 的真实一致性。HOLD 只留 inventory，不得为聚类改成 PASS。
+    使用 $novel-dna-mining-suite V1.7.0。新增跨书机制研究必须先读取 references/core/mechanism-family-contract.md 与 references/core/mechanism-family-workflow.md，按 MECHANISM_CARD_EXTRACTION → READINESS_NORMALIZATION → PAIR_CALIBRATION → FAMILY_PILOT → BOUNDARY_STRESS_TEST → DOMAIN_EXPANSION → DOMAIN_FULL → optional CROSS_DOMAIN_ONTOLOGY → FULL_LIBRARY 推进，并遵守每阶段人工 STOP。关键词、embedding、connected components、single-link 只能做召回，不能决定 family membership；每个成员必须独立通过 family definition test，card count 不等于 independent implementation count。V1.6.x source routing、derived/combat/supplemental gates 继续有效，legacy semantic recluster 仅用于回归验证。
