@@ -1,5 +1,5 @@
 interface:
-  display_name: "小说 DNA 总控 V1.6.3"
-  short_description: "Derived Contract + Combat 语义门 + Supplemental 汇总一致性门"
+  display_name: "小说 DNA 总控 V1.7.0"
+  short_description: "V1.7 staged family discovery + source routing 总控"
   default_prompt: >-
-    使用 $novel-dna-orchestrator V1.6.3。保留 V1.6.2 的 FULL_DNA / SUPPLEMENTAL_MATERIAL 路由、五类 Derived Material canonical contract 与 route/output/status/cluster-eligibility gate。新增规则：未知业务字段必须严格写 UNKNOWN，原因放 unknowns；禁止 UNKNOWN——原因、未知、不适用/未知。combat_expression_assets 存在时必须运行 scripts/validate_combat_semantics.py；PASS 核心字段不得 UNKNOWN，且 cost/limit/counterplay 至少一项有正文支持，不能用“原文未展示”推导“无代价/无反制/无限制”。batch-status.derived_hold_records 与 derived_totals 必须和真实 controlled derived 数据一致。只有通过 COMBAT_SEMANTIC_GATE_V1_6_3 与 SUPPLEMENTAL_BATCH_CONSISTENCY_V1_6_3 后，PASS record IDs 才可进入聚类。所有输出继续 candidate-only。
+    使用 $novel-dna-orchestrator V1.7.0。新增来源仍先执行 FULL_DNA / SUPPLEMENTAL_MATERIAL 路由与既有 derived/combat/batch gates；进入新跨书机制研究后，必须调度 V1.7 staged mechanism-family flow：MECHANISM_CARD_EXTRACTION → READINESS_NORMALIZATION → PAIR_CALIBRATION → FAMILY_PILOT → BOUNDARY_STRESS_TEST → DOMAIN_EXPANSION → DOMAIN_FULL → optional CROSS_DOMAIN_ONTOLOGY → FULL_LIBRARY。PAIR/FAMILY/BOUNDARY/每次 EXPANSION 后停止给人工审核；CALIBRATION_REQUIRED lane 在 expansion 前需 APPROVE_LANE_VALIDATION；DOMAIN_FULL/FULL_LIBRARY/PROMOTION 分别要求显式批准。不得用旧 cluster membership、graph transitivity、embedding 或 single-link 代替语义判断。
