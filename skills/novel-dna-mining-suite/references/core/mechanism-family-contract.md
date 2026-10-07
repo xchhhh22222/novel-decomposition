@@ -2,7 +2,7 @@
 
 This is the canonical contract for new cross-book mechanism research. It replaces one-shot full semantic clustering as the default architecture, while leaving the V1.6.x semantic recluster contract available for legacy validation only.
 
-The purpose is to establish an auditable answer to “what counts as the same reusable narrative mechanism?” on a small sample before scope expands. It does not prescribe a target family count and does not require every card to be assigned.
+The purpose is to establish an auditable answer to “what counts as the same reusable narrative mechanism?” on a small sample before scope expands. It does not prescribe a target family count and does not require every card to be assigned. The production-proven execution SOP is documented in `mechanism-family-workflow.md` in the mining-suite core references; this contract remains the normative semantic and stage-gate authority.
 
 ## 1. Stage state machine
 
@@ -128,9 +128,9 @@ The current validated scope is intentionally narrow:
 ```text
 relationship_engine = FAMILY_DISCOVERY_VALIDATED
 GF_CORE = FAMILY_DISCOVERY_VALIDATED
+GF_ABILITY = FAMILY_DISCOVERY_VALIDATED
 plotline_progression_engine = FAMILY_DISCOVERY_VALIDATED
 
-GF_ABILITY = CALIBRATION_REQUIRED
 other character projections = CALIBRATION_REQUIRED
 other decomposition modules = CALIBRATION_REQUIRED
 ```
@@ -167,7 +167,7 @@ input/resource
 → limitation/cost
 ```
 
-`GF_ABILITY` is a separate, unvalidated lane. Matching ability names, output effects, or growth results do not establish a shared core mechanism.
+`GF_ABILITY` is a separate validated lane. Matching ability names, output effects, or growth results still do not establish a shared core mechanism; it must remain isolated from `GF_CORE` except in an explicitly approved cross-domain ontology/composition run.
 
 ### 4.3 Plotline specialization
 
@@ -315,3 +315,94 @@ validation_execution_id
 The validator hashes raw file bytes when invoked from the CLI. When called as a library without file bytes, it hashes canonical JSON and records the hash mode. A separately supplied pair JSON/JSONL artifact must contain the same records as the run document. `--verify-report <old-report.json>` compares the old binding with the current validator, run document, run ID, and pair artifact; any stale or mismatched binding fails `VALIDATION_BINDING_GATE`. A previous PASS report is not reusable after artifact mutation.
 
 The default domain-full method remains retrieval hints followed by independent definition tests. It must not default to an N×N semantic graph. Full-library work means combining validated domain family libraries, incremental expansion, normalized signatures, ontology relations, and composition links—not loading the entire library into one clustering pass.
+
+
+## 9. Production-proven execution checklist
+
+The detailed operational sequence lives in `mechanism-family-workflow.md`. The canonical checklist is:
+
+```text
+0. Freeze HEAD / run / lane / population / validator provenance
+1. MECHANISM_CARD_EXTRACTION
+2. READINESS_NORMALIZATION
+3. Independence audit
+4. PAIR_CALIBRATION
+5. HUMAN REVIEW
+6. FAMILY_PILOT
+7. HUMAN REVIEW
+8. BOUNDARY_STRESS_TEST
+9. HUMAN REVIEW + lane approval when required
+10. DOMAIN_EXPANSION by independent frozen-family definition tests
+11. HUMAN REVIEW after every expansion
+12. DOMAIN_FULL seal/freeze
+13. optional CROSS_DOMAIN_ONTOLOGY with identity/composition separation
+14. HUMAN REVIEW
+15. FULL_LIBRARY assembly
+16. HUMAN REVIEW
+17. explicit production promotion
+```
+
+Normative execution rules:
+
+- `card count != independent implementation count`;
+- dependent parent/child, projection, copied-output, composite-component, and same-episode records do not automatically add independent support;
+- PAIR_CALIBRATION never emits operational `STABLE`;
+- BOUNDARY_STRESS_TEST is the first stage allowed to emit `STABLE`;
+- expansion is `eligible cards × frozen stable families`, not a full N×N clustering graph;
+- residual mechanisms that may form a new family return to pair calibration instead of being minted inside expansion;
+- DOMAIN_FULL is a seal/freeze stage and uses explicit `SAME/SUBTYPE/ANALOGOUS/DIFFERENT/HOLD/UNCLUSTERED` accounting;
+- cross-domain ontology never changes family membership;
+- composition requires a concrete source-output → target-input bridge condition;
+- FULL_LIBRARY assembles approved assets and may derive planner recipes/indexes, but those derived artifacts are not semantic evidence;
+- recipe link provenance must be audited independently;
+- validator PASS never substitutes for required human semantic approval;
+- promotion may change packaging/runtime metadata, but never family semantics, membership, link direction, bridge conditions, or approved recipe semantics.
+
+### 9.1 Mandatory human gates
+
+At minimum:
+
+```text
+PAIR_CALIBRATION → STOP_FOR_HUMAN_REVIEW
+FAMILY_PILOT → STOP_FOR_HUMAN_REVIEW
+BOUNDARY_STRESS_TEST → STOP_FOR_HUMAN_REVIEW
+each DOMAIN_EXPANSION → STOP_FOR_HUMAN_REVIEW
+DOMAIN_FULL ← APPROVE_DOMAIN_FULL
+optional CROSS_DOMAIN_ONTOLOGY → STOP_FOR_HUMAN_REVIEW
+FULL_LIBRARY ← APPROVE_FULL_LIBRARY
+ACTIVE_PROMOTION ← APPROVE_PROMOTION
+```
+
+A lane marked `CALIBRATION_REQUIRED` also needs:
+
+`APPROVE_LANE_VALIDATION:<domain>:<lane>`
+
+before it may proceed into DOMAIN_EXPANSION.
+
+### 9.2 Hard semantic stops
+
+Immediately stop when:
+
+- a frozen stable-family definition is widened or materially changed to rescue a member;
+- SAME/SUBTYPE lacks primary-object evidence;
+- dependent implementations are counted as independent cross-book support;
+- ANALOGOUS or HOLD is treated as membership;
+- graph connectivity or single-link transitivity decides membership;
+- UNCLUSTERED is forced into a family;
+- historical cluster membership is inherited as truth;
+- a stale validation binding is reused after artifact mutation;
+- an ontology composition link is justified only by “helpful / stronger / informative” without an executable bridge;
+- a recipe declares families that do not match its referenced composition-link endpoints.
+
+### 9.3 Validated V1.7 reference scope
+
+The production-proven reference implementation has completed the staged flow through DOMAIN_FULL for:
+
+```text
+relationship_engine
+GF_CORE
+GF_ABILITY
+plotline_progression_engine
+```
+
+It also validated optional cross-domain ontology/composition and FULL_LIBRARY assembly. These results prove the workflow; they are not a required family count or mandatory ontology shape for future runs.
