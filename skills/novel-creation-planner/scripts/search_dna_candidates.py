@@ -4,11 +4,21 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
 from pathlib import Path
 from typing import Any, Iterable
+
+SHARED_DNA_PACKAGE_ID = "nova-shared-dna-library"
+GAP_NOT_ACTIVE = "SHARED_DNA_LIBRARY_NOT_ACTIVE"
+GAP_MANIFEST_INVALID = "SHARED_DNA_LIBRARY_MANIFEST_INVALID"
+GAP_INTEGRITY_MISMATCH = "SHARED_DNA_LIBRARY_INTEGRITY_MISMATCH"
+
+EXIT_OK = 0
+EXIT_NOT_ACTIVE = 3
+EXIT_GATE_FAILURE = 4
 
 
 MODULES = {
@@ -320,6 +330,103 @@ def usage_status(row: dict[str, Any], value: dict[str, Any]) -> str:
     return "ADAPTABLE"
 
 
+def _fail(gap: str, detail: dict[str, Any]) -> int:
+    """Fail closed: print gap JSON and return the gate exit code. Never continue."""
+    print(json.dumps({"gap": gap, **detail}, ensure_ascii=False))
+    return EXIT_GATE_FAILURE if gap != GAP_NOT_ACTIVE else EXIT_NOT_ACTIVE
+
+
+def verify_shared_dna_package_integrity(root: Path, manifest: dict) -> list[str]:
+    """Deterministic integrity verification for a versioned shared DNA package.
+
+    Returns a list of violations (empty list = PASS). Fail closed on any issue.
+    """
+    errors: list[str] = []
+    artifact_paths = manifest.get("artifact_paths")
+    artifact_hashes = manifest.get("artifact_sha256")
+    if not isinstance(artifact_paths, dict) or not artifact_paths:
+        return ["artifact_paths must be a non-empty dict"]
+    if not isinstance(artifact_hashes, dict) or not artifact_hashes:
+        return ["artifact_sha256 must be a non-empty dict"]
+    if set(artifact_paths) != set(artifact_hashes):
+        errors.append("artifact_paths and artifact_sha256 keys do not match")
+        return errors
+
+    root_resolved = root.resolve()
+    for name, rel in artifact_paths.items():
+        declared = artifact_hashes[name]
+        if not isinstance(rel, str) or not isinstance(declared, str):
+            errors.append(f"{name}: path/hash must be strings")
+            continue
+        p = Path(rel)
+        if p.is_absolute():
+            errors.append(f"{name}: absolute path forbidden: {rel}")
+            continue
+        if ".." in p.parts:
+            errors.append(f"{name}: path escape forbidden: {rel}")
+            continue
+        target = (root_resolved / p).resolve()
+        if target != root_resolved and root_resolved not in target.parents:
+            errors.append(f"{name}: resolves outside package root: {rel}")
+            continue
+        if not target.exists() or not target.is_file():
+            errors.append(f"{name}: missing or not a regular file: {rel}")
+            continue
+        actual = hashlib.sha256(target.read_bytes()).hexdigest()
+        if actual != declared:
+            errors.append(f"{name}: sha256 mismatch (declared {declared[:12]}.. actual {actual[:12]}..)")
+    return errors
+
+
+def load_shared_dna_manifest(library: Path) -> dict | None:
+    """Detect VERSIONED_SHARED_DNA_PACKAGE_MODE. Returns manifest only for
+    package_id == nova-shared-dna-library; anything else stays legacy (None)."""
+    manifest_path = library / "manifest.json"
+    if not manifest_path.exists():
+        return None
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except Exception:
+        return {"__invalid__": True}
+    if manifest.get("package_id") == SHARED_DNA_PACKAGE_ID:
+        return manifest
+    return None
+
+
+def enforce_shared_dna_package_gate(root: Path, manifest: dict, allow_staging: bool) -> tuple[dict | None, int]:
+    """Status gate + integrity gate for package mode. Returns (metadata, exit_code).
+
+    Exit 0 = PASS (metadata carries library_mode/library_status/package_version).
+    Truth table (fail closed):
+      active=true  + status=ACTIVE_SHARED_LIBRARY            -> PASS
+      active=false + status=INSTALLATION_STAGING_NOT_ACTIVE  -> PASS only with --allow-staging-library
+      anything else                                          -> SHARED_DNA_LIBRARY_MANIFEST_INVALID (exit 4)
+    --allow-staging-library only bypasses the active status gate, never integrity.
+    """
+    if manifest.get("__invalid__"):
+        return None, _fail(GAP_MANIFEST_INVALID, {"library_mode": "VERSIONED_PACKAGE",
+                                                  "reason": "manifest.json is not valid JSON"})
+    active = manifest.get("active") is True
+    status = manifest.get("status")
+    if active and status == "ACTIVE_SHARED_LIBRARY":
+        pass
+    elif not active and status == "INSTALLATION_STAGING_NOT_ACTIVE":
+        if not allow_staging:
+            return None, _fail(GAP_NOT_ACTIVE, {
+                "library_mode": "VERSIONED_PACKAGE", "status": status, "active": False,
+                "hint": "pass --allow-staging-library for integration tests / installation verification"})
+    else:
+        return None, _fail(GAP_MANIFEST_INVALID, {
+            "library_mode": "VERSIONED_PACKAGE", "status": status, "active": manifest.get("active"),
+            "reason": "flag/status combination not permitted"})
+    errors = verify_shared_dna_package_integrity(root, manifest)
+    if errors:
+        return None, _fail(GAP_INTEGRITY_MISMATCH, {
+            "library_mode": "VERSIONED_PACKAGE", "status": status, "violations": errors})
+    return {"library_mode": "VERSIONED_PACKAGE", "library_status": status,
+            "package_version": manifest.get("package_version")}, EXIT_OK
+
+
 def main() -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
@@ -334,8 +441,20 @@ def main() -> int:
     parser.add_argument("--max-per-book", type=int, default=0, help="0 means unlimited; useful for source diversity.")
     parser.add_argument("--include-per-book", action="store_true")
     parser.add_argument("--record-types", default="", help="Optional comma/space separated record_type filter.")
+    parser.add_argument("--allow-staging-library", action="store_true",
+                        help="Package mode only: allow status=INSTALLATION_STAGING_NOT_ACTIVE (does NOT bypass integrity).")
     parser.add_argument("--format", choices=("jsonl", "json", "md"), default="jsonl")
     args = parser.parse_args()
+
+    # --- VERSIONED_SHARED_DNA_PACKAGE_MODE gate (legacy libraries without a
+    # nova-shared-dna-library manifest keep the old behavior unchanged) ---
+    package_manifest = load_shared_dna_manifest(args.library.resolve())
+    package_meta: dict | None = None
+    if package_manifest is not None:
+        package_meta, gate_exit = enforce_shared_dna_package_gate(
+            args.library.resolve(), package_manifest, args.allow_staging_library)
+        if gate_exit != EXIT_OK:
+            return gate_exit
 
     root = args.library.resolve() / "DNA素材"
     if not root.exists():
@@ -471,6 +590,8 @@ def main() -> int:
         "returned": len(results),
         "results": results,
     }
+    if package_meta:
+        payload.update(package_meta)  # library_mode / library_status / package_version (metadata only)
 
     if args.format == "json":
         print(json.dumps(payload, ensure_ascii=False, indent=2))
