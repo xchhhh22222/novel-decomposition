@@ -18,6 +18,7 @@ search (search_dna_candidates.py) is untouched.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -27,11 +28,16 @@ from typing import Any, Iterable
 
 GAP_UNAVAILABLE = "MECHANISM_LIBRARY_UNAVAILABLE"
 GAP_NOT_ACTIVE = "MECHANISM_LIBRARY_NOT_ACTIVE"
+GAP_INTEGRITY = "MECHANISM_LIBRARY_INTEGRITY_MISMATCH"
+GAP_MANIFEST_INVALID = "MECHANISM_LIBRARY_MANIFEST_INVALID"
 
 EXIT_OK = 0
 EXIT_UNAVAILABLE = 2
 EXIT_NOT_ACTIVE = 3
+EXIT_INTEGRITY = 4
 EXIT_USAGE = 64
+
+STATUS_ACTIVE_PROMOTED = "ACTIVE_PROMOTED"
 
 FAMILY = "family"
 RECIPE = "recipe"
@@ -116,6 +122,60 @@ def load_package(root: Path) -> dict:
         "slot_index": slot_index,
         "adjacency": adjacency,
     }
+
+
+def verify_package_integrity(root: Path, manifest: dict) -> list[str]:
+    """Deterministic fail-closed integrity check: on-disk bytes == approved manifest hashes.
+
+    Runtime must confirm that the package bytes currently on disk are exactly the
+    HUMAN APPROVED payload declared by the manifest. Any problem is fatal: no
+    warning-and-continue, no hash regeneration, no acceptance of new files.
+
+    Checks:
+      1. manifest.artifact_paths present
+      2. manifest.artifact_sha256 present
+      3. both maps have identical keys
+      4. each artifact exists and is a regular file
+      5. each artifact resolves inside mechanism_library_root
+      6. ``../`` / absolute-path escapes rejected
+      7-8. SHA-256 of every artifact == manifest hash
+    """
+    problems: list[str] = []
+    paths = manifest.get("artifact_paths")
+    hashes = manifest.get("artifact_sha256")
+    if not isinstance(paths, dict) or not paths:
+        return ["manifest.artifact_paths missing or empty"]
+    if not isinstance(hashes, dict) or not hashes:
+        return ["manifest.artifact_sha256 missing or empty"]
+    if set(paths) != set(hashes):
+        return ["artifact_paths/artifact_sha256 key mismatch: "
+                f"missing_in_paths={sorted(set(hashes) - set(paths))} "
+                f"missing_in_hashes={sorted(set(paths) - set(hashes))}"]
+    root_resolved = root.resolve()
+    for name in sorted(paths):
+        declared = paths[name]
+        parts = Path(declared).parts
+        if Path(declared).is_absolute() or ".." in parts:
+            problems.append(f"{name}: path escape rejected ({declared})")
+            continue
+        # manifest may declare repo-relative paths (packages/mechanism-library/v1.7.0/x)
+        # or package-relative paths (x); resolve both deterministically.
+        resolved: Path | None = None
+        for cand in (root / declared, root / Path(declared).name):
+            if cand.is_file():
+                resolved = cand.resolve()
+                break
+        if resolved is None:
+            problems.append(f"{name}: artifact missing or not a regular file ({declared})")
+            continue
+        if not resolved.is_relative_to(root_resolved):
+            problems.append(f"{name}: resolved path outside mechanism_library_root ({declared})")
+            continue
+        actual = hashlib.sha256(resolved.read_bytes()).hexdigest()
+        expected = hashes[name]
+        if actual != expected:
+            problems.append(f"{name}: sha256 mismatch (expected {expected}, actual {actual})")
+    return problems
 
 
 def excluded_recipe_ids(manifest: dict) -> set[str]:
@@ -312,13 +372,36 @@ def main(argv: list[str] | None = None) -> int:
         return EXIT_UNAVAILABLE
 
     manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
-    if manifest.get("active_promotion") is not True and not args.allow_staging:
+    active = manifest.get("active_promotion") is True
+
+    # Manifest consistency: an active package must be both flagged active AND
+    # marked ACTIVE_PROMOTED. active_promotion=true with a staging status is an
+    # inconsistent manifest and must never be used (in any mode).
+    if active and manifest.get("status") != STATUS_ACTIVE_PROMOTED:
+        json.dump({"gap": GAP_MANIFEST_INVALID, "library": str(root),
+                    "status": manifest.get("status"),
+                    "active_promotion": manifest.get("active_promotion"),
+                    "detail": "active_promotion=true requires status=ACTIVE_PROMOTED"},
+                   sys.stdout, ensure_ascii=False)
+        print()
+        return EXIT_INTEGRITY
+
+    if not active and not args.allow_staging:
         json.dump({"gap": GAP_NOT_ACTIVE, "library": str(root),
                     "status": manifest.get("status"),
                     "hint": "pass --allow-staging for integration tests / installation verification"},
                    sys.stdout, ensure_ascii=False)
         print()
         return EXIT_NOT_ACTIVE
+
+    # Integrity gate runs in EVERY mode: --allow-staging bypasses only the
+    # active-promotion gate, never integrity verification.
+    problems = verify_package_integrity(root, manifest)
+    if problems:
+        json.dump({"gap": GAP_INTEGRITY, "library": str(root), "problems": problems},
+                   sys.stdout, ensure_ascii=False, indent=2)
+        print()
+        return EXIT_INTEGRITY
 
     pkg = load_package(root)
     asset_types = tuple(t.strip() for t in args.asset_types.split(",") if t.strip() in ASSET_TYPES) or ASSET_TYPES

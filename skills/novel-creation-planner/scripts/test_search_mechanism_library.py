@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 """Smoke tests for the RMF mechanism-library adapter (search_mechanism_library.py).
 
-Covers the five human-approved integration cases (A-E), the four negative cases
-(N1-N4), held/dropped exclusion, format handling, and planner backward
+Covers the five human-approved integration cases (A-E), the eight negative cases
+(N1-N4 semantic exclusion/unavailable/not-active; N5-N8 tampered payload, missing
+payload, path escape, active-flag/status mismatch), held/dropped exclusion,
+runtime hash integrity verification, format handling, and planner backward
 compatibility via validate_creation_plan.py. Self-contained fixture: no
 machine-specific paths, no external dependencies.
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -17,6 +21,17 @@ from pathlib import Path
 
 SEARCH = Path(__file__).with_name("search_mechanism_library.py")
 VALIDATOR = Path(__file__).with_name("validate_creation_plan.py")
+
+PAYLOAD_FILES = [
+    "stable-families.json",
+    "held-families.json",
+    "normalized-family-signatures.jsonl",
+    "ontology-concepts.jsonl",
+    "composition-links.jsonl",
+    "composition-recipes.jsonl",
+    "mechanism-slot-index.json",
+    "composition-adjacency-index.json",
+]
 
 R1 = "RMF:CHARACTER_FUNCTION:2fd0415e3b3081ae"
 R2 = "RMF:CHARACTER_FUNCTION:45237559c05a719c"
@@ -179,13 +194,25 @@ def build_package(root: Path, *, active: bool = False, include_dropped: bool = F
     (root / "composition-adjacency-index.json").write_text(json.dumps({
         "families": {f["family_id"]: {"outbound_link_ids": [], "inbound_link_ids": []} for f in FAMILIES}},
         ensure_ascii=False), encoding="utf-8")
-    (root / "manifest.json").write_text(json.dumps({
+    # additional declared payload artifacts (mirrors the real v1.7.0 package manifest)
+    (root / "normalized-family-signatures.jsonl").write_text(
+        "".join(json.dumps({"family_id": f["family_id"], "signature": f["family_id"]}, ensure_ascii=False) + "\n"
+                for f in FAMILIES), encoding="utf-8")
+    (root / "ontology-concepts.jsonl").write_text(
+        json.dumps({"concept_id": "XDO-01", "kind": "composition_ontology"}, ensure_ascii=False) + "\n",
+        encoding="utf-8")
+    # deterministic integrity declaration: on-disk bytes == manifest hashes
+    manifest: dict = {
         "package_id": "nova-mechanism-library", "package_version": "1.7.0",
-        "status": "ACTIVE" if active else "INSTALLATION_STAGING_NOT_PROMOTED",
+        "status": "ACTIVE_PROMOTED" if active else "INSTALLATION_STAGING_NOT_PROMOTED",
         "active_promotion": active,
         "excluded_assets": [{"asset_id": "REC-008", "reason": "DROPPED_INVALID_PROVENANCE"},
                              {"asset_ids": [HELD_GFC, HELD_GFA], "reason": "HELD_FAMILIES_OUTSIDE_ACTIVE_REGISTRY"}],
-    }, ensure_ascii=False), encoding="utf-8")
+        "artifact_paths": {name: name for name in PAYLOAD_FILES},
+        "artifact_sha256": {name: hashlib.sha256((root / name).read_bytes()).hexdigest()
+                             for name in PAYLOAD_FILES},
+    }
+    (root / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False), encoding="utf-8")
 
 
 def run_search(library: Path, *args: str) -> tuple[int, dict | str]:
@@ -292,6 +319,62 @@ def main() -> int:
             check(f"N2 no held ({query!r})", HELD_GFC not in fams and HELD_GFA not in fams, str(fams))
             assert isinstance(r["results"], dict)
         check("N2 excluded list present", set(r["excluded"]["held_family_ids"]) == {HELD_GFC, HELD_GFA}, str(r["excluded"]))
+
+        # N5: tampered payload — one byte changed, manifest hashes unchanged
+        tampered = tmp / "tampered-package"
+        shutil.copytree(staging, tampered)
+        families_doc = json.loads((tampered / "stable-families.json").read_text(encoding="utf-8"))
+        families_doc["families"][0]["family_name"] += "X"  # flip exactly one payload byte-region
+        (tampered / "stable-families.json").write_text(json.dumps(families_doc, ensure_ascii=False), encoding="utf-8")
+        code, out = run_search(tampered, "--query", "升级", "--allow-staging")
+        check("N5 tampered payload rejected",
+              code == 4 and isinstance(out, dict) and out.get("gap") == "MECHANISM_LIBRARY_INTEGRITY_MISMATCH"
+              and any("stable-families.json" in p for p in out.get("problems", [])),
+              f"code={code} out={str(out)[:200]}")
+
+        # N6: missing payload — one declared artifact deleted
+        missing = tmp / "missing-package"
+        shutil.copytree(staging, missing)
+        (missing / "composition-links.jsonl").unlink()
+        code, out = run_search(missing, "--query", "升级", "--allow-staging")
+        check("N6 missing payload rejected",
+              code == 4 and isinstance(out, dict) and out.get("gap") == "MECHANISM_LIBRARY_INTEGRITY_MISMATCH"
+              and any("composition-links.jsonl" in p for p in out.get("problems", [])),
+              f"code={code} out={str(out)[:200]}")
+
+        # N7: path escape — manifest artifact path escapes the package root
+        escape = tmp / "escape-package"
+        shutil.copytree(staging, escape)
+        esc_manifest = json.loads((escape / "manifest.json").read_text(encoding="utf-8"))
+        esc_manifest["artifact_paths"]["stable-families.json"] = "../outside.json"
+        (escape / "manifest.json").write_text(json.dumps(esc_manifest, ensure_ascii=False), encoding="utf-8")
+        code, out = run_search(escape, "--query", "升级", "--allow-staging")
+        check("N7 path escape rejected",
+              code == 4 and isinstance(out, dict) and out.get("gap") == "MECHANISM_LIBRARY_INTEGRITY_MISMATCH"
+              and any("path escape" in p for p in out.get("problems", [])),
+              f"code={code} out={str(out)[:200]}")
+
+        # N8: active flag / status mismatch — active_promotion=true but staging status
+        mismatch = tmp / "mismatch-package"
+        shutil.copytree(staging, mismatch)
+        mm_manifest = json.loads((mismatch / "manifest.json").read_text(encoding="utf-8"))
+        mm_manifest["active_promotion"] = True
+        mm_manifest["status"] = "INSTALLATION_STAGING_NOT_PROMOTED"
+        (mismatch / "manifest.json").write_text(json.dumps(mm_manifest, ensure_ascii=False), encoding="utf-8")
+        code, out = run_search(mismatch, "--query", "升级")  # production mode: no --allow-staging
+        check("N8 flag/status mismatch rejected in production mode",
+              code == 4 and isinstance(out, dict) and out.get("gap") == "MECHANISM_LIBRARY_MANIFEST_INVALID",
+              f"code={code} out={str(out)[:200]}")
+        # staging mode must also refuse an inconsistent manifest
+        code, out = run_search(mismatch, "--query", "升级", "--allow-staging")
+        check("N8 flag/status mismatch rejected in staging mode too",
+              code == 4 and isinstance(out, dict) and out.get("gap") == "MECHANISM_LIBRARY_MANIFEST_INVALID",
+              f"code={code} out={str(out)[:200]}")
+
+        # integrity gate cannot be bypassed by --allow-staging: staging package itself still verifies
+        code, out = run_search(staging, "--query", "升级", "--allow-staging")
+        check("staging package passes integrity gate", code == 0 and isinstance(out, dict)
+              and out.get("library_status") == "STAGING", str(out)[:160])
 
         # formats
         code, out = run_search(active, "--query", "升级", "--format", "md", "--allow-staging")
