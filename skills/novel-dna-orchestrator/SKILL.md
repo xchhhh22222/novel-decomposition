@@ -1,9 +1,9 @@
 ---
 name: novel-dna-orchestrator
-description: V1.6.6 小说 DNA 中控：在 V1.6.5 基础上新增语义证据 provenance 与 primary-object 隔离；词典/关键词机制 atom 只能做召回 hint，linked context 只能佐证，不能直接决定等价或 lineage。
+description: V1.7.0 小说 DNA 中控：保留 V1.6.x 来源路由与拆解门，同时将新跨书机制研究正式调度到 staged mechanism-family discovery；pair calibration、family pilot、boundary stress、domain expansion、DOMAIN_FULL 与 FULL_LIBRARY 必须按阶段和人审门推进。
 ---
 
-# 小说 DNA 拆书总控 V1.6.6
+# 小说 DNA 拆书总控 V1.7.0
 
 ## 目标
 
@@ -25,6 +25,50 @@ V1.6 的核心变化：**不是每一本来源都默认完整跑 01—09。**
 `源文与章节事实 → 逐章情绪层 → 横向专项候选 → 人工可审的总索引`
 
 本 Skill 负责边界、位置、状态、依赖和验收，不包办金手指、世界观等专项分析。专项内容由对应 Skill 生成候选；正式入库继续交给 `fanqie-material-curator` 审核。
+
+
+## V1.7.0 Mechanism Family 调度
+
+新跨书机制研究不得再默认走 one-shot full recluster。中控必须读取：
+
+- `references/mechanism-family-contract.md`；
+- mining-suite canonical `references/core/mechanism-family-workflow.md`；
+- 对应 pinned validator。
+
+标准阶段：
+
+```text
+MECHANISM_CARD_EXTRACTION
+→ READINESS_NORMALIZATION
+→ PAIR_CALIBRATION
+→ FAMILY_PILOT
+→ BOUNDARY_STRESS_TEST
+→ DOMAIN_EXPANSION
+→ DOMAIN_FULL
+→ optional CROSS_DOMAIN_ONTOLOGY
+→ FULL_LIBRARY
+```
+
+调度规则：
+
+- PAIR_CALIBRATION、FAMILY_PILOT、BOUNDARY_STRESS_TEST、每次 DOMAIN_EXPANSION 后必须 STOP 给人工审核；
+- CALIBRATION_REQUIRED lane 在 expansion 前必须取得 `APPROVE_LANE_VALIDATION:<domain>:<lane>`；
+- DOMAIN_FULL / FULL_LIBRARY / ACTIVE_PROMOTION 分别要求 `APPROVE_DOMAIN_FULL` / `APPROVE_FULL_LIBRARY` / `APPROVE_PROMOTION`；
+- `card count != independent implementation count`，parent/child、projection、copy output、同一 causal episode 不能重复计独立支持；
+- 新卡对冻结 family 逐条 definition test，不用 connected components、single-link、embedding graph 或旧 cluster membership 决定归属；
+- ontology 的 identity 与 composition 必须分离，composition 不改变 family membership；
+- FULL_LIBRARY 负责组装已验证 family/signature/ontology/composition，不重新全库聚类。
+
+当前已验证 lane：
+
+```text
+relationship_engine
+GF_CORE
+GF_ABILITY
+plotline_progression_engine
+```
+
+其它 lane 仍从 calibration 开始。
 
 ## 模式路由
 
