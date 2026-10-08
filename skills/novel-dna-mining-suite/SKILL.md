@@ -15,6 +15,7 @@ description: V1.7.0 小说 DNA 拆解与可复用机制族发现套件：保留 
 - 路由落盘后先运行 `python scripts/core/validate_source_routes.py <source_routes.jsonl>`；SOURCE_ROUTING_GATE_V1_6_1 未 PASS 时禁止开始拆解。
 - 总控、输入包、目录、阶段门和总索引：读取 `references/core/`。
 - 章节情绪：读取 `references/specialists/chapter-emotion-miner/`，canonical 章节字段唯一服从 `references/core/chapter-emotion-schema.md`。
+- **EMOF 情绪功能派生（新增、仅按任务运行）**：在 01 canonical/承诺账本已存在且通过原门后，读取 [references/core/emotion-function-card-contract.md](references/core/emotion-function-card-contract.md)。仅从本书可核验章节抽取跨场景可迁移的情绪功能、必要因果与可替换条件；写入独立研究分支的 derived candidate，不改 01 schema / 02–09 / RMF / active 包。运行 `python scripts/core/validate_emotion_function_cards.py <emotion_function_cards.jsonl> --library-root <material-library-working-tree>`。机器 PASS 绝不代表语义 PASS，更不能自行进行跨书 EMOF 聚类。
 - 金手指：读取 `references/specialists/golden-finger-miner/`。
 - 世界观：V1.4 同时拆世界规则与 `factions` 势力生态。
 - 修炼体系：V1.4 按来源实际存在数量拆 `cultivation_systems / system_relations / techniques / artifacts / resource_assets`，不预设体系数量。
