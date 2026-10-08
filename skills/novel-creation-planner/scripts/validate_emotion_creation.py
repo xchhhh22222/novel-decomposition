@@ -363,14 +363,48 @@ def validate_draft(data: Any) -> dict:
             if len(referenced) < len(selected):
                 error(errors, where, "READY requires all selected materials to join compatibility graph")
         # DRAFT and HOLD may have unresolved gaps, but never report a successful gate here.
+    source_failed = package is None or not materials or any(
+        "materials." in issue and ".source" in issue for issue in errors
+    )
+    interface_failed = any("materials." in issue and (
+        ".interface" in issue or "interface_readiness" in issue
+    ) for issue in errors)
+    readiness_values = {item.get("interface_readiness") for item in materials.values()}
+    if interface_failed:
+        interface_gate = "FAIL"
+    elif "HOLD" in readiness_values:
+        interface_gate = "HOLD"
+    elif "PARTIAL" in readiness_values:
+        interface_gate = "PARTIAL"
+    elif materials:
+        interface_gate = "PASS"
+    else:
+        interface_gate = "NOT_CHECKED"
+    links_all = [
+        x for option in options.values()
+        for x in (option.get("compatibility_checks") or [])
+        if isinstance(x, dict)
+    ]
+    if any("compatibility_checks" in issue for issue in errors):
+        compatibility_gate = "FAIL"
+    elif any(x.get("result") == "HARD_CONFLICT" for x in links_all):
+        compatibility_gate = "HARD_CONFLICT"
+    elif any(x.get("result") == "HOLD" for x in links_all):
+        compatibility_gate = "HOLD"
+    elif any(x.get("result") == "ADAPTABLE" for x in links_all):
+        compatibility_gate = "ADAPTABLE"
+    elif links_all:
+        compatibility_gate = "PASS"
+    else:
+        compatibility_gate = "NOT_CHECKED"
     return {
         "ok": not errors,
         "machine_check": "STRUCTURAL_ONLY",
         "library_integrity": "PASS" if package is not None else "FAIL",
-        "source_trust": "PASS" if not any("materials." in e and ".source" in e for e in errors) else "FAIL",
-        "interface_readiness": "PASS" if not any("materials." in e and ".interface" in e for e in errors) else "FAIL",
-        "current_compatibility": "PASS" if not any("compatibility_checks" in e for e in errors) else "FAIL",
-        "emotion_causality": "PASS" if not any("emotion_patterns." in e for e in errors) else "FAIL",
+        "source_trust": "FAIL" if source_failed else "PASS",
+        "interface_readiness": interface_gate,
+        "current_compatibility": compatibility_gate,
+        "emotion_causality": "PASS" if patterns and not any("emotion_patterns." in e for e in errors) else "FAIL",
         "creation_approval": "NOT_GRANTED",
         "option_ids": sorted(options),
         "errors": errors,
