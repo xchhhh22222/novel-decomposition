@@ -1,0 +1,34 @@
+name: Planner Emotion-First QA
+on:
+  pull_request:
+    paths:
+      - 'skills/novel-creation-planner/**'
+      - '.github/workflows/planner-emotion-first-ci.yml'
+  push:
+    branches:
+      - planner-emotion-first-qa-v1
+    paths:
+      - 'skills/novel-creation-planner/**'
+      - '.github/workflows/planner-emotion-first-ci.yml'
+  workflow_dispatch:
+
+jobs:
+  planner-regression:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile planner Python modules
+        run: python -m compileall -q skills/novel-creation-planner/scripts
+      - name: Emotion-first source, interface and composition QA
+        run: python skills/novel-creation-planner/scripts/test_validate_emotion_creation.py
+      - name: Existing plan schema regression
+        run: python skills/novel-creation-planner/scripts/test_validate_creation_plan.py
+      - name: Existing DNA search regression
+        run: python skills/novel-creation-planner/scripts/test_search_dna_candidates.py
+      - name: Active/staging package gate regression
+        run: python skills/novel-creation-planner/scripts/test_search_dna_package_gate.py
