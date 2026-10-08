@@ -1,0 +1,33 @@
+name: EMOF Derived Mining QA
+on:
+  pull_request:
+    paths:
+      - 'skills/novel-chapter-emotion-miner/**'
+      - 'skills/novel-dna-orchestrator/**'
+      - 'skills/novel-dna-mining-suite/**'
+      - '.github/workflows/emof-mining-ci.yml'
+  push:
+    branches:
+      - emotion-function-miner-derived-v1
+      - main
+    paths:
+      - 'skills/novel-chapter-emotion-miner/**'
+      - 'skills/novel-dna-orchestrator/**'
+      - 'skills/novel-dna-mining-suite/**'
+      - '.github/workflows/emof-mining-ci.yml'
+  workflow_dispatch:
+
+jobs:
+  emotion-function-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile mining scripts
+        run: python -m compileall -q skills/novel-dna-mining-suite/scripts/core
+      - name: EMOF source closure and evidence regression
+        run: python skills/novel-dna-mining-suite/scripts/core/test_validate_emotion_function_cards.py
