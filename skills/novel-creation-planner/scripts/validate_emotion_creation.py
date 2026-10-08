@@ -170,7 +170,7 @@ def locate_record(package: Path, manifest: dict, source: dict, where: str, error
     return row
 
 
-def validate_pattern(pid: str, row: dict, errors: list[str]) -> None:
+def validate_pattern(pid: str, row: dict, research_root: Any, errors: list[str]) -> None:
     where = f"emotion_patterns.{pid}"
     kind = row.get("source_kind")
     if kind not in REF_SOURCE_KINDS:
@@ -178,10 +178,45 @@ def validate_pattern(pid: str, row: dict, errors: list[str]) -> None:
     if kind == "RESEARCH_VERIFIED":
         if row.get("source_publication_status") != "RESEARCH_NOT_ACTIVE":
             error(errors, where, "01 emotion research cannot be labeled ACTIVE_SHARED_LIBRARY")
-        if not string_array(row.get("source_evidence_refs")) or not row["source_evidence_refs"]:
+        refs = row.get("source_evidence_refs")
+        if not string_array(refs) or not refs:
             error(errors, where, "research pattern needs chapter evidence refs")
-        if row.get("research_evidence_check") != "VERIFIED":
-            error(errors, where, "research pattern needs separately verified evidence check")
+        if not nonempty(research_root) or not Path(research_root).is_absolute() or not Path(research_root).is_dir():
+            error(errors, where, "RESEARCH_VERIFIED requires accessible absolute research_root")
+        else:
+            base = Path(research_root).resolve()
+            rel = row.get("research_source_path")
+            expected_hash = row.get("research_file_sha256")
+            if not nonempty(rel) or not re.fullmatch(r"[a-f0-9]{64}", str(expected_hash)):
+                error(errors, where, "research_source_path and 64-hex research_file_sha256 required")
+            else:
+                p = Path(rel)
+                path = (base / p).resolve()
+                if (p.is_absolute() or ".." in p.parts or base not in path.parents
+                        or path.name != "chapter_emotion.jsonl"
+                        or "01_章节情绪" not in path.parts):
+                    error(errors, where, "research file must be a confined 01_章节情绪/chapter_emotion.jsonl")
+                elif not path.is_file():
+                    error(errors, where, "research chapter emotion source missing")
+                else:
+                    content = path.read_bytes()
+                    if hashlib.sha256(content).hexdigest() != expected_hash:
+                        error(errors, where, "research emotion file SHA-256 mismatch")
+                    try:
+                        chapters = [
+                            x for line in content.decode("utf-8-sig").splitlines()
+                            if line.strip() and isinstance((x := json.loads(line)), dict)
+                        ]
+                    except (UnicodeError, ValueError):
+                        chapters = []
+                        error(errors, where, "research emotion source is not valid chapter JSONL")
+                    valid = {
+                        x.get("chapter_ref")
+                        for x in chapters if x.get("qa_status") == "PASS"
+                    }
+                    for ref in refs if isinstance(refs, list) else []:
+                        if ref not in valid:
+                            error(errors, where, f"research evidence ref absent or non-PASS: {ref}")
     if not nonempty(row.get("reader_promise")):
         error(errors, where, "reader_promise required")
     beats = row.get("beats")
@@ -197,7 +232,6 @@ def validate_pattern(pid: str, row: dict, errors: list[str]) -> None:
     if not nonempty(row.get("visible_payoff")) or not nonempty(row.get("aftermath")):
         error(errors, where, "visible_payoff and aftermath required")
 
-
 def validate_draft(data: Any) -> dict:
     errors: list[str] = []
     data = object_at(data, "draft", errors)
@@ -207,9 +241,13 @@ def validate_draft(data: Any) -> dict:
         error(errors, "draft", "status must be DRAFT; validator does not approve a novel")
     package, manifest = load_active_library(data.get("shared_library_root"), errors)
     patterns = unique_ids(data.get("emotion_patterns"), "pattern_id", "emotion_patterns", errors)
+    if not patterns:
+        error(errors, "emotion_patterns", "at least one pattern required")
     for pid, row in patterns.items():
-        validate_pattern(pid, row, errors)
+        validate_pattern(pid, row, data.get("research_root"), errors)
     materials = unique_ids(data.get("materials"), "material_id", "materials", errors)
+    if not materials:
+        error(errors, "materials", "at least one active DNA component required")
     for mid, item in materials.items():
         where = f"materials.{mid}"
         source = object_at(item.get("source"), where+".source", errors)
@@ -228,6 +266,8 @@ def validate_draft(data: Any) -> dict:
         if item.get("interface_readiness") == "READY" and (not inter.get("inputs") or inter.get("unknowns")):
             error(errors, where, "READY needs explicit inputs and no unresolved interface unknowns")
     options = unique_ids(data.get("options"), "option_id", "options", errors)
+    if not options:
+        error(errors, "options", "at least one option required")
     for oid, option in options.items():
         where = f"options.{oid}"
         if option.get("status") not in {"DRAFT", "READY_FOR_HUMAN_REVIEW", "HOLD"}:
