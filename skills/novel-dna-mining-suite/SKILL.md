@@ -1,6 +1,6 @@
 ---
 name: novel-dna-mining-suite
-description: V1.7.0 小说 DNA 拆解与可复用机制族发现套件：保留 V1.6.x 拆解/语义回归，同时将新跨书聚类正式切换为 staged mechanism-family discovery；pair calibration、family pilot、boundary stress、domain expansion、DOMAIN_FULL、可选 cross-domain ontology 与 FULL_LIBRARY 均有独立人审门。
+description: V1.7.0 小说 DNA 拆解与分阶段机制族发现套件；保留现有拆书/聚类契约，新增可选单书情绪功能 EMOF 派生与独立来源 QA；不更改 canonical 01、生产材料和已冻结 mechanism families。
 ---
 
 # 小说 DNA 拆解套件 V1.7.0
