@@ -240,6 +240,12 @@ def main() -> int:
     legacy.pop("material_dispatch", None)
     cases.append(("schema v1 backward compatibility", legacy, True))
 
+    # Legacy v1/v2 remain compatible; opt-in emotion-first plans require
+    # a validated sidecar that proves source/interface/compatibility closure.
+    emotion_without_sidecar = copy.deepcopy(base)
+    emotion_without_sidecar["creation_method"] = "EMOTION_FIRST"
+    cases.append(("emotion-first plan without sidecar must fail", emotion_without_sidecar, False))
+
     missing_dispatch = copy.deepcopy(base)
     missing_dispatch.pop("material_dispatch")
     cases.append(("schema v2 requires material dispatch", missing_dispatch, False))
