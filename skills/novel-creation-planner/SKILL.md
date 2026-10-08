@@ -1,9 +1,9 @@
 ---
 name: novel-creation-planner
-description: V1.2 市场结构学习 + 素材调度 + 高潮倒推型小说创造规划器：先研究目标赛道新书榜 Top10 前10章并选3本深拆前20章，只学习节奏/情绪/钩子结构；再调度 V1.4 素材库组装世界、势力、体系、金手指与战略目标物，设计前100章约2个大高潮并反向生成故事脊柱。
+description: V1.2 兼容 + Emotion-First 创作模式：从读者承诺和因果情绪窗口出发，独立检索机制库与真实 DNA 组件；按来源可信、接口可信、当前组合兼容的三轴 QA 调度，并保留既有市场研究及高潮倒推流程。
 ---
 
-# 小说创造规划总控 V1.2
+# 小说创造规划总控 V1.2 + Emotion-First QA
 
 本 Skill 是创造层，不是拆书层。它把用户意图、近期市场信号和已经整理好的素材转化为可写的新书计划：
 
@@ -13,13 +13,14 @@ description: V1.2 市场结构学习 + 素材调度 + 高潮倒推型小说创�
 
 ## 模式路由
 
+- **默认从零开书的新模式：必须先读取 [references/emotion-first-creation.md](references/emotion-first-creation.md)，执行情绪目标 → 因果窗口 → RMF → DNA组件 → 兼容桥 → 新书候选；不能把“低低高”标签当完整剧情。**
 - 需要扫榜、筛书、获取前10章：读取 [references/execution-pipeline.md](references/execution-pipeline.md)。
 - **需要开新书的实时赛道学习：必须读取 [references/market-benchmark.md](references/market-benchmark.md)，执行 Top10 前10章比较 → 选3本 → 前20章深拆。**
 - `market-opening-synthesis.md` 仅作为旧版轻量开篇横评参考，不再定义 V1.2 标准流程。
 - 需要创造金手指、人物关系、世界观、修炼和资源循环：读取 [references/creation-kernel.md](references/creation-kernel.md)。
 - 需要规划前300章：读取 [references/architecture-300.md](references/architecture-300.md)。
 - 需要三案比较、原创性、兼容性、债务和素材覆盖审核：读取 [references/audit-and-output.md](references/audit-and-output.md)。
-- 需要落盘机器可检验的计划包：读取 [references/plan-schema.md](references/plan-schema.md)，并运行 `scripts/validate_creation_plan.py`。
+- 需要落盘机器可检验的计划包：读取 [references/plan-schema.md](references/plan-schema.md)，并运行 `scripts/validate_creation_plan.py`；**情绪优先候选另执行 `scripts/validate_emotion_creation.py <draft.json>`，正式计划采用 `creation_method=EMOTION_FIRST` 时必须联带 `--emotion-draft <draft.json>`，两套校验均不得冒充人工批准。**
 - 保存 V1.2 市场对标包或高潮倒推包时，分别运行 `python scripts/validate_v12_artifacts.py benchmark <market_benchmark.json>` 与 `python scripts/validate_v12_artifacts.py climax <climax_backplan.json>`。
 - **需要从素材库选材、决定先查什么/查多少/何时停止：必须读取 [references/material-dispatch.md](references/material-dispatch.md)。**
 - 配置了 `mechanism_library_root` 时，先用 [references/mechanism-library.md](references/mechanism-library.md) 做 Wave 0 机制引擎选择（`scripts/search_mechanism_library.py`），再进入素材调度；未配置则完全按旧流程运行。
@@ -67,7 +68,27 @@ description: V1.2 市场结构学习 + 素材调度 + 高潮倒推型小说创�
 
 主代理负责冻结输入、处理冲突、整合结果和最终验收。指定模型不可用时按同一角色契约由当前代理完成，不阻断任务。
 
-## 总工作流 V1.2
+## 情绪优先的执行顺序（新开书默认）
+
+V1.2 已有市场结构学习、素材调度和高潮倒推保留；默认新增的前置执行次序：
+
+```text
+原始用户 brief 与 Planner 工作假说分离
+→ 读者承诺与 2–3 个因果情绪窗口
+→ RMF 原始查询/扩展查询分开检索
+→ 情绪拍反推所需 02–09 素材槽位
+→ 生产素材组件真实召回 + 回到源记录
+→ SOURCE_QA / INTERFACE_READINESS / CURRENT_COMPATIBILITY
+→ 可执行原创桥接 + 反向修正情绪兑现
+→ A/B/C 创作候选 + 自动覆盖/来源/接口报告
+→ STOP_FOR_HUMAN_REVIEW
+```
+
+任何已声明的开篇、篇章高潮和重复剧情机制分别需调度 07、08、09（或报告精确缺口）；06 主线也需单独定位。当前生产包**没有 active 01 情绪模块**，只能使用可核验 research 情绪作为非 active 参考，或把情绪设计明确标 `ORIGINAL_DESIGN`；不得自称情绪库已激活。来源 QA=PASS ≠ 接口完整 ≠ 当前兼容。
+
+旧版 V1.2 `schema_version=1/2` 计划继续兼容；新情绪候选由独立 `validate_emotion_creation.py` 校验。不要为通过质量门重写拆书事实、V1.7 family/recipe 或生产包。
+
+## 总工作流 V1.2（市场、计划与高潮阶段继续保留）
 
 1. **只冻结赛道与硬约束**：先确认平台/频道/题材、目标读者、用户明确禁区。不要在市场对标前预设具体世界观、金手指或故事事件。
 2. **建立实时 Top10 基线**：同赛道新书榜固定保留前10名；在合法可访问范围内逐本取得第1—10章。不能因为某本不适合未来设定就剔除。
@@ -75,7 +96,7 @@ description: V1.2 市场结构学习 + 素材调度 + 高潮倒推型小说创�
 4. **选3本结构强样本**：按“最值得学习的结构长处 + 三本尽量互补”选择，不按与未来故事的相似度选择。
 5. **深拆3本前20章**：继续获取第11—20章；逐章固定拆 `主角目的 → 阻碍 → 行动 → 配角作用 → 兑现 → 情绪 → 钩子 → 下一章点击理由 → 状态变化`。证据不足标 partial。
 6. **冻结开篇结构约束**：把三书长处抽成 `structural_lessons`，例如“第一章立冲突、两章内给可执行解法、三章内完成首次兑现”。只保存结构，不保存具体包装。
-7. **建立 V1.1 素材调度单**：读取 `material-dispatch.md`，按波次调世界前提、factions、主/副体系、普通资源、金手指、功法/法宝等组件，并保留来源链。
+7. **建立情绪优先 V1.1 素材调度单**：读取 `material-dispatch.md`，先由情绪承诺/兑现生成槽位，再按波次调世界前提、factions、主/副体系、普通资源、金手指、功法/法宝等组件，并保留来源链。
 8. **构造势力池与资源逻辑**：明确官方/军方/学院/公司集团/家族/地下/敌对组织中实际需要哪些；每个势力说明控制什么、想要什么、能动用什么。普通资源只负责日常循环。
 9. **创造战略目标物**：为高潮创建 `strategic_target`。它必须让主角“必须拿”、竞争者“也有理由抢”，并能把多方势力拉进同一争夺。
 10. **先设计前100章约2个大高潮**：默认一个位于约30—45章，一个位于约80—100章。每个高潮必须有目标核、准入门槛、多方阻碍、兑现、代价、不可逆变化和下一阶段入口；高潮2由高潮1后果推出。
@@ -101,6 +122,14 @@ description: V1.2 市场结构学习 + 素材调度 + 高潮倒推型小说创�
 - 300章规划必须存在至少两次结构刷新；不能只靠换地图、抬数值和更强敌人延长。
 - 对素材不足的阶段标记 `GAP` 并输出需求，不用无来源内容伪装成素材支持。
 - 默认只在对话中展示候选。写入章纲、小说资料、素材库或调用记录仍需用户明确授权。
+
+## 三轴 QA 的强制停点
+
+- 来源可信：必须定位到 active 包 manifest 声明的源文件、确切行/组件、证据与 QA；来源 QA PASS 仅代表来源可用于分析。
+- 接口可信：独立记录输入、输出、依赖、限制、UNKNOWN；不允许将接口缺口藏在一段摘要中。
+- 当前兼容：跨书输出→输入必须逐对记录 `DIRECT_FIT / ADAPTABLE / HOLD / HARD_CONFLICT`；ADAPTABLE 的新桥属于原创设定，不能标为原书事实。
+- 必需交付物的06主线、07开篇、08高潮、09重复剧情模块不得静默跳过；`SOURCE_GAP / RETRIEVAL_GAP / INTERFACE_GAP / ADAPTATION_REQUIRED / CREATIVE_OPEN_CHOICE` 分开记录。
+- 新开书三案的机器审计必须先通过情绪候选校验；`ok=true` 仍要等待人工选择。
 
 ## 完成标准
 
