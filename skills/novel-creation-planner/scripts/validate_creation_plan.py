@@ -232,7 +232,7 @@ def main() -> int:
             gate = validate_draft(draft)
             if not gate.get("ok"):
                 errors.extend("emotion_draft: " + issue for issue in gate.get("errors", []))
-            if draft.get("design_mode") != "EMOTION_FIRST":
+            if not isinstance(draft, dict) or draft.get("design_mode") != "EMOTION_FIRST":
                 errors.append("emotion_draft.design_mode must be EMOTION_FIRST")
         except (OSError, ValueError, TypeError, ImportError) as exc:
             errors.append(f"emotion_draft is unavailable or invalid: {exc}")
