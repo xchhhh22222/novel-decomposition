@@ -11,6 +11,16 @@ description: 从已通过QA的章节事实中提取逐章读者情绪覆盖，�
 - 承诺追踪、节奏审计与横向候选：再读取 [clustering-and-qa.md](references/clustering-and-qa.md)。
 - 结构校验：从任意目录运行包内入口 `python <suite>/scripts/validate.py --specialty chapter-emotion-miner --kind canonical <jsonl> --expected-book <BOOK_ID> --expected-range <起章-止章> --workspace-root <项目根>`；`--workspace-root` 用于解析 `evidence_path`，不从安装路径猜测项目根。跨书派生记录另加 `--all-books-complete`、`--expected-books` 和 `--completion-manifest`。
 
+## 单书情绪功能派生：不改变 G2
+
+当任务明确要求可迁移情绪骨架时，先遵守 canonical 01 和本 specialty 的全部旧 QA，再进入 mining-suite `references/core/emotion-function-card-contract.md` 定义的 EMOF 派生模式。
+
+1. 优先复用已经 QA PASS 的逐章情绪、`promise_ledger.jsonl`、节奏审计与 05/06/07/08/09 组件；已完工旧书原则上**不重拆原文**，只对有争议的来源证据做最小回查。
+2. 一个情绪窗口记录真实的 source facts，再**单独**提取 reader expectation、pressure、character agency、visible payoff、aftermath、invariants、replacement slots 和 limitations；不能用原剧情套换几个名词来替代抽象。
+3. 未完成的承诺或因果缺口为 `HOLD`，无需凑齐窗口数量或强行补造。
+4. 新产物 `emotion_function_cards.jsonl` 永不写入 canonical `chapter_emotion.jsonl`，不参与本轮跨书聚类或直接晋升生产包。
+5. 机械结构/真实引用验证使用 `scripts/core/validate_emotion_function_cards.py`；来源可追踪、接口是否真正可迁移和当前小说兼容性必须分别判定。
+
 ## 单一任务
 
 本 Skill 只回答一个问题：作者如何让读者在每一章经历期待、蓄压、转折、兑现和余震。
