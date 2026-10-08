@@ -137,6 +137,12 @@ def main() -> int:
             result = validate_draft(data)
             if result["ok"] != expected:
                 failures.append({"name": name, "expected": expected, "errors": result["errors"]})
+            if name == "valid closure" and (result.get("source_trust"), result.get("interface_readiness"), result.get("current_compatibility")) != ("PASS", "PASS", "PASS"):
+                failures.append({"name": "three-axis PASS", "report": result})
+            if name == "grounded adaptation" and result.get("current_compatibility") != "ADAPTABLE":
+                failures.append({"name": "ADAPTABLE is not mistaken for PASS", "report": result})
+            if name == "non-ready interface" and result.get("interface_readiness") != "PARTIAL":
+                failures.append({"name": "PARTIAL interface is not mistaken for PASS", "report": result})
         print(json.dumps({"cases": len(cases), "passed": len(cases)-len(failures),
                           "failures": failures}, ensure_ascii=False, indent=2))
         return 0 if not failures else 1
