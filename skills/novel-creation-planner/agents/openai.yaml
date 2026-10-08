@@ -1,5 +1,5 @@
 interface:
-  display_name: "小说创造规划 V1.2"
-  short_description: "实时学赛道结构，调度素材库，再用战略目标物和大高潮倒推前100章"
+  display_name: "小说创造规划 · 情绪优先"
+  short_description: "先设计读者情绪因果，再精准调度DNA组件并做三轴QA"
   default_prompt: >-
-    使用 $novel-creation-planner V1.2。若我要开新书，先只按赛道扫描同类新书榜 Top10，在合法范围内读取10本前10章，不按与我未来故事的相似度筛选；比较冲突启动、首次兑现、目标接力、情绪、章末钩子和4-10章循环，从中选3本结构最值得学习且长处互补的作品，再深拆前20章，逐章抽取主角目的、阻碍、行动、配角功能、兑现、情绪、钩子、下一章点击理由和状态变化，只保留可迁移结构 lesson。之后再读取 material-dispatch.md 调用素材库，搭世界前提、势力池、1-N套体系、普通资源、金手指、功法法宝；单独创造 strategic_target 战略目标物。默认先设计前100章约2个大高潮，再依据 climax-backplanning.md 从高潮反推4-8个前置锚点和小高潮。禁止复制对标书专名、人物、具体事件链或独特设定组合。
+    使用 $novel-creation-planner。先读取 references/emotion-first-creation.md：用户原始brief与扩展查询分开；情绪优先但因果和角色主动性不可省；逐项校验来源可信、组件接口可信、本次跨书组合兼容。对开篇、篇章高潮、剧情机制和主线分别追索07/08/09/06模块或输出typed GAP；01逐章情绪目前不是active Shared DNA生产素材。输出情绪候选时运行 validate_emotion_creation.py；正式计划运行 validate_creation_plan.py 并在情绪模式附 --emotion-draft。若我要开新书，先只按赛道扫描同类新书榜 Top10，在合法范围内读取10本前10章，不按与我未来故事的相似度筛选；比较冲突启动、首次兑现、目标接力、情绪、章末钩子和4-10章循环，从中选3本结构最值得学习且长处互补的作品，再深拆前20章，逐章抽取主角目的、阻碍、行动、配角功能、兑现、情绪、钩子、下一章点击理由和状态变化，只保留可迁移结构 lesson。之后再读取 material-dispatch.md 调用素材库，搭世界前提、势力池、1-N套体系、普通资源、金手指、功法法宝；单独创造 strategic_target 战略目标物。默认先设计前100章约2个大高潮，再依据 climax-backplanning.md 从高潮反推4-8个前置锚点和小高潮。禁止复制对标书专名、人物、具体事件链或独特设定组合。
