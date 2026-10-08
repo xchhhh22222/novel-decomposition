@@ -15,6 +15,19 @@
 → 新书候选
 ```
 
+## 0. Emotion-First 优先调度与来源接口验收
+
+新开书默认读取 `emotion-first-creation.md`：先建立可兑现的情绪承诺、压力、人物主动选择、状态转移和余震，再从这些需求推导槽位。市场结构仍只用于学习节奏，RMF 负责长期复用，02–09 DNA 为具体实现。
+
+当前 01 章节情绪仅在部分研究书籍出现，**不在 active Shared DNA v1.0.0 包中**。不得把研究情绪卡按生产 QA=PASS 使用；允许 `RESEARCH_VERIFIED`（保留来源及范围）或 `ORIGINAL_DESIGN` 情绪候选。
+
+* 根据声明交付物强制模块覆盖：`growth_loop→02+03+04`、`story_spine→06`、`opening→07`、`major_climaxes→08`、`repeating_plot_engine→09`、`relationships→05`。没有合格候选必须输出 typed GAP，不能静默跳过。
+* 06/07/08/09 目前多数为 `per_book`，查询必须显式带 `--include-per-book`；空结果先检查 `include_per_book` 元数据，不得推导素材不存在。
+* 当前组件模式只原生展开 03/04。对于 06 `lines[]`、08 `arcs[]`、09 `mechanisms[]`，应检索父记录后读取完整原始 JSONL，引用具体 `component_path` 和内部 ID；不能凭整书摘要声称用了完整剧情机制。
+* 每个所选组件的 three-axis QA：**来源可信**（active 包路径/哈希/record/证据/QA）、**接口可信**（输入/输出/依赖/约束/未知）、**当前兼容**（逐对 `DIRECT_FIT / ADAPTABLE / HOLD / HARD_CONFLICT`）。QA=PASS 绝非自动兼容。
+* 原创设计和来源缺口要分开：`SOURCE_GAP` 回拆书补证据；`RETRIEVAL_GAP` 修查询/检索；`INTERFACE_GAP` 回查组件或换组件；`ADAPTATION_REQUIRED` 由 Planner 生成明示原创桥；`CREATIVE_OPEN_CHOICE` 是作者审美选择。
+* 保存 `emotion_draft.json` 用 `scripts/validate_emotion_creation.py` 做候选校验；机器 PASS 只是结构完整，并非小说质量审核。
+
 ## 1. 调度与检索的区别
 
 “检索”只回答：库里有哪些记录和关键词相近。
