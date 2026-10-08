@@ -208,6 +208,7 @@ def main() -> int:
         sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="Validate a candidate novel creation plan.")
     parser.add_argument("target", type=Path)
+    parser.add_argument("--emotion-draft", type=Path, help="Validated sidecar for creation_method=EMOTION_FIRST")
     args = parser.parse_args()
     try:
         data = json.loads(args.target.read_text(encoding="utf-8-sig"))
@@ -220,6 +221,21 @@ def main() -> int:
     if not isinstance(data, dict):
         print(json.dumps({"ok": False, "errors": errors}, ensure_ascii=False, indent=2))
         return 1
+    # Opt-in bridge: preserve legacy plans, but never let an emotion-first plan
+    # omit its source/interface/compatibility sidecar at formal validation.
+    if data.get("creation_method") == "EMOTION_FIRST" and args.emotion_draft is None:
+        errors.append("creation_method=EMOTION_FIRST requires --emotion-draft sidecar")
+    if args.emotion_draft is not None:
+        try:
+            from validate_emotion_creation import validate_draft
+            draft = json.loads(args.emotion_draft.read_text(encoding="utf-8-sig"))
+            gate = validate_draft(draft)
+            if not gate.get("ok"):
+                errors.extend("emotion_draft: " + issue for issue in gate.get("errors", []))
+            if draft.get("design_mode") != "EMOTION_FIRST":
+                errors.append("emotion_draft.design_mode must be EMOTION_FIRST")
+        except (OSError, ValueError, TypeError, ImportError) as exc:
+            errors.append(f"emotion_draft is unavailable or invalid: {exc}")
     schema_version = data.get("schema_version")
     if schema_version not in {1, 2}:
         errors.append("schema_version must be 1 or 2")
