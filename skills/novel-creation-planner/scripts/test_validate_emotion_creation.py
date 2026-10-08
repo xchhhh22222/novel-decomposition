@@ -103,6 +103,33 @@ def main() -> int:
                 "changed_state": "money balance", "why_causal": "world institution allows conversion",
                 "provenance": "ORIGINAL_DESIGN"})
         add("grounded adaptation", bridge, True)
+        def research_case(d):
+            research = Path(tmp) / "research-artifacts"
+            rel = "books/BOOK_A/01_章节情绪/chapter_emotion.jsonl"
+            path = research / rel
+            path.parent.mkdir(parents=True, exist_ok=True)
+            rows = [
+                {"chapter_ref": f"BOOK_A:CHAPTER:{i:04}", "qa_status": "PASS"}
+                for i in (1, 2, 3)
+            ]
+            path.write_text("\n".join(json.dumps(x) for x in rows) + "\n", encoding="utf-8")
+            d["research_root"] = str(research)
+            d["emotion_patterns"][0].update(
+                source_kind="RESEARCH_VERIFIED",
+                source_publication_status="RESEARCH_NOT_ACTIVE",
+                research_source_path=rel,
+                research_file_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+                source_evidence_refs=[x["chapter_ref"] for x in rows],
+            )
+        add("real research evidence closure", research_case, True)
+        def research_false_hash(d):
+            research_case(d)
+            d["emotion_patterns"][0]["research_file_sha256"] = "0"*64
+        add("research file hash mismatch", research_false_hash)
+        def research_fake_ref(d):
+            research_case(d)
+            d["emotion_patterns"][0]["source_evidence_refs"].append("BOOK_A:CHAPTER:9999")
+        add("fake research emotion evidence", research_fake_ref)
         add("non-ready interface", lambda d: d["materials"][1].update(interface_readiness="PARTIAL"))
         add("unexplained gap", lambda d: d["options"][0]["slots"][0].update(material_ids=[],gap={"type":"CREATIVE_OPEN_CHOICE","reason":"original","next_action":"design"}))
         failures = []
