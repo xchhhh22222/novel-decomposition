@@ -12,6 +12,17 @@ description: 从已通过QA的章节事实中提取逐章读者情绪覆盖，�
 - 结构校验：运行 `python scripts/validate_outputs.py <jsonl> --kind canonical --expected-book <BOOK_ID> --expected-range <起章-止章>`；跨书派生记录另加 `--all-books-complete`、`--expected-books` 和 `--completion-manifest`。
 - 语义硬门：结构校验通过后必须运行 `python scripts/audit_semantics.py <chapter_emotion.jsonl> --source-file <完整源书> --source-review <SOL抽样复核.json> [--entity-file <人物/实体JSON或JSONL>] [--entity <显式实体名>]`。没有 SOL 抽样文件只能得到 `SOURCE_SAMPLE_REVIEW_REQUIRED`，不得完成 G2。
 
+## EMOF 情绪功能派生模式（仅授权时运行）
+
+本独立 specialist 保持原逐章 canonical 工作流不变；**本模式是 G2 完成后的可选派生步骤**，不必重新拆已通过 QA 的章节。权威 contract：`skills/novel-dna-mining-suite/references/core/emotion-function-card-contract.md`。
+
+- 从同书的 `chapter_emotion.jsonl`、`promise_ledger.jsonl` 及原章/02–09 证据定位有意义的「期待→压力→主动行动→可见兑现→余震」窗口。无真实兑现时保留未关闭承诺，不强行造高潮。
+- 输出 `emotion_function_card` 独立 JSONL，而不是给 canonical 01 新增字段；`source_facts` 忠实原文，`emotional_function` 抽象情绪功能和因果不变量，`replacement_slots` 记录人物身份、场景、敌人、资源、解决方式的替换条件。
+- 功能匹配是**相近的核心读者期待/压力走向/兑现作用**，不是要求「青梅」与「妹妹」、「妖魔」与「仇人」造成完全相同的感受；不能用只换名词的原书完整事件链充当成功的新书设计。
+- source chapter 与 promise ID 必须每条真实命中；`source_fingerprint=UNAVAILABLE` 明示部分来源未核实，不得补造 SHA 或来源审核。
+- 运行 mining-suite 的 `scripts/core/validate_emotion_function_cards.py`，独立语义审核另行记录；未审派生卡保持 `status=candidate, qa_status=HOLD`。不合并 cross-book family、不更新索引、不做 Planner 兼容性结论。
+- WorkBuddy 历史素材迁移见 `skills/novel-dna-mining-suite/references/core/emotion-function-workbuddy-handoff.md`；只能在素材库独立分支按已授权的窗口生成/补录派生文件。
+
 ## 单一任务
 
 本 Skill 只回答一个问题：作者如何让读者在每一章经历期待、蓄压、转折、兑现和余震。
