@@ -27,6 +27,16 @@ V1.6 的核心变化：**不是每一本来源都默认完整跑 01—09。**
 本 Skill 负责边界、位置、状态、依赖和验收，不包办金手指、世界观等专项分析。专项内容由对应 Skill 生成候选；正式入库继续交给 `fanqie-material-curator` 审核。
 
 
+## EMOF 情绪功能派生路由（非聚类、非组装）
+
+新建 EMOF 派生记录是**既有 01 canonical + promise ledger 之后的独立选择性任务**。当用户要求抽取可迁移情绪因果骨架或微调旧书素材时，委派给 `novel-chapter-emotion-miner`；必须加载 mining-suite 的 `references/core/emotion-function-card-contract.md` 并验证原书来源链。
+
+- 拆书：只生成 source-grounded 单书 `emotion_function_card`、独立 evidence/QA；可记录「情绪功能近似」的假设，但**不聚类**。
+- 聚类：待用户完成本轮旧素材派生审核后，再由未来独立 Cluster Skill 实施；不得提前修改已冻结 v1.7 RMF family 或 active library。
+- 组装：待聚类专项验收后再交 Planner；当前可用 02–09 原始材料继续保留。
+- 审核：机器核对每条章节/承诺引用；独立语义审查情绪不变量与可替换条件，来源指纹 UNAVAILABLE 明确 PARTIAL；跨书兼容性此阶段一律 NOT_APPLICABLE。
+- 旧素材采用 `books/BOOK_NNN/01_章节情绪/derived/emotion_function_cards.jsonl` 的**非生产**候选分支增量补卡；未经独立验收不覆盖旧文件、不改正式清单与状态。
+
 ## V1.7.0 Mechanism Family 调度
 
 新跨书机制研究不得再默认走 one-shot full recluster。中控必须读取：
