@@ -4,7 +4,7 @@ Status: `ARCHITECTURE_PROPOSAL / RESEARCH_ONLY`. This is a read-only derivative 
 
 ## Dataset layout
 
-A pilot directory contains `source-manifest.json`, `promise-resolution.jsonl`, `emotion-lines.jsonl`, `emotion-weaves.jsonl`, `macro-emotion-arcs.jsonl`, `arc-handoffs.jsonl`, and human-readable review files.
+A pilot directory contains `source-manifest.json`, `promise-resolution.jsonl`, `emotion-lines.jsonl`, `emotion-weaves.jsonl`, `macro-emotion-arcs.jsonl`, `arc-handoffs.jsonl`, and human-readable review files. A pilot that performs targeted raw-text verification may also declare `source_text_audit_path` for a claim-level JSONL audit.
 
 Every one of the four core JSONL record types requires:
 
@@ -20,7 +20,7 @@ The opt-in R2 profile is declared by `research_contract_profile=CLAIM_EVIDENCE_V
 - handoff: `evidence_bindings`
 - promise crosswalk: `source_evidence_refs`
 
-Each critical binding requires `claim`, `chapter_ref`, `source_record_id`, `field_path`, and `interpretation`. The validator resolves the chapter record and field. It cannot decide whether the cited field proves the prose claim; unresolved semantics must report `NEEDS_SEMANTIC_REVIEW`.
+Each critical binding requires `claim`, `chapter_ref`, `source_record_id`, `field_path`, and `interpretation`. The validator resolves the chapter record and field. If a targeted source-text audit marks the canonical field `CONTRADICTED`, the binding must also provide the corresponding `source_text_audit_ref`; this acknowledges the conflict but does not make the interpretation true. The validator cannot decide whether the cited field proves the prose claim; unresolved semantics must report `NEEDS_SEMANTIC_REVIEW`.
 
 ## Emotion line
 
@@ -42,7 +42,7 @@ For an R2 `OBSERVED_OVERLAP` candidate, the target must demonstrate macro qualif
 
 ## Provenance and review
 
-The manifest freezes a Git commit and hashes each declared source blob. `REFERENCE_RESOLVED` only means referenced QA records were found. `SOURCE_TEXT_VERIFICATION_PARTIAL` must be retained when chapter source fingerprints are unavailable. Machine validation never grants semantic approval or production promotion. `claim_binding_gate=PASS` means only that the claimed evidence locations resolve and the required shape is complete.
+The manifest freezes a Git commit and hashes each declared source blob. A raw source file's Git object identity and byte checksum are different claims and must be recorded separately as `source_text_git_blob={algorithm: git-sha1, oid: ...}` and `source_text_file_checksum={algorithm: sha256, value: ...}`. `REFERENCE_RESOLVED` only means referenced QA records were found. `SOURCE_TEXT_VERIFICATION_PARTIAL` must be retained when chapter source fingerprints are unavailable. Machine validation never grants semantic approval or production promotion. `claim_binding_gate=PASS` means only that the claimed evidence locations resolve and the required shape is complete.
 
 Run:
 

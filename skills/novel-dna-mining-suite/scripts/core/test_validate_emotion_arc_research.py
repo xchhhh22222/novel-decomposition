@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""NOVA Emotion Arc V2 validator matrix (T01-T21)."""
+"""NOVA Emotion Arc V2 validator matrix (T01-T24)."""
 from __future__ import annotations
 
 import copy
@@ -363,7 +363,57 @@ def main() -> int:
             p["arc-handoffs.jsonl"][0]["prior_arc_payoff_check"]["observed_result"] = "new line replaces old promise"
         run("T21 new line cannot cancel old payoff", cancel_old_contract, False, "PRIOR_PAYOFF_CONTRACT_CANCELLED")
 
-    print(json.dumps({"ok": not failures, "cases": 21, "passed": 21 - len(failures), "failures": failures}, ensure_ascii=False, indent=2))
+        def mislabeled_research_checksum(p, m):
+            enable_claim_evidence_v2(p, m)
+            m["coverage"].update(source_text_blob_sha256="a" * 40)
+        run(
+            "T22 Git blob OID cannot be mislabeled as SHA-256 in research mode",
+            mislabeled_research_checksum,
+            False, "SOURCE_CHECKSUM_LABEL_INVALID",
+        )
+
+        def add_contradicted_source_audit(p, m, acknowledge: bool) -> None:
+            enable_claim_evidence_v2(p, m)
+            m["source_text_audit_path"] = "source-text-audit.jsonl"
+            m["coverage"].update({
+                "source_text_repo": "fixture/raw-source",
+                "source_text_commit_sha": "a" * 40,
+                "source_text_git_blob": {"algorithm": "git-sha1", "oid": "b" * 40},
+                "source_text_file_checksum": {"algorithm": "sha256", "value": "c" * 64},
+            })
+            p["source-text-audit.jsonl"] = [{
+                "audit_id": "STA:BOOK_001:R3:001",
+                "research_claim_ids": ["FIXTURE_CAUSAL_CLAIM"],
+                "canonical_record_id": "BOOK_001:EMOTION:0004",
+                "canonical_field_path": "turning_point",
+                "canonical_claim": "turn-4",
+                "source_repo": "fixture/raw-source",
+                "source_commit_sha": "a" * 40,
+                "source_path": "fixture.txt",
+                "source_line_start": 10,
+                "source_line_end": 20,
+                "source_fact": "the raw source contradicts the canonical turning point",
+                "consistency": "CONTRADICTED",
+                "affected_record_ids": ["EW:BOOK_001:001"],
+                "required_correction": "do not rely on the contradicted field without acknowledging this audit",
+                "review_status": "REVIEWED_R3",
+            }]
+            if acknowledge:
+                p["emotion-weaves.jsonl"][0]["evidence_bindings"][0]["source_text_audit_ref"] = "STA:BOOK_001:R3:001"
+
+        run(
+            "T23 contradicted canonical binding requires audit acknowledgement",
+            lambda p, m: add_contradicted_source_audit(p, m, False),
+            False, "CONTRADICTED_CANONICAL_BINDING_UNACKNOWLEDGED",
+        )
+        run(
+            "T24 acknowledged contradiction remains semantic pending",
+            lambda p, m: add_contradicted_source_audit(p, m, True),
+            True,
+            check=lambda r: r["source_text_audit_gate"] == "PASS" and r["semantic_review"] == "PENDING_INDEPENDENT_REVIEW",
+        )
+
+    print(json.dumps({"ok": not failures, "cases": 24, "passed": 24 - len(failures), "failures": failures}, ensure_ascii=False, indent=2))
     return 0 if not failures else 1
 
 

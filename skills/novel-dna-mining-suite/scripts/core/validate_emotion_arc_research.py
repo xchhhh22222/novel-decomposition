@@ -72,6 +72,14 @@ FULL_EVIDENCE_VIEWS = {
     "arc_handoff": "evidence_bindings",
     "promise_resolution": "source_evidence_refs",
 }
+SHA1_RE = re.compile(r"[0-9a-f]{40}")
+SHA256_RE = re.compile(r"[0-9a-f]{64}")
+SOURCE_AUDIT_REQUIRED_FIELDS = {
+    "audit_id", "research_claim_ids", "canonical_record_id", "canonical_field_path",
+    "canonical_claim", "source_repo", "source_commit_sha", "source_path",
+    "source_line_start", "source_line_end", "source_fact", "consistency",
+    "affected_record_ids", "required_correction", "review_status",
+}
 
 
 def issue(items: list[dict[str, str]], code: str, where: str, message: str) -> None:
@@ -181,7 +189,11 @@ def validate_common(
     chapter_rows: dict[str, dict[str, Any]], component_ids: set[str],
     errors: list[dict[str, str]], warnings: list[dict[str, str]],
     claim_evidence_mode: bool = False,
+    source_text_audit_ids: set[str] | None = None,
+    contradicted_canonical_fields: dict[tuple[str, str], set[str]] | None = None,
 ) -> None:
+    source_text_audit_ids = source_text_audit_ids or set()
+    contradicted_canonical_fields = contradicted_canonical_fields or {}
     missing = sorted(COMMON_FIELDS - set(row))
     if missing:
         issue(errors, "MISSING_REQUIRED_FIELDS", where, f"missing: {', '.join(missing)}")
@@ -273,6 +285,15 @@ def validate_common(
             field_at(source, binding["field_path"])
         except (KeyError, IndexError, TypeError, ValueError):
             issue(errors, "MISSING_SOURCE_FIELD", loc, "field_path does not resolve in canonical source record")
+        audit_ref = binding.get("source_text_audit_ref")
+        if audit_ref is not None and audit_ref not in source_text_audit_ids:
+            issue(errors, "MISSING_SOURCE_TEXT_AUDIT_REF", loc, "source_text_audit_ref does not resolve")
+        contradicted_by = contradicted_canonical_fields.get((binding["source_record_id"], binding["field_path"]), set())
+        if contradicted_by and audit_ref not in contradicted_by:
+            issue(
+                errors, "CONTRADICTED_CANONICAL_BINDING_UNACKNOWLEDGED", loc,
+                "binding uses a canonical field contradicted by targeted source-text audit without acknowledging that audit",
+            )
     if requires_bindings and review.get("status") != "PASS":
         issue(
             warnings, "SEMANTIC_CLAIM_UNVERIFIED", where,
@@ -290,7 +311,8 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
         return {
             "ok": False, "machine_check": "NOT_RUN", "structural_gate": "FAIL", "source_reference_gate": "FAIL",
             "crosswalk_gate": "NOT_CHECKED", "weave_causality_evidence_gate": "NOT_CHECKED",
-            "claim_binding_gate": "NOT_CHECKED", "macro_handoff_gate": "NOT_CHECKED",
+            "claim_binding_gate": "NOT_CHECKED", "source_text_audit_gate": "NOT_CHECKED",
+            "macro_handoff_gate": "NOT_CHECKED",
             "source_trust": {"reference_status": "FAIL", "source_text_status": "UNKNOWN"},
             "semantic_review": "PENDING_INDEPENDENT_REVIEW", "test_summary": {},
             "errors": [{"code": "MANIFEST_UNREADABLE", "where": "source-manifest.json", "message": str(exc)}],
@@ -417,6 +439,84 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
     if unavailable_fingerprints:
         issue(warnings, "SOURCE_FINGERPRINT_PARTIAL", "chapter_emotion", f"{len(unavailable_fingerprints)} in-scope chapter fingerprints are UNAVAILABLE")
 
+    source_text_audit_ids: set[str] = set()
+    contradicted_canonical_fields: dict[tuple[str, str], set[str]] = {}
+    source_text_audit_enabled = False
+    audit_path_value = manifest.get("source_text_audit_path")
+    if "source_text_blob_sha256" in coverage and (claim_evidence_mode or audit_path_value is not None):
+        issue(
+            errors, "SOURCE_CHECKSUM_LABEL_INVALID", "source-manifest.json.coverage",
+            "Git blob OID and file SHA-256 must be recorded separately; source_text_blob_sha256 is ambiguous",
+        )
+    if audit_path_value is not None:
+        source_text_audit_enabled = True
+        git_blob_meta = coverage.get("source_text_git_blob")
+        file_checksum = coverage.get("source_text_file_checksum")
+        if (
+            not isinstance(git_blob_meta, dict)
+            or git_blob_meta.get("algorithm") != "git-sha1"
+            or not isinstance(git_blob_meta.get("oid"), str)
+            or not SHA1_RE.fullmatch(git_blob_meta["oid"])
+        ):
+            issue(errors, "SOURCE_CHECKSUM_FORMAT_INVALID", "source-manifest.json.coverage.source_text_git_blob", "git-sha1 OID must be 40 lowercase hex characters")
+        if (
+            not isinstance(file_checksum, dict)
+            or file_checksum.get("algorithm") != "sha256"
+            or not isinstance(file_checksum.get("value"), str)
+            or not SHA256_RE.fullmatch(file_checksum["value"])
+        ):
+            issue(errors, "SOURCE_CHECKSUM_FORMAT_INVALID", "source-manifest.json.coverage.source_text_file_checksum", "SHA-256 must be 64 lowercase hex characters")
+        if not isinstance(audit_path_value, str) or not audit_path_value or Path(audit_path_value).is_absolute() or ".." in Path(audit_path_value).parts:
+            issue(errors, "SOURCE_TEXT_AUDIT_INVALID", "source-manifest.json.source_text_audit_path", "audit path must be a relative in-pilot path")
+            audit_rows: list[dict[str, Any]] = []
+        else:
+            try:
+                audit_rows = read_jsonl(pilot / audit_path_value)
+            except (OSError, ValueError) as exc:
+                issue(errors, "SOURCE_TEXT_AUDIT_INVALID", audit_path_value, str(exc))
+                audit_rows = []
+        for index, audit in enumerate(audit_rows):
+            where = f"{audit_path_value}[{index}]"
+            if not isinstance(audit, dict) or SOURCE_AUDIT_REQUIRED_FIELDS - set(audit):
+                issue(errors, "SOURCE_TEXT_AUDIT_INVALID", where, "source-text audit row is missing required fields")
+                continue
+            audit_id = audit.get("audit_id")
+            if not isinstance(audit_id, str) or not audit_id.startswith(f"STA:{book_id}:R3:") or audit_id in source_text_audit_ids:
+                issue(errors, "SOURCE_TEXT_AUDIT_INVALID", where, "audit_id must be unique STA:<book>:R3:<nnn>")
+                continue
+            source_text_audit_ids.add(audit_id)
+            if (
+                not string_list(audit.get("research_claim_ids"), allow_empty=False)
+                or not string_list(audit.get("affected_record_ids"), allow_empty=False)
+                or not all(nonempty(audit.get(key)) for key in (
+                    "canonical_record_id", "canonical_field_path", "canonical_claim", "source_repo",
+                    "source_commit_sha", "source_path", "source_fact", "required_correction", "review_status",
+                ))
+                or audit.get("consistency") not in {"CONSISTENT", "PARTIAL", "CONTRADICTED"}
+                or audit.get("review_status") != "REVIEWED_R3"
+                or not isinstance(audit.get("source_line_start"), int)
+                or not isinstance(audit.get("source_line_end"), int)
+                or audit["source_line_start"] <= 0
+                or audit["source_line_end"] < audit["source_line_start"]
+                or audit.get("source_repo") != coverage.get("source_text_repo")
+                or audit.get("source_commit_sha") != coverage.get("source_text_commit_sha")
+            ):
+                issue(errors, "SOURCE_TEXT_AUDIT_INVALID", where, "audit provenance, line range, arrays, consistency, or review status is invalid")
+            if audit.get("consistency") == "CONTRADICTED":
+                key = (str(audit.get("canonical_record_id")), str(audit.get("canonical_field_path")))
+                contradicted_canonical_fields.setdefault(key, set()).add(audit_id)
+            canonical_source = next(
+                (row for row in chapter_rows.values() if row.get("record_id") == audit.get("canonical_record_id")),
+                None,
+            )
+            if canonical_source is None:
+                issue(errors, "SOURCE_TEXT_AUDIT_INVALID", where, "canonical_record_id does not resolve")
+            else:
+                try:
+                    field_at(canonical_source, str(audit.get("canonical_field_path")))
+                except (KeyError, IndexError, TypeError, ValueError):
+                    issue(errors, "SOURCE_TEXT_AUDIT_INVALID", where, "canonical_field_path does not resolve")
+
     typed_rows: dict[str, list[dict[str, Any]]] = {}
     all_stable_ids: dict[str, str] = {}
     for record_type, filename in FILES.items():
@@ -431,7 +531,7 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
             where = f"{filename}[{index}]"
             validate_common(
                 row, record_type, where, str(book_id), chapter_rows, component_ids,
-                errors, warnings, claim_evidence_mode,
+                errors, warnings, claim_evidence_mode, source_text_audit_ids, contradicted_canonical_fields,
             )
             ident = row.get("record_id")
             if nonempty(ident):
@@ -776,6 +876,8 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
         "SOURCE_REPO_UNAVAILABLE", "SOURCE_SNAPSHOT_MISSING", "SOURCE_SNAPSHOT_HASH_MISMATCH",
         "MISSING_SOURCE_ROLE", "SOURCE_JSONL_INVALID", "MISSING_CHAPTER_COVERAGE", "SOURCE_QA_NOT_PASS",
         "PROVENANCE_OVERCLAIM", "MISSING_SOURCE_RECORD", "MISSING_SOURCE_FIELD", "MISSING_COMPONENT_REF",
+        "SOURCE_CHECKSUM_LABEL_INVALID", "SOURCE_CHECKSUM_FORMAT_INVALID", "SOURCE_TEXT_AUDIT_INVALID",
+        "MISSING_SOURCE_TEXT_AUDIT_REF", "CONTRADICTED_CANONICAL_BINDING_UNACKNOWLEDGED",
     }
     crosswalk_codes = {code for code in (entry["code"] for entry in errors) if code.startswith("CROSSWALK") or code == "UNSUPPORTED_PROMISE_IDENTITY"}
     weave_codes = {entry["code"] for entry in errors if entry["code"] in {
@@ -791,6 +893,7 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
         entry["code"] for entry in errors if entry["code"] in {
             "EVIDENCE_POLICY_INVALID", "CLAIM_BINDINGS_REQUIRED", "INVALID_EVIDENCE_BINDINGS",
             "INVALID_EVIDENCE_BINDING", "MISSING_SOURCE_RECORD", "MISSING_SOURCE_FIELD",
+            "MISSING_SOURCE_TEXT_AUDIT_REF", "CONTRADICTED_CANONICAL_BINDING_UNACKNOWLEDGED",
         }
     }
     source_failed = any(entry["code"] in source_codes for entry in errors)
@@ -817,6 +920,12 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
         ),
         "structural_gate": "FAIL" if structural_failed else "PASS",
         "source_reference_gate": "FAIL" if source_failed else "PASS",
+        "source_text_audit_gate": (
+            "FAIL" if any(entry["code"] in {
+                "SOURCE_CHECKSUM_LABEL_INVALID", "SOURCE_CHECKSUM_FORMAT_INVALID", "SOURCE_TEXT_AUDIT_INVALID",
+                "MISSING_SOURCE_TEXT_AUDIT_REF", "CONTRADICTED_CANONICAL_BINDING_UNACKNOWLEDGED",
+            } for entry in errors) else "PASS" if source_text_audit_enabled else "NOT_ENABLED"
+        ),
         "crosswalk_gate": "FAIL" if crosswalk_codes else "HOLD" if unresolved_crosswalk else "PASS",
         "claim_binding_gate": "FAIL" if claim_binding_codes else "PASS" if claim_evidence_mode else "NOT_ENABLED",
         "weave_causality_evidence_gate": weave_gate,
@@ -825,6 +934,7 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
             "reference_status": "FAIL" if source_failed else "REFERENCE_RESOLVED",
             "source_text_status": "SOURCE_TEXT_VERIFICATION_PARTIAL" if unavailable_fingerprints else "NO_MISSING_FINGERPRINT_REPORTED",
             "source_commit_sha": commit,
+            "targeted_source_text_audit": "REVIEWED_R3" if source_text_audit_enabled else "NOT_ENABLED",
         },
         "semantic_review": "PENDING_INDEPENDENT_REVIEW" if semantic_pending else "PASS_RECORDED",
         "creation_approval": "NOT_GRANTED",
@@ -856,7 +966,8 @@ def main() -> int:
         report = {
             "ok": False, "structural_gate": "FAIL", "source_reference_gate": "FAIL",
             "crosswalk_gate": "NOT_CHECKED", "weave_causality_evidence_gate": "NOT_CHECKED",
-            "macro_handoff_gate": "NOT_CHECKED", "source_trust": {"reference_status": "FAIL"},
+            "source_text_audit_gate": "NOT_CHECKED", "macro_handoff_gate": "NOT_CHECKED",
+            "source_trust": {"reference_status": "FAIL"},
             "semantic_review": "PENDING_INDEPENDENT_REVIEW", "test_summary": {},
             "errors": [{"code": "VALIDATOR_EXCEPTION", "where": "runtime", "message": str(exc)}],
             "warnings": [],
