@@ -1,33 +1,38 @@
-# Planner E2/E3 runtime capability gaps
+# Planner E2/E3 runtime capability gaps — Skill Integration Pilot
 
-Disposition: `PLANNER_RUNTIME_INTEGRATION = NOT_VERIFIED`.
+Disposition: `RESEARCH_ADAPTER_EXECUTABLE / PRODUCTION_RUNTIME_NOT_APPROVED`.
 
-## Executable check
+## What the pilot now executes
 
-The existing production command was run against the hypothetical fixture:
+The isolated research adapter now performs the previously missing minimum path:
 
-```text
-python skills/novel-creation-planner/scripts/validate_emotion_creation.py research/emotion-arc-v2/fixtures/hypothetical-demon-family/emotion-arc-draft.json
-```
+1. keeps E0/E1/M0/D1–D4 and inserts optional E2/E3;
+2. derives 02–09 functional slots before source retrieval;
+3. queries the existing shared package and resolves every selected row to frozen commit/path/line/record/hash;
+4. keeps two independent macro settlement contracts and prevents B from cancelling A;
+5. emits macro, active-line, weave/handoff, material-assembly and nine-stage Story Spine views;
+6. validates both the enabled path and a `--disable-emotion-arcs` baseline;
+7. compares capability changes rather than generated-file counts.
 
-Actual result: `ok=false`. The validator requires production `schema_version=1`, `design_mode=EMOTION_FIRST`, an absolute production `shared_library_root`, and production `emotion_patterns`, `materials`, and `options`. The research fixture intentionally supplies none of those claims.
+The demon-home pilot resolved provenance-verified candidates for 8/8 slots. This is retrieval completeness only. Every compatibility decision remains `CANDIDATE_NEEDS_SEMANTIC_REVIEW`; BOOK_005 supplying four top-ranked slots is explicitly reported as a concentration risk.
 
-## Missing runtime capabilities
+## Remaining productionization blockers
 
-1. No production schema fields or migration for E2 macro arcs, E3 weave records, handoff contracts, or active-state packets.
-2. No Planner command/loader that inserts E2/E3 between E1 and M0 while preserving existing E0/E1/M0/D1–D4 execution.
-3. No automated material retrieval that consumes emotion-derived functional slots, selects source candidates and records compatibility decisions.
-4. No runtime enforcement that A and B keep independent settlement contracts or that B cannot cancel A.
-5. No bridge from the research emotion-arc validator into production Planner validation.
-6. No execution engine that emits or updates the proposed active-state packet.
-7. No end-to-end regression proving an E2/E3 plan can continue through the existing nine-stage Story Spine and downstream climax/architecture steps.
+1. No approved production schema or migration exists for E2 macro arcs, E3 lines/weaves, handoff contracts or active-state packets.
+2. The adapter is a research command, not a wired stage in the production Planner command or saved-plan lifecycle.
+3. Retrieval ranking is lexical/function-oriented. Provenance and package integrity are machine-checked, but final interface/current-combination compatibility still needs human review.
+4. No approved policy promotes a research selected candidate into a formal material choice; fixture status changes cannot perform promotion.
+5. No production runtime persists and reconciles active emotion state across subsequent planning sessions or chapter confirmations.
+6. Macro dominance transfer remains `CANDIDATE_UNVERIFIED`; the validator only preserves contracts and structure.
+7. RMF selection remains optional and was `NOT_SELECTED` in this pilot; no production recipe was changed.
+8. The pilot does not authorize Stage 4 prose, production package writes, canonical edits, or frozen RMF edits.
 
-## What is verified
+## Deliberate HOLDs
 
-- The fixture derives character, institution, ability and object slots from emotion/payoff needs before naming source candidates.
-- Source candidates carry repository/commit/path/ID, abstract use and compatibility gaps.
-- Macro A and B have independent payoff contracts, and the handoff retains A's contract.
-- The existing nine Story Spine stages are fully represented for both arcs.
-- `OBSERVED_SOURCE` research examples and `ORIGINAL_DESIGN` fixture records are explicitly separated.
+- semantic correctness of material compatibility;
+- source concentration acceptability;
+- handoff dominance transfer;
+- production schema/API design and migration;
+- long-running state reconciliation beyond the single structured plan.
 
-These are document/fixture checks, not automated Planner execution.
+The old production validators remain unchanged and continue to reject the historical research fixture as a production plan. That is expected and is not bypassed by the research validator.

@@ -1,0 +1,39 @@
+{
+  "weaves": [
+    {
+      "weave_id": "EW:PILOT:001",
+      "type": "ENABLES_CHOICE",
+      "from_line_id": "EL:PILOT:GROWTH",
+      "to_line_id": "EL:PILOT:FAMILY",
+      "event": "主角主动暴露受限制的短时破障能力，承担身份审查和恢复期，打通由家人决定是否使用的撤离路线",
+      "causal_bridge": "能力输出必须改变家人的可行选择，而非只增加战斗数值"
+    },
+    {
+      "weave_id": "EW:PILOT:002",
+      "type": "CAUSES_PRESSURE",
+      "from_line_id": "EL:PILOT:RELATIONSHIP",
+      "to_line_id": "EL:PILOT:FAMILY",
+      "event": "一名家人留下启动备用节点，其他人分组撤离并带走原始预警记录",
+      "causal_bridge": "家人的主动决定改变撤离/防守方案及主角成本"
+    },
+    {
+      "weave_id": "EW:PILOT:003",
+      "type": "PAYOFF_OPENS",
+      "from_line_id": "EL:PILOT:FAMILY",
+      "to_line_id": "EL:PILOT:ACCOUNTABILITY",
+      "event": "救援日志与家人保存的原始记录显示授权优先级被人为改写",
+      "causal_bridge": "证据在救援过程中出现，但不能替代家园守护的独立结算"
+    }
+  ],
+  "handoff": {
+    "handoff_id": "AH:PILOT:A-B",
+    "from_macro_id": "MA:PILOT:A",
+    "to_macro_id": "MA:PILOT:B",
+    "trigger": "救援日志与家人保存的原始记录显示授权优先级被人为改写",
+    "overlap_design": true,
+    "old_arc_contract_retained": "家人通过自身选择脱离即时威胁，失效防线被替换为可运行的临时保护方案，并可见记录能力进入恢复期、欠下防护资源债，并被监管记录锁定，不能只用击退敌人替代家庭安全结算",
+    "new_arc_contract": "获利链被证据化，至少一项预警权限、责任认定或防护资源流发生可见改变；必须改变至少一项保护权限、责任或资源流",
+    "dominance_transfer_status": "CANDIDATE_UNVERIFIED",
+    "qa_status": "HOLD"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "emotion_lines": [
+    {
+      "line_id": "EL:PILOT:FAMILY",
+      "expectation": "仍有独立判断和行动能力的家人不只是人质，能以一名家人留下启动备用节点，其他人分组撤离并带走原始预警记录影响结果",
+      "payoff_condition": "一名家人留下启动备用节点，其他人分组撤离并带走原始预警记录实际改变安全状态",
+      "macro_ids": [
+        "MA:PILOT:A"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "line_id": "EL:PILOT:GROWTH",
+      "expectation": "主角能否在失败后取得足以救援、但受只能短时破障，使用后有明确恢复期且不能替代持续防守限制的能力",
+      "payoff_condition": "能力通过救援验证，同时兑现能力进入恢复期、欠下防护资源债，并被监管记录锁定",
+      "macro_ids": [
+        "MA:PILOT:A"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "line_id": "EL:PILOT:RELATIONSHIP",
+      "expectation": "家人和协作者是否拥有独立目标并迫使主角调整方案",
+      "payoff_condition": "至少一次他人选择改变节点、成本或撤离结果",
+      "macro_ids": [
+        "MA:PILOT:A",
+        "MA:PILOT:B"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "line_id": "EL:PILOT:ACCOUNTABILITY",
+      "expectation": "谁从保护漏洞中获利，主角能否迫使保护资格、责任归属和资源分配发生改变",
+      "payoff_condition": "获利链被证据化，至少一项预警权限、责任认定或防护资源流发生可见改变；必须改变至少一项保护权限、责任或资源流",
+      "macro_ids": [
+        "MA:PILOT:B"
+      ],
+      "state": "PENDING_TRIGGER"
+    }
+  ],
+  "active_macro_arcs": [
+    "MA:PILOT:A",
+    "MA:PILOT:B"
+  ],
+  "active_emotion_lines": [
+    "EL:PILOT:FAMILY",
+    "EL:PILOT:GROWTH",
+    "EL:PILOT:RELATIONSHIP",
+    "EL:PILOT:ACCOUNTABILITY"
+  ],
+  "pending_payoff_contracts": [
+    "家人通过自身选择脱离即时威胁，失效防线被替换为可运行的临时保护方案，并可见记录能力进入恢复期、欠下防护资源债，并被监管记录锁定，不能只用击退敌人替代家庭安全结算",
+    "获利链被证据化，至少一项预警权限、责任认定或防护资源流发生可见改变；必须改变至少一项保护权限、责任或资源流"
+  ],
+  "current_reader_knowledge": [
+    "主角相信公共预警而错过首次转移窗口，第一次保护行动失败",
+    "救援日志与家人保存的原始记录显示授权优先级被人为改写"
+  ],
+  "state_constraints": [
+    "只能短时破障，使用后有明确恢复期且不能替代持续防守",
+    "能力进入恢复期、欠下防护资源债，并被监管记录锁定"
+  ],
+  "chosen_story_beats": [
+    "trigger",
+    "goal",
+    "resistance",
+    "nodes",
+    "choice",
+    "cost",
+    "payoff",
+    "state_change",
+    "next_entry"
+  ],
+  "material_adapter_refs": [
+    "AR:BOOK:BOOK_007",
+    "CF:BOOK:BOOK_005",
+    "CS:BOOK:BOOK_007",
+    "GF:BOOK_005",
+    "OP:BOOK_008",
+    "PL:BOOK:BOOK_005",
+    "PM:BOOK:BOOK_009",
+    "WB:BOOK:BOOK_005"
+  ]
+}

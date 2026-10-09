@@ -1,0 +1,26 @@
+{
+  "macro_arcs": [
+    {
+      "macro_id": "MA:PILOT:A",
+      "label": "家园守护",
+      "origin_kind": "ORIGINAL_DESIGN",
+      "reader_promise": "经历主角相信公共预警而错过首次转移窗口，第一次保护行动失败后，依赖边镇公共防线的年轻武者能否让仍有独立判断和行动能力的家人获得真实、可持续的保护结果",
+      "start_condition": "边镇保护机构把有限预警与防护资源优先分配给利益关系户",
+      "settlement_contract": "家人通过自身选择脱离即时威胁，失效防线被替换为可运行的临时保护方案，并可见记录能力进入恢复期、欠下防护资源债，并被监管记录锁定，不能只用击退敌人替代家庭安全结算",
+      "irreversible_change": "家园保护状态改善，但主角的受限能力暴露，篡改过的预警授权记录进入可查状态",
+      "status": "DESIGNED_NOT_OBSERVED",
+      "qa_status": "HOLD"
+    },
+    {
+      "macro_id": "MA:PILOT:B",
+      "label": "保护秩序追索",
+      "origin_kind": "ORIGINAL_DESIGN",
+      "reader_promise": "谁从保护漏洞中获利，主角能否迫使保护资格、责任归属和资源分配发生改变",
+      "start_condition": "救援日志与家人保存的原始记录显示授权优先级被人为改写",
+      "settlement_contract": "获利链被证据化，至少一项预警权限、责任认定或防护资源流发生可见改变；必须改变至少一项保护权限、责任或资源流",
+      "irreversible_change": "依赖边镇公共防线的年轻武者从家庭救援者变成保护规则争议的当事人",
+      "status": "DESIGNED_NOT_OBSERVED",
+      "qa_status": "HOLD"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "contract": "EXISTING_NINE_STAGE_STORY_SPINE",
+  "stages": [
+    {
+      "stage": "trigger",
+      "story_task": "边镇保护机构把有限预警与防护资源优先分配给利益关系户，受利益方放行的妖魔袭击队抵达资源紧张的边镇家园",
+      "emotion_line_ids": [
+        "EL:PILOT:FAMILY"
+      ],
+      "macro_arc_ids": [
+        "MA:PILOT:A"
+      ],
+      "material_refs": [
+        "AR:BOOK:BOOK_007",
+        "CF:BOOK:BOOK_005",
+        "CS:BOOK:BOOK_007",
+        "GF:BOOK_005",
+        "OP:BOOK_008",
+        "PL:BOOK:BOOK_005",
+        "PM:BOOK:BOOK_009",
+        "WB:BOOK:BOOK_005"
+      ]
+    },
+    {
+      "stage": "goal",
+      "story_task": "让仍有独立判断和行动能力的家人进入可防守状态并恢复真实保护",
+      "emotion_line_ids": [
+        "EL:PILOT:FAMILY"
+      ],
+      "macro_arc_ids": [
+        "MA:PILOT:A"
+      ],
+      "material_refs": [
+        "AR:BOOK:BOOK_007",
+        "CF:BOOK:BOOK_005",
+        "CS:BOOK:BOOK_007",
+        "GF:BOOK_005",
+        "OP:BOOK_008",
+        "PL:BOOK:BOOK_005",
+        "PM:BOOK:BOOK_009",
+        "WB:BOOK:BOOK_005"
+      ]
+    },
+    {
+      "stage": "resistance",
+      "story_task": "失效屏障、被分隔的家人、稀缺救援资源、活动中的妖魔和拒绝放权的守备接口",
+      "emotion_line_ids": [
+        "EL:PILOT:FAMILY",
+        "EL:PILOT:GROWTH"
+      ],
+      "macro_arc_ids": [
+        "MA:PILOT:A"
+      ],
+      "material_refs": [
+        "AR:BOOK:BOOK_007",
+        "CF:BOOK:BOOK_005",
+        "CS:BOOK:BOOK_007",
+        "GF:BOOK_005",
+        "OP:BOOK_008",
+        "PL:BOOK:BOOK_005",
+        "PM:BOOK:BOOK_009",
+        "WB:BOOK:BOOK_005"
+      ]
+    },
+    {
+      "stage": "nodes",
+      "story_task": "核实袭击并承认首次保护失败 → 争取公共救援权限但遭拒 → 家人分工保存证据并选择路线 → 主角付代价破障反击 → 共同恢复临时防线并确认安全结果",
+      "emotion_line_ids": [
+        "EL:PILOT:FAMILY",
+        "EL:PILOT:RELATIONSHIP"
+      ],
+      "macro_arc_ids": [
+        "MA:PILOT:A"
+      ],
+      "material_refs": [
+        "AR:BOOK:BOOK_007",
+        "CF:BOOK:BOOK_005",
+        "CS:BOOK:BOOK_007",
+        "GF:BOOK_005",
+        "OP:BOOK_008",
+        "PL:BOOK:BOOK_005",
+        "PM:BOOK:BOOK_009",
+        "WB:BOOK:BOOK_005"
+      ]
+    },
+    {
+      "stage": "choice",
+      "story_task": "主角主动暴露受限制的短时破障能力，承担身份审查和恢复期，打通由家人决定是否使用的撤离路线",
+      "emotion_line_ids": [
+        "EL:PILOT:GROWTH",
+        "EL:PILOT:RELATIONSHIP"
+      ],
+      "macro_arc_ids": [
+        "MA:PILOT:A"
+      ],
+      "material_refs": [
+        "AR:BOOK:BOOK_007",
+        "CF:BOOK:BOOK_005",
+        "CS:BOOK:BOOK_007",
+        "GF:BOOK_005",
+        "OP:BOOK_008",
+        "PL:BOOK:BOOK_005",
+        "PM:BOOK:BOOK_009",
+        "WB:BOOK:BOOK_005"
+      ]
+    },
+    {
+      "stage": "cost",
+      "story_task": "能力进入恢复期、欠下防护资源债，并被监管记录锁定",
+      "emotion_line_ids": [
+        "EL:PILOT:GROWTH"
+      ],
+      "macro_arc_ids": [
+        "MA:PILOT:A"
+      ],
+      "material_refs": [
+        "AR:BOOK:BOOK_007",
+        "CF:BOOK:BOOK_005",
+        "CS:BOOK:BOOK_007",
+        "GF:BOOK_005",
+        "OP:BOOK_008",
+        "PL:BOOK:BOOK_005",
+        "PM:BOOK:BOOK_009",
+        "WB:BOOK:BOOK_005"
+      ]
+    },
+    {
+      "stage": "payoff",
+      "story_task": "家人通过自身选择脱离即时威胁，失效防线被替换为可运行的临时保护方案",
+      "emotion_line_ids": [
+        "EL:PILOT:FAMILY"
+      ],
+      "macro_arc_ids": [
+        "MA:PILOT:A"
+      ],
+      "material_refs": [
+        "AR:BOOK:BOOK_007",
+        "CF:BOOK:BOOK_005",
+        "CS:BOOK:BOOK_007",
+        "GF:BOOK_005",
+        "OP:BOOK_008",
+        "PL:BOOK:BOOK_005",
+        "PM:BOOK:BOOK_009",
+        "WB:BOOK:BOOK_005"
+      ]
+    },
+    {
+      "stage": "state_change",
+      "story_task": "家园保护状态改善，但主角的受限能力暴露，篡改过的预警授权记录进入可查状态",
+      "emotion_line_ids": [
+        "EL:PILOT:FAMILY",
+        "EL:PILOT:ACCOUNTABILITY"
+      ],
+      "macro_arc_ids": [
+        "MA:PILOT:A",
+        "MA:PILOT:B"
+      ],
+      "material_refs": [
+        "AR:BOOK:BOOK_007",
+        "CF:BOOK:BOOK_005",
+        "CS:BOOK:BOOK_007",
+        "GF:BOOK_005",
+        "OP:BOOK_008",
+        "PL:BOOK:BOOK_005",
+        "PM:BOOK:BOOK_009",
+        "WB:BOOK:BOOK_005"
+      ]
+    },
+    {
+      "stage": "next_entry",
+      "story_task": "救援日志与家人保存的原始记录显示授权优先级被人为改写；后续节点：保存两份授权记录 → 定位预警资源的审批链 → 迫使利益方公开解释 → 改变一项保护资格或资源流",
+      "emotion_line_ids": [
+        "EL:PILOT:ACCOUNTABILITY"
+      ],
+      "macro_arc_ids": [
+        "MA:PILOT:B"
+      ],
+      "material_refs": [
+        "AR:BOOK:BOOK_007",
+        "CF:BOOK:BOOK_005",
+        "CS:BOOK:BOOK_007",
+        "GF:BOOK_005",
+        "OP:BOOK_008",
+        "PL:BOOK:BOOK_005",
+        "PM:BOOK:BOOK_009",
+        "WB:BOOK:BOOK_005"
+      ]
+    }
+  ]
+}

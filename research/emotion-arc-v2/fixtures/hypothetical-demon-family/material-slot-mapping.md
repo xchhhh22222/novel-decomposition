@@ -1,5 +1,7 @@
 # Emotion-first functional slots and DNA candidate mapping
 
+> Historical static review artifact. It is not the executable selection result and has not been promoted. The Skill Integration Pilot derives and retrieves current candidates in `runtime-output/e2-e3-enabled/material-assembly.json`; that output uses the active frozen shared package and retains semantic review HOLD.
+
 Frozen research source: `xchhhh22222/nova-material-library@1e10e6e3ffb70eda94a400073155fd89db724ce9`. All source records below are `candidate` records with QA PASS in that snapshot. They are `ADAPTABLE`, never formal `SUPPORTED` production cards.
 
 ## Derivation order
@@ -22,4 +24,4 @@ The fixture first derives four required functions from its reader contracts: fam
 
 - The source candidates do not provide the exact compatible demon ecology, warning-rights rule, rescue ability, or regulator incentives. These are `ORIGINAL_DESIGN` tasks.
 - No RMF family/recipe is selected or modified.
-- This fixture is not validated by the production emotion-creation or plan-schema validators and cannot be promoted through status changes.
+- This fixture remains invalid for production emotion-creation/plan-schema validators and cannot be promoted through status changes. The separate research validator only proves the optional adapter's structure and frozen provenance.

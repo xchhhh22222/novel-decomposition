@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "structural_gate": "PASS",
+  "semantic_review": "NEEDS_SEMANTIC_REVIEW",
+  "production_promotion": "NOT_RUN",
+  "errors": [],
+  "warnings": []
+}

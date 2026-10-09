@@ -1,0 +1,76 @@
+{
+  "slots": [
+    {
+      "slot_id": "SLOT:ABILITY:COSTLY_RESCUE",
+      "module": "golden_finger",
+      "function_required": "给依赖边镇公共防线的年轻武者提供一次能改变救援条件、但保留只能短时破障，使用后有明确恢复期且不能替代持续防守的能力接口",
+      "query": "保护 救援 代价 限制 成长",
+      "required": true,
+      "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+      "derivation_origin": "ORIGINAL_DESIGN"
+    },
+    {
+      "slot_id": "SLOT:WORLD:PROTECTION_RULE",
+      "module": "worldbuilding",
+      "function_required": "让掌握预警、屏障资源和事后认定权的边镇守备机构控制预警/保护资源，并能因边镇保护机构把有限预警与防护资源优先分配给利益关系户承担责任",
+      "query": "保护 权限 资源 分配 责任",
+      "required": true,
+      "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+      "derivation_origin": "ORIGINAL_DESIGN"
+    },
+    {
+      "slot_id": "SLOT:SYSTEM:RESCUE_COST",
+      "module": "cultivation_system",
+      "function_required": "把救援输出、资源消耗和能力进入恢复期、欠下防护资源债，并被监管记录锁定放入可验证成长体系",
+      "query": "短时 爆发 救援 资源 代价",
+      "required": true,
+      "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+      "derivation_origin": "ORIGINAL_DESIGN"
+    },
+    {
+      "slot_id": "SLOT:RELATIONSHIP:FAMILY_AGENCY",
+      "module": "character_function",
+      "function_required": "让仍有独立判断和行动能力的家人通过一名家人留下启动备用节点，其他人分组撤离并带走原始预警记录真实改变撤离或防守结果",
+      "query": "家庭 保护 选择 关系 代价",
+      "required": true,
+      "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+      "derivation_origin": "ORIGINAL_DESIGN"
+    },
+    {
+      "slot_id": "SLOT:PLOTLINE:ATTACK_TO_INQUIRY",
+      "module": "plotline",
+      "function_required": "把受利益方放行的妖魔袭击队、主动反击、救援结算和制度追查组织成连续因果线",
+      "query": "袭击 救援 调查 责任 证据",
+      "required": true,
+      "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+      "derivation_origin": "ORIGINAL_DESIGN"
+    },
+    {
+      "slot_id": "SLOT:OPENING:FAILED_PROTECTION_PROMISE",
+      "module": "opening",
+      "function_required": "用主角相信公共预警而错过首次转移窗口，第一次保护行动失败建立保护承诺，并尽快给出可执行反击入口",
+      "query": "家人 危机 承诺 失败 反击",
+      "required": true,
+      "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+      "derivation_origin": "ORIGINAL_DESIGN"
+    },
+    {
+      "slot_id": "SLOT:ARC:SETTLEMENT_AND_RELAY",
+      "module": "arc_structure",
+      "function_required": "先兑现家人通过自身选择脱离即时威胁，失效防线被替换为可运行的临时保护方案，再由救援日志与家人保存的原始记录显示授权优先级被人为改写开启下一阶段而不取消旧合同",
+      "query": "保护 高潮 结算 状态变化 下一阶段",
+      "required": true,
+      "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+      "derivation_origin": "ORIGINAL_DESIGN"
+    },
+    {
+      "slot_id": "SLOT:MECHANISM:EVIDENCE_ACCOUNTABILITY",
+      "module": "plot_mechanism",
+      "function_required": "让可检查证据、权限限制和资源责任反复制造选择与后果",
+      "query": "权限 证据 资源 责任 调查",
+      "required": true,
+      "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+      "derivation_origin": "ORIGINAL_DESIGN"
+    }
+  ]
+}

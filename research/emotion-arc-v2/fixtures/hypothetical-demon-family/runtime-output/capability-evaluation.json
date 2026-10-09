@@ -1,0 +1,40 @@
+{
+  "schema_version": "emotion_arc_v2_pilot_evaluation_v1",
+  "status": "candidate",
+  "qa_status": "HOLD",
+  "production_promotion": "NOT_RUN",
+  "evaluation_basis": "capability evidence, not generated file count",
+  "checks": {
+    "plot_diversity": {
+      "improved": true,
+      "evidence": "enhanced path tracks 4 independent payoff contracts; baseline has no independent line ledger"
+    },
+    "relationship_agency": {
+      "improved": true,
+      "evidence": "relationship choice is attached to action nodes/choice rather than recorded as atmosphere"
+    },
+    "reader_expectation_management": {
+      "improved": true,
+      "evidence": "both macro settlement contracts remain explicit in the active state packet"
+    },
+    "continuation_capacity": {
+      "improved": true,
+      "evidence": "macro B starts through a causal evidence trigger without cancelling macro A"
+    },
+    "function_first_material_use": {
+      "improved": true,
+      "evidence": "8/8 module slots have real selected sources; every miss is an explicit GAP"
+    },
+    "story_spine_compatibility": {
+      "improved": true,
+      "evidence": "both paths preserve the same nine action-stage names; E2/E3 adds references without replacing the spine"
+    }
+  },
+  "conclusion": "MATERIAL_IMPROVEMENT_OBSERVED",
+  "semantic_review": "NEEDS_INDEPENDENT_REVIEW",
+  "remaining_limits": [
+    "retrieval ranking and interface compatibility remain research candidates",
+    "macro dominance transfer is not machine approved",
+    "no production schema or Stage 4 writing authorization is granted"
+  ]
+}
