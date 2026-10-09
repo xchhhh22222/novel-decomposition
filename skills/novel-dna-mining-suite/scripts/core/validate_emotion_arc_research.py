@@ -63,6 +63,15 @@ HANDOFF_RESULTS = {
 }
 CONFIDENCE = {"LOW", "MEDIUM", "HIGH"}
 REVIEW = {"PENDING_REVIEW", "PASS", "HOLD", "FAIL"}
+CLAIM_EVIDENCE_PROFILE = "CLAIM_EVIDENCE_V2"
+EVIDENCE_SCOPE = "REPRESENTATIVE_SUMMARY"
+FULL_EVIDENCE_VIEWS = {
+    "emotion_line": "beats[].evidence_refs",
+    "emotion_weave": "evidence_bindings",
+    "macro_emotion_arc": "evidence_bindings",
+    "arc_handoff": "evidence_bindings",
+    "promise_resolution": "source_evidence_refs",
+}
 
 
 def issue(items: list[dict[str, str]], code: str, where: str, message: str) -> None:
@@ -171,6 +180,7 @@ def validate_common(
     row: dict[str, Any], expected_type: str, where: str, book_id: str,
     chapter_rows: dict[str, dict[str, Any]], component_ids: set[str],
     errors: list[dict[str, str]], warnings: list[dict[str, str]],
+    claim_evidence_mode: bool = False,
 ) -> None:
     missing = sorted(COMMON_FIELDS - set(row))
     if missing:
@@ -222,17 +232,39 @@ def validate_common(
                 issue(errors, "MISSING_COMPONENT_REF", where, f"component reference does not resolve: {ref}")
     if not isinstance(row.get("evidence_gaps"), list):
         issue(errors, "INVALID_EVIDENCE_GAPS", where, "evidence_gaps must be an array")
+    if claim_evidence_mode and row.get("source_evidence_scope") != EVIDENCE_SCOPE:
+        issue(
+            errors, "EVIDENCE_POLICY_INVALID", where,
+            f"source_evidence_scope must be {EVIDENCE_SCOPE} under {CLAIM_EVIDENCE_PROFILE}",
+        )
     bindings = row.get("evidence_bindings", [])
     if not isinstance(bindings, list):
         issue(errors, "INVALID_EVIDENCE_BINDINGS", where, "evidence_bindings must be an array")
+        bindings = []
+    requires_bindings = claim_evidence_mode and (
+        expected_type in {"macro_emotion_arc", "arc_handoff"}
+        or (expected_type == "emotion_weave" and row.get("weave_type") in CAUSAL_WEAVES)
+    )
+    if requires_bindings and not bindings:
+        issue(
+            errors, "CLAIM_BINDINGS_REQUIRED", where,
+            "causal weave, macro transition, and handoff records need claim-level evidence bindings",
+        )
+    seen_claims: set[str] = set()
     for index, binding in enumerate(bindings if isinstance(bindings, list) else []):
         loc = f"{where}.evidence_bindings[{index}]"
         if not isinstance(binding, dict) or any(
             not nonempty(binding.get(key))
-            for key in ("claim", "chapter_ref", "source_record_id", "field_path")
+            for key in ("claim", "chapter_ref", "source_record_id", "field_path", "interpretation")
         ):
-            issue(errors, "INVALID_EVIDENCE_BINDING", loc, "claim/chapter_ref/source_record_id/field_path required")
+            issue(
+                errors, "INVALID_EVIDENCE_BINDING", loc,
+                "claim/chapter_ref/source_record_id/field_path/interpretation required",
+            )
             continue
+        if binding["claim"] in seen_claims:
+            issue(errors, "INVALID_EVIDENCE_BINDING", loc, "claim text must be unique within a record")
+        seen_claims.add(binding["claim"])
         source = chapter_rows.get(binding["chapter_ref"])
         if source is None or source.get("record_id") != binding["source_record_id"]:
             issue(errors, "MISSING_SOURCE_RECORD", loc, "source chapter or source record ID does not resolve")
@@ -241,6 +273,11 @@ def validate_common(
             field_at(source, binding["field_path"])
         except (KeyError, IndexError, TypeError, ValueError):
             issue(errors, "MISSING_SOURCE_FIELD", loc, "field_path does not resolve in canonical source record")
+    if requires_bindings and review.get("status") != "PASS":
+        issue(
+            warnings, "SEMANTIC_CLAIM_UNVERIFIED", where,
+            "claim bindings resolve structurally; causal/macro/handoff interpretation still needs independent review",
+        )
 
 
 def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
@@ -251,9 +288,9 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
         manifest = read_json(pilot / "source-manifest.json")
     except (OSError, ValueError) as exc:
         return {
-            "ok": False, "structural_gate": "FAIL", "source_reference_gate": "FAIL",
+            "ok": False, "machine_check": "NOT_RUN", "structural_gate": "FAIL", "source_reference_gate": "FAIL",
             "crosswalk_gate": "NOT_CHECKED", "weave_causality_evidence_gate": "NOT_CHECKED",
-            "macro_handoff_gate": "NOT_CHECKED",
+            "claim_binding_gate": "NOT_CHECKED", "macro_handoff_gate": "NOT_CHECKED",
             "source_trust": {"reference_status": "FAIL", "source_text_status": "UNKNOWN"},
             "semantic_review": "PENDING_INDEPENDENT_REVIEW", "test_summary": {},
             "errors": [{"code": "MANIFEST_UNREADABLE", "where": "source-manifest.json", "message": str(exc)}],
@@ -262,6 +299,25 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
 
     book_id = manifest.get("book_id")
     chapter_range = manifest.get("chapter_range")
+    contract_profile = manifest.get("research_contract_profile", "LEGACY_V1")
+    claim_evidence_mode = contract_profile == CLAIM_EVIDENCE_PROFILE
+    if contract_profile not in {"LEGACY_V1", CLAIM_EVIDENCE_PROFILE}:
+        issue(errors, "INVALID_MANIFEST", "source-manifest.json", "unknown research_contract_profile")
+    if claim_evidence_mode:
+        evidence_policy = manifest.get("evidence_policy")
+        if not isinstance(evidence_policy, dict):
+            issue(errors, "EVIDENCE_POLICY_INVALID", "source-manifest.json", "evidence_policy object required")
+        else:
+            if evidence_policy.get("top_level_source_evidence_refs") != EVIDENCE_SCOPE:
+                issue(
+                    errors, "EVIDENCE_POLICY_INVALID", "source-manifest.json.evidence_policy",
+                    f"top-level references must declare {EVIDENCE_SCOPE}",
+                )
+            if evidence_policy.get("full_evidence_views") != FULL_EVIDENCE_VIEWS:
+                issue(
+                    errors, "EVIDENCE_POLICY_INVALID", "source-manifest.json.evidence_policy",
+                    "full_evidence_views must unambiguously name the complete evidence field for each record type",
+                )
     if manifest.get("schema_version") != 1 or not BOOK_RE.fullmatch(str(book_id)):
         issue(errors, "INVALID_MANIFEST", "source-manifest.json", "schema_version=1 and BOOK_NNN book_id required")
     if not isinstance(chapter_range, dict) or not all(isinstance(chapter_range.get(k), int) for k in ("start", "end")):
@@ -373,7 +429,10 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
         typed_rows[record_type] = rows
         for index, row in enumerate(rows):
             where = f"{filename}[{index}]"
-            validate_common(row, record_type, where, str(book_id), chapter_rows, component_ids, errors, warnings)
+            validate_common(
+                row, record_type, where, str(book_id), chapter_rows, component_ids,
+                errors, warnings, claim_evidence_mode,
+            )
             ident = row.get("record_id")
             if nonempty(ident):
                 if ident in all_stable_ids:
@@ -553,6 +612,7 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
     macros = unique_records(typed_rows["macro_emotion_arc"], "record_id", "macro-emotion-arcs.jsonl", errors)
     macro_start: dict[str, int] = {}
     macro_payoff: dict[str, int | None] = {}
+    macro_qualified_at: dict[str, int | None] = {}
     for ident, row in macros.items():
         where = f"macro-emotion-arcs.jsonl.{ident}"
         for key in ("reader_macro_promise", "macro_question", "progression_summary", "irreversible_state_change"):
@@ -573,6 +633,56 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
             members = []
         elif len(set(members)) == 1:
             issue(warnings, "MACRO_SINGLE_LINE_PARTIAL", where, "single-line macro requires human review of organizing value")
+        if claim_evidence_mode:
+            qualification = row.get("macro_qualification")
+            qualified_at: int | None = None
+            if not isinstance(qualification, dict):
+                issue(errors, "MACRO_ORGANIZATION_UNPROVEN", where, "macro_qualification object required")
+            else:
+                qualified_ref = qualification.get("qualification_chapter_ref")
+                qualified_at = chapter_number(qualified_ref)
+                sustained = qualification.get("sustained_progression_evidence_refs")
+                organized = qualification.get("organized_line_ids")
+                sustained_chapters = [chapter_number(ref) for ref in sustained] if isinstance(sustained, list) else []
+                organized_have_in_window_beats = (
+                    isinstance(organized, list)
+                    and qualified_at is not None
+                    and isinstance(window, dict)
+                    and all(
+                        any(
+                            (beat_chapter := chapter_number(beat.get("chapter_ref"))) is not None
+                            and window.get("start", 0) <= beat_chapter <= qualified_at
+                            for beat in lines.get(line_id, {}).get("beats", [])
+                            if isinstance(beat, dict)
+                        )
+                        for line_id in organized
+                    )
+                )
+                if (
+                    qualified_ref not in chapter_rows
+                    or qualified_at is None
+                    or not isinstance(window, dict)
+                    or not window.get("start", 0) <= qualified_at <= window.get("end", 0)
+                    or not string_list(sustained, allow_empty=False)
+                    or len(set(sustained)) < 2
+                    or any(ref not in chapter_rows for ref in sustained)
+                    or any(
+                        chapter is None or not window.get("start", 0) <= chapter <= qualified_at
+                        for chapter in sustained_chapters
+                    )
+                    or not string_list(organized, allow_empty=False)
+                    or len(set(organized)) < 2
+                    or any(line_id not in members for line_id in organized)
+                    or not organized_have_in_window_beats
+                    or not nonempty(qualification.get("organization_explanation"))
+                ):
+                    issue(
+                        errors, "MACRO_ORGANIZATION_UNPROVEN", where,
+                        "macro qualification needs 2+ in-window progression refs and 2+ member lines with beats by the qualification chapter",
+                    )
+            macro_qualified_at[ident] = qualified_at
+        else:
+            macro_qualified_at[ident] = macro_start.get(ident)
         if row.get("current_status") not in MACRO_STATES:
             issue(errors, "MACRO_INVALID_STATE", where, "invalid current_status")
         payoff = row.get("payoff_contract")
@@ -629,12 +739,35 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
             paid_at = macro_payoff[source_id]
             if paid_at is not None and macro_start[target_id] > paid_at:
                 issue(errors, "HANDOFF_TEMPORAL_CONFLICT", where, "new macro starts after prior macro observed payoff")
+            if (
+                claim_evidence_mode and conclusion == "OBSERVED_OVERLAP" and paid_at is not None
+                and (
+                    macro_qualified_at.get(target_id) is None
+                    or macro_qualified_at[target_id] > paid_at
+                )
+            ):
+                issue(
+                    errors, "HANDOFF_TEMPORAL_CONFLICT", where,
+                    "target macro must demonstrate organizing capacity no later than prior macro payoff",
+                )
         prior = row.get("prior_arc_payoff_check")
         if not isinstance(prior, dict) or any(not nonempty(prior.get(k)) for k in ("criterion", "observed_result", "status")):
             issue(errors, "HANDOFF_REQUIRED_FIELDS", where, "prior_arc_payoff_check fields required")
         elif prior.get("status") == "PENDING":
             handoff_hold = True
             issue(warnings, "PRIOR_ARC_PAYOFF_PENDING", where, "prior macro payoff remains pending independent review")
+        elif claim_evidence_mode and prior.get("status") in {"CANCELLED", "REPLACED", "WAIVED"}:
+            issue(
+                errors, "PRIOR_PAYOFF_CONTRACT_CANCELLED", where,
+                "a new line or macro cannot cancel, replace, or waive the prior payoff contract",
+            )
+        elif claim_evidence_mode and prior.get("status") == "OBSERVED_PAID":
+            prior_refs = prior.get("observed_evidence_refs")
+            if not string_list(prior_refs, allow_empty=False) or any(ref not in chapter_rows for ref in prior_refs):
+                issue(
+                    errors, "HANDOFF_REQUIRED_FIELDS", where,
+                    "OBSERVED_PAID prior payoff needs resolvable observed_evidence_refs",
+                )
         if conclusion in {"CANDIDATE_UNVERIFIED", "NO_EVIDENCE"}:
             handoff_hold = True
             issue(warnings, "HANDOFF_UNVERIFIED", where, f"handoff conclusion retained as {conclusion}")
@@ -649,29 +782,51 @@ def validate_pilot(pilot: Path, repo: Path | None = None) -> dict[str, Any]:
         "INVALID_MEMBERS", "WEAVE_TYPE_INVALID", "CAUSAL_LINK_UNSUPPORTED", "NONCAUSAL_DIRECTION_FORBIDDEN",
         "WEAVE_REQUIRED_FIELDS", "WEAVE_EVENT_NOT_IN_MEMBER",
     }}
-    macro_codes = {entry["code"] for entry in errors if entry["code"].startswith("MACRO") or entry["code"].startswith("HANDOFF") or entry["code"] == "MISSING_PAYOFF_EVIDENCE"}
+    macro_codes = {
+        entry["code"] for entry in errors if entry["code"].startswith("MACRO")
+        or entry["code"].startswith("HANDOFF")
+        or entry["code"] in {"MISSING_PAYOFF_EVIDENCE", "PRIOR_PAYOFF_CONTRACT_CANCELLED"}
+    }
+    claim_binding_codes = {
+        entry["code"] for entry in errors if entry["code"] in {
+            "EVIDENCE_POLICY_INVALID", "CLAIM_BINDINGS_REQUIRED", "INVALID_EVIDENCE_BINDINGS",
+            "INVALID_EVIDENCE_BINDING", "MISSING_SOURCE_RECORD", "MISSING_SOURCE_FIELD",
+        }
+    }
     source_failed = any(entry["code"] in source_codes for entry in errors)
     semantic_statuses = {
         row.get("semantic_review", {}).get("status")
         for rows in typed_rows.values() for row in rows if isinstance(row.get("semantic_review"), dict)
     }
-    structural_exclusions = source_codes | crosswalk_codes | weave_codes | macro_codes
+    structural_exclusions = source_codes | crosswalk_codes | weave_codes | macro_codes | claim_binding_codes
     structural_failed = any(entry["code"] not in structural_exclusions for entry in errors)
+    semantic_pending = semantic_statuses != {"PASS"}
+    weave_gate = "FAIL" if weave_codes or claim_binding_codes else "PASS"
+    macro_gate = "FAIL" if macro_codes or claim_binding_codes else "HOLD" if handoff_hold else "PASS"
+    if claim_evidence_mode and semantic_pending:
+        if weave_gate == "PASS" and causal_count:
+            weave_gate = "NEEDS_SEMANTIC_REVIEW"
+        if macro_gate == "PASS" and (macros or handoffs):
+            macro_gate = "NEEDS_SEMANTIC_REVIEW"
 
     return {
         "ok": not errors,
-        "machine_check": "STRUCTURE_REFERENCE_AND_DECLARED_CAUSAL_EVIDENCE_ONLY",
+        "machine_check": (
+            "STRUCTURE_REFERENCE_AND_CLAIM_BINDING_RESOLUTION_ONLY"
+            if claim_evidence_mode else "STRUCTURE_REFERENCE_AND_DECLARED_CAUSAL_EVIDENCE_ONLY"
+        ),
         "structural_gate": "FAIL" if structural_failed else "PASS",
         "source_reference_gate": "FAIL" if source_failed else "PASS",
         "crosswalk_gate": "FAIL" if crosswalk_codes else "HOLD" if unresolved_crosswalk else "PASS",
-        "weave_causality_evidence_gate": "FAIL" if weave_codes else "PASS",
-        "macro_handoff_gate": "FAIL" if macro_codes else "HOLD" if handoff_hold else "PASS",
+        "claim_binding_gate": "FAIL" if claim_binding_codes else "PASS" if claim_evidence_mode else "NOT_ENABLED",
+        "weave_causality_evidence_gate": weave_gate,
+        "macro_handoff_gate": macro_gate,
         "source_trust": {
             "reference_status": "FAIL" if source_failed else "REFERENCE_RESOLVED",
             "source_text_status": "SOURCE_TEXT_VERIFICATION_PARTIAL" if unavailable_fingerprints else "NO_MISSING_FINGERPRINT_REPORTED",
             "source_commit_sha": commit,
         },
-        "semantic_review": "PENDING_INDEPENDENT_REVIEW" if semantic_statuses != {"PASS"} else "PASS_RECORDED",
+        "semantic_review": "PENDING_INDEPENDENT_REVIEW" if semantic_pending else "PASS_RECORDED",
         "creation_approval": "NOT_GRANTED",
         "production_promotion": "NOT_RUN",
         "test_summary": {

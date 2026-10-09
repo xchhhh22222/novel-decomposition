@@ -1,8 +1,10 @@
 # Hypothetical design brief: demon attack on the protagonist's home
 
-Status: `DRAFT / HYPOTHETICAL_DESIGN / NOT A NOVEL FACT`.
+Status: `DRAFT / HYPOTHETICAL_DESIGN / DOCUMENTED_DESIGN_ONLY / NOT A NOVEL FACT`.
 
 This fixture tests the optional Planner E2/E3 interface without writing chapter prose. It deliberately uses no BOOK_001 character names, unique objects, or connected event chain.
+
+The fixture's people, institution, ability, evidence object and event chain are `ORIGINAL_DESIGN`. The frozen BOOK_001 rows cited by the mapping are separate `OBSERVED_SOURCE` candidates used only for abstract functional compatibility. The existing production Planner does not execute this fixture.
 
 ## Series promise
 

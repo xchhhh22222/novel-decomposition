@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""NOVA Emotion Arc V2 validator matrix (T01-T17)."""
+"""NOVA Emotion Arc V2 validator matrix (T01-T21)."""
 from __future__ import annotations
 
 import copy
@@ -188,6 +188,83 @@ def has_code(report: dict, code: str) -> bool:
     return any(item.get("code") == code for item in report.get("errors", []))
 
 
+def enable_claim_evidence_v2(payload: dict[str, list[dict]], manifest: dict) -> None:
+    manifest["research_contract_profile"] = "CLAIM_EVIDENCE_V2"
+    manifest["evidence_policy"] = {
+        "top_level_source_evidence_refs": "REPRESENTATIVE_SUMMARY",
+        "full_evidence_views": {
+            "emotion_line": "beats[].evidence_refs",
+            "emotion_weave": "evidence_bindings",
+            "macro_emotion_arc": "evidence_bindings",
+            "arc_handoff": "evidence_bindings",
+            "promise_resolution": "source_evidence_refs",
+        },
+    }
+    for rows in payload.values():
+        for row in rows:
+            if "record_type" in row:
+                row["source_evidence_scope"] = "REPRESENTATIVE_SUMMARY"
+                row.setdefault("evidence_bindings", [])
+    weave = payload["emotion-weaves.jsonl"][0]
+    weave["evidence_bindings"] = [
+        {
+            "claim": "chapter four contains the declared decision point",
+            "chapter_ref": "BOOK_001:CHAPTER:0004",
+            "source_record_id": "BOOK_001:EMOTION:0004",
+            "field_path": "turning_point",
+            "interpretation": "the source field is relevant; causal semantics remain pending review",
+        }
+    ]
+    macro1, macro2 = payload["macro-emotion-arcs.jsonl"]
+    macro1["evidence_bindings"] = [
+        {
+            "claim": "the first macro has an observed partial result",
+            "chapter_ref": "BOOK_001:CHAPTER:0004",
+            "source_record_id": "BOOK_001:EMOTION:0004",
+            "field_path": "visible_payoff_evidence[0]",
+            "interpretation": "a visible result exists; macro sufficiency remains pending review",
+        }
+    ]
+    macro1["macro_qualification"] = {
+        "qualification_chapter_ref": "BOOK_001:CHAPTER:0004",
+        "sustained_progression_evidence_refs": ["BOOK_001:CHAPTER:0001", "BOOK_001:CHAPTER:0004"],
+        "organized_line_ids": ["EL:BOOK_001:001", "EL:BOOK_001:002"],
+        "organization_explanation": "two distinct line contracts are organized across two observed beats",
+    }
+    payload["emotion-lines.jsonl"][0]["beats"].append({
+        "beat_id": "EL:BOOK_001:001:B03", "chapter_ref": "BOOK_001:CHAPTER:0010",
+        "function": "PRESSURIZE", "reader_expectation_change": "old contract remains active",
+        "character_agency": "preserves the earlier obligation", "state_change": "the line overlaps the new window",
+        "evidence_refs": ["BOOK_001:CHAPTER:0010"],
+    })
+    macro2["member_line_ids"] = ["EL:BOOK_001:001", "EL:BOOK_001:002"]
+    macro2["evidence_bindings"] = [
+        {
+            "claim": "the second macro candidate continues beyond a single label",
+            "chapter_ref": "BOOK_001:CHAPTER:0008",
+            "source_record_id": "BOOK_001:EMOTION:0008",
+            "field_path": "pressure_source",
+            "interpretation": "pressure is observable; organizing capacity remains pending review",
+        }
+    ]
+    macro2["macro_qualification"] = {
+        "qualification_chapter_ref": "BOOK_001:CHAPTER:0010",
+        "sustained_progression_evidence_refs": ["BOOK_001:CHAPTER:0008", "BOOK_001:CHAPTER:0010"],
+        "organized_line_ids": ["EL:BOOK_001:001", "EL:BOOK_001:002"],
+        "organization_explanation": "the candidate claims to organize two lines across two chapters",
+    }
+    handoff = payload["arc-handoffs.jsonl"][0]
+    handoff["evidence_bindings"] = [
+        {
+            "claim": "a new promise trigger exists at the declared handoff",
+            "chapter_ref": "BOOK_001:CHAPTER:0008",
+            "source_record_id": "BOOK_001:EMOTION:0008",
+            "field_path": "promise_opened[0]",
+            "interpretation": "the promise exists; handoff quality remains pending review",
+        }
+    ]
+
+
 def main() -> int:
     failures: list[dict] = []
     with tempfile.TemporaryDirectory() as tmp:
@@ -250,7 +327,43 @@ def main() -> int:
         run("T16 origin layer conflict", lambda p, m: p["emotion-lines.jsonl"][0].update(origin_kind="HYPOTHETICAL_DESIGN"), False, "ORIGIN_LAYER_CONFLICT")
         run("T17 provenance overclaim", lambda p, m: m["coverage"].update(source_text_verification_status="SOURCE_TEXT_VERIFIED_FULL"), False, "PROVENANCE_OVERCLAIM")
 
-    print(json.dumps({"ok": not failures, "cases": 17, "passed": 17 - len(failures), "failures": failures}, ensure_ascii=False, indent=2))
+        def fake_causal_interpretation(p, m):
+            enable_claim_evidence_v2(p, m)
+            p["emotion-weaves.jsonl"][0]["causal_explanation"] = "a fabricated causal reading with a real chapter reference"
+        run(
+            "T18 real reference with false causal interpretation needs semantic review",
+            fake_causal_interpretation, True,
+            check=lambda r: r["claim_binding_gate"] == "PASS"
+            and r["weave_causality_evidence_gate"] == "NEEDS_SEMANTIC_REVIEW"
+            and r["semantic_review"] == "PENDING_INDEPENDENT_REVIEW",
+        )
+
+        def cooccurrence_claimed_causal(p, m):
+            enable_claim_evidence_v2(p, m)
+            p["emotion-weaves.jsonl"][0]["causal_evidence"] = {
+                "from_state_change": "event A is present",
+                "to_pressure_or_choice": "event B is present",
+                "bridge_observation": "the same chapter mentions both",
+            }
+        run(
+            "T19 co-occurrence declared causal needs semantic review",
+            cooccurrence_claimed_causal, True,
+            check=lambda r: r["weave_causality_evidence_gate"] == "NEEDS_SEMANTIC_REVIEW",
+        )
+
+        def line_start_not_macro(p, m):
+            enable_claim_evidence_v2(p, m)
+            p["macro-emotion-arcs.jsonl"][1]["macro_qualification"]["organized_line_ids"] = ["EL:BOOK_001:002"]
+            p["macro-emotion-arcs.jsonl"][1]["macro_qualification"]["sustained_progression_evidence_refs"] = ["BOOK_001:CHAPTER:0008"]
+        run("T20 new line start is not macro capacity", line_start_not_macro, False, "MACRO_ORGANIZATION_UNPROVEN")
+
+        def cancel_old_contract(p, m):
+            enable_claim_evidence_v2(p, m)
+            p["arc-handoffs.jsonl"][0]["prior_arc_payoff_check"]["status"] = "CANCELLED"
+            p["arc-handoffs.jsonl"][0]["prior_arc_payoff_check"]["observed_result"] = "new line replaces old promise"
+        run("T21 new line cannot cancel old payoff", cancel_old_contract, False, "PRIOR_PAYOFF_CONTRACT_CANCELLED")
+
+    print(json.dumps({"ok": not failures, "cases": 21, "passed": 21 - len(failures), "failures": failures}, ensure_ascii=False, indent=2))
     return 0 if not failures else 1
 
 

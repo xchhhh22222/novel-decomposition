@@ -6,10 +6,37 @@
   "origin_kind": "HYPOTHETICAL_DESIGN",
   "creation_approval": "NOT_GRANTED",
   "production_promotion": "NOT_RUN",
+  "runtime_status": "DOCUMENTED_DESIGN_ONLY",
   "series_promise": {
     "id": "SP:HDF:001",
     "reader_promise": "主角能否从依赖他人保护的人，成长为能改变保护资格与规则的人"
   },
+  "emotion_first_functional_slots": [
+    {
+      "slot_id": "FS:HDF:CHARACTER:FAMILY_AGENCY",
+      "derived_from": ["EL:HDF:001", "MA:HDF:A"],
+      "function": "a family member must make a consequential defense or evacuation choice",
+      "implementation_origin": "ORIGINAL_DESIGN"
+    },
+    {
+      "slot_id": "FS:HDF:FACTION:PROTECTION_AUTHORITY",
+      "derived_from": ["EL:HDF:004", "MA:HDF:B"],
+      "function": "an institution must allocate warning rights and remain answerable for the allocation",
+      "implementation_origin": "ORIGINAL_DESIGN"
+    },
+    {
+      "slot_id": "FS:HDF:ABILITY:COSTLY_RESCUE",
+      "derived_from": ["EL:HDF:002", "EW:HDF:001"],
+      "function": "power must open a family choice while producing a visible recovery or resource cost",
+      "implementation_origin": "ORIGINAL_DESIGN"
+    },
+    {
+      "slot_id": "FS:HDF:OBJECT:AUTHORIZATION_RECORD",
+      "derived_from": ["EL:HDF:003", "EL:HDF:004", "AH:HDF:A-B"],
+      "function": "an inspectable object must trigger B without settling A or proving the whole conspiracy",
+      "implementation_origin": "ORIGINAL_DESIGN"
+    }
+  ],
   "macro_arcs": [
     {
       "id": "MA:HDF:A",
