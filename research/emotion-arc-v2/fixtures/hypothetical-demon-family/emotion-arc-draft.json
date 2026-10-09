@@ -1,0 +1,98 @@
+{
+  "schema_version": "emotion_arc_design_v2_research",
+  "fixture_id": "HYPOTHETICAL_DEMON_FAMILY_001",
+  "status": "DRAFT",
+  "qa_status": "HOLD",
+  "origin_kind": "HYPOTHETICAL_DESIGN",
+  "creation_approval": "NOT_GRANTED",
+  "production_promotion": "NOT_RUN",
+  "series_promise": {
+    "id": "SP:HDF:001",
+    "reader_promise": "主角能否从依赖他人保护的人，成长为能改变保护资格与规则的人"
+  },
+  "macro_arcs": [
+    {
+      "id": "MA:HDF:A",
+      "label": "家园守护",
+      "reader_promise": "主角必须让家人从一次有明确攻击者和制度漏洞的袭击中获得可见保护结果",
+      "start_condition": "边境预警资源被利益方挪用，导致妖魔小队能定位主角家园",
+      "settlement_contract": "家人脱离即时威胁、保护设施或迁移方案实际生效，并显示主角支付的资源/身份代价",
+      "irreversible_change": "家园防线被重建，但主角暴露受限制的力量来源",
+      "status": "DESIGNED_NOT_OBSERVED"
+    },
+    {
+      "id": "MA:HDF:B",
+      "label": "保护秩序追索",
+      "reader_promise": "主角能否证明谁从保护漏洞获利，并迫使保护资格规则发生改变",
+      "start_condition": "A 的调查取得被篡改的预警授权记录，且受限力量暴露让监管方介入",
+      "settlement_contract": "获利链被证据化，至少一项保护权限、责任归属或资源分配发生可见改变",
+      "irreversible_change": "主角从家庭救援者变成规则争议的当事人",
+      "status": "DESIGNED_NOT_OBSERVED"
+    }
+  ],
+  "emotion_lines": [
+    {
+      "id": "EL:HDF:001",
+      "expectation": "家人不是一次性人质，而能在危险前作出具体选择并获得持续保护",
+      "payoff_condition": "至少一位家人以自身行动影响撤离/防守结果，且安全状态真实改变",
+      "dominance": "PRIMARY_IN_A"
+    },
+    {
+      "id": "EL:HDF:002",
+      "expectation": "救援所需成长能否在资源不足下实现且留下下一阶段限制",
+      "payoff_condition": "能力通过救援验证，同时消耗或后遗症限制后续行动",
+      "dominance": "SUPPORT_IN_A"
+    },
+    {
+      "id": "EL:HDF:003",
+      "expectation": "主角使用受限制力量后能否保住行动自主权",
+      "payoff_condition": "暴露带来可见监管、关系或身份后果，而非只有一句秘密可能泄露",
+      "dominance": "BRIDGE_A_TO_B"
+    },
+    {
+      "id": "EL:HDF:004",
+      "expectation": "保护漏洞背后的利益方会不会被证明并付出制度代价",
+      "payoff_condition": "利益链证据成立并改变至少一项权限或资源流",
+      "dominance": "PRIMARY_IN_B"
+    }
+  ],
+  "weaves": [
+    {
+      "id": "EW:HDF:001",
+      "type": "ENABLES_CHOICE",
+      "from_line_id": "EL:HDF:002",
+      "to_line_id": "EL:HDF:001",
+      "event": "主角用有后遗症的短时能力突破封锁，为家人创造可执行撤离路线",
+      "before_after": {"before": "家人被固定在失效防线内", "after": "家人能自行选择撤离或留守支援"},
+      "causal_bridge": "成长输出改变家人的可行选择，而不是只提高战斗数值"
+    },
+    {
+      "id": "EW:HDF:002",
+      "type": "CAUSES_PRESSURE",
+      "from_line_id": "EL:HDF:003",
+      "to_line_id": "EL:HDF:004",
+      "event": "受限力量被现场记录后，监管方带走记录并冻结救援功劳",
+      "before_after": {"before": "制度漏洞仍可被解释为意外", "after": "主角必须查明授权记录以证明行动合法并保护家人"},
+      "causal_bridge": "身份暴露把利益链调查从可选怀疑变成必须完成的自证目标"
+    }
+  ],
+  "handoff": {
+    "id": "AH:HDF:A-B",
+    "from_macro_id": "MA:HDF:A",
+    "to_macro_id": "MA:HDF:B",
+    "trigger_before_a_settlement": "救援中发现被篡改的预警授权记录",
+    "a_contract_retained": "家人安全与防线生效仍必须在 A 末可见结算",
+    "b_expectation": "谁篡改保护优先级、谁获利、主角将如何改变规则",
+    "overlap_design": true,
+    "validation_status": "DESIGN_CANDIDATE_ONLY"
+  },
+  "active_state_packet_shape": [
+    "active_macro_arcs",
+    "active_emotion_lines",
+    "pending_payoff_contracts",
+    "current_reader_knowledge",
+    "state_constraints",
+    "chosen_story_beats",
+    "material_adapter_refs"
+  ]
+}

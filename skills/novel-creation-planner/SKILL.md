@@ -14,6 +14,7 @@ description: V1.2 兼容 + Emotion-First 创作模式：从读者承诺和因果
 ## 模式路由
 
 - **默认从零开书的新模式：必须先读取 [references/emotion-first-creation.md](references/emotion-first-creation.md)，执行情绪目标 → 因果窗口 → RMF → DNA组件 → 兼容桥 → 新书候选；不能把“低低高”标签当完整剧情。**
+- 用户明确要求 `Emotion Arc V2` 研究模式或提供已审核 V2 研究输入时，可选读取 [references/emotion-arc-weaving-v2.md](references/emotion-arc-weaving-v2.md)，在 E1 与 M0 之间增加 E2/E3；该模式不改变正式 plan schema、默认路由或旧校验器。
 - 需要扫榜、筛书、获取前10章：读取 [references/execution-pipeline.md](references/execution-pipeline.md)。
 - **需要开新书的实时赛道学习：必须读取 [references/market-benchmark.md](references/market-benchmark.md)，执行 Top10 前10章比较 → 选3本 → 前20章深拆。**
 - `market-opening-synthesis.md` 仅作为旧版轻量开篇横评参考，不再定义 V1.2 标准流程。
