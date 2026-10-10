@@ -1,0 +1,183 @@
+{
+  "schema_version": "emotion_first_phase2_minimal_acceptance_audit_v1",
+  "status": "candidate",
+  "qa_status": "PASS_STRUCTURAL_REVIEW_PENDING",
+  "scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+  "base_option_id": "ENHANCED:ASH_SEED",
+  "source": {
+    "phase1_path": "research/emotion-arc-v2/runs/emotion-first-phase1-real-20261010/attempts/attempt-01/result/enhanced-options.json",
+    "phase1_sha256": "7228e4e21ed6eadd536fddaf145d51bac11903e7e3418101b68e54fd7a6b785c",
+    "phase2_pressure_test_path": "research/emotion-arc-v2/phase2-diversity/longform-pressure-test.json"
+  },
+  "timeline_consistency": {
+    "policy": "优先恢复冻结的 Phase 1 编排；本补丁没有采用独立新节奏候选。",
+    "frozen_node_windows": [
+      {"node_id": "ES1", "chapter_range": "1-3"},
+      {"node_id": "ES2", "chapter_range": "4-9"},
+      {"node_id": "ES3", "chapter_range": "10-15"},
+      {"node_id": "ES4", "chapter_range": "16-23"},
+      {"node_id": "ES5", "chapter_range": "24-30"},
+      {"node_id": "ES6", "chapter_range": "31-38"},
+      {"node_id": "ES7", "chapter_range": "39-45"},
+      {"node_id": "ES8", "chapter_range": "46-50"}
+    ],
+    "choice_position_audit": [
+      {
+        "audit_id": "TL-001",
+        "choice": "主角烧毁仓格、承担毁粮指控，并被家人封锁仓权和逐出试田组",
+        "phase1_position": "ES1 / chapters 1-3",
+        "previous_phase2_position": "chapters 1-2",
+        "accepted_position": "ES1 / chapters 1-3",
+        "reason": "旧压力测试把发现、烧仓、指控和家庭处分压缩到两章，早于冻结窗口完成关键关系后果。",
+        "contract_impact": "不改变 MA-A 合同，但压缩会让后续灰谱核验看似提前，并削弱仓权丧失的蓄压；现已恢复。",
+        "resolution": "RESTORED_TO_PHASE1"
+      },
+      {
+        "audit_id": "TL-002",
+        "choice": "主角承载灰谱，以第一条修炼支路换取可复验证据",
+        "phase1_position": "ES2 / chapters 4-9",
+        "previous_phase2_position": "chapters 3-4",
+        "accepted_position": "ES2 / chapters 4-9（压力测试细分为4-6承载、7-9初证）",
+        "reason": "旧位置把能力代价提前到 ES1 窗口，并过早完成外部确认。",
+        "contract_impact": "提前满足能力可信度会缩短 MA-A 的公共验证链；恢复后 ES2 只取得初证，烧仓责任和仓权仍未结算。",
+        "resolution": "RESTORED_TO_PHASE1"
+      },
+      {
+        "audit_id": "TL-003",
+        "choice": "全家拒绝竞争者的私下合格证明，选择公开试田",
+        "phase1_position": "ES4 / chapters 16-23",
+        "previous_phase2_position": "chapters 5-6",
+        "accepted_position": "ES4 / chapters 16-23（保留在11-25聚合窗口内）",
+        "reason": "旧位置跳过 ES3 的家庭条件合作，令公开风险选择在家人尚未投入种谱前发生。",
+        "contract_impact": "会提前推进 family_agency_formal 并把私证拒绝误当作早期信任兑现；恢复后共同方案仍需 ES3→ES4 因果链。",
+        "resolution": "RESTORED_TO_PHASE1"
+      },
+      {
+        "audit_id": "TL-004",
+        "choice": "妹妹以灌溉记录纠正水期并实际重排试种",
+        "phase1_position": "ES4 / chapters 16-23",
+        "previous_phase2_position": "chapters 7-9",
+        "accepted_position": "ES4 / chapters 16-23（保留在11-25聚合窗口内）",
+        "reason": "旧位置在 ES2 仅有污染初证时就给予妹妹改变方案的正式行动权，关系线提前兑现。",
+        "contract_impact": "会把家庭主动共同方案提前九章以上，并掩盖 ES3 的承载上限谈判；恢复后家人行动权按冻结顺序建立。",
+        "resolution": "RESTORED_TO_PHASE1"
+      },
+      {
+        "audit_id": "TL-005",
+        "choice": "祖母提出私藏种谱并要求主角接受承载上限",
+        "phase1_position": "ES3 / chapters 10-15",
+        "previous_phase2_position": "chapter 10 即形成全家第一次可执行共同方案",
+        "accepted_position": "chapter 10 仅开启条件谈判；完整决定仍在 ES3 / chapters 10-15",
+        "reason": "第10章可以开启 ES3，但不能把整个六章窗口的条件、投入和共同方案在单章全部完成。",
+        "contract_impact": "避免把 family_agency_formal 或关系线阶段兑现提前；第10章结束时仅为 OPEN，种谱尚未正式投入。",
+        "resolution": "RESTORED_TO_PHASE1"
+      },
+      {
+        "audit_id": "TL-006",
+        "choice": "主角第二次承载保住幼苗，全家保留异常盐封而不立即指控供应方",
+        "phase1_position": "ES5 / chapters 24-30",
+        "previous_phase2_position": "chapters 26-40 聚合窗口",
+        "accepted_position": "ES5 / chapters 24-30",
+        "reason": "旧聚合窗口把盐封物证和第二次能力代价延后两章，并与 ES6 的撤田选择混在同一窗口。",
+        "contract_impact": "会延后 ES:MACRO:B 的 NOT_OPENED→OPEN，同时模糊 MA-A 成长代价见证；现已恢复 ES5 独立窗口。",
+        "resolution": "RESTORED_TO_PHASE1"
+      },
+      {
+        "audit_id": "TL-007",
+        "choice": "主角服从家人撤出一半田块并放弃包揽全部污染",
+        "phase1_position": "ES6 / chapters 31-38",
+        "previous_phase2_position": "chapters 26-40 聚合窗口",
+        "accepted_position": "ES6 / chapters 31-38",
+        "reason": "旧聚合窗口无法区分 ES5 开启盐封问题与 ES6 家庭否决权产生实际后果的先后。",
+        "contract_impact": "会模糊 MA-A 进入 PARTIALLY_PAID 的见证位置；恢复后部分安全只在 ES6 的分区隔离结果后成立。",
+        "resolution": "RESTORED_TO_PHASE1"
+      },
+      {
+        "audit_id": "TL-008",
+        "choice": "全家放弃种谱完全独占，主角接受共同监督，冬储合同生效",
+        "phase1_position": "ES7 / chapters 39-45",
+        "previous_phase2_position": "chapters 41-45",
+        "accepted_position": "ES7 / chapters 39-45",
+        "reason": "旧压力测试把完整合同结算推迟到第41章，留下第39-40章与冻结节点不一致。",
+        "contract_impact": "MA-A 的 PAID 见证必须保持 ES7 / 39-45；现已恢复，不改变任何结算条件。",
+        "resolution": "RESTORED_TO_PHASE1"
+      }
+    ],
+    "unchanged_key_choice_windows": [
+      "ES8 / chapters 46-50：只提交批号和两地样本、拒绝把未知供应链写成定论"
+    ],
+    "independent_new_pacing_candidates": [],
+    "result": "PASS_PHASE1_BASELINE_RESTORED"
+  },
+  "parallel_macro_commitment_ledger": [
+    {
+      "macro_id": "ES:MACRO:A",
+      "title": "冬粮、安全与行动信任",
+      "promise": "被误解的主角能否以有代价能力和家人共同选择恢复冬粮、安全与行动信任",
+      "settlement_contract": "家庭拥有可持续冬粮和净种，灰穗不再扩散；主角能力经公共结果验证且代价保留；家人共同签署监督；冬储合同正式生效。",
+      "last_defined_progress_node": "ES7 / chapters 39-45",
+      "last_actual_progress_node": "ES7 / chapters 39-45（研究规划节点，非已发生正文）",
+      "last_actual_story_node": null,
+      "current_state": "PAID",
+      "state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "unpaid_reader_expectations": [],
+      "dormancy_reason": "CONTRACT_PAID_NOT_DORMANT",
+      "next_trigger_condition": "无需再次触发结算；后续只能承接已兑现结果，不得重开或撤销原合同。",
+      "stagnation_risk": "低；只有后续方案否认净种、监督资格或冬储合同而无新因果时，才会形成伪兑现风险。",
+      "cancelled": false,
+      "absorbed_by": null
+    },
+    {
+      "macro_id": "ES:MACRO:B",
+      "title": "异常盐封来源与采购责任",
+      "promise": "统一采购的异常盐封为何跨区出现，以及谁应承担扩大后的粮种责任",
+      "settlement_contract": "盐封来源、采购决策与受影响区域获得可核验解释，并实际改变家庭监督边界和区域换种方案。",
+      "last_defined_progress_node": "ES8 / chapters 46-50",
+      "last_actual_progress_node": "ES8 / chapters 46-50（研究规划节点，非已发生正文）",
+      "last_actual_story_node": null,
+      "current_state": "ACTIVE_HOLD",
+      "state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "unpaid_reader_expectations": [
+        "异常盐封的可核验来源",
+        "采购决策由谁作出、依据与责任如何认定",
+        "受影响区域的可核验范围",
+        "调查结果如何实际改变家庭监督边界和区域换种方案"
+      ],
+      "dormancy_reason": "ES8 只证明盐封属于统一采购层，具体来源、决策人、动机和区域影响仍缺少证据；共种弧可运行，但不能代替调查结算。",
+      "next_trigger_condition": "出现可追踪的盐封来源、采购决策记录或跨区样本，并迫使家庭对监督边界或换种方案作出实际选择；传闻或同批号重复不足以结算。",
+      "stagnation_risk": "若长期不确认仍在追索或不给出新的证据机会，读者会把盐封视为被遗忘的调查承诺，并认为共种弧是在回避责任问题。无需机械每十章推进，但必须保留可见的未付状态。",
+      "cancelled": false,
+      "absorbed_by": null
+    },
+    {
+      "macro_id": "P2:ES:MACRO:B:COMMONS",
+      "title": "互惠种池与公共责任",
+      "promise": "家庭能否在守住自身冬粮的同时，把稀缺净种变成可问责、可持续的互惠种池",
+      "settlement_contract": "家庭最低储备、借种资格、暂停权、损失分担和补偿申诉形成可执行规则，并经至少两个气候周期和一次真实失败验证。",
+      "last_defined_progress_node": "P2:COMMONS:W4 / chapters 91-100",
+      "last_actual_progress_node": "P2:COMMONS:W4 / chapters 91-100（研究规划节点，非已发生正文）",
+      "last_actual_story_node": null,
+      "current_state": "PARTIALLY_PAID",
+      "state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "unpaid_reader_expectations": [
+        "互惠种池经过第二个气候周期后仍可持续",
+        "一次真实失败下的完整申诉、赔偿与责任归属",
+        "祖种母本私有边界与公共需要之间的长期规则",
+        "跨区参与者取得共同治理权后的制度调整"
+      ],
+      "dormancy_reason": "首季审计只能提供阶段兑现；第二气候周期、真实失败与跨区治理条件在100章规划边界内尚未发生。",
+      "next_trigger_condition": "进入第二气候周期，或出现依现有借种规则仍无法解决的真实失败、母本边界争议或共同治理修订请求。",
+      "stagnation_risk": "若只有首季制度文本而没有跨季压力和失败责任，阶段兑现会显得是纸面胜利，家人取得的决策权也会退化为装饰。",
+      "cancelled": false,
+      "absorbed_by": null,
+      "absorbs_macro_ids": [],
+      "separate_from_salt_seal_arc": true
+    }
+  ],
+  "semantic_review_limits": [
+    "本账本记录的是研究规划状态，不声称小说正文已经发生。",
+    "PARTIALLY_PAID 与 PAID 仍需独立语义审核，结构校验不能替代文学判断。",
+    "ES:MACRO:B 的盐封来源与采购责任保持 ACTIVE_HOLD，不被共种弧吸收、取消或视为已兑现。"
+  ],
+  "disposition": "STOP_FOR_INDEPENDENT_REVIEW"
+}

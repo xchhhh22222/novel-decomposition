@@ -86,14 +86,16 @@ Legacy tended toward future-fragment testing, public validation, identity misrea
 
 ### Chapters 1–10
 
-Five high-precision beats retain Phase 1 causality: urgent warehouse burning, loss of warehouse rights, costly ash-spectrum verification, the sister's irrigation record changing the plan, and the grandmother's conditional seed contribution. Each beat records pressure, choice, cost, relationship change, visible small payoff and next action.
+Four high-precision windows now preserve the frozen Phase 1 order exactly: ES1 occupies chapters 1–3; ES2 occupies chapters 4–9 and is split only into bearing evidence followed by initial verification; chapter 10 opens ES3's conditional family negotiation without completing it. The sister's irrigation record and the family's rejection of a private certificate remain ES4 choices in chapters 16–23 and are not treated as events that already occurred in chapters 1–10.
 
 ### Chapters 11–50
 
-- 11–25: family resources make a public test field possible; the old safety contract is not yet paid.
-- 26–40: a second sealed channel and family veto force partial protection; the salt-seal clue opens only bounded knowledge.
-- 41–45: all MA-A settlement witnesses occur and the original contract becomes `PAID`.
-- 46–50: success creates the first external seed request; the household becomes a resource holder and public decision-maker.
+- 11–15 / ES3: the protagonist accepts the family's bearing limit and the grandmother conditionally contributes the hidden seed genealogy.
+- 16–23 / ES4: the sister's irrigation record changes the trial, and the family chooses a public test field over a private certificate.
+- 24–30 / ES5: the second sealed channel preserves the seedlings, while the retained salt seal opens only bounded knowledge.
+- 31–38 / ES6: family veto and divided roles force partial protection rather than total self-sacrifice.
+- 39–45 / ES7: all MA-A settlement witnesses occur and the original contract becomes `PAID`.
+- 46–50 / ES8: the family reports only verified batch evidence; success also creates the first external seed request and public-responsibility pressure.
 
 ### Chapters 51–100
 
@@ -172,6 +174,30 @@ The first test invocation exposed a test-module import-path error and was correc
 | `test_search_mechanism_library.py` | PASS, 0 failures |
 | `test_validate_v12_artifacts.py` | 6/6 PASS |
 | Planner Skill quick validation | `Skill is valid!` |
+
+### Minimal acceptance patch
+
+The independent audit `phase2-minimal-acceptance-audit.json` records eight timeline discrepancies and their resolution. All eight were restored to the Phase 1 baseline; no alternative pacing candidate was adopted. Its parallel commitment ledger distinguishes planned research state from observed story fact and records separate status, unpaid expectations, dormancy reasons, trigger conditions and stagnation risks for:
+
+- `ES:MACRO:A`: `PAID` at ES7, with its frozen contract unchanged.
+- `ES:MACRO:B`: `ACTIVE_HOLD` at ES8; salt-seal source, procurement responsibility, affected region and real supervision/swap consequences remain unpaid.
+- `P2:ES:MACRO:B:COMMONS`: `PARTIALLY_PAID` at the planned 91–100 stage settlement; cross-season sustainability and failure governance remain unpaid.
+
+The commons arc does not absorb or cancel the salt-seal arc. None of the three ledger entries claims a last actual novel-story node because this remains a structured research plan rather than observed prose.
+
+```text
+python research/emotion-arc-v2/phase2-diversity/test_validate_phase2_acceptance_patch.py
+# 7/7 PASS
+
+python research/emotion-arc-v2/phase2-diversity/validate_phase2_acceptance_patch.py \
+  --audit research/emotion-arc-v2/phase2-diversity/phase2-minimal-acceptance-audit.json \
+  --longform research/emotion-arc-v2/phase2-diversity/longform-pressure-test.json \
+  --phase1 research/emotion-arc-v2/runs/emotion-first-phase1-real-20261010/attempts/attempt-01/result/enhanced-options.json \
+  --output research/emotion-arc-v2/phase2-diversity/acceptance-patch-validation-report.json
+# PASS, 0 errors, 2 expected semantic-scope warnings
+```
+
+One legacy mechanism-search test initially hit a Windows subprocess decoding exception under the default console codec. It passed unchanged when rerun with `PYTHONUTF8=1` and `PYTHONIOENCODING=utf-8`; no validator, fixture or threshold was altered.
 
 ## 8. Remaining HOLDs
 
