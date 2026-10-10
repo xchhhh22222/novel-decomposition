@@ -1,0 +1,717 @@
+{
+  "schema_version": "emotion_story_semantic_composition_v1",
+  "brief_id": "SEB:FAMILY_PROTECTION:001",
+  "status": "candidate",
+  "semantic_composer": {
+    "kind": "MODEL_AUTHORED_RESEARCH_CANDIDATE",
+    "model_family": "GPT-5",
+    "deterministic_validation_required": true,
+    "literary_approval": "NOT_GRANTED"
+  },
+  "material_profiles": {
+    "PROFILE:A:LAMP_WARD": [
+      {
+        "slot_id": "A:GF:VISIBLE_COSTLY_GROWTH",
+        "module": "golden_finger",
+        "function_required": "低评价能力必须经公开保护行动证明价值，并留下可持续的身体与资源成本",
+        "query": "公开验证 低评价 成长 代价 资源",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "GF:BOOK_009",
+        "abstract_function": "低评价能力经过训练和公开战果重新定价",
+        "constraint_checks": {
+          "ability": "保留受控制力和误伤风险约束，不复制火焰刀魂",
+          "resource": "公开战果只打开培养入口，不直接生成无限资源",
+          "world": "改写为城防灵灯维修与守备考核接口",
+          "character": "主角必须主动承担失败和暴露风险"
+        },
+        "rule_conflicts": ["来源的高温武魂表面与灵灯修复能力不兼容，必须重做输入和表现层"],
+        "adaptation_bridge": {
+          "new_rule": "主角只能读取并短时重刻受损灵灯的灵纹断点",
+          "cost_or_constraint": "每次越级重刻都会灼伤一段经脉，修复需要真实战功与药材",
+          "changed_state": "公开守灯结果可改变家庭的防护资格与培养资源",
+          "why_causal": "能力只有在修复真实防线并接受机构复核后才能换来资源和身份变化",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "迫使主角在保留经脉与扩大保护范围之间选择，并让最终守住家区的结果可被第三方复核",
+        "rejected_source_ids": ["GF:BOOK_005"],
+        "rejection_reasons": {
+          "GF:BOOK_005": "未来片段预见提供的是信息优势，不能直接满足本槽位所需的可训练保护输出与身体代价；采用会把成长证明偷换成提前知道答案"
+        },
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "A:WORLD:WARD_REGISTRY",
+        "module": "worldbuilding",
+        "function_required": "多方武道机构共同管理防线、资格和资源，使家庭保护受制度分配影响",
+        "query": "武道 官方 势力 管理 家庭 保护",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "WB:BOOK:BOOK_001",
+        "abstract_function": "官方、传统势力与军方共同管理武者和公共风险",
+        "constraint_checks": {
+          "ability": "世界规则不赋予额外能力",
+          "resource": "防护名额、灵灯燃料和维修权分别归不同机构",
+          "world": "符合高武公共秩序与传统势力并存",
+          "character": "家庭可通过登记、申诉和社区协作影响结果"
+        },
+        "rule_conflicts": [],
+        "adaptation_bridge": {
+          "new_rule": "边城防护资格由守备府登记、灯行供应、地方宗族维护三方共同决定",
+          "cost_or_constraint": "任何一方拒绝接口都会使贫民区防线降级，但记录可被追责",
+          "changed_state": "家庭安全从私人战力问题变成可验证的公共资源权利",
+          "why_causal": "资格分配直接决定家区能否获得燃料、维修和避难入口",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "让主角必须取得维修权和公开记录，而不是只击败袭击者",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "A:SYSTEM:CRAFT_AND_COMBAT_PROOF",
+        "module": "cultivation_system",
+        "function_required": "修炼提升必须能在维修、战斗和经脉损耗三个维度被验证",
+        "query": "器物灵性 训练 资源 公开验证 战力",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "CS:BOOK:BOOK_009",
+        "abstract_function": "境界、器物构筑、训练资源和公开战力共同定义成长状态",
+        "constraint_checks": {
+          "ability": "灵纹感知和重刻受境界与器材限制",
+          "resource": "经脉修复药和灯芯材料分别消耗",
+          "world": "工匠修炼可被城防制度认证",
+          "character": "成长不能替代家人的协作和撤离决定"
+        },
+        "rule_conflicts": [],
+        "adaptation_bridge": {
+          "new_rule": "灵纹师以识纹、承载、重刻三项分别考核，战力只占其中一项",
+          "cost_or_constraint": "越级重刻提高防线输出但累积不可忽略的经脉灼痕",
+          "changed_state": "主角的成长同时改变维修权限、战场能力和恢复债务",
+          "why_causal": "每次能力提升都必须在真实断灯或守城节点中验证",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "把成长代价写入可用次数、恢复窗口和守城选择",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "A:CHARACTER:FAMILY_CO_ACTOR",
+        "module": "character_function",
+        "function_required": "被保护家人必须拥有独立目标并在关键节点直接改变防守方案",
+        "query": "独立 共战 保护 选择 关系",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "HEROINE:BOOK_008:时雨晴",
+        "abstract_function": "从被保护对象转为有独立目标和现场行动的共战者",
+        "constraint_checks": {
+          "ability": "家人不复制来源角色能力，只承担联灯与撤离组织",
+          "resource": "家人掌握住户名单和备用灯芯而非无条件资源",
+          "world": "普通人可通过社区岗位参与城防",
+          "character": "妹妹的目标是保住整条巷区，不服从主角单独带家逃走"
+        },
+        "rule_conflicts": [],
+        "adaptation_bridge": {
+          "new_rule": "家属作为联灯员有权决定哪些节点先通电并组织邻里撤离",
+          "cost_or_constraint": "留在联灯台会承担被围困风险，撤离则无法形成完整防线",
+          "changed_state": "保护关系从单向救援转成分工共担",
+          "why_causal": "妹妹的节点选择直接决定主角能力能覆盖多少家庭",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "让主角从只救自家改为接受家人提出的社区联防方案",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "A:PLOT:QUALIFICATION_TO_RESOURCE",
+        "module": "plotline",
+        "function_required": "危险任务、资格复核、资源入口和后续责任必须形成连续因果线",
+        "query": "保护 资格 成长 公开 资源",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "PL:BOOK_008",
+        "component_pointer": "/plotlines/1",
+        "component_id": "PL:008:ACADEMY",
+        "abstract_function": "通过高风险考核取得训练设施和持续资源，同时增加暴露义务",
+        "constraint_checks": {
+          "ability": "任务验证灵纹维修而非来源书能力",
+          "resource": "战功换维修材料和资格，存在机会成本",
+          "world": "考核由城防机构主持",
+          "character": "家人是否参保与主角是否入职分开结算"
+        },
+        "rule_conflicts": [],
+        "adaptation_bridge": {
+          "new_rule": "临时灯工可通过断区抢修考核申请正式维修权",
+          "cost_or_constraint": "参加考核必须把家庭暂时留在低防护区并公开能力",
+          "changed_state": "一次任务转成长期材料、权限和责任接口",
+          "why_causal": "没有公开抢修记录就无法改变家庭防护等级",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "把主角的成长试验绑定到家庭防护资格，而非旁支副本",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "A:OPENING:FAMILY_NEED_TO_TASK",
+        "module": "opening",
+        "function_required": "前十章把弱势家庭缺口、合法任务入口和首次小兑现连成一条链",
+        "query": "弱势 家庭 收入 任务 承诺",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "OP:BOOK:BOOK_001",
+        "component_pointer": "/promise_setup/0",
+        "component_id": "OP:PROMISE:1",
+        "abstract_function": "家庭资源缺口把力量觉醒转成必须验证的现实承诺",
+        "constraint_checks": {
+          "ability": "开篇只展示读纹雏形，不提前给完整守城能力",
+          "resource": "第一笔维修报酬只能延缓断供",
+          "world": "合法临时工入口可追责",
+          "character": "主角主动签下任务，家人保留反对和替代方案"
+        },
+        "rule_conflicts": [],
+        "adaptation_bridge": {
+          "new_rule": "家庭被降为末级防护户后，临时抢修是唯一可快速恢复积分的合法入口",
+          "cost_or_constraint": "首次任务只能恢复一盏灯且暴露主角异常识纹",
+          "changed_state": "家庭保护从愿望转成有价、有风险的行动目标",
+          "why_causal": "断供记录直接触发主角接任务",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "确保第一轮下降不是背景卖惨，而是迫使主角进入可失败的任务",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "A:ARC:HOME_DEFENSE_SETTLEMENT",
+        "module": "arc_structure",
+        "function_required": "训练、资格和前线守护逐级升级，并在前50章形成家庭安全结算",
+        "query": "低评价 训练 前线 保护 高潮",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "AR:BOOK:BOOK_009",
+        "component_pointer": "/arcs/3/arc_identity",
+        "component_id": "AR:ARC:BOOK_009:FRONTLINE",
+        "abstract_function": "把此前训练构筑放进公共防线危机中完成阶段验证",
+        "constraint_checks": {
+          "ability": "高潮要求维修、协作和战斗共同成立",
+          "resource": "前置材料和经脉状态决定高潮可用方案",
+          "world": "家区防线是公共设施而非私人法宝",
+          "character": "家人联灯决定保护结果"
+        },
+        "rule_conflicts": [],
+        "adaptation_bridge": {
+          "new_rule": "前线高潮改为九灯联防失效后的分区复燃",
+          "cost_or_constraint": "主角无法独自同时修复所有节点，必须授权家人和邻里分担",
+          "changed_state": "家区获得实质安全、正式防护等级和可追责记录",
+          "why_causal": "前30章的训练、材料、人际协作都成为高潮前置条件",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "使第一宏弧以家庭安全和制度登记同时改变结束",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "A:MECH:PUBLIC_REPRICING",
+        "module": "plot_mechanism",
+        "function_required": "公开证据必须迫使权威复核资源和防护资格，而不是只产生围观",
+        "query": "公开验证 评级 资源 代价",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "PM:BOOK:BOOK_009",
+        "component_pointer": "/mechanisms/1/mechanism_identity",
+        "component_id": "PM:MECH:BOOK_009:REPRICE",
+        "abstract_function": "第三方可见战果触发权威复核并重算培养资源或权限",
+        "constraint_checks": {
+          "ability": "复核对象是维修与守城结果",
+          "resource": "评级变化只重分配现有防护资源",
+          "world": "存在公开记录、权威复核和申诉接口",
+          "character": "主角必须选择公开证据并承担能力暴露"
+        },
+        "rule_conflicts": [],
+        "adaptation_bridge": {
+          "new_rule": "灯阵复核会同时查看修复记录、居民伤亡和燃料流向",
+          "cost_or_constraint": "公开复核会暴露主角能力并触发既得利益反制",
+          "changed_state": "低防护户评级和材料配额被重算",
+          "why_causal": "没有可复核数据，权威不会改变资源分配",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "让主角选择留下证据而非接受私下补偿，并由此启动下一弧压力",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      }
+    ],
+    "PROFILE:B:MIGRATION_CONVOY": [
+      {
+        "slot_id": "B:GF:BURDEN_TRANSFER",
+        "module": "golden_finger",
+        "function_required": "主角把可支配资源和自身承压转为群体保护，但不能无代价替家人承担一切",
+        "query": "资源 消耗 绑定 目标 供养 成长",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "GF:BOOK_004",
+        "abstract_function": "消耗宿主可支配之物并强化绑定目标",
+        "constraint_checks": {
+          "ability": "只转移自愿登记的负重与资源，不复制万倍强化",
+          "resource": "每次护持消耗真实粮票、灵石或主角承压位",
+          "world": "迁徙契约由驿路规则承认",
+          "character": "家人可拒绝绑定并决定资源用途"
+        },
+        "rule_conflicts": ["来源的万倍结果会消灭长期压力，必须删除倍率并加入容量上限"],
+        "adaptation_bridge": {
+          "new_rule": "承途印只能把登记家庭自愿交出的物资与负重汇入一枚临时护路锚",
+          "cost_or_constraint": "主角每开启一个承压位就冻结一段修炼通道，且不能替他人决定投入",
+          "changed_state": "家庭共同投入可以延长车队安全时间，但主角成长速度下降",
+          "why_causal": "保护强度来自真实集体选择和可消耗资源，而非凭空增幅",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "把保护从个人爆发改为家人决定投入、主角承担长期成长代价的集体行动",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "B:WORLD:RESOURCE_COMMONS",
+        "module": "worldbuilding",
+        "function_required": "聚居共同体拥有可分配资源和自治岗位，迁徙安全依赖组织而非单人战力",
+        "query": "资源 共同体 治理 试炼 保护",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "WB:BOOK:BOOK_006",
+        "component_pointer": "/factions/1",
+        "component_id": "WB-F2",
+        "abstract_function": "区域共同体自行经营生产、训练、军队和远征资源",
+        "constraint_checks": {
+          "ability": "共同体只提供组织接口",
+          "resource": "路线、车辆、粮药和护卫名额有独立库存",
+          "world": "改为高武迁徙带而非个人神域",
+          "character": "普通家属可承担账房、侦路和护队岗位"
+        },
+        "rule_conflicts": ["个人神域所有权不适用于公共迁徙路线，必须改成多户共同体"],
+        "adaptation_bridge": {
+          "new_rule": "低地聚落以户籍份额共同持有车队资源，但安全路线由上级驿盟审批",
+          "cost_or_constraint": "资源分配需要公开账目，缺额会直接减少可迁户数",
+          "changed_state": "家人拥有组织筹码，也暴露于驿盟配额压力",
+          "why_causal": "能否迁出取决于共同体组织与审批双重结果",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "让家庭组织、资源盘点和路线权共同决定保护结果",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "B:SYSTEM:SHARED_BURDEN_PHYSIOLOGY",
+        "module": "cultivation_system",
+        "function_required": "需要支持承压位冻结、护路锚持续时间和恢复债务的成长体系",
+        "query": "资源 经营 多职业 战力 权限",
+        "candidate_limit": 12,
+        "decision": "ORIGINAL_DESIGN",
+        "abstract_function": "以承压位、经脉冻结和恢复周期约束保护能力",
+        "constraint_checks": {
+          "ability": "承压位数量随境界增长但不能临战无限新增",
+          "resource": "恢复依赖路线战功和专门药材",
+          "world": "体系必须能被驿盟检测",
+          "character": "主角不能绕过家人自愿投入规则"
+        },
+        "rule_conflicts": ["候选 CS:BOOK:BOOK_006 以个人神域和眷属文明为核心，无法直接解释人体承压位与迁徙护锚"],
+        "effect_on_action_or_payoff": "限制主角一次能保护的车辆数量，并把成长债延续到下一阶段",
+        "rejected_source_ids": ["CS:BOOK:BOOK_006"],
+        "rejection_reasons": {
+          "CS:BOOK:BOOK_006": "其修炼对象、资源接口和身份权限都建立在个人神域所有权上，与共享迁徙契约的身体成本发生硬接口冲突"
+        },
+        "gap_reason": "检索到的神域经营体系不能直接复用；采用明确的 ORIGINAL_DESIGN 承压位体系并保留人工审核"
+      },
+      {
+        "slot_id": "B:CHARACTER:HOUSEHOLD_ORGANIZERS",
+        "module": "character_function",
+        "function_required": "家属和普通迁民能够独立盘点、编组、侦路并反向约束主角方案",
+        "query": "资源配置 自治 选择 战术 组织",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "CF:BOOK:BOOK_006",
+        "component_pointer": "/narrative_functions/2",
+        "component_id": "NF3",
+        "abstract_function": "基层成员把普通个体组织成战术与生产能力",
+        "constraint_checks": {
+          "ability": "普通家属不获得主角能力",
+          "resource": "他们控制车队清单、哨位和补给顺序",
+          "world": "岗位由共同体授权",
+          "character": "姑母和青年车夫有自己的保全目标和否决权"
+        },
+        "rule_conflicts": [],
+        "adaptation_bridge": {
+          "new_rule": "迁民议事组可决定分车、侦路和物资投入，主角只掌握护锚技术",
+          "cost_or_constraint": "集体方案更慢且必须接受伤员和老人的优先级",
+          "changed_state": "家人从被运送对象变成路线方案的共同作者",
+          "why_causal": "编组质量直接决定护锚覆盖和车队损失",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "迫使主角放弃只带自家突围，转为保护由家属重组的多户车队",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "B:PLOT:ORGANIZATION_UNDER_REAL_LOSS",
+        "module": "plotline",
+        "function_required": "共同体组织必须在真实伤亡规则下被验证，并把结果换成路线权和战利品",
+        "query": "文明 组织 真实伤亡 公开 战利品",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "PL:BOOK:BOOK_006",
+        "component_pointer": "/plotlines/2",
+        "component_id": "PL003",
+        "abstract_function": "组织能力进入真实损失规则，并以结果换公开资格和资源",
+        "constraint_checks": {
+          "ability": "主角护锚只是组织中的一环",
+          "resource": "损耗、伤员和战利品均可计账",
+          "world": "路线试行有真实风险和复核者",
+          "character": "家属方案和主角方案共同接受结果检验"
+        },
+        "rule_conflicts": [],
+        "adaptation_bridge": {
+          "new_rule": "临时迁徙证必须通过一次危险支路护送验证",
+          "cost_or_constraint": "失败会损失车辆、物资和后续申请信用",
+          "changed_state": "组织战果转成正式通行份额",
+          "why_causal": "驿盟只承认可核查的护送记录",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "使迁徙权来自集体完成的护送任务，而非主角个人声望",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "B:OPENING:SCARCE_STARTING_ASSETS",
+        "module": "opening",
+        "function_required": "开篇把家庭低配额、有限启动资源和经营承诺快速显性化",
+        "query": "弱势 资源 投资 经营 承诺",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "OP:BOOK:BOOK_006",
+        "component_pointer": "/promise_setup/1",
+        "component_id": "OP006-PR2",
+        "abstract_function": "有限启动投资建立能否转化为公开成果的承诺",
+        "constraint_checks": {
+          "ability": "不提前揭示完整承途印",
+          "resource": "三辆旧车和一份临时路票是有限投入",
+          "world": "资源来自聚落共有而非学校赠送",
+          "character": "家庭会议决定是否把资源交给主角试行"
+        },
+        "rule_conflicts": [],
+        "adaptation_bridge": {
+          "new_rule": "聚落只肯给主角一次支路试运和三辆旧车",
+          "cost_or_constraint": "失败会削减全家正式迁徙份额",
+          "changed_state": "保护愿望转成可计量的试运目标",
+          "why_causal": "低配额迫使家庭在留下和试运之间选择",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "使前十章的两次下降都来自资源决策和失败后果",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "B:ARC:EXTERNAL_PROBLEM_TO_CONTRACT",
+        "module": "arc_structure",
+        "function_required": "把外部迁徙困境、试运验证和稳定合作合同组织成阶段弧",
+        "query": "资源 治理 外部合作 阶段",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "AR:BOOK:BOOK_006",
+        "component_pointer": "/arcs/4/arc_identity",
+        "component_id": "AR:ARC:006:005",
+        "abstract_function": "用受控方案解决外部群体困境并建立稳定合作",
+        "constraint_checks": {
+          "ability": "合作依赖护路锚但不等于能力升级",
+          "resource": "安全路线和正式份额是阶段结果",
+          "world": "合同由驿盟和迁民共同体共同确认",
+          "character": "家属组织结果是合同成立条件"
+        },
+        "rule_conflicts": [],
+        "adaptation_bridge": {
+          "new_rule": "支路试运成功才能把临时车队升级为正式迁民共同体",
+          "cost_or_constraint": "主角必须公开承压位损伤并接受后续限载",
+          "changed_state": "家庭和同行者取得真实路线权，主角留下成长债",
+          "why_causal": "合同只在外部困境被可重复方案解决后成立",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "让第一弧以安全抵达和正式通行权结算，而不是打赢沿途敌人",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "B:MECH:DELEGATED_AUTONOMY",
+        "module": "plot_mechanism",
+        "function_required": "主角给出边界与资源，家属自治编组并让结果反向改变下一步",
+        "query": "自治 资源 边界 战果 组织",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "PM:BOOK:BOOK_006",
+        "component_pointer": "/mechanisms/2/mechanism_identity",
+        "component_id": "PM006-3",
+        "abstract_function": "上位行动者提供边界与资源，基层成员自治执行并以结果反哺",
+        "constraint_checks": {
+          "ability": "主角只设护锚容量和禁区",
+          "resource": "家庭议事组分配车辆和物资",
+          "world": "自治受公开账目和路线法约束",
+          "character": "普通人选择能改变主角保护半径与代价"
+        },
+        "rule_conflicts": ["来源的神明—眷属层级不能复用，必须改为平等授权"],
+        "adaptation_bridge": {
+          "new_rule": "主角公布护锚边界后，由迁民议事组自行编车、侦路和分配负重",
+          "cost_or_constraint": "主角不得临时夺回已授权资源，错误决策由共同体承担并复盘",
+          "changed_state": "基层方案反过来决定主角下一次承压位配置",
+          "why_causal": "自治结果直接进入资源和路线的下一轮选择",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "让家人真正改变车队方案、损耗和最终安全结果",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      }
+    ]
+  },
+  "enhanced_options": [
+    {
+      "option_id": "BRIDGE:A:ENHANCED",
+      "pair_id": "PAIR:A:LAMP_WARD",
+      "mode": "E2_E3_ENABLED",
+      "status": "candidate",
+      "qa_status": "HOLD",
+      "research_state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "title": "候选A：九灯旧巷",
+      "premise": "被降为末级防护户的少年灯工，通过受限灵纹能力、家人联防和公开复核争回整条旧巷的实际保护权。",
+      "causal_signature": {
+        "central_conflict": "固定家园的公共防线资源被既得利益截流",
+        "ability_logic": "读取断纹并以经脉灼伤换短时重刻",
+        "relationship_topology": "家人掌握联灯顺序并要求扩大保护对象",
+        "institution_engine": "维修资格与公开复核重算防护等级",
+        "next_arc_trigger": "燃料批次与登记记录不一致"
+      },
+      "emotion_source_uses": [
+        {"record_kind":"line","record_id":"EL:BOOK_001:001","similarity_reason":"家庭安全必须由能力转化为可见改善","transferable_part":"保护结果需要可持续资源与家庭状态变化","reuse_limit":"不复用原人物、药物或章节事件"},
+        {"record_kind":"line","record_id":"EL:BOOK_001:002","similarity_reason":"成长必须经任务验证并保留代价","transferable_part":"能力—任务—外部证明—新缺口的循环","reuse_limit":"不复用点数和原功法"},
+        {"record_kind":"line","record_id":"EL:BOOK_001:005","similarity_reason":"关系需要以资源和风险互助获得证明","transferable_part":"他人选择成为家庭保护的行动接口","reuse_limit":"不复用原伙伴关系和事件链"},
+        {"record_kind":"line","record_id":"EL:BOOK_001:003","similarity_reason":"长期势力压力通过资格和公共责任持续作用","transferable_part":"合法入口、权限与公开后果的阶段变化","reuse_limit":"不把阶段权限写成稳定正式位置"},
+        {"record_kind":"weave","record_id":"EW:BOOK_001:001","similarity_reason":"家庭缺口可因果推动制度入口","transferable_part":"家庭压力→接受有风险合法任务","reuse_limit":"只能复用关系类型，不复制任务"},
+        {"record_kind":"weave","record_id":"EW:BOOK_001:006","similarity_reason":"关系资源可真实改变家庭保护选择","transferable_part":"伙伴/家属行动打开保护方案","reuse_limit":"必须保留他人独立目标"},
+        {"record_kind":"weave","record_id":"EW:BOOK_001:013","similarity_reason":"制度公开变化会反向增加家庭压力","transferable_part":"公共规则变化→家庭安全条件变化","reuse_limit":"不能以新闻背景冒充因果"},
+        {"record_kind":"macro","record_id":"MA:BOOK_001:001","similarity_reason":"家庭保护、成长验证和合法位置共同组织较大承诺","transferable_part":"多线阶段结果不能代替完整宏弧结算","reuse_limit":"来源宏弧自身仍PARTIALLY_PAID"},
+        {"record_kind":"macro","record_id":"MA:BOOK_001:002","similarity_reason":"新秘密可提前启动并持续组织后续问题","transferable_part":"证据逐级增加而不一次揭底","reuse_limit":"不复用父辈遗产或潮汐主题"},
+        {"record_kind":"handoff","record_id":"AH:BOOK_001:001","similarity_reason":"观察到旧弧未完时新期待启动并重叠","transferable_part":"保留旧合同、限制新线披露范围","reuse_limit":"只作重叠候选，不能宣称主导权交接成功"}
+      ],
+      "story_nodes": [
+        {"node_id":"EA1","chapter_range":"1-3","cause":"守备府按欠费记录把旧巷降为末级防护区","event":"主角家被拒绝进入高阶避难灯区","character_choice":"主角签下无人愿接的夜间临时灯工契约","decision_makers":["主角","母亲"],"consequence":"家庭保护从愿望变成有期限的资格目标","reveals":["家庭防护等级被下调","临时灯工可积累复核记录"]},
+        {"node_id":"EA2","chapter_range":"4-8","cause":"第一轮暴雨使旧灯阵连锁熄灭","event":"主角按旧图抢修仍失败，家人被迫二次转移","character_choice":"主角留下记录并承担维修责任，不接受灯行删档换赔偿","decision_makers":["主角","母亲"],"consequence":"第二次下降形成，能力与制度两条缺口同时暴露","reveals":["旧图与现实断点不一致","删档可以换取短期补偿"]},
+        {"node_id":"EA3","chapter_range":"9-15","cause":"失败记录使主角获得进入废灯库复查的机会","event":"他发现自己能读取断纹并短时重刻，但经脉出现灼伤","character_choice":"只修复一条验证回路并保留伤势证据","decision_makers":["主角"],"consequence":"成长线启动，能力有可测试输出和明确上限","reveals":["主角能读取灵纹断点","越级重刻会灼伤经脉"]},
+        {"node_id":"EA4","chapter_range":"16-22","cause":"一条回路不足以覆盖所有住户","event":"妹妹组织住户担任联灯员并提出九点分区方案","character_choice":"主角放弃只接自家线路，接受家人扩大保护范围的方案","decision_makers":["主角","妹妹","住户代表"],"consequence":"关系线真实改变防守目标、资源分配和风险","reveals":["家人掌握住户与备用灯芯清单","九点联灯需要普通人协作"]},
+        {"node_id":"EA5","chapter_range":"23-30","cause":"正式维修权要求公开抢修考核","event":"主角与联灯组完成一次断区抢修，获得临时材料配额","character_choice":"公开伤势与维修数据，拒绝只展示战斗输出","decision_makers":["主角","妹妹","复核官"],"consequence":"家庭防护获得阶段改善，能力和关系分别取得局部兑现","reveals":["公开维修结果可触发防护复核","主角伤势限制下一次重刻"]},
+        {"node_id":"EA6","chapter_range":"31-35","cause":"复核数据暴露燃料批次与登记数量不符","event":"妹妹保留一枚被要求销毁的旧灯芯编号","character_choice":"家人只公开编号异常，不提前指认幕后势力","decision_makers":["主角","妹妹"],"consequence":"下一宏弧获得有限触发，旧弧仍等待真正守住家区","reveals":["燃料批次与登记记录不一致"]},
+        {"node_id":"EA7","chapter_range":"36-40","cause":"灯行担心复核扩大，私下提出恢复主角一家资格","event":"对方要求主角撤回整条旧巷的维修记录","character_choice":"主角和家人拒绝私下名额，选择公开九灯联防验收","decision_makers":["主角","母亲","妹妹"],"consequence":"势力压力升级，最终保护必须在公开危机中完成","reveals":["灯行愿用单户资格交换撤档","旧巷验收将决定整区资源"]},
+        {"node_id":"EA8","chapter_range":"41-46","cause":"兽潮冲击与燃料短缺同时压垮九灯阵","event":"家人按分区点灯，主角以受限重刻逐段复燃，旧巷保持避难通道","character_choice":"主角保留最后一段经脉，不追杀退敌，优先稳定避难线","decision_makers":["主角","妹妹","住户联灯组"],"consequence":"家庭和旧巷获得可见安全结果，主角留下恢复债务","reveals":["九灯联防成功保护旧巷","主角经脉损伤需要长期恢复"]},
+        {"node_id":"EA9","chapter_range":"47-50","cause":"守城结果必须进入制度结算","event":"旧巷防护等级恢复，异常编号进入独立审计","character_choice":"主角接受限期维修责任但不加入灯行私契","decision_makers":["主角","守备府","家人"],"consequence":"旧弧实际兑现，新弧保持调查入口而未揭示结论","reveals":["旧巷正式恢复防护资格","异常编号进入审计但责任人未知"]}
+      ],
+      "emotion_lines": [
+        {"line_id":"EA:LINE:FAMILY","line_role":"FAMILY_PROTECTION","source_pattern_refs":["EL:BOOK_001:001"],"reader_expectation":"主角能否把能力转成家人和旧巷的真实安全","payoff_domain":"FAMILY_SAFETY","payoff_contract":"九灯联防实际运行，家人进入安全区且旧巷防护资格恢复","state_transitions":[{"node_id":"EA1","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["家庭防护等级被下调"]},{"node_id":"EA2","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["旧图与现实断点不一致"]},{"node_id":"EA5","from":"ACTIVE","to":"PARTIALLY_PAID","reader_knowledge_added":["公开维修结果可触发防护复核"]},{"node_id":"EA8","from":"PARTIALLY_PAID","to":"PAID","reader_knowledge_added":["九灯联防成功保护旧巷"]}]},
+        {"line_id":"EA:LINE:GROWTH","line_role":"GROWTH_COST","source_pattern_refs":["EL:BOOK_001:002"],"reader_expectation":"低评价能力能否经真实任务证明且不抹掉代价","payoff_domain":"CAPABILITY_PROOF","payoff_contract":"重刻能力通过陌生断区和兽潮验证，经脉伤势及恢复债同步可见","state_transitions":[{"node_id":"EA2","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["旧图与现实断点不一致"]},{"node_id":"EA3","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["主角能读取灵纹断点","越级重刻会灼伤经脉"]},{"node_id":"EA5","from":"ACTIVE","to":"PARTIALLY_PAID","reader_knowledge_added":["主角伤势限制下一次重刻"]},{"node_id":"EA8","from":"PARTIALLY_PAID","to":"PAID","reader_knowledge_added":["主角经脉损伤需要长期恢复"]}]},
+        {"line_id":"EA:LINE:RELATIONSHIP","line_role":"RELATIONSHIP_AGENCY","source_pattern_refs":["EL:BOOK_001:005"],"reader_expectation":"家人能否从被保护对象变成改变方案的共同行动者","payoff_domain":"RELATIONSHIP_AGENCY","payoff_contract":"家人提出并执行联灯方案，其选择实际改变保护范围和最终结果","state_transitions":[{"node_id":"EA4","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["家人掌握住户与备用灯芯清单"]},{"node_id":"EA5","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["公开维修结果可触发防护复核"]},{"node_id":"EA8","from":"ACTIVE","to":"PAID","reader_knowledge_added":["九灯联防成功保护旧巷"]}]},
+        {"line_id":"EA:LINE:FACTION","line_role":"LONG_TERM_FACTION_PRESSURE","source_pattern_refs":["EL:BOOK_001:003"],"reader_expectation":"公开记录能否改变防护分配，并揭开长期截流压力","payoff_domain":"INSTITUTIONAL_POSITION","payoff_contract":"旧巷资格被正式恢复且异常记录进入可追责审计，幕后责任仍作为后续债务","state_transitions":[{"node_id":"EA1","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["临时灯工可积累复核记录"]},{"node_id":"EA5","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["公开维修结果可触发防护复核"]},{"node_id":"EA9","from":"ACTIVE","to":"PARTIALLY_PAID","reader_knowledge_added":["异常编号进入审计但责任人未知"]}]}
+      ],
+      "weaves": [
+        {"weave_id":"EA:WEAVE:1","source_weave_refs":["EW:BOOK_001:001"],"relation_type":"CAUSES_PRESSURE","from_line_id":"EA:LINE:FAMILY","to_line_id":"EA:LINE:FACTION","node_id":"EA1","causal_bridge":"家庭防护降级直接迫使主角进入可追责的临时工制度","effect_on_choice":"主角签合法任务而不是私下偷灯油"},
+        {"weave_id":"EA:WEAVE:2","source_weave_refs":["EW:BOOK_001:006"],"relation_type":"ENABLES_CHOICE","from_line_id":"EA:LINE:RELATIONSHIP","to_line_id":"EA:LINE:FAMILY","node_id":"EA4","causal_bridge":"妹妹掌握的住户与灯芯清单使九点联防成为可行方案","effect_on_choice":"主角从只救自家转向保护整条旧巷"},
+        {"weave_id":"EA:WEAVE:3","source_weave_refs":["EW:BOOK_001:013"],"relation_type":"CAUSES_PRESSURE","from_line_id":"EA:LINE:FACTION","to_line_id":"EA:LINE:FAMILY","node_id":"EA7","causal_bridge":"公开复核规则使灯行的私下交换无法同时满足整区保护","effect_on_choice":"家庭拒绝单户名额并承担公开验收风险"},
+        {"weave_id":"EA:WEAVE:4","source_weave_refs":["EW:BOOK_001:004"],"relation_type":"CO_PAYOFF","from_line_id":"EA:LINE:GROWTH","to_line_id":"EA:LINE:FAMILY","node_id":"EA8","causal_bridge":"受限重刻与家人联灯必须同时成立才能稳定避难线","effect_on_choice":"主角停止追敌，把剩余能力用于稳定家区"}
+      ],
+      "macro_arcs": [
+        {"macro_id":"EA:MACRO:A","label":"争回真实保护权","source_macro_refs":["MA:BOOK_001:001"],"settlement_contract":"九灯联防在真实危机中保护家人和旧巷，防护资格正式恢复，并留下主角成长代价","state_transitions":[{"node_id":"EA1","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["家庭防护等级被下调"]},{"node_id":"EA2","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["旧图与现实断点不一致"]},{"node_id":"EA5","from":"ACTIVE","to":"PARTIALLY_PAID","reader_knowledge_added":["公开维修结果可触发防护复核"]},{"node_id":"EA8","from":"PARTIALLY_PAID","to":"PAID","reader_knowledge_added":["九灯联防成功保护旧巷"]}]},
+        {"macro_id":"EA:MACRO:B","label":"追查防护资源截流","source_macro_refs":["MA:BOOK_001:002"],"settlement_contract":"查清异常燃料与登记链条，迫使至少一项资源分配或问责规则发生可见变化","state_transitions":[{"node_id":"EA6","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["燃料批次与登记记录不一致"]},{"node_id":"EA9","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["异常编号进入审计但责任人未知"]}]}
+      ],
+      "handoff": {"handoff_id":"EA:HANDOFF:A-B","source_handoff_refs":["AH:BOOK_001:001"],"trigger_node_id":"EA6","old_arc_contract_retained":"九灯联防在真实危机中保护家人和旧巷，防护资格正式恢复，并留下主角成长代价","new_arc_promise":"异常燃料和登记链条为何长期牺牲低防护区","withheld_questions":["谁修改登记","资源流向何处","守备府与灯行各自承担什么责任"],"dominance_transfer_status":"CANDIDATE_UNVERIFIED","qa_status":"HOLD"},
+      "story_spine": {"stages":[{"stage":"trigger","story_task":"EA1 防护降级"},{"stage":"goal","story_task":"恢复家庭与旧巷保护"},{"stage":"resistance","story_task":"断灯、资格和截流压力"},{"stage":"nodes","story_task":"EA2-EA7 失败、成长、家人联防、公开复核"},{"stage":"choice","story_task":"拒绝单户私下资格"},{"stage":"cost","story_task":"经脉灼伤与能力暴露"},{"stage":"payoff","story_task":"EA8 九灯联防成功"},{"stage":"state_change","story_task":"旧巷资格恢复"},{"stage":"next_entry","story_task":"EA6/EA9 异常编号进入审计"}]},
+      "chapter_phases": [
+        {"range":"1-10","purpose":"两次下降：资格被夺与抢修失败","payoff":"确认合法任务和能力雏形"},
+        {"range":"11-25","purpose":"能力代价与家人联防形成","payoff":"九点方案具备执行条件"},
+        {"range":"26-40","purpose":"公开复核、局部改善和新弧线索","payoff":"临时配额到账但公开冲突升级"},
+        {"range":"41-50","purpose":"家园守护实际结算并保留审计入口","payoff":"家庭安全、资格和成长代价同时可见"}
+      ],
+      "continuation_conditions": ["经脉恢复资源仍未解决","异常编号责任链仍未知","正式维修责任会持续制造资源和公共选择"],
+      "material_profile_id": "PROFILE:A:LAMP_WARD",
+      "material_bindings": {
+        "A:GF:VISIBLE_COSTLY_GROWTH":{"story_node_ids":["EA3","EA5","EA8"],"node_effects":{"EA3":"能力出现但经脉灼伤限制试用","EA5":"公开抢修证明能力并暴露恢复缺口","EA8":"主角选择稳定防线而非追敌"}},
+        "A:WORLD:WARD_REGISTRY":{"story_node_ids":["EA1","EA6","EA9"],"node_effects":{"EA1":"防护等级直接制造家庭危机","EA6":"登记与燃料记录形成有限新线索","EA9":"公开守城结果转成正式资格"}},
+        "A:SYSTEM:CRAFT_AND_COMBAT_PROOF":{"story_node_ids":["EA3","EA8"],"node_effects":{"EA3":"识纹、承载和重刻分别受限","EA8":"经脉状态决定高潮可用方案"}},
+        "A:CHARACTER:FAMILY_CO_ACTOR":{"story_node_ids":["EA4","EA8"],"node_effects":{"EA4":"妹妹提出方案改变保护范围","EA8":"家人执行联灯决定避难线能否成立"}},
+        "A:PLOT:QUALIFICATION_TO_RESOURCE":{"story_node_ids":["EA2","EA5"],"node_effects":{"EA2":"失败记录打开正式考核入口","EA5":"考核结果换取材料和维修资格"}},
+        "A:OPENING:FAMILY_NEED_TO_TASK":{"story_node_ids":["EA1","EA2"],"node_effects":{"EA1":"家庭缺口迫使主角接合法任务","EA2":"首次任务失败形成第二次下降"}},
+        "A:ARC:HOME_DEFENSE_SETTLEMENT":{"story_node_ids":["EA5","EA8"],"node_effects":{"EA5":"训练与资格进入高潮前置","EA8":"多项前置共同结算家庭保护"}},
+        "A:MECH:PUBLIC_REPRICING":{"story_node_ids":["EA5","EA7","EA9"],"node_effects":{"EA5":"公开证据触发防护复核","EA7":"私下交易与公开证据形成选择","EA9":"结果重算防护资格并打开审计"}}
+      }
+    },
+    {
+      "option_id": "BRIDGE:B:ENHANCED",
+      "pair_id": "PAIR:B:MIGRATION_CONVOY",
+      "mode": "E2_E3_ENABLED",
+      "status": "candidate",
+      "qa_status": "HOLD",
+      "research_state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "title": "候选B：背山迁途",
+      "premise": "被排除在安全迁徙配额之外的弱势少年，以有容量上限的承途印和家属自治车队争取全家的真实通行权。",
+      "causal_signature": {
+        "central_conflict": "迁徙配额和安全路线被上级驿盟垄断",
+        "ability_logic": "家庭自愿投入资源，主角冻结修炼通道形成护路锚",
+        "relationship_topology": "迁民议事组拥有编车和资源否决权",
+        "institution_engine": "真实护送记录换取正式路线合同",
+        "next_arc_trigger": "官方安全路线与旧路标发生空间矛盾"
+      },
+      "emotion_source_uses": [
+        {"record_kind":"line","record_id":"EL:BOOK_001:001","similarity_reason":"保护必须落实为家庭生活与安全状态","transferable_part":"资源投入必须回到家庭可见结果","reuse_limit":"不复用治疗和原家庭设定"},
+        {"record_kind":"line","record_id":"EL:BOOK_001:002","similarity_reason":"成长输出必须在危险任务中验证并保留边界","transferable_part":"能力验证同时产生新成长缺口","reuse_limit":"不复用点数循环"},
+        {"record_kind":"line","record_id":"EL:BOOK_001:005","similarity_reason":"关系通过资源和风险互惠形成可靠通道","transferable_part":"他人投入改变可行行动","reuse_limit":"迁民家属不是原伙伴映射"},
+        {"record_kind":"line","record_id":"EL:BOOK_001:003","similarity_reason":"资格、任务和公共位置持续施压","transferable_part":"临时入口到正式权限的阶段变化","reuse_limit":"不能把一次护送当稳定制度位置"},
+        {"record_kind":"weave","record_id":"EW:BOOK_001:007","similarity_reason":"成长状态可以改变家庭选择并打开更大问题","transferable_part":"能力进展→新信息/家庭选择条件","reuse_limit":"不能复用父辈秘密触发链"},
+        {"record_kind":"weave","record_id":"EW:BOOK_001:006","similarity_reason":"关系行动能够启用家庭保护方案","transferable_part":"他人资源与选择打开新路径","reuse_limit":"必须保留资源所有权"},
+        {"record_kind":"weave","record_id":"EW:BOOK_001:008","similarity_reason":"制度任务可对长期秘密线产生压力但不等于阻断","transferable_part":"并行目标形成优先级压力","reuse_limit":"不得声称直接因果已被来源验证"},
+        {"record_kind":"macro","record_id":"MA:BOOK_001:001","similarity_reason":"家庭保护、成长和合法位置可共同组织宏弧","transferable_part":"多线合同须独立满足","reuse_limit":"来源宏弧未完整结算"},
+        {"record_kind":"macro","record_id":"MA:BOOK_001:002","similarity_reason":"有限证据可以让长期问题先启动后资格化","transferable_part":"线索持续增加且阶段兑现不等于真相终结","reuse_limit":"不复用父辈、档案和潮汐内容"},
+        {"record_kind":"handoff","record_id":"AH:BOOK_001:001","similarity_reason":"新期待可在旧弧未支付时打开并重叠","transferable_part":"明确旧合同、触发证据和保留问题","reuse_limit":"完整主导权交接仍未验证"}
+      ],
+      "story_nodes": [
+        {"node_id":"EB1","chapter_range":"1-4","cause":"山脉沉降使低地聚落进入强制迁徙名单，但主角家没有安全路线配额","event":"驿盟拒绝一家人的正式路票","character_choice":"主角要求公开配额账并接受一次临时支路试运","decision_makers":["主角","姑母","聚落账房"],"consequence":"家庭保护被转成路线权、车辆和物资的具体目标","reveals":["主角家没有安全路线配额","临时试运可产生申请记录"]},
+        {"node_id":"EB2","chapter_range":"5-9","cause":"临时车队沿旧支路遭遇塌桥和掠夺","event":"主角的个人护送失败，三辆旧车损毁一辆","character_choice":"主角拒绝伪报无损，保留真实损耗以换复核机会","decision_makers":["主角","车夫"],"consequence":"第二次下降形成，个人英雄路线被证伪","reveals":["旧支路维护记录失真","个人护送不足以保护车队"]},
+        {"node_id":"EB3","chapter_range":"10-16","cause":"损耗复核让主角接触废弃承途碑","event":"他能把自愿投入汇成护路锚，但每个承压位冻结一段修炼通道","character_choice":"只开启一个承压位并公开容量上限","decision_makers":["主角","姑母"],"consequence":"成长线启动，保护能力依赖真实资源和长期代价","reveals":["承途印需要家庭自愿投入","每个承压位会冻结修炼通道"]},
+        {"node_id":"EB4","chapter_range":"17-23","cause":"一个承压位只能覆盖少量车辆","event":"姑母召集迁民议事组重排车辆、伤员和侦路岗位","character_choice":"主角接受集体编车，不再把所有风险集中到自己","decision_makers":["主角","姑母","车夫代表","伤员家属"],"consequence":"关系线改变车队规模、资源投入和能力使用顺序","reveals":["迁民议事组可重排车辆与物资","普通家属能承担侦路和哨位"]},
+        {"node_id":"EB5","chapter_range":"24-30","cause":"正式路票要求完成一次真实伤亡规则下的支路护送","event":"自治车队以可核查损耗完成试运并取得临时份额","character_choice":"家属优先保伤员车，主角放弃追击抢功","decision_makers":["主角","姑母","迁民议事组"],"consequence":"家庭获得局部保护，能力和组织分别通过外部验证","reveals":["真实护送记录可换临时通行份额","护路锚仍受承压位上限限制"]},
+        {"node_id":"EB6","chapter_range":"31-35","cause":"复核路线时旧路标与官方安全图出现矛盾","event":"车夫找到一枚被人为移位的驿标","character_choice":"议事组只登记空间矛盾，不提前宣称驿盟阴谋","decision_makers":["主角","车夫代表","姑母"],"consequence":"下一宏弧获得有限证据入口，家庭仍未安全抵达","reveals":["旧路标与官方安全图不一致"]},
+        {"node_id":"EB7","chapter_range":"36-40","cause":"上级驿商提出给主角一家单独路票，条件是解散多户车队","event":"单户安全与共同体合同发生冲突","character_choice":"主角服从议事组决议，维持多户车队并公开账目","decision_makers":["主角","姑母","迁民议事组"],"consequence":"势力压力升级，保护目标从一家扩展为可持续共同体","reveals":["驿商愿以单户路票换取车队解散","多户合同会触动既有配额"]},
+        {"node_id":"EB8","chapter_range":"41-47","cause":"沉降加速，车队必须穿过风切峡完成最终迁徙","event":"家属自治分车、侦路和补给，主角以有限承压位维持护路锚，全队抵达高地","character_choice":"主角不新增致残承压位，按议事组方案分批通过","decision_makers":["主角","姑母","车夫代表","伤员家属"],"consequence":"家庭与共同体获得真实安全和正式通行合同，主角保留成长债","reveals":["车队安全抵达高地","主角两段修炼通道处于冻结恢复期"]},
+        {"node_id":"EB9","chapter_range":"48-50","cause":"安全抵达需要制度结算和路线复盘","event":"多户车队获得正式路票，移位驿标进入跨区核查","character_choice":"主角接受限载规则，不用战功换取个人免审","decision_makers":["主角","驿盟复核员","迁民议事组"],"consequence":"旧弧兑现，新弧只确认路线记录异常，未揭示受益者和目的","reveals":["多户车队取得正式通行合同","移位驿标进入核查但受益者未知"]}
+      ],
+      "emotion_lines": [
+        {"line_id":"EB:LINE:FAMILY","line_role":"FAMILY_PROTECTION","source_pattern_refs":["EL:BOOK_001:001"],"reader_expectation":"主角能否让家人取得真实路线权并安全抵达","payoff_domain":"FAMILY_SAFETY","payoff_contract":"家庭随多户车队安全抵达高地并获得正式通行合同","state_transitions":[{"node_id":"EB1","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["主角家没有安全路线配额"]},{"node_id":"EB2","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["个人护送不足以保护车队"]},{"node_id":"EB5","from":"ACTIVE","to":"PARTIALLY_PAID","reader_knowledge_added":["真实护送记录可换临时通行份额"]},{"node_id":"EB8","from":"PARTIALLY_PAID","to":"PAID","reader_knowledge_added":["车队安全抵达高地"]}]},
+        {"line_id":"EB:LINE:GROWTH","line_role":"GROWTH_COST","source_pattern_refs":["EL:BOOK_001:002"],"reader_expectation":"承途印能否提升保护能力而不让代价消失","payoff_domain":"CAPABILITY_PROOF","payoff_contract":"护路锚通过真实迁徙验证，承压位冻结和恢复期继续约束后续成长","state_transitions":[{"node_id":"EB2","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["旧支路维护记录失真"]},{"node_id":"EB3","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["承途印需要家庭自愿投入","每个承压位会冻结修炼通道"]},{"node_id":"EB5","from":"ACTIVE","to":"PARTIALLY_PAID","reader_knowledge_added":["护路锚仍受承压位上限限制"]},{"node_id":"EB8","from":"PARTIALLY_PAID","to":"PAID","reader_knowledge_added":["主角两段修炼通道处于冻结恢复期"]}]},
+        {"line_id":"EB:LINE:RELATIONSHIP","line_role":"RELATIONSHIP_AGENCY","source_pattern_refs":["EL:BOOK_001:005"],"reader_expectation":"家人是否拥有资源与方案决策权而非只被运输","payoff_domain":"RELATIONSHIP_AGENCY","payoff_contract":"迁民议事组的编车和分批方案实际决定车队规模、损耗与安全结果","state_transitions":[{"node_id":"EB4","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["迁民议事组可重排车辆与物资"]},{"node_id":"EB5","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["真实护送记录可换临时通行份额"]},{"node_id":"EB8","from":"ACTIVE","to":"PAID","reader_knowledge_added":["车队安全抵达高地"]}]},
+        {"line_id":"EB:LINE:FACTION","line_role":"LONG_TERM_FACTION_PRESSURE","source_pattern_refs":["EL:BOOK_001:003"],"reader_expectation":"公开护送记录能否改变配额，并揭开路线异常的长期受益链","payoff_domain":"INSTITUTIONAL_POSITION","payoff_contract":"多户车队取得正式路票且移位驿标进入核查，完整受益链继续作为后续债务","state_transitions":[{"node_id":"EB1","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["临时试运可产生申请记录"]},{"node_id":"EB5","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["真实护送记录可换临时通行份额"]},{"node_id":"EB9","from":"ACTIVE","to":"PARTIALLY_PAID","reader_knowledge_added":["移位驿标进入核查但受益者未知"]}]}
+      ],
+      "weaves": [
+        {"weave_id":"EB:WEAVE:1","source_weave_refs":["EW:BOOK_001:006"],"relation_type":"ENABLES_CHOICE","from_line_id":"EB:LINE:RELATIONSHIP","to_line_id":"EB:LINE:FAMILY","node_id":"EB4","causal_bridge":"家属重排车辆与物资后，有限承压位才可能覆盖多户车队","effect_on_choice":"主角放弃单人全扛，接受分批与岗位自治"},
+        {"weave_id":"EB:WEAVE:2","source_weave_refs":["EW:BOOK_001:007"],"relation_type":"ENABLES_CHOICE","from_line_id":"EB:LINE:GROWTH","to_line_id":"EB:LINE:FAMILY","node_id":"EB5","causal_bridge":"承途印的容量与真实损耗共同决定能否换到临时份额","effect_on_choice":"家属优先保护伤员车，主角放弃追功"},
+        {"weave_id":"EB:WEAVE:3","source_weave_refs":["EW:BOOK_001:008"],"relation_type":"CAUSES_PRESSURE","from_line_id":"EB:LINE:FACTION","to_line_id":"EB:LINE:FAMILY","node_id":"EB7","causal_bridge":"单户路票提议制造家庭安全与共同体合同的优先级压力","effect_on_choice":"家庭选择维持多户车队而非先走"},
+        {"weave_id":"EB:WEAVE:4","source_weave_refs":["EW:BOOK_001:010"],"relation_type":"CO_PAYOFF","from_line_id":"EB:LINE:RELATIONSHIP","to_line_id":"EB:LINE:GROWTH","node_id":"EB8","causal_bridge":"自治分车降低护锚负担，主角守住承压位上限仍完成迁徙","effect_on_choice":"主角拒绝新增致残承压位，按集体方案分批通过"}
+      ],
+      "macro_arcs": [
+        {"macro_id":"EB:MACRO:A","label":"争取真实迁徙权","source_macro_refs":["MA:BOOK_001:001"],"settlement_contract":"家庭随自治车队安全抵达高地，取得正式通行合同，主角承压位冻结代价仍然有效","state_transitions":[{"node_id":"EB1","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["主角家没有安全路线配额"]},{"node_id":"EB2","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["个人护送不足以保护车队"]},{"node_id":"EB5","from":"ACTIVE","to":"PARTIALLY_PAID","reader_knowledge_added":["真实护送记录可换临时通行份额"]},{"node_id":"EB8","from":"PARTIALLY_PAID","to":"PAID","reader_knowledge_added":["车队安全抵达高地"]}]},
+        {"macro_id":"EB:MACRO:B","label":"追查安全路线被改写的受益链","source_macro_refs":["MA:BOOK_001:002"],"settlement_contract":"查清路标移位与配额流向，迫使路线审批或迁民利益规则发生可见变化","state_transitions":[{"node_id":"EB6","from":"NOT_OPENED","to":"OPEN","reader_knowledge_added":["旧路标与官方安全图不一致"]},{"node_id":"EB9","from":"OPEN","to":"ACTIVE","reader_knowledge_added":["移位驿标进入核查但受益者未知"]}]}
+      ],
+      "handoff": {"handoff_id":"EB:HANDOFF:A-B","source_handoff_refs":["AH:BOOK_001:001"],"trigger_node_id":"EB6","old_arc_contract_retained":"家庭随自治车队安全抵达高地，取得正式通行合同，主角承压位冻结代价仍然有效","new_arc_promise":"谁在改写安全路线和迁徙配额，低地空置会让谁获利","withheld_questions":["谁移动路标","低地空置的真实收益是什么","驿盟内部是否知情"],"dominance_transfer_status":"CANDIDATE_UNVERIFIED","qa_status":"HOLD"},
+      "story_spine": {"stages":[{"stage":"trigger","story_task":"EB1 路票被拒"},{"stage":"goal","story_task":"让家庭安全迁至高地"},{"stage":"resistance","story_task":"配额、损耗和路线控制"},{"stage":"nodes","story_task":"EB2-EB7 失败、承途印、自治车队、试运与单户诱惑"},{"stage":"choice","story_task":"维持多户车队"},{"stage":"cost","story_task":"修炼通道冻结和资源损耗"},{"stage":"payoff","story_task":"EB8 全队安全抵达"},{"stage":"state_change","story_task":"正式通行合同成立"},{"stage":"next_entry","story_task":"EB6/EB9 路标异常进入核查"}]},
+      "chapter_phases": [
+        {"range":"1-10","purpose":"两次下降：路票被拒与个人护送失败","payoff":"获得真实损耗记录和复核入口"},
+        {"range":"11-25","purpose":"承途印代价和家属自治形成","payoff":"多户车队具备可执行组织"},
+        {"range":"26-40","purpose":"试运局部兑现、新弧线索和单户诱惑","payoff":"临时份额到账但共同体冲突升级"},
+        {"range":"41-50","purpose":"迁徙安全结算并保留路线核查入口","payoff":"安全、正式路票与成长债同时可见"}
+      ],
+      "continuation_conditions": ["冻结修炼通道需要新的恢复资源","移位驿标受益链仍未知","正式路票带来持续护送义务和限载冲突"],
+      "material_profile_id": "PROFILE:B:MIGRATION_CONVOY",
+      "material_bindings": {
+        "B:GF:BURDEN_TRANSFER":{"story_node_ids":["EB3","EB5","EB8"],"node_effects":{"EB3":"能力依赖自愿投入并冻结修炼通道","EB5":"容量上限迫使家属分配保护优先级","EB8":"主角拒绝新增致残承压位"}},
+        "B:WORLD:RESOURCE_COMMONS":{"story_node_ids":["EB1","EB7","EB9"],"node_effects":{"EB1":"路线配额制造家庭危机","EB7":"共同体合同与单户名额冲突","EB9":"护送结果转为正式路票"}},
+        "B:SYSTEM:SHARED_BURDEN_PHYSIOLOGY":{"story_node_ids":["EB3","EB8"],"node_effects":{"EB3":"原创承压位定义能力容量","EB8":"冻结通道使高潮胜利保留成长债"}},
+        "B:CHARACTER:HOUSEHOLD_ORGANIZERS":{"story_node_ids":["EB4","EB8"],"node_effects":{"EB4":"家属重排车辆与物资","EB8":"自治分车决定最终损耗"}},
+        "B:PLOT:ORGANIZATION_UNDER_REAL_LOSS":{"story_node_ids":["EB2","EB5","EB8"],"node_effects":{"EB2":"真实失败否定个人护送","EB5":"可核查试运换临时份额","EB8":"组织能力完成最终迁徙"}},
+        "B:OPENING:SCARCE_STARTING_ASSETS":{"story_node_ids":["EB1","EB2"],"node_effects":{"EB1":"低配额和三辆旧车建立承诺","EB2":"车辆损毁形成第二次下降"}},
+        "B:ARC:EXTERNAL_PROBLEM_TO_CONTRACT":{"story_node_ids":["EB6","EB8"],"node_effects":{"EB6":"外部路线矛盾打开下一问题","EB8":"解决迁徙困境形成稳定合同"}},
+        "B:MECH:DELEGATED_AUTONOMY":{"story_node_ids":["EB4","EB7","EB8"],"node_effects":{"EB4":"主角下放编车和资源权","EB7":"议事组否决单户逃生","EB8":"自治结果反向约束能力配置"}}
+      }
+    }
+  ],
+  "legacy_options": [
+    {
+      "option_id": "BRIDGE:A:LEGACY",
+      "pair_id": "PAIR:A:LAMP_WARD",
+      "mode": "LEGACY_BASELINE",
+      "status": "candidate",
+      "qa_status": "HOLD",
+      "research_state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "title": "旧路径候选A：九灯旧巷",
+      "premise": "少年灯工用受限灵纹能力和社区协作争回旧巷防护资格。",
+      "causal_signature": {"central_conflict":"固定家园防线资源被截流","ability_logic":"断纹重刻伴随经脉灼伤","relationship_topology":"家属参与联灯","institution_engine":"公开验收恢复资格","next_arc_trigger":"登记异常"},
+      "reader_expectations": [
+        {"expectation":"家人能否安全留在旧巷","payoff":"九灯联防运行且旧巷资格恢复"},
+        {"expectation":"低评能力能否证明价值","payoff":"抢修和守城均成功且伤势可见"},
+        {"expectation":"家人是否参与而非等待救援","payoff":"家属联灯实际影响守城结果"},
+        {"expectation":"截流者会否被追查","payoff":"异常编号进入审计但责任未定"}
+      ],
+      "story_nodes": [
+        {"node_id":"LA1","chapter_range":"1-5","cause":"旧巷防护被降级","event":"主角家庭被拒绝进入高阶避难区","character_choice":"签下夜间灯工任务","decision_makers":["主角","母亲"],"consequence":"建立恢复防护资格目标","reveals":["防护被降级"]},
+        {"node_id":"LA2","chapter_range":"6-10","cause":"暴雨导致断灯","event":"首次抢修失败且家人转移","character_choice":"保留失败记录","decision_makers":["主角"],"consequence":"获得复查入口并暴露能力缺口","reveals":["断点与旧图不符"]},
+        {"node_id":"LA3","chapter_range":"11-20","cause":"废灯复查","event":"发现断纹重刻能力和经脉代价","character_choice":"有限试用并接受家属联灯建议","decision_makers":["主角","妹妹"],"consequence":"形成九点联防方案","reveals":["能力与经脉代价"]},
+        {"node_id":"LA4","chapter_range":"21-30","cause":"需要正式材料和权限","event":"公开抢修考核成功","character_choice":"公开伤势和数据","decision_makers":["主角","复核官"],"consequence":"取得临时配额","reveals":["公开结果可换资格"]},
+        {"node_id":"LA5","chapter_range":"31-38","cause":"复核发现编号异常","event":"灯行提出单户补偿换撤档","character_choice":"家人拒绝私了","decision_makers":["主角","母亲","妹妹"],"consequence":"守城压力与后续审计同时升级","reveals":["登记编号异常"],"opens_next_arc":true},
+        {"node_id":"LA6","chapter_range":"39-46","cause":"兽潮和燃料短缺冲击旧巷","event":"九灯联防完成分区复燃","character_choice":"优先稳定避难线而非追敌","decision_makers":["主角","妹妹","住户"],"consequence":"家庭和旧巷安全","reveals":["旧巷守住"]},
+        {"node_id":"LA7","chapter_range":"47-50","cause":"需要结算守城结果","event":"防护资格恢复并启动审计","character_choice":"接受公共维修责任但拒绝私契","decision_makers":["主角","守备府"],"consequence":"第一阶段结束并保留调查入口","reveals":["资格恢复","责任人未知"]}
+      ],
+      "story_spine":{"stages":[{"stage":"trigger","story_task":"LA1"},{"stage":"goal","story_task":"恢复保护"},{"stage":"resistance","story_task":"断灯与截流"},{"stage":"nodes","story_task":"LA2-LA5"},{"stage":"choice","story_task":"拒绝私了"},{"stage":"cost","story_task":"经脉灼伤"},{"stage":"payoff","story_task":"LA6"},{"stage":"state_change","story_task":"资格恢复"},{"stage":"next_entry","story_task":"审计入口"}]},
+      "chapter_phases":[{"range":"1-10","purpose":"降级与失败","payoff":"复查入口"},{"range":"11-25","purpose":"能力和联防","payoff":"方案成立"},{"range":"26-40","purpose":"考核和私了冲突","payoff":"临时配额"},{"range":"41-50","purpose":"守城与结算","payoff":"安全和资格"}],
+      "continuation_conditions":["经脉恢复债","截流责任链","公共维修义务"],
+      "material_profile_id":"PROFILE:A:LAMP_WARD",
+      "material_bindings":{
+        "A:GF:VISIBLE_COSTLY_GROWTH":{"story_node_ids":["LA3","LA4","LA6"],"node_effects":{"LA3":"发现能力与代价","LA4":"公开验证","LA6":"能力服务避难线"}},
+        "A:WORLD:WARD_REGISTRY":{"story_node_ids":["LA1","LA5","LA7"],"node_effects":{"LA1":"制度制造危机","LA5":"记录异常打开调查","LA7":"结果转资格"}},
+        "A:SYSTEM:CRAFT_AND_COMBAT_PROOF":{"story_node_ids":["LA3","LA6"],"node_effects":{"LA3":"体系限制能力","LA6":"伤势约束高潮"}},
+        "A:CHARACTER:FAMILY_CO_ACTOR":{"story_node_ids":["LA3","LA6"],"node_effects":{"LA3":"家属提出联防","LA6":"家属执行联灯"}},
+        "A:PLOT:QUALIFICATION_TO_RESOURCE":{"story_node_ids":["LA2","LA4"],"node_effects":{"LA2":"失败打开考核","LA4":"考核换配额"}},
+        "A:OPENING:FAMILY_NEED_TO_TASK":{"story_node_ids":["LA1","LA2"],"node_effects":{"LA1":"家庭缺口促成任务","LA2":"任务失败加压"}},
+        "A:ARC:HOME_DEFENSE_SETTLEMENT":{"story_node_ids":["LA4","LA6"],"node_effects":{"LA4":"高潮前置成立","LA6":"守城结算"}},
+        "A:MECH:PUBLIC_REPRICING":{"story_node_ids":["LA4","LA5","LA7"],"node_effects":{"LA4":"证据触发复核","LA5":"私了与公开冲突","LA7":"重算资格"}}
+      }
+    },
+    {
+      "option_id": "BRIDGE:B:LEGACY",
+      "pair_id": "PAIR:B:MIGRATION_CONVOY",
+      "mode": "LEGACY_BASELINE",
+      "status": "candidate",
+      "qa_status": "HOLD",
+      "research_state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "title": "旧路径候选B：背山迁途",
+      "premise": "无安全配额的少年以承途印和自治车队争取全家的迁徙权。",
+      "causal_signature": {"central_conflict":"迁徙配额被垄断","ability_logic":"自愿投入换护锚并冻结修炼通道","relationship_topology":"议事组编车","institution_engine":"护送记录换路线合同","next_arc_trigger":"路标矛盾"},
+      "reader_expectations": [
+        {"expectation":"家人能否安全抵达高地","payoff":"车队安全抵达并取得正式路票"},
+        {"expectation":"承途印代价是否真实","payoff":"能力完成护送且修炼通道保持冻结"},
+        {"expectation":"家属是否掌握行动权","payoff":"议事组方案决定分车和损耗"},
+        {"expectation":"路线异常是否会被追查","payoff":"移位驿标进入核查但受益者未知"}
+      ],
+      "story_nodes": [
+        {"node_id":"LB1","chapter_range":"1-5","cause":"家中没有安全迁徙配额","event":"正式路票申请被拒","character_choice":"接受一次临时试运","decision_makers":["主角","姑母"],"consequence":"保护目标转成路线权","reveals":["无安全配额"]},
+        {"node_id":"LB2","chapter_range":"6-10","cause":"旧支路维护失真","event":"个人护送失败并损毁车辆","character_choice":"保留真实损耗","decision_makers":["主角","车夫"],"consequence":"个人路线失败并获得复核入口","reveals":["维护记录失真"]},
+        {"node_id":"LB3","chapter_range":"11-20","cause":"复核接触废弃承途碑","event":"能力出现并冻结修炼通道","character_choice":"限制承压位并接受家属编车","decision_makers":["主角","姑母"],"consequence":"形成自治车队方案","reveals":["能力和承压代价"]},
+        {"node_id":"LB4","chapter_range":"21-30","cause":"正式路票要求危险试运","event":"多户车队完成支路护送","character_choice":"优先伤员车而非追功","decision_makers":["主角","议事组"],"consequence":"取得临时份额","reveals":["真实护送可换份额"]},
+        {"node_id":"LB5","chapter_range":"31-38","cause":"路线复盘发现驿标异常","event":"驿商提出单户路票换解散车队","character_choice":"维持多户合同","decision_makers":["主角","姑母","议事组"],"consequence":"最终迁徙与后续核查同时加压","reveals":["路标与安全图矛盾"],"opens_next_arc":true},
+        {"node_id":"LB6","chapter_range":"39-47","cause":"沉降迫使车队穿越风切峡","event":"自治分车与有限护锚完成迁徙","character_choice":"拒绝新增致残承压位，分批通过","decision_makers":["主角","议事组","车夫"],"consequence":"家庭和车队安全抵达","reveals":["车队安全抵达"]},
+        {"node_id":"LB7","chapter_range":"48-50","cause":"迁徙结果需要制度结算","event":"正式路票成立并核查驿标","character_choice":"接受限载规则而非个人免审","decision_makers":["主角","驿盟","议事组"],"consequence":"第一阶段结束并保留路线调查","reveals":["正式路票成立","受益者未知"]}
+      ],
+      "story_spine":{"stages":[{"stage":"trigger","story_task":"LB1"},{"stage":"goal","story_task":"安全迁徙"},{"stage":"resistance","story_task":"配额与路线"},{"stage":"nodes","story_task":"LB2-LB5"},{"stage":"choice","story_task":"维持多户合同"},{"stage":"cost","story_task":"修炼通道冻结"},{"stage":"payoff","story_task":"LB6"},{"stage":"state_change","story_task":"正式路票"},{"stage":"next_entry","story_task":"路标核查"}]},
+      "chapter_phases":[{"range":"1-10","purpose":"拒签与失败","payoff":"复核入口"},{"range":"11-25","purpose":"能力与自治","payoff":"车队形成"},{"range":"26-40","purpose":"试运与单户诱惑","payoff":"临时份额"},{"range":"41-50","purpose":"迁徙与结算","payoff":"安全和路票"}],
+      "continuation_conditions":["承压位恢复债","路线受益链","持续护送义务"],
+      "material_profile_id":"PROFILE:B:MIGRATION_CONVOY",
+      "material_bindings":{
+        "B:GF:BURDEN_TRANSFER":{"story_node_ids":["LB3","LB4","LB6"],"node_effects":{"LB3":"能力依赖投入和代价","LB4":"容量约束保护顺序","LB6":"拒绝致残超载"}},
+        "B:WORLD:RESOURCE_COMMONS":{"story_node_ids":["LB1","LB5","LB7"],"node_effects":{"LB1":"配额制造危机","LB5":"共同体合同受压","LB7":"结果转正式路票"}},
+        "B:SYSTEM:SHARED_BURDEN_PHYSIOLOGY":{"story_node_ids":["LB3","LB6"],"node_effects":{"LB3":"原创承压位限制能力","LB6":"成长债保留"}},
+        "B:CHARACTER:HOUSEHOLD_ORGANIZERS":{"story_node_ids":["LB3","LB6"],"node_effects":{"LB3":"家属编车","LB6":"自治方案决定损耗"}},
+        "B:PLOT:ORGANIZATION_UNDER_REAL_LOSS":{"story_node_ids":["LB2","LB4","LB6"],"node_effects":{"LB2":"真实失败","LB4":"组织验证","LB6":"最终迁徙"}},
+        "B:OPENING:SCARCE_STARTING_ASSETS":{"story_node_ids":["LB1","LB2"],"node_effects":{"LB1":"有限试运建立承诺","LB2":"车辆损毁加压"}},
+        "B:ARC:EXTERNAL_PROBLEM_TO_CONTRACT":{"story_node_ids":["LB5","LB6"],"node_effects":{"LB5":"外部问题打开","LB6":"解决困境形成合同"}},
+        "B:MECH:DELEGATED_AUTONOMY":{"story_node_ids":["LB3","LB5","LB6"],"node_effects":{"LB3":"下放编车权","LB5":"议事组否决单户路票","LB6":"自治约束能力配置"}}
+      }
+    }
+  ]
+}

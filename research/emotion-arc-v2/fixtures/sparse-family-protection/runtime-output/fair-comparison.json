@@ -1,0 +1,93 @@
+{
+  "schema_version": "emotion_story_bridge_comparison_v1",
+  "status": "candidate",
+  "qa_status": "HOLD",
+  "evaluation_basis": "paired story behavior and causal obligations, not field count, hit rate, file count or shared Story Spine names",
+  "brief_sha256": "64d5a97605344da6a19e04e73ba4cc6285b8c200ee3945a35ba2b11e0241cc4e",
+  "pair_comparisons": [
+    {
+      "pair_id": "PAIR:A:LAMP_WARD",
+      "same_sparse_brief_sha256": "64d5a97605344da6a19e04e73ba4cc6285b8c200ee3945a35ba2b11e0241cc4e",
+      "legacy": {
+        "distinct_reader_expectations": 4,
+        "causal_nodes_with_choice_and_consequence": 7,
+        "multi_actor_choices": 6,
+        "emotion_or_relationship_choice_links": 6,
+        "distinct_payoff_results": 4,
+        "credible_early_next_arc_entry_present": true,
+        "nodes_with_targeted_material_use": 7,
+        "material_uses_with_action_effect": 19,
+        "rejected_or_conflicted_materials": 2,
+        "fifty_chapter_phases": 4,
+        "continuation_conditions": 3
+      },
+      "enhanced": {
+        "distinct_reader_expectations": 4,
+        "causal_nodes_with_choice_and_consequence": 9,
+        "multi_actor_choices": 8,
+        "emotion_or_relationship_choice_links": 4,
+        "distinct_payoff_results": 4,
+        "credible_early_next_arc_entry_present": true,
+        "nodes_with_targeted_material_use": 9,
+        "material_uses_with_action_effect": 19,
+        "rejected_or_conflicted_materials": 2,
+        "fifty_chapter_phases": 4,
+        "continuation_conditions": 3
+      },
+      "interpretation": "Metrics expose expectation separation, causal choices, payoff independence, early overlap and node-level material use. They do not establish prose quality, originality, reader response or final literary superiority."
+    },
+    {
+      "pair_id": "PAIR:B:MIGRATION_CONVOY",
+      "same_sparse_brief_sha256": "64d5a97605344da6a19e04e73ba4cc6285b8c200ee3945a35ba2b11e0241cc4e",
+      "legacy": {
+        "distinct_reader_expectations": 4,
+        "causal_nodes_with_choice_and_consequence": 7,
+        "multi_actor_choices": 7,
+        "emotion_or_relationship_choice_links": 7,
+        "distinct_payoff_results": 4,
+        "credible_early_next_arc_entry_present": true,
+        "nodes_with_targeted_material_use": 7,
+        "material_uses_with_action_effect": 20,
+        "rejected_or_conflicted_materials": 5,
+        "fifty_chapter_phases": 4,
+        "continuation_conditions": 3
+      },
+      "enhanced": {
+        "distinct_reader_expectations": 4,
+        "causal_nodes_with_choice_and_consequence": 9,
+        "multi_actor_choices": 9,
+        "emotion_or_relationship_choice_links": 4,
+        "distinct_payoff_results": 4,
+        "credible_early_next_arc_entry_present": true,
+        "nodes_with_targeted_material_use": 9,
+        "material_uses_with_action_effect": 20,
+        "rejected_or_conflicted_materials": 5,
+        "fifty_chapter_phases": 4,
+        "continuation_conditions": 3
+      },
+      "interpretation": "Metrics expose expectation separation, causal choices, payoff independence, early overlap and node-level material use. They do not establish prose quality, originality, reader response or final literary superiority."
+    }
+  ],
+  "capability_observation": "E2_E3_EXPLICIT_OBLIGATION_TRACKING_OBSERVED",
+  "creative_quality": "PENDING_INDEPENDENT_REVIEW",
+  "independent_semantic_review_checklist": [
+    "Do the two enhanced concepts differ in causal engine rather than names and surface nouns?",
+    "Does every selected emotion-source pattern remain an abstraction rather than a copied event chain?",
+    "Do relationship actors alter a feasible choice, cost or result instead of merely reacting?",
+    "Does each payoff produce visible safety, capability, relationship or institutional change without substituting for another contract?",
+    "Does the second macro arc reveal only a trigger and bounded clue before the first arc pays?",
+    "Do selected 02-09 components satisfy their stated interfaces after adaptation, including resource and failure conditions?",
+    "Are source-concentration, repeated conflict and suspense-stalling risks acceptable for chapters 1-50?",
+    "Can chapters 51+ continue from explicit unresolved conditions rather than a new unrelated crisis?"
+  ],
+  "failure_cases_retained": [
+    "future-premonition candidate rejected where the slot requires earned, cost-bearing protective output",
+    "blanket attachment of all material IDs to every node is a validation failure",
+    "reader knowledge introduced before its trigger node is a validation failure",
+    "a new macro arc cancelling the old settlement contract is a validation failure",
+    "a selected source absent from deterministic retrieval/provenance is a validation failure",
+    "two options with the same causal signature and renamed surfaces are a validation failure"
+  ],
+  "material_adaptation": "REVIEW_REQUIRED",
+  "production_promotion": "NOT_RUN"
+}

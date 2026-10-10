@@ -1,0 +1,3193 @@
+{
+  "schema_version": "emotion_story_bridge_options_v1",
+  "mode": "LEGACY_BASELINE",
+  "status": "candidate",
+  "qa_status": "HOLD",
+  "brief_sha256": "64d5a97605344da6a19e04e73ba4cc6285b8c200ee3945a35ba2b11e0241cc4e",
+  "semantic_composer": {
+    "kind": "MODEL_AUTHORED_RESEARCH_CANDIDATE",
+    "model_family": "GPT-5",
+    "deterministic_validation_required": true,
+    "literary_approval": "NOT_GRANTED"
+  },
+  "options": [
+    {
+      "option_id": "BRIDGE:A:LEGACY",
+      "pair_id": "PAIR:A:LAMP_WARD",
+      "mode": "LEGACY_BASELINE",
+      "status": "candidate",
+      "qa_status": "HOLD",
+      "research_state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "title": "旧路径候选A：九灯旧巷",
+      "premise": "少年灯工用受限灵纹能力和社区协作争回旧巷防护资格。",
+      "causal_signature": {
+        "central_conflict": "固定家园防线资源被截流",
+        "ability_logic": "断纹重刻伴随经脉灼伤",
+        "relationship_topology": "家属参与联灯",
+        "institution_engine": "公开验收恢复资格",
+        "next_arc_trigger": "登记异常"
+      },
+      "reader_expectations": [
+        {
+          "expectation": "家人能否安全留在旧巷",
+          "payoff": "九灯联防运行且旧巷资格恢复"
+        },
+        {
+          "expectation": "低评能力能否证明价值",
+          "payoff": "抢修和守城均成功且伤势可见"
+        },
+        {
+          "expectation": "家人是否参与而非等待救援",
+          "payoff": "家属联灯实际影响守城结果"
+        },
+        {
+          "expectation": "截流者会否被追查",
+          "payoff": "异常编号进入审计但责任未定"
+        }
+      ],
+      "story_nodes": [
+        {
+          "node_id": "LA1",
+          "chapter_range": "1-5",
+          "cause": "旧巷防护被降级",
+          "event": "主角家庭被拒绝进入高阶避难区",
+          "character_choice": "签下夜间灯工任务",
+          "decision_makers": [
+            "主角",
+            "母亲"
+          ],
+          "consequence": "建立恢复防护资格目标",
+          "reveals": [
+            "防护被降级"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "A:WORLD:WARD_REGISTRY",
+              "material_ref": "WB:BOOK:BOOK_001",
+              "role_at_node": "官方、传统势力与军方共同管理武者和公共风险",
+              "effect_on_action": "制度制造危机"
+            },
+            {
+              "slot_id": "A:OPENING:FAMILY_NEED_TO_TASK",
+              "material_ref": "OP:PROMISE:1",
+              "role_at_node": "家庭资源缺口把力量觉醒转成必须验证的现实承诺",
+              "effect_on_action": "家庭缺口促成任务"
+            }
+          ]
+        },
+        {
+          "node_id": "LA2",
+          "chapter_range": "6-10",
+          "cause": "暴雨导致断灯",
+          "event": "首次抢修失败且家人转移",
+          "character_choice": "保留失败记录",
+          "decision_makers": [
+            "主角"
+          ],
+          "consequence": "获得复查入口并暴露能力缺口",
+          "reveals": [
+            "断点与旧图不符"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "A:PLOT:QUALIFICATION_TO_RESOURCE",
+              "material_ref": "PL:008:ACADEMY",
+              "role_at_node": "通过高风险考核取得训练设施和持续资源，同时增加暴露义务",
+              "effect_on_action": "失败打开考核"
+            },
+            {
+              "slot_id": "A:OPENING:FAMILY_NEED_TO_TASK",
+              "material_ref": "OP:PROMISE:1",
+              "role_at_node": "家庭资源缺口把力量觉醒转成必须验证的现实承诺",
+              "effect_on_action": "任务失败加压"
+            }
+          ]
+        },
+        {
+          "node_id": "LA3",
+          "chapter_range": "11-20",
+          "cause": "废灯复查",
+          "event": "发现断纹重刻能力和经脉代价",
+          "character_choice": "有限试用并接受家属联灯建议",
+          "decision_makers": [
+            "主角",
+            "妹妹"
+          ],
+          "consequence": "形成九点联防方案",
+          "reveals": [
+            "能力与经脉代价"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "A:GF:VISIBLE_COSTLY_GROWTH",
+              "material_ref": "GF:BOOK_009",
+              "role_at_node": "低评价能力经过训练和公开战果重新定价",
+              "effect_on_action": "发现能力与代价"
+            },
+            {
+              "slot_id": "A:SYSTEM:CRAFT_AND_COMBAT_PROOF",
+              "material_ref": "CS:BOOK:BOOK_009",
+              "role_at_node": "境界、器物构筑、训练资源和公开战力共同定义成长状态",
+              "effect_on_action": "体系限制能力"
+            },
+            {
+              "slot_id": "A:CHARACTER:FAMILY_CO_ACTOR",
+              "material_ref": "HEROINE:BOOK_008:时雨晴",
+              "role_at_node": "从被保护对象转为有独立目标和现场行动的共战者",
+              "effect_on_action": "家属提出联防"
+            }
+          ]
+        },
+        {
+          "node_id": "LA4",
+          "chapter_range": "21-30",
+          "cause": "需要正式材料和权限",
+          "event": "公开抢修考核成功",
+          "character_choice": "公开伤势和数据",
+          "decision_makers": [
+            "主角",
+            "复核官"
+          ],
+          "consequence": "取得临时配额",
+          "reveals": [
+            "公开结果可换资格"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "A:GF:VISIBLE_COSTLY_GROWTH",
+              "material_ref": "GF:BOOK_009",
+              "role_at_node": "低评价能力经过训练和公开战果重新定价",
+              "effect_on_action": "公开验证"
+            },
+            {
+              "slot_id": "A:PLOT:QUALIFICATION_TO_RESOURCE",
+              "material_ref": "PL:008:ACADEMY",
+              "role_at_node": "通过高风险考核取得训练设施和持续资源，同时增加暴露义务",
+              "effect_on_action": "考核换配额"
+            },
+            {
+              "slot_id": "A:ARC:HOME_DEFENSE_SETTLEMENT",
+              "material_ref": "AR:ARC:BOOK_009:FRONTLINE",
+              "role_at_node": "把此前训练构筑放进公共防线危机中完成阶段验证",
+              "effect_on_action": "高潮前置成立"
+            },
+            {
+              "slot_id": "A:MECH:PUBLIC_REPRICING",
+              "material_ref": "PM:MECH:BOOK_009:REPRICE",
+              "role_at_node": "第三方可见战果触发权威复核并重算培养资源或权限",
+              "effect_on_action": "证据触发复核"
+            }
+          ]
+        },
+        {
+          "node_id": "LA5",
+          "chapter_range": "31-38",
+          "cause": "复核发现编号异常",
+          "event": "灯行提出单户补偿换撤档",
+          "character_choice": "家人拒绝私了",
+          "decision_makers": [
+            "主角",
+            "母亲",
+            "妹妹"
+          ],
+          "consequence": "守城压力与后续审计同时升级",
+          "reveals": [
+            "登记编号异常"
+          ],
+          "opens_next_arc": true,
+          "material_uses": [
+            {
+              "slot_id": "A:WORLD:WARD_REGISTRY",
+              "material_ref": "WB:BOOK:BOOK_001",
+              "role_at_node": "官方、传统势力与军方共同管理武者和公共风险",
+              "effect_on_action": "记录异常打开调查"
+            },
+            {
+              "slot_id": "A:MECH:PUBLIC_REPRICING",
+              "material_ref": "PM:MECH:BOOK_009:REPRICE",
+              "role_at_node": "第三方可见战果触发权威复核并重算培养资源或权限",
+              "effect_on_action": "私了与公开冲突"
+            }
+          ]
+        },
+        {
+          "node_id": "LA6",
+          "chapter_range": "39-46",
+          "cause": "兽潮和燃料短缺冲击旧巷",
+          "event": "九灯联防完成分区复燃",
+          "character_choice": "优先稳定避难线而非追敌",
+          "decision_makers": [
+            "主角",
+            "妹妹",
+            "住户"
+          ],
+          "consequence": "家庭和旧巷安全",
+          "reveals": [
+            "旧巷守住"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "A:GF:VISIBLE_COSTLY_GROWTH",
+              "material_ref": "GF:BOOK_009",
+              "role_at_node": "低评价能力经过训练和公开战果重新定价",
+              "effect_on_action": "能力服务避难线"
+            },
+            {
+              "slot_id": "A:SYSTEM:CRAFT_AND_COMBAT_PROOF",
+              "material_ref": "CS:BOOK:BOOK_009",
+              "role_at_node": "境界、器物构筑、训练资源和公开战力共同定义成长状态",
+              "effect_on_action": "伤势约束高潮"
+            },
+            {
+              "slot_id": "A:CHARACTER:FAMILY_CO_ACTOR",
+              "material_ref": "HEROINE:BOOK_008:时雨晴",
+              "role_at_node": "从被保护对象转为有独立目标和现场行动的共战者",
+              "effect_on_action": "家属执行联灯"
+            },
+            {
+              "slot_id": "A:ARC:HOME_DEFENSE_SETTLEMENT",
+              "material_ref": "AR:ARC:BOOK_009:FRONTLINE",
+              "role_at_node": "把此前训练构筑放进公共防线危机中完成阶段验证",
+              "effect_on_action": "守城结算"
+            }
+          ]
+        },
+        {
+          "node_id": "LA7",
+          "chapter_range": "47-50",
+          "cause": "需要结算守城结果",
+          "event": "防护资格恢复并启动审计",
+          "character_choice": "接受公共维修责任但拒绝私契",
+          "decision_makers": [
+            "主角",
+            "守备府"
+          ],
+          "consequence": "第一阶段结束并保留调查入口",
+          "reveals": [
+            "资格恢复",
+            "责任人未知"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "A:WORLD:WARD_REGISTRY",
+              "material_ref": "WB:BOOK:BOOK_001",
+              "role_at_node": "官方、传统势力与军方共同管理武者和公共风险",
+              "effect_on_action": "结果转资格"
+            },
+            {
+              "slot_id": "A:MECH:PUBLIC_REPRICING",
+              "material_ref": "PM:MECH:BOOK_009:REPRICE",
+              "role_at_node": "第三方可见战果触发权威复核并重算培养资源或权限",
+              "effect_on_action": "重算资格"
+            }
+          ]
+        }
+      ],
+      "story_spine": {
+        "stages": [
+          {
+            "stage": "trigger",
+            "story_task": "LA1"
+          },
+          {
+            "stage": "goal",
+            "story_task": "恢复保护"
+          },
+          {
+            "stage": "resistance",
+            "story_task": "断灯与截流"
+          },
+          {
+            "stage": "nodes",
+            "story_task": "LA2-LA5"
+          },
+          {
+            "stage": "choice",
+            "story_task": "拒绝私了"
+          },
+          {
+            "stage": "cost",
+            "story_task": "经脉灼伤"
+          },
+          {
+            "stage": "payoff",
+            "story_task": "LA6"
+          },
+          {
+            "stage": "state_change",
+            "story_task": "资格恢复"
+          },
+          {
+            "stage": "next_entry",
+            "story_task": "审计入口"
+          }
+        ]
+      },
+      "chapter_phases": [
+        {
+          "range": "1-10",
+          "purpose": "降级与失败",
+          "payoff": "复查入口"
+        },
+        {
+          "range": "11-25",
+          "purpose": "能力和联防",
+          "payoff": "方案成立"
+        },
+        {
+          "range": "26-40",
+          "purpose": "考核和私了冲突",
+          "payoff": "临时配额"
+        },
+        {
+          "range": "41-50",
+          "purpose": "守城与结算",
+          "payoff": "安全和资格"
+        }
+      ],
+      "continuation_conditions": [
+        "经脉恢复债",
+        "截流责任链",
+        "公共维修义务"
+      ],
+      "material_slots": [
+        {
+          "slot_id": "A:GF:VISIBLE_COSTLY_GROWTH",
+          "module": "golden_finger",
+          "function_required": "低评价能力必须经公开保护行动证明价值，并留下可持续的身体与资源成本",
+          "query": "公开验证 低评价 成长 代价 资源",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "abstract_function": "低评价能力经过训练和公开战果重新定价",
+          "constraint_checks": {
+            "ability": "保留受控制力和误伤风险约束，不复制火焰刀魂",
+            "resource": "公开战果只打开培养入口，不直接生成无限资源",
+            "world": "改写为城防灵灯维修与守备考核接口",
+            "character": "主角必须主动承担失败和暴露风险"
+          },
+          "rule_conflicts": [
+            "来源的高温武魂表面与灵灯修复能力不兼容，必须重做输入和表现层"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "主角只能读取并短时重刻受损灵灯的灵纹断点",
+            "cost_or_constraint": "每次越级重刻都会灼伤一段经脉，修复需要真实战功与药材",
+            "changed_state": "公开守灯结果可改变家庭的防护资格与培养资源",
+            "why_causal": "能力只有在修复真实防线并接受机构复核后才能换来资源和身份变化",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "迫使主角在保留经脉与扩大保护范围之间选择，并让最终守住家区的结果可被第三方复核",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LA3",
+            "LA4",
+            "LA6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "GF:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "低评价器物→精神内景试探→刀灵回应→形态解放→公开验证",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "吸收/操控血液—受伤重构—战力与追踪权限扩张",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "异常片段预见—主动试探—现实验证—未来改写",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "抽卡保底/知识差筛选/任务资源循环",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "公开行动—关注反馈—任务/形态收益",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "把宿主承受或持有之物供养给绑定目标→目标获得万倍结果",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "濒死激活的系统外挂：被动天赋『幸运』产幸运点→属性加点+付费随机领悟天赋→复制类天赋借力滚雪球",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "DA:ABILITY:BOOK_017:003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "【献往虚无的祭品】+【众生相】+【共沐神恩】",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "现金输入→等价时间修为→公开战斗/直播变现循环",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "行为结果→双点数→修炼/恢复",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_010",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_010",
+              "title": "接触葉纹复刻能力+情绪魂气驱动版本更新",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_015",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_015",
+              "title": "每日新能力发放+能力库累积+单启用",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "GF:BOOK_009",
+            "module": "golden_finger",
+            "record_id": "GF:BOOK_009",
+            "source_record_id": "GF:BOOK_009",
+            "component_id": null,
+            "component_path": null,
+            "book_id": "BOOK_009",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/02_金手指/per_book/BOOK_009.jsonl",
+            "line": 1,
+            "source_line_sha256": "47ffd16473d8c9e815e5fa937399d5d44b1f95b5c55eadbb067fae9cee959f2b",
+            "title": "低评价器物→精神内景试探→刀灵回应→形态解放→公开验证",
+            "summary": "input 低评级刀形武魂、前世文化记忆、冥想与战斗压力 process 进入精神内景并等待回应，再把形态与高温能力投入考核、训练和战争 output 获得火焰刀魂输出，换取评价、名额、训练资源和军功",
+            "evidence_refs": [
+              "BOOK_009:CHAPTER:0001",
+              "BOOK_009:CHAPTER:0006",
+              "BOOK_009:CHAPTER:0013",
+              "BOOK_009:CHAPTER:0059"
+            ],
+            "source_component_preview": "{\"schema_version\":1,\"record_type\":\"per_book\",\"record_id\":\"GF:BOOK_009\",\"status\":\"candidate\",\"evidence_refs\":[\"BOOK_009:CHAPTER:0001\",\"BOOK_009:CHAPTER:0006\",\"BOOK_009:CHAPTER:0013\",\"BOOK_009:CHAPTER:0059\"],\"unknowns\":[\"独立金手指还是武魂规则UNKNOWN\",\"终极形态代价与上限UNKNOWN\"],\"confidence\":\"MEDIUM\",\"qa_status\":\"PASS\",\"book_id\":\"BOOK_009\",\"title\":\"高武：看不起器物灵性，炎系器物灵性呢\",\"chapters_covered\":\"1-62\",\"mechanic_name_in_book\":\"前世文化记忆提示＋人格化刀魂觉醒（源文未给稳定金手指名）\",\"normalized_category\":\"认知信息差与器物灵性成长\",\"normalized_archetype\":\"低评价器物→精神内景试探→刀灵回应→形态解放→公开验证\",\"core_formula\":{\"input\":\"低评级刀形武魂、前世文化记忆、冥想与战斗压力\",\"process\":\"进入精神内景并等待回应，再把形态与高温能力投入考核、训练和战争\",\"output\":\"获得火焰刀魂输出，换取评价、名额、训练资源和军功\"},\"ownership\":\"源文只明确主角持续使用该刀魂；其是否为独立外挂、武魂本体或前世认知共同作用，保持候选。\",\"activation_conditions\":[\"觉醒后主动冥想\",\"考核、训练和生死压力促成形态验证\",\"普遍触发条件UNKNOWN\"],\"hard_limits\":[\"输出受境"
+          },
+          "rejected_refs": [
+            {
+              "material_id": "GF:BOOK_005",
+              "module": "golden_finger",
+              "record_id": "GF:BOOK_005",
+              "source_record_id": "GF:BOOK_005",
+              "component_id": null,
+              "component_path": null,
+              "book_id": "BOOK_005",
+              "qa_status": "PASS",
+              "usage_status": "ADAPTABLE_WITH_GAPS",
+              "path": "DNA素材/02_金手指/per_book/BOOK_005.jsonl",
+              "line": 1,
+              "source_line_sha256": "8fbf099c9a3fbf48277c7be1c8a24a850ad8a8bb7e5215e1949c800077a93ff2",
+              "title": "异常片段预见—主动试探—现实验证—未来改写",
+              "summary": "input 高风险事件、环境或空间异常，以及江寒接收到的视觉/感官未来片段；部分片段由场景或药物状态触发，稳定触发条件UNKNOWN process 江寒先经历不完整的未来结果或失败分支，再按自身理解试探、逃生或提醒；现实行动会改变条件并使结果分叉，官方/队友随后将片段与现场对照 output 提前获得灾害、攻击轨迹、路线、异常物或行动结果的信息差，经现实验证后转为避险、救援、任务协同、官方权限与认知变化",
+              "evidence_refs": [
+                "BOOK_005:CHAPTER:0001",
+                "BOOK_005:CHAPTER:0002",
+                "BOOK_005:CHAPTER:0003",
+                "BOOK_005:CHAPTER:0012",
+                "BOOK_005:CHAPTER:0013",
+                "BOOK_005:CHAPTER:0015",
+                "BOOK_005:CHAPTER:0024",
+                "BOOK_005:CHAPTER:0025",
+                "BOOK_005:CHAPTER:0035",
+                "BOOK_005:CHAPTER:0038",
+                "BOOK_005:CHAPTER:0040",
+                "BOOK_005:CHAPTER:0054",
+                "BOOK_005:CHAPTER:0058",
+                "BOOK_005:CHAPTER:0071",
+                "BOOK_005:CHAPTER:0075",
+                "BOOK_005:CHAPTER:0085",
+                "BOOK_005:CHAPTER:0092",
+                "BOOK_005:CHAPTER:0102",
+                "BOOK_005:CHAPTER:0109",
+                "BOOK_005:CHAPTER:0110",
+                "BOOK_005:CHAPTER:0112",
+                "BOOK_005:CHAPTER:0116",
+                "BOOK_005:EMOTION:0001",
+                "BOOK_005:EMOTION:0012",
+                "BOOK_005:EMOTION:0013",
+                "BOOK_005:EMOTION:0024",
+                "BOOK_005:EMOTION:0040",
+                "BOOK_005:EMOTION:0054",
+                "BOOK_005:EMOTION:0075",
+                "BOOK_005:EMOTION:0092",
+                "BOOK_005:EMOTION:0102",
+                "BOOK_005:EMOTION:0116"
+              ],
+              "reason": "未来片段预见提供的是信息优势，不能直接满足本槽位所需的可训练保护输出与身体代价；采用会把成长证明偷换成提前知道答案",
+              "decision": "REJECT"
+            }
+          ]
+        },
+        {
+          "slot_id": "A:WORLD:WARD_REGISTRY",
+          "module": "worldbuilding",
+          "function_required": "多方武道机构共同管理防线、资格和资源，使家庭保护受制度分配影响",
+          "query": "武道 官方 势力 管理 家庭 保护",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "abstract_function": "官方、传统势力与军方共同管理武者和公共风险",
+          "constraint_checks": {
+            "ability": "世界规则不赋予额外能力",
+            "resource": "防护名额、灵灯燃料和维修权分别归不同机构",
+            "world": "符合高武公共秩序与传统势力并存",
+            "character": "家庭可通过登记、申诉和社区协作影响结果"
+          },
+          "rule_conflicts": [],
+          "adaptation_bridge": {
+            "new_rule": "边城防护资格由守备府登记、灯行供应、地方宗族维护三方共同决定",
+            "cost_or_constraint": "任何一方拒绝接口都会使贫民区防线降级，但记录可被追责",
+            "changed_state": "家庭安全从私人战力问题变成可验证的公共资源权利",
+            "why_causal": "资格分配直接决定家区能否获得燃料、维修和避难入口",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "让主角必须取得维修权和公开记录，而不是只击败袭击者",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LA1",
+            "LA5",
+            "LA7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "WB:BOOK:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "灵气潮汐终止后武道凌驾现实；官方、传统势力、联盟、军方和国际体系共同管理武者，复苏与异兽重组秩序。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "冻结源呈现的是一个现代城市社会：高中生在公开觉醒/检测体系中接触异能，同时灵妖、灾害与空间裂隙可以进入日常区域；官方机构负责调查、核验、封控和把异常纳入任务系统。核心前提由第1章觉醒典礼、第6/12章官方调查、第24章校园风险处置和第112-116章裂隙任务共同支持。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "现代都市校园与直播文化中存在欲气、秽灵、血醒/神武、灾隙和战渊；学院培养，官方处置，阎慈用原作记忆与系统介入未来剧情。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_011",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_011",
+              "title": "现代世界暗藏名为诡舍的异质空间：诡客被选中后周期性进入血门执行任务换取生存权，血门背后鬼物、规则与NPC共存；真相是诡舍即神祠（建木命力所铸之盒），保护规则实为诡客作为神的基本权力，大日灾变之『灰』曾被疯子借建木封印。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "现代高武社会把气血、境界、裂缝和妖兽战果制度化；林渊绑定现金兑换修为系统后，以直播把高风险战斗变成可变现的公众内容。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "现代城市中的全民武魂觉醒与武道教育，学校以检测、排名和考核筛选人才，凶兽、训练营与军方前线将校园竞争推入战争。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "现实世界的灾难死亡者（如地震遇难者）被接入「终焉之地」——一个自称为创造「神/女娲」而运行的封闭游戏世界；死者在此以「参与者」身份反复参加死亡游戏（BOOK_012:CHAPTER:0002, BOOK_012:CHAPTER:0009）。世界由戴生肖面具的「生肖」管理，幕后存在层级神明（四象、天龙）与「阴魂管理局」…",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "世界是一片被迷雾包裹大海上的孤岛群：离城岛有400万人口，其中仅400多人是人类，其余全是可伪装成人的兽（『小可爱』行话，CH56/L8646『岛上有400万人口，其中只有400多个人类，剩下的全是小可爱』）；无法离开孤岛，只能经『官方通道』（飞机/高铁/高速）抵达其他孤岛且中途不可脱离（CH56）；迷雾之下真相被系…",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_014",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_014",
+              "title": "百余年前克系存在（三柱神与阿撒托斯阴影）入侵，'迷雾'降世吞没全球，人类蜷缩于据点城市（大夏为最强堡垒）；诸神与神国真实存在（埃及/北欧/希腊/印度/天庭/神欲天堂），神明依托宇宙意志与法则诞生；禁墟者、魔法师与神明共同构成力量层；克系神明曾被半步升维的耶兰得重伤并封印于月球，随时间推移迷雾削弱至原浓度不到2%（E1…",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "诸天世界碎片撞击蓝星，现实空间扩大并持续接纳异世界英雄、宝物与规则；世界意识赋予少数人会长/招募能力，英雄协会承担秩序与探索职责。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民高中觉醒个人神域；神明经营眷族、建筑、资源与信仰，并通过公共神域、残域和镜像试炼参与竞争。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神在【源初】造物主压迫下强行降临现实，把世界改造成【信仰游戏】：全人类意识被侵占，必须择神而信，世界被切成无数碎片，资源与生存空间全部经由试炼分配；神明可陨落、权柄可分食融合，甚至神明是可被批量生产的（_ch995-997）。",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "WB:BOOK:BOOK_001",
+            "module": "worldbuilding",
+            "record_id": "WB:BOOK:BOOK_001",
+            "source_record_id": "WB:BOOK:BOOK_001",
+            "component_id": null,
+            "component_path": null,
+            "book_id": "BOOK_001",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/03_世界观/per_book/BOOK_001.jsonl",
+            "line": 1,
+            "source_line_sha256": "b94fa858ca8d80ffa406ce0d39257f8e169894d1ffe93e131f1bda581ca6c0c1",
+            "title": "灵气潮汐终止后武道凌驾现实；官方、传统势力、联盟、军方和国际体系共同管理武者，复苏与异兽重组秩序。",
+            "summary": "灵气潮汐终止后武道凌驾现实；官方、传统势力、联盟、军方和国际体系共同管理武者，复苏与异兽重组秩序。",
+            "evidence_refs": [
+              "BOOK_001:CHAPTER:0001",
+              "BOOK_001:CHAPTER:0002",
+              "BOOK_001:CHAPTER:0005",
+              "BOOK_001:CHAPTER:0016",
+              "BOOK_001:CHAPTER:0030",
+              "BOOK_001:CHAPTER:0084",
+              "BOOK_001:CHAPTER:0092",
+              "BOOK_001:CHAPTER:0122",
+              "BOOK_001:CHAPTER:0131",
+              "BOOK_001:CHAPTER:0137"
+            ],
+            "source_component_preview": "{\"record_type\":\"per_book\",\"schema_version\":2,\"record_id\":\"WB:BOOK:BOOK_001\",\"status\":\"candidate\",\"book_id\":\"BOOK_001\",\"title\":\"高武：从临时工到武镇周天！\",\"chapters_covered\":\"1-137\",\"world_core_premise\":\"灵气潮汐终止后武道凌驾现实；官方、传统势力、联盟、军方和国际体系共同管理武者，复苏与异兽重组秩序。\",\"ordinary_life_state\":\"普通社会未公开完整武道真相，武者危机由机构封装处理。\",\"factions\":[{\"faction_id\":\"F1\",\"name_in_book\":\"武安局\",\"faction_type\":\"official\",\"public_role\":\"官方武者治安与任务\",\"actual_interest\":\"资源、秩序与组织利益\",\"controlled_resources\":[\"任务\",\"档案\",\"高阶武者\",\"权限\"],\"controlled_territories_or_access\":[\"所属行动区域\"],\"controlled_information_or_rules\":[\"身份与分配规则\"],\"recruitment_or_entry\":[\"任务/师承/任命/家族\"],\"internal_hierarchy\":[\"基层→地方→高层\"],\"relations\":[{\"target_faction_id\":\"F2\",\"relation_type\":\"ally\",\"observable_basis\":\"共同任务或资源关系\",\"evidence_refs\":[\"BOOK_001:CHAPTER:0002\",\"BOOK_001:CHAPTER:0005\"]}]"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "A:SYSTEM:CRAFT_AND_COMBAT_PROOF",
+          "module": "cultivation_system",
+          "function_required": "修炼提升必须能在维修、战斗和经脉损耗三个维度被验证",
+          "query": "器物灵性 训练 资源 公开验证 战力",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "abstract_function": "境界、器物构筑、训练资源和公开战力共同定义成长状态",
+          "constraint_checks": {
+            "ability": "灵纹感知和重刻受境界与器材限制",
+            "resource": "经脉修复药和灯芯材料分别消耗",
+            "world": "工匠修炼可被城防制度认证",
+            "character": "成长不能替代家人的协作和撤离决定"
+          },
+          "rule_conflicts": [],
+          "adaptation_bridge": {
+            "new_rule": "灵纹师以识纹、承载、重刻三项分别考核，战力只占其中一项",
+            "cost_or_constraint": "越级重刻提高防线输出但累积不可忽略的经脉灼痕",
+            "changed_state": "主角的成长同时改变维修权限、战场能力和恢复债务",
+            "why_causal": "每次能力提升都必须在真实断灯或守城节点中验证",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "把成长代价写入可用次数、恢复窗口和守城选择",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LA3",
+            "LA6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "CS:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武：看不起器物灵性，炎系器物灵性呢",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "你管这叫精神病？这分明是先知！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "猎魔人小姐，我真不是血族",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_015",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_015",
+              "title": "一天获得一个超能力的我不懂恋爱",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "高武：从临时工到武镇周天！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "异兽迷城",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_010",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_010",
+              "title": "超能：我有一面复刻镜",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "CS:BOOK:BOOK_009",
+            "module": "cultivation_system",
+            "record_id": "CS:BOOK:BOOK_009",
+            "source_record_id": "CS:BOOK:BOOK_009",
+            "component_id": null,
+            "component_path": null,
+            "book_id": "BOOK_009",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/04_修炼体系/per_book/BOOK_009.jsonl",
+            "line": 1,
+            "source_line_sha256": "fb89d50dba075394de2383f7d57ee62f9eead9f451dbc85c87880cfc98a72095",
+            "title": "高武：看不起器物灵性，炎系器物灵性呢",
+            "summary": "BOOK_009:CHAPTER:0001 BOOK_009:CHAPTER:0010 BOOK_009:CHAPTER:0028 BOOK_009:CHAPTER:0043 BOOK_009:CHAPTER:0054 BOOK_009:CHAPTER:0062",
+            "evidence_refs": [
+              "BOOK_009:CHAPTER:0001",
+              "BOOK_009:CHAPTER:0010",
+              "BOOK_009:CHAPTER:0028",
+              "BOOK_009:CHAPTER:0043",
+              "BOOK_009:CHAPTER:0054",
+              "BOOK_009:CHAPTER:0062"
+            ],
+            "source_component_preview": "{\"record_type\":\"per_book\",\"schema_version\":1,\"record_id\":\"CS:BOOK:BOOK_009\",\"status\":\"candidate\",\"evidence_refs\":[\"BOOK_009:CHAPTER:0001\",\"BOOK_009:CHAPTER:0010\",\"BOOK_009:CHAPTER:0028\",\"BOOK_009:CHAPTER:0043\",\"BOOK_009:CHAPTER:0054\",\"BOOK_009:CHAPTER:0062\"],\"unknowns\":[\"源文未完整交代通用境界突破条件、武魂与武技换算\",\"终极形态的长期代价UNKNOWN\"],\"confidence\":\"MEDIUM\",\"qa_status\":\"PASS\",\"book_id\":\"BOOK_009\",\"title\":\"高武：看不起器物灵性，炎系器物灵性呢\",\"chapters_covered\":\"1-62\",\"universal_system\":{\"name\":\"武魂品级＋武道境界＋武技/军功\",\"entry\":\"高中阶段觉醒武魂并进入武道教育与检测\",\"growth_loop\":\"境界训练→公开考核/积分→技能资源→更高训练与前线\",\"unknowns\":[\"社会完整等级表UNKNOWN\"]},\"realm_system\":{\"realm_order\":[{\"realm_id\":\"R1\",\"name_in_book\":\"一阶\",\"order\":1,\"stage_difference\":\"基础武者阶段\",\"direct_evidence_refs\":[\"BOOK_009:CHAPTER:0001\"]},{\"realm_id\":\"R2\",\"name_in_book\":\"二阶\",\"order\":2,\"stage_differenc"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "A:CHARACTER:FAMILY_CO_ACTOR",
+          "module": "character_function",
+          "function_required": "被保护家人必须拥有独立目标并在关键节点直接改变防守方案",
+          "query": "独立 共战 保护 选择 关系",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "abstract_function": "从被保护对象转为有独立目标和现场行动的共战者",
+          "constraint_checks": {
+            "ability": "家人不复制来源角色能力，只承担联灯与撤离组织",
+            "resource": "家人掌握住户名单和备用灯芯而非无条件资源",
+            "world": "普通人可通过社区岗位参与城防",
+            "character": "妹妹的目标是保住整条巷区，不服从主角单独带家逃走"
+          },
+          "rule_conflicts": [],
+          "adaptation_bridge": {
+            "new_rule": "家属作为联灯员有权决定哪些节点先通电并组织邻里撤离",
+            "cost_or_constraint": "留在联灯台会承担被围困风险，撤离则无法形成完整防线",
+            "changed_state": "保护关系从单向救援转成分工共担",
+            "why_causal": "妹妹的节点选择直接决定主角能力能覆盖多少家庭",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "让主角从只救自家改为接受家人提出的社区联防方案",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LA3",
+            "LA6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "HEROINE:BOOK_008:时雨晴",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "时雨晴｜从被保护对象到独立共战者",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "你管这叫精神病？这分明是先知！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武：看不起器物灵性，炎系器物灵性呢",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HEROINE:BOOK_007:方月瑶",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "方月瑶｜猎魔追捕者、污染风险承载者与关系发动机",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HC:BOOK_002:沈清雪",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "沈清雪",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HEROINE:GAP:BOOK_014",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_014",
+              "title": "我在精神病院学斩神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "异兽迷城",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "高武：从临时工到武镇周天！",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "HEROINE:BOOK_008:时雨晴",
+            "module": "character_function",
+            "record_id": "HEROINE:BOOK_008:时雨晴",
+            "source_record_id": "HEROINE:BOOK_008:时雨晴",
+            "component_id": null,
+            "component_path": null,
+            "book_id": "BOOK_008",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/05_人物功能与标签/derived/heroine/BOOK_008.jsonl",
+            "line": 1,
+            "source_line_sha256": "2fcfb5e9d69c481f91ffd1b07751ae0200f0c7f43e7d95e95e4290186e3bafa2",
+            "title": "时雨晴｜从被保护对象到独立共战者",
+            "summary": "在不依附阎慈代为决定的前提下完成自身觉醒、战斗与成长；第3章主动邀约共同走职业路线，第8章觉醒后直接承担现场。",
+            "evidence_refs": [
+              "BOOK_008:CHAPTER:0003",
+              "BOOK_008:CHAPTER:0007",
+              "BOOK_008:CHAPTER:0008",
+              "BOOK_008:CHAPTER:0010",
+              "BOOK_008:CHAPTER:0023",
+              "BOOK_008:CHAPTER:0085",
+              "BOOK_008:CHAPTER:0086"
+            ],
+            "source_component_preview": "{\"record_type\":\"heroine_character\",\"schema_version\":1,\"status\":\"candidate\",\"record_id\":\"HEROINE:BOOK_008:时雨晴\",\"book_id\":\"BOOK_008\",\"character_id\":\"时雨晴\",\"title\":\"时雨晴｜从被保护对象到独立共战者\",\"chapters_covered\":\"1-86\",\"qa_status\":\"PASS\",\"confidence\":\"MEDIUM\",\"unknowns\":[\"86章后个人目标、终局关系和长期职业路线UNKNOWN\"],\"independent_goal\":\"在不依附阎慈代为决定的前提下完成自身觉醒、战斗与成长；第3章主动邀约共同走职业路线，第8章觉醒后直接承担现场。\",\"personality_evidence\":[{\"claim\":\"面对重大选择会主动提出共同路线，而不是等待阎慈安排\",\"evidence\":\"第3章向阎慈提出暂停大学、共同走职业路线。\",\"evidence_refs\":[\"BOOK_008:CHAPTER:0003\"]},{\"claim\":\"遭遇现实危险后能把情绪转成独立行动\",\"evidence\":\"第7章阎慈受伤后，第8章自行觉醒并击杀怪物，再面对疯人院目标。\",\"evidence_refs\":[\"BOOK_008:CHAPTER:0007\",\"BOOK_008:CHAPTER:0008\"]},{\"claim\":\"关系表达带有主动调侃与战斗后的自我确认\",\"evidence\":\"第85-86章战斗后主动向阎慈确认自己的帅与关系互动。\",\"evidence_refs\":[\"BOOK_008:CHAPTER:0085\",\"BOOK_008:CHAPTER:0086\"]}],\"boundaries\":["
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "A:PLOT:QUALIFICATION_TO_RESOURCE",
+          "module": "plotline",
+          "function_required": "危险任务、资格复核、资源入口和后续责任必须形成连续因果线",
+          "query": "保护 资格 成长 公开 资源",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/plotlines/1",
+          "component_id": "PL:008:ACADEMY",
+          "abstract_function": "通过高风险考核取得训练设施和持续资源，同时增加暴露义务",
+          "constraint_checks": {
+            "ability": "任务验证灵纹维修而非来源书能力",
+            "resource": "战功换维修材料和资格，存在机会成本",
+            "world": "考核由城防机构主持",
+            "character": "家人是否参保与主角是否入职分开结算"
+          },
+          "rule_conflicts": [],
+          "adaptation_bridge": {
+            "new_rule": "临时灯工可通过断区抢修考核申请正式维修权",
+            "cost_or_constraint": "参加考核必须把家庭暂时留在低防护区并公开能力",
+            "changed_state": "一次任务转成长期材料、权限和责任接口",
+            "why_causal": "没有公开抢修记录就无法改变家庭防护等级",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "把主角的成长试验绑定到家庭防护资格，而非旁支副本",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LA2",
+            "LA4"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "PL:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "猎魔人小姐，我真不是血族",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武：看不起器物灵性，炎系器物灵性呢",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "异兽迷城",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "你管这叫精神病？这分明是先知！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "PL:008:ACADEMY",
+            "module": "plotline",
+            "record_id": "PL:BOOK_008",
+            "source_record_id": "PL:BOOK_008",
+            "component_id": "PL:008:ACADEMY",
+            "component_path": "/plotlines/1",
+            "book_id": "BOOK_008",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/06_主线与支线/per_book/BOOK_008.jsonl",
+            "line": 1,
+            "source_line_sha256": "68a849c8123fdd439755cb137b255bb44a9d7ad13d8b913ce1ed00ba562f0368",
+            "title": "青梅是天命之女？可我既是天命！",
+            "summary": "BOOK_008:CHAPTER:0001 BOOK_008:CHAPTER:0008 BOOK_008:CHAPTER:0010 BOOK_008:CHAPTER:0023 BOOK_008:CHAPTER:0026 BOOK_008:CHAPTER:0027 BOOK_008:CHAPTER:0028 BOOK_008:CHAPTER:0034 BOOK_008:CHAPTER:0037 BOOK_008:CHAPTER:0044 BOOK_008:CHAPTER:0045 BOOK_008:CHAPTER:0047 BOOK_008:CHAPTE…",
+            "evidence_refs": [
+              "BOOK_008:CHAPTER:0001",
+              "BOOK_008:CHAPTER:0008",
+              "BOOK_008:CHAPTER:0010",
+              "BOOK_008:CHAPTER:0023",
+              "BOOK_008:CHAPTER:0026",
+              "BOOK_008:CHAPTER:0027",
+              "BOOK_008:CHAPTER:0028",
+              "BOOK_008:CHAPTER:0034",
+              "BOOK_008:CHAPTER:0037",
+              "BOOK_008:CHAPTER:0044",
+              "BOOK_008:CHAPTER:0045",
+              "BOOK_008:CHAPTER:0047",
+              "BOOK_008:CHAPTER:0048",
+              "BOOK_008:CHAPTER:0049",
+              "BOOK_008:CHAPTER:0051",
+              "BOOK_008:CHAPTER:0053",
+              "BOOK_008:CHAPTER:0054",
+              "BOOK_008:CHAPTER:0057",
+              "BOOK_008:CHAPTER:0059",
+              "BOOK_008:CHAPTER:0060",
+              "BOOK_008:CHAPTER:0062",
+              "BOOK_008:CHAPTER:0070",
+              "BOOK_008:CHAPTER:0073",
+              "BOOK_008:CHAPTER:0074",
+              "BOOK_008:CHAPTER:0075",
+              "BOOK_008:CHAPTER:0077",
+              "BOOK_008:CHAPTER:0078",
+              "BOOK_008:CHAPTER:0079",
+              "BOOK_008:CHAPTER:0083",
+              "BOOK_008:CHAPTER:0084",
+              "BOOK_008:CHAPTER:0085",
+              "BOOK_008:CHAPTER:0086"
+            ],
+            "source_component_preview": "{\"line_identity\":{\"line_id\":\"PL:008:ACADEMY\",\"line_label\":\"白泽学院成长与资格线\",\"line_scope\":\"23-47\",\"line_purpose\":\"把学院身份转成训练、共鸣池/进化池和灾隙考核资格\",\"line_kind\":\"child\",\"evidence_refs\":[\"BOOK_008:CHAPTER:0023\",\"BOOK_008:CHAPTER:0026\",\"BOOK_008:CHAPTER:0027\",\"BOOK_008:CHAPTER:0028\",\"BOOK_008:CHAPTER:0034\",\"BOOK_008:CHAPTER:0037\",\"BOOK_008:CHAPTER:0044\",\"BOOK_008:CHAPTER:0045\",\"BOOK_008:CHAPTER:0047\"],\"unknowns\":[]},\"trigger\":{\"trigger_id\":\"PL:T2\",\"actual_start_event\":\"阎慈与时雨晴被百里珂带入白泽学院并接入小白网络\",\"chapter_or_stage\":\"23\",\"start_mode\":\"new\",\"evidence_refs\":[\"BOOK_008:CHAPTER:0023\"],\"unknowns\":[]},\"goals\":[{\"goal_id\":\"PL:G2\",\"goal_statement\":\"通过学院考核并取得可持续成长资源\",\"subject\":\"阎慈/时雨晴\",\"phase_scope\":\"23-47\",\"success_condition\":\"完成考核、获得排名与设施入口\",\"goal_status\":\"paid\",\"evidence_refs\":[\"BOOK_008:CHAPTER:0023\",\"BOOK_008:CHAP"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "A:OPENING:FAMILY_NEED_TO_TASK",
+          "module": "opening",
+          "function_required": "前十章把弱势家庭缺口、合法任务入口和首次小兑现连成一条链",
+          "query": "弱势 家庭 收入 任务 承诺",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/promise_setup/0",
+          "component_id": "OP:PROMISE:1",
+          "abstract_function": "家庭资源缺口把力量觉醒转成必须验证的现实承诺",
+          "constraint_checks": {
+            "ability": "开篇只展示读纹雏形，不提前给完整守城能力",
+            "resource": "第一笔维修报酬只能延缓断供",
+            "world": "合法临时工入口可追责",
+            "character": "主角主动签下任务，家人保留反对和替代方案"
+          },
+          "rule_conflicts": [],
+          "adaptation_bridge": {
+            "new_rule": "家庭被降为末级防护户后，临时抢修是唯一可快速恢复积分的合法入口",
+            "cost_or_constraint": "首次任务只能恢复一盏灯且暴露主角异常识纹",
+            "changed_state": "家庭保护从愿望转成有价、有风险的行动目标",
+            "why_causal": "断供记录直接触发主角接任务",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "确保第一轮下降不是背景卖惨，而是迫使主角进入可失败的任务",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LA1",
+            "LA2"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "OP:BOOK:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "高武：从临时工到武镇周天！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武器物灵性开篇",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "你管这叫精神病？这分明是先知！",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "OP:PROMISE:1",
+            "module": "opening",
+            "record_id": "OP:BOOK:BOOK_001",
+            "source_record_id": "OP:BOOK:BOOK_001",
+            "component_id": "OP:PROMISE:1",
+            "component_path": "/promise_setup/0",
+            "book_id": "BOOK_001",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/07_开篇/per_book/BOOK_001.jsonl",
+            "line": 1,
+            "source_line_sha256": "161088aac8b0a9f611f592d4f6a3799e010dbd60a6458e8ce88aeb909a38a88a",
+            "title": "高武：从临时工到武镇周天！",
+            "summary": "BOOK_001:CHAPTER:0001 BOOK_001:CHAPTER:0003 BOOK_001:CHAPTER:0005 BOOK_001:CHAPTER:0006 BOOK_001:CHAPTER:0009 BOOK_001:CHAPTER:0010",
+            "evidence_refs": [
+              "BOOK_001:CHAPTER:0001",
+              "BOOK_001:CHAPTER:0003",
+              "BOOK_001:CHAPTER:0005",
+              "BOOK_001:CHAPTER:0006",
+              "BOOK_001:CHAPTER:0009",
+              "BOOK_001:CHAPTER:0010"
+            ],
+            "source_component_preview": "{\"promise_id\":\"OP:PROMISE:1\",\"promise_statement\":\"玉碟将把实际行动转成可持续的成长循环。\",\"promise_target\":\"江云的战力与选择空间\",\"setup_event\":\"玉碟反馈和气血修炼在前3章被反复验证。\",\"expected_future_payoff_or_unresolved_question\":\"读者等待点数在真实任务中继续兑现并改变身份。\",\"promise_status\":\"partially_paid\",\"setup_window\":3,\"evidence_refs\":[\"BOOK_001:CHAPTER:0001\",\"BOOK_001:CHAPTER:0002\",\"BOOK_001:CHAPTER:0003\"],\"unknowns\":[\"上限\"]}"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "A:ARC:HOME_DEFENSE_SETTLEMENT",
+          "module": "arc_structure",
+          "function_required": "训练、资格和前线守护逐级升级，并在前50章形成家庭安全结算",
+          "query": "低评价 训练 前线 保护 高潮",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/arcs/3/arc_identity",
+          "component_id": "AR:ARC:BOOK_009:FRONTLINE",
+          "abstract_function": "把此前训练构筑放进公共防线危机中完成阶段验证",
+          "constraint_checks": {
+            "ability": "高潮要求维修、协作和战斗共同成立",
+            "resource": "前置材料和经脉状态决定高潮可用方案",
+            "world": "家区防线是公共设施而非私人法宝",
+            "character": "家人联灯决定保护结果"
+          },
+          "rule_conflicts": [],
+          "adaptation_bridge": {
+            "new_rule": "前线高潮改为九灯联防失效后的分区复燃",
+            "cost_or_constraint": "主角无法独自同时修复所有节点，必须授权家人和邻里分担",
+            "changed_state": "家区获得实质安全、正式防护等级和可追责记录",
+            "why_causal": "前30章的训练、材料、人际协作都成为高潮前置条件",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "使第一宏弧以家庭安全和制度登记同时改变结束",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LA4",
+            "LA6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "AR:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武器物灵性成长与前线战争结构",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "猎魔人小姐，我真不是血族",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_011",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_011",
+              "title": "诡舍",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AS:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "AR:ARC:BOOK_009:FRONTLINE",
+            "module": "arc_structure",
+            "record_id": "AR:BOOK:BOOK_009",
+            "source_record_id": "AR:BOOK:BOOK_009",
+            "component_id": "AR:ARC:BOOK_009:FRONTLINE",
+            "component_path": "/arcs/3/arc_identity",
+            "book_id": "BOOK_009",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/08_篇章结构/per_book/BOOK_009.jsonl",
+            "line": 1,
+            "source_line_sha256": "3ab1efec91efaf4cb534ca1a5054564fdbefed8700befd2c57df8abe727b8bcf",
+            "title": "高武器物灵性成长与前线战争结构",
+            "summary": "1-10 校园低评反转；11-25 检测与联合选拔；26-44 训练营与中央特训",
+            "evidence_refs": [
+              "BOOK_009:CHAPTER:0001",
+              "BOOK_009:CHAPTER:0010",
+              "BOOK_009:CHAPTER:0025",
+              "BOOK_009:CHAPTER:0044",
+              "BOOK_009:CHAPTER:0062"
+            ],
+            "source_component_preview": "{\"arc_id\":\"AR:ARC:BOOK_009:FRONTLINE\",\"arc_label\":\"前线兽潮与终局形态\",\"arc_scope\":\"45-62\",\"arc_purpose\":\"把高温构筑置于兽潮、城防与军功责任中，完成终局形态的战场验证\",\"arc_kind\":\"main\",\"parent_arc_id\":\"UNKNOWN\",\"evidence_refs\":[\"BOOK_009:CHAPTER:0045\",\"BOOK_009:CHAPTER:0054\",\"BOOK_009:CHAPTER:0062\"],\"unknowns\":[\"第62章之后结构未知\"]}"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "A:MECH:PUBLIC_REPRICING",
+          "module": "plot_mechanism",
+          "function_required": "公开证据必须迫使权威复核资源和防护资格，而不是只产生围观",
+          "query": "公开验证 评级 资源 代价",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/mechanisms/1/mechanism_identity",
+          "component_id": "PM:MECH:BOOK_009:REPRICE",
+          "abstract_function": "第三方可见战果触发权威复核并重算培养资源或权限",
+          "constraint_checks": {
+            "ability": "复核对象是维修与守城结果",
+            "resource": "评级变化只重分配现有防护资源",
+            "world": "存在公开记录、权威复核和申诉接口",
+            "character": "主角必须选择公开证据并承担能力暴露"
+          },
+          "rule_conflicts": [],
+          "adaptation_bridge": {
+            "new_rule": "灯阵复核会同时查看修复记录、居民伤亡和燃料流向",
+            "cost_or_constraint": "公开复核会暴露主角能力并触发既得利益反制",
+            "changed_state": "低防护户评级和材料配额被重算",
+            "why_causal": "没有可复核数据，权威不会改变资源分配",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "让主角选择留下证据而非接受私下补偿，并由此启动下一弧压力",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LA4",
+            "LA5",
+            "LA7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "PM:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "能力约束下的公开验证—资源升级机制",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK_017:001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏：可复用剧情机制集",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_014",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_014",
+              "title": "我在精神病院学斩神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_010",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_010",
+              "title": "超能：我有一面复刻镜",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "异兽迷城",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_011",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_011",
+              "title": "诡舍",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "PM:MECH:BOOK_009:REPRICE",
+            "module": "plot_mechanism",
+            "record_id": "PM:BOOK:BOOK_009",
+            "source_record_id": "PM:BOOK:BOOK_009",
+            "component_id": "PM:MECH:BOOK_009:REPRICE",
+            "component_path": "/mechanisms/1/mechanism_identity",
+            "book_id": "BOOK_009",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/09_剧情机制/per_book/BOOK_009.jsonl",
+            "line": 1,
+            "source_line_sha256": "214b4262c98a3914e7b27adcdf15f19b511016b427ad66559ca5f88b132cd5c2",
+            "title": "能力约束下的公开验证—资源升级机制",
+            "summary": "BOOK_009:CHAPTER:0010 BOOK_009:CHAPTER:0028 BOOK_009:CHAPTER:0048 BOOK_009:CHAPTER:0061",
+            "evidence_refs": [
+              "BOOK_009:CHAPTER:0010",
+              "BOOK_009:CHAPTER:0028",
+              "BOOK_009:CHAPTER:0048",
+              "BOOK_009:CHAPTER:0061"
+            ],
+            "source_component_preview": "{\"mechanism_id\":\"PM:MECH:BOOK_009:REPRICE\",\"mechanism_label\":\"公开验证—权威复核—培养价格重定价\",\"mechanism_description\":\"被低评级标签压制的个体主动进入可观察场景，以战果触发权威复核，使评级、舆论与培养资源重新定价。\",\"reusable_operation\":\"低评价与资源压低→承担公开失败风险→形成第三方可见战果→权威复核→评级和培养权限重算\",\"applicability_scope\":\"校园考核、职业认证、机构评级与人才选拔\",\"core_invariants\":[\"必须有第三方可见战果\",\"必须存在权威复核接口\",\"结果改变培养资源或权限\"],\"excluded_surface_labels\":[\"原IP武器专名\",\"原IP形态名\",\"原IP招式链\"],\"distinction_boundary\":\"只抽象公开证据与制度重定价，不把单一个例外推为全国制度已全面改版。\",\"evidence_refs\":[\"BOOK_009:CHAPTER:0007\",\"BOOK_009:CHAPTER:0013\",\"BOOK_009:CHAPTER:0019\",\"BOOK_009:CHAPTER:0021\"],\"unknowns\":[\"全国统一评级制度是否正式改版UNKNOWN\"]}"
+          },
+          "rejected_refs": []
+        }
+      ]
+    },
+    {
+      "option_id": "BRIDGE:B:LEGACY",
+      "pair_id": "PAIR:B:MIGRATION_CONVOY",
+      "mode": "LEGACY_BASELINE",
+      "status": "candidate",
+      "qa_status": "HOLD",
+      "research_state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "title": "旧路径候选B：背山迁途",
+      "premise": "无安全配额的少年以承途印和自治车队争取全家的迁徙权。",
+      "causal_signature": {
+        "central_conflict": "迁徙配额被垄断",
+        "ability_logic": "自愿投入换护锚并冻结修炼通道",
+        "relationship_topology": "议事组编车",
+        "institution_engine": "护送记录换路线合同",
+        "next_arc_trigger": "路标矛盾"
+      },
+      "reader_expectations": [
+        {
+          "expectation": "家人能否安全抵达高地",
+          "payoff": "车队安全抵达并取得正式路票"
+        },
+        {
+          "expectation": "承途印代价是否真实",
+          "payoff": "能力完成护送且修炼通道保持冻结"
+        },
+        {
+          "expectation": "家属是否掌握行动权",
+          "payoff": "议事组方案决定分车和损耗"
+        },
+        {
+          "expectation": "路线异常是否会被追查",
+          "payoff": "移位驿标进入核查但受益者未知"
+        }
+      ],
+      "story_nodes": [
+        {
+          "node_id": "LB1",
+          "chapter_range": "1-5",
+          "cause": "家中没有安全迁徙配额",
+          "event": "正式路票申请被拒",
+          "character_choice": "接受一次临时试运",
+          "decision_makers": [
+            "主角",
+            "姑母"
+          ],
+          "consequence": "保护目标转成路线权",
+          "reveals": [
+            "无安全配额"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "B:WORLD:RESOURCE_COMMONS",
+              "material_ref": "WB-F2",
+              "role_at_node": "区域共同体自行经营生产、训练、军队和远征资源",
+              "effect_on_action": "配额制造危机"
+            },
+            {
+              "slot_id": "B:OPENING:SCARCE_STARTING_ASSETS",
+              "material_ref": "OP006-PR2",
+              "role_at_node": "有限启动投资建立能否转化为公开成果的承诺",
+              "effect_on_action": "有限试运建立承诺"
+            }
+          ]
+        },
+        {
+          "node_id": "LB2",
+          "chapter_range": "6-10",
+          "cause": "旧支路维护失真",
+          "event": "个人护送失败并损毁车辆",
+          "character_choice": "保留真实损耗",
+          "decision_makers": [
+            "主角",
+            "车夫"
+          ],
+          "consequence": "个人路线失败并获得复核入口",
+          "reveals": [
+            "维护记录失真"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "B:PLOT:ORGANIZATION_UNDER_REAL_LOSS",
+              "material_ref": "PL003",
+              "role_at_node": "组织能力进入真实损失规则，并以结果换公开资格和资源",
+              "effect_on_action": "真实失败"
+            },
+            {
+              "slot_id": "B:OPENING:SCARCE_STARTING_ASSETS",
+              "material_ref": "OP006-PR2",
+              "role_at_node": "有限启动投资建立能否转化为公开成果的承诺",
+              "effect_on_action": "车辆损毁加压"
+            }
+          ]
+        },
+        {
+          "node_id": "LB3",
+          "chapter_range": "11-20",
+          "cause": "复核接触废弃承途碑",
+          "event": "能力出现并冻结修炼通道",
+          "character_choice": "限制承压位并接受家属编车",
+          "decision_makers": [
+            "主角",
+            "姑母"
+          ],
+          "consequence": "形成自治车队方案",
+          "reveals": [
+            "能力和承压代价"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "B:GF:BURDEN_TRANSFER",
+              "material_ref": "GF:BOOK_004",
+              "role_at_node": "消耗宿主可支配之物并强化绑定目标",
+              "effect_on_action": "能力依赖投入和代价"
+            },
+            {
+              "slot_id": "B:SYSTEM:SHARED_BURDEN_PHYSIOLOGY",
+              "material_ref": "ORIGINAL:B:SYSTEM:SHARED_BURDEN_PHYSIOLOGY",
+              "role_at_node": "以承压位、经脉冻结和恢复周期约束保护能力",
+              "effect_on_action": "原创承压位限制能力"
+            },
+            {
+              "slot_id": "B:CHARACTER:HOUSEHOLD_ORGANIZERS",
+              "material_ref": "NF3",
+              "role_at_node": "基层成员把普通个体组织成战术与生产能力",
+              "effect_on_action": "家属编车"
+            },
+            {
+              "slot_id": "B:MECH:DELEGATED_AUTONOMY",
+              "material_ref": "PM006-3",
+              "role_at_node": "上位行动者提供边界与资源，基层成员自治执行并以结果反哺",
+              "effect_on_action": "下放编车权"
+            }
+          ]
+        },
+        {
+          "node_id": "LB4",
+          "chapter_range": "21-30",
+          "cause": "正式路票要求危险试运",
+          "event": "多户车队完成支路护送",
+          "character_choice": "优先伤员车而非追功",
+          "decision_makers": [
+            "主角",
+            "议事组"
+          ],
+          "consequence": "取得临时份额",
+          "reveals": [
+            "真实护送可换份额"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "B:GF:BURDEN_TRANSFER",
+              "material_ref": "GF:BOOK_004",
+              "role_at_node": "消耗宿主可支配之物并强化绑定目标",
+              "effect_on_action": "容量约束保护顺序"
+            },
+            {
+              "slot_id": "B:PLOT:ORGANIZATION_UNDER_REAL_LOSS",
+              "material_ref": "PL003",
+              "role_at_node": "组织能力进入真实损失规则，并以结果换公开资格和资源",
+              "effect_on_action": "组织验证"
+            }
+          ]
+        },
+        {
+          "node_id": "LB5",
+          "chapter_range": "31-38",
+          "cause": "路线复盘发现驿标异常",
+          "event": "驿商提出单户路票换解散车队",
+          "character_choice": "维持多户合同",
+          "decision_makers": [
+            "主角",
+            "姑母",
+            "议事组"
+          ],
+          "consequence": "最终迁徙与后续核查同时加压",
+          "reveals": [
+            "路标与安全图矛盾"
+          ],
+          "opens_next_arc": true,
+          "material_uses": [
+            {
+              "slot_id": "B:WORLD:RESOURCE_COMMONS",
+              "material_ref": "WB-F2",
+              "role_at_node": "区域共同体自行经营生产、训练、军队和远征资源",
+              "effect_on_action": "共同体合同受压"
+            },
+            {
+              "slot_id": "B:ARC:EXTERNAL_PROBLEM_TO_CONTRACT",
+              "material_ref": "AR:ARC:006:005",
+              "role_at_node": "用受控方案解决外部群体困境并建立稳定合作",
+              "effect_on_action": "外部问题打开"
+            },
+            {
+              "slot_id": "B:MECH:DELEGATED_AUTONOMY",
+              "material_ref": "PM006-3",
+              "role_at_node": "上位行动者提供边界与资源，基层成员自治执行并以结果反哺",
+              "effect_on_action": "议事组否决单户路票"
+            }
+          ]
+        },
+        {
+          "node_id": "LB6",
+          "chapter_range": "39-47",
+          "cause": "沉降迫使车队穿越风切峡",
+          "event": "自治分车与有限护锚完成迁徙",
+          "character_choice": "拒绝新增致残承压位，分批通过",
+          "decision_makers": [
+            "主角",
+            "议事组",
+            "车夫"
+          ],
+          "consequence": "家庭和车队安全抵达",
+          "reveals": [
+            "车队安全抵达"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "B:GF:BURDEN_TRANSFER",
+              "material_ref": "GF:BOOK_004",
+              "role_at_node": "消耗宿主可支配之物并强化绑定目标",
+              "effect_on_action": "拒绝致残超载"
+            },
+            {
+              "slot_id": "B:SYSTEM:SHARED_BURDEN_PHYSIOLOGY",
+              "material_ref": "ORIGINAL:B:SYSTEM:SHARED_BURDEN_PHYSIOLOGY",
+              "role_at_node": "以承压位、经脉冻结和恢复周期约束保护能力",
+              "effect_on_action": "成长债保留"
+            },
+            {
+              "slot_id": "B:CHARACTER:HOUSEHOLD_ORGANIZERS",
+              "material_ref": "NF3",
+              "role_at_node": "基层成员把普通个体组织成战术与生产能力",
+              "effect_on_action": "自治方案决定损耗"
+            },
+            {
+              "slot_id": "B:PLOT:ORGANIZATION_UNDER_REAL_LOSS",
+              "material_ref": "PL003",
+              "role_at_node": "组织能力进入真实损失规则，并以结果换公开资格和资源",
+              "effect_on_action": "最终迁徙"
+            },
+            {
+              "slot_id": "B:ARC:EXTERNAL_PROBLEM_TO_CONTRACT",
+              "material_ref": "AR:ARC:006:005",
+              "role_at_node": "用受控方案解决外部群体困境并建立稳定合作",
+              "effect_on_action": "解决困境形成合同"
+            },
+            {
+              "slot_id": "B:MECH:DELEGATED_AUTONOMY",
+              "material_ref": "PM006-3",
+              "role_at_node": "上位行动者提供边界与资源，基层成员自治执行并以结果反哺",
+              "effect_on_action": "自治约束能力配置"
+            }
+          ]
+        },
+        {
+          "node_id": "LB7",
+          "chapter_range": "48-50",
+          "cause": "迁徙结果需要制度结算",
+          "event": "正式路票成立并核查驿标",
+          "character_choice": "接受限载规则而非个人免审",
+          "decision_makers": [
+            "主角",
+            "驿盟",
+            "议事组"
+          ],
+          "consequence": "第一阶段结束并保留路线调查",
+          "reveals": [
+            "正式路票成立",
+            "受益者未知"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "B:WORLD:RESOURCE_COMMONS",
+              "material_ref": "WB-F2",
+              "role_at_node": "区域共同体自行经营生产、训练、军队和远征资源",
+              "effect_on_action": "结果转正式路票"
+            }
+          ]
+        }
+      ],
+      "story_spine": {
+        "stages": [
+          {
+            "stage": "trigger",
+            "story_task": "LB1"
+          },
+          {
+            "stage": "goal",
+            "story_task": "安全迁徙"
+          },
+          {
+            "stage": "resistance",
+            "story_task": "配额与路线"
+          },
+          {
+            "stage": "nodes",
+            "story_task": "LB2-LB5"
+          },
+          {
+            "stage": "choice",
+            "story_task": "维持多户合同"
+          },
+          {
+            "stage": "cost",
+            "story_task": "修炼通道冻结"
+          },
+          {
+            "stage": "payoff",
+            "story_task": "LB6"
+          },
+          {
+            "stage": "state_change",
+            "story_task": "正式路票"
+          },
+          {
+            "stage": "next_entry",
+            "story_task": "路标核查"
+          }
+        ]
+      },
+      "chapter_phases": [
+        {
+          "range": "1-10",
+          "purpose": "拒签与失败",
+          "payoff": "复核入口"
+        },
+        {
+          "range": "11-25",
+          "purpose": "能力与自治",
+          "payoff": "车队形成"
+        },
+        {
+          "range": "26-40",
+          "purpose": "试运与单户诱惑",
+          "payoff": "临时份额"
+        },
+        {
+          "range": "41-50",
+          "purpose": "迁徙与结算",
+          "payoff": "安全和路票"
+        }
+      ],
+      "continuation_conditions": [
+        "承压位恢复债",
+        "路线受益链",
+        "持续护送义务"
+      ],
+      "material_slots": [
+        {
+          "slot_id": "B:GF:BURDEN_TRANSFER",
+          "module": "golden_finger",
+          "function_required": "主角把可支配资源和自身承压转为群体保护，但不能无代价替家人承担一切",
+          "query": "资源 消耗 绑定 目标 供养 成长",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "abstract_function": "消耗宿主可支配之物并强化绑定目标",
+          "constraint_checks": {
+            "ability": "只转移自愿登记的负重与资源，不复制万倍强化",
+            "resource": "每次护持消耗真实粮票、灵石或主角承压位",
+            "world": "迁徙契约由驿路规则承认",
+            "character": "家人可拒绝绑定并决定资源用途"
+          },
+          "rule_conflicts": [
+            "来源的万倍结果会消灭长期压力，必须删除倍率并加入容量上限"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "承途印只能把登记家庭自愿交出的物资与负重汇入一枚临时护路锚",
+            "cost_or_constraint": "主角每开启一个承压位就冻结一段修炼通道，且不能替他人决定投入",
+            "changed_state": "家庭共同投入可以延长车队安全时间，但主角成长速度下降",
+            "why_causal": "保护强度来自真实集体选择和可消耗资源，而非凭空增幅",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "把保护从个人爆发改为家人决定投入、主角承担长期成长代价的集体行动",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LB3",
+            "LB4",
+            "LB6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "GF:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "把宿主承受或持有之物供养给绑定目标→目标获得万倍结果",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "现金输入→等价时间修为→公开战斗/直播变现循环",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "异常片段预见—主动试探—现实验证—未来改写",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_010",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_010",
+              "title": "接触葉纹复刻能力+情绪魂气驱动版本更新",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "吸收/操控血液—受伤重构—战力与追踪权限扩张",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "行为结果→双点数→修炼/恢复",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "DA:ABILITY:BOOK_017:003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "【献往虚无的祭品】+【众生相】+【共沐神恩】",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "DA:ABILITY:BOOK_016:003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "识谎者（智慧系）",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "抽卡保底/知识差筛选/任务资源循环",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "低评价器物→精神内景试探→刀灵回应→形态解放→公开验证",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "扩大样本基数/筛选变异/保底定向高价值目标",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "DA:ABILITY:BOOK_015:003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_015",
+              "title": "梦境控制",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "GF:BOOK_004",
+            "module": "golden_finger",
+            "record_id": "GF:BOOK_004",
+            "source_record_id": "GF:BOOK_004",
+            "component_id": null,
+            "component_path": null,
+            "book_id": "BOOK_004",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/02_金手指/per_book/BOOK_004.jsonl",
+            "line": 1,
+            "source_line_sha256": "b052af72950f4567b7e2cfdfcf150d0b23ac9dd47050c664164a4e7791962914",
+            "title": "把宿主承受或持有之物供养给绑定目标→目标获得万倍结果",
+            "summary": "input 宿主可支配的修炼资源、负面状态、灵魂/材料、功德或雷霆 process 选择一个可供养对象并绑定接收目标，宿主份额被消耗或剥离，接收目标获得万倍强化 output 身体净化、本命幡进阶、阴兵/血魔军团成长或法宝储备增强",
+            "evidence_refs": [
+              "BOOK_004:CHAPTER:0001",
+              "BOOK_004:CHAPTER:0002",
+              "BOOK_004:CHAPTER:0010",
+              "BOOK_004:CHAPTER:0019",
+              "BOOK_004:CHAPTER:0048",
+              "BOOK_004:CHAPTER:0063",
+              "BOOK_004:CHAPTER:0067",
+              "BOOK_004:CHAPTER:0075"
+            ],
+            "source_component_preview": "{\"schema_version\":1,\"record_type\":\"per_book\",\"record_id\":\"GF:BOOK_004\",\"status\":\"candidate\",\"book_id\":\"BOOK_004\",\"title\":\"全民法宝：我的人皇幡无限进化！\",\"chapters_covered\":\"1-76\",\"mechanic_name_in_book\":\"万倍供养系统\",\"normalized_category\":\"定向供养增幅\",\"normalized_archetype\":\"把宿主承受或持有之物供养给绑定目标→目标获得万倍结果\",\"core_formula\":{\"input\":\"宿主可支配的修炼资源、负面状态、灵魂/材料、功德或雷霆\",\"process\":\"选择一个可供养对象并绑定接收目标，宿主份额被消耗或剥离，接收目标获得万倍强化\",\"output\":\"身体净化、本命幡进阶、阴兵/血魔军团成长或法宝储备增强\"},\"ownership\":\"李逍独有系统；他人只能观察供养后的结果\",\"activation_conditions\":[\"李逍主动确认供养对象与接收目标\",\"供养对象必须已被李逍承受、持有或取得\"],\"hard_limits\":[\"不能凭空生成供养物，必须先取得丹药、魂体、血魔石、功德叶或雷霆等输入\",\"供养会改变或消耗宿主当前持有状态，负面状态供养也以宿主先承受为前提\",\"绑定目标和具体增幅结果受对象性质约束，已读范围未证明任意目标均可接受任意输入\"],\"costs\":[\"前期为获取魂体主动进入乱葬岗等危险场景\",\"大量吸纳雷池资源引发军方设施损耗与关注\",\"高价值供养会暴露本命法宝远超常规的异常表现\"],\"failure_modes\":[\"缺少合法可控的供养输入时无法启动下一轮\",\"接收目标未建立或输入性质不匹配时结果在已读范围不可确认"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "B:WORLD:RESOURCE_COMMONS",
+          "module": "worldbuilding",
+          "function_required": "聚居共同体拥有可分配资源和自治岗位，迁徙安全依赖组织而非单人战力",
+          "query": "资源 共同体 治理 试炼 保护",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/factions/1",
+          "component_id": "WB-F2",
+          "abstract_function": "区域共同体自行经营生产、训练、军队和远征资源",
+          "constraint_checks": {
+            "ability": "共同体只提供组织接口",
+            "resource": "路线、车辆、粮药和护卫名额有独立库存",
+            "world": "改为高武迁徙带而非个人神域",
+            "character": "普通家属可承担账房、侦路和护队岗位"
+          },
+          "rule_conflicts": [
+            "个人神域所有权不适用于公共迁徙路线，必须改成多户共同体"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "低地聚落以户籍份额共同持有车队资源，但安全路线由上级驿盟审批",
+            "cost_or_constraint": "资源分配需要公开账目，缺额会直接减少可迁户数",
+            "changed_state": "家人拥有组织筹码，也暴露于驿盟配额压力",
+            "why_causal": "能否迁出取决于共同体组织与审批双重结果",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "让家庭组织、资源盘点和路线权共同决定保护结果",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LB1",
+            "LB5",
+            "LB7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "WB:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民高中觉醒个人神域；神明经营眷族、建筑、资源与信仰，并通过公共神域、残域和镜像试炼参与竞争。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "冻结源呈现的是一个现代城市社会：高中生在公开觉醒/检测体系中接触异能，同时灵妖、灾害与空间裂隙可以进入日常区域；官方机构负责调查、核验、封控和把异常纳入任务系统。核心前提由第1章觉醒典礼、第6/12章官方调查、第24章校园风险处置和第112-116章裂隙任务共同支持。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神在【源初】造物主压迫下强行降临现实，把世界改造成【信仰游戏】：全人类意识被侵占，必须择神而信，世界被切成无数碎片，资源与生存空间全部经由试炼分配；神明可陨落、权柄可分食融合，甚至神明是可被批量生产的（_ch995-997）。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "世界是一片被迷雾包裹大海上的孤岛群：离城岛有400万人口，其中仅400多人是人类，其余全是可伪装成人的兽（『小可爱』行话，CH56/L8646『岛上有400万人口，其中只有400多个人类，剩下的全是小可爱』）；无法离开孤岛，只能经『官方通道』（飞机/高铁/高速）抵达其他孤岛且中途不可脱离（CH56）；迷雾之下真相被系…",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_011",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_011",
+              "title": "现代世界暗藏名为诡舍的异质空间：诡客被选中后周期性进入血门执行任务换取生存权，血门背后鬼物、规则与NPC共存；真相是诡舍即神祠（建木命力所铸之盒），保护规则实为诡客作为神的基本权力，大日灾变之『灰』曾被疯子借建木封印。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_014",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_014",
+              "title": "百余年前克系存在（三柱神与阿撒托斯阴影）入侵，'迷雾'降世吞没全球，人类蜷缩于据点城市（大夏为最强堡垒）；诸神与神国真实存在（埃及/北欧/希腊/印度/天庭/神欲天堂），神明依托宇宙意志与法则诞生；禁墟者、魔法师与神明共同构成力量层；克系神明曾被半步升维的耶兰得重伤并封印于月球，随时间推移迷雾削弱至原浓度不到2%（E1…",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "现代高武社会把气血、境界、裂缝和妖兽战果制度化；林渊绑定现金兑换修为系统后，以直播把高风险战斗变成可变现的公众内容。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "现实世界的灾难死亡者（如地震遇难者）被接入「终焉之地」——一个自称为创造「神/女娲」而运行的封闭游戏世界；死者在此以「参与者」身份反复参加死亡游戏（BOOK_012:CHAPTER:0002, BOOK_012:CHAPTER:0009）。世界由戴生肖面具的「生肖」管理，幕后存在层级神明（四象、天龙）与「阴魂管理局」…",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "灵气潮汐终止后武道凌驾现实；官方、传统势力、联盟、军方和国际体系共同管理武者，复苏与异兽重组秩序。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "诸天世界碎片撞击蓝星，现实空间扩大并持续接纳异世界英雄、宝物与规则；世界意识赋予少数人会长/招募能力，英雄协会承担秩序与探索职责。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "现代高武社会以全民觉醒本命法宝为成长起点，学校、人工天劫、军训、功德宝树、军方雷池和高校考试共同分配修炼权限与风险。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "现代都市校园与直播文化中存在欲气、秽灵、血醒/神武、灾隙和战渊；学院培养，官方处置，阎慈用原作记忆与系统介入未来剧情。",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "WB-F2",
+            "module": "worldbuilding",
+            "record_id": "WB:BOOK:BOOK_006",
+            "source_record_id": "WB:BOOK:BOOK_006",
+            "component_id": "WB-F2",
+            "component_path": "/factions/1",
+            "book_id": "BOOK_006",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/03_世界观/per_book/BOOK_006.jsonl",
+            "line": 1,
+            "source_line_sha256": "a3e2b6bda0cd0de42cbd4bc97d40e699515efcc52f0d7c5043de4ec75568337e",
+            "title": "全民高中觉醒个人神域；神明经营眷族、建筑、资源与信仰，并通过公共神域、残域和镜像试炼参与竞争。",
+            "summary": "全民高中觉醒个人神域；神明经营眷族、建筑、资源与信仰，并通过公共神域、残域和镜像试炼参与竞争。",
+            "evidence_refs": [
+              "BOOK_006:CHAPTER:0001",
+              "BOOK_006:CHAPTER:0004",
+              "BOOK_006:CHAPTER:0011",
+              "BOOK_006:CHAPTER:0022",
+              "BOOK_006:CHAPTER:0034",
+              "BOOK_006:CHAPTER:0043",
+              "BOOK_006:CHAPTER:0055",
+              "BOOK_006:CHAPTER:0064",
+              "BOOK_006:CHAPTER:0074"
+            ],
+            "source_component_preview": "{\"faction_id\":\"WB-F2\",\"name_in_book\":\"五灵城眷族共同体\",\"faction_type\":\"regional\",\"public_role\":\"经营唐诗神域并承担生产、训练与远征\",\"actual_interest\":\"生存、成长、信仰与文明扩张\",\"controlled_resources\":[\"农田\",\"工坊\",\"军队\",\"灵兽\"],\"controlled_territories_or_access\":[\"个人神域聚居区与远征队\"],\"controlled_information_or_rules\":[\"本地生产经验与战阵\"],\"recruitment_or_entry\":[\"主眷属人族与后天眷属\"],\"internal_hierarchy\":[\"族老\",\"核心战力\",\"职业者\",\"普通居民\"],\"relations\":[],\"conflict_sources\":[\"生态压力\",\"战争\",\"资质差异\"],\"protagonist_interface\":\"把神谕和资源转化为自主制度与战果\",\"evidence_refs\":[\"BOOK_006:CHAPTER:0008\",\"BOOK_006:CHAPTER:0020\",\"BOOK_006:CHAPTER:0027\",\"BOOK_006:CHAPTER:0052\",\"BOOK_006:CHAPTER:0065\",\"BOOK_006:CHAPTER:0074\"],\"unknowns\":[]}"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "B:SYSTEM:SHARED_BURDEN_PHYSIOLOGY",
+          "module": "cultivation_system",
+          "function_required": "需要支持承压位冻结、护路锚持续时间和恢复债务的成长体系",
+          "query": "资源 经营 多职业 战力 权限",
+          "candidate_limit": 12,
+          "decision": "ORIGINAL_DESIGN",
+          "abstract_function": "以承压位、经脉冻结和恢复周期约束保护能力",
+          "constraint_checks": {
+            "ability": "承压位数量随境界增长但不能临战无限新增",
+            "resource": "恢复依赖路线战功和专门药材",
+            "world": "体系必须能被驿盟检测",
+            "character": "主角不能绕过家人自愿投入规则"
+          },
+          "rule_conflicts": [
+            "候选 CS:BOOK:BOOK_006 以个人神域和眷属文明为核心，无法直接解释人体承压位与迁徙护锚"
+          ],
+          "effect_on_action_or_payoff": "限制主角一次能保护的车辆数量，并把成长债延续到下一阶段",
+          "gap_reason": "检索到的神域经营体系不能直接复用；采用明确的 ORIGINAL_DESIGN 承压位体系并保留人工审核",
+          "story_node_ids": [
+            "LB3",
+            "LB6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "CS:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "你管这叫精神病？这分明是先知！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "猎魔人小姐，我真不是血族",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "高武：从临时工到武镇周天！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_015",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_015",
+              "title": "一天获得一个超能力的我不懂恋爱",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "异兽迷城",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武：看不起器物灵性，炎系器物灵性呢",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_010",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_010",
+              "title": "超能：我有一面复刻镜",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": null,
+          "rejected_refs": [
+            {
+              "material_id": "CS:BOOK:BOOK_006",
+              "module": "cultivation_system",
+              "record_id": "CS:BOOK:BOOK_006",
+              "source_record_id": "CS:BOOK:BOOK_006",
+              "component_id": null,
+              "component_path": null,
+              "book_id": "BOOK_006",
+              "qa_status": "PASS",
+              "usage_status": "ADAPTABLE_WITH_GAPS",
+              "path": "DNA素材/04_修炼体系/per_book/BOOK_006.jsonl",
+              "line": 1,
+              "source_line_sha256": "d79f8338751babe42c5be947734bc9124a384dbfebb58615bc1af9b8674b53b5",
+              "title": "全民神祇：我的神域有点不对劲",
+              "summary": "BOOK_006:CHAPTER:0001 BOOK_006:CHAPTER:0004 BOOK_006:CHAPTER:0011 BOOK_006:CHAPTER:0022 BOOK_006:CHAPTER:0034 BOOK_006:CHAPTER:0043 BOOK_006:CHAPTER:0055 BOOK_006:CHAPTER:0064 BOOK_006:CHAPTER:0074",
+              "evidence_refs": [
+                "BOOK_006:CHAPTER:0001",
+                "BOOK_006:CHAPTER:0004",
+                "BOOK_006:CHAPTER:0011",
+                "BOOK_006:CHAPTER:0022",
+                "BOOK_006:CHAPTER:0034",
+                "BOOK_006:CHAPTER:0043",
+                "BOOK_006:CHAPTER:0055",
+                "BOOK_006:CHAPTER:0064",
+                "BOOK_006:CHAPTER:0074"
+              ],
+              "reason": "其修炼对象、资源接口和身份权限都建立在个人神域所有权上，与共享迁徙契约的身体成本发生硬接口冲突",
+              "decision": "REJECT"
+            }
+          ]
+        },
+        {
+          "slot_id": "B:CHARACTER:HOUSEHOLD_ORGANIZERS",
+          "module": "character_function",
+          "function_required": "家属和普通迁民能够独立盘点、编组、侦路并反向约束主角方案",
+          "query": "资源配置 自治 选择 战术 组织",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/narrative_functions/2",
+          "component_id": "NF3",
+          "abstract_function": "基层成员把普通个体组织成战术与生产能力",
+          "constraint_checks": {
+            "ability": "普通家属不获得主角能力",
+            "resource": "他们控制车队清单、哨位和补给顺序",
+            "world": "岗位由共同体授权",
+            "character": "姑母和青年车夫有自己的保全目标和否决权"
+          },
+          "rule_conflicts": [],
+          "adaptation_bridge": {
+            "new_rule": "迁民议事组可决定分车、侦路和物资投入，主角只掌握护锚技术",
+            "cost_or_constraint": "集体方案更慢且必须接受伤员和老人的优先级",
+            "changed_state": "家人从被运送对象变成路线方案的共同作者",
+            "why_causal": "编组质量直接决定护锚覆盖和车队损失",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "迫使主角放弃只带自家突围，转为保护由家属重组的多户车队",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LB3",
+            "LB6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "CF:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "异兽迷城",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "高武：从临时工到武镇周天！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HEROINE:BOOK_005:欧阳倩",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "欧阳倩｜带队教师、异常训练管理者与制度保护者",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HEROINE:BOOK_007:阿加莎",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "阿加莎｜污染异域的幸存祭司、独立救援者与高阶下属候选",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武：看不起器物灵性，炎系器物灵性呢",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HEROINE:BOOK_004:苏妙妙",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "苏妙妙｜S级法宝天才、精英试炼同伴",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HC:BOOK_002:陆雪凝",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "陆雪凝",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "NF3",
+            "module": "character_function",
+            "record_id": "CF:BOOK:BOOK_006",
+            "source_record_id": "CF:BOOK:BOOK_006",
+            "component_id": "NF3",
+            "component_path": "/narrative_functions/2",
+            "book_id": "BOOK_006",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/05_人物功能与标签/per_book/BOOK_006.jsonl",
+            "line": 1,
+            "source_line_sha256": "ed0771f561d4ae72008be04099b02fb4d12d22f116e88c08fe086db6d5adeabe",
+            "title": "全民神祇：我的神域有点不对劲",
+            "summary": "唐诗 886 林曼 三位族老；在随机结果、预算和战争规则中作取舍；盘点库存、生态和战力并提出方案",
+            "evidence_refs": [
+              "BOOK_006:CHAPTER:0001",
+              "BOOK_006:CHAPTER:0004",
+              "BOOK_006:CHAPTER:0011",
+              "BOOK_006:CHAPTER:0022",
+              "BOOK_006:CHAPTER:0034",
+              "BOOK_006:CHAPTER:0043",
+              "BOOK_006:CHAPTER:0055",
+              "BOOK_006:CHAPTER:0064",
+              "BOOK_006:CHAPTER:0074"
+            ],
+            "source_component_preview": "{\"function_id\":\"NF3\",\"person_id\":\"三位族老\",\"function_type\":\"基层组织与战术创造者\",\"actual_operation\":\"训练普通人、设计战阵与攻城计划\",\"target\":\"把普通眷族组织成文明战力\",\"phase_scope\":\"20-74\",\"function_state\":\"observed\",\"evidence_refs\":[\"BOOK_006:CHAPTER:0020\",\"BOOK_006:CHAPTER:0027\",\"BOOK_006:CHAPTER:0029\",\"BOOK_006:CHAPTER:0052\",\"BOOK_006:CHAPTER:0067\"],\"unknowns\":[]}"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "B:PLOT:ORGANIZATION_UNDER_REAL_LOSS",
+          "module": "plotline",
+          "function_required": "共同体组织必须在真实伤亡规则下被验证，并把结果换成路线权和战利品",
+          "query": "文明 组织 真实伤亡 公开 战利品",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/plotlines/2",
+          "component_id": "PL003",
+          "abstract_function": "组织能力进入真实损失规则，并以结果换公开资格和资源",
+          "constraint_checks": {
+            "ability": "主角护锚只是组织中的一环",
+            "resource": "损耗、伤员和战利品均可计账",
+            "world": "路线试行有真实风险和复核者",
+            "character": "家属方案和主角方案共同接受结果检验"
+          },
+          "rule_conflicts": [],
+          "adaptation_bridge": {
+            "new_rule": "临时迁徙证必须通过一次危险支路护送验证",
+            "cost_or_constraint": "失败会损失车辆、物资和后续申请信用",
+            "changed_state": "组织战果转成正式通行份额",
+            "why_causal": "驿盟只承认可核查的护送记录",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "使迁徙权来自集体完成的护送任务，而非主角个人声望",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LB2",
+            "LB4",
+            "LB6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "PL:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "猎魔人小姐，我真不是血族",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "异兽迷城",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武：看不起器物灵性，炎系器物灵性呢",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_011",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_011",
+              "title": "诡舍",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "高武：从临时工到武镇周天！",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "PL003",
+            "module": "plotline",
+            "record_id": "PL:BOOK:BOOK_006",
+            "source_record_id": "PL:BOOK:BOOK_006",
+            "component_id": "PL003",
+            "component_path": "/plotlines/2",
+            "book_id": "BOOK_006",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/06_主线与支线/per_book/BOOK_006.jsonl",
+            "line": 1,
+            "source_line_sha256": "d0138ccdfafc4907bca0d6083381190470ecce135dafb1be2a45cb7801def02b",
+            "title": "全民神祇：我的神域有点不对劲",
+            "summary": "BOOK_006:CHAPTER:0001 BOOK_006:CHAPTER:0074",
+            "evidence_refs": [
+              "BOOK_006:CHAPTER:0001",
+              "BOOK_006:CHAPTER:0074"
+            ],
+            "source_component_preview": "{\"line_identity\":{\"line_id\":\"PL003\",\"line_label\":\"半神残域月考\",\"line_scope\":\"25-34\",\"line_purpose\":\"把文明组织力放进真实伤亡规则下验证，并用低损攻城换公开第一名和大批战利品\",\"line_kind\":\"main\",\"evidence_refs\":[\"BOOK_006:CHAPTER:0025\",\"BOOK_006:CHAPTER:0027\",\"BOOK_006:CHAPTER:0029\",\"BOOK_006:CHAPTER:0030\",\"BOOK_006:CHAPTER:0034\"],\"unknowns\":[]},\"trigger\":{\"trigger_id\":\"PL003-T\",\"actual_start_event\":\"学校开启半神残域月考，唐诗让自愿眷族远征\",\"chapter_or_stage\":\"25-34\",\"start_mode\":\"new\",\"evidence_refs\":[\"BOOK_006:CHAPTER:0025\",\"BOOK_006:CHAPTER:0027\"],\"unknowns\":[]},\"goals\":[{\"goal_id\":\"PL003-G\",\"goal_statement\":\"在陌生残域获取积分和资源，同时控制不可逆战损\",\"subject\":\"唐诗/五灵城文明\",\"phase_scope\":\"25-34\",\"success_condition\":\"攻城、深入核心区域并以第一名结束月考，组织战法得到外部排名验证\",\"goal_status\":\"paid\",\"evidence_refs\":[\"BOOK_006:CHAPTER:0025\",\"BOOK_006:CHAPTER:0027\",\"BOOK_006:CHAPTER:0029\",\"BOOK_006:C"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "B:OPENING:SCARCE_STARTING_ASSETS",
+          "module": "opening",
+          "function_required": "开篇把家庭低配额、有限启动资源和经营承诺快速显性化",
+          "query": "弱势 资源 投资 经营 承诺",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/promise_setup/1",
+          "component_id": "OP006-PR2",
+          "abstract_function": "有限启动投资建立能否转化为公开成果的承诺",
+          "constraint_checks": {
+            "ability": "不提前揭示完整承途印",
+            "resource": "三辆旧车和一份临时路票是有限投入",
+            "world": "资源来自聚落共有而非学校赠送",
+            "character": "家庭会议决定是否把资源交给主角试行"
+          },
+          "rule_conflicts": [],
+          "adaptation_bridge": {
+            "new_rule": "聚落只肯给主角一次支路试运和三辆旧车",
+            "cost_or_constraint": "失败会削减全家正式迁徙份额",
+            "changed_state": "保护愿望转成可计量的试运目标",
+            "why_causal": "低配额迫使家庭在留下和试运之间选择",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "使前十章的两次下降都来自资源决策和失败后果",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LB1",
+            "LB2"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "OP:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武器物灵性开篇",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "高武：从临时工到武镇周天！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "你管这叫精神病？这分明是先知！",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "OP006-PR2",
+            "module": "opening",
+            "record_id": "OP:BOOK:BOOK_006",
+            "source_record_id": "OP:BOOK:BOOK_006",
+            "component_id": "OP006-PR2",
+            "component_path": "/promise_setup/1",
+            "book_id": "BOOK_006",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE",
+            "path": "DNA素材/07_开篇/per_book/BOOK_006.jsonl",
+            "line": 1,
+            "source_line_sha256": "f116bc568eefe906d6cf88087b7eb829240007023e46202b821f9030ec7ac9cf",
+            "title": "全民神祇：我的神域有点不对劲",
+            "summary": "BOOK_006:CHAPTER:0001 BOOK_006:CHAPTER:0004 BOOK_006:CHAPTER:0005 BOOK_006:CHAPTER:0008 BOOK_006:CHAPTER:0010",
+            "evidence_refs": [
+              "BOOK_006:CHAPTER:0001",
+              "BOOK_006:CHAPTER:0004",
+              "BOOK_006:CHAPTER:0005",
+              "BOOK_006:CHAPTER:0008",
+              "BOOK_006:CHAPTER:0010"
+            ],
+            "source_component_preview": "{\"promise_id\":\"OP006-PR2\",\"promise_statement\":\"七中对唐诗的最高种子押注能否换来超出普通家庭路线的真实文明成果。\",\"promise_target\":\"学校投资与公开成绩\",\"setup_event\":\"第5章学校给出高额神晶和四级/三级建筑资源。\",\"expected_future_payoff_or_unresolved_question\":\"这些启动资产能否在月考、神战和升学中兑现成公开排名。\",\"promise_status\":\"open\",\"setup_window\":5,\"evidence_refs\":[\"BOOK_006:CHAPTER:0005\"],\"unknowns\":[]}"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "B:ARC:EXTERNAL_PROBLEM_TO_CONTRACT",
+          "module": "arc_structure",
+          "function_required": "把外部迁徙困境、试运验证和稳定合作合同组织成阶段弧",
+          "query": "资源 治理 外部合作 阶段",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/arcs/4/arc_identity",
+          "component_id": "AR:ARC:006:005",
+          "abstract_function": "用受控方案解决外部群体困境并建立稳定合作",
+          "constraint_checks": {
+            "ability": "合作依赖护路锚但不等于能力升级",
+            "resource": "安全路线和正式份额是阶段结果",
+            "world": "合同由驿盟和迁民共同体共同确认",
+            "character": "家属组织结果是合同成立条件"
+          },
+          "rule_conflicts": [],
+          "adaptation_bridge": {
+            "new_rule": "支路试运成功才能把临时车队升级为正式迁民共同体",
+            "cost_or_constraint": "主角必须公开承压位损伤并接受后续限载",
+            "changed_state": "家庭和同行者取得真实路线权，主角留下成长债",
+            "why_causal": "合同只在外部困境被可重复方案解决后成立",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "让第一弧以安全抵达和正式通行权结算，而不是打赢沿途敌人",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LB5",
+            "LB6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "AR:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "猎魔人小姐，我真不是血族",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武器物灵性成长与前线战争结构",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AS:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_011",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_011",
+              "title": "诡舍",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "AR:ARC:006:005",
+            "module": "arc_structure",
+            "record_id": "AR:BOOK:BOOK_006",
+            "source_record_id": "AR:BOOK:BOOK_006",
+            "component_id": "AR:ARC:006:005",
+            "component_path": "/arcs/4/arc_identity",
+            "book_id": "BOOK_006",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/08_篇章结构/per_book/BOOK_006.jsonl",
+            "line": 1,
+            "source_line_sha256": "734ebd4666d9cbe72339c09749ecdeb9d384cf6819615c8b53e61a6eef736210",
+            "title": "全民神祇：我的神域有点不对劲",
+            "summary": "1-11 觉醒与保底机制成型；12-24 资源底盘与文明职业化；25-34 半神残域月考",
+            "evidence_refs": [
+              "BOOK_006:CHAPTER:0001",
+              "BOOK_006:CHAPTER:0011",
+              "BOOK_006:CHAPTER:0034",
+              "BOOK_006:CHAPTER:0048",
+              "BOOK_006:CHAPTER:0065",
+              "BOOK_006:CHAPTER:0074"
+            ],
+            "source_component_preview": "{\"arc_id\":\"AR:ARC:006:005\",\"arc_label\":\"寂夜民实验与属神契约\",\"arc_scope\":\"45-48\",\"arc_purpose\":\"把神域中的危险异常资产转成解决外部文明问题的可控方案，并建立第一个稳定属神合作\",\"arc_kind\":\"main\",\"parent_arc_id\":\"NONE\",\"evidence_refs\":[\"BOOK_006:CHAPTER:0045\",\"BOOK_006:CHAPTER:0046\",\"BOOK_006:CHAPTER:0047\",\"BOOK_006:CHAPTER:0048\"],\"unknowns\":[]}"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "B:MECH:DELEGATED_AUTONOMY",
+          "module": "plot_mechanism",
+          "function_required": "主角给出边界与资源，家属自治编组并让结果反向改变下一步",
+          "query": "自治 资源 边界 战果 组织",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/mechanisms/2/mechanism_identity",
+          "component_id": "PM006-3",
+          "abstract_function": "上位行动者提供边界与资源，基层成员自治执行并以结果反哺",
+          "constraint_checks": {
+            "ability": "主角只设护锚容量和禁区",
+            "resource": "家庭议事组分配车辆和物资",
+            "world": "自治受公开账目和路线法约束",
+            "character": "普通人选择能改变主角保护半径与代价"
+          },
+          "rule_conflicts": [
+            "来源的神明—眷属层级不能复用，必须改为平等授权"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "主角公布护锚边界后，由迁民议事组自行编车、侦路和分配负重",
+            "cost_or_constraint": "主角不得临时夺回已授权资源，错误决策由共同体承担并复盘",
+            "changed_state": "基层方案反过来决定主角下一次承压位配置",
+            "why_causal": "自治结果直接进入资源和路线的下一轮选择",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "让家人真正改变车队方案、损耗和最终安全结果",
+          "gap_reason": "",
+          "story_node_ids": [
+            "LB3",
+            "LB5",
+            "LB6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "PM:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "能力约束下的公开验证—资源升级机制",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_010",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_010",
+              "title": "超能：我有一面复刻镜",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK_017:001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏：可复用剧情机制集",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "异兽迷城",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_011",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_011",
+              "title": "诡舍",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "PM006-3",
+            "module": "plot_mechanism",
+            "record_id": "PM:BOOK:BOOK_006",
+            "source_record_id": "PM:BOOK:BOOK_006",
+            "component_id": "PM006-3",
+            "component_path": "/mechanisms/2/mechanism_identity",
+            "book_id": "BOOK_006",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/09_剧情机制/per_book/BOOK_006.jsonl",
+            "line": 1,
+            "source_line_sha256": "771d9c69090f349454bd430797d4623715338f0b80a3a2893e043fbc9612549c",
+            "title": "全民神祇：我的神域有点不对劲",
+            "summary": "BOOK_006:CHAPTER:0010 BOOK_006:CHAPTER:0020 BOOK_006:CHAPTER:0029 BOOK_006:CHAPTER:0043 BOOK_006:CHAPTER:0064 BOOK_006:CHAPTER:0073",
+            "evidence_refs": [
+              "BOOK_006:CHAPTER:0010",
+              "BOOK_006:CHAPTER:0020",
+              "BOOK_006:CHAPTER:0029",
+              "BOOK_006:CHAPTER:0043",
+              "BOOK_006:CHAPTER:0064",
+              "BOOK_006:CHAPTER:0073"
+            ],
+            "source_component_preview": "{\"mechanism_id\":\"PM006-3\",\"mechanism_label\":\"神明给边界与资源—眷属自治生长—结果反哺\",\"mechanism_description\":\"唐诗提供建筑、传承、资源和战略禁区，但不替眷属执行每一个细节；眷属自行形成职业、战阵、侦查、攻城和多线指挥，再把战果与经验反哺文明。\",\"reusable_operation\":\"神明划定目标与禁区→下放建筑、传承、资源和权限→族老/职业者自行侦察与编组→在真实任务中决策→战果与经验反哺自治\",\"applicability_scope\":\"18-34/52-56/68-74\",\"core_invariants\":[\"输入或环境约束真实存在\",\"必须经过筛选/适配而非直接领取完美结果\",\"主角或共同体需要做取舍\",\"成功结果进入文明长期状态\"],\"excluded_surface_labels\":[\"一次变异\",\"单次考试\",\"单只灵兽\",\"一次攻城\"],\"distinction_boundary\":\"描述跨阶段可重复的经营与组织操作，不把单次事件或题材名词当机制。\",\"evidence_refs\":[\"BOOK_006:CHAPTER:0018\",\"BOOK_006:CHAPTER:0020\",\"BOOK_006:CHAPTER:0025\",\"BOOK_006:CHAPTER:0027\",\"BOOK_006:CHAPTER:0029\",\"BOOK_006:CHAPTER:0052\",\"BOOK_006:CHAPTER:0068\",\"BOOK_006:CHAPTER:0069\",\"BOOK_006:CHAPTER:0073\"],\"unknowns\":[]}"
+          },
+          "rejected_refs": []
+        }
+      ]
+    }
+  ]
+}

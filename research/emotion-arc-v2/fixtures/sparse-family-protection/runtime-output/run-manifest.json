@@ -1,0 +1,28 @@
+{
+  "schema_version": "emotion_story_bridge_run_v1",
+  "status": "candidate",
+  "qa_status": "HOLD",
+  "brief_sha256": "64d5a97605344da6a19e04e73ba4cc6285b8c200ee3945a35ba2b11e0241cc4e",
+  "input_mode": "SPARSE_EMOTION_BRIEF",
+  "semantic_composer": {
+    "kind": "MODEL_AUTHORED_RESEARCH_CANDIDATE",
+    "model_family": "GPT-5",
+    "deterministic_validation_required": true,
+    "literary_approval": "NOT_GRANTED"
+  },
+  "material_source": {
+    "mode": "FROZEN_GIT_SNAPSHOT",
+    "repository": "https://github.com/xchhhh22222/nova-material-library.git",
+    "commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_subdir": "packages/shared-dna-library/v1.0.0"
+  },
+  "emotion_source": {
+    "source_book_id": "BOOK_001",
+    "source_commit_sha": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_status": "candidate/HOLD/RESEARCH_NOT_ACTIVE"
+  },
+  "emotion_library_consumption": "EXECUTED_RESEARCH",
+  "material_adaptation": "REVIEW_REQUIRED",
+  "creative_quality": "PENDING_INDEPENDENT_REVIEW",
+  "production_promotion": "NOT_RUN"
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "sparse_emotion_brief_v1",
+  "brief_id": "SEB:FAMILY_PROTECTION:001",
+  "input_mode": "SPARSE_EMOTION_BRIEF",
+  "status": "candidate",
+  "genre": [
+    "玄幻",
+    "高武"
+  ],
+  "core_reader_expectation": "弱势主角最终有能力保护家人",
+  "emotion_contour": [
+    "DOWN",
+    "DOWN",
+    "UP"
+  ],
+  "required_emotion_weaves": [
+    "家庭保护必须形成可观察的实际结果",
+    "成长必须有代价并改变可行选择",
+    "人物关系必须参与并改变行动",
+    "长期势力压力必须持续进入后续阶段"
+  ],
+  "longform_requirement": "旧大情绪弧获得实际兑现前，新大弧应当有合理的提前启动机会，但不得取消旧弧兑现义务",
+  "forbidden_prefill": "输入不预设妖魔身份、人物背景、能力、物品、势力、具体冲突或下一大弧主题"
+}
