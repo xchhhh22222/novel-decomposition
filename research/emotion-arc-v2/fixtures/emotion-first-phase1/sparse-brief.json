@@ -1,0 +1,24 @@
+{
+  "schema_version": "sparse_emotion_brief_v1",
+  "brief_id": "SEB:TRUST_AND_PROTECTION:V1",
+  "input_mode": "SPARSE_EMOTION_BRIEF",
+  "status": "candidate",
+  "genre": [
+    "玄幻",
+    "高武"
+  ],
+  "core_reader_expectation": "主角在被亲近之人误解后，通过有代价的行动重建信任，让家人从互相防备转向共同抵御真正的危险",
+  "emotion_contour": [
+    "DOWN",
+    "DOWN",
+    "UP"
+  ],
+  "required_emotion_weaves": [
+    "家庭保护的承诺必须形成可见的安全变化",
+    "能力成长必须承担可以影响后续选择的代价",
+    "家人与主角的关系要能主动改变行动方案",
+    "长期势力压力必须由当期决定产生而非空降新敌"
+  ],
+  "longform_requirement": "本阶段兑现家人的安全与关系变化之前，下一大情绪弧可以留下可信触发，但不可取消原有承诺；先规划50章及后续延续条件",
+  "forbidden_prefill": "尚未选择人物姓名、具体敌人、金手指、势力结构、具体故事节点或下一弧主题"
+}
