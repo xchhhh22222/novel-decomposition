@@ -1,0 +1,17 @@
+{
+  "schema_version": "nova_emotion_first_workflow_v1",
+  "phase": "VALIDATED_RESEARCH",
+  "status": "candidate",
+  "production_promotion": "NOT_RUN",
+  "brief_hash": "400ff445aa7ae0b6336a78c022dcd395aff2daeb399ebcb8225474ea86fe3116",
+  "retrieval_hash": "6d265220ac4f7d708a60b43a46c7aa049478c3cb07a28e3f213b3b4d296cd65f",
+  "emotion_package": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\emotion-arc-v2-20261009\\nova-material-library\\research\\emotion-arc-v2\\skill-integration\\book001-derived",
+  "model_passes": [
+    "LEGACY_BASELINE",
+    "E2_E3_ENABLED"
+  ],
+  "independence": "REQUESTED_NOT_MACHINE_PROVEN",
+  "quality": "PENDING_INDEPENDENT_REVIEW",
+  "material_adaptation": "REVIEW_REQUIRED",
+  "final_attempt": "attempts\\attempt-01"
+}

@@ -1,0 +1,623 @@
+{
+  "schema_version": "emotion_story_composer_fragment_v1",
+  "brief_id": "SEB:TRUST_AND_PROTECTION:V1",
+  "mode": "LEGACY_BASELINE",
+  "status": "candidate",
+  "semantic_composer": {
+    "kind": "MODEL_AUTHORED_RESEARCH_CANDIDATE",
+    "model_family": "GPT-5",
+    "literary_approval": "NOT_GRANTED"
+  },
+  "material_profiles": {
+    "LEGACY:PROFILE:QUARANTINE_WELL": [
+      {
+        "slot_id": "LQ:GF:TOXIN_BEARING",
+        "module": "golden_finger",
+        "function_required": "让弱势主角暂时承接污染以换取检验窗口，同时留下会改变后续选择的身体代价",
+        "query": "代价 吸收 污染 保护",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "GF:BOOK_007",
+        "abstract_function": "把危险物质吸收、伤势重构与追踪结果连成有代价的行动接口",
+        "constraint_checks": {
+          "ability": "只允许短时承载已接触的井蚀，不提供通用吞噬或无损净化",
+          "resource": "每次承载消耗味觉、平衡感与恢复期，不能连续使用",
+          "world": "能力结果必须由检验所复核，个人判断不能替代公共安全结论",
+          "character": "主角需要主动选择承受剂量，家人可以否决把他当永久滤器"
+        },
+        "rule_conflicts": ["来源血液操控若原样保留会引入血族身份和战斗扩张，故只迁移承载—重构—追踪接口"],
+        "adaptation_bridge": {
+          "new_rule": "将血液吸收改写为只能承接单一井蚀谱的短时毒负荷",
+          "cost_or_constraint": "感官缺失与三日恢复窗会迫使主角放弃连续取样",
+          "changed_state": "主角从无法证明污染变为能携带可复验样本，但战力与生活能力下降",
+          "why_causal": "只有真实承受污染，检验所才接受其样本并打开净井权限",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "能力把保护愿望变成可验证且不可免费重复的取样行动",
+        "rejected_source_ids": ["GF:BOOK_005"],
+        "rejection_reasons": {
+          "GF:BOOK_005": "未来片段只提供信息优势，不能产生本方案所需的污染承载证据，且会削弱主角以代价换信任的过程"
+        },
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LQ:WORLD:ASSAY_AUTHORITY",
+        "module": "worldbuilding",
+        "function_required": "让污染检测、配水资格和公开复核形成可追责制度",
+        "query": "污染 检测 权限 资源",
+        "component_types": ["rule_chain"],
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "WB:BOOK:BOOK_005",
+        "component_pointer": "/rule_chains/0",
+        "component_id": "WB:RULE:BOOK005:001",
+        "abstract_function": "检测与登记结果影响资源权限，并允许后续调查纠正初判",
+        "constraint_checks": {
+          "ability": "制度只确认污染谱和承载记录，不替能力提供额外效果",
+          "resource": "净水配额、封存样本和检验名额均可计量",
+          "world": "检测所、配水署和街坊见证形成三方校验",
+          "character": "家人拥有样本封签共同签名权，不是被动获救者"
+        },
+        "rule_conflicts": ["来源以觉醒检测为中心，本案改为公共卫生资源审计"],
+        "adaptation_bridge": {
+          "new_rule": "两次独立检测加家庭封签才能改变配水等级",
+          "cost_or_constraint": "公开复核会冻结全家的临时配额",
+          "changed_state": "私人争执被转成可追责的公共资源争议",
+          "why_causal": "家人是否共同封签直接决定证据能否进入制度流程",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "把安全兑现落实为净水权生效与污染病例停止新增",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LQ:SYSTEM:DOSE_LEDGER",
+        "module": "cultivation_system",
+        "function_required": "记录承载剂量、恢复周期与战力损失，禁止无代价净化",
+        "query": "代价 净化 身体 验证",
+        "component_types": ["cultivation_system"],
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "CS:BOOK:BOOK_005",
+        "component_pointer": "/cultivation_systems/0",
+        "component_id": "CS:SYSTEM:BOOK005:AWAKENED_COMBAT",
+        "abstract_function": "能力需要现实试验、状态限制与外部验证共同定义战力",
+        "constraint_checks": {
+          "ability": "承载上限由已训练经络容量决定",
+          "resource": "恢复药只能缩短恢复时间，不能消除感官损失",
+          "world": "超限会留下可检测的井蚀残响",
+          "character": "主角可拒绝超限，家人能据账本调整行动"
+        },
+        "rule_conflicts": ["来源异能体系边界较宽，本案收束为剂量账本与单一污染谱"],
+        "adaptation_bridge": {
+          "new_rule": "每次承载写入公开剂量账，超过三格将永久损伤一项感官",
+          "cost_or_constraint": "战斗输出与净化承载共享同一容量",
+          "changed_state": "成长提升的是可承担剂量，而非免疫危险",
+          "why_causal": "保护越多人越会压缩主角后续战斗选择",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "成长代价延续到下一阶段，而非高潮后自动清零",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LQ:CHARACTER:FAMILY_SEAL",
+        "module": "character_function",
+        "function_required": "让家人通过保管封签、提供生活记录和决定公开范围改变调查方案",
+        "query": "家庭 误解 信任 共同选择",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "CF:BOOK:BOOK_016",
+        "abstract_function": "关系角色以独立信息、拒绝权和战术位置改变主角方案",
+        "constraint_checks": {
+          "ability": "家人不获得主角能力",
+          "resource": "家人掌握配水票与旧账册，贡献有不可替代性",
+          "world": "家庭共同签名在本地制度中有效",
+          "character": "家人可以先拒绝、再提出更安全的公开方案"
+        },
+        "rule_conflicts": ["不迁移来源人物身份和关系包装，只迁移独立行动功能"],
+        "adaptation_bridge": {
+          "new_rule": "封签必须由未接触检验所的家庭成员保管",
+          "cost_or_constraint": "公开账册会让全家失去私下补偿机会",
+          "changed_state": "家人从怀疑者转为证据共同所有者",
+          "why_causal": "没有他们的选择，样本会因保管链不完整而失效",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "关系修复以共同决策和分工呈现，不靠口头和解",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LQ:PLOT:PROOF_TO_RIGHT",
+        "module": "plotline",
+        "function_required": "把弱起点、公开验证、资源资格和敌对阻挠组织成连续因果线",
+        "query": "调查 资格 资源 真相",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "PL:BOOK:BOOK_004",
+        "component_pointer": "/plotlines/0",
+        "component_id": "PL:004:L1",
+        "abstract_function": "通过连续公开验证把低评价能力转成制度资源与行动资格",
+        "constraint_checks": {
+          "ability": "每次验证必须展示不同剂量边界",
+          "resource": "资格只开放检验与净井工具，不直接赠送胜利",
+          "world": "反对方可通过程序质疑但不能抹去复验结果",
+          "character": "主角必须选择公开身体代价"
+        },
+        "rule_conflicts": ["不迁移法宝成长、学校选拔和邪教报复事件链"],
+        "adaptation_bridge": {
+          "new_rule": "三次复验分别换来取样、净井、配水复核权限",
+          "cost_or_constraint": "每次权限升级都扩大主角暴露与承载责任",
+          "changed_state": "调查从私人取样升级为公开资源重分配",
+          "why_causal": "前次可见结果是后次权限的必要条件",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "保证每阶段都有权限和安全状态变化",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LQ:OPENING:MISREAD_SAMPLE",
+        "module": "opening",
+        "function_required": "前三章以被误解的取样行为建立信任破裂和保护承诺",
+        "query": "家人 误解 危机 承诺",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "OP:BOOK:BOOK_005",
+        "component_pointer": "/promise_setup/1",
+        "component_id": "OP:005:P2",
+        "abstract_function": "持续误解经官方核验转成新的行动位置",
+        "constraint_checks": {
+          "ability": "开篇不提前解释完整能力",
+          "resource": "被取走的配水票立即影响家庭生活",
+          "world": "误解来自可见行为与信息缺口，不靠集体降智",
+          "character": "主角选择保住样本而暂不辩解"
+        },
+        "rule_conflicts": ["拒绝预见能力与精神病标签，只迁移误解—核验结构"],
+        "adaptation_bridge": {
+          "new_rule": "样本一旦解释来源就会被配水署以违规取样销毁",
+          "cost_or_constraint": "主角暂时失去家庭信任与居住资格",
+          "changed_state": "保护行动首先制造关系低谷",
+          "why_causal": "保住可复验证据与即时解释不能兼得",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "误解由主角的真实取舍造成，并可被后续行动纠正",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LQ:ARC:PRIVATE_TO_PUBLIC",
+        "module": "arc_structure",
+        "function_required": "把家庭误解、区域污染网和程序审查组织为一个可结算阶段",
+        "query": "调查 公开 资格 高潮",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "AR:BOOK:BOOK_007",
+        "component_pointer": "/arcs/3/arc_identity",
+        "component_id": "AR:ARC:BOOK007:04",
+        "abstract_function": "在程序审查与高风险行动中同时取得公开关系保护和行动资格",
+        "constraint_checks": {
+          "ability": "高潮不能靠突然越阶",
+          "resource": "净井工具必须由前序权限取得",
+          "world": "审查结论和现场救援分别提供制度与事实见证",
+          "character": "家人的公开证言承担现实损失"
+        },
+        "rule_conflicts": ["不迁移血族、异域宴会或恋爱公开身份"],
+        "adaptation_bridge": {
+          "new_rule": "结算需要污染下降、配水权生效和家庭共同签字三项同时成立",
+          "cost_or_constraint": "主角留下长期感官缺损，家庭失去私下赔付",
+          "changed_state": "家从封户对象变为净井共同监督者",
+          "why_causal": "公共安全和关系修复由同一组行动分别兑现",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "高潮同时交付安全、关系与资格但不相互替代",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LQ:MECH:PHYSICAL_AUDIT",
+        "module": "plot_mechanism",
+        "function_required": "反复用可复算物证约束证词和配水账目",
+        "query": "证据 责任 资源 公开",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "PM:BOOK:BOOK_012",
+        "component_pointer": "/mechanisms/3/mechanism_identity",
+        "component_id": "PM:MECHANISM:004",
+        "abstract_function": "用物理量和守恒关系让争议形成公众可复验的唯一解",
+        "constraint_checks": {
+          "ability": "计算不替代取样能力，只检验结果",
+          "resource": "水量、毒剂浓度和封签数均可观测",
+          "world": "公众可复算，裁决不依赖主角口才",
+          "character": "家人提供日用水量记录并决定是否公开"
+        },
+        "rule_conflicts": ["不迁移轮回游戏或原案件，只采用硬约束核验操作"],
+        "adaptation_bridge": {
+          "new_rule": "井水总量、配给总量与毒剂衰减必须三账一致",
+          "cost_or_constraint": "任何缺失记录都会把结论降为部分成立",
+          "changed_state": "传言争执转成能公开追责的差额",
+          "why_causal": "差额直接定位被调换的配水批次并改变救援顺序",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "证据直接决定先净化哪口井以及谁承担封户后果",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      }
+    ],
+    "LEGACY:PROFILE:ECHO_HUNT": [
+      {
+        "slot_id": "LH:GF:WOUND_RELAY",
+        "module": "golden_finger",
+        "function_required": "把猎场伤害暂时分流给自愿承压者，形成可见保护与不可逆负担",
+        "query": "契约 伤害 分担 代价",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "DA:ABILITY:BOOK_016:010",
+        "abstract_function": "在明确目标和容量边界内转移伤害",
+        "constraint_checks": {
+          "ability": "只能在预先结契的三人之间分流，不能把伤害抹除",
+          "resource": "每人只有固定承压格，满格后契约崩断",
+          "world": "契约痕迹可由猎场裁判石验证",
+          "character": "每位家人可拒绝加入或主动退出"
+        },
+        "rule_conflicts": ["来源复制能力不提供本案需要的同意与容量规则"],
+        "adaptation_bridge": {
+          "new_rule": "伤害只能按事前公开比例转移，且每次变更需全员同意",
+          "cost_or_constraint": "主角承担最高比例并留下长期震颤",
+          "changed_state": "个人护卫变成家庭共同承担风险的战术网络",
+          "why_causal": "谁愿意承压直接改变阵型和撤退时机",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "保护结果建立在可撤回的共同选择上",
+        "rejected_source_ids": ["GF:BOOK_007"],
+        "rejection_reasons": {
+          "GF:BOOK_007": "血液吸收与血奴追踪会把家庭关系改写成支配关系，不适合自愿共同承压"
+        },
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LH:WORLD:HUNT_OWNERSHIP",
+        "module": "worldbuilding",
+        "function_required": "建立猎场所有权、贡额和家族安全边界之间的利益冲突",
+        "query": "猎场 所有权 家族 势力",
+        "component_types": ["faction"],
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "WB:BOOK:BOOK_001",
+        "component_pointer": "/factions/2",
+        "component_id": "F3",
+        "abstract_function": "传统势力控制地域资源与资格，并因旧利益持续施压",
+        "constraint_checks": {
+          "ability": "势力不能控制伤害分流能力",
+          "resource": "猎获、通行标与贡额均有公开账目",
+          "world": "猎盟、边镇与家族三方权利可区分",
+          "character": "家人对是否放弃独占猎获拥有表决权"
+        },
+        "rule_conflicts": ["不迁移来源山门身份和父辈秘密"],
+        "adaptation_bridge": {
+          "new_rule": "独占猎获可抵贡额，但共同猎获能换全村安全边界",
+          "cost_or_constraint": "公开共同所有会失去家族短期收益",
+          "changed_state": "家族私利选择转为区域安全制度问题",
+          "why_causal": "所有权选择决定猎盟是否有理由追缴与封路",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "长期势力压力由家庭的公开选择产生",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LH:SYSTEM:RESONANCE_SCARS",
+        "module": "cultivation_system",
+        "function_required": "把契约伤害、器物共鸣和境界验证放入可计算体系",
+        "query": "契约 负伤 共鸣 验证",
+        "component_types": ["cultivation_system"],
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "CS:BOOK:BOOK_004",
+        "component_pointer": "/cultivation_systems/0",
+        "component_id": "CS:004:S1",
+        "abstract_function": "本命器物成长需经公开考核和实战结果验证",
+        "constraint_checks": {
+          "ability": "弓契只记录分流比例和承压，不生成无限器物能力",
+          "resource": "修复弓契消耗猎获骨材与恢复时间",
+          "world": "裁判石可验证承压痕但不能判断情感",
+          "character": "家人决定是否继续共享契约"
+        },
+        "rule_conflicts": ["不采用无限供养或法宝吞噬成长"],
+        "adaptation_bridge": {
+          "new_rule": "共鸣弓每次分流会在参与者身上留下同频伤痕",
+          "cost_or_constraint": "伤痕未恢复前不能再次调整比例",
+          "changed_state": "能力成长表现为更精确分流而非更高无条件伤害",
+          "why_causal": "错误分配会让家庭成员真实受伤并改变下一场选择",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "成长代价持续影响狩猎、劳动和信任",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LH:CHARACTER:KIN_COUNCIL",
+        "module": "character_function",
+        "function_required": "让家人各持路线、药材和猎场知识并共同决定阵型",
+        "query": "家族 决策 共同行动 信任",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "CF:BOOK:BOOK_008",
+        "abstract_function": "关键关系角色以独立目标、资源与现场行动改变主角决策",
+        "constraint_checks": {
+          "ability": "家人不共享主角之外的能力",
+          "resource": "路线、止血药和贡额账分散在不同人手中",
+          "world": "家族表决对共有猎具有法律效力",
+          "character": "误解者也保留合理利益和否决权"
+        },
+        "rule_conflicts": ["不迁移来源恋爱结构和天命身份"],
+        "adaptation_bridge": {
+          "new_rule": "三项关键资源分别由三名家人控制，任何单人无法完成猎场行动",
+          "cost_or_constraint": "合作意味着所有人公开自己的错误判断",
+          "changed_state": "家庭从围绕主角服从转为联合指挥",
+          "why_causal": "路线和药材选择直接改变谁承受伤害与能否撤离",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "关系线通过行动权限改变高潮方案",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LH:PLOT:ORGANIZED_HUNT",
+        "module": "plotline",
+        "function_required": "将家庭组织、真实伤亡规则、公开资格和战利品结算串成主线",
+        "query": "狩猎 契约 利益 冲突",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "PL:BOOK:BOOK_006",
+        "component_pointer": "/plotlines/2",
+        "component_id": "PL003",
+        "abstract_function": "把组织能力投入真实损失环境，并以低损结果换取公开资格",
+        "constraint_checks": {
+          "ability": "组织不能消除猎物强度差",
+          "resource": "药材、承压格和退路都会耗尽",
+          "world": "公开资格由损失与救援结果共同评定",
+          "character": "家人自治执行而非只听主角命令"
+        },
+        "rule_conflicts": ["不迁移神域、眷族或学校月考包装"],
+        "adaptation_bridge": {
+          "new_rule": "猎场资格按救回人数、共同猎获和实际战损三项结算",
+          "cost_or_constraint": "追求高猎获会挤压撤退与救援资源",
+          "changed_state": "家庭组织力获得外部承认并改变贡额",
+          "why_causal": "自治分工决定能否在有限承压格下救回失踪猎人",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "公开结果验证关系合作而非个人击杀数",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LH:OPENING:REFUSED_SHOT",
+        "module": "opening",
+        "function_required": "以主角拒绝完成祖猎一箭制造合理误解和即时家族损失",
+        "query": "家族 仪式 误解 危机",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "OP:BOOK:BOOK_004",
+        "component_pointer": "/promise_setup/1",
+        "component_id": "OP004-PR2",
+        "abstract_function": "把危险副作用转换成后续成长入口并快速建立反差承诺",
+        "constraint_checks": {
+          "ability": "开篇只显示主角观察到回伤征兆，不解释全部契约",
+          "resource": "拒射导致当季贡额缺口立即出现",
+          "world": "家人根据传统经验误判具有合理性",
+          "character": "主角主动承担懦弱名声以阻止回伤"
+        },
+        "rule_conflicts": ["不采用系统供养或最弱法宝逆袭包装"],
+        "adaptation_bridge": {
+          "new_rule": "被标记猎物死亡会把最后一击伤害返给同血亲族",
+          "cost_or_constraint": "主角不能在无证据时公开猎场禁忌来源",
+          "changed_state": "一次保护性拒绝造成信任坠落和贡额危机",
+          "why_causal": "开枪会立即伤害家人，拒绝则失去资格",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "开篇误解来自两难选择而非沟通拖延",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LH:ARC:HUNT_TO_CHARTER",
+        "module": "arc_structure",
+        "function_required": "从能力觉醒和家族资格推进到区域守猎章程生效",
+        "query": "狩猎 资格 争夺 高潮",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "AR:BOOK:BOOK_014",
+        "component_pointer": "/arcs/0/arc_identity",
+        "component_id": "AR:ARC:1",
+        "abstract_function": "觉醒、组织入编与守卫任务逐级扩大行动权限",
+        "constraint_checks": {
+          "ability": "阶段升级必须由分流结果验证",
+          "resource": "守猎章程不额外提供无限补给",
+          "world": "章程只覆盖本地猎场，外部猎盟仍有上诉权",
+          "character": "家人共同签署而非主角代签"
+        },
+        "rule_conflicts": ["不迁移神话组织、海外战线和原作小队"],
+        "adaptation_bridge": {
+          "new_rule": "家族先取得临时共猎权，再以救援结果换区域章程",
+          "cost_or_constraint": "章程要求公开承压伤痕与战损账",
+          "changed_state": "被视为怯战者的家庭成为守猎责任主体",
+          "why_causal": "高潮成果必须同时改变安全边界和制度权利",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "结算把家庭安全、信任与公共责任分别落地",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      },
+      {
+        "slot_id": "LH:MECH:VERIFIABLE_SECRET",
+        "module": "plot_mechanism",
+        "function_required": "用有真实代价且可验证的信息交换重建家庭互信",
+        "query": "契约 选择 代价 反噬",
+        "candidate_limit": 12,
+        "decision": "SELECT_ADAPT",
+        "selected_source_id": "PM:BOOK_017:001",
+        "component_pointer": "/mechanisms/4/mechanism_identity",
+        "component_id": "PM:MECH:BOOK_017:5",
+        "abstract_function": "双方轮流交付会贬值的真实信息，并通过验证形成合作基础",
+        "constraint_checks": {
+          "ability": "秘密交换不直接提升战力",
+          "resource": "公开禁忌会失去私人狩猎优势",
+          "world": "信息可由伤痕、猎物标记和裁判石交叉验证",
+          "character": "主角与家人都必须交付自身错误或隐瞒"
+        },
+        "rule_conflicts": ["不迁移丑角组织和仪式惩罚包装"],
+        "adaptation_bridge": {
+          "new_rule": "每人交付一条可现场复验且公开后失去独占价值的信息",
+          "cost_or_constraint": "任何一方保留关键部分都会使共猎契约降级",
+          "changed_state": "信任从情感声明变成互相暴露弱点后的合作",
+          "why_causal": "交换出的禁忌和旧账直接改变狩猎阵型与所有权选择",
+          "provenance": "ORIGINAL_DESIGN"
+        },
+        "effect_on_action_or_payoff": "信任生产机制反复推动战术与制度选择",
+        "rejected_source_ids": [],
+        "rejection_reasons": {},
+        "gap_reason": ""
+      }
+    ]
+  },
+  "options": [
+    {
+      "option_id": "LEGACY:QUARANTINE_WELL",
+      "pair_id": "PAIR:RESOURCE_TRUST",
+      "mode": "LEGACY_BASELINE",
+      "status": "candidate",
+      "qa_status": "HOLD",
+      "research_state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "title": "候选一：雾井封户",
+      "premise": "被家人误认为偷卖净水票的弱势学徒，为保住一份会被销毁的污染样本而接受封户与检验，用持续感官损失换取净井权限，最终与家人共同让安全和配水权真实生效。",
+      "causal_signature": {
+        "central_conflict": "污染证据保全与家庭即时配水生存互相冲突",
+        "ability_logic": "承接单一井蚀谱并以感官缺失换可复验样本",
+        "relationship_topology": "家人分别掌握封签、日用账和是否公开的否决权",
+        "institution_engine": "独立检测、物证守恒和公开配水复核",
+        "next_arc_trigger": "被保留的毒剂批号指向跨区采购合同"
+      },
+      "reader_expectations": [
+        {"expectation": "家人能否脱离污染与封户", "payoff": "两口井污染下降、家庭净水票恢复且病例停止新增"},
+        {"expectation": "主角的成长是否真正付出代价", "payoff": "取得净井承载资格但永久失去部分味觉并进入恢复限制"},
+        {"expectation": "误解能否转为可行动的信任", "payoff": "家人共同封签、否决超限并成为净井监督者"},
+        {"expectation": "资源垄断是否承担后果", "payoff": "本地配水决定被复核并形成可继续追查的采购责任链"}
+      ],
+      "story_nodes": [
+        {"node_id": "LQ1", "chapter_range": "1-3", "cause": "主角发现家中配水有异味且正规投诉会立即回收样本", "event": "他拿走全家最后一张净水票换密封瓶，家人只看到票据消失与弟弟病情加重", "character_choice": "主角保住样本并接受偷卖指控", "decision_makers": ["主角", "母亲", "姐姐"], "consequence": "主角被逐出临时住处，家庭信任降至最低", "reveals": ["样本一旦进入普通投诉渠道就会被销毁"]},
+        {"node_id": "LQ2", "chapter_range": "4-8", "cause": "未经登记的样本无法进入检验所", "event": "主角以身体承载一格井蚀留下可检测残响", "character_choice": "他承担味觉衰退换第一次检测", "decision_makers": ["主角", "检验员"], "consequence": "污染存在得到初步确认，但全家因来源违规被封户", "reveals": ["井蚀可被身体残响复验", "承载会损失感官"]},
+        {"node_id": "LQ3", "chapter_range": "9-14", "cause": "封户期间仍有同批居民发病", "event": "主角参加公开剂量试验争取二次取样资格", "character_choice": "他放弃恢复期并公开第一格伤害", "decision_makers": ["主角", "母亲"], "consequence": "取得一口井的临时取样权，却失去近期战斗能力", "reveals": ["污染来自配水批次而非单户储存"]},
+        {"node_id": "LQ4", "chapter_range": "15-22", "cause": "配水署提出私下补偿换回封签", "event": "姐姐发现旧日用账与官方配水量不符", "character_choice": "家人拒绝私赔，提出由他们保管封签并限定主角承载上限", "decision_makers": ["母亲", "姐姐", "主角"], "consequence": "家庭首次共同制定行动，私下和解窗口关闭", "reveals": ["配水总量存在可计算差额"]},
+        {"node_id": "LQ5", "chapter_range": "23-30", "cause": "第二口井开始出现急性病例", "event": "一家人按水量、封签与毒剂衰减重排净井顺序", "character_choice": "主角服从家人的上限决定，先救病例更多但证据更弱的街区", "decision_makers": ["主角", "母亲", "姐姐"], "consequence": "更多居民获救，但关键证据可能随净化消失", "reveals": ["救援顺序与追责证据存在冲突"]},
+        {"node_id": "LQ6", "chapter_range": "31-37", "cause": "配水署以证据被净化为由准备撤销调查", "event": "家人交出未使用的家庭样本，主角承载第二格完成交叉复验", "character_choice": "全家放弃唯一私用净水储备换公开结论", "decision_makers": ["主角", "母亲", "姐姐"], "consequence": "污染批次被正式确认，主角永久失去部分味觉", "reveals": ["毒剂批号与本地登记不一致"]},
+        {"node_id": "LQ7", "chapter_range": "38-45", "cause": "正式结论触发配水权复核与净井行动", "event": "两口井完成净化，家庭票据和居住权恢复，家人被列为共同监督者", "character_choice": "家人拒绝让主角继续超限，改用公开轮值完成后续检测", "decision_makers": ["主角", "母亲", "姐姐", "街坊监督者"], "consequence": "家庭安全与行动信任获得可见兑现，旧承诺结算", "reveals": ["本地净水权已生效", "病例停止新增"]},
+        {"node_id": "LQ8", "chapter_range": "46-50", "cause": "监督者整理封存批次时发现采购码跨区重复", "event": "家人共同决定只公开批号异常并保留供应商名单等待复核", "character_choice": "主角不以未证实名单换英雄声望", "decision_makers": ["主角", "家人", "监督者"], "consequence": "下一阶段势力压力由本次公开审计产生，但幕后结论未提前暴露", "reveals": ["采购合同存在跨区重复批号"], "opens_next_arc": true}
+      ],
+      "story_spine": {"stages": [
+        {"stage": "trigger", "story_task": "净水票消失与污染样本制造家庭误解"},
+        {"stage": "goal", "story_task": "取得可复验污染证据并让家庭安全恢复"},
+        {"stage": "resistance", "story_task": "封户、检测门槛、配水垄断与身体承载上限"},
+        {"stage": "nodes", "story_task": "取样、剂量试验、家庭封签、净井与公开复核"},
+        {"stage": "choice", "story_task": "在私下补偿与公开安全、救援与证据之间选择"},
+        {"stage": "cost", "story_task": "感官损失、配额冻结和放弃私人补偿"},
+        {"stage": "payoff", "story_task": "井水安全、配水权生效和家庭共同监督"},
+        {"stage": "state_change", "story_task": "家庭从互相防备变成有否决权的行动共同体"},
+        {"stage": "next_entry", "story_task": "重复采购批号开启跨区合同压力"}
+      ]},
+      "chapter_phases": [
+        {"range": "1-10", "purpose": "建立误解、封户和能力代价", "payoff": "污染得到首次独立确认"},
+        {"range": "11-25", "purpose": "把家庭从冲突方转成证据保管方", "payoff": "共同封签与行动上限成立"},
+        {"range": "26-40", "purpose": "让救援与追责发生真实冲突", "payoff": "污染批次被公开确认"},
+        {"range": "41-50", "purpose": "完成安全与关系结算并打开合同压力", "payoff": "净水权生效且下一线只暴露有限触发"}
+      ],
+      "continuation_conditions": ["主角的感官缺损继续限制战斗与承载", "跨区采购批号必须经外部复核后才能形成指控", "家庭监督权在更高层制度中尚无稳定保障"],
+      "material_profile_id": "LEGACY:PROFILE:QUARANTINE_WELL",
+      "material_bindings": {
+        "LQ:GF:TOXIN_BEARING": {"story_node_ids": ["LQ2", "LQ3", "LQ6"], "node_effects": {"LQ2": "承载污染换取首次检测", "LQ3": "恢复期与战斗力损失迫使公开试验", "LQ6": "第二格承载完成交叉复验并留下永久代价"}},
+        "LQ:WORLD:ASSAY_AUTHORITY": {"story_node_ids": ["LQ1", "LQ4", "LQ7"], "node_effects": {"LQ1": "投诉销样规则造成无法即时解释", "LQ4": "共同封签改变证据资格", "LQ7": "复核令让配水权实际生效"}},
+        "LQ:SYSTEM:DOSE_LEDGER": {"story_node_ids": ["LQ2", "LQ3", "LQ6"], "node_effects": {"LQ2": "写入第一格剂量", "LQ3": "恢复窗限制下一次行动", "LQ6": "超限边缘兑现永久感官损失"}},
+        "LQ:CHARACTER:FAMILY_SEAL": {"story_node_ids": ["LQ4", "LQ5", "LQ7"], "node_effects": {"LQ4": "家人拒绝私赔并取得封签控制", "LQ5": "家人决定救援顺序与承载上限", "LQ7": "家人否决继续超限并承担监督"}},
+        "LQ:PLOT:PROOF_TO_RIGHT": {"story_node_ids": ["LQ3", "LQ6", "LQ7"], "node_effects": {"LQ3": "公开试验换二次取样权", "LQ6": "交叉复验触发正式调查", "LQ7": "调查结果转成净水与居住权"}},
+        "LQ:OPENING:MISREAD_SAMPLE": {"story_node_ids": ["LQ1", "LQ2"], "node_effects": {"LQ1": "取走票据造成可理解的家庭误判", "LQ2": "封户把误解升级为现实损失"}},
+        "LQ:ARC:PRIVATE_TO_PUBLIC": {"story_node_ids": ["LQ4", "LQ6", "LQ7"], "node_effects": {"LQ4": "私人争执转为共同证据行动", "LQ6": "高风险复验形成高潮触发", "LQ7": "安全、资格、关系分别结算"}},
+        "LQ:MECH:PHYSICAL_AUDIT": {"story_node_ids": ["LQ4", "LQ5", "LQ8"], "node_effects": {"LQ4": "水量差额证明问题不在单户", "LQ5": "硬约束决定净井顺序", "LQ8": "重复批号形成下一阶段有限线索"}}
+      }
+    },
+    {
+      "option_id": "LEGACY:ECHO_HUNT",
+      "pair_id": "PAIR:RITUAL_TRUST",
+      "mode": "LEGACY_BASELINE",
+      "status": "candidate",
+      "qa_status": "HOLD",
+      "research_state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "title": "候选二：裂弓还契",
+      "premise": "边猎家族把少年在祖猎礼上拒射视为怯战，他必须证明猎物回伤禁忌并以共鸣弓承担最大伤害份额；家人通过自愿承压、共享猎获和共同签约，把互相指责改造成能保护整个边村的守猎章程。",
+      "causal_signature": {
+        "central_conflict": "保住家族贡额的传统射杀会触发血亲回伤",
+        "ability_logic": "事前同意的伤害分流与不可快速恢复的共鸣伤痕",
+        "relationship_topology": "家人分别控制路线、止血资源和共有猎决议",
+        "institution_engine": "猎获所有权、战损账和边村守猎章程",
+        "next_arc_trigger": "共同猎获决定暴露猎盟长期虚报贡额"
+      },
+      "reader_expectations": [
+        {"expectation": "主角是否能真正保护被回伤威胁的家人", "payoff": "家族成员存活、血亲回伤被阻断且安全猎界生效"},
+        {"expectation": "伤害分流是否有真实代价", "payoff": "主角留下持续震颤，所有参与者的承压伤痕进入后续限制"},
+        {"expectation": "误解的家人能否成为行动主体", "payoff": "家人共同决定比例、路线、撤退和共有猎获"},
+        {"expectation": "猎盟压力是否由本阶段选择产生", "payoff": "共有猎获让旧贡额账出现可追查缺口而非空降新敌"}
+      ],
+      "story_nodes": [
+        {"node_id": "LH1", "chapter_range": "1-3", "cause": "祖猎目标出现只有主角注意到的返伤纹", "event": "主角拒绝完成最后一箭，家族失去当季贡额资格", "character_choice": "他承担怯战名声也不射杀", "decision_makers": ["主角", "父亲", "姑母"], "consequence": "家人认定他背弃共同生计，关系跌落", "reveals": ["猎物死亡前出现返伤纹"]},
+        {"node_id": "LH2", "chapter_range": "4-8", "cause": "猎盟要求三日内补足贡额", "event": "主角用自身小伤测试返伤会沿血亲扩散", "character_choice": "他先在自己与自愿的姑母之间建立最低比例分流", "decision_makers": ["主角", "姑母"], "consequence": "禁忌初步成立，两人同时留下共鸣伤痕", "reveals": ["回伤沿血亲扩散", "分流不消除总伤害"]},
+        {"node_id": "LH3", "chapter_range": "9-14", "cause": "单次测试不足以推翻祖猎规则", "event": "家人举行可验证秘密交换，公开各自隐瞒的旧猎记录", "character_choice": "父亲交出会使自家失去独占权的旧标记图", "decision_makers": ["主角", "父亲", "姑母"], "consequence": "家人发现返伤猎物曾被猎盟反复转卖给边户", "reveals": ["旧标记图存在重复猎物编号"]},
+        {"node_id": "LH4", "chapter_range": "15-22", "cause": "猎盟以欠贡为由准备封闭家族通道", "event": "家庭表决把下一次猎获改为共有并制定伤害比例", "character_choice": "所有人放弃独占收益换边村参与和更多撤退手", "decision_makers": ["主角", "父亲", "姑母", "边村代表"], "consequence": "家族取得一次临时共猎权，也承担公开战损责任", "reveals": ["共有猎获可申请临时守猎资格"]},
+        {"node_id": "LH5", "chapter_range": "23-30", "cause": "猎物群逼近边村且共鸣伤痕尚未恢复", "event": "家庭按承压格分队救回被困猎人", "character_choice": "主角放弃追杀高价值头兽，优先接手他人伤害打开撤退路", "decision_makers": ["主角", "姑母", "边村队长"], "consequence": "人员获救但贡额仍不足，主角震颤加重", "reveals": ["自治分队能在低战力下减少战损"]},
+        {"node_id": "LH6", "chapter_range": "31-37", "cause": "猎盟派出的追缴队要求没收共有猎物", "event": "家人公开伤痕、救援名单与旧标记图要求按战损结算", "character_choice": "父亲承认自己曾隐瞒旧猎记录并承担罚额", "decision_makers": ["父亲", "主角", "边村代表"], "consequence": "临时共猎结果获得裁判石承认，追缴依据动摇", "reveals": ["猎盟贡额账与重复编号不一致"]},
+        {"node_id": "LH7", "chapter_range": "38-45", "cause": "返伤猎群冲击村界形成最终验证", "event": "全家按自愿比例分流并以共同路线完成驱离，守猎章程当场生效", "character_choice": "主角拒绝独自吃满伤害，接受家人的比例方案", "decision_makers": ["主角", "父亲", "姑母", "边村队长"], "consequence": "家人和边村安全、家庭合作与公共资格获得可见兑现", "reveals": ["安全猎界已生效", "回伤可由共猎阵型规避"]},
+        {"node_id": "LH8", "chapter_range": "46-50", "cause": "共有猎获入账使历年贡额无法平衡", "event": "家人共同决定保全原始账页，只提交可核验差额", "character_choice": "他们不提前指认猎盟中的具体责任人", "decision_makers": ["主角", "父亲", "姑母", "边村代表"], "consequence": "猎盟的长期利益压力由本阶段制度选择产生，完整内幕仍未知", "reveals": ["历年贡额存在系统性差额"], "opens_next_arc": true}
+      ],
+      "story_spine": {"stages": [
+        {"stage": "trigger", "story_task": "祖猎拒射让保护选择被误认为背叛"},
+        {"stage": "goal", "story_task": "证明返伤并让家人与边村获得真实安全"},
+        {"stage": "resistance", "story_task": "欠贡、传统经验、承压上限与猎盟追缴"},
+        {"stage": "nodes", "story_task": "小伤试验、秘密交换、共有表决、救援与章程验证"},
+        {"stage": "choice", "story_task": "在独占猎获、个人承担和共同分流之间选择"},
+        {"stage": "cost", "story_task": "持续震颤、全家伤痕、罚额和放弃独占收益"},
+        {"stage": "payoff", "story_task": "家人存活、安全猎界与守猎资格生效"},
+        {"stage": "state_change", "story_task": "家庭从互相指责转为联合指挥与共同所有"},
+        {"stage": "next_entry", "story_task": "贡额差额打开猎盟责任调查"}
+      ]},
+      "chapter_phases": [
+        {"range": "1-10", "purpose": "建立拒射误解与返伤验证", "payoff": "家人确认分流不等于免伤"},
+        {"range": "11-25", "purpose": "用秘密交换和共有表决生产信任", "payoff": "临时共猎权成立"},
+        {"range": "26-40", "purpose": "让组织能力在真实伤亡中受检验", "payoff": "救援和战损账获得外部承认"},
+        {"range": "41-50", "purpose": "兑现安全章程并产生猎盟压力", "payoff": "安全猎界生效且贡额差额成为有限线索"}
+      ],
+      "continuation_conditions": ["全家共鸣伤痕继续占用承压容量", "猎盟差额只能证明账目异常不能提前指定责任人", "边村章程进入更高层复核时可能遭遇资源封锁"],
+      "material_profile_id": "LEGACY:PROFILE:ECHO_HUNT",
+      "material_bindings": {
+        "LH:GF:WOUND_RELAY": {"story_node_ids": ["LH2", "LH5", "LH7"], "node_effects": {"LH2": "小比例分流验证回伤与代价", "LH5": "承压格迫使主角放弃追猎", "LH7": "自愿比例成为最终保护方案"}},
+        "LH:WORLD:HUNT_OWNERSHIP": {"story_node_ids": ["LH1", "LH4", "LH8"], "node_effects": {"LH1": "贡额制度让拒射造成现实损失", "LH4": "共有所有权换临时共猎资格", "LH8": "入账方式暴露长期贡额差额"}},
+        "LH:SYSTEM:RESONANCE_SCARS": {"story_node_ids": ["LH2", "LH5", "LH7"], "node_effects": {"LH2": "伤痕记录第一轮分流", "LH5": "未恢复伤痕限制救援阵型", "LH7": "能力提升表现为更精确而非无代价"}},
+        "LH:CHARACTER:KIN_COUNCIL": {"story_node_ids": ["LH3", "LH4", "LH7"], "node_effects": {"LH3": "各人交出独立信息", "LH4": "家人共同决定共有与比例", "LH7": "家人方案替代主角独担"}},
+        "LH:PLOT:ORGANIZED_HUNT": {"story_node_ids": ["LH4", "LH5", "LH7"], "node_effects": {"LH4": "临时组织获得进入猎场的资格", "LH5": "自治救援在真实战损中验证", "LH7": "结果换取守猎章程"}},
+        "LH:OPENING:REFUSED_SHOT": {"story_node_ids": ["LH1", "LH2"], "node_effects": {"LH1": "拒射建立合理误解和贡额压力", "LH2": "小伤试验给出可执行验证入口"}},
+        "LH:ARC:HUNT_TO_CHARTER": {"story_node_ids": ["LH4", "LH6", "LH7"], "node_effects": {"LH4": "私人家事升级为边村共猎", "LH6": "程序审查检验战损与所有权", "LH7": "高潮结果转成安全章程"}},
+        "LH:MECH:VERIFIABLE_SECRET": {"story_node_ids": ["LH3", "LH6", "LH8"], "node_effects": {"LH3": "真实秘密交换建立合作基础", "LH6": "父亲公开隐瞒换取账目可信", "LH8": "家庭只提交可验证差额并保留未知"}}
+      }
+    }
+  ]
+}

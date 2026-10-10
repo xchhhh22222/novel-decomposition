@@ -1,0 +1,3791 @@
+{
+  "schema_version": "emotion_story_bridge_options_v1",
+  "mode": "E2_E3_ENABLED",
+  "status": "candidate",
+  "qa_status": "HOLD",
+  "brief_sha256": "400ff445aa7ae0b6336a78c022dcd395aff2daeb399ebcb8225474ea86fe3116",
+  "semantic_composer": {
+    "kind": "MODEL_AUTHORED_RESEARCH_CANDIDATE",
+    "model_family": "MULTI_PASS_AS_DECLARED",
+    "deterministic_validation_required": true,
+    "literary_approval": "NOT_GRANTED"
+  },
+  "options": [
+    {
+      "option_id": "ENHANCED:ASH_SEED",
+      "pair_id": "PAIR:RESOURCE_TRUST",
+      "mode": "E2_E3_ENABLED",
+      "status": "candidate",
+      "qa_status": "HOLD",
+      "research_state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "title": "增强候选一：灰穗封仓",
+      "premise": "少年为阻止灰穗寄生扩散烧掉家中一格冬储种，被亲人认定替竞争者毁仓；他以封闭修炼支路为代价承载灰谱，而家人以种谱、灌溉和仓权共同决定试种，最终让家庭冬粮、信任与净种合同分别生效。",
+      "pilot_scope_gap": "Phase 1 validator forces four small lines and two macros; this is a pilot constraint, not a universal creative optimum.",
+      "causal_signature": {
+        "central_conflict": "即时隔绝寄生必须烧毁家庭冬储",
+        "ability_logic": "承载灰谱会逐条封闭修炼支路",
+        "relationship_topology": "种谱、灌溉和仓权分散在三名家人手中",
+        "institution_engine": "公开发芽率审计与冬储合同",
+        "next_arc_trigger": "异常盐封批号只在公开试田后显现"
+      },
+      "emotion_source_uses": [
+        {
+          "record_kind": "line",
+          "record_id": "EL:BOOK_001:001",
+          "similarity_reason": "都要求能力最终转成家人可观察且可持续的安全改善",
+          "transferable_part": "把家庭资源缺口持续转化为行动选择，并以生活安全变化结算",
+          "reuse_limit": "不复制原书亲属、医疗事件或任务链；来源仍为 candidate/HOLD"
+        },
+        {
+          "record_kind": "line",
+          "record_id": "EL:BOOK_001:002",
+          "similarity_reason": "都要求成长经现实验证并保留代价和上限",
+          "transferable_part": "能力提升必须通过陌生任务结果而非自述成立",
+          "reuse_limit": "本案代价是封闭支路，不使用点数或原功法"
+        },
+        {
+          "record_kind": "line",
+          "record_id": "EL:BOOK_001:005",
+          "similarity_reason": "临时合作需要经资源和共同风险变为有边界的可靠关系",
+          "transferable_part": "共同投入和明确边界作为关系兑现",
+          "reuse_limit": "改写为家庭内部多方权利，不搬运伙伴人物与药物渠道"
+        },
+        {
+          "record_kind": "line",
+          "record_id": "EL:BOOK_001:003",
+          "similarity_reason": "公开资格和制度责任会反过来约束个人行动",
+          "transferable_part": "合法位置必须以公共结果和制度后果获得",
+          "reuse_limit": "只用于冬储认证，不等同正式武者身份"
+        },
+        {
+          "record_kind": "weave",
+          "record_id": "EW:BOOK_001:001",
+          "similarity_reason": "家庭生存缺口会直接迫使主角进入受监管的高风险入口",
+          "transferable_part": "家庭压力因果性地开启制度行动",
+          "reuse_limit": "不能把家庭危机当装饰性动机"
+        },
+        {
+          "record_kind": "weave",
+          "record_id": "EW:BOOK_001:006",
+          "similarity_reason": "关系积累应产生新的保护选择并留下关系债务",
+          "transferable_part": "他人的资源与风险投入改变家庭解决方案",
+          "reuse_limit": "家人拥有否决权，不把合作写成单向馈赠"
+        },
+        {
+          "record_kind": "weave",
+          "record_id": "EW:BOOK_001:004",
+          "similarity_reason": "可见成长会增加制度关注和身份压力",
+          "transferable_part": "成长兑现同时制造下一层公共责任",
+          "reuse_limit": "不能把公开结果自动写成稳定合法位置"
+        },
+        {
+          "record_kind": "macro",
+          "record_id": "MA:BOOK_001:001",
+          "similarity_reason": "家庭安全、能力验证、关系边界和合法位置共同组织较大承诺",
+          "transferable_part": "多条小线分别兑现后构成宏弧结算",
+          "reuse_limit": "不得降低来源长期合同或把一次救粮当全部宏弧证据"
+        },
+        {
+          "record_kind": "macro",
+          "record_id": "MA:BOOK_001:002",
+          "similarity_reason": "阶段中后部的有限物证可提前启动下一调查期待",
+          "transferable_part": "新期待跨信息、家庭和制度选择持续运行",
+          "reuse_limit": "只迁移提前启动形状，不复制父辈遗产和档案事件"
+        },
+        {
+          "record_kind": "handoff",
+          "record_id": "AH:BOOK_001:001",
+          "similarity_reason": "允许新旧宏弧在旧合同未完成时重叠",
+          "transferable_part": "保留旧合同并限制新线只揭示触发线索",
+          "reuse_limit": "观察到重叠不证明主导权交接，必须保持 CANDIDATE_UNVERIFIED"
+        }
+      ],
+      "emotion_pattern_rejections": [
+        {
+          "record_id": "EW:BOOK_001:009",
+          "reason": "权限失败型延迟并非本案主要发动机；强行套用会让粮食危机停在查档等待"
+        },
+        {
+          "record_id": "EW:BOOK_001:011",
+          "reason": "父辈遗赠启用成长输入与本案无必要对应，避免用遗产替代家人共同试种"
+        }
+      ],
+      "story_nodes": [
+        {
+          "node_id": "ES1",
+          "chapter_range": "1-3",
+          "cause": "主角发现一格冬储种出现会在一刻内扩散的灰纹",
+          "event": "他烧毁仓格阻断孢化，家人只看到祖种和竞争资格一同被毁",
+          "character_choice": "主角先烧仓再承担毁粮指控",
+          "decision_makers": [
+            "主角",
+            "父亲",
+            "祖母"
+          ],
+          "consequence": "家人封锁仓权并把他逐出试田组",
+          "reveals": [
+            "灰纹在密闭仓格内加速扩散"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "ES:OPENING:BURNED_CELL",
+              "material_ref": "OP:005:P2",
+              "role_at_node": "被误解的异常行动经后续公共核验改变身份位置",
+              "effect_on_action": "保护性烧仓制造真实损失和误解"
+            }
+          ]
+        },
+        {
+          "node_id": "ES2",
+          "chapter_range": "4-9",
+          "cause": "育种台拒绝检验已烧毁的样本",
+          "event": "主角从灰烬中承载残余灰谱，封闭第一条修炼支路",
+          "character_choice": "他用短期战力换一份可复验灰谱",
+          "decision_makers": [
+            "主角",
+            "育种员"
+          ],
+          "consequence": "灰穗存在获得初证，但烧仓责任未被洗清",
+          "reveals": [
+            "承载灰谱会封闭修炼支路",
+            "灰烬仍保留可复验谱型"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "ES:GF:ASH_BEARING",
+              "material_ref": "GF:BOOK_007",
+              "role_at_node": "吸收危险介质、以身体重构承受后果并获得追踪线索",
+              "effect_on_action": "承载灰谱换首次复验"
+            },
+            {
+              "slot_id": "ES:WORLD:SEED_CERTIFICATION",
+              "material_ref": "WB:RULE:BOOK005:001",
+              "role_at_node": "检测登记影响训练与资源权限，现实结果可反向纠正初判",
+              "effect_on_action": "认证门槛使初证不能洗清责任"
+            },
+            {
+              "slot_id": "ES:SYSTEM:SEALED_CHANNELS",
+              "material_ref": "CS:SYSTEM:BOOK005:AWAKENED_COMBAT",
+              "role_at_node": "能力经现实试验、状态限制和外部任务共同验证",
+              "effect_on_action": "第一支路封闭"
+            },
+            {
+              "slot_id": "ES:PLOT:ARSON_TO_CERTIFICATE",
+              "material_ref": "PL:004:L1",
+              "role_at_node": "弱起点经多次公开验证换取更高资源和制度位置",
+              "effect_on_action": "初证打开小试田"
+            },
+            {
+              "slot_id": "ES:OPENING:BURNED_CELL",
+              "material_ref": "OP:005:P2",
+              "role_at_node": "被误解的异常行动经后续公共核验改变身份位置",
+              "effect_on_action": "残灰提供可执行验证入口"
+            }
+          ]
+        },
+        {
+          "node_id": "ES3",
+          "chapter_range": "10-15",
+          "cause": "家庭失去冬储资格且只能选择一块小试田",
+          "event": "祖母提出用私藏种谱复验，但要求主角不得再擅自承载",
+          "character_choice": "主角接受家人设定的承载上限",
+          "decision_makers": [
+            "主角",
+            "祖母",
+            "妹妹"
+          ],
+          "consequence": "家庭从完全排斥转为有条件合作",
+          "reveals": [
+            "祖母保留一份未登记种谱"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "ES:CHARACTER:SEED_COUNCIL",
+              "material_ref": "CF:BOOK:BOOK_016",
+              "role_at_node": "关系角色以独立信息、行动和边界改变主角方案",
+              "effect_on_action": "祖母以种谱设定合作条件"
+            }
+          ]
+        },
+        {
+          "node_id": "ES4",
+          "chapter_range": "16-23",
+          "cause": "小试田的水期与官方建议冲突",
+          "event": "妹妹以灌溉记录证明先前失败不是主角操控，并重排试种",
+          "character_choice": "家人拒绝竞争者提供的私下合格证明，选择公开试田",
+          "decision_makers": [
+            "主角",
+            "祖母",
+            "妹妹",
+            "父亲"
+          ],
+          "consequence": "家庭承担种谱公开风险，合作转为主动共同方案",
+          "reveals": [
+            "官方水期记录与本地土温不匹配"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "ES:WORLD:SEED_CERTIFICATION",
+              "material_ref": "WB:RULE:BOOK005:001",
+              "role_at_node": "检测登记影响训练与资源权限，现实结果可反向纠正初判",
+              "effect_on_action": "公开试田改变证据资格"
+            },
+            {
+              "slot_id": "ES:CHARACTER:SEED_COUNCIL",
+              "material_ref": "CF:BOOK:BOOK_016",
+              "role_at_node": "关系角色以独立信息、行动和边界改变主角方案",
+              "effect_on_action": "妹妹水期记录改变试田选择"
+            },
+            {
+              "slot_id": "ES:PLOT:ARSON_TO_CERTIFICATE",
+              "material_ref": "PL:004:L1",
+              "role_at_node": "弱起点经多次公开验证换取更高资源和制度位置",
+              "effect_on_action": "公开试田扩大验证"
+            },
+            {
+              "slot_id": "ES:ARC:WINTER_RESERVE",
+              "material_ref": "AR:ARC:BOOK007:04",
+              "role_at_node": "程序审查与高风险行动共同改变公开关系保护和行动资格",
+              "effect_on_action": "家庭争执升级为公共试田"
+            },
+            {
+              "slot_id": "ES:MECH:GERMINATION_AUDIT",
+              "material_ref": "PM:MECHANISM:004",
+              "role_at_node": "用可计算物证暴露证词与资源账之间的必然矛盾",
+              "effect_on_action": "发芽率纠正水期说法"
+            }
+          ]
+        },
+        {
+          "node_id": "ES5",
+          "chapter_range": "24-30",
+          "cause": "公开试田出现第二轮灰穗",
+          "event": "主角封闭第二条支路保住幼苗，家人按发芽率和批号定位异常盐封",
+          "character_choice": "全家保留盐封而不立即指控供应方",
+          "decision_makers": [
+            "主角",
+            "祖母",
+            "妹妹",
+            "育种员"
+          ],
+          "consequence": "主角战力再降，新宏弧获得有限物证入口",
+          "reveals": [
+            "异常盐封批号同时出现在两地种粮"
+          ],
+          "opens_next_arc": true,
+          "material_uses": [
+            {
+              "slot_id": "ES:GF:ASH_BEARING",
+              "material_ref": "GF:BOOK_007",
+              "role_at_node": "吸收危险介质、以身体重构承受后果并获得追踪线索",
+              "effect_on_action": "第二次承载减少可用战技"
+            },
+            {
+              "slot_id": "ES:SYSTEM:SEALED_CHANNELS",
+              "material_ref": "CS:SYSTEM:BOOK005:AWAKENED_COMBAT",
+              "role_at_node": "能力经现实试验、状态限制和外部任务共同验证",
+              "effect_on_action": "第二支路封闭改变高潮战术"
+            },
+            {
+              "slot_id": "ES:MECH:GERMINATION_AUDIT",
+              "material_ref": "PM:MECHANISM:004",
+              "role_at_node": "用可计算物证暴露证词与资源账之间的必然矛盾",
+              "effect_on_action": "批号差额开启新弧"
+            }
+          ]
+        },
+        {
+          "node_id": "ES6",
+          "chapter_range": "31-38",
+          "cause": "孢化潮威胁整片冬田且公开试验可能全毁",
+          "event": "家人分管水期、仓门和净种，主角只承载关键谱型而不包揽全部污染",
+          "character_choice": "主角服从家人撤出一半田块的决定",
+          "decision_makers": [
+            "主角",
+            "祖母",
+            "妹妹",
+            "父亲"
+          ],
+          "consequence": "家庭粮食安全部分恢复，关系和能力线阶段兑现",
+          "reveals": [
+            "分区隔离能阻止灰穗跨田传播"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "ES:GF:ASH_BEARING",
+              "material_ref": "GF:BOOK_007",
+              "role_at_node": "吸收危险介质、以身体重构承受后果并获得追踪线索",
+              "effect_on_action": "家人限制承载迫使分区保护"
+            },
+            {
+              "slot_id": "ES:CHARACTER:SEED_COUNCIL",
+              "material_ref": "CF:BOOK:BOOK_016",
+              "role_at_node": "关系角色以独立信息、行动和边界改变主角方案",
+              "effect_on_action": "家人分工并否决全量承载"
+            },
+            {
+              "slot_id": "ES:ARC:WINTER_RESERVE",
+              "material_ref": "AR:ARC:BOOK007:04",
+              "role_at_node": "程序审查与高风险行动共同改变公开关系保护和行动资格",
+              "effect_on_action": "孢化潮形成阶段高潮"
+            }
+          ]
+        },
+        {
+          "node_id": "ES7",
+          "chapter_range": "39-45",
+          "cause": "净种发芽结果达到公共复核门槛",
+          "event": "育种台确认净种率，冬储合同生效，家庭共同签署监督条款",
+          "character_choice": "全家放弃种谱独占换区域安全和持续换种",
+          "decision_makers": [
+            "主角",
+            "祖母",
+            "妹妹",
+            "父亲",
+            "育种台代表"
+          ],
+          "consequence": "家庭有粮、净种入仓、信任行动化和合法位置同时完成结算",
+          "reveals": [
+            "净种发芽率通过复核",
+            "冬储合同正式生效",
+            "家庭监督资格正式生效"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "ES:WORLD:SEED_CERTIFICATION",
+              "material_ref": "WB:RULE:BOOK005:001",
+              "role_at_node": "检测登记影响训练与资源权限，现实结果可反向纠正初判",
+              "effect_on_action": "合同生效形成制度兑现"
+            },
+            {
+              "slot_id": "ES:SYSTEM:SEALED_CHANNELS",
+              "material_ref": "CS:SYSTEM:BOOK005:AWAKENED_COMBAT",
+              "role_at_node": "能力经现实试验、状态限制和外部任务共同验证",
+              "effect_on_action": "净种结果验证能力但代价保留"
+            },
+            {
+              "slot_id": "ES:CHARACTER:SEED_COUNCIL",
+              "material_ref": "CF:BOOK:BOOK_016",
+              "role_at_node": "关系角色以独立信息、行动和边界改变主角方案",
+              "effect_on_action": "全家共同签署监督"
+            },
+            {
+              "slot_id": "ES:PLOT:ARSON_TO_CERTIFICATE",
+              "material_ref": "PL:004:L1",
+              "role_at_node": "弱起点经多次公开验证换取更高资源和制度位置",
+              "effect_on_action": "结果换冬储资格"
+            },
+            {
+              "slot_id": "ES:ARC:WINTER_RESERVE",
+              "material_ref": "AR:ARC:BOOK007:04",
+              "role_at_node": "程序审查与高风险行动共同改变公开关系保护和行动资格",
+              "effect_on_action": "四项合同在PAID前得到见证"
+            }
+          ]
+        },
+        {
+          "node_id": "ES8",
+          "chapter_range": "46-50",
+          "cause": "合同归档显示盐封批号属于更高层统一采购",
+          "event": "家庭只提交批号和两地样本，拒绝把未知供应链写成定论",
+          "character_choice": "主角不以猜测换提前免责",
+          "decision_makers": [
+            "主角",
+            "家人",
+            "育种台代表"
+          ],
+          "consequence": "旧宏弧已兑现，新宏弧继续 ACTIVE，但主导权交接仍未验证",
+          "reveals": [
+            "盐封来自统一采购层但具体责任人未知"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "ES:MECH:GERMINATION_AUDIT",
+              "material_ref": "PM:MECHANISM:004",
+              "role_at_node": "用可计算物证暴露证词与资源账之间的必然矛盾",
+              "effect_on_action": "有限物证约束后续指控"
+            }
+          ]
+        }
+      ],
+      "emotion_lines": [
+        {
+          "line_id": "ES:LINE:FAMILY",
+          "line_role": "FAMILY_PROTECTION",
+          "payoff_domain": "家庭粮食安全",
+          "payoff_contract": "家庭获得可持续冬粮、净种和不再扩散的安全状态",
+          "state_transitions": [
+            {
+              "node_id": "ES1",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": [
+                "灰纹在密闭仓格内加速扩散"
+              ]
+            },
+            {
+              "node_id": "ES2",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "ES6",
+              "from": "ACTIVE",
+              "to": "PARTIALLY_PAID",
+              "reader_knowledge_added": [
+                "分区隔离能阻止灰穗跨田传播"
+              ]
+            },
+            {
+              "node_id": "ES7",
+              "from": "PARTIALLY_PAID",
+              "to": "PAID",
+              "reader_knowledge_added": [
+                "冬储合同正式生效"
+              ]
+            }
+          ]
+        },
+        {
+          "line_id": "ES:LINE:GROWTH",
+          "line_role": "GROWTH_COST",
+          "payoff_domain": "能力与代价",
+          "payoff_contract": "灰谱承载经公共结果验证，同时封闭支路继续限制后续战力",
+          "state_transitions": [
+            {
+              "node_id": "ES2",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": [
+                "承载灰谱会封闭修炼支路"
+              ]
+            },
+            {
+              "node_id": "ES5",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "ES7",
+              "from": "ACTIVE",
+              "to": "PAID",
+              "reader_knowledge_added": [
+                "净种发芽率通过复核"
+              ]
+            }
+          ]
+        },
+        {
+          "line_id": "ES:LINE:RELATION",
+          "line_role": "RELATIONSHIP_AGENCY",
+          "payoff_domain": "家庭行动信任",
+          "payoff_contract": "家人拥有真实否决权和资源职责，并共同签署后续监督",
+          "state_transitions": [
+            {
+              "node_id": "ES1",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "ES3",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": [
+                "祖母保留一份未登记种谱"
+              ]
+            },
+            {
+              "node_id": "ES6",
+              "from": "ACTIVE",
+              "to": "PARTIALLY_PAID",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "ES7",
+              "from": "PARTIALLY_PAID",
+              "to": "PAID",
+              "reader_knowledge_added": [
+                "家庭监督资格正式生效"
+              ]
+            }
+          ]
+        },
+        {
+          "line_id": "ES:LINE:INSTITUTION",
+          "line_role": "FACTION_PRESSURE",
+          "payoff_domain": "制度资格与责任",
+          "payoff_contract": "本地冬储资格生效且采购异常形成受限、可核验的后续压力",
+          "state_transitions": [
+            {
+              "node_id": "ES2",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "ES4",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": [
+                "官方水期记录与本地土温不匹配"
+              ]
+            },
+            {
+              "node_id": "ES7",
+              "from": "ACTIVE",
+              "to": "PARTIALLY_PAID",
+              "reader_knowledge_added": [
+                "冬储合同正式生效"
+              ]
+            },
+            {
+              "node_id": "ES8",
+              "from": "PARTIALLY_PAID",
+              "to": "ACTIVE",
+              "reader_knowledge_added": [
+                "盐封来自统一采购层但具体责任人未知"
+              ]
+            }
+          ]
+        }
+      ],
+      "weaves": [
+        {
+          "weave_id": "ES:WEAVE:1",
+          "from_line_id": "ES:LINE:FAMILY",
+          "to_line_id": "ES:LINE:INSTITUTION",
+          "node_id": "ES2",
+          "relation_type": "CAUSES_PRESSURE",
+          "causal_bridge": "家庭冬粮缺口迫使主角进入育种台认证而非留在私人辩解",
+          "effect_on_choice": "主角接受封闭支路换检验入口"
+        },
+        {
+          "weave_id": "ES:WEAVE:2",
+          "from_line_id": "ES:LINE:RELATION",
+          "to_line_id": "ES:LINE:FAMILY",
+          "node_id": "ES4",
+          "relation_type": "ENABLES_CHOICE",
+          "causal_bridge": "家人的种谱和灌溉权让公开试田成为可行保护方案",
+          "effect_on_choice": "全家拒绝私下证明并选择承担公开风险"
+        },
+        {
+          "weave_id": "ES:WEAVE:3",
+          "from_line_id": "ES:LINE:GROWTH",
+          "to_line_id": "ES:LINE:INSTITUTION",
+          "node_id": "ES5",
+          "relation_type": "CAUSES_PRESSURE",
+          "causal_bridge": "第二次可见承载既证明能力也暴露统一批号异常",
+          "effect_on_choice": "主角保留物证而不把成长结果换成即时免责"
+        },
+        {
+          "weave_id": "ES:WEAVE:4",
+          "from_line_id": "ES:LINE:RELATION",
+          "to_line_id": "ES:LINE:GROWTH",
+          "node_id": "ES6",
+          "relation_type": "LIMITS_COST",
+          "causal_bridge": "家人否决全量承载，迫使能力在有限支路中使用",
+          "effect_on_choice": "主角撤出一半田块并接受部分兑现"
+        }
+      ],
+      "macro_arcs": [
+        {
+          "macro_id": "ES:MACRO:A",
+          "macro_promise": "被误解的主角能否以有代价能力和家人共同选择恢复冬粮、安全与行动信任",
+          "settlement_contract": "家庭拥有可持续冬粮和净种，灰穗不再扩散；主角能力经公共结果验证且代价保留；家人共同签署监督；冬储合同正式生效。",
+          "required_settlement_conditions": [
+            {
+              "condition_id": "winter_food_safe",
+              "description": "净种入仓并能支撑家庭冬粮",
+              "witness_node_id": "ES7"
+            },
+            {
+              "condition_id": "growth_cost_visible",
+              "description": "至少两条修炼支路仍处于封闭状态",
+              "witness_node_id": "ES5"
+            },
+            {
+              "condition_id": "family_agency_formal",
+              "description": "家人共同签署并取得监督资格",
+              "witness_node_id": "ES7"
+            },
+            {
+              "condition_id": "contract_effective",
+              "description": "冬储合同正式生效",
+              "witness_node_id": "ES7"
+            }
+          ],
+          "state_transitions": [
+            {
+              "node_id": "ES1",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": [
+                "灰纹在密闭仓格内加速扩散"
+              ]
+            },
+            {
+              "node_id": "ES2",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "ES6",
+              "from": "ACTIVE",
+              "to": "PARTIALLY_PAID",
+              "reader_knowledge_added": [
+                "分区隔离能阻止灰穗跨田传播"
+              ]
+            },
+            {
+              "node_id": "ES7",
+              "from": "PARTIALLY_PAID",
+              "to": "PAID",
+              "reader_knowledge_added": [
+                "冬储合同正式生效"
+              ]
+            }
+          ]
+        },
+        {
+          "macro_id": "ES:MACRO:B",
+          "macro_promise": "统一采购的异常盐封为何跨区出现，以及谁应承担扩大后的粮种责任",
+          "settlement_contract": "盐封来源、采购决策与受影响区域获得可核验解释，并实际改变家庭监督边界和区域换种方案。",
+          "required_settlement_conditions": [],
+          "state_transitions": [
+            {
+              "node_id": "ES5",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": [
+                "异常盐封批号同时出现在两地种粮"
+              ]
+            },
+            {
+              "node_id": "ES8",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": [
+                "盐封来自统一采购层但具体责任人未知"
+              ]
+            }
+          ]
+        }
+      ],
+      "handoff": {
+        "from_macro_id": "ES:MACRO:A",
+        "to_macro_id": "ES:MACRO:B",
+        "trigger_node_id": "ES5",
+        "overlap_status": "OBSERVED_IN_PLAN",
+        "dominance_transfer_status": "CANDIDATE_UNVERIFIED",
+        "old_arc_contract_retained": "家庭拥有可持续冬粮和净种，灰穗不再扩散；主角能力经公共结果验证且代价保留；家人共同签署监督；冬储合同正式生效。",
+        "withheld_questions": [
+          "谁批准异常盐封",
+          "统一采购覆盖多少区域",
+          "灰穗是事故还是利用"
+        ],
+        "handoff_limit": "AH001 only supports overlap as a research reference, not verified dominance transfer"
+      },
+      "story_spine": {
+        "stages": [
+          {
+            "stage": "trigger",
+            "story_task": "烧仓保护被误读为毁掉家庭生计"
+          },
+          {
+            "stage": "goal",
+            "story_task": "恢复冬粮、安全与家庭行动信任"
+          },
+          {
+            "stage": "resistance",
+            "story_task": "灰穗扩散、认证门槛、支路封闭和家人资源边界"
+          },
+          {
+            "stage": "nodes",
+            "story_task": "承载、小试田、公开试田、分区隔离与合同复核"
+          },
+          {
+            "stage": "choice",
+            "story_task": "在私下合格、全量承载和共同风险之间选择"
+          },
+          {
+            "stage": "cost",
+            "story_task": "战技支路封闭与种谱独占丧失"
+          },
+          {
+            "stage": "payoff",
+            "story_task": "净种入仓、家庭监督和冬储合同生效"
+          },
+          {
+            "stage": "state_change",
+            "story_task": "家人由审判者变为有否决权的共同监督者"
+          },
+          {
+            "stage": "next_entry",
+            "story_task": "异常盐封打开受限采购调查"
+          }
+        ]
+      },
+      "chapter_phases": [
+        {
+          "range": "1-10",
+          "purpose": "建立烧仓误解与灰谱代价",
+          "payoff": "灰穗获得第一次外部确认"
+        },
+        {
+          "range": "11-25",
+          "purpose": "让家人资源进入共同试种",
+          "payoff": "公开试田由家庭主动选择"
+        },
+        {
+          "range": "26-40",
+          "purpose": "能力代价、家庭方案和区域安全相互制约",
+          "payoff": "冬田部分安全且盐封线有限开启"
+        },
+        {
+          "range": "41-50",
+          "purpose": "完成旧宏弧合同并维持新弧未知",
+          "payoff": "冬储合同生效但采购责任仍待查"
+        }
+      ],
+      "continuation_conditions": [
+        "封闭支路在后续战斗中继续造成技能缺口",
+        "采购层责任必须依靠新的区域证据而非猜测",
+        "家庭监督资格扩大到外区前需重新谈判"
+      ],
+      "material_slots": [
+        {
+          "slot_id": "ES:GF:ASH_BEARING",
+          "module": "golden_finger",
+          "function_required": "让主角承载寄生灰穗以辨别被污染的种粮，并以修炼通道灼损支付代价",
+          "query": "代价 吸收 污染 保护",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "abstract_function": "吸收危险介质、以身体重构承受后果并获得追踪线索",
+          "constraint_checks": {
+            "ability": "只能承载接触过的灰穗谱",
+            "resource": "每次承载封闭一条修炼支路七日",
+            "world": "灰谱须由育种台复验",
+            "character": "家人可以否决继续承载并改变试种范围"
+          },
+          "rule_conflicts": [
+            "不迁移血族、血奴或无限恢复，只保留危险介质承载与可追踪结果"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "灰穗只能被导入已开启的修炼支路，支路封闭期间相关能力失效",
+            "cost_or_constraint": "承载越多，主角可用战技越少",
+            "changed_state": "主角能识别污染种粮但必须在保护与成长间分配通道",
+            "why_causal": "只有真实灰谱才能让育种台承认污染并启动换种",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "成长能力直接制造救粮选择与后续战力缺口",
+          "gap_reason": "",
+          "story_node_ids": [
+            "ES2",
+            "ES5",
+            "ES6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "GF:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "吸收/操控血液—受伤重构—战力与追踪权限扩张",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "异常片段预见—主动试探—现实验证—未来改写",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "DA:ABILITY:BOOK_016:010",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "伤害转移（复制自萌羊，精神/辅助系）",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "DA:ABILITY:BOOK_017:003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "【献往虚无的祭品】+【众生相】+【共沐神恩】",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "公开行动—关注反馈—任务/形态收益",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "低评价器物→精神内景试探→刀灵回应→形态解放→公开验证",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "DA:ABILITY:BOOK_015:004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_015",
+              "title": "画圆（圆神）",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "GF:BOOK_007",
+            "module": "golden_finger",
+            "record_id": "GF:BOOK_007",
+            "source_record_id": "GF:BOOK_007",
+            "component_id": null,
+            "component_path": null,
+            "book_id": "BOOK_007",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/02_金手指/per_book/BOOK_007.jsonl",
+            "line": 1,
+            "source_line_sha256": "7af97064c000cf7a660d5452fc4cd4c394c036feb9c5771becd435b16905c3f2",
+            "title": "吸收/操控血液—受伤重构—战力与追踪权限扩张",
+            "summary": "input 血族血液、可吸收目标与当前伤势/战斗环境 process 陆舟以血液操控、吸收、血奴与身体重构应对攻击；是否存在独立系统界面UNKNOWN output 恢复、血液武装、血奴追踪、位阶/战力变化与局部信息优势",
+            "evidence_refs": [
+              "BOOK_007:CHAPTER:0001",
+              "BOOK_007:CHAPTER:0006",
+              "BOOK_007:CHAPTER:0010",
+              "BOOK_007:CHAPTER:0046",
+              "BOOK_007:CHAPTER:0058",
+              "BOOK_007:CHAPTER:0072",
+              "BOOK_007:CHAPTER:0089",
+              "BOOK_007:CHAPTER:0100",
+              "BOOK_007:CHAPTER:0114",
+              "BOOK_007:CHAPTER:0121",
+              "BOOK_007:EMOTION:0001",
+              "BOOK_007:EMOTION:0059",
+              "BOOK_007:EMOTION:0109"
+            ],
+            "source_component_preview": "{\"schema_version\":1,\"record_type\":\"per_book\",\"record_id\":\"GF:BOOK_007\",\"status\":\"candidate\",\"book_id\":\"BOOK_007\",\"title\":\"猎魔人小姐，我真不是血族\",\"chapters_covered\":\"1-124\",\"mechanic_name_in_book\":\"血族体质、血液操控与不死恢复表现（源文未给稳定外挂正式名）\",\"normalized_category\":\"种族天赋与血液成长\",\"normalized_archetype\":\"吸收/操控血液—受伤重构—战力与追踪权限扩张\",\"core_formula\":{\"input\":\"血族血液、可吸收目标与当前伤势/战斗环境\",\"process\":\"陆舟以血液操控、吸收、血奴与身体重构应对攻击；是否存在独立系统界面UNKNOWN\",\"output\":\"恢复、血液武装、血奴追踪、位阶/战力变化与局部信息优势\"},\"ownership\":\"源文范围内只有陆舟展示该组合；是否为血族共有、为何他特殊及绝对不死边界UNKNOWN\",\"activation_conditions\":[\"血液接触或吸收目标\",\"受伤/被毁后的重构表现\",\"血奴需要可转化对象与环境，完整条件UNKNOWN\"],\"hard_limits\":[\"未证明绝对无敌；高阶/特殊攻击的上限和代价UNKNOWN\",\"不提供自动执行力，仍受地图、对手位阶、信息和追击压力约束\",\"血族完整成长规则、血月/查尔斯关系UNKNOWN\"],\"costs\":[\"战斗暴露血族身份\",\"吸收与血奴使用可能引发猎魔人追踪和阵营风险\",\"精神、资源、时间与重构限制UNKNOWN\"],\"failure_modes\":[\"信息不足导致被围捕\",\"特殊奇物/高阶敌手改变恢复结果\",\"血奴"
+          },
+          "rejected_refs": [
+            {
+              "material_id": "GF:BOOK_005",
+              "module": "golden_finger",
+              "record_id": "GF:BOOK_005",
+              "source_record_id": "GF:BOOK_005",
+              "component_id": null,
+              "component_path": null,
+              "book_id": "BOOK_005",
+              "qa_status": "PASS",
+              "usage_status": "ADAPTABLE_WITH_GAPS",
+              "path": "DNA素材/02_金手指/per_book/BOOK_005.jsonl",
+              "line": 1,
+              "source_line_sha256": "8fbf099c9a3fbf48277c7be1c8a24a850ad8a8bb7e5215e1949c800077a93ff2",
+              "title": "异常片段预见—主动试探—现实验证—未来改写",
+              "summary": "input 高风险事件、环境或空间异常，以及江寒接收到的视觉/感官未来片段；部分片段由场景或药物状态触发，稳定触发条件UNKNOWN process 江寒先经历不完整的未来结果或失败分支，再按自身理解试探、逃生或提醒；现实行动会改变条件并使结果分叉，官方/队友随后将片段与现场对照 output 提前获得灾害、攻击轨迹、路线、异常物或行动结果的信息差，经现实验证后转为避险、救援、任务协同、官方权限与认知变化",
+              "evidence_refs": [
+                "BOOK_005:CHAPTER:0001",
+                "BOOK_005:CHAPTER:0002",
+                "BOOK_005:CHAPTER:0003",
+                "BOOK_005:CHAPTER:0012",
+                "BOOK_005:CHAPTER:0013",
+                "BOOK_005:CHAPTER:0015",
+                "BOOK_005:CHAPTER:0024",
+                "BOOK_005:CHAPTER:0025",
+                "BOOK_005:CHAPTER:0035",
+                "BOOK_005:CHAPTER:0038",
+                "BOOK_005:CHAPTER:0040",
+                "BOOK_005:CHAPTER:0054",
+                "BOOK_005:CHAPTER:0058",
+                "BOOK_005:CHAPTER:0071",
+                "BOOK_005:CHAPTER:0075",
+                "BOOK_005:CHAPTER:0085",
+                "BOOK_005:CHAPTER:0092",
+                "BOOK_005:CHAPTER:0102",
+                "BOOK_005:CHAPTER:0109",
+                "BOOK_005:CHAPTER:0110",
+                "BOOK_005:CHAPTER:0112",
+                "BOOK_005:CHAPTER:0116",
+                "BOOK_005:EMOTION:0001",
+                "BOOK_005:EMOTION:0012",
+                "BOOK_005:EMOTION:0013",
+                "BOOK_005:EMOTION:0024",
+                "BOOK_005:EMOTION:0040",
+                "BOOK_005:EMOTION:0054",
+                "BOOK_005:EMOTION:0075",
+                "BOOK_005:EMOTION:0092",
+                "BOOK_005:EMOTION:0102",
+                "BOOK_005:EMOTION:0116"
+              ],
+              "reason": "未来预见不能提供灰谱实物证据，还会把家人合作降为主角单方面提前知道答案",
+              "decision": "REJECT"
+            }
+          ]
+        },
+        {
+          "slot_id": "ES:WORLD:SEED_CERTIFICATION",
+          "module": "worldbuilding",
+          "function_required": "让种粮检测、播种资格与冬储合同构成可追责制度",
+          "query": "污染 检测 权限 资源",
+          "component_types": [
+            "rule_chain"
+          ],
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/rule_chains/0",
+          "component_id": "WB:RULE:BOOK005:001",
+          "abstract_function": "检测登记影响训练与资源权限，现实结果可反向纠正初判",
+          "constraint_checks": {
+            "ability": "认证只验证灰谱不强化主角",
+            "resource": "冬储种、试田和认证名额有限",
+            "world": "育种台、乡仓和家庭种谱三方互证",
+            "character": "家人掌握祖传种谱与是否公开的权利"
+          },
+          "rule_conflicts": [
+            "来源为觉醒检测，本案重设为粮种认证和冬储合同"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "只有家庭种谱与两块独立试田同时通过才能恢复播种资格",
+            "cost_or_constraint": "公开种谱会失去家族的独占育种收益",
+            "changed_state": "私人烧仓争议转为公共粮食安全审计",
+            "why_causal": "家人是否公开种谱决定污染结论能否成立",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "安全兑现落实为净种入仓和冬粮合同生效",
+          "gap_reason": "",
+          "story_node_ids": [
+            "ES2",
+            "ES4",
+            "ES7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "WB:BOOK:BOOK_005",
+              "source_record_id": "WB:BOOK:BOOK_005",
+              "component_id": "WB:RULE:BOOK005:001",
+              "book_id": "BOOK_005",
+              "title": "觉醒检测与能力登记把超常表现纳入学校和官方可管理的身份流程，检测结果会影响训练、排名、保密和后续调查。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_003",
+              "source_record_id": "WB:BOOK:BOOK_003",
+              "component_id": "WB-R3",
+              "book_id": "BOOK_003",
+              "title": "公开战果影响协会评价与后续资源权限。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_009",
+              "source_record_id": "WB:BOOK:BOOK_009",
+              "component_id": "WB-RULE-01",
+              "book_id": "BOOK_009",
+              "title": "武魂觉醒后的检测品级影响社会评价、训练入口和资源机会，但公开实战结果可以反向修正评价。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_002",
+              "source_record_id": "WB:BOOK:BOOK_002",
+              "component_id": "WB:RULE:003",
+              "book_id": "BOOK_002",
+              "title": "高考、招生与天才班训练把战力公开量化，成绩可换取高校和功法权限。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_004",
+              "source_record_id": "WB:BOOK:BOOK_004",
+              "component_id": "WB:004:R1",
+              "book_id": "BOOK_004",
+              "title": "本命法宝天赋、境界和考核战果共同决定学生可获得的教育与训练资源。",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_006",
+              "source_record_id": "WB:BOOK:BOOK_006",
+              "component_id": "WB-R2",
+              "book_id": "BOOK_006",
+              "title": "神域资源可通过交易平台与中转枢纽流通",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_017",
+              "source_record_id": "WB:BOOK:BOOK_017",
+              "component_id": "WB:RULE:002",
+              "book_id": "BOOK_017",
+              "title": "试炼即资源：一切'资源'从衣食住行到神赐威能都通过【祈愿试炼】获得；通关延伸试炼可打通空气墙扩大生存空间；单人试炼不增加登神之路得分",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_001",
+              "source_record_id": "WB:BOOK:BOOK_001",
+              "component_id": "C1",
+              "book_id": "BOOK_001",
+              "title": "灵气潮汐/沉寂/复苏改变能量密度",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_016",
+              "source_record_id": "WB:BOOK:BOOK_016",
+              "component_id": "WB:RULE:002",
+              "book_id": "BOOK_016",
+              "title": "觉醒与天赋序列规则：人类接触觉醒者有机会觉醒（必要非充分，CH~400无色组织论文）；天赋共199序列，数字越小越强；序列100+上限4级；天赋分元素/精神/召唤/守护/时空/知识/生命/辅助/强化等系别；等级1-8，3→4为质变瓶颈，升级方式因系别而异（输出系杀兽/智慧系累计使用）",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_008",
+              "source_record_id": "WB:BOOK:BOOK_008",
+              "component_id": "WB:R:008:1",
+              "book_id": "BOOK_008",
+              "title": "公开关注、神武与灾隙将都市日常接入超常战场",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_012",
+              "source_record_id": "WB:BOOK:BOOK_012",
+              "component_id": "WB:RULE:002",
+              "book_id": "BOOK_012",
+              "title": "双死轮回：终焉之地第十日湮灭后死者短暂回到现实，一天后在地震中再度死亡，随即重返终焉之地；人生「最短一天，最长十天」（人蛇点破，BOOK_012:CHAPTER:0102）",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "WB:RULE:BOOK005:001",
+            "module": "worldbuilding",
+            "record_id": "WB:BOOK:BOOK_005",
+            "source_record_id": "WB:BOOK:BOOK_005",
+            "component_id": "WB:RULE:BOOK005:001",
+            "component_path": "/rule_chains/0",
+            "book_id": "BOOK_005",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/03_世界观/per_book/BOOK_005.jsonl",
+            "line": 1,
+            "source_line_sha256": "de2aa2809d0943a4247cd555c5ddc6fedc0a9097c2fcc200f2aab129048053c9",
+            "title": "觉醒检测与能力登记把超常表现纳入学校和官方可管理的身份流程，检测结果会影响训练、排名、保密和后续调查。",
+            "summary": "BOOK_005:CHAPTER:0001 BOOK_005:CHAPTER:0020 BOOK_005:CHAPTER:0021 BOOK_005:CHAPTER:0029 BOOK_005:CHAPTER:0040 BOOK_005:CHAPTER:0102",
+            "evidence_refs": [
+              "BOOK_005:CHAPTER:0001",
+              "BOOK_005:CHAPTER:0020",
+              "BOOK_005:CHAPTER:0021",
+              "BOOK_005:CHAPTER:0029",
+              "BOOK_005:CHAPTER:0040",
+              "BOOK_005:CHAPTER:0102"
+            ],
+            "source_component_preview": "{\"chain_id\":\"WB:RULE:BOOK005:001\",\"completeness\":\"partial\",\"rule_statement\":\"觉醒检测与能力登记把超常表现纳入学校和官方可管理的身份流程，检测结果会影响训练、排名、保密和后续调查。\",\"scope\":\"高中觉醒典礼、学生训练和官方能力评估场景；更广泛社会适用范围UNKNOWN\",\"scarcity\":\"可被可靠解释、登记和验证的能力信息，以及安全训练和官方注意力\",\"resource_flow\":\"学生在觉醒典礼/训练中暴露表现，学校与官方进行检测、排名、复盘和登记；被验证的异常可获得训练、保护、任务或岗位入口，具体资源分配规则UNKNOWN\",\"interests_and_institutions\":\"学校需要维持教学和纪律秩序，官方需要建立异常档案并控制风险；江寒的非标准表现使两套解释发生冲突\",\"constraints\":\"学生必须接受公共考核、纪律和保密安排；能力登记可能低估真实作用；主角不能仅凭自述跳过检测与训练\",\"conflict_engine\":\"同一行为在学生/教师公共视角与官方异常评估中含义不同，造成社死、排名、保密和监控冲突\",\"plot_entry\":\"觉醒典礼、低等级登记、训练测试和官方岗位把主角从校园笑柄逐步推入制度化异常任务\",\"information_ownership\":\"学校掌握现场纪律与学生记录，官方掌握调查、档案和保护决策，江寒掌握独特预见体验；三方解释不一致\",\"map_or_region_effect\":\"从校园课堂/训练馆到官方实训和任务现场，进入更高风险区域需要训练与官方安排；正式权限门槛UNKNOWN\",\"recurring_threat\":\"觉醒者的异常能力会在灾害、训练或任务中产生难以归类的风险，制度每次核验都可能引发新的公开后果\",\"emoti"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "ES:SYSTEM:SEALED_CHANNELS",
+          "module": "cultivation_system",
+          "function_required": "把灰穗承载、通道封闭和实战损失写入成长规则",
+          "query": "代价 净化 身体 验证",
+          "component_types": [
+            "cultivation_system"
+          ],
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/cultivation_systems/0",
+          "component_id": "CS:SYSTEM:BOOK005:AWAKENED_COMBAT",
+          "abstract_function": "能力经现实试验、状态限制和外部任务共同验证",
+          "constraint_checks": {
+            "ability": "每条支路只能封存一种灰谱",
+            "resource": "解除封闭需要净种发芽产生的清气",
+            "world": "封闭状态可被育种台与战斗检测共同观察",
+            "character": "主角不能越过家人决定私自扩大试种"
+          },
+          "rule_conflicts": [
+            "来源能力边界较宽，本案限定为修炼支路与灰谱一一对应"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "承载灰穗会锁死对应战技支路，只有净种成功发芽才可解除",
+            "cost_or_constraint": "高潮时主角至少失去两项常用战技",
+            "changed_state": "保护家人越成功，短期战力选择越少",
+            "why_causal": "家人选择哪些种粮先试直接决定主角失去哪条支路",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "能力代价跨节点持续并改变战术",
+          "gap_reason": "",
+          "story_node_ids": [
+            "ES2",
+            "ES5",
+            "ES7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "CS:BOOK:BOOK_005",
+              "source_record_id": "CS:BOOK:BOOK_005",
+              "component_id": "CS:SYSTEM:BOOK005:AWAKENED_COMBAT",
+              "book_id": "BOOK_005",
+              "title": "异能觉醒/灵能战斗体系（源文未给出稳定总名）",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_015",
+              "source_record_id": "CS:BOOK:BOOK_015",
+              "component_id": "CS:SYSTEM:001",
+              "book_id": "BOOK_015",
+              "title": "超能力（每日获得一个）",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_007",
+              "source_record_id": "CS:BOOK:BOOK_007",
+              "component_id": "CS:SYSTEM:BOOK007:BLOODLINE",
+              "book_id": "BOOK_007",
+              "title": "血族血脉/吸血进阶体系",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_004",
+              "source_record_id": "CS:BOOK:BOOK_004",
+              "component_id": "CS:004:S1",
+              "book_id": "BOOK_004",
+              "title": "本命法宝武道体系",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_014",
+              "source_record_id": "CS:BOOK:BOOK_014",
+              "component_id": "CS:SYSTEM:003",
+              "book_id": "BOOK_014",
+              "title": "神明体系",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_010",
+              "source_record_id": "CS:BOOK:BOOK_010",
+              "component_id": "CS:SYSTEM:001",
+              "book_id": "BOOK_010",
+              "title": "葉纹能力者体系",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_013",
+              "source_record_id": "CS:BOOK:BOOK_013",
+              "component_id": "CS:SYSTEM:002",
+              "book_id": "BOOK_013",
+              "title": "灾厄融合（融合者/融合派）",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_016",
+              "source_record_id": "CS:BOOK:BOOK_016",
+              "component_id": "CS:SYSTEM:001",
+              "book_id": "BOOK_016",
+              "title": "天赋体系（觉醒者）",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "CS:SYSTEM:BOOK005:AWAKENED_COMBAT",
+            "module": "cultivation_system",
+            "record_id": "CS:BOOK:BOOK_005",
+            "source_record_id": "CS:BOOK:BOOK_005",
+            "component_id": "CS:SYSTEM:BOOK005:AWAKENED_COMBAT",
+            "component_path": "/cultivation_systems/0",
+            "book_id": "BOOK_005",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/04_修炼体系/per_book/BOOK_005.jsonl",
+            "line": 1,
+            "source_line_sha256": "66e6fe303a0094900a2c37c70dc40ac712f63a2b2082ede235cd135eb82199b2",
+            "title": "异能觉醒/灵能战斗体系（源文未给出稳定总名）",
+            "summary": "觉醒/登记→训练或任务中施展→以命中、避险、救援或队伍协同验证→获得更高风险训练、官方保护或任务权限；正式境界变化未被直接证实",
+            "evidence_refs": [
+              "BOOK_005:CHAPTER:0001",
+              "BOOK_005:CHAPTER:0020",
+              "BOOK_005:CHAPTER:0040",
+              "BOOK_005:CHAPTER:0054",
+              "BOOK_005:CHAPTER:0075",
+              "BOOK_005:CHAPTER:0085",
+              "BOOK_005:CHAPTER:0102",
+              "BOOK_005:CHAPTER:0116"
+            ],
+            "source_component_preview": "{\"system_id\":\"CS:SYSTEM:BOOK005:AWAKENED_COMBAT\",\"name_in_book\":\"异能觉醒/灵能战斗体系（源文未给出稳定总名）\",\"system_type\":\"energy\",\"population_scope\":\"江寒及学校、官方训练/任务场景中可见的觉醒者；是否覆盖所有社会成员UNKNOWN\",\"entry_condition\":\"觉醒典礼或异常能力显现后进入检测、登记和训练；具体觉醒条件UNKNOWN\",\"energy_or_power_source\":\"源文将输出表现称为灵能/异能，且展示光点、灵能弹等现象；能量来源、储量与补充规则UNKNOWN\",\"training_method\":\"通过学校课程、教师控制训练球、官方测试、现场实训和重复施展改善执行与生存路线；是否存在统一功法或境界修炼UNKNOWN\",\"growth_loop\":\"觉醒/登记→训练或任务中施展→以命中、避险、救援或队伍协同验证→获得更高风险训练、官方保护或任务权限；正式境界变化未被直接证实\",\"realm_system\":{\"realm_order\":[],\"transition_events\":[],\"break_conditions\":[],\"realm_limits\":[\"不能从击杀、灵能弹强度、官方岗位或任务准入反推正式境界\"],\"unknowns\":[\"正式境界名称、排序、阶段差异、突破条件和主角当前境界UNKNOWN\",\"源文中的金级等目标/敌方标记是否属于同一公共境界体系UNKNOWN\"]},\"resource_requirements\":[\"训练场与教师/官方测试\",\"药物、星髓或其它训练资源；具体转化规则UNKNOWN\",\"身体承受力、灵能输出能力、队友与任务装备\"],\"validation_methods\":[\"第37-40章训"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "ES:CHARACTER:SEED_COUNCIL",
+          "module": "character_function",
+          "function_required": "让家人分别控制种谱、灌溉与粮仓钥匙，能实质改变保护方案",
+          "query": "家庭 误解 信任 共同选择",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "abstract_function": "关系角色以独立信息、行动和边界改变主角方案",
+          "constraint_checks": {
+            "ability": "家人不共享承载能力",
+            "resource": "祖母掌种谱、妹妹掌水期、父亲掌仓钥",
+            "world": "家庭共签才可启动试田",
+            "character": "每人可拒绝公开自身掌握的资源"
+          },
+          "rule_conflicts": [
+            "不迁移来源角色身份和情感包装"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "三项资源缺一就无法完成净种试验",
+            "cost_or_constraint": "合作要求家人承认各自隐瞒造成的误判",
+            "changed_state": "家人从指责烧仓者转为共同承担粮种风险",
+            "why_causal": "他们的资源选择直接决定试验规模和主角承载通道",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "关系线通过资源否决权改变行动与兑现",
+          "gap_reason": "",
+          "story_node_ids": [
+            "ES3",
+            "ES4",
+            "ES6",
+            "ES7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "CF:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "你管这叫精神病？这分明是先知！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "异兽迷城",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HC:BOOK_002:沈清雪",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "沈清雪",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "DA:RELATIONSHIP:BOOK_012:006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "DA:RELATIONSHIP:BOOK_017:004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HC:BOOK_006:林曼",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "林曼｜五灵城核心火系法师与远征指挥者（关键女性，非恋爱女主）",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HEROINE:BOOK_004:苏妙妙",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "苏妙妙｜S级法宝天才、精英试炼同伴",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_014",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_014",
+              "title": "我在精神病院学斩神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HEROINE:BOOK_007:阿加莎",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "阿加莎｜污染异域的幸存祭司、独立救援者与高阶下属候选",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "CF:BOOK:BOOK_016",
+            "module": "character_function",
+            "record_id": "CF:BOOK:BOOK_016",
+            "source_record_id": "CF:BOOK:BOOK_016",
+            "component_id": null,
+            "component_path": null,
+            "book_id": "BOOK_016",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/05_人物功能与标签/per_book/BOOK_016.jsonl",
+            "line": 1,
+            "source_line_sha256": "df2053be548805d9054344506cb937ca55491836a8504e50e498a18ec53d378f",
+            "title": "异兽迷城",
+            "summary": "P1 P2 P3 P4；约会夜反杀李薇薇救高阳，随后封口、布防（破坏监控）、夜访训示——把新人拖入觉醒者生存规则的执行者；以『只关心升级』的纯粹变强目标与高阳的隐藏式变强互为镜像；招募抉择中公开声明『跟着斗虎可以继续变强』的优先级",
+            "evidence_refs": [
+              "BOOK_016:CHAPTER:0003",
+              "BOOK_016:CHAPTER:0032",
+              "BOOK_016:CHAPTER:0054",
+              "BOOK_016:CHAPTER:0055",
+              "BOOK_016:CHAPTER:0126",
+              "BOOK_016:CHAPTER:0132",
+              "BOOK_016:CHAPTER:0139",
+              "BOOK_016:CHAPTER:0214",
+              "BOOK_016:CHAPTER:0257",
+              "BOOK_016:CHAPTER:0268",
+              "BOOK_016:CHAPTER:0294",
+              "BOOK_016:CHAPTER:0346",
+              "BOOK_016:CHAPTER:0620",
+              "BOOK_016:CHAPTER:0626",
+              "BOOK_016:CHAPTER:1087",
+              "BOOK_016:CHAPTER:1108",
+              "BOOK_016:CHAPTER:1143",
+              "BOOK_016:CHAPTER:1220"
+            ],
+            "source_component_preview": "{\"record_type\":\"per_book\",\"schema_version\":1,\"record_id\":\"CF:BOOK:BOOK_016\",\"status\":\"candidate\",\"book_id\":\"BOOK_016\",\"title\":\"异兽迷城\",\"author\":\"彭湃\",\"chapters_covered\":\"1-1309\",\"person_scope\":[\"P1\",\"P2\",\"P3\",\"P4\",\"P5\",\"P6\",\"P7\",\"P8\",\"P9\",\"P10\",\"P11\",\"P12\",\"P13\",\"P14\",\"P15\",\"P16\",\"P17\",\"P18\"],\"identity_facts\":[{\"fact_id\":\"CF:IDENTITY:001\",\"person_id\":\"P1\",\"fact\":\"高阳：穿越者（穿越12年融入宿主家庭），高三学生→散户觉醒者（幸运序列199）→十二生肖成员/七影长老→麒麟工会卧底→九嗣队长；系统唯一使用者\",\"fact_scope\":\"1-1309\",\"evidence_refs\":[\"BOOK_016:CHAPTER:0001\",\"BOOK_016:CHAPTER:0003\",\"BOOK_016:CHAPTER:0139\",\"BOOK_016:CHAPTER:0268\",\"BOOK_016:CHAPTER:0626\"],\"unknowns\":[]},{\"fact_id\":\"CF:IDENTITY:002\",\"person_id\":\"P2\",\"fact\":\"青灵：高三短跑特长生、全校公认女神、『厌男症』表象（实为兽袭幸存者/觉醒者）；金属20+刀神32双天赋；李薇薇挚友；持家族乌金唐刀\",\"fact_scope\":\"1-113\",\"evidence_refs\":[\"BOOK_016:CHAPTER:0002\",\"BOOK_"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "ES:PLOT:ARSON_TO_CERTIFICATE",
+          "module": "plotline",
+          "function_required": "把烧仓误解、试田验证、公开资格和粮种结算串成主线",
+          "query": "调查 资格 资源 真相",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/plotlines/0",
+          "component_id": "PL:004:L1",
+          "abstract_function": "弱起点经多次公开验证换取更高资源和制度位置",
+          "constraint_checks": {
+            "ability": "每次验证展示不同支路的限制",
+            "resource": "资格只开放试田与冬储入口",
+            "world": "对手可以质疑流程但不能抹去发芽率",
+            "character": "家人共同决定是否承担失败批次"
+          },
+          "rule_conflicts": [
+            "不迁移法宝供养、学校选拔和邪教报复"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "小试田、公共田、冬储仓三级结果逐步换权",
+            "cost_or_constraint": "每升级一次都要公开更多家庭种谱",
+            "changed_state": "烧仓嫌疑者变成受限制的净种执行者",
+            "why_causal": "前一层可见发芽结果是后一层权限的必要条件",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "剧情每阶段都有资源、身份和安全状态变化",
+          "gap_reason": "",
+          "story_node_ids": [
+            "ES2",
+            "ES4",
+            "ES7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "PL:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "猎魔人小姐，我真不是血族",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_011",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_011",
+              "title": "诡舍",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "高武：从临时工到武镇周天！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "你管这叫精神病？这分明是先知！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武：看不起器物灵性，炎系器物灵性呢",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "异兽迷城",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "PL:004:L1",
+            "module": "plotline",
+            "record_id": "PL:BOOK:BOOK_004",
+            "source_record_id": "PL:BOOK:BOOK_004",
+            "component_id": "PL:004:L1",
+            "component_path": "/plotlines/0",
+            "book_id": "BOOK_004",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/06_主线与支线/per_book/BOOK_004.jsonl",
+            "line": 1,
+            "source_line_sha256": "1f716e44d5846558606b4e319eb08255f8f080a13b58dfbe37db976724f56b1e",
+            "title": "全民法宝：我的人皇幡无限进化！",
+            "summary": "BOOK_004:CHAPTER:0001 BOOK_004:CHAPTER:0076 BOOK_004:CHAPTER:0040 BOOK_004:CHAPTER:0041 BOOK_004:CHAPTER:0056 BOOK_004:CHAPTER:0061",
+            "evidence_refs": [
+              "BOOK_004:CHAPTER:0001",
+              "BOOK_004:CHAPTER:0076",
+              "BOOK_004:CHAPTER:0040",
+              "BOOK_004:CHAPTER:0041",
+              "BOOK_004:CHAPTER:0056",
+              "BOOK_004:CHAPTER:0061"
+            ],
+            "source_component_preview": "{\"line_identity\":{\"line_id\":\"PL:004:L1\",\"line_label\":\"弱法宝逆转与公开选拔线\",\"line_scope\":\"1-76\",\"line_purpose\":\"让李逍从F级觉醒起点持续把招魂幡推入更高制度与战场\",\"line_kind\":\"main\",\"evidence_refs\":[\"BOOK_004:CHAPTER:0001\",\"BOOK_004:CHAPTER:0076\"],\"unknowns\":[]},\"trigger\":{\"trigger_id\":\"PL:004:L1:T\",\"actual_start_event\":\"李逍只觉醒F级本命法宝却绑定万倍供养系统\",\"chapter_or_stage\":\"第1章\",\"start_mode\":\"new\",\"evidence_refs\":[\"BOOK_004:CHAPTER:0001\"],\"unknowns\":[]},\"goals\":[{\"goal_id\":\"PL:004:L1:G1\",\"goal_statement\":\"通过培养本命法宝取得学校、军方与高校认可\",\"subject\":\"李逍\",\"phase_scope\":\"1-76\",\"success_condition\":\"在公开考核中以可见战果进入更高资源层\",\"goal_status\":\"open\",\"evidence_refs\":[\"BOOK_004:CHAPTER:0024\",\"BOOK_004:CHAPTER:0066\",\"BOOK_004:CHAPTER:0068\"],\"unknowns\":[]}],\"resistances\":[{\"resistance_id\":\"PL:004:L1:R1\",\"resistance_type\":\"institutional_and_hostile\",\"operation\":\"天赋"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "ES:OPENING:BURNED_CELL",
+          "module": "opening",
+          "function_required": "用主角烧毁一格冬储种阻断孢化，建立可理解的家庭误解",
+          "query": "家人 误解 危机 承诺",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/promise_setup/1",
+          "component_id": "OP:005:P2",
+          "abstract_function": "被误解的异常行动经后续公共核验改变身份位置",
+          "constraint_checks": {
+            "ability": "开篇只呈现灰纹和灼痛，不解释完整机制",
+            "resource": "烧毁的是家庭真实冬储",
+            "world": "家人依据损失与竞争记录误判合理",
+            "character": "主角选择先隔绝孢化而非争辩"
+          },
+          "rule_conflicts": [
+            "不迁移预见画面或精神病标签"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "灰穗离开密闭仓格会在一刻内污染整仓",
+            "cost_or_constraint": "主角无法在一刻内取得检测证明",
+            "changed_state": "即时保护造成家庭资源损失和信任崩落",
+            "why_causal": "烧仓是阻止扩散的唯一即时选择",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "开篇低谷由真实两难产生",
+          "gap_reason": "",
+          "story_node_ids": [
+            "ES1",
+            "ES2"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "OP:BOOK:BOOK_001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_001",
+              "title": "高武：从临时工到武镇周天！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "你管这叫精神病？这分明是先知！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武器物灵性开篇",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "OP:005:P2",
+            "module": "opening",
+            "record_id": "OP:BOOK:BOOK_005",
+            "source_record_id": "OP:BOOK:BOOK_005",
+            "component_id": "OP:005:P2",
+            "component_path": "/promise_setup/1",
+            "book_id": "BOOK_005",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/07_开篇/per_book/BOOK_005.jsonl",
+            "line": 1,
+            "source_line_sha256": "4a2da270ccf20dbade4af00777059590c96cd7226f60c9f39b9872fddb5c6843",
+            "title": "你管这叫精神病？这分明是先知！",
+            "summary": "BOOK_005:CHAPTER:0001 BOOK_005:CHAPTER:0002 BOOK_005:CHAPTER:0005 BOOK_005:CHAPTER:0012 BOOK_005:CHAPTER:0013 BOOK_005:CHAPTER:0020",
+            "evidence_refs": [
+              "BOOK_005:CHAPTER:0001",
+              "BOOK_005:CHAPTER:0002",
+              "BOOK_005:CHAPTER:0005",
+              "BOOK_005:CHAPTER:0012",
+              "BOOK_005:CHAPTER:0013",
+              "BOOK_005:CHAPTER:0020"
+            ],
+            "source_component_preview": "{\"promise_id\":\"OP:005:P2\",\"promise_statement\":\"官方会如何处理这个无法用常规医疗解释的学生\",\"promise_target\":\"官方核验与身份变化\",\"setup_event\":\"前5章持续的校园/家庭误解及后续调查入口\",\"expected_future_payoff_or_unresolved_question\":\"官方是否承认信息价值并给出新的行动位置\",\"promise_status\":\"open\",\"setup_window\":5,\"evidence_refs\":[\"BOOK_005:CHAPTER:0005\",\"BOOK_005:CHAPTER:0006\"],\"unknowns\":[\"正式身份与资源回报在20章内尚未定型\"]}"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "ES:ARC:WINTER_RESERVE",
+          "module": "arc_structure",
+          "function_required": "把家庭资源危机、试田和公共粮食安全组织为完整阶段",
+          "query": "调查 公开 资格 高潮",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/arcs/3/arc_identity",
+          "component_id": "AR:ARC:BOOK007:04",
+          "abstract_function": "程序审查与高风险行动共同改变公开关系保护和行动资格",
+          "constraint_checks": {
+            "ability": "高潮仍受封闭支路限制",
+            "resource": "净种数量必须覆盖冬储底线",
+            "world": "安全、资格与责任分别由不同结果见证",
+            "character": "家人共同签署冬储合同"
+          },
+          "rule_conflicts": [
+            "不迁移血族审查、异域宴会或原作关系"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "结算须满足家庭有粮、净种达标、冬储合同生效和共同签署",
+            "cost_or_constraint": "主角保留封闭支路，家庭放弃种谱独占",
+            "changed_state": "家庭成为公共育种监督者而非单纯获救者",
+            "why_causal": "关系与安全分别由共同试种和合同结果兑现",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "宏弧结算具备独立、可见、同节点前完成的见证",
+          "gap_reason": "",
+          "story_node_ids": [
+            "ES4",
+            "ES6",
+            "ES7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "AR:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "猎魔人小姐，我真不是血族",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AS:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武器物灵性成长与前线战争结构",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_014",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_014",
+              "title": "我在精神病院学斩神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_011",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_011",
+              "title": "诡舍",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "AR:ARC:BOOK007:04",
+            "module": "arc_structure",
+            "record_id": "AR:BOOK:BOOK_007",
+            "source_record_id": "AR:BOOK:BOOK_007",
+            "component_id": "AR:ARC:BOOK007:04",
+            "component_path": "/arcs/3/arc_identity",
+            "book_id": "BOOK_007",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/08_篇章结构/per_book/BOOK_007.jsonl",
+            "line": 1,
+            "source_line_sha256": "d2b4bb2cd5751016dd74cecef7f679150548d1c58ddd7b3c74d20616110dbb1b",
+            "title": "猎魔人小姐，我真不是血族",
+            "summary": "1-10 永宁街身份逃亡；11-40 血月卷轴与张家血族网络；41-74 福寿区与黑鹰帮",
+            "evidence_refs": [
+              "BOOK_007:CHAPTER:0001",
+              "BOOK_007:CHAPTER:0074",
+              "BOOK_007:CHAPTER:0100",
+              "BOOK_007:CHAPTER:0124"
+            ],
+            "source_component_preview": "{\"arc_id\":\"AR:ARC:BOOK007:04\",\"arc_label\":\"监察审查与异域宴会\",\"arc_scope\":\"75-100\",\"arc_purpose\":\"让主角在程序审查和异域高阶战斗中取得公开关系保护与四阶成长\",\"arc_kind\":\"main\",\"parent_arc_id\":\"UNKNOWN\",\"evidence_refs\":[\"BOOK_007:CHAPTER:0075\",\"BOOK_007:CHAPTER:0100\"],\"unknowns\":[]}"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "ES:MECH:GERMINATION_AUDIT",
+          "module": "plot_mechanism",
+          "function_required": "以发芽率、批号和田块面积反复校验各方说法",
+          "query": "证据 责任 资源 公开",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/mechanisms/3/mechanism_identity",
+          "component_id": "PM:MECHANISM:004",
+          "abstract_function": "用可计算物证暴露证词与资源账之间的必然矛盾",
+          "constraint_checks": {
+            "ability": "审计不替代承载",
+            "resource": "种量、发芽率和田块面积可计量",
+            "world": "公开试田允许第三方复算",
+            "character": "家人决定哪些种谱进入验证"
+          },
+          "rule_conflicts": [
+            "不迁移原游戏案件，只采用硬约束核验"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "种量乘发芽率必须与登记产苗数一致",
+            "cost_or_constraint": "样本过小只能得到部分结论",
+            "changed_state": "传言与指控变成可复算批次差额",
+            "why_causal": "差额决定换种范围和哪块田先被隔离",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "证据直接改变田块、承载和合同选择",
+          "gap_reason": "",
+          "story_node_ids": [
+            "ES4",
+            "ES5",
+            "ES8"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "PM:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "能力约束下的公开验证—资源升级机制",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_015",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_015",
+              "title": "一天获得一个超能力的我不懂恋爱",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_016",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "异兽迷城",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_010",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_010",
+              "title": "超能：我有一面复刻镜",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK_017:001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏：可复用剧情机制集",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "PM:MECHANISM:004",
+            "module": "plot_mechanism",
+            "record_id": "PM:BOOK:BOOK_012",
+            "source_record_id": "PM:BOOK:BOOK_012",
+            "component_id": "PM:MECHANISM:004",
+            "component_path": "/mechanisms/3/mechanism_identity",
+            "book_id": "BOOK_012",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/09_剧情机制/per_book/BOOK_012.jsonl",
+            "line": 1,
+            "source_line_sha256": "c44be4f2f06227bf7f93acaa8ffb3651b59b3194e9bee479d2111a6647fbd1f1",
+            "title": "十日终焉",
+            "summary": "BOOK_012:CHAPTER:0001 BOOK_012:CHAPTER:0010 BOOK_012:CHAPTER:0020 BOOK_012:CHAPTER:0031 BOOK_012:CHAPTER:0032 BOOK_012:CHAPTER:0100 BOOK_012:CHAPTER:0120 BOOK_012:CHAPTER:0224 BOOK_012:CHAPTER:0230 BOOK_012:CHAPTER:0235 BOOK_012:CHAPTER:0274 BOOK_012:CHAPTER:0610 BOOK_012:CHAPTE…",
+            "evidence_refs": [
+              "BOOK_012:CHAPTER:0001",
+              "BOOK_012:CHAPTER:0010",
+              "BOOK_012:CHAPTER:0020",
+              "BOOK_012:CHAPTER:0031",
+              "BOOK_012:CHAPTER:0032",
+              "BOOK_012:CHAPTER:0100",
+              "BOOK_012:CHAPTER:0120",
+              "BOOK_012:CHAPTER:0224",
+              "BOOK_012:CHAPTER:0230",
+              "BOOK_012:CHAPTER:0235",
+              "BOOK_012:CHAPTER:0274",
+              "BOOK_012:CHAPTER:0610",
+              "BOOK_012:CHAPTER:0644",
+              "BOOK_012:CHAPTER:0749",
+              "BOOK_012:CHAPTER:0755",
+              "BOOK_012:CHAPTER:0760",
+              "BOOK_012:CHAPTER:1350"
+            ],
+            "source_component_preview": "{\"mechanism_id\":\"PM:MECHANISM:004\",\"mechanism_label\":\"物证约束计算：用物理/数学硬约束检验证词\",\"mechanism_description\":\"以不可伪造的物理量（人数、时间、氧气消耗、空间容积等）建立硬约束，用计算暴露证词与现场之间的必然矛盾\",\"reusable_operation\":\"同一结构反复运转：圈定可计算量→建立守恒/边界条件→代入各方说法→找出无解或唯一解→用解来指认真伪\",\"applicability_scope\":\"适用于存在封闭空间、固定人数、有限资源等可量化条件的游戏与案件（氧耗类推理等）\",\"core_invariants\":[\"存在至少一个可观测的物理硬约束\",\"计算所需的边界条件可从现场获得\"],\"excluded_surface_labels\":[\"游戏\",\"比赛\",\"考试\"],\"distinction_boundary\":\"与PM7的区别：PM7依赖行为模式的主观推断，本机制依赖物理量的客观计算，两者常配合使用互为验证。\",\"evidence_refs\":[\"BOOK_012:CHAPTER:0224\",\"BOOK_012:CHAPTER:0230\",\"BOOK_012:CHAPTER:0610\"],\"unknowns\":[]}"
+          },
+          "rejected_refs": []
+        }
+      ]
+    },
+    {
+      "option_id": "ENHANCED:SILENT_BELL",
+      "pair_id": "PAIR:RITUAL_TRUST",
+      "mode": "E2_E3_ENABLED",
+      "status": "candidate",
+      "qa_status": "HOLD",
+      "research_state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+      "title": "增强候选二：断钟静守",
+      "premise": "少年在兽潮前割断祖传警钟绳，被家人视为断绝求援；他以逐步失聪为代价证明钟声会引兽，而家人掌握路线、灯旗与住户册，最终共同完成静默撤离并让新防务协议正式生效。",
+      "pilot_scope_gap": "Phase 1 validator forces four small lines and two macros; this is a pilot constraint, not a universal creative optimum.",
+      "causal_signature": {
+        "central_conflict": "传统求援钟声本身会把兽潮引向家宅",
+        "ability_logic": "吸收钟震会锁入脊骨并永久削减听域",
+        "relationship_topology": "路线、灯旗和住户册由不同家人独立控制",
+        "institution_engine": "实际伤亡与兽向记录重写防务协议",
+        "next_arc_trigger": "成功撤离后官方兽向图与现场轨迹矛盾"
+      },
+      "emotion_source_uses": [
+        {
+          "record_kind": "line",
+          "record_id": "EL:BOOK_001:001",
+          "similarity_reason": "目标都是让新能力转成家人的可见安全改善",
+          "transferable_part": "家庭风险持续迫使主角把能力用于保护而非抽象升级",
+          "reuse_limit": "不复制原家庭成员和医疗情节"
+        },
+        {
+          "record_kind": "line",
+          "record_id": "EL:BOOK_001:002",
+          "similarity_reason": "能力必须经陌生任务和明确限制验证",
+          "transferable_part": "用外部行动结果验证力量并保留上限",
+          "reuse_limit": "本案代价为听域损失，不使用点数或原成长循环"
+        },
+        {
+          "record_kind": "line",
+          "record_id": "EL:BOOK_001:005",
+          "similarity_reason": "可靠合作需要共同风险、资源投入和清晰边界",
+          "transferable_part": "关系通过可见投入改变可行选择",
+          "reuse_limit": "改写为家庭自治指挥，不复制伙伴关系"
+        },
+        {
+          "record_kind": "line",
+          "record_id": "EL:BOOK_001:003",
+          "similarity_reason": "个人选择进入制度后需要承担正式责任与权限边界",
+          "transferable_part": "公共信用与合法位置由可核验结果产生",
+          "reuse_limit": "防务协议是局部位置，不代表永久正式身份"
+        },
+        {
+          "record_kind": "weave",
+          "record_id": "EW:BOOK_001:007",
+          "similarity_reason": "成长能力改变信息获取条件，家庭接触只是支持条件",
+          "transferable_part": "能力实质改变主角能否识别隐藏危险",
+          "reuse_limit": "不得把家庭阶段兑现误写为声路秘密的直接原因"
+        },
+        {
+          "record_kind": "weave",
+          "record_id": "EW:BOOK_001:005",
+          "similarity_reason": "行动、边界和关系可靠性可在共同风险中共同兑现",
+          "transferable_part": "救援产生公开后果并验证合作",
+          "reuse_limit": "来源 causal bridge 为空，复用时必须为本案补足明确因果"
+        },
+        {
+          "record_kind": "weave",
+          "record_id": "EW:BOOK_001:013",
+          "similarity_reason": "制度公开会改变家庭保护的社会条件并增加照护压力",
+          "transferable_part": "公开结果既保护家庭也让其进入更大责任结构",
+          "reuse_limit": "不依赖来源错误 canonical 叙述"
+        },
+        {
+          "record_kind": "macro",
+          "record_id": "MA:BOOK_001:001",
+          "similarity_reason": "家庭安全、能力验证、制度位置和处置边界需要共同组织",
+          "transferable_part": "宏弧合同不得被某一条局部救援替代",
+          "reuse_limit": "必须等协议生效而非撤离成功就宣称 PAID"
+        },
+        {
+          "record_kind": "macro",
+          "record_id": "MA:BOOK_001:002",
+          "similarity_reason": "新的长期解释问题可在旧弧未结束时由有限证据启动",
+          "transferable_part": "新期待需要持续改变家庭和制度选择",
+          "reuse_limit": "不复制父辈、档案与潮汐内容"
+        },
+        {
+          "record_kind": "handoff",
+          "record_id": "AH:BOOK_001:001",
+          "similarity_reason": "已观察到新旧宏弧重叠但完整主导权交接未证实",
+          "transferable_part": "允许先开新问题并保留旧合同",
+          "reuse_limit": "只能标 CANDIDATE_UNVERIFIED，不能宣称成功接力"
+        }
+      ],
+      "emotion_pattern_rejections": [
+        {
+          "record_id": "EW:BOOK_001:008",
+          "reason": "本案不是强制征召挤压私人目标，不把通知或命令自动写成行动阻断"
+        },
+        {
+          "record_id": "EW:BOOK_001:012",
+          "reason": "本案新线由地图矛盾触发，不需要档案授权型信息通道"
+        }
+      ],
+      "story_nodes": [
+        {
+          "node_id": "EB1",
+          "chapter_range": "1-3",
+          "cause": "主角听见第一响后地下兽群朝家宅地层转向",
+          "event": "他割断警钟绳阻止第二响，家人只看到求援被断",
+          "character_choice": "主角承担背叛指控也不恢复钟绳",
+          "decision_makers": [
+            "主角",
+            "母亲",
+            "兄长"
+          ],
+          "consequence": "家庭剥夺其巡夜资格，兽潮仍逼近",
+          "reveals": [
+            "第一响后兽群转向家宅地层"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "EB:WORLD:WATCH_PROTOCOL",
+              "material_ref": "F3",
+              "role_at_node": "传统地域势力掌握资格与资源，并以旧规则持续影响家庭选择",
+              "effect_on_action": "钟台规则使断绳成为现实违规"
+            },
+            {
+              "slot_id": "EB:OPENING:CUT_BELL",
+              "material_ref": "OP004-PR2",
+              "role_at_node": "把被视为副作用或失败的选择转成可验证成长入口",
+              "effect_on_action": "割绳产生合理误解和制度损失"
+            }
+          ]
+        },
+        {
+          "node_id": "EB2",
+          "chapter_range": "4-9",
+          "cause": "没有第二次震幅就无法证明钟声引兽",
+          "event": "主角在废钟上吸收测试震波，锁入第一段脊骨并失去高频听域",
+          "character_choice": "他以听觉损伤换可复验的兽向变化",
+          "decision_makers": [
+            "主角",
+            "母亲"
+          ],
+          "consequence": "家人确认存在风险但仍不信任他的完整判断",
+          "reveals": [
+            "钟震可被骨鸣吸收",
+            "吸收会永久削减听域"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "EB:GF:RESONANCE_SINK",
+              "material_ref": "DA:ABILITY:BOOK_016:010",
+              "role_at_node": "将明确来源的伤害转移到有容量限制的承受者",
+              "effect_on_action": "吸收测试钟震并损失高频听域"
+            },
+            {
+              "slot_id": "EB:SYSTEM:BONE_HEARING",
+              "material_ref": "CS:004:S1",
+              "role_at_node": "器物与战力成长需经考核和实战结果共同验证",
+              "effect_on_action": "建立听域代价"
+            },
+            {
+              "slot_id": "EB:OPENING:CUT_BELL",
+              "material_ref": "OP004-PR2",
+              "role_at_node": "把被视为副作用或失败的选择转成可验证成长入口",
+              "effect_on_action": "测试震波提供可执行证明"
+            }
+          ]
+        },
+        {
+          "node_id": "EB3",
+          "chapter_range": "10-15",
+          "cause": "传统响钟方案已失效而静默路线尚无信任基础",
+          "event": "家庭交换各自隐瞒的巡路信息，发现兄长改过一处危险标记",
+          "character_choice": "兄长公开错误，母亲同意进行一段静默试撤",
+          "decision_makers": [
+            "主角",
+            "母亲",
+            "兄长",
+            "妹妹"
+          ],
+          "consequence": "家庭从互相指责转为有条件协作",
+          "reveals": [
+            "旧巡路图曾被家庭成员改动"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "EB:CHARACTER:SILENT_COMMAND",
+              "material_ref": "CF:BOOK:BOOK_008",
+              "role_at_node": "关系角色以独立目标、资源和现场行动改变主角决策",
+              "effect_on_action": "家人交付独立风险信息"
+            },
+            {
+              "slot_id": "EB:MECH:TRUST_EXCHANGE",
+              "material_ref": "PM:MECH:BOOK_017:5",
+              "role_at_node": "双方轮流交付有真实代价的秘密，经验证后建立互信",
+              "effect_on_action": "真实信息交换建立合作"
+            }
+          ]
+        },
+        {
+          "node_id": "EB4",
+          "chapter_range": "16-23",
+          "cause": "试撤需要在无口令情况下覆盖老人和幼童",
+          "event": "妹妹设计灯旗，母亲用住户册重排批次，主角只负责吸收关键震动",
+          "character_choice": "主角放弃单人带路，接受家人分段自治",
+          "decision_makers": [
+            "主角",
+            "母亲",
+            "兄长",
+            "妹妹"
+          ],
+          "consequence": "首段撤离成功，关系合作获得行动证明",
+          "reveals": [
+            "三段自治能在失去口令时保持撤离完整"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "EB:SYSTEM:BONE_HEARING",
+              "material_ref": "CS:004:S1",
+              "role_at_node": "器物与战力成长需经考核和实战结果共同验证",
+              "effect_on_action": "听域缺口迫使视觉协作"
+            },
+            {
+              "slot_id": "EB:CHARACTER:SILENT_COMMAND",
+              "material_ref": "CF:BOOK:BOOK_008",
+              "role_at_node": "关系角色以独立目标、资源和现场行动改变主角决策",
+              "effect_on_action": "路线灯旗名册共同完成试撤"
+            },
+            {
+              "slot_id": "EB:PLOT:SILENT_DEFENSE",
+              "material_ref": "PL003",
+              "role_at_node": "组织能力在真实伤亡规则下验证，以结果换公开资源和资格",
+              "effect_on_action": "试撤验证组织接口"
+            },
+            {
+              "slot_id": "EB:ARC:PROTOCOL_REWRITE",
+              "material_ref": "AR:ARC:1",
+              "role_at_node": "觉醒、组织入编和守卫任务逐级扩大行动权限",
+              "effect_on_action": "家庭争执升级为防务试行"
+            }
+          ]
+        },
+        {
+          "node_id": "EB5",
+          "chapter_range": "24-30",
+          "cause": "钟台令要求恢复响钟并提交官方兽向图",
+          "event": "家人将现场足迹与官方图叠合，发现两处兽道被系统性移位",
+          "character_choice": "全家拒绝立即指认钟台人员，只保全两套地图",
+          "decision_makers": [
+            "主角",
+            "母亲",
+            "兄长",
+            "边村记录员"
+          ],
+          "consequence": "下一宏弧获得有限触发，旧弧仍未完成",
+          "reveals": [
+            "官方兽向图与现场足迹存在两处固定偏移"
+          ],
+          "opens_next_arc": true,
+          "material_uses": [
+            {
+              "slot_id": "EB:WORLD:WATCH_PROTOCOL",
+              "material_ref": "F3",
+              "role_at_node": "传统地域势力掌握资格与资源，并以旧规则持续影响家庭选择",
+              "effect_on_action": "官方地图进入核验"
+            },
+            {
+              "slot_id": "EB:MECH:TRUST_EXCHANGE",
+              "material_ref": "PM:MECH:BOOK_017:5",
+              "role_at_node": "双方轮流交付有真实代价的秘密，经验证后建立互信",
+              "effect_on_action": "家人共同保全两套地图"
+            }
+          ]
+        },
+        {
+          "node_id": "EB6",
+          "chapter_range": "31-38",
+          "cause": "真正兽潮抵达且钟台停止补给",
+          "event": "主角锁入第二段钟震，家人按灯旗和住户册完成大部撤离",
+          "character_choice": "家人否决主角锁入第三段，留下救援余量",
+          "decision_makers": [
+            "主角",
+            "母亲",
+            "兄长",
+            "妹妹"
+          ],
+          "consequence": "家庭安全部分兑现，主角听域进一步缩小",
+          "reveals": [
+            "静默路线能避开主要兽道"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "EB:GF:RESONANCE_SINK",
+              "material_ref": "DA:ABILITY:BOOK_016:010",
+              "role_at_node": "将明确来源的伤害转移到有容量限制的承受者",
+              "effect_on_action": "第二段承载改变实战指挥"
+            },
+            {
+              "slot_id": "EB:SYSTEM:BONE_HEARING",
+              "material_ref": "CS:004:S1",
+              "role_at_node": "器物与战力成长需经考核和实战结果共同验证",
+              "effect_on_action": "能力升级同时增加依赖"
+            },
+            {
+              "slot_id": "EB:CHARACTER:SILENT_COMMAND",
+              "material_ref": "CF:BOOK:BOOK_008",
+              "role_at_node": "关系角色以独立目标、资源和现场行动改变主角决策",
+              "effect_on_action": "家人否决第三段承载"
+            },
+            {
+              "slot_id": "EB:PLOT:SILENT_DEFENSE",
+              "material_ref": "PL003",
+              "role_at_node": "组织能力在真实伤亡规则下验证，以结果换公开资源和资格",
+              "effect_on_action": "真实兽潮检验低伤亡方案"
+            },
+            {
+              "slot_id": "EB:ARC:PROTOCOL_REWRITE",
+              "material_ref": "AR:ARC:1",
+              "role_at_node": "觉醒、组织入编和守卫任务逐级扩大行动权限",
+              "effect_on_action": "真实兽潮形成阶段高潮"
+            }
+          ]
+        },
+        {
+          "node_id": "EB7",
+          "chapter_range": "39-45",
+          "cause": "防务协议要求完整撤离、无二次引兽和正式签署三项结果",
+          "event": "最后一批住户撤出，兽群未被钟震二次引导，边镇签发静默协议",
+          "character_choice": "家人共同承担后续轮值，主角接受不再单独指挥",
+          "decision_makers": [
+            "主角",
+            "母亲",
+            "兄长",
+            "妹妹",
+            "边镇代表"
+          ],
+          "consequence": "家庭安全、关系信任、能力验证和防务资格完成结算",
+          "reveals": [
+            "全体住户完成撤离",
+            "未发生二次引兽",
+            "静默防务协议正式生效"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "EB:GF:RESONANCE_SINK",
+              "material_ref": "DA:ABILITY:BOOK_016:010",
+              "role_at_node": "将明确来源的伤害转移到有容量限制的承受者",
+              "effect_on_action": "保留第三段容量而非无代价解决"
+            },
+            {
+              "slot_id": "EB:WORLD:WATCH_PROTOCOL",
+              "material_ref": "F3",
+              "role_at_node": "传统地域势力掌握资格与资源，并以旧规则持续影响家庭选择",
+              "effect_on_action": "实战结果让新协议生效"
+            },
+            {
+              "slot_id": "EB:CHARACTER:SILENT_COMMAND",
+              "material_ref": "CF:BOOK:BOOK_008",
+              "role_at_node": "关系角色以独立目标、资源和现场行动改变主角决策",
+              "effect_on_action": "联合签署防务轮值"
+            },
+            {
+              "slot_id": "EB:PLOT:SILENT_DEFENSE",
+              "material_ref": "PL003",
+              "role_at_node": "组织能力在真实伤亡规则下验证，以结果换公开资源和资格",
+              "effect_on_action": "结果换正式协议"
+            },
+            {
+              "slot_id": "EB:ARC:PROTOCOL_REWRITE",
+              "material_ref": "AR:ARC:1",
+              "role_at_node": "觉醒、组织入编和守卫任务逐级扩大行动权限",
+              "effect_on_action": "所有PAID条件在协议生效前见证"
+            }
+          ]
+        },
+        {
+          "node_id": "EB8",
+          "chapter_range": "46-50",
+          "cause": "新协议归档需要解释地图偏移来源",
+          "event": "家庭只提交偏移坐标和原始足迹，拒绝填入未知的责任链",
+          "character_choice": "主角不利用英雄身份提前定罪",
+          "decision_makers": [
+            "主角",
+            "家人",
+            "边村记录员"
+          ],
+          "consequence": "地图调查继续 ACTIVE，完整主导权交接保持未验证",
+          "reveals": [
+            "偏移覆盖多个边村但制作人与动机未知"
+          ],
+          "material_uses": [
+            {
+              "slot_id": "EB:MECH:TRUST_EXCHANGE",
+              "material_ref": "PM:MECH:BOOK_017:5",
+              "role_at_node": "双方轮流交付有真实代价的秘密，经验证后建立互信",
+              "effect_on_action": "只提交可验证偏移并约束推断"
+            }
+          ]
+        }
+      ],
+      "emotion_lines": [
+        {
+          "line_id": "EB:LINE:FAMILY",
+          "line_role": "FAMILY_PROTECTION",
+          "payoff_domain": "家庭与住户安全",
+          "payoff_contract": "家人和住户完成撤离且不再因警钟遭遇二次引兽",
+          "state_transitions": [
+            {
+              "node_id": "EB1",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": [
+                "第一响后兽群转向家宅地层"
+              ]
+            },
+            {
+              "node_id": "EB2",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "EB6",
+              "from": "ACTIVE",
+              "to": "PARTIALLY_PAID",
+              "reader_knowledge_added": [
+                "静默路线能避开主要兽道"
+              ]
+            },
+            {
+              "node_id": "EB7",
+              "from": "PARTIALLY_PAID",
+              "to": "PAID",
+              "reader_knowledge_added": [
+                "全体住户完成撤离",
+                "未发生二次引兽"
+              ]
+            }
+          ]
+        },
+        {
+          "line_id": "EB:LINE:GROWTH",
+          "line_role": "GROWTH_COST",
+          "payoff_domain": "骨鸣能力与听域代价",
+          "payoff_contract": "骨鸣经真实兽潮验证，同时两档听域损失继续限制后续指挥",
+          "state_transitions": [
+            {
+              "node_id": "EB2",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": [
+                "吸收会永久削减听域"
+              ]
+            },
+            {
+              "node_id": "EB6",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "EB7",
+              "from": "ACTIVE",
+              "to": "PAID",
+              "reader_knowledge_added": [
+                "未发生二次引兽"
+              ]
+            }
+          ]
+        },
+        {
+          "line_id": "EB:LINE:RELATION",
+          "line_role": "RELATIONSHIP_AGENCY",
+          "payoff_domain": "家庭联合指挥",
+          "payoff_contract": "家人分别拥有路线、灯旗与住户核验职责，并能否决主角超限",
+          "state_transitions": [
+            {
+              "node_id": "EB1",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "EB3",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": [
+                "旧巡路图曾被家庭成员改动"
+              ]
+            },
+            {
+              "node_id": "EB6",
+              "from": "ACTIVE",
+              "to": "PARTIALLY_PAID",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "EB7",
+              "from": "PARTIALLY_PAID",
+              "to": "PAID",
+              "reader_knowledge_added": [
+                "静默防务协议正式生效"
+              ]
+            }
+          ]
+        },
+        {
+          "line_id": "EB:LINE:INSTITUTION",
+          "line_role": "FACTION_PRESSURE",
+          "payoff_domain": "防务资格与地图责任",
+          "payoff_contract": "静默协议正式生效，地图矛盾形成有限且可核验的后续责任问题",
+          "state_transitions": [
+            {
+              "node_id": "EB2",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "EB5",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": [
+                "官方兽向图与现场足迹存在两处固定偏移"
+              ]
+            },
+            {
+              "node_id": "EB7",
+              "from": "ACTIVE",
+              "to": "PARTIALLY_PAID",
+              "reader_knowledge_added": [
+                "静默防务协议正式生效"
+              ]
+            },
+            {
+              "node_id": "EB8",
+              "from": "PARTIALLY_PAID",
+              "to": "ACTIVE",
+              "reader_knowledge_added": [
+                "偏移覆盖多个边村但制作人与动机未知"
+              ]
+            }
+          ]
+        }
+      ],
+      "weaves": [
+        {
+          "weave_id": "EB:WEAVE:1",
+          "from_line_id": "EB:LINE:GROWTH",
+          "to_line_id": "EB:LINE:FAMILY",
+          "node_id": "EB2",
+          "relation_type": "ENABLES_CHOICE",
+          "causal_bridge": "骨鸣能力改变了能否测量钟声与兽向的条件，家庭接触只提供测试场景",
+          "effect_on_choice": "主角以听域损失换家人可观察的证据"
+        },
+        {
+          "weave_id": "EB:WEAVE:2",
+          "from_line_id": "EB:LINE:RELATION",
+          "to_line_id": "EB:LINE:FAMILY",
+          "node_id": "EB4",
+          "relation_type": "ENABLES_CHOICE",
+          "causal_bridge": "家人的地图、灯旗和名册让静默撤离从主角猜想变为可执行方案",
+          "effect_on_choice": "主角放弃单人指挥并接受分段自治"
+        },
+        {
+          "weave_id": "EB:WEAVE:3",
+          "from_line_id": "EB:LINE:FAMILY",
+          "to_line_id": "EB:LINE:INSTITUTION",
+          "node_id": "EB5",
+          "relation_type": "CAUSES_PRESSURE",
+          "causal_bridge": "静默试撤的现场足迹反过来暴露官方地图偏移",
+          "effect_on_choice": "全家保全证据但不提前指认责任人"
+        },
+        {
+          "weave_id": "EB:WEAVE:4",
+          "from_line_id": "EB:LINE:RELATION",
+          "to_line_id": "EB:LINE:GROWTH",
+          "node_id": "EB6",
+          "relation_type": "LIMITS_COST",
+          "causal_bridge": "家人拥有撤离信息与否决权，因此能阻止主角锁入第三段",
+          "effect_on_choice": "主角保留听域并接受部分安全兑现"
+        }
+      ],
+      "macro_arcs": [
+        {
+          "macro_id": "EB:MACRO:A",
+          "macro_promise": "被视为断绝求援的主角能否以有代价的骨鸣和家庭联合指挥真正保护家园",
+          "settlement_contract": "家人和住户完成撤离且未发生二次引兽；骨鸣经兽潮验证且听域代价保留；家人形成联合指挥；静默防务协议正式生效。",
+          "required_settlement_conditions": [
+            {
+              "condition_id": "all_evacuated",
+              "description": "全体住户完成撤离",
+              "witness_node_id": "EB7"
+            },
+            {
+              "condition_id": "no_second_lure",
+              "description": "没有钟震导致二次引兽",
+              "witness_node_id": "EB7"
+            },
+            {
+              "condition_id": "cost_retained",
+              "description": "主角两档听域损失仍存在",
+              "witness_node_id": "EB6"
+            },
+            {
+              "condition_id": "protocol_effective",
+              "description": "静默防务协议正式生效",
+              "witness_node_id": "EB7"
+            }
+          ],
+          "state_transitions": [
+            {
+              "node_id": "EB1",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": [
+                "第一响后兽群转向家宅地层"
+              ]
+            },
+            {
+              "node_id": "EB2",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": []
+            },
+            {
+              "node_id": "EB6",
+              "from": "ACTIVE",
+              "to": "PARTIALLY_PAID",
+              "reader_knowledge_added": [
+                "静默路线能避开主要兽道"
+              ]
+            },
+            {
+              "node_id": "EB7",
+              "from": "PARTIALLY_PAID",
+              "to": "PAID",
+              "reader_knowledge_added": [
+                "静默防务协议正式生效"
+              ]
+            }
+          ]
+        },
+        {
+          "macro_id": "EB:MACRO:B",
+          "macro_promise": "官方兽向图为何系统性偏离现场轨迹，以及防务资源由谁据此分配",
+          "settlement_contract": "地图制作、偏移原因与受影响边村得到可核验证据，并实际改变防务资源与家庭责任边界。",
+          "required_settlement_conditions": [],
+          "state_transitions": [
+            {
+              "node_id": "EB5",
+              "from": "NOT_OPENED",
+              "to": "OPEN",
+              "reader_knowledge_added": [
+                "官方兽向图与现场足迹存在两处固定偏移"
+              ]
+            },
+            {
+              "node_id": "EB8",
+              "from": "OPEN",
+              "to": "ACTIVE",
+              "reader_knowledge_added": [
+                "偏移覆盖多个边村但制作人与动机未知"
+              ]
+            }
+          ]
+        }
+      ],
+      "handoff": {
+        "from_macro_id": "EB:MACRO:A",
+        "to_macro_id": "EB:MACRO:B",
+        "trigger_node_id": "EB5",
+        "overlap_status": "OBSERVED_IN_PLAN",
+        "dominance_transfer_status": "CANDIDATE_UNVERIFIED",
+        "old_arc_contract_retained": "家人和住户完成撤离且未发生二次引兽；骨鸣经兽潮验证且听域代价保留；家人形成联合指挥；静默防务协议正式生效。",
+        "withheld_questions": [
+          "谁制作偏移地图",
+          "偏移是错误还是利益安排",
+          "哪些边村受到同一影响"
+        ],
+        "handoff_limit": "AH001 is reused only as an overlap warning; dominance transfer remains unverified"
+      },
+      "story_spine": {
+        "stages": [
+          {
+            "stage": "trigger",
+            "story_task": "割断警钟阻止引兽却被误读为断绝求援"
+          },
+          {
+            "stage": "goal",
+            "story_task": "让家人与住户安全并建立可信防务"
+          },
+          {
+            "stage": "resistance",
+            "story_task": "钟台命令、兽潮、听域损失与家庭信息分裂"
+          },
+          {
+            "stage": "nodes",
+            "story_task": "吸收震波、信息交换、试撤、地图比对与真实兽潮"
+          },
+          {
+            "stage": "choice",
+            "story_task": "在恢复响钟、独自承载和联合静默之间选择"
+          },
+          {
+            "stage": "cost",
+            "story_task": "永久听域损失、断供和家庭公开错误"
+          },
+          {
+            "stage": "payoff",
+            "story_task": "完整撤离、无二次引兽和协议生效"
+          },
+          {
+            "stage": "state_change",
+            "story_task": "家庭从互相防备变成联合指挥责任体"
+          },
+          {
+            "stage": "next_entry",
+            "story_task": "地图偏移开启有限责任调查"
+          }
+        ]
+      },
+      "chapter_phases": [
+        {
+          "range": "1-10",
+          "purpose": "建立断钟误解与骨鸣代价",
+          "payoff": "家人看到钟震与兽向的可复验联系"
+        },
+        {
+          "range": "11-25",
+          "purpose": "通过信息交换建立静默试撤",
+          "payoff": "家庭分段自治首次成功"
+        },
+        {
+          "range": "26-40",
+          "purpose": "在真实兽潮中检验联合指挥",
+          "payoff": "大部撤离且地图矛盾有限开启"
+        },
+        {
+          "range": "41-50",
+          "purpose": "完成旧合同并维持地图调查未知",
+          "payoff": "协议生效而责任链仍待证"
+        }
+      ],
+      "continuation_conditions": [
+        "听域损失要求长期依赖视觉与家人指挥",
+        "地图偏移必须经多个边村复核才能归责",
+        "新协议遭遇钟台断供时需建立替代资源循环"
+      ],
+      "material_slots": [
+        {
+          "slot_id": "EB:GF:RESONANCE_SINK",
+          "module": "golden_finger",
+          "function_required": "把会引兽的钟声导入骨骼并承担听觉损伤，换取静默预警窗口",
+          "query": "契约 伤害 分担 代价",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "abstract_function": "将明确来源的伤害转移到有容量限制的承受者",
+          "constraint_checks": {
+            "ability": "只能吸收已接触的声震，不能消除兽潮",
+            "resource": "骨鸣容量满后永久损伤听觉",
+            "world": "钟台石能记录吸收前后震幅",
+            "character": "家人决定是否继续敲钟或改用静默信号"
+          },
+          "rule_conflicts": [
+            "来源为复制来的伤害转移，本案增加声震来源、容量与可验证边界"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "主角可把单次钟震锁入三段脊骨，每段锁入后失去一档听域",
+            "cost_or_constraint": "最多三段且无法在本阶段恢复",
+            "changed_state": "主角获得查验声路的能力同时逐步失聪",
+            "why_causal": "只有吸收一次钟震才能证明钟声与兽群转向的关系",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "能力代价直接改变指挥方式和家庭分工",
+          "gap_reason": "",
+          "story_node_ids": [
+            "EB2",
+            "EB6",
+            "EB7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "DA:ABILITY:BOOK_016:010",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "伤害转移（复制自萌羊，精神/辅助系）",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "DA:ABILITY:BOOK_017:003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "【献往虚无的祭品】+【众生相】+【共沐神恩】",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "吸收/操控血液—受伤重构—战力与追踪权限扩张",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "异常片段预见—主动试探—现实验证—未来改写",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "低评价器物→精神内景试探→刀灵回应→形态解放→公开验证",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_015",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_015",
+              "title": "每日新能力发放+能力库累积+单启用",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "GF:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "公开行动—关注反馈—任务/形态收益",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "DA:ABILITY:BOOK_016:010",
+            "module": "golden_finger",
+            "record_id": "DA:ABILITY:BOOK_016:010",
+            "source_record_id": "DA:ABILITY:BOOK_016:010",
+            "component_id": null,
+            "component_path": null,
+            "book_id": "BOOK_016",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE",
+            "path": "DNA素材/02_金手指/derived/ability_assets.jsonl",
+            "line": 20,
+            "source_line_sha256": "9a8d9bb6d52daaff0b853aa345826c4c8a4fdcd39b0df69d3479996db66a840f",
+            "title": "伤害转移（复制自萌羊，精神/辅助系）",
+            "summary": "BOOK_016:CHAPTER:0070 BOOK_016:CHAPTER:1220",
+            "evidence_refs": [
+              "BOOK_016:CHAPTER:0070",
+              "BOOK_016:CHAPTER:1220"
+            ],
+            "source_component_preview": "{\"record_type\":\"derived_asset\",\"schema_version\":2,\"record_id\":\"DA:ABILITY:BOOK_016:010\",\"status\":\"candidate\",\"book_id\":\"BOOK_016\",\"view\":\"ability_assets\",\"legacy_record_id\":\"GF:ASSET:BOOK_016:010\",\"name_in_book\":\"伤害转移（复制自萌羊，精神/辅助系）\",\"ability_core\":\"把他人的伤害吸收到自己身上并可转嫁——团队救人核\",\"trigger\":\"接触+发动\",\"input\":\"目标身上的伤害；接手者身体承受力\",\"operation\":\"吸收伤害→体内储存→转换给他人；复制版受时限约束（2级10秒，CH70『10秒钟我没法吸收黄警官身体的伤害，即便吸收了又能在体内储存多久，又该转换给谁？』）\",\"output\":\"队友伤势清零\",\"limit\":\"时限+存储时长+转移目标三重约束；本体承受上限\",\"cost\":\"自身承伤风险\",\"growth\":\"复制等级提升延长时限\",\"first_showcase\":\"BOOK_016:CHAPTER:0070；事件：黑衣人战黄警官重伤，高阳3秒内心推演复制伤害转移的可行性并放弃——用『不能』的定义展示能力边界；兑现说明：以一场失败的计算教读者规则，比成功更立规则感\",\"appeal_hook\":\"『伤都给我』的守护幻想与承受代价的悬念\",\"immediate_fantasy\":\"把队友从死亡线拉回\",\"combat_value\":\"战术核：团战减员克星；麒麟窃取版曾6秒转移全部伤害压制王子凯（CH1220）\",\"social_value\":\"极高：萌羊『团宠奶妈』定位的根基\",\"plot_generation\":\""
+          },
+          "rejected_refs": [
+            {
+              "material_id": "GF:BOOK_007",
+              "module": "golden_finger",
+              "record_id": "GF:BOOK_007",
+              "source_record_id": "GF:BOOK_007",
+              "component_id": null,
+              "component_path": null,
+              "book_id": "BOOK_007",
+              "qa_status": "PASS",
+              "usage_status": "ADAPTABLE_WITH_GAPS",
+              "path": "DNA素材/02_金手指/per_book/BOOK_007.jsonl",
+              "line": 1,
+              "source_line_sha256": "7af97064c000cf7a660d5452fc4cd4c394c036feb9c5771becd435b16905c3f2",
+              "title": "吸收/操控血液—受伤重构—战力与追踪权限扩张",
+              "summary": "input 血族血液、可吸收目标与当前伤势/战斗环境 process 陆舟以血液操控、吸收、血奴与身体重构应对攻击；是否存在独立系统界面UNKNOWN output 恢复、血液武装、血奴追踪、位阶/战力变化与局部信息优势",
+              "evidence_refs": [
+                "BOOK_007:CHAPTER:0001",
+                "BOOK_007:CHAPTER:0006",
+                "BOOK_007:CHAPTER:0010",
+                "BOOK_007:CHAPTER:0046",
+                "BOOK_007:CHAPTER:0058",
+                "BOOK_007:CHAPTER:0072",
+                "BOOK_007:CHAPTER:0089",
+                "BOOK_007:CHAPTER:0100",
+                "BOOK_007:CHAPTER:0114",
+                "BOOK_007:CHAPTER:0121",
+                "BOOK_007:EMOTION:0001",
+                "BOOK_007:EMOTION:0059",
+                "BOOK_007:EMOTION:0109"
+              ],
+              "reason": "血液支配与血奴追踪会让保护依赖控制他人，不符合家人主动改变方案的要求",
+              "decision": "REJECT"
+            }
+          ]
+        },
+        {
+          "slot_id": "EB:WORLD:WATCH_PROTOCOL",
+          "module": "worldbuilding",
+          "function_required": "建立钟台命令、兽潮路线和边村防务资格之间的制度压力",
+          "query": "猎场 所有权 家族 势力",
+          "component_types": [
+            "faction"
+          ],
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/factions/2",
+          "component_id": "F3",
+          "abstract_function": "传统地域势力掌握资格与资源，并以旧规则持续影响家庭选择",
+          "constraint_checks": {
+            "ability": "钟台组织不能赋予主角额外能力",
+            "resource": "警钟、避难洞和巡路名额各自有限",
+            "world": "边村与钟台令有明确责任界面",
+            "character": "家人可选择遵令敲钟或承担静默撤离责任"
+          },
+          "rule_conflicts": [
+            "不迁移山门、父辈遗产和原作势力身份"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "钟台按响钟次数拨款，边村按实际伤亡保留自治权",
+            "cost_or_constraint": "停止敲钟会失去当期防务补给",
+            "changed_state": "家庭安全选择会直接触动钟台利益",
+            "why_causal": "静默方案成功会暴露旧响钟规则的错误成本",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "长期势力压力由当期防务决策产生",
+          "gap_reason": "",
+          "story_node_ids": [
+            "EB1",
+            "EB5",
+            "EB7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "WB:BOOK:BOOK_001",
+              "source_record_id": "WB:BOOK:BOOK_001",
+              "component_id": "F3",
+              "book_id": "BOOK_001",
+              "title": "青云山传统势力",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_002",
+              "source_record_id": "WB:BOOK:BOOK_002",
+              "component_id": "WB:F5",
+              "book_id": "BOOK_002",
+              "title": "京都武大天才班/竞争者群体",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_012",
+              "source_record_id": "WB:BOOK:BOOK_012",
+              "component_id": "WB:FACTION:002",
+              "book_id": "BOOK_012",
+              "title": "生肖（人级/地级/天级）",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_017",
+              "source_record_id": "WB:BOOK:BOOK_017",
+              "component_id": "WB:FACTION:002",
+              "book_id": "BOOK_017",
+              "title": "庸人会",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_011",
+              "source_record_id": "WB:BOOK:BOOK_011",
+              "component_id": "WB:F:5",
+              "book_id": "BOOK_011",
+              "title": "彼岸相关者",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "WB:BOOK:BOOK_005",
+              "source_record_id": "WB:BOOK:BOOK_005",
+              "component_id": "WB:FACTION:ACADEMY_BOOK005",
+              "book_id": "BOOK_005",
+              "title": "江寒所在高中/学校系统（源文未给出稳定专名）",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "F3",
+            "module": "worldbuilding",
+            "record_id": "WB:BOOK:BOOK_001",
+            "source_record_id": "WB:BOOK:BOOK_001",
+            "component_id": "F3",
+            "component_path": "/factions/2",
+            "book_id": "BOOK_001",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/03_世界观/per_book/BOOK_001.jsonl",
+            "line": 1,
+            "source_line_sha256": "b94fa858ca8d80ffa406ce0d39257f8e169894d1ffe93e131f1bda581ca6c0c1",
+            "title": "青云山传统势力",
+            "summary": "资源、秩序与组织利益",
+            "evidence_refs": [
+              "BOOK_001:CHAPTER:0029",
+              "BOOK_001:CHAPTER:0030",
+              "BOOK_001:CHAPTER:0034",
+              "BOOK_001:CHAPTER:0040",
+              "BOOK_001:CHAPTER:0041",
+              "BOOK_001:CHAPTER:0054",
+              "BOOK_001:CHAPTER:0085",
+              "BOOK_001:CHAPTER:0086"
+            ],
+            "source_component_preview": "{\"faction_id\":\"F3\",\"name_in_book\":\"青云山传统势力\",\"faction_type\":\"underground\",\"public_role\":\"传承与高阶规则\",\"actual_interest\":\"资源、秩序与组织利益\",\"controlled_resources\":[\"任务\",\"档案\",\"高阶武者\",\"权限\"],\"controlled_territories_or_access\":[\"所属行动区域\"],\"controlled_information_or_rules\":[\"身份与分配规则\"],\"recruitment_or_entry\":[\"任务/师承/任命/家族\"],\"internal_hierarchy\":[\"基层→地方→高层\"],\"relations\":[{\"target_faction_id\":\"F1\",\"relation_type\":\"ally\",\"observable_basis\":\"共同任务或资源关系\",\"evidence_refs\":[\"BOOK_001:CHAPTER:0029\",\"BOOK_001:CHAPTER:0030\"]}],\"conflict_sources\":[\"资源/权限/信息差\"],\"protagonist_interface\":\"改变江云任务、资源或风险\",\"evidence_refs\":[\"BOOK_001:CHAPTER:0029\",\"BOOK_001:CHAPTER:0030\",\"BOOK_001:CHAPTER:0034\",\"BOOK_001:CHAPTER:0040\",\"BOOK_001:CHAPTER:0041\",\"BOOK_001:CHAPTER:0054\",\"BOOK_001:CHAPTER:0085\",\"BOOK_001:CHAPTER:0086\"],\"unknowns\":[]}"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "EB:SYSTEM:BONE_HEARING",
+          "module": "cultivation_system",
+          "function_required": "用器物共鸣和公开实战验证声震承载的边界",
+          "query": "契约 负伤 共鸣 验证",
+          "component_types": [
+            "cultivation_system"
+          ],
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/cultivation_systems/0",
+          "component_id": "CS:004:S1",
+          "abstract_function": "器物与战力成长需经考核和实战结果共同验证",
+          "constraint_checks": {
+            "ability": "骨鸣只解析方向与承载震幅",
+            "resource": "静默标具需用旧钟碎片制作",
+            "world": "训练震幅与兽潮实战分别验证能力",
+            "character": "家人掌握视觉信号，主角失聪后不能单独指挥"
+          },
+          "rule_conflicts": [
+            "不采用无限供养、法宝吞噬或原作器物"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "每失去一档听域才能稳定一套视觉信号回路",
+            "cost_or_constraint": "能力成长同时减少主角接收口头命令的能力",
+            "changed_state": "越强越依赖家人指挥",
+            "why_causal": "成长代价强制关系线进入战术核心",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "成长让家人真正改变行动方案而非只提供鼓励",
+          "gap_reason": "",
+          "story_node_ids": [
+            "EB2",
+            "EB4",
+            "EB6"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "CS:BOOK:BOOK_004",
+              "source_record_id": "CS:BOOK:BOOK_004",
+              "component_id": "CS:004:S1",
+              "book_id": "BOOK_004",
+              "title": "本命法宝武道体系",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_005",
+              "source_record_id": "CS:BOOK:BOOK_005",
+              "component_id": "CS:SYSTEM:BOOK005:AWAKENED_COMBAT",
+              "book_id": "BOOK_005",
+              "title": "异能觉醒/灵能战斗体系（源文未给出稳定总名）",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_015",
+              "source_record_id": "CS:BOOK:BOOK_015",
+              "component_id": "CS:SYSTEM:001",
+              "book_id": "BOOK_015",
+              "title": "超能力（每日获得一个）",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_007",
+              "source_record_id": "CS:BOOK:BOOK_007",
+              "component_id": "CS:SYSTEM:BOOK007:BLOODLINE",
+              "book_id": "BOOK_007",
+              "title": "血族血脉/吸血进阶体系",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CS:BOOK:BOOK_013",
+              "source_record_id": "CS:BOOK:BOOK_013",
+              "component_id": "CS:SYSTEM:001",
+              "book_id": "BOOK_013",
+              "title": "十四通神大道（神道体系）",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "CS:004:S1",
+            "module": "cultivation_system",
+            "record_id": "CS:BOOK:BOOK_004",
+            "source_record_id": "CS:BOOK:BOOK_004",
+            "component_id": "CS:004:S1",
+            "component_path": "/cultivation_systems/0",
+            "book_id": "BOOK_004",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/04_修炼体系/per_book/BOOK_004.jsonl",
+            "line": 1,
+            "source_line_sha256": "a58223ad316dc430140f1bbb7cc87fd238d1e401f63aac7d46ba039eb9398c9a",
+            "title": "本命法宝武道体系",
+            "summary": "资源/魂体→宿主或法宝成长→公开战果→更高资源和设施权限→更高风险验证",
+            "evidence_refs": [
+              "BOOK_004:CHAPTER:0001",
+              "BOOK_004:CHAPTER:0010",
+              "BOOK_004:CHAPTER:0048",
+              "BOOK_004:CHAPTER:0063",
+              "BOOK_004:CHAPTER:0075"
+            ],
+            "source_component_preview": "{\"system_id\":\"CS:004:S1\",\"name_in_book\":\"本命法宝武道体系\",\"system_type\":\"hybrid\",\"population_scope\":\"完成本命法宝觉醒的人类修炼者\",\"entry_condition\":\"觉醒本命法宝并获得天赋评价\",\"energy_or_power_source\":\"修炼资源、天劫、魂体、功德与雷霆等\",\"training_method\":\"吸收资源提升宿主境界，培养本命法宝并通过实战、天劫和考试验证\",\"growth_loop\":\"资源/魂体→宿主或法宝成长→公开战果→更高资源和设施权限→更高风险验证\",\"realm_system\":{\"realm_order\":[{\"realm_id\":\"CS:004:R1\",\"realm_name\":\"后天境\",\"order\":1,\"direct_evidence\":\"开篇学生修炼和校内竞争所处基础层\",\"evidence_refs\":[\"BOOK_004:CHAPTER:0001\",\"BOOK_004:CHAPTER:0024\"],\"unknowns\":[],\"name_in_book\":\"后天境\",\"stage_difference\":\"基础修炼与校园竞争层\",\"direct_evidence_refs\":[\"BOOK_004:CHAPTER:0001\",\"BOOK_004:CHAPTER:0024\"]},{\"realm_id\":\"CS:004:R2\",\"realm_name\":\"先天境\",\"order\":2,\"direct_evidence\":\"功德宝树后李逍达到先天四重\",\"evidence_refs\":[\"BOOK_004:CHAPTER:0065\"],\"unknowns\":[],\"name_in_book\":\"先天境\",\"stage_differenc"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "EB:CHARACTER:SILENT_COMMAND",
+          "module": "character_function",
+          "function_required": "让家人分别负责路线、视觉指令和避难人数核验",
+          "query": "家族 决策 共同行动 信任",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "abstract_function": "关系角色以独立目标、资源和现场行动改变主角决策",
+          "constraint_checks": {
+            "ability": "家人不继承骨鸣",
+            "resource": "地图、灯旗与住户册分散持有",
+            "world": "撤离结果由人数核验而非主角声望决定",
+            "character": "误解主角的家人仍保留合理职责与反对权"
+          },
+          "rule_conflicts": [
+            "不迁移恋爱、天命或原人物关系"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "静默撤离必须由三名家庭成员各自完成一段不可替代指挥",
+            "cost_or_constraint": "任何人退出都会留下盲区",
+            "changed_state": "家庭从质疑断绳者转为共同指挥者",
+            "why_causal": "主角听域下降后只能依靠家人提供行动信息",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "信任通过相互依赖和否决权体现",
+          "gap_reason": "",
+          "story_node_ids": [
+            "EB3",
+            "EB4",
+            "EB6",
+            "EB7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "CC:HEROINE:BOOK_016:001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_016",
+              "title": "青灵：厌男表象下的双天赋刀神——非恋爱位的功能型女主候选",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "你管这叫精神病？这分明是先知！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_014",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_014",
+              "title": "我在精神病院学斩神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "CF:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "VILLAIN:BOOK_004:荆然",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "荆然｜失败升级型校园竞争者",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HC:BOOK_002:云曦",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "云曦",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HEROINE:BOOK_007:方月瑶",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "方月瑶｜猎魔追捕者、污染风险承载者与关系发动机",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "HC:BOOK_006:林曼",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "林曼｜五灵城核心火系法师与远征指挥者（关键女性，非恋爱女主）",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "CF:BOOK:BOOK_008",
+            "module": "character_function",
+            "record_id": "CF:BOOK:BOOK_008",
+            "source_record_id": "CF:BOOK:BOOK_008",
+            "component_id": null,
+            "component_path": null,
+            "book_id": "BOOK_008",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/05_人物功能与标签/per_book/BOOK_008.jsonl",
+            "line": 1,
+            "source_line_sha256": "a939f8261099fe1d940cf47f87341b8abd0fae888fc6bd4fd2d570f384349d0c",
+            "title": "青梅是天命之女？可我既是天命！",
+            "summary": "YAN_CI SHI_YUQING QIN_XIAOTANG BAILI_KE；用记忆与系统反馈改写事件；从受保护者转为觉醒共战者",
+            "evidence_refs": [
+              "BOOK_008:CHAPTER:0001",
+              "BOOK_008:CHAPTER:0007",
+              "BOOK_008:CHAPTER:0008",
+              "BOOK_008:CHAPTER:0009",
+              "BOOK_008:CHAPTER:0010",
+              "BOOK_008:CHAPTER:0014",
+              "BOOK_008:CHAPTER:0019",
+              "BOOK_008:CHAPTER:0023",
+              "BOOK_008:CHAPTER:0026",
+              "BOOK_008:CHAPTER:0027",
+              "BOOK_008:CHAPTER:0044",
+              "BOOK_008:CHAPTER:0048",
+              "BOOK_008:CHAPTER:0063",
+              "BOOK_008:CHAPTER:0064",
+              "BOOK_008:CHAPTER:0066",
+              "BOOK_008:CHAPTER:0070",
+              "BOOK_008:CHAPTER:0073",
+              "BOOK_008:CHAPTER:0079",
+              "BOOK_008:CHAPTER:0082",
+              "BOOK_008:CHAPTER:0083",
+              "BOOK_008:CHAPTER:0084",
+              "BOOK_008:CHAPTER:0085",
+              "BOOK_008:CHAPTER:0086"
+            ],
+            "source_component_preview": "{\"schema_version\":1,\"status\":\"candidate\",\"book_id\":\"BOOK_008\",\"title\":\"青梅是天命之女？可我既是天命！\",\"chapters_covered\":\"1-86\",\"evidence_refs\":[\"BOOK_008:CHAPTER:0001\",\"BOOK_008:CHAPTER:0007\",\"BOOK_008:CHAPTER:0008\",\"BOOK_008:CHAPTER:0009\",\"BOOK_008:CHAPTER:0010\",\"BOOK_008:CHAPTER:0014\",\"BOOK_008:CHAPTER:0019\",\"BOOK_008:CHAPTER:0023\",\"BOOK_008:CHAPTER:0026\",\"BOOK_008:CHAPTER:0027\",\"BOOK_008:CHAPTER:0044\",\"BOOK_008:CHAPTER:0048\",\"BOOK_008:CHAPTER:0063\",\"BOOK_008:CHAPTER:0064\",\"BOOK_008:CHAPTER:0066\",\"BOOK_008:CHAPTER:0070\",\"BOOK_008:CHAPTER:0073\",\"BOOK_008:CHAPTER:0079\",\"BOOK_008:CHAPTER:0082\",\"BOOK_008:CHAPTER:0083\",\"BOOK_008:CHAPTER:0084\",\"BOOK_008:CHAPTER:0085\",\"BOOK_008:CHAPTER:0086\"],\"unknowns\":[\"第86章后人物功能UNKNOWN\"],\"confidence\":\"MEDIUM\",\"qa_status\":\"PASS\",\"record_type\":\"per_book\",\"record_id\":\"CF:BO"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "EB:PLOT:SILENT_DEFENSE",
+          "module": "plotline",
+          "function_required": "把家庭组织投入真实兽潮风险，并以低伤亡换防务资格",
+          "query": "狩猎 契约 利益 冲突",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/plotlines/2",
+          "component_id": "PL003",
+          "abstract_function": "组织能力在真实伤亡规则下验证，以结果换公开资源和资格",
+          "constraint_checks": {
+            "ability": "组织力不降低兽群强度",
+            "resource": "标具、避难洞和骨鸣容量会耗尽",
+            "world": "防务资格按伤亡、撤离和兽向变化结算",
+            "character": "家人自治指挥各段路线"
+          },
+          "rule_conflicts": [
+            "不迁移神域、眷族和学校月考"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "静默防务按撤离完整度与未引发二次兽潮结算",
+            "cost_or_constraint": "停止响钟会失去外援和补给",
+            "changed_state": "家庭方案获得外部验证并改变边村权限",
+            "why_causal": "多段自治指挥决定能否在主角失聪时完成撤离",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "公开结果检验共同保护而非个人击杀",
+          "gap_reason": "",
+          "story_node_ids": [
+            "EB4",
+            "EB6",
+            "EB7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "PL:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "猎魔人小姐，我真不是血族",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PL:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "PL003",
+            "module": "plotline",
+            "record_id": "PL:BOOK:BOOK_006",
+            "source_record_id": "PL:BOOK:BOOK_006",
+            "component_id": "PL003",
+            "component_path": "/plotlines/2",
+            "book_id": "BOOK_006",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/06_主线与支线/per_book/BOOK_006.jsonl",
+            "line": 1,
+            "source_line_sha256": "d0138ccdfafc4907bca0d6083381190470ecce135dafb1be2a45cb7801def02b",
+            "title": "全民神祇：我的神域有点不对劲",
+            "summary": "BOOK_006:CHAPTER:0001 BOOK_006:CHAPTER:0074",
+            "evidence_refs": [
+              "BOOK_006:CHAPTER:0001",
+              "BOOK_006:CHAPTER:0074"
+            ],
+            "source_component_preview": "{\"line_identity\":{\"line_id\":\"PL003\",\"line_label\":\"半神残域月考\",\"line_scope\":\"25-34\",\"line_purpose\":\"把文明组织力放进真实伤亡规则下验证，并用低损攻城换公开第一名和大批战利品\",\"line_kind\":\"main\",\"evidence_refs\":[\"BOOK_006:CHAPTER:0025\",\"BOOK_006:CHAPTER:0027\",\"BOOK_006:CHAPTER:0029\",\"BOOK_006:CHAPTER:0030\",\"BOOK_006:CHAPTER:0034\"],\"unknowns\":[]},\"trigger\":{\"trigger_id\":\"PL003-T\",\"actual_start_event\":\"学校开启半神残域月考，唐诗让自愿眷族远征\",\"chapter_or_stage\":\"25-34\",\"start_mode\":\"new\",\"evidence_refs\":[\"BOOK_006:CHAPTER:0025\",\"BOOK_006:CHAPTER:0027\"],\"unknowns\":[]},\"goals\":[{\"goal_id\":\"PL003-G\",\"goal_statement\":\"在陌生残域获取积分和资源，同时控制不可逆战损\",\"subject\":\"唐诗/五灵城文明\",\"phase_scope\":\"25-34\",\"success_condition\":\"攻城、深入核心区域并以第一名结束月考，组织战法得到外部排名验证\",\"goal_status\":\"paid\",\"evidence_refs\":[\"BOOK_006:CHAPTER:0025\",\"BOOK_006:CHAPTER:0027\",\"BOOK_006:CHAPTER:0029\",\"BOOK_006:C"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "EB:OPENING:CUT_BELL",
+          "module": "opening",
+          "function_required": "以主角割断警钟绳制造合理的背叛误解和即时危险",
+          "query": "家族 仪式 误解 危机",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/promise_setup/1",
+          "component_id": "OP004-PR2",
+          "abstract_function": "把被视为副作用或失败的选择转成可验证成长入口",
+          "constraint_checks": {
+            "ability": "开篇只显示兽群随钟声转向",
+            "resource": "割绳使边村失去传统求援",
+            "world": "家人依据既有成功经验误判合理",
+            "character": "主角主动承担背叛指控阻止第二响"
+          },
+          "rule_conflicts": [
+            "不迁移供养系统、法宝和学校评价"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "地下兽群以钟震定位薄弱地层",
+            "cost_or_constraint": "断钟同时切断合法求援信号",
+            "changed_state": "即时保护制造更深的家庭与制度低谷",
+            "why_causal": "第二响会把兽群直接引向家宅",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "误解源于无法兼得求援与避险的真实选择",
+          "gap_reason": "",
+          "story_node_ids": [
+            "EB1",
+            "EB2"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "OP:BOOK:BOOK_005",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_005",
+              "title": "你管这叫精神病？这分明是先知！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "OP:BOOK:BOOK_003",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_003",
+              "title": "全民英雄协会：开局招募一拳光头",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "OP004-PR2",
+            "module": "opening",
+            "record_id": "OP:BOOK:BOOK_004",
+            "source_record_id": "OP:BOOK:BOOK_004",
+            "component_id": "OP004-PR2",
+            "component_path": "/promise_setup/1",
+            "book_id": "BOOK_004",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE",
+            "path": "DNA素材/07_开篇/per_book/BOOK_004.jsonl",
+            "line": 1,
+            "source_line_sha256": "c5183675dee088f6c2414552b998a200c02b891726f1a12ebc533c53a8c47b87",
+            "title": "全民法宝：我的人皇幡无限进化！",
+            "summary": "BOOK_004:CHAPTER:0001 BOOK_004:CHAPTER:0003 BOOK_004:CHAPTER:0005 BOOK_004:CHAPTER:0006 BOOK_004:CHAPTER:0010",
+            "evidence_refs": [
+              "BOOK_004:CHAPTER:0001",
+              "BOOK_004:CHAPTER:0003",
+              "BOOK_004:CHAPTER:0005",
+              "BOOK_004:CHAPTER:0006",
+              "BOOK_004:CHAPTER:0010"
+            ],
+            "source_component_preview": "{\"promise_id\":\"OP004-PR2\",\"promise_statement\":\"系统能否把普通人避之不及的副作用和危险资源转成主角阵容的养料。\",\"promise_target\":\"供养输入扩展\",\"setup_event\":\"第5章李逍尝试把身体毒素供养给招魂幡。\",\"expected_future_payoff_or_unresolved_question\":\"后续还能否把邪功副作用、伤害、雷霆、功德等性质完全不同的东西纳入成长。\",\"promise_status\":\"open\",\"setup_window\":5,\"evidence_refs\":[\"BOOK_004:CHAPTER:0005\"],\"unknowns\":[]}"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "EB:ARC:PROTOCOL_REWRITE",
+          "module": "arc_structure",
+          "function_required": "从断钟嫌疑推进到静默防务协议正式生效",
+          "query": "狩猎 资格 争夺 高潮",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/arcs/0/arc_identity",
+          "component_id": "AR:ARC:1",
+          "abstract_function": "觉醒、组织入编和守卫任务逐级扩大行动权限",
+          "constraint_checks": {
+            "ability": "高潮不能绕过三段骨鸣上限",
+            "resource": "协议生效不自动补足钟台资源",
+            "world": "新协议仅覆盖本村且需复核",
+            "character": "家人共同签署并承担轮值"
+          },
+          "rule_conflicts": [
+            "不迁移神话组织、原作小队和海外战线"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "先试行一夜静默撤离，再凭伤亡和兽向记录换协议",
+            "cost_or_constraint": "协议要求公开钟台路线矛盾并承受断供",
+            "changed_state": "家庭由违规者变成静默防务责任主体",
+            "why_causal": "安全变化、关系合作和制度生效分别有现场见证",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "宏弧结算不以单次救援代替正式协议",
+          "gap_reason": "",
+          "story_node_ids": [
+            "EB4",
+            "EB6",
+            "EB7"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "AR:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AS:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_007",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_007",
+              "title": "猎魔人小姐，我真不是血族",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_014",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_014",
+              "title": "我在精神病院学斩神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_017",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "高武器物灵性成长与前线战争结构",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "AR:BOOK:BOOK_011",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_011",
+              "title": "诡舍",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "AR:ARC:1",
+            "module": "arc_structure",
+            "record_id": "AR:BOOK:BOOK_014",
+            "source_record_id": "AR:BOOK:BOOK_014",
+            "component_id": "AR:ARC:1",
+            "component_path": "/arcs/0/arc_identity",
+            "book_id": "BOOK_014",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/08_篇章结构/per_book/BOOK_014.jsonl",
+            "line": 1,
+            "source_line_sha256": "02088f6e376e092f9311183d0d1300a907e36361cd4851139638b2dd0fe6238b",
+            "title": "我在精神病院学斩神",
+            "summary": "第1-274章 觉醒入编与关隘守卫（卷一）；第275-589章 出海与斩神资格（卷二）；第590-982章 东瀛神器线（卷三）",
+            "evidence_refs": [
+              "BOOK_014:CHAPTER:0003",
+              "BOOK_014:CHAPTER:0274",
+              "BOOK_014:CHAPTER:0335",
+              "BOOK_014:CHAPTER:0551",
+              "BOOK_014:CHAPTER:0589",
+              "BOOK_014:CHAPTER:0695",
+              "BOOK_014:CHAPTER:0982",
+              "BOOK_014:CHAPTER:1193",
+              "BOOK_014:CHAPTER:1222",
+              "BOOK_014:CHAPTER:1358",
+              "BOOK_014:CHAPTER:1723",
+              "BOOK_014:CHAPTER:1755",
+              "BOOK_014:CHAPTER:1890",
+              "BOOK_014:CHAPTER:1926",
+              "BOOK_014:CHAPTER:1980",
+              "BOOK_014:CHAPTER:2007",
+              "BOOK_014:CHAPTER:2013",
+              "BOOK_014:CHAPTER:2021"
+            ],
+            "source_component_preview": "{\"arc_id\":\"AR:ARC:1\",\"arc_label\":\"觉醒入编与关隘守卫（卷一）\",\"arc_scope\":\"第1-274章\",\"arc_purpose\":\"以觉醒+入编夜幕建立世界观与主角能力坐标系\",\"arc_kind\":\"main\",\"parent_arc_id\":\"UNKNOWN\",\"evidence_refs\":[\"BOOK_014:CHAPTER:0003\",\"BOOK_014:CHAPTER:0335\",\"BOOK_014:CHAPTER:0337\"],\"unknowns\":[\"arc_id 原记录为 AR1，改为 AR:ARC: 引用形\"]}"
+          },
+          "rejected_refs": []
+        },
+        {
+          "slot_id": "EB:MECH:TRUST_EXCHANGE",
+          "module": "plot_mechanism",
+          "function_required": "通过可验证且交付即贬值的信息交换重建家庭合作",
+          "query": "契约 选择 代价 反噬",
+          "candidate_limit": 12,
+          "decision": "SELECT_ADAPT",
+          "component_pointer": "/mechanisms/4/mechanism_identity",
+          "component_id": "PM:MECH:BOOK_017:5",
+          "abstract_function": "双方轮流交付有真实代价的秘密，经验证后建立互信",
+          "constraint_checks": {
+            "ability": "信息交换不提升骨鸣容量",
+            "resource": "公开旧地图会失去钟台私下补贴",
+            "world": "兽向和震幅可验证每条信息",
+            "character": "主角与家人都必须承认隐瞒"
+          },
+          "rule_conflicts": [
+            "不迁移丑角仪式和原作阵营"
+          ],
+          "adaptation_bridge": {
+            "new_rule": "每人交付一条可由下一次巡路验证的风险信息",
+            "cost_or_constraint": "虚假或保留会直接制造撤离盲区",
+            "changed_state": "互信变为共同承担错误信息后果",
+            "why_causal": "交换结果决定巡路、灯旗和避难次序",
+            "provenance": "ORIGINAL_DESIGN"
+          },
+          "effect_on_action_or_payoff": "关系修复连续改变防务决策",
+          "gap_reason": "",
+          "story_node_ids": [
+            "EB3",
+            "EB5",
+            "EB8"
+          ],
+          "selection_order": "FUNCTION_FIRST_SOURCE_SECOND",
+          "candidate_pool": [
+            {
+              "record_id": "PM:BOOK:BOOK_012",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_012",
+              "title": "十日终焉",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK_017:001",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_017",
+              "title": "诸神愚戏：可复用剧情机制集",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_014",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_014",
+              "title": "我在精神病院学斩神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_009",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_009",
+              "title": "能力约束下的公开验证—资源升级机制",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_011",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_011",
+              "title": "诡舍",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_002",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_002",
+              "title": "一毛一天修为，我靠直播氪穿宇宙",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_013",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_013",
+              "title": "我不是戏神",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_008",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_008",
+              "title": "青梅是天命之女？可我既是天命！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_006",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_006",
+              "title": "全民神祇：我的神域有点不对劲",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_004",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_004",
+              "title": "全民法宝：我的人皇幡无限进化！",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_015",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_015",
+              "title": "一天获得一个超能力的我不懂恋爱",
+              "qa_status": "PASS"
+            },
+            {
+              "record_id": "PM:BOOK:BOOK_010",
+              "source_record_id": null,
+              "component_id": null,
+              "book_id": "BOOK_010",
+              "title": "超能：我有一面复刻镜",
+              "qa_status": "PASS"
+            }
+          ],
+          "selected_ref": {
+            "material_id": "PM:MECH:BOOK_017:5",
+            "module": "plot_mechanism",
+            "record_id": "PM:BOOK_017:001",
+            "source_record_id": "PM:BOOK_017:001",
+            "component_id": "PM:MECH:BOOK_017:5",
+            "component_path": "/mechanisms/4/mechanism_identity",
+            "book_id": "BOOK_017",
+            "qa_status": "PASS",
+            "usage_status": "ADAPTABLE_WITH_GAPS",
+            "path": "DNA素材/09_剧情机制/per_book/BOOK_017.jsonl",
+            "line": 1,
+            "source_line_sha256": "a98bb543c6749deb282cae21e459960d910341e9fb4dc483fd8aa9a2e04c1a65",
+            "title": "诸神愚戏：可复用剧情机制集",
+            "summary": "BOOK_017:CHAPTER:0008 BOOK_017:CHAPTER:0140 BOOK_017:CHAPTER:0300 BOOK_017:CHAPTER:0620 BOOK_017:CHAPTER:1000 BOOK_017:CHAPTER:1364",
+            "evidence_refs": [
+              "BOOK_017:CHAPTER:0008",
+              "BOOK_017:CHAPTER:0140",
+              "BOOK_017:CHAPTER:0300",
+              "BOOK_017:CHAPTER:0620",
+              "BOOK_017:CHAPTER:1000",
+              "BOOK_017:CHAPTER:1364"
+            ],
+            "source_component_preview": "{\"mechanism_id\":\"PM:MECH:BOOK_017:5\",\"mechanism_label\":\"交心局\",\"mechanism_description\":\"丑角一系的入伙/对赌仪式：双方轮流交付对自身有真实代价的秘密，以可验证的真实建立互信，再在互信基础上完成深层交易\",\"reusable_operation\":\"约定交付轮次与对等标准→一方交付真实秘密→对方验证后对等交付→互信建立后进入深层交易\",\"applicability_scope\":\"双方存在合作需求但缺乏信任基础、且均持有可验证秘密的场景\",\"core_invariants\":[\"交付即贬值保证真实\",\"对等轮换结构\",\"仪式惩罚约束虚假\"],\"excluded_surface_labels\":[\"无验证的口头的信任表达\",\"单向情报交易\"],\"distinction_boundary\":\"是信任生产机制，与透支可信性的双簧局互为镜像\",\"evidence_refs\":[\"BOOK_017:CHAPTER:1000\"],\"unknowns\":[]}"
+          },
+          "rejected_refs": []
+        }
+      ]
+    }
+  ]
+}
