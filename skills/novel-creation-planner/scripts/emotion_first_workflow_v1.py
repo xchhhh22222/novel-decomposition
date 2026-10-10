@@ -84,10 +84,10 @@ You must create the JSON artifact yourself in the research workspace. The user
 must not hand-author a long semantic-composition file.
 """
     if mode == "LEGACY_BASELINE":
-        return shared + "\n## Isolation\nThis pass may use 02–09 sources but MUST NOT read EL/EW/MA/AH retrieval, E2/E3 patterns or the enhanced candidate. Compose independently from the sparse brief. \`options[*].mode\` must be \`LEGACY_BASELINE\`. Do not add emotion_source_uses/emotion_lines/weaves/macro_arcs/handoff to legacy options.\n"
+        return shared + "\n## Isolation\nThis pass may use 02–09 sources but MUST NOT read EL/EW/MA/AH retrieval, E2/E3 patterns or the enhanced candidate. Compose independently from the sparse brief. `options[*].mode` must be `LEGACY_BASELINE`. Do not add emotion_source_uses/emotion_lines/weaves/macro_arcs/handoff to legacy options.\n"
     if retrieval is None:
         raise ValueError("enhanced prompt requires retrieval")
-    return shared + "\nEvery enhanced macro PAID requires \`required_settlement_conditions\` entries {condition_id, description, witness_node_id}; each witness must occur no later than its PAID transition. Do not use rescue success as proof of later administrative settlement.\n\n## Evidence inventory (candidate/HOLD only; NOT approved templates)\n" + json.dumps(retrieval, ensure_ascii=False, indent=2) + "\n\nUse actual retrieved EL/EW/MA/AH IDs; select relevant patterns and record similarity_reason, transferable_part, reuse_limit. \`options[*].mode\` must be \`E2_E3_ENABLED\`; include source-backed emotion_source_uses, independent payoff contracts and honest overlapping macro structure. Never turn AH001 into verified dominance transfer.\n"
+    return shared + "\nEvery enhanced macro PAID requires `required_settlement_conditions` entries {condition_id, description, witness_node_id}; each witness must occur no later than its PAID transition. Do not use rescue success as proof of later administrative settlement.\n\n## Evidence inventory (candidate/HOLD only; NOT approved templates)\n" + json.dumps(retrieval, ensure_ascii=False, indent=2) + "\n\nUse actual retrieved EL/EW/MA/AH IDs; select relevant patterns and record similarity_reason, transferable_part, reuse_limit. `options[*].mode` must be `E2_E3_ENABLED`; include source-backed emotion_source_uses, independent payoff contracts and honest overlapping macro structure. Never turn AH001 into verified dominance transfer.\n"
 
 
 def prepare(args: argparse.Namespace) -> None:
@@ -164,17 +164,23 @@ def finalize(args: argparse.Namespace) -> None:
     if {o.get("pair_id") for o in legacy["options"]} != {o.get("pair_id") for o in enhanced["options"]}:
         raise ValueError("independent comparison pair IDs differ")
     combined = {"schema_version": COMPOSITION_SCHEMA, "brief_id": brief["brief_id"], "status": "candidate", "semantic_composer": {"kind": "MODEL_AUTHORED_RESEARCH_CANDIDATE", "model_family": "MULTI_PASS_AS_DECLARED", "deterministic_validation_required": True, "literary_approval": "NOT_GRANTED"}, "material_profiles": {**legacy.get("material_profiles", {}), **enhanced.get("material_profiles", {})}, "legacy_options": legacy["options"], "enhanced_options": enhanced["options"]}
-    combined_path = workspace / "semantic-composition.generated.json"
+    attempts_root = workspace / "attempts"
+    previous = sorted(attempts_root.glob("attempt-*")) if attempts_root.exists() else []
+    if len(previous) >= 3:
+        raise ValueError("three total model validation attempts exhausted; STOP/HOLD")
+    attempt = attempts_root / f"attempt-{len(previous) + 1:02d}"
+    combined_path = attempt / "semantic-composition.generated.json"
     dump(combined_path, combined)
     script = Path(__file__).with_name("run_emotion_story_bridge_pilot.py")
-    run = subprocess.run([sys.executable, str(script), "--brief", str(workspace / "brief.json"), "--semantic-composition", str(combined_path), "--emotion-library", session["emotion_package"], "--material-snapshot-repo", str(args.material_snapshot_repo.resolve()), "--material-snapshot-commit", args.material_snapshot_commit, "--material-package-subdir", args.material_package_subdir, "--output-dir", str(workspace / "result")], capture_output=True, text=True, encoding="utf-8")
+    run = subprocess.run([sys.executable, str(script), "--brief", str(workspace / "brief.json"), "--semantic-composition", str(combined_path), "--emotion-library", session["emotion_package"], "--material-snapshot-repo", str(args.material_snapshot_repo.resolve()), "--material-snapshot-commit", args.material_snapshot_commit, "--material-package-subdir", args.material_package_subdir, "--output-dir", str(attempt / "result")], capture_output=True, text=True, encoding="utf-8")
     if run.returncode:
         dump(workspace / "model-repair-request.json", {"status": "HOLD", "error": run.stdout[-5000:] or run.stderr[-5000:], "repair_only": "repair model composition, not validator or contract"})
         raise ValueError("bridge validation HOLD; see model-repair-request.json")
-    result = load(workspace / "result" / "validation-report.json")
+    result = load(attempt / "result" / "validation-report.json")
     if not result.get("ok"):
         raise ValueError("bridge returned a nonpassing report")
-    session.update(phase="VALIDATED_RESEARCH", quality="PENDING_INDEPENDENT_REVIEW", material_adaptation="REVIEW_REQUIRED", production_promotion="NOT_RUN")
+    session.update(phase="VALIDATED_RESEARCH", quality="PENDING_INDEPENDENT_REVIEW", material_adaptation="REVIEW_REQUIRED", production_promotion="NOT_RUN", final_attempt=str(attempt.relative_to(workspace)))
+    (workspace / "model-repair-request.json").unlink(missing_ok=True)
     dump(workspace / "session.json", session)
     print(json.dumps({"ok": True, "phase": "VALIDATED_RESEARCH", "quality": "PENDING_INDEPENDENT_REVIEW", "workspace": str(workspace)}, ensure_ascii=False))
 
