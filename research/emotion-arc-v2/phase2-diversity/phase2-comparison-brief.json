@@ -1,0 +1,24 @@
+{
+  "schema_version": "emotion_first_phase2_continuation_brief_v1",
+  "brief_id": "P2:BRIEF:ASH_AFTER_MA_A",
+  "status": "candidate",
+  "genre": ["玄幻", "高武"],
+  "source_option_id": "ENHANCED:ASH_SEED",
+  "frozen_story_state": {
+    "ma_a": "PAID",
+    "ma_a_contract": "家庭拥有可持续冬粮和净种，灰穗不再扩散；主角能力经公共结果验证且代价保留；家人共同签署监督；冬储合同正式生效。",
+    "growth_cost": "两条修炼支路仍然封闭并限制后续行动",
+    "relationship_state": "家人拥有种谱、灌溉、仓储和共同监督的真实权利",
+    "institution_state": "冬储合同与家庭监督资格已经生效",
+    "unpaid_obligation": "盐封来源、采购决策、受影响区域及监督边界仍为 ACTIVE_HOLD"
+  },
+  "continuation_request": "从既有选择、代价、关系权利和制度结果自然规划51-100章；不得取消旧合同，不得依赖空降强敌、隐藏身份或全新世界危机。",
+  "same_material_scope": ["02", "03", "04", "05", "06", "07", "08", "09"],
+  "same_retrieval_budget": "each module top 8, max one result per source book",
+  "path_specific_information": {
+    "legacy": "receives frozen story state and material interface, but no instruction to optimize EL/EW/MA/AH causal obligations",
+    "enhanced": "receives the same state plus Phase 1 EL/EW/MA/AH obligations and contract-retention rules"
+  },
+  "strict_blind_test": false,
+  "independence": "REQUESTED_NOT_MACHINE_PROVEN"
+}

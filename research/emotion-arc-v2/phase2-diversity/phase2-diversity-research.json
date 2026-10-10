@@ -1,0 +1,439 @@
+{
+  "schema_version": "emotion_first_phase2_diversity_research_v1",
+  "status": "candidate",
+  "qa_status": "HOLD",
+  "research_state_scope": "PLANNED_RESEARCH_STATE_NOT_OBSERVED",
+  "phase1_base": {
+    "repository": "xchhhh22222/novel-decomposition",
+    "branch": "research/emotion-first-skill-workflow-v1",
+    "commit": "fea5272815b50c9a5e9f68866a2e1426a028a32e",
+    "source_path": "research/emotion-arc-v2/runs/emotion-first-phase1-real-20261010/attempts/attempt-01/result/enhanced-options.json",
+    "source_sha256": "7228e4e21ed6eadd536fddaf145d51bac11903e7e3418101b68e54fd7a6b785c",
+    "mutation_policy": "REFERENCE_ONLY_DO_NOT_OVERWRITE"
+  },
+  "emotion_evidence_policy": {
+    "book_id": "BOOK_001",
+    "status": "candidate/HOLD/RESEARCH_NOT_ACTIVE",
+    "allowed_use": "abstract overlap, causal weave and contract-retention reference",
+    "handoff_reference": "AH:BOOK_001:001",
+    "handoff_reference_status": "CANDIDATE_UNVERIFIED",
+    "prohibited_claim": "AH001 does not prove successful narrative-dominance transfer"
+  },
+  "handoff_candidates": [
+    {
+      "handoff_id": "P2:H:ASH:COMMONS",
+      "base_option_id": "ENHANCED:ASH_SEED",
+      "title": "共种议约",
+      "causal_engine_family": "SHARED_ASSET_GOVERNANCE",
+      "engine_summary": "净种成功和家庭监督权使外部家庭提出共享请求；稀缺种谱从私产变成公共责任，家庭成员因保全、共享与补偿目标不同而持续作出互相约束的选择。",
+      "source_evidence": {
+        "line_ids": ["EL:BOOK_001:001", "EL:BOOK_001:002", "EL:BOOK_001:005", "EL:BOOK_001:003"],
+        "weave_ids": ["EW:BOOK_001:001", "EW:BOOK_001:006", "EW:BOOK_001:004"],
+        "macro_ids": ["MA:BOOK_001:001", "MA:BOOK_001:002"],
+        "handoff_id": "AH:BOOK_001:001",
+        "use_status": "RESEARCH_ANALOGY_ONLY",
+        "semantic_limit": "supports overlap and retained obligations, not verified dominance transfer"
+      },
+      "frozen_ma_a": {
+        "macro_id": "ES:MACRO:A",
+        "state": "PAID",
+        "paid_at_node": "ES7",
+        "macro_promise": "被误解的主角能否以有代价能力和家人共同选择恢复冬粮、安全与行动信任",
+        "settlement_contract": "家庭拥有可持续冬粮和净种，灰穗不再扩散；主角能力经公共结果验证且代价保留；家人共同签署监督；冬储合同正式生效。",
+        "settled_promises": [
+          "净种入仓并能支撑家庭冬粮",
+          "灰穗停止跨田扩散",
+          "能力通过公共结果验证且封闭支路代价仍在",
+          "家人共同签署并取得监督资格",
+          "冬储合同正式生效"
+        ]
+      },
+      "retained_phase1_b_obligation": {
+        "macro_id": "ES:MACRO:B",
+        "state": "ACTIVE_HOLD",
+        "contract_retained": "盐封来源、采购决策与受影响区域获得可核验解释，并实际改变家庭监督边界和区域换种方案。",
+        "role_in_this_branch": "异常盐封只作为共享资格的来源审查条件；即使证明是普通流程错误，共种冲突仍成立。",
+        "cancellation": false
+      },
+      "proposed_ma_b": {
+        "macro_id": "P2:ES:MACRO:B:COMMONS",
+        "core_reader_expectation": "这个刚获得安全的家庭，能否在不牺牲自家冬粮和关系的前提下，把救命种谱变成可持续、可问责的公共种源？",
+        "trigger": {
+          "chapter_window": "46-52",
+          "event": "邻户依据已生效的冬储合同申请净种，育种台要求监督家庭决定是否开放种谱和承担失败批次责任。",
+          "character_choice": "祖母拒绝整谱公开但同意小批借种；妹妹要求记录所有受种户结果；父亲要求保留最低家庭储备；主角放弃单独签字。",
+          "condition_changed": "家庭从资源受害者变为拥有稀缺资源和审批权的责任主体。"
+        },
+        "overlap_with_old_arc": "MA-A 的安全、净种和家庭共同监督不是背景奖励，而是 MA-B 得以发生的权利、资源与决策结构。",
+        "state_transitions": [
+          {"window": "46-52", "from": "NOT_OPENED", "to": "OPEN", "witness": "第一份借种申请必须由全家共同表决"},
+          {"window": "53-75", "from": "OPEN", "to": "ACTIVE", "witness": "首次借种减少家庭安全库存并产生可追责结果"},
+          {"window": "91-100", "from": "ACTIVE", "to": "PARTIALLY_PAID", "witness": "互惠种池完成一季公开验收，但祖种公开边界仍未完成"}
+        ],
+        "stage_settlement": {
+          "window": "91-100",
+          "conditions": [
+            "至少三个家庭通过同一套发芽率和损耗率审计",
+            "主角家庭保留最低冬粮并承担一项真实损失",
+            "妹妹拥有独立暂停批次的签字权",
+            "祖母允许释放部分谱系但保留不可复制的母本"
+          ],
+          "result": "PARTIALLY_PAID"
+        },
+        "full_settlement": {
+          "earliest_window": "101+",
+          "conditions": [
+            "互惠种池经历至少两个不同气候周期仍可持续",
+            "种谱共享、补偿与失败责任形成可申诉规则",
+            "家庭成员对祖种私有边界形成可执行协议",
+            "旧盐封来源义务获得证据化结算而非被新弧覆盖"
+          ],
+          "result": "NOT_YET_PAID"
+        },
+        "why_not_quickly_solved": "有限母本、跨田适配、家庭最低储备、失败责任和每季结果都不能靠一次战斗或一纸协议解决。",
+        "enemy_independence_test": {
+          "passes": true,
+          "without_new_enemy": "即使所有申请者都善意，资源稀缺、不同风险承受能力和家庭内部价值分歧仍会持续制造选择。"
+        },
+        "not_reskin_reason": "发动机从查明外部责任改为分配已获得的权力与稀缺资源；胜负由治理后果而非揭露幕后者决定。"
+      },
+      "emotion_lines": [
+        {
+          "line_id": "P2:ES:EL:FAMILY_SECURITY",
+          "source_analogy_ids": ["EL:BOOK_001:001", "EW:BOOK_001:001"],
+          "reader_expectation": "共享不能再次让家人失去冬粮。",
+          "character_goal": "父亲守住最低家庭储备。",
+          "accumulated_pressure": "MA-A 证明净种可用，也让申请者迅速增加。",
+          "available_choices": ["拒绝共享", "限额借种", "开放互惠种池"],
+          "required_cost": "开放会减少安全库存；拒绝会失去监督资格的公共正当性。",
+          "causal_interfaces": ["P2:ES:EL:RELATION_AUTHORITY", "P2:ES:EL:PUBLIC_DUTY"],
+          "stage_payoff": "家庭最低储备写入配额规则并经一季验证。",
+          "unpaid_promise": "连续灾年下规则是否仍能保护家庭。",
+          "next_state": "PARTIALLY_PAID"
+        },
+        {
+          "line_id": "P2:ES:EL:GROWTH_SCAR",
+          "source_analogy_ids": ["EL:BOOK_001:002", "EW:BOOK_001:004"],
+          "reader_expectation": "封闭支路必须真实限制主角，而非结算后消失。",
+          "character_goal": "主角在不继续封闭支路的情况下完成跨田验证。",
+          "accumulated_pressure": "两条支路已封闭，新增谱型超过单人承载上限。",
+          "available_choices": ["继续自损承载", "缩小共享规模", "把检测权分给受训家人"],
+          "required_cost": "主角让渡能力解释权并接受他人可能作出不同判断。",
+          "causal_interfaces": ["P2:ES:EL:RELATION_AUTHORITY", "P2:ES:EL:PUBLIC_DUTY"],
+          "stage_payoff": "轮值检测者完成一轮无主角兜底的复验。",
+          "unpaid_promise": "封闭支路能否恢复以及恢复会否破坏新分工。",
+          "next_state": "ACTIVE"
+        },
+        {
+          "line_id": "P2:ES:EL:RELATION_AUTHORITY",
+          "source_analogy_ids": ["EL:BOOK_001:005", "EW:BOOK_001:006"],
+          "reader_expectation": "共同监督权会改变谁能作决定。",
+          "character_goal": "妹妹取得独立批次暂停权，祖母保留母本否决权。",
+          "accumulated_pressure": "MA-A 已证明家人的资源与否决权不可替代。",
+          "available_choices": ["维持全家一致决", "按领域授权", "交给育种台"],
+          "required_cost": "领域授权允许家人在关键时刻反对主角。",
+          "causal_interfaces": ["P2:ES:EL:FAMILY_SECURITY", "P2:ES:EL:PUBLIC_DUTY"],
+          "stage_payoff": "妹妹独立暂停一个高收益批次并被结果证明合理。",
+          "unpaid_promise": "家庭权力分工能否经受重大损失。",
+          "next_state": "PARTIALLY_PAID"
+        },
+        {
+          "line_id": "P2:ES:EL:PUBLIC_DUTY",
+          "source_analogy_ids": ["EL:BOOK_001:003", "MA:BOOK_001:001"],
+          "reader_expectation": "监督资格带来的权力必须承担可见公共后果。",
+          "character_goal": "建立可复验、可申诉、不会把失败全压给家庭的互惠规则。",
+          "accumulated_pressure": "冬储合同令家庭拥有他户没有的净种与签字权。",
+          "available_choices": ["私下交换", "育种台全权管理", "家庭与受种户共同治理"],
+          "required_cost": "公开记录会暴露家庭错误并限制私下照顾熟人。",
+          "causal_interfaces": ["P2:ES:EL:FAMILY_SECURITY", "P2:ES:EL:GROWTH_SCAR", "P2:ES:EL:RELATION_AUTHORITY"],
+          "stage_payoff": "互惠种池首季账目公开且产生一次对家庭不利的追责。",
+          "unpaid_promise": "跨季、跨区的规则尚未成立。",
+          "next_state": "PARTIALLY_PAID"
+        }
+      ],
+      "causal_graph": [
+        {"from": "P2:ES:EL:GROWTH_SCAR", "to": "P2:ES:EL:RELATION_AUTHORITY", "bridge": "主角无法承载全部谱型", "effect": "妹妹和祖母取得真实检测与暂停权"},
+        {"from": "P2:ES:EL:RELATION_AUTHORITY", "to": "P2:ES:EL:FAMILY_SECURITY", "bridge": "家人可否决高风险批次", "effect": "家庭储备不再由主角单方面下注"},
+        {"from": "P2:ES:EL:FAMILY_SECURITY", "to": "P2:ES:EL:PUBLIC_DUTY", "bridge": "最低储备限制可共享数量", "effect": "公共规则必须处理稀缺而非承诺无限供给"},
+        {"from": "P2:ES:EL:PUBLIC_DUTY", "to": "P2:ES:EL:GROWTH_SCAR", "bridge": "公开审计要求多人复验", "effect": "主角不能用一次高风险承载替代制度流程"}
+      ],
+      "counterfactual_tests": [
+        {"remove": "P2:ES:EL:FAMILY_SECURITY", "required_story_change": "共享不再威胁家庭底线，配额冲突可用慷慨表态代替真实选择。", "decorative": false},
+        {"remove": "P2:ES:EL:GROWTH_SCAR", "required_story_change": "主角可独自完成所有检测，家庭授权和轮值训练失去必要性。", "decorative": false},
+        {"remove": "P2:ES:EL:RELATION_AUTHORITY", "required_story_change": "共享决策退化为主角个人善恶选择，家庭分歧不再改变结果。", "decorative": false},
+        {"remove": "P2:ES:EL:PUBLIC_DUTY", "required_story_change": "借种可在几章内以私人赠予解决，无法支撑51–100章。", "decorative": false}
+      ],
+      "handoff_status": "PROPOSED_PHASE2_CANDIDATE",
+      "dominance_transfer_status": "PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "handoff_id": "P2:H:ASH:SCAR",
+      "base_option_id": "ENHANCED:ASH_SEED",
+      "title": "残脉授火",
+      "causal_engine_family": "IRREVERSIBLE_COST_AND_DELEGATION",
+      "engine_summary": "封闭支路令主角无法继续单人承载，保护义务迫使他把灰谱识别拆成可学习的有限技能；家人和学徒获得能力后形成不同目标与风险边界。",
+      "source_evidence": {
+        "line_ids": ["EL:BOOK_001:001", "EL:BOOK_001:002", "EL:BOOK_001:005", "EL:BOOK_001:003"],
+        "weave_ids": ["EW:BOOK_001:001", "EW:BOOK_001:006", "EW:BOOK_001:004"],
+        "macro_ids": ["MA:BOOK_001:001", "MA:BOOK_001:002"],
+        "handoff_id": "AH:BOOK_001:001",
+        "use_status": "RESEARCH_ANALOGY_ONLY",
+        "semantic_limit": "supports overlap and retained obligations, not verified dominance transfer"
+      },
+      "frozen_ma_a": {
+        "macro_id": "ES:MACRO:A",
+        "state": "PAID",
+        "paid_at_node": "ES7",
+        "settlement_contract": "家庭拥有可持续冬粮和净种，灰穗不再扩散；主角能力经公共结果验证且代价保留；家人共同签署监督；冬储合同正式生效。"
+      },
+      "retained_phase1_b_obligation": {
+        "macro_id": "ES:MACRO:B",
+        "state": "ACTIVE_HOLD",
+        "contract_retained": "盐封来源、采购决策与受影响区域获得可核验解释，并实际改变家庭监督边界和区域换种方案。",
+        "role_in_this_branch": "作为需要不同检测者复核的长期样本线，不能取代授能冲突。",
+        "cancellation": false
+      },
+      "proposed_ma_b": {
+        "macro_id": "P2:ES:MACRO:B:SCAR",
+        "core_reader_expectation": "当主角再也不能独自承担保护代价时，他能否让别人真正拥有能力和拒绝权，而不是培养新的替身？",
+        "trigger": {
+          "chapter_window": "47-54",
+          "event": "一次常规复验中主角因封闭支路无法分辨复合灰谱，妹妹用灌溉记录先一步叫停批次。",
+          "character_choice": "主角公开自己的识别盲区，提出把灰谱拆成多岗位训练；家人要求每名学习者可退出且不得替他承伤。",
+          "condition_changed": "能力代价从个人弱点变为组织保护方式必须改变的事实。"
+        },
+        "overlap_with_old_arc": "MA-A 保留的成长代价和家庭否决权直接生成新弧，不需要新敌人或新秘密。",
+        "state_transitions": [
+          {"window": "47-54", "from": "NOT_OPENED", "to": "OPEN", "witness": "主角首次公开无法完成的识别任务"},
+          {"window": "55-75", "from": "OPEN", "to": "ACTIVE", "witness": "第一名受训家人拒绝主角的高风险方案并改变结果"},
+          {"window": "86-100", "from": "ACTIVE", "to": "PARTIALLY_PAID", "witness": "分布式检测完成一次主角缺席的保护行动，但训练代价尚未稳定"}
+        ],
+        "stage_settlement": {"window": "86-100", "conditions": ["至少三种识别职能由不同人物独立完成", "一次拒绝权实际避免更大损失", "一名学习者因训练放弃其他成长机会"], "result": "PARTIALLY_PAID"},
+        "full_settlement": {"earliest_window": "101+", "conditions": ["训练体系证明不会复制主角的支路伤害", "主角能在失去最终裁决权时继续合作", "家人能力目标不再只围绕保护主角"], "result": "NOT_YET_PAID"},
+        "why_not_quickly_solved": "技能拆分、训练失败、退出权和角色独立目标需要多次真实行动验证，无法靠主角传授一次秘诀完成。",
+        "enemy_independence_test": {"passes": true, "without_new_enemy": "训练资源、不同风险承受和谁拥有最终判断权已经足够制造长期冲突。"},
+        "not_reskin_reason": "新弧的胜负标准是权力与能力能否真正分散，而非主角查出更高层责任。"
+      },
+      "emotion_lines": [
+        {"line_id": "P2:ES2:EL:LIMIT", "reader_expectation": "封闭支路持续影响选择。", "character_goal": "主角找到非自损保护方法。", "accumulated_pressure": "两条支路持续封闭。", "available_choices": ["继续承载", "缩小保护范围", "拆分技能"], "required_cost": "失去唯一专家地位。", "causal_interfaces": ["P2:ES2:EL:AGENCY"], "stage_payoff": "主角缺席时检测仍成功。", "unpaid_promise": "支路恢复与新体系是否冲突。", "next_state": "PARTIALLY_PAID"},
+        {"line_id": "P2:ES2:EL:AGENCY", "reader_expectation": "受训家人拥有拒绝和离开的权利。", "character_goal": "家人按自身目标选择承担范围。", "accumulated_pressure": "MA-A 已建立否决权。", "available_choices": ["接受岗位", "限制职责", "退出训练"], "required_cost": "退出会减少家庭保护容量。", "causal_interfaces": ["P2:ES2:EL:LIMIT", "P2:ES2:EL:DUTY"], "stage_payoff": "一次拒绝真实改变方案。", "unpaid_promise": "独立成长目标能否保留。", "next_state": "ACTIVE"},
+        {"line_id": "P2:ES2:EL:DUTY", "reader_expectation": "新增能力不会把别人变成耗材。", "character_goal": "建立退出、轮值和伤害上限。", "accumulated_pressure": "主角过去以自损证明保护。", "available_choices": ["复制英雄模式", "严格限额", "公开风险账"], "required_cost": "保护效率下降且部分请求被拒。", "causal_interfaces": ["P2:ES2:EL:AGENCY"], "stage_payoff": "风险账导致一次公开停训。", "unpaid_promise": "长期人才不足。", "next_state": "PARTIALLY_PAID"}
+      ],
+      "causal_graph": [
+        {"from": "P2:ES2:EL:LIMIT", "to": "P2:ES2:EL:AGENCY", "bridge": "主角无法完成复合识别", "effect": "家人必须成为独立决策者"},
+        {"from": "P2:ES2:EL:AGENCY", "to": "P2:ES2:EL:DUTY", "bridge": "学习者可拒绝和退出", "effect": "保护制度必须接受容量不足"},
+        {"from": "P2:ES2:EL:DUTY", "to": "P2:ES2:EL:LIMIT", "bridge": "轮值上限禁止主角偷偷兜底", "effect": "成长代价持续可见"}
+      ],
+      "counterfactual_tests": [
+        {"remove": "P2:ES2:EL:LIMIT", "required_story_change": "主角可继续包办，授能没有因果必要。", "decorative": false},
+        {"remove": "P2:ES2:EL:AGENCY", "required_story_change": "学习者只是主角工具，关系弧消失。", "decorative": false},
+        {"remove": "P2:ES2:EL:DUTY", "required_story_change": "训练可快速扩张，长期代价与公共冲突消失。", "decorative": false}
+      ],
+      "handoff_status": "PROPOSED_PHASE2_CANDIDATE",
+      "dominance_transfer_status": "PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "handoff_id": "P2:H:BELL:COMMAND",
+      "base_option_id": "ENHANCED:SILENT_BELL",
+      "title": "无声分令",
+      "causal_engine_family": "RELATIONSHIP_AUTHORITY_REDISTRIBUTION",
+      "engine_summary": "静默协议成功后，主角的听域损失使集中指挥失效；家人必须分别拥有路线、灯旗和住户核验的最终决定权，保护关系由服从英雄变成相互制衡。",
+      "source_evidence": {
+        "line_ids": ["EL:BOOK_001:001", "EL:BOOK_001:002", "EL:BOOK_001:005", "EL:BOOK_001:003"],
+        "weave_ids": ["EW:BOOK_001:007", "EW:BOOK_001:005", "EW:BOOK_001:013"],
+        "macro_ids": ["MA:BOOK_001:001", "MA:BOOK_001:002"],
+        "handoff_id": "AH:BOOK_001:001",
+        "use_status": "RESEARCH_ANALOGY_ONLY",
+        "semantic_limit": "supports overlap and retained obligations, not verified dominance transfer"
+      },
+      "frozen_ma_a": {
+        "macro_id": "EB:MACRO:A",
+        "state": "PAID",
+        "paid_at_node": "EB7",
+        "settlement_contract": "家人和住户完成撤离且未发生二次引兽；骨鸣经兽潮验证且听域代价保留；家人形成联合指挥；静默防务协议正式生效。"
+      },
+      "retained_phase1_b_obligation": {
+        "macro_id": "EB:MACRO:B",
+        "state": "ACTIVE_HOLD",
+        "contract_retained": "地图制作、偏移原因与受影响边村得到可核验证据，并实际改变防务资源与家庭责任边界。",
+        "role_in_this_branch": "地图偏移作为路线岗位的待核输入；即使只是测绘误差，分令冲突仍成立。",
+        "cancellation": false
+      },
+      "proposed_ma_b": {
+        "macro_id": "P2:EB:MACRO:B:COMMAND",
+        "core_reader_expectation": "失去完整听域的主角能否把最终指挥权真正交给家人，并在家人作出与他不同的决定时仍共同保护住户？",
+        "trigger": {"chapter_window": "47-53", "event": "协议后的第一次演练中，所有人等待主角确认，灯旗延误导致一户错过安全窗口。", "character_choice": "主角承认自己无法同步三路信号，同意三名家人各自拥有不可越级的最终权限。", "condition_changed": "联合指挥从临时合作变成必须承担错误的常态权力结构。"},
+        "overlap_with_old_arc": "MA-A 兑现的静默协议、家人职责和听域代价直接造成新弧。",
+        "state_transitions": [
+          {"window": "47-53", "from": "NOT_OPENED", "to": "OPEN", "witness": "集中等待导致可见损失"},
+          {"window": "54-75", "from": "OPEN", "to": "ACTIVE", "witness": "家人首次在主角反对下独立改线"},
+          {"window": "91-98", "from": "ACTIVE", "to": "PARTIALLY_PAID", "witness": "三权分令完成一次无中心撤离并公开复盘一项错误"}
+        ],
+        "stage_settlement": {"window": "91-98", "conditions": ["路线、信号、户籍三权各有一次独立决定", "一次分歧通过预设优先级解决", "主角未越权兜底", "错误责任公开归属且没有取消权限"], "result": "PARTIALLY_PAID"},
+        "full_settlement": {"earliest_window": "101+", "conditions": ["分令系统跨不同灾情仍有效", "家人可在主角长期缺席时运行", "听域代价不被新能力抹除"], "result": "NOT_YET_PAID"},
+        "why_not_quickly_solved": "权力边界只有在多次意见冲突、错误归责和不同灾情中才可验证。",
+        "enemy_independence_test": {"passes": true, "without_new_enemy": "演练、自然兽迁和资源不足已足以暴露集中指挥失败。"},
+        "not_reskin_reason": "核心回报是家人真正取得并保住指挥权，不是发现地图幕后操作者。"
+      },
+      "emotion_lines": [
+        {"line_id": "P2:EB1:EL:COST", "reader_expectation": "听域损失持续限制指挥。", "character_goal": "主角找到不依赖听觉中心的保护方式。", "accumulated_pressure": "两档听域损失仍存在。", "available_choices": ["冒险锁入第三段", "缩小覆盖", "分散指挥"], "required_cost": "失去最终确认权。", "causal_interfaces": ["P2:EB1:EL:AUTHORITY"], "stage_payoff": "主角缺席仍完成撤离。", "unpaid_promise": "更复杂灾情下是否有效。", "next_state": "PARTIALLY_PAID"},
+        {"line_id": "P2:EB1:EL:AUTHORITY", "reader_expectation": "家人不是传令员而是决策者。", "character_goal": "三名家人守住各自最终权限。", "accumulated_pressure": "MA-A 已证明三种资源不可替代。", "available_choices": ["接受分令", "把权交给村镇", "恢复主角中心"], "required_cost": "独立决定也独立承担错误。", "causal_interfaces": ["P2:EB1:EL:COST", "P2:EB1:EL:TRUST"], "stage_payoff": "一次反对主角的改线救下住户。", "unpaid_promise": "错误发生后权限会否被收回。", "next_state": "ACTIVE"},
+        {"line_id": "P2:EB1:EL:TRUST", "reader_expectation": "信任能承受不同判断和可见错误。", "character_goal": "建立不以零失误为前提的复盘规则。", "accumulated_pressure": "过去误解来自看不见主角判断依据。", "available_choices": ["隐瞒错误", "集中追责", "公开复盘并保留权限"], "required_cost": "公开错误会降低短期威信。", "causal_interfaces": ["P2:EB1:EL:AUTHORITY"], "stage_payoff": "错误公开但分令未被取消。", "unpaid_promise": "重大伤亡下的信任尚未验证。", "next_state": "PARTIALLY_PAID"}
+      ],
+      "causal_graph": [
+        {"from": "P2:EB1:EL:COST", "to": "P2:EB1:EL:AUTHORITY", "bridge": "主角听域无法覆盖三路信号", "effect": "家人取得最终权限"},
+        {"from": "P2:EB1:EL:AUTHORITY", "to": "P2:EB1:EL:TRUST", "bridge": "独立决定必然产生不同判断", "effect": "关系必须容纳错误而非只奖励服从"},
+        {"from": "P2:EB1:EL:TRUST", "to": "P2:EB1:EL:COST", "bridge": "复盘禁止主角以继续自损换回中心权", "effect": "成长代价不能被英雄行为绕过"}
+      ],
+      "counterfactual_tests": [
+        {"remove": "P2:EB1:EL:COST", "required_story_change": "主角可重新集中指挥，分令失去必要性。", "decorative": false},
+        {"remove": "P2:EB1:EL:AUTHORITY", "required_story_change": "家人只执行命令，关系变化不影响行动。", "decorative": false},
+        {"remove": "P2:EB1:EL:TRUST", "required_story_change": "一次错误即可恢复独裁，长期弧在数章内结束。", "decorative": false}
+      ],
+      "handoff_status": "PROPOSED_PHASE2_CANDIDATE",
+      "dominance_transfer_status": "PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "handoff_id": "P2:H:BELL:CHARTER",
+      "base_option_id": "ENHANCED:SILENT_BELL",
+      "title": "静守公约",
+      "causal_engine_family": "PUBLIC_RESPONSIBILITY_TRADEOFF",
+      "engine_summary": "静默协议被邻村采用后，有限灯油、巡守、医疗和撤离名额必须重新分配；主角从被误解的破坏者变成对公共选择后果负责的人。",
+      "source_evidence": {
+        "line_ids": ["EL:BOOK_001:001", "EL:BOOK_001:002", "EL:BOOK_001:005", "EL:BOOK_001:003"],
+        "weave_ids": ["EW:BOOK_001:007", "EW:BOOK_001:005", "EW:BOOK_001:013"],
+        "macro_ids": ["MA:BOOK_001:001", "MA:BOOK_001:002"],
+        "handoff_id": "AH:BOOK_001:001",
+        "use_status": "RESEARCH_ANALOGY_ONLY",
+        "semantic_limit": "supports overlap and retained obligations, not verified dominance transfer"
+      },
+      "frozen_ma_a": {
+        "macro_id": "EB:MACRO:A",
+        "state": "PAID",
+        "paid_at_node": "EB7",
+        "settlement_contract": "家人和住户完成撤离且未发生二次引兽；骨鸣经兽潮验证且听域代价保留；家人形成联合指挥；静默防务协议正式生效。"
+      },
+      "retained_phase1_b_obligation": {
+        "macro_id": "EB:MACRO:B",
+        "state": "ACTIVE_HOLD",
+        "contract_retained": "地图制作、偏移原因与受影响边村得到可核验证据，并实际改变防务资源与家庭责任边界。",
+        "role_in_this_branch": "地图偏移影响配额置信度，必须核验但不能把资源选择归咎于一个幕后者。",
+        "cancellation": false
+      },
+      "proposed_ma_b": {
+        "macro_id": "P2:EB:MACRO:B:CHARTER",
+        "core_reader_expectation": "主角能否让静默防务扩展到更多住户，同时承担有限资源必然造成的取舍和问责？",
+        "trigger": {"chapter_window": "46-52", "event": "邻村请求采用静默协议，但现有灯油和巡守只够覆盖两个方向，扩大一处就会降低原村冗余。", "character_choice": "主角拒绝用英雄承诺填补缺口，要求公开优先级；家人分别代表路线、住户和信号提出冲突方案。", "condition_changed": "成功协议改变了防务资源的需求结构和主角的公共身份。"},
+        "overlap_with_old_arc": "只有 MA-A 已正式生效的协议和联合指挥，才会带来扩展请求与公共问责。",
+        "state_transitions": [
+          {"window": "46-52", "from": "NOT_OPENED", "to": "OPEN", "witness": "第一次跨村配额选择降低本村冗余"},
+          {"window": "53-76", "from": "OPEN", "to": "ACTIVE", "witness": "一次资源优先级让部分住户延后撤离并触发公开问责"},
+          {"window": "92-100", "from": "ACTIVE", "to": "PARTIALLY_PAID", "witness": "公约完成一轮资源结算、申诉和补偿，但跨季供给未稳"}
+        ],
+        "stage_settlement": {"window": "92-100", "conditions": ["配额规则提前公开", "至少一次对主角家庭不利的分配真实执行", "延后者获得补偿与申诉", "地图不确定性以置信区间而非阴谋结论处理"], "result": "PARTIALLY_PAID"},
+        "full_settlement": {"earliest_window": "101+", "conditions": ["灯油、巡守、医疗形成跨季供给", "多个村镇能共同修订公约", "主角不再拥有事实上的否决特权", "地图责任线得到证据化结算"], "result": "NOT_YET_PAID"},
+        "why_not_quickly_solved": "有限资源、不同风险位置、申诉和跨季供给会反复产生真实输家，无法用击败一名对手结束。",
+        "enemy_independence_test": {"passes": true, "without_new_enemy": "所有参与者都善意时，资源不足与风险分布差异仍要求代价性选择。"},
+        "not_reskin_reason": "结构核心是公共分配与问责，而非地图调查或更强兽潮。"
+      },
+      "emotion_lines": [
+        {"line_id": "P2:EB2:EL:SAFETY", "reader_expectation": "扩展保护不能偷偷牺牲原有家庭。", "character_goal": "家人守住最低冗余。", "accumulated_pressure": "邻村请求超过现有资源。", "available_choices": ["拒绝扩展", "降低冗余", "轮换覆盖"], "required_cost": "每种选择都会留下未覆盖窗口。", "causal_interfaces": ["P2:EB2:EL:DUTY"], "stage_payoff": "最低冗余和轮换缺口公开。", "unpaid_promise": "极端兽迁下是否足够。", "next_state": "ACTIVE"},
+        {"line_id": "P2:EB2:EL:AGENCY", "reader_expectation": "家人以各自职责改变分配结果。", "character_goal": "路线、信号、住户代表各守一项不可替代标准。", "accumulated_pressure": "联合指挥已在 MA-A 生效。", "available_choices": ["服从主角", "领域表决", "交给外部机构"], "required_cost": "领域表决可能让家庭承担不利结果。", "causal_interfaces": ["P2:EB2:EL:DUTY"], "stage_payoff": "家人投票否决主角偏向本村的方案。", "unpaid_promise": "重大损失后代表权是否保留。", "next_state": "PARTIALLY_PAID"},
+        {"line_id": "P2:EB2:EL:DUTY", "reader_expectation": "公共权力产生可见问责和补偿。", "character_goal": "主角建立可申诉且不伪装零风险的公约。", "accumulated_pressure": "协议成功使他成为事实上的公共决策人。", "available_choices": ["承诺全保", "暗中倾斜", "公开排序与补偿"], "required_cost": "承认有人会被延后，主角承担声望和资源损失。", "causal_interfaces": ["P2:EB2:EL:SAFETY", "P2:EB2:EL:AGENCY"], "stage_payoff": "一次不利分配、申诉和补偿完整走完。", "unpaid_promise": "跨季供给与多村共治。", "next_state": "PARTIALLY_PAID"}
+      ],
+      "causal_graph": [
+        {"from": "P2:EB2:EL:SAFETY", "to": "P2:EB2:EL:DUTY", "bridge": "家庭最低冗余占用公共资源", "effect": "主角必须公开保护谁与延后谁"},
+        {"from": "P2:EB2:EL:AGENCY", "to": "P2:EB2:EL:DUTY", "bridge": "家人代表不同风险维度", "effect": "主角无法独自定义公平"},
+        {"from": "P2:EB2:EL:DUTY", "to": "P2:EB2:EL:SAFETY", "bridge": "公开配额限制家庭优先权", "effect": "公共身份反向改变家庭安全选择"}
+      ],
+      "counterfactual_tests": [
+        {"remove": "P2:EB2:EL:SAFETY", "required_story_change": "家庭无最低底线，公共分配没有私人代价。", "decorative": false},
+        {"remove": "P2:EB2:EL:AGENCY", "required_story_change": "主角独自决定公平，人物关系不影响剧情。", "decorative": false},
+        {"remove": "P2:EB2:EL:DUTY", "required_story_change": "资源冲突可用临时借调解决，无法形成宏弧。", "decorative": false}
+      ],
+      "handoff_status": "PROPOSED_PHASE2_CANDIDATE",
+      "dominance_transfer_status": "PENDING_INDEPENDENT_REVIEW"
+    }
+  ],
+  "planner_path_comparison": {
+    "brief_id": "P2:BRIEF:ASH_AFTER_MA_A",
+    "brief_sha256": "6472d726680ef95960da31670ba30dc319b9122409f5d093f61396a4ce40fa02",
+    "independence": "REQUESTED_NOT_MACHINE_PROVEN",
+    "strict_blind_test": false,
+    "paths": [
+      {
+        "path": "LEGACY_BASELINE",
+        "option_id": "P2:CMP:LEGACY:REGIONAL_TRIAL",
+        "title": "区域育种资格战",
+        "causal_engine": "EVENT_QUALIFICATION_CHAIN",
+        "reader_promise": "家庭能否利用已经验证的净种，通过连续公开试验获得更稳定的区域供给资格。",
+        "material_selected_ids": ["GF:BOOK_005", "WB:BOOK:BOOK_002", "CS:BOOK:BOOK_007", "CF:BOOK:BOOK_012", "PL:BOOK:BOOK_007", "OP:BOOK:BOOK_003", "AR:BOOK:BOOK_008", "PM:BOOK:BOOK_009"],
+        "story_nodes": [
+          {"node": "L1", "cause": "冬储合同生效后开放区域育种资格窗口", "choice": "主角报名以换取更稳定供给", "state_change": "家庭进入连续公开试验"},
+          {"node": "L2", "cause": "局部未来片段显示一轮灌溉后试田失败", "choice": "主角先做缩小版危险试验", "state_change": "一项失败条件得到现实确认"},
+          {"node": "L3", "cause": "公开赛要求不同水期记录", "choice": "家人分别提供账簿、灌溉和仓储信息", "state_change": "家庭资源成为参赛条件"},
+          {"node": "L4", "cause": "连续试验压缩本家储备", "choice": "主角再承载一次灰谱保住资格", "state_change": "成长代价加重，资格继续"},
+          {"node": "L5", "cause": "公开验收要求可见战果", "choice": "主角选择高风险批次完成验证", "state_change": "误解减少，区域排名上升"},
+          {"node": "L6", "cause": "最终发芽率达到门槛", "choice": "家庭接受区域供给任务", "state_change": "获得配额和下一轮外区任务"}
+        ],
+        "strengths": ["事件目标明确", "公开验证反馈快", "成长与资格结果易于观察"],
+        "limitations": ["后续容易继续复制资格赛和外区任务", "家人主要提供条件，独立权力对结果的限制较弱", "未来片段可能替代共同判断"],
+        "quality_status": "PENDING_INDEPENDENT_REVIEW"
+      },
+      {
+        "path": "E2_E3_ENABLED",
+        "option_id": "P2:CMP:E2E3:COMMONS",
+        "title": "共种议约",
+        "causal_engine": "SHARED_ASSET_GOVERNANCE",
+        "reader_promise": "家庭能否在守住冬粮与关系的同时，把净种和监督权转成可问责的公共种源。",
+        "material_selected_ids": ["DA:ABILITY:BOOK_017:003", "WB:BOOK:BOOK_005", "CS:BOOK:BOOK_009", "CF:BOOK:BOOK_008", "PL:BOOK:BOOK_006", "OP:BOOK:BOOK_009", "AR:BOOK:BOOK_002", "PM:BOOK:BOOK_016"],
+        "story_nodes": [
+          {"node": "E1", "cause": "合同生效使邻户提出借种申请", "choice": "全家拒绝主角单独批准", "state_change": "稀缺资源进入共同治理"},
+          {"node": "E2", "cause": "封闭支路无法覆盖所有田况", "choice": "妹妹取得独立暂停权", "state_change": "成长代价转化为关系权力"},
+          {"node": "E3", "cause": "第一批借种降低家庭储备", "choice": "父亲设最低库存并接受延迟扩张", "state_change": "家庭安全限制公共承诺"},
+          {"node": "E4", "cause": "异地田况产生新灰谱", "choice": "祖母以部分母本交换耐旱侧系", "state_change": "共享由赠予转为互惠"},
+          {"node": "E5", "cause": "短旱使母本、自家收入和共享田不能同时保全", "choice": "主角执行家庭表决并失去一支高产侧系", "state_change": "权力让渡和公共信用产生真实代价"},
+          {"node": "E6", "cause": "首季数据达到审计条件", "choice": "家庭公开包括对自己不利的补偿记录", "state_change": "共种弧阶段性 PARTIALLY_PAID"}
+        ],
+        "strengths": ["四条情绪线相互限制选择", "配角拥有能改变资源结果的独立权力", "51-100章由既有状态自然推出"],
+        "limitations": ["原创适配桥更多，语义自然度需人工审核", "治理过程可能降低事件速度", "旧盐封合同仍须另行偿还"],
+        "quality_status": "PENDING_INDEPENDENT_REVIEW"
+      }
+    ],
+    "comparison": {
+      "reader_expectations": "Legacy 集中于取得资格；E2/E3 分离家庭安全、成长伤痕、关系权力和公共责任。",
+      "choice_causality": "Legacy 的家人资源帮助主角完成试验；E2/E3 的家人权限能阻止或改写主角方案。",
+      "payoff_independence": "Legacy 主要以公开资格统一结算；E2/E3 要求安全、授权、审计和成长限制分别留下结果。",
+      "handoff_credibility": "Legacy 以新一轮外区任务续接；E2/E3 由已获得资源与权力的后果续接。",
+      "material_node_effect": "两组均有节点作用记录；E2/E3 的选材更直接响应情绪功能槽，但适配复杂度更高。",
+      "conflict_risk": "Legacy 风险是资格赛重复；E2/E3 风险是治理程序化和旧合同积压。",
+      "quality_conclusion": "NO_AUTOMATIC_WINNER; E2/E3 shows stronger explicit causal obligations, not proven literary superiority."
+    }
+  },
+  "diversity_claim": {
+    "engine_families": [
+      "SHARED_ASSET_GOVERNANCE",
+      "IRREVERSIBLE_COST_AND_DELEGATION",
+      "RELATIONSHIP_AUTHORITY_REDISTRIBUTION",
+      "PUBLIC_RESPONSIBILITY_TRADEOFF"
+    ],
+    "all_require_new_enemy": false,
+    "all_require_hidden_conspiracy": false,
+    "claim_status": "PENDING_INDEPENDENT_REVIEW"
+  },
+  "provisional_selection": {
+    "handoff_id": "P2:H:ASH:COMMONS",
+    "status": "RESEARCH_PROVISIONAL_SELECTION",
+    "reason": "它同时让 MA-A 的净种、家庭监督、成长伤痕和制度资格成为新弧输入；即使删除新敌人和幕后阴谋，稀缺、权利和亲属价值分歧仍能推动51–100章。",
+    "not_user_approved_setting": true
+  },
+  "global_status": {
+    "phase_2": "RESEARCH_DELIVERED",
+    "macro_arc_diversity": "PENDING_INDEPENDENT_REVIEW",
+    "longform_sustainability": "PENDING_INDEPENDENT_REVIEW",
+    "material_adaptation": "REVIEW_REQUIRED",
+    "creative_quality": "PENDING_INDEPENDENT_REVIEW",
+    "production_promotion": "NOT_RUN",
+    "stage_4_creation": "HOLD"
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "schema_version": "emotion_first_phase2_longform_pressure_test_v1",
+  "status": "candidate",
+  "qa_status": "HOLD",
+  "selection_status": "RESEARCH_PROVISIONAL_SELECTION",
+  "selected_handoff_id": "P2:H:ASH:COMMONS",
+  "base_option_id": "ENHANCED:ASH_SEED",
+  "scope": "STRUCTURED_OUTLINE_NOT_NOVEL_PROSE",
+  "frozen_phase1_dependency": {
+    "source_option": "ENHANCED:ASH_SEED",
+    "ma_a_contract_unchanged": true,
+    "ma_a_paid_at": "ES7 / chapters 39-45",
+    "ma_a_settlement_contract": "家庭拥有可持续冬粮和净种，灰穗不再扩散；主角能力经公共结果验证且代价保留；家人共同签署监督；冬储合同正式生效。",
+    "phase1_ma_b_retained": "ES:MACRO:B remains ACTIVE_HOLD and is not cancelled by the commons arc"
+  },
+  "chapters_1_10_high_precision": [
+    {
+      "range": "1-2",
+      "why_now": "灰纹在封闭仓格内加速，延迟就会污染全部冬储。",
+      "pressure_or_loss": "主角必须在没有家人授权时烧毁一格祖种。",
+      "character_choice": "先烧仓隔绝，再承担毁粮指控。",
+      "cost": "失去仓权和试田资格，家庭安全库存下降。",
+      "relationship_change": "父亲和祖母从依赖转为限制主角行动。",
+      "visible_small_payoff": "灰纹没有跨格扩散，但主角尚未被证明正确。",
+      "next_action": "从灰烬取得可复验样本。",
+      "active_promises": ["家庭冬粮能否保住", "烧仓是否真是保护"],
+      "material_links": ["OP:005:P2"]
+    },
+    {
+      "range": "3-4",
+      "why_now": "育种台拒绝检验已毁样本，家庭误解因此固化。",
+      "pressure_or_loss": "主角只有承载残余灰谱才能留下证据。",
+      "character_choice": "用一条修炼支路换取可复验谱型。",
+      "cost": "第一条支路封闭，相关战技暂时失效。",
+      "relationship_change": "家人发现他付出代价，但仍不恢复仓权。",
+      "visible_small_payoff": "外部人员确认灰谱存在。",
+      "next_action": "申请一块小试田而非要求立即免责。",
+      "active_promises": ["能力是否可信", "代价会否持续"],
+      "material_links": ["GF:BOOK_007", "CS:SYSTEM:BOOK005:AWAKENED_COMBAT"]
+    },
+    {
+      "range": "5-6",
+      "why_now": "初证只能证明污染存在，不能证明烧仓是唯一方案。",
+      "pressure_or_loss": "竞争者提供私下合格证明，能快速恢复资格但无法公开复验。",
+      "character_choice": "主角拒绝私证，接受更慢的公开试田路径。",
+      "cost": "家庭继续承受资格冻结和邻里怀疑。",
+      "relationship_change": "妹妹开始提供灌溉记录，但保留否决权。",
+      "visible_small_payoff": "小试田获准，关系从完全排斥转为条件合作。",
+      "next_action": "核对水期和灰谱。",
+      "active_promises": ["公开结果能否改变家庭判断"],
+      "material_links": ["WB:RULE:BOOK005:001", "PL:004:L1"]
+    },
+    {
+      "range": "7-9",
+      "why_now": "试田水期与官方建议冲突，直接影响幼苗能否存活。",
+      "pressure_or_loss": "若按官方水期失败，剩余种粮也会受损。",
+      "character_choice": "主角接受妹妹重排灌溉，不以能力权威覆盖记录。",
+      "cost": "错过一次更高收益的抢种窗口。",
+      "relationship_change": "妹妹的记录第一次实际改变主角方案。",
+      "visible_small_payoff": "幼苗通过第一轮发芽检查。",
+      "next_action": "祖母决定是否提供私藏种谱。",
+      "active_promises": ["家人的选择能否持续改变结果"],
+      "material_links": ["CF:BOOK:BOOK_016", "PM:MECHANISM:004"]
+    },
+    {
+      "range": "10",
+      "why_now": "家庭只能选择一块试田，必须决定是否投入未登记母本。",
+      "pressure_or_loss": "失败会同时失去冬粮与祖种。",
+      "character_choice": "祖母只提供部分种谱，并要求主角不得擅自继续承载。",
+      "cost": "主角接受能力上限，家庭承担公开暴露母本的风险。",
+      "relationship_change": "合作被写成双向条件，不是原谅宣言。",
+      "visible_small_payoff": "全家形成第一次可执行共同方案。",
+      "next_action": "进入公开试田和跨田验证。",
+      "active_promises": ["共同方案能否守住冬粮", "限制是否会在危机中被遵守"],
+      "material_links": ["CF:BOOK:BOOK_016"]
+    }
+  ],
+  "chapters_11_50_weaving": [
+    {
+      "range": "11-25",
+      "active_emotion_lines": ["ES:LINE:FAMILY", "ES:LINE:RELATION", "ES:LINE:INSTITUTION"],
+      "key_character_choices": ["妹妹用灌溉记录推翻官方水期", "全家拒绝私下合格证明，选择公开试田"],
+      "resource_or_ability_change": "未登记种谱进入有限试验，家庭库存继续承压。",
+      "visible_local_payoff": "公开试田由家庭共同选择并建立可复验证据。",
+      "unpaid_promises": ["净种尚未入仓", "主角能力代价尚未完成公共验证"],
+      "ma_b_early_trigger": "无；不得提前把盐封责任结论作为读者知识。",
+      "ma_a_full_payoff_condition_progress": ["family_agency_formal: IN_PROGRESS", "winter_food_safe: NOT_YET"],
+      "material_world_links": ["WB:RULE:BOOK005:001", "CF:BOOK:BOOK_016", "PM:MECHANISM:004"]
+    },
+    {
+      "range": "26-40",
+      "active_emotion_lines": ["ES:LINE:FAMILY", "ES:LINE:GROWTH", "ES:LINE:RELATION", "ES:LINE:INSTITUTION"],
+      "key_character_choices": ["主角第二次承载但保留盐封物证", "家人否决全量承载并撤出一半田块"],
+      "resource_or_ability_change": "第二条修炼支路封闭，安全田块缩小，盐封样本被留存。",
+      "visible_local_payoff": "分区隔离阻止跨田扩散，家庭粮食安全部分恢复。",
+      "unpaid_promises": ["冬储合同尚未生效", "净种率尚未公共复核"],
+      "ma_b_early_trigger": "盐封批号跨地重复，只开启 ES:MACRO:B，不证明动机或责任人。",
+      "ma_a_full_payoff_condition_progress": ["growth_cost_visible: MET", "winter_food_safe: PARTIAL", "contract_effective: NOT_YET"],
+      "material_world_links": ["GF:BOOK_007", "CS:SYSTEM:BOOK005:AWAKENED_COMBAT", "AR:ARC:BOOK007:04"]
+    },
+    {
+      "range": "41-45",
+      "active_emotion_lines": ["ES:LINE:FAMILY", "ES:LINE:GROWTH", "ES:LINE:RELATION", "ES:LINE:INSTITUTION"],
+      "key_character_choices": ["全家放弃种谱完全独占", "主角接受监督条款而不换回单独仓权"],
+      "resource_or_ability_change": "净种入仓，监督资格和冬储合同生效；两条支路仍封闭。",
+      "visible_local_payoff": "MA-A 全部条件在 ES7 获得见证并进入 PAID。",
+      "unpaid_promises": ["盐封来源义务继续 ACTIVE_HOLD", "新获得的监督权如何使用尚未回答"],
+      "ma_b_early_trigger": "只保留已知批号异常，不转成幕后势力结论。",
+      "ma_a_full_payoff_condition_progress": ["winter_food_safe: MET", "growth_cost_visible: MET", "family_agency_formal: MET", "contract_effective: MET"],
+      "material_world_links": ["WB:RULE:BOOK005:001", "PL:004:L1", "AR:ARC:BOOK007:04"]
+    },
+    {
+      "range": "46-50",
+      "active_emotion_lines": ["ES:LINE:GROWTH", "ES:LINE:RELATION", "ES:LINE:INSTITUTION", "P2:ES:EL:PUBLIC_DUTY"],
+      "key_character_choices": ["家人拒绝立刻整谱公开", "全家同意接收第一份限额借种申请"],
+      "resource_or_ability_change": "家庭由缺粮者变为持有净种与监督权的资源方。",
+      "visible_local_payoff": "MA-A 的安全结果保持；新权力的第一项现实责任出现。",
+      "unpaid_promises": ["借种失败由谁承担", "家庭最低储备如何计算", "盐封来源仍待证据"],
+      "ma_b_early_trigger": "邻户依据正式合同申请种源，P2 共种弧进入 OPEN。",
+      "ma_a_full_payoff_condition_progress": ["MA-A remains PAID; no condition is reopened or cancelled"],
+      "material_world_links": ["WB:BOOK:BOOK_005", "CF:BOOK:BOOK_008"]
+    }
+  ],
+  "chapters_51_100_windows": [
+    {
+      "range": "51-60",
+      "reader_promise_advanced": "家庭能否在不重新失去冬粮的情况下履行第一份公共借种责任。",
+      "character_choice": "父亲提出最低储备线，祖母只借出侧系种，妹妹要求借种户同步公开田况；主角接受自己没有单独批准权。",
+      "visible_state_change": "第一批净种离开家庭仓库，家庭安全余量实际下降，三方签字规则开始生效。",
+      "new_cost_or_unpaid_obligation": "若受种田失败，补种将挤占本家储备；盐封来源核验仍未完成。",
+      "causal_links": ["MA-A 的净种和监督资格直接产生借种申请", "封闭支路限制主角同时复验多块田"],
+      "material_world_links": ["WB:BOOK:BOOK_005", "CF:BOOK:BOOK_008", "PM:BOOK:BOOK_016"],
+      "anti_airdrop_check": "没有新敌人；申请来自已公开生效的冬储合同。"
+    },
+    {
+      "range": "61-75",
+      "reader_promise_advanced": "共享种谱能否形成互惠而非单向消耗，家人取得的权力是否真实。",
+      "character_choice": "受种田出现不同灰谱时，妹妹独立暂停高收益批次，反对主角继续承载；祖母用母本换取对方耐旱侧系。",
+      "visible_state_change": "妹妹取得正式暂停权；互惠种池出现第二来源，但一块试田错过收益窗口。",
+      "new_cost_or_unpaid_obligation": "公开暂停降低家庭声望和当季收入；新侧系需要后续复验。",
+      "causal_links": ["成长伤痕迫使权限分散", "家人权力改变资源流向", "资源流向反过来扩大公共责任"],
+      "material_world_links": ["DA:ABILITY:BOOK_017:003", "CS:BOOK:BOOK_009", "PL:BOOK:BOOK_006"],
+      "anti_airdrop_check": "压力来自第一批借种的适配差异，不是突然出现的新危机。"
+    },
+    {
+      "range": "76-90",
+      "reader_promise_advanced": "祖种保全、家庭生计和公共种源三项承诺发生不可同时满足的冲突。",
+      "character_choice": "短旱使母本和共享田只能保一处灌溉；祖母主张保母本，妹妹主张保已承诺的共享田，父亲提出牺牲一块自家商品田。主角选择执行家庭表决而非以能力越权。",
+      "visible_state_change": "一支高产侧系因断水永久损失，共享田保住；家庭收入下降但公共信用提升。",
+      "new_cost_or_unpaid_obligation": "祖母与妹妹的价值分歧没有被胜利抹平；家庭需要新的补偿来源。",
+      "causal_links": ["有限灌溉使家庭安全线限制公共承诺", "关系授权让分歧真正改变损失归属", "主角让渡权力维持成长代价的后果"],
+      "material_world_links": ["CF:BOOK:BOOK_008", "PL:BOOK:BOOK_006", "AR:BOOK:BOOK_002"],
+      "anti_airdrop_check": "短旱是既有农业世界规则的压力变化；核心冲突即使没有灾害也会在下一次资源不足时出现。"
+    },
+    {
+      "range": "91-100",
+      "reader_promise_advanced": "互惠种池能否完成一次有代价、可审计的阶段结算。",
+      "character_choice": "全家公开首季发芽率、损耗和自家优待记录；接受一次对本家不利的补偿裁定，并只释放部分谱系。",
+      "visible_state_change": "三个家庭完成互惠验收，妹妹的暂停权写入流程，主角家庭由唯一救援者变为受约束的共同管理者。",
+      "new_cost_or_unpaid_obligation": "母本边界、跨季耐旱性、封闭支路恢复和旧盐封来源仍未完成。",
+      "causal_links": ["公开责任约束家庭偏好", "家庭最低储备限制扩张速度", "多方复验阻止主角用一次自损替代制度"],
+      "material_world_links": ["WB:BOOK:BOOK_005", "PM:BOOK:BOOK_016", "AR:BOOK:BOOK_002"],
+      "stage_result": "P2:ES:MACRO:B:COMMONS -> PARTIALLY_PAID",
+      "anti_airdrop_check": "结算来自51章开始的借种、暂停、资源牺牲和审计累积。"
+    }
+  ],
+  "post_100_continuation_conditions_only": [
+    "互惠种池必须经历第二种气候周期，才能检验是否真正可持续。",
+    "祖种母本的公开边界与补偿规则尚未形成完整合同。",
+    "主角封闭支路若开始恢复，会重新改变家庭检测权和能力分工。",
+    "ES:MACRO:B 的盐封来源、采购决策与区域责任仍须证据化结算，不得因共种弧成功而取消。",
+    "受种家庭获得经验后可能要求共同修订规则，原监督家庭必须让渡部分制度权力。"
+  ],
+  "macro_contract_ledger": [
+    {
+      "macro_id": "ES:MACRO:A",
+      "state_at_100": "PAID",
+      "settlement_window": "39-45",
+      "contract_mutated": false,
+      "unpaid_conditions": []
+    },
+    {
+      "macro_id": "ES:MACRO:B",
+      "state_at_100": "ACTIVE_HOLD",
+      "settlement_window": "UNPROVEN",
+      "contract_mutated": false,
+      "unpaid_conditions": ["盐封来源", "采购决策", "受影响区域", "监督边界变化"]
+    },
+    {
+      "macro_id": "P2:ES:MACRO:B:COMMONS",
+      "state_at_100": "PARTIALLY_PAID",
+      "settlement_window": "91-100 stage settlement",
+      "contract_mutated": false,
+      "unpaid_conditions": ["跨两个气候周期可持续", "完整申诉与失败责任", "祖种私有边界", "跨区共治"]
+    }
+  ],
+  "story_spine": {
+    "stages": [
+      {"stage": "trigger", "story_task": "MA-A 成功使邻户依据合同申请净种，家庭首次面对共享决定。"},
+      {"stage": "goal", "story_task": "建立不牺牲家庭冬粮、又能持续帮助他户的互惠种池。"},
+      {"stage": "resistance", "story_task": "有限母本、封闭支路、田况差异及家人价值分歧共同限制方案。"},
+      {"stage": "nodes", "story_task": "限额借种、暂停批次、交换侧系、旱期表决与公开审计逐步验证规则。"},
+      {"stage": "choice", "story_task": "在保母本、保自家收入与兑现共享承诺之间作不可兼得的选择。"},
+      {"stage": "cost", "story_task": "失去一支高产侧系、减少家庭收入，并让渡主角的单独裁决权。"},
+      {"stage": "payoff", "story_task": "三个家庭完成首季互惠验收，配额、暂停和补偿规则获得可见阶段结果。"},
+      {"stage": "state_change", "story_task": "主角家庭由被保护对象变为受约束的公共种源共同管理者。"},
+      {"stage": "next_entry", "story_task": "第二气候周期、母本边界、支路恢复和旧盐封合同形成101章后的接续条件。"}
+    ]
+  },
+  "sustainability_claim": "PENDING_INDEPENDENT_REVIEW",
+  "claim_limit": "This plan demonstrates causal continuation conditions through chapter 100; it does not prove prose quality or 300/500 chapter retention."
+}

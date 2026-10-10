@@ -1,0 +1,110 @@
+{
+  "schema_version": "emotion_first_phase2_literary_review_v1",
+  "status": "candidate",
+  "qa_status": "HOLD",
+  "reviewer": "GPT-5 / Codex semantic research pass",
+  "rubric_note": "Scores are evidence-indexed research aids, not production approval or proof of reader response.",
+  "dimensions": [
+    "reader_expectation",
+    "emotion_payoff",
+    "character_agency",
+    "causal_weaving",
+    "macro_arc_diversity",
+    "longform_sustainability",
+    "setting_material_compatibility",
+    "originality"
+  ],
+  "candidate_reviews": [
+    {
+      "handoff_id": "P2:H:ASH:COMMONS",
+      "scores": {
+        "reader_expectation": {"score": 5, "evidence": "家庭刚获得的净种和监督权立刻变成是否共享、共享多少、失败由谁承担的持续问题。"},
+        "emotion_payoff": {"score": 4, "evidence": "91–100章以首季互惠验收、真实侧系损失和不利补偿形成可见阶段结算，但完整跨季合同仍未支付。"},
+        "character_agency": {"score": 5, "evidence": "祖母控制母本、妹妹拥有暂停权、父亲设最低储备，三人的决定分别改变可共享数量和损失归属。"},
+        "causal_weaving": {"score": 5, "evidence": "封闭支路迫使检测权分散，分散权力限制家庭下注，家庭底线又限制公共配额。"},
+        "macro_arc_diversity": {"score": 5, "evidence": "主发动机是稀缺资产治理和家庭价值分歧；删除新敌人及阴谋后仍成立。"},
+        "longform_sustainability": {"score": 5, "evidence": "51–100章由合同生效、种源稀缺、既有支路伤痕和家庭监督权逐窗推进。"},
+        "setting_material_compatibility": {"score": 4, "evidence": "检测、公开资格、多人权限和资源经营接口相容，但共享能力的原创桥仍需人工检查边界。"},
+        "originality": {"score": 4, "evidence": "八个选择来源分散且只借抽象接口；种谱家族治理组合仍需独立比对避免来源拼贴感。"}
+      },
+      "total": 37,
+      "structural_holds": ["跨季可持续性未实际验证", "ES:MACRO:B 盐封合同仍 ACTIVE_HOLD", "素材适配仍需人工审核"],
+      "recommendation": "RESEARCH_PROVISIONAL_SELECTION"
+    },
+    {
+      "handoff_id": "P2:H:ASH:SCAR",
+      "scores": {
+        "reader_expectation": {"score": 4, "evidence": "读者可持续期待主角能否在失去唯一专家地位后仍完成保护。"},
+        "emotion_payoff": {"score": 4, "evidence": "无主角兜底的保护行动和真实拒绝权可见，但训练失败的情绪余震需要更细设计。"},
+        "character_agency": {"score": 5, "evidence": "学习者可拒绝、退出并选择自身成长目标，选择直接减少保护容量。"},
+        "causal_weaving": {"score": 5, "evidence": "成长伤痕制造授权必要，退出权制造公共容量限制，轮值上限反过来阻止主角自损兜底。"},
+        "macro_arc_diversity": {"score": 5, "evidence": "发动机是不完整能力与授权伦理，而非调查或升级敌人。"},
+        "longform_sustainability": {"score": 4, "evidence": "训练、失败、退出和独立目标可持续，但若岗位变化不足可能重复成训练单元。"},
+        "setting_material_compatibility": {"score": 4, "evidence": "与支路封闭、家庭监督相容；分布式灰谱的规则仍是原创适配。"},
+        "originality": {"score": 4, "evidence": "把英雄代价转成权力让渡具有差异，但需避免常见学院训练套路。"}
+      },
+      "total": 35,
+      "structural_holds": ["训练机制存在重复风险", "学习者长期独立目标尚未逐人展开", "ES:MACRO:B 仍未结算"],
+      "recommendation": "VIABLE_RESEARCH_ALTERNATIVE"
+    },
+    {
+      "handoff_id": "P2:H:BELL:COMMAND",
+      "scores": {
+        "reader_expectation": {"score": 4, "evidence": "主角是否真正交出指挥权是清楚且可观察的关系承诺。"},
+        "emotion_payoff": {"score": 4, "evidence": "无中心撤离和公开错误能形成具体回报，但需避免每次都用演练兑现。"},
+        "character_agency": {"score": 5, "evidence": "路线、信号、户籍三权各有不可越级决定，家人可在主角反对下改线。"},
+        "causal_weaving": {"score": 5, "evidence": "听域损失迫使分权，分权制造不同判断，信任规则又禁止自损夺回中心。"},
+        "macro_arc_diversity": {"score": 5, "evidence": "核心是权威重分配和容错信任，地图调查仅为受限输入。"},
+        "longform_sustainability": {"score": 4, "evidence": "多类灾情和错误归责可持续，但需要足够不同的决策环境避免重复撤离。"},
+        "setting_material_compatibility": {"score": 4, "evidence": "与静默协议、灯旗和听损自然衔接；三权边界仍需场景验证。"},
+        "originality": {"score": 4, "evidence": "以英雄失能推动家庭分权有辨识度，但分布式指挥属于可识别母题。"}
+      },
+      "total": 35,
+      "structural_holds": ["场景类型可能重复", "重大错误后的权限保留未验证", "EB:MACRO:B 地图合同仍 ACTIVE_HOLD"],
+      "recommendation": "VIABLE_RESEARCH_ALTERNATIVE"
+    },
+    {
+      "handoff_id": "P2:H:BELL:CHARTER",
+      "scores": {
+        "reader_expectation": {"score": 4, "evidence": "成功协议扩大后谁被保护、谁被延后、谁承担责任具有持续等待价值。"},
+        "emotion_payoff": {"score": 4, "evidence": "不利分配、申诉和补偿走完一轮可见，但完整跨季供给尚未支付。"},
+        "character_agency": {"score": 5, "evidence": "家人代表不同风险维度并可投票否决主角偏向本村的方案。"},
+        "causal_weaving": {"score": 5, "evidence": "家庭最低冗余占用公共资源，公共问责限制家庭优先权，角色代表权改变公平定义。"},
+        "macro_arc_diversity": {"score": 5, "evidence": "公共资源取舍是主发动机，所有参与者善意时冲突仍成立。"},
+        "longform_sustainability": {"score": 5, "evidence": "配额、申诉、补偿和供给按既有协议后果自然形成多窗口压力。"},
+        "setting_material_compatibility": {"score": 4, "evidence": "灯油、巡守、医疗与地图置信度兼容；资源量级仍需后续定标。"},
+        "originality": {"score": 4, "evidence": "把保护爽点转为公共决策责任具有差异，但需避免写成纯行政流程。"}
+      },
+      "total": 36,
+      "structural_holds": ["资源量级未冻结", "行政流程可能压低情绪强度", "地图责任线仍待证据"],
+      "recommendation": "SECONDARY_RESEARCH_SELECTION"
+    }
+  ],
+  "legacy_vs_emotion_first": {
+    "same_brief_ref": "phase2-comparison-brief.json",
+    "same_brief_sha256": "6472d726680ef95960da31670ba30dc319b9122409f5d093f61396a4ce40fa02",
+    "same_material_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "same_budget": "8 modules × top 8 candidates × max 1 result per book",
+    "independence": "REQUESTED_NOT_MACHINE_PROVEN",
+    "legacy_observation": "Legacy 选择更偏向未来片段、公开验证、身份误判和连续外部任务，能提供直接事件动量；人物资源可参与解题，但选择标准没有先要求情绪线互相限制。",
+    "enhanced_observation": "E2/E3 选择优先服务代价分配、家人独立权限和公共责任，明确拒绝以未来预见替代共同选择；素材适配更依赖原创桥，工程可追踪不等于文学更自然。",
+    "material_selection_result": "legacy/enhanced each selected 8 real sources; shared selected IDs = 0",
+    "quality_claim": "NO_AUTOMATIC_WINNER",
+    "why_no_winner": "两条路径没有在严格盲测中生成完整等量小说文本，当前只能比较结构义务、选择逻辑和素材接口，不能证明读者偏好。"
+  },
+  "failure_cases": [
+    {"case": "把四个新弧都改成查找更高层责任人", "result": "HOLD", "reason": "违反宏弧多样性假设。"},
+    {"case": "删除家人行动线而其他节点无需改变", "result": "FAIL", "reason": "所谓交织只是装饰。"},
+    {"case": "第100章把共种弧标为完全 PAID", "result": "FAIL", "reason": "跨季可持续和完整责任规则没有见证。"},
+    {"case": "新共种弧取消盐封或地图原有合同", "result": "FAIL", "reason": "新弧不得覆盖旧未付承诺。"},
+    {"case": "以八个来源零重合宣称文学质量提升", "result": "FAIL", "reason": "来源差异只证明独立选材，不证明创作优越。"},
+    {"case": "将 AH:BOOK_001:001 标为已验证主导权交接", "result": "FAIL", "reason": "来源只支持重叠候选和保留合同。"}
+  ],
+  "overall": {
+    "macro_arc_diversity": "PENDING_INDEPENDENT_REVIEW",
+    "longform_sustainability": "PENDING_INDEPENDENT_REVIEW",
+    "material_adaptation": "REVIEW_REQUIRED",
+    "creative_quality": "PENDING_INDEPENDENT_REVIEW",
+    "production_promotion": "NOT_RUN"
+  }
+}
