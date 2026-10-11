@@ -1,102 +1,67 @@
-# NOVA 市场双池试验 V1 — 番茄都市高武 × 版权/IP改编
+# NOVA 番茄版权商城「好书」× 都市高武双样本研究 V1
 
-> **RESEARCH ONLY / NOT PRODUCTION**。用户目标：同时提升番茄网文可读性与红果等微短剧改编适配性。该目标不等于任何榜单/题材保证签约、流量、授权或改编。2026-10-11 核查：可确认番茄官网新书/阅读榜及作者版权专区；尚未验证稳定、公开、正式命名为“版权榜”的 Top10 接口。不得虚构其存在、名次或前10作品。
+> RESEARCH ONLY。2026-10-11 用户已澄清：“版权榜”实际指【番茄版权商城中的好书】，不是版权改编公告或官方排行。不得让旧公告或巅峰榜替代商城好书。商城出现的书不自动代表已经售出改编权，不证明作品更容易签约。
 
-## 1. 两个来源独立采样，各最多十名
+## 1. 主样本池 A：版权商城「好书」10部
 
-### Pool A — 版权榜 / 改编结果与IP潜力
+官方入口：https://mall.fanqiecopyright.com/pc/index
 
-用户指定 **“番茄版权榜前10”**。首先查证精确入口：官方产品/APP 展示的榜单名、URL或用户授权的页面截图、更新时间、排名规则、书名与 book_id。只有真的证实它是**排序榜单**、能核实 1–10 名，才能写：
+- 2024年1月商城上线报道描述其可查询电影、有声、新媒体短剧等合作项目；它不包含2026年即时好书名单。
+- 当前网页文字抓取只能确认商城入口和页面标题，网页内容动态渲染，尚未验证「好书」具体书名及顺序；必须使用本地经授权的图形浏览器人工读取当前栏目。
+- 打开官网，进入实际页面显示的「好书」栏目。记录访问时间、页面URL、截图、显示的排序条件、筛选条件、是否登录及可见作品。
+- 优先按页面原始显示次序采集前10部**不同的原著小说**，列表有重复卡片或非小说项目则保留原始记录并顺延补样本；不足10部报告部分完成。书籍不按类型适配程度暗中替换。
+- 每部保存作品名、作者、商城作品链接、公开 book_id（如有）、商城展示顺序 shelf_position、时间、版权合作类型、页面实际陈述的授权状态。不能验证的填 UNKNOWN。
+- shelf_position 是页面展示次序，**不是版权价值排名**；official_rank 为 null。状态使用 MALL_GOOD_BOOKS_10=VERIFIED/PARTIAL/UNVERIFIED。
+- 如用户提供官方「好书」页面截图/导出可合法人工核对；不得编造商城API或用旧的版权改编公告填补名单。
 
-- `pool_id=COPYRIGHT_TOP10`
-- `verification=VERIFIED_OFFICIAL_RANKING`
-- `rank=1…10`
+## 2. 主样本池 B：番茄男频都市高武新书榜前10
 
-**如果未核实，必须记** `COPYRIGHT_RANK_UNVERIFIED / NO_RANKS_ASSERTED`，保留空的该榜单候选、已检索的官方链接及精确缺口。允许用户提供榜单截图/链接后人工逐项核验；不得由创作模型凭记忆补10部作品。
+保持 V1.2 原本的官方都市高武新书榜快照，采集原始 rank 1–10、书名作者、book_id、公开热度与日期。只有此池的 rank 是榜单排名。
 
-可另采集**明确声明的补充观察池**：
-- 番茄版权专区公开的已售/合作 IP 事实（存在授权项才可标 `RIGHTS_CONFIRMED`，且可能不是排行）。
-- 番茄“巅峰榜”中被声明的IP潜力与传播价值信号（`PEAK_IP_POTENTIAL`，**绝不是 COPYRIGHT_TOP10**）。
-- 若经核实存在面向微短剧改编的官方征文/公示作品清单，记 `OFFICIAL_IP_PROGRAM`，不是榜单。
+两个池彼此独立；同一书可有两种 pool_memberships，不要误计两部。不能把20个样本合并到旧 V1.2 仅允许10条的 market_benchmark.json.top10。使用研究 sidecar，不改生产 Schema、旧校验器和 main。
 
-以上三种**不得替代用户指定的正式版权榜 Top10**，不得从“IP潜力”反推出“改编权已经售出”。不同体裁（女频甜宠、现实家庭、男频战神等）仅抽取可迁移的 **情绪引爆、镜头冲突、角色关系、场景成本、转折与点击理由**；不拿题材热度机械套用男频都市高武。
+## 3. 前10章拆解规则
 
-### Pool B — 都市高武榜前10
+先核实商城卡片对应番茄原著小说的作者、book_id 和目录，禁止错选漫画、同名作品或同人。只读官网可合法公开访问、用户提供或获授权章节；遇到登录、付费、反爬、访问限制不绕过。每部目标分析1–10章，具体已读范围需留证据；无法读取仅保留 metadata_only，不从目录/简介伪造章节发生的情节。
 
-保持既有可追溯主赛道：番茄**男频 / 都市高武 / 新书榜**前10，作为当前赛道的开篇读者信号。用户后续指定“阅读榜”时显式变更 `ranking=new|reading`；不得在同一快照混排新书与阅读。每本保留榜单URL、时间、rank、书名、作者、book_id、字数/在读等真实公开指标。没有权威样本不补造。
+每章记录：
+- 首个能直接拍出来的危机、主角当下欲望与可见风险；
+- 金手指具体输入、输出、首次露面、首次有效强兑现；没有金手指写 NOT_APPLICABLE；
+- 高武世界真实超凡力量，如何改变事件而不是只换拳击术语；
+- 人物冲动、偏见、贪婪、恐惧等非理性选择及其因果、对手是否仍有独立目的；
+- 兑现前后状态变化、章末追读期待、下章新阻力；
+- 可拍场景、视效预算风险、真人微短剧与AI漫剧的不同适配性；
+- 以上各点的章号、真实正文证据位置，不准仅凭标题和简介推断。
 
-### 原则
+重点研究：首次强效果的可理解程度、前三章第一次爽点、前10章第二次不同性质兑现、金手指规则解释是否拖慢故事，以及如何平衡一开始强与长期成长。
 
-- `dual_pool_target=10+10`，两池分开采样、分开统计，并以 `pool_memberships` 标记重合；不是强行“20本互不重合”。
-- 两组都要查当前快照和历史变化（若存在真实历史）。**单日绝不是趋势**。
-- A 研究“影视化/短剧化表达能力、实际授权证据”；B 研究“都市高武平台阅读表现”。**它们回答不同问题，不能把两个榜的名次加权求一个成功概率。**
-- 榜单可达性必须由执行代理在本轮真实检验，报 `verified/partial/unavailable`；规则文档不是实际扫榜证据。
-- 版权交易条件、付费、授权范围、改编成片率、流量转化率均未知时必须记 `NOT_VERIFIED`。
+版权商城其他题材仅用于提取可迁移的冲突与情绪反转；都市高武的力量与成长预期仍由B池校准。商城待授权、已售、影视、长剧、动画、真人微短剧和AI漫剧均分别记录，不合并成“已被红果改编”。
 
-## 2. 采集与样本完整度
+## 4. 证据充分之后才素材融合
 
-沿用 `execution-pipeline.md` 的合法取样、下载质量及来源门。指定的 `$fanqie-ranking-scan` 仅运行它**真实支持**的榜型/分类，不给它编造 `--ranking copyright`。对版权池，如果无受支持的采集能力：
-1. 优先保存确实存在的公开官方网页元数据（若页可验证）；
-2. 若版权榜为仅APP可见或受权限保护，征求用户截图/页面导出，`ingest_mode=user_authorized`，确保来源、日期、rank、book_id真实；
-3. 没有则明确 `COPYRIGHT_RANK_UNVERIFIED`，绝不让第三方营销帖冒充官方版权榜。
-4. 把失败/部分/用户导入留在manifest中，继续可独立完成的都市高武池；不得静默标记全部20/20完成。
+从真正读过的章节抽象结构 lesson，不复制人物、独特场景或完整事件链。再按情绪需求检索冻结02–09组件，尤其02金手指、07开篇、09剧情机制。优先验证：第一场危机中的即时强效果、可视化呈现、人物关系和利益反转、前10章二级兑现、11–100章可持续限制。每个选择保留真实素材ID、来源、适配与拒绝理由，原创桥必须与来源事实分开。
 
-试验模式并行保存：
-```text
-market_ip_dual_v1/
-  manifest.json
-  ranking_urban_new_top10.jsonl
-  ranking_copyright_top10.jsonl  # only VERIFIED; otherwise empty with status
-  supplementary_ip_references.jsonl
-  opening_cards_urban.jsonl
-  opening_cards_ip.jsonl
-  dual_pool_structure_matrix.md
-  short_drama_transfer_lessons.md
-  evidence/
-```
-快照字段 `pool_id / rank / ranking_name / official_url / captured_at / book_id / access_boundary / source_status / rights_fact_level / actual_chapters_analyzed / extraction_method / evidence_locations`；无rank不能放入ranked top10，`null`不等于0。
+完成横评后给出3个不同都市高武金手指+开篇方向（1–10章节奏卡），暂不写小说正文，不改《高武：这一拳，我练过》，不进入正式集成。
 
-原 V1.2 `market_benchmark.json` 的 `top10` **严格只接受10条**。**禁止将20条塞入旧字段来绕过验证器**。本试验使用**研究侧车证据包**，原 `validate_v12_artifacts.py benchmark` 和生产 Schema 原封不动。正式支持双榜前，旧baseline和新dual不能冒充同一种`complete`。
+## 5. 交付及停止状态
 
-## 3. 两种市场信号怎么读
+在 research/market-short-drama-v1/mall-good-books-2026-10-11/ 中保存：
+- mall-good-books-10.jsonl（真实商城展示顺序与证据）
+- urban-high-martial-new-10.jsonl（真实官方新书榜）
+- sample-access-manifest.json（正文获取状态）
+- chapter-01-10-evidence-matrix.md
+- opening-short-drama-lessons.md
+- golden-finger-material-bridge.md
+- three-new-concepts.md
+- evidence/截图及来源记录
 
-**都市高武池**：金手指第一次被观众感知的时点、战力尺度的可见事实、开篇冲突和选择、目标和首次兑现、1–3章及4–10章钩子。分类特殊性优先。
+本地 WorkBuddy 可通过有授权的浏览器进行动态页面访问，但不得发明当前没有支持的 ranking=copyright 命令。所有不可访问的条目保留原始情况，允许提交 PARTIAL，不能以假样本凑数。
 
-**版权/IP池**：核实的是榜单或权利事实，不预设版权作品均是成功短剧。仅在真实读到获授权的合法公开章节、合法公开改编成片内容或宣传资料后，观察：
-- 可用一句话解释的能力/身份/利益冲突，主角当下必须做什么；
-- 首个**可拍**场景、可见行为、情绪强度、谁掌握现场主动权；
-- 角色的失控与冲动：羡妒/恐惧/偏爱/利益护持、但必须有内在动机和代价；
-- 反转前后的观众已知事实，避免全靠旁白；
-- 一次小兑现后立即开启下一难题；不是毫无因果地每30秒硬反转；
-- 场景/制作成本：主要景别、可控场地、人数、异兽/CG需求，分别标**真人微短剧**、**AI漫剧/动画**可行性；
-- 真实授权/IP潜力/阅读热度三项**分开**报证据。
+状态：MALL_ENTRY=VERIFIED；MALL_GOOD_BOOKS=UNVERIFIED（截至当前文本端抓取）；CHAPTER_01_10=NOT_YET_READ；PRODUCTION_PROMOTION=NOT_RUN；STOP_FOR_INDEPENDENT_REVIEW。
 
-所有开篇结构判断必须引用真正读过的章节/合法素材，不能仅凭书名、简介、版权新闻猜正文结构。跨池高频模式与类型差异分开汇总，并包含失败/难改编案例防止幸存者偏差。
+## 参考入口
 
-## 4. 双池总结与开书输出
-
-完成研究报告时分别答：
-
-- B（赛道）：番茄都市高武近期读者对能力、强度、情绪兑现的具体期待是什么？实际支持这个判断的样本是哪几章？
-- A（改编）：哪些已确认的小说 / IP 节目样本中，存在可以视听化的冲突、关系及反转？现有资料能否独立证明短剧改编，而不是仅有“IP潜力”？
-- 交叉：保留都市高武能力爽感，同时让矛盾可见、人物有可拍摄的行动；不要把“高武玄幻”写成低武职场剧。
-- 商业未知：签约资格、版权合同、平台风控/推荐机制、改编机会和收益不会因为符合榜单形态而自动获得。
-
-**Stop/Status：**
-`URBAN_TOP10=VERIFIED|PARTIAL|UNAVAILABLE`；
-`COPYRIGHT_TOP10=VERIFIED|PARTIAL|COPYRIGHT_RANK_UNVERIFIED`；
-`RIGHTS_ADAPTATION_SIGNAL=EVIDENCE_BOUND|UNVERIFIED`；
-`DUAL_BENCHMARK=RESEARCH_PARTIAL|RESEARCH_COMPLETE`（只有两池实际完成才可complete）；
-`IP_SIGNING_PREDICTION=NOT_ESTABLISHED`；
-`PRODUCTION_PROMOTION=NOT_RUN`。
-
-## 5. 官方短剧向IP计划作为政策证据（不可冒充榜单）
-
-番茄于 2026-01-22 发布“文启剧燃｜番茄小说×短剧版权中心首届短剧向IP联合征文活动”，**都市男频赛道明确包含都市高武**；其公开规则对参赛状态、篇幅及相关时限另有要求，**2026-05-31 截稿与签约期限已经过去**。因此本次只能作为平台重视短剧向IP的历史政策/题材证据，不能告知用户现在仍可报名，不能用它推断 2026-10 当下的获改编概率。来源：https://fanqienovel.com/writer/zone/article/7595564497767514174 。
-
-短故事的IP储备计划与**长篇都市高武**的选书、篇幅和改编路径不相同；不要把两者的投稿条件或奖项混用。仍应另行查当期官方征稿和签约条款；没有当前政策依据则记 `CURRENT_PROGRAM=NOT_VERIFIED`。
-
-参考入口（不是实时版权排名证据）：
-- 番茄排行：https://fanqienovel.com/rank
-- 番茄作者版权专区：https://fanqienovel.com/writer/zone/copyright
-- 巅峰榜（具有IP潜力维度，≠版权榜）：番茄APP书城-推荐-排行榜-巅峰榜；官网动态位置需现场核验。
+- 商城：https://mall.fanqiecopyright.com/pc/index
+- 2024商城上线介绍：https://www.sohu.com/a/749539282_121119379
+- 官方新书榜：https://fanqienovel.com/rank
+- 旧改编公告：https://fanqienovel.com/writer/zone/copyright/adapt?type=0 （只能辅助，不是本轮主样本）
