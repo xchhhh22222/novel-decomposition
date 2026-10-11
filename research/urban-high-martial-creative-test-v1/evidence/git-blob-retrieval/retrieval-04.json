@@ -1,0 +1,133 @@
+{
+  "query": "成长 实战 验证 身体 训练 代价",
+  "modules": [
+    "cultivation_system"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 5,
+  "results": [
+    {
+      "record_id": "CS:BOOK:BOOK_005",
+      "record_type": "per_book",
+      "module": "cultivation_system",
+      "book_id": "BOOK_005",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_005.jsonl",
+      "line": 1,
+      "title": "你管这叫精神病？这分明是先知！",
+      "score": 36.18,
+      "why": [
+        "正文:成长",
+        "正文:实战",
+        "正文:验证",
+        "正文:身体",
+        "正文:训练",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_005:CHAPTER:0001 BOOK_005:CHAPTER:0020 BOOK_005:CHAPTER:0037 BOOK_005:CHAPTER:0040 BOOK_005:CHAPTER:0054 BOOK_005:CHAPTER:0055 BOOK_005:CHAPTER:0075 BOOK_005:CHAPTER:0085 BOOK_005:CHAPTER:0092 BOOK_005:CHAPTER:0102 BOOK_005:CHAPTER:0104 BOOK_005:CHAPTER:0111 BOOK_005:CHAPTE…"
+    },
+    {
+      "record_id": "CS:BOOK:BOOK_008",
+      "record_type": "per_book",
+      "module": "cultivation_system",
+      "book_id": "BOOK_008",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_008.jsonl",
+      "line": 1,
+      "title": "青梅是天命之女？可我既是天命！",
+      "score": 35.73,
+      "why": [
+        "正文:成长",
+        "正文:实战",
+        "正文:验证",
+        "正文:身体",
+        "正文:训练",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_008:CHAPTER:0001 BOOK_008:CHAPTER:0005 BOOK_008:CHAPTER:0008 BOOK_008:CHAPTER:0014 BOOK_008:CHAPTER:0026 BOOK_008:CHAPTER:0027 BOOK_008:CHAPTER:0028 BOOK_008:CHAPTER:0035 BOOK_008:CHAPTER:0037 BOOK_008:CHAPTER:0045 BOOK_008:CHAPTER:0047 BOOK_008:CHAPTER:0061 BOOK_008:CHAPTE…"
+    },
+    {
+      "record_id": "CS:BOOK:BOOK_007",
+      "record_type": "per_book",
+      "module": "cultivation_system",
+      "book_id": "BOOK_007",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_007.jsonl",
+      "line": 1,
+      "title": "猎魔人小姐，我真不是血族",
+      "score": 32.18,
+      "why": [
+        "正文:成长",
+        "正文:实战",
+        "正文:验证",
+        "正文:训练",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_007:CHAPTER:0001 BOOK_007:CHAPTER:0005 BOOK_007:CHAPTER:0006 BOOK_007:CHAPTER:0026 BOOK_007:CHAPTER:0030 BOOK_007:CHAPTER:0066 BOOK_007:CHAPTER:0069 BOOK_007:CHAPTER:0073 BOOK_007:CHAPTER:0074 BOOK_007:CHAPTER:0100 BOOK_007:CHAPTER:0105 BOOK_007:CHAPTER:0110 BOOK_007:CHAPTE…"
+    },
+    {
+      "record_id": "CS:BOOK:BOOK_009",
+      "record_type": "per_book",
+      "module": "cultivation_system",
+      "book_id": "BOOK_009",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_009.jsonl",
+      "line": 1,
+      "title": "高武：看不起器物灵性，炎系器物灵性呢",
+      "score": 27.64,
+      "why": [
+        "正文:成长",
+        "正文:实战",
+        "正文:验证",
+        "正文:训练",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_009:CHAPTER:0001 BOOK_009:CHAPTER:0010 BOOK_009:CHAPTER:0028 BOOK_009:CHAPTER:0043 BOOK_009:CHAPTER:0054 BOOK_009:CHAPTER:0062"
+    },
+    {
+      "record_id": "CS:BOOK:BOOK_015",
+      "record_type": "per_book",
+      "module": "cultivation_system",
+      "book_id": "BOOK_015",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_015.jsonl",
+      "line": 1,
+      "title": "一天获得一个超能力的我不懂恋爱",
+      "score": 27.18,
+      "why": [
+        "正文:成长",
+        "正文:实战",
+        "正文:验证",
+        "正文:身体",
+        "正文:训练"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_015:CHAPTER:0001 BOOK_015:CHAPTER:0005 BOOK_015:CHAPTER:0030 BOOK_015:CHAPTER:0043 BOOK_015:CHAPTER:0059 BOOK_015:CHAPTER:0062 BOOK_015:CHAPTER:0063 BOOK_015:CHAPTER:0078 BOOK_015:CHAPTER:0088 BOOK_015:CHAPTER:0115 BOOK_015:CHAPTER:0136"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

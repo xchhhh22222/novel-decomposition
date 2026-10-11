@@ -1,0 +1,126 @@
+{
+  "query": "自主 生存 资源 责任 选择",
+  "modules": [
+    "plotline"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 5,
+  "results": [
+    {
+      "record_id": "PL:BOOK:BOOK_004",
+      "record_type": "per_book",
+      "module": "plotline",
+      "book_id": "BOOK_004",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/06_主线与支线/per_book/BOOK_004.jsonl",
+      "line": 1,
+      "title": "全民法宝：我的人皇幡无限进化！",
+      "score": 22.67,
+      "why": [
+        "正文:自主",
+        "正文:生存",
+        "正文:资源",
+        "正文:责任",
+        "正文:选择"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_004:CHAPTER:0001 BOOK_004:CHAPTER:0076 BOOK_004:CHAPTER:0040 BOOK_004:CHAPTER:0041 BOOK_004:CHAPTER:0056 BOOK_004:CHAPTER:0061"
+    },
+    {
+      "record_id": "PL:BOOK:BOOK_016",
+      "record_type": "per_book",
+      "module": "plotline",
+      "book_id": "BOOK_016",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/06_主线与支线/per_book/BOOK_016.jsonl",
+      "line": 1,
+      "title": "异兽迷城",
+      "score": 22.33,
+      "why": [
+        "正文:自主",
+        "正文:生存",
+        "正文:资源",
+        "正文:选择"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_016:CHAPTER:0001 BOOK_016:CHAPTER:0003 BOOK_016:CHAPTER:0015 BOOK_016:CHAPTER:0034 BOOK_016:CHAPTER:0054 BOOK_016:CHAPTER:0139 BOOK_016:CHAPTER:0214 BOOK_016:CHAPTER:0296 BOOK_016:CHAPTER:0346 BOOK_016:CHAPTER:0620 BOOK_016:CHAPTER:1054 BOOK_016:CHAPTER:1062 BOOK_016:CHAPTE…"
+    },
+    {
+      "record_id": "PL:BOOK:BOOK_009",
+      "record_type": "per_book",
+      "module": "plotline",
+      "book_id": "BOOK_009",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/06_主线与支线/per_book/BOOK_009.jsonl",
+      "line": 1,
+      "title": "高武：看不起器物灵性，炎系器物灵性呢",
+      "score": 21.67,
+      "why": [
+        "正文:生存",
+        "正文:资源",
+        "正文:责任",
+        "正文:选择"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_009:CHAPTER:0003 BOOK_009:CHAPTER:0006 BOOK_009:CHAPTER:0010 BOOK_009:CHAPTER:0025 BOOK_009:CHAPTER:0043 BOOK_009:CHAPTER:0054 BOOK_009:CHAPTER:0059 BOOK_009:CHAPTER:0062"
+    },
+    {
+      "record_id": "PL:BOOK:BOOK_012",
+      "record_type": "per_book",
+      "module": "plotline",
+      "book_id": "BOOK_012",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/06_主线与支线/per_book/BOOK_012.jsonl",
+      "line": 1,
+      "title": "十日终焉",
+      "score": 19.0,
+      "why": [
+        "正文:自主",
+        "正文:生存",
+        "正文:资源",
+        "正文:选择"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_012:CHAPTER:0001 BOOK_012:CHAPTER:0020 BOOK_012:CHAPTER:0066 BOOK_012:CHAPTER:0100 BOOK_012:CHAPTER:0120 BOOK_012:CHAPTER:0224 BOOK_012:CHAPTER:0274 BOOK_012:CHAPTER:0610 BOOK_012:CHAPTER:0644 BOOK_012:CHAPTER:0749 BOOK_012:CHAPTER:0760 BOOK_012:CHAPTER:1350 BOOK_012:CHAPTE…"
+    },
+    {
+      "record_id": "PL:BOOK:BOOK_007",
+      "record_type": "per_book",
+      "module": "plotline",
+      "book_id": "BOOK_007",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/06_主线与支线/per_book/BOOK_007.jsonl",
+      "line": 1,
+      "title": "猎魔人小姐，我真不是血族",
+      "score": 18.67,
+      "why": [
+        "正文:生存",
+        "正文:资源",
+        "正文:选择"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_007:CHAPTER:0001 BOOK_007:CHAPTER:0074 BOOK_007:CHAPTER:0100 BOOK_007:CHAPTER:0124"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

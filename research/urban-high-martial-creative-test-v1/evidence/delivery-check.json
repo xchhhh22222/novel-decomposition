@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "scope": "file completeness, source/hash/selection/module resolution, chapter Han counts, changed-path scope only",
+  "code_base": "9ef17befd7508e69c6b7898206c579b08b86ed11",
+  "material_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+  "required_files": [
+    "novel-concept.md",
+    "material-selection-report.md",
+    "emotion-arc-plan.md",
+    "chapter-01.md",
+    "chapter-02.md",
+    "chapter-03.md",
+    "chapters-04-10-outline.md",
+    "chapters-11-100-plan.md",
+    "creative-test-report.md"
+  ],
+  "chapters": {
+    "chapter-01.md": {
+      "han_count": 2540,
+      "nonwhitespace_count": 2974,
+      "sha256": "3569b7c22514dce9a2bb5b8dda9267fcfcddf8e5ea8a412b82287d7a38e38db5"
+    },
+    "chapter-02.md": {
+      "han_count": 2514,
+      "nonwhitespace_count": 2957,
+      "sha256": "b17fe8189c85ecb88dbd745961b5f8898917da5b0e141e989de9ad13e36922ee"
+    },
+    "chapter-03.md": {
+      "han_count": 2712,
+      "nonwhitespace_count": 3201,
+      "sha256": "f76e0a874f5d09b9875fbfee6dc7c6c3148250b347d31d97a68d4fc0760563d5"
+    }
+  },
+  "adopted_modules": [
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09"
+  ],
+  "canonical_schema_rmf_production_changed": false,
+  "semantic_continuity": "manual findings in continuity-audit.md; not machine-proven",
+  "quality": "PENDING_INDEPENDENT_REVIEW",
+  "formal_planner_validators": "NOT_RUN: no production-schema plan created",
+  "legacy_enhanced_blind_comparison": "NOT_RUN"
+}

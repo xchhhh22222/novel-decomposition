@@ -1,0 +1,124 @@
+{
+  "query": "反击 代价 兑现 资格 资源",
+  "modules": [
+    "arc_structure"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 5,
+  "results": [
+    {
+      "record_id": "AR:BOOK:BOOK_009",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_009",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_009.jsonl",
+      "line": 1,
+      "title": "高武器物灵性成长与前线战争结构",
+      "score": 24.33,
+      "why": [
+        "正文:代价",
+        "正文:兑现",
+        "正文:资格",
+        "正文:资源"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "1-10 校园低评反转；11-25 检测与联合选拔；26-44 训练营与中央特训"
+    },
+    {
+      "record_id": "AR:BOOK:BOOK_008",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_008",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_008.jsonl",
+      "line": 1,
+      "title": "青梅是天命之女？可我既是天命！",
+      "score": 21.67,
+      "why": [
+        "正文:代价",
+        "正文:兑现",
+        "正文:资格",
+        "正文:资源"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "1-10 终焉预知与疯人院救援；11-22 救援余波与学院转移；23-47 白泽学院资格与资源兑现"
+    },
+    {
+      "record_id": "AS:BOOK:BOOK_013",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_013",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_013.jsonl",
+      "line": 1,
+      "title": "我不是戏神",
+      "score": 20.33,
+      "why": [
+        "正文:代价",
+        "正文:兑现",
+        "正文:资格",
+        "正文:资源"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "第1-45章 开局与极光城篇；第58-96章 兵道古藏生死战篇；第96-349章 执法官与体制异常篇"
+    },
+    {
+      "record_id": "AR:BOOK:BOOK_003",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_003",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_003.jsonl",
+      "line": 1,
+      "title": "全民英雄协会：开局招募一拳光头",
+      "score": 20.0,
+      "why": [
+        "正文:代价",
+        "正文:兑现",
+        "正文:资源"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "1-8 觉醒与初始招募；9-32 助理任务与无限城；33-66 多英雄与黑暗大陆"
+    },
+    {
+      "record_id": "AR:BOOK:BOOK_002",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_002",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_002.jsonl",
+      "line": 1,
+      "title": "一毛一天修为，我靠直播氪穿宇宙",
+      "score": 19.33,
+      "why": [
+        "正文:兑现",
+        "正文:资格",
+        "正文:资源"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "1-20 一毛规则验证与直播开环；21-50 考试排名与状元资格；51-76 商业合作与二阶裂缝实战"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

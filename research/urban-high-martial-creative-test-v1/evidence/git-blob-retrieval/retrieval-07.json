@@ -1,0 +1,122 @@
+{
+  "query": "紧张 生存 主动 首次 兑现",
+  "modules": [
+    "opening"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 5,
+  "results": [
+    {
+      "record_id": "OP:BOOK:BOOK_002",
+      "record_type": "per_book",
+      "module": "opening",
+      "book_id": "BOOK_002",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/07_开篇/per_book/BOOK_002.jsonl",
+      "line": 1,
+      "title": "一毛一天修为，我靠直播氪穿宇宙",
+      "score": 21.33,
+      "why": [
+        "正文:紧张",
+        "正文:主动",
+        "正文:首次",
+        "正文:兑现"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "BOOK_002:CHAPTER:0001 BOOK_002:CHAPTER:0003 BOOK_002:CHAPTER:0005 BOOK_002:CHAPTER:0007 BOOK_002:CHAPTER:0010 BOOK_002:CHAPTER:0020"
+    },
+    {
+      "record_id": "OP:BOOK_008",
+      "record_type": "per_book",
+      "module": "opening",
+      "book_id": "BOOK_008",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/07_开篇/per_book/BOOK_008.jsonl",
+      "line": 1,
+      "title": "青梅是天命之女？可我既是天命！",
+      "score": 18.67,
+      "why": [
+        "正文:生存",
+        "正文:主动",
+        "正文:首次",
+        "正文:兑现"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_008:CHAPTER:0001 BOOK_008:CHAPTER:0003 BOOK_008:CHAPTER:0004 BOOK_008:CHAPTER:0005 BOOK_008:CHAPTER:0008 BOOK_008:CHAPTER:0010 BOOK_008:CHAPTER:0014 BOOK_008:CHAPTER:0020"
+    },
+    {
+      "record_id": "OP:BOOK:BOOK_006",
+      "record_type": "per_book",
+      "module": "opening",
+      "book_id": "BOOK_006",
+      "schema_version": 1,
+      "confidence": "HIGH",
+      "qa_status": "PASS",
+      "path": "DNA素材/07_开篇/per_book/BOOK_006.jsonl",
+      "line": 1,
+      "title": "全民神祇：我的神域有点不对劲",
+      "score": 13.67,
+      "why": [
+        "正文:生存",
+        "正文:主动",
+        "正文:兑现"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "BOOK_006:CHAPTER:0001 BOOK_006:CHAPTER:0004 BOOK_006:CHAPTER:0005 BOOK_006:CHAPTER:0008 BOOK_006:CHAPTER:0010"
+    },
+    {
+      "record_id": "OP:BOOK:BOOK_001",
+      "record_type": "per_book",
+      "module": "opening",
+      "book_id": "BOOK_001",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/07_开篇/per_book/BOOK_001.jsonl",
+      "line": 1,
+      "title": "高武：从临时工到武镇周天！",
+      "score": 13.0,
+      "why": [
+        "正文:生存",
+        "正文:主动",
+        "正文:兑现"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_001:CHAPTER:0001 BOOK_001:CHAPTER:0003 BOOK_001:CHAPTER:0005 BOOK_001:CHAPTER:0006 BOOK_001:CHAPTER:0009 BOOK_001:CHAPTER:0010"
+    },
+    {
+      "record_id": "OP:BOOK:BOOK_007",
+      "record_type": "per_book",
+      "module": "opening",
+      "book_id": "BOOK_007",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/07_开篇/per_book/BOOK_007.jsonl",
+      "line": 1,
+      "title": "猎魔人小姐，我真不是血族",
+      "score": 12.0,
+      "why": [
+        "正文:生存",
+        "正文:主动"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_007:CHAPTER:0001 BOOK_007:CHAPTER:0005 BOOK_007:CHAPTER:0010 BOOK_007:CHAPTER:0020"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

@@ -1,0 +1,2949 @@
+[
+  {
+    "module": "02",
+    "decision": "ADOPT",
+    "record_id": "GF:BOOK_005",
+    "book_id": "BOOK_005",
+    "book_title": "你管这叫精神病？这分明是先知！",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/02_金手指/per_book/BOOK_005.jsonl",
+    "line": 1,
+    "component_path": "/core_formula",
+    "package_file_sha256": "450c250f6984c0d42d17f380a3f18adf935415dfdb379c4afa414b29f49ced02",
+    "git_blob_row_sha256": "8fbf099c9a3fbf48277c7be1c8a24a850ad8a8bb7e5215e1949c800077a93ff2",
+    "source_map": [
+      {
+        "package_path": "DNA素材/02_金手指/per_book/BOOK_005.jsonl",
+        "source_path": "books/BOOK_005/02_金手指/per_book/BOOK_005.jsonl",
+        "source_sha256": "450c250f6984c0d42d17f380a3f18adf935415dfdb379c4afa414b29f49ced02",
+        "source_line": 1,
+        "book_id": "BOOK_005",
+        "record_id": "GF:BOOK_005",
+        "module": "02_金手指",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_005:CHAPTER:0001",
+      "BOOK_005:CHAPTER:0002",
+      "BOOK_005:CHAPTER:0003",
+      "BOOK_005:CHAPTER:0012",
+      "BOOK_005:CHAPTER:0013",
+      "BOOK_005:CHAPTER:0015",
+      "BOOK_005:CHAPTER:0024",
+      "BOOK_005:CHAPTER:0025",
+      "BOOK_005:CHAPTER:0035",
+      "BOOK_005:CHAPTER:0038",
+      "BOOK_005:CHAPTER:0040",
+      "BOOK_005:CHAPTER:0054",
+      "BOOK_005:CHAPTER:0058",
+      "BOOK_005:CHAPTER:0071",
+      "BOOK_005:CHAPTER:0075",
+      "BOOK_005:CHAPTER:0085",
+      "BOOK_005:CHAPTER:0092",
+      "BOOK_005:CHAPTER:0102",
+      "BOOK_005:CHAPTER:0109",
+      "BOOK_005:CHAPTER:0110",
+      "BOOK_005:CHAPTER:0112",
+      "BOOK_005:CHAPTER:0116",
+      "BOOK_005:EMOTION:0001",
+      "BOOK_005:EMOTION:0012",
+      "BOOK_005:EMOTION:0013",
+      "BOOK_005:EMOTION:0024",
+      "BOOK_005:EMOTION:0040",
+      "BOOK_005:EMOTION:0054",
+      "BOOK_005:EMOTION:0075",
+      "BOOK_005:EMOTION:0092",
+      "BOOK_005:EMOTION:0102",
+      "BOOK_005:EMOTION:0116"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "PARTIAL",
+    "CURRENT_COMPATIBILITY": "ADAPTABLE",
+    "reason": "主动试探/现实核验；未采用未来预见，全部回响数值原创",
+    "original_parameters_not_source_facts": true,
+    "selected_component_snapshot": {
+      "input": "高风险事件、环境或空间异常，以及江寒接收到的视觉/感官未来片段；部分片段由场景或药物状态触发，稳定触发条件UNKNOWN",
+      "process": "江寒先经历不完整的未来结果或失败分支，再按自身理解试探、逃生或提醒；现实行动会改变条件并使结果分叉，官方/队友随后将片段与现场对照",
+      "output": "提前获得灾害、攻击轨迹、路线、异常物或行动结果的信息差，经现实验证后转为避险、救援、任务协同、官方权限与认知变化"
+    }
+  },
+  {
+    "module": "02",
+    "decision": "REJECT",
+    "record_id": "GF:BOOK_002",
+    "book_id": "BOOK_002",
+    "book_title": "一毛一天修为，我靠直播氪穿宇宙",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/02_金手指/per_book/BOOK_002.jsonl",
+    "line": 1,
+    "component_path": "/core_formula",
+    "package_file_sha256": "9001dc6ccd730a902397c2f54f78197e512a0512abe5885b0cd6688cd1e5e37d",
+    "git_blob_row_sha256": "ddf740642016c1b1f70cc72f62c352eba02e5b27bbf1a0fdd0279550829bd8ad",
+    "source_map": [
+      {
+        "package_path": "DNA素材/02_金手指/per_book/BOOK_002.jsonl",
+        "source_path": "books/BOOK_002/02_金手指/per_book/BOOK_002.jsonl",
+        "source_sha256": "9001dc6ccd730a902397c2f54f78197e512a0512abe5885b0cd6688cd1e5e37d",
+        "source_line": 1,
+        "book_id": "BOOK_002",
+        "record_id": "GF:BOOK_002",
+        "module": "02_金手指",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_002:CHAPTER:0001",
+      "BOOK_002:CHAPTER:0003",
+      "BOOK_002:CHAPTER:0007",
+      "BOOK_002:CHAPTER:0050",
+      "BOOK_002:CHAPTER:0124"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "NOT_SELECTED",
+    "reason": "现金即时换修为使伤后训练与伙伴必要性消失",
+    "original_parameters_not_source_facts": false,
+    "selected_component_snapshot": {
+      "input": "充值金额、直播礼物折现或赌局/带货收入",
+      "process": "按固定比例将可用现金直接兑换为对应年限修为，修为即时沉淀为气血/境界收益",
+      "output": "气血、武道境界、战斗表现与继续吸引打赏的公开结果"
+    }
+  },
+  {
+    "module": "03",
+    "decision": "ADOPT",
+    "record_id": "WB:BOOK:BOOK_002",
+    "book_id": "BOOK_002",
+    "book_title": "一毛一天修为，我靠直播氪穿宇宙",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/03_世界观/per_book/BOOK_002.jsonl",
+    "line": 1,
+    "component_path": "/factions/3",
+    "package_file_sha256": "fdce0ef9b1311a06cf15cd4bdb6960063b707527ee63bf0a01974e22f95693cd",
+    "git_blob_row_sha256": "264abd34a48e496dbe1dd2db3ac8cfd78d21c9858a62024e42ba47a264ee4814",
+    "source_map": [
+      {
+        "package_path": "DNA素材/03_世界观/per_book/BOOK_002.jsonl",
+        "source_path": "books/BOOK_002/03_世界观/per_book/BOOK_002.jsonl",
+        "source_sha256": "fdce0ef9b1311a06cf15cd4bdb6960063b707527ee63bf0a01974e22f95693cd",
+        "source_line": 1,
+        "book_id": "BOOK_002",
+        "record_id": "WB:BOOK:BOOK_002",
+        "module": "03_世界观",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_002:CHAPTER:0004",
+      "BOOK_002:CHAPTER:0008",
+      "BOOK_002:CHAPTER:0051",
+      "BOOK_002:CHAPTER:0063"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "ADAPTABLE",
+    "reason": "商业将战力表现变收入，改为职业测试而非直播学校",
+    "original_parameters_not_source_facts": true,
+    "selected_component_snapshot": {
+      "faction_id": "WB:F4",
+      "name_in_book": "直播平台与商业合作方",
+      "faction_type": "corporation",
+      "public_role": "提供直播传播、观众打赏、带货和代言合同",
+      "actual_interest": "把高武战斗与公众注意力转成销售、流量和现金",
+      "controlled_resources": [
+        "观众打赏、礼物折现、带货订单、品牌合同"
+      ],
+      "controlled_territories_or_access": [
+        "直播间、媒体热搜、企业渠道"
+      ],
+      "controlled_information_or_rules": [
+        "热度、合同报价、礼物与收益结算规则"
+      ],
+      "recruitment_or_entry": [
+        "主播签约、品牌代言、观众关注"
+      ],
+      "internal_hierarchy": [
+        "平台—品牌/商会—主播—观众"
+      ],
+      "relations": [
+        {
+          "target_faction_id": "WB:F2",
+          "relation_type": "dependency",
+          "observable_basis": "直播需要裂缝/妖兽作为内容入口并受安全秩序约束",
+          "evidence_refs": [
+            "BOOK_002:CHAPTER:0004"
+          ]
+        }
+      ],
+      "conflict_sources": [
+        "直播真实性、观众审美与战斗风险造成收益波动",
+        "主角必须持续提供可见内容才能维持现金输入"
+      ],
+      "protagonist_interface": "林渊以战斗兑现承诺，陆雪凝代表商业合作并参与裂缝直播",
+      "evidence_refs": [
+        "BOOK_002:CHAPTER:0004",
+        "BOOK_002:CHAPTER:0008",
+        "BOOK_002:CHAPTER:0051",
+        "BOOK_002:CHAPTER:0063"
+      ],
+      "unknowns": []
+    }
+  },
+  {
+    "module": "03",
+    "decision": "REJECT",
+    "record_id": "WB:BOOK:BOOK_005",
+    "book_id": "BOOK_005",
+    "book_title": "你管这叫精神病？这分明是先知！",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/03_世界观/per_book/BOOK_005.jsonl",
+    "line": 1,
+    "component_path": "/rule_chains/0",
+    "package_file_sha256": "1aedaee00903a1006635e49af8c6f48f1f1eeaf66f2677818fd7ed265ec06a6a",
+    "git_blob_row_sha256": "de2aa2809d0943a4247cd555c5ddc6fedc0a9097c2fcc200f2aab129048053c9",
+    "source_map": [
+      {
+        "package_path": "DNA素材/03_世界观/per_book/BOOK_005.jsonl",
+        "source_path": "books/BOOK_005/03_世界观/per_book/BOOK_005.jsonl",
+        "source_sha256": "1aedaee00903a1006635e49af8c6f48f1f1eeaf66f2677818fd7ed265ec06a6a",
+        "source_line": 1,
+        "book_id": "BOOK_005",
+        "record_id": "WB:BOOK:BOOK_005",
+        "module": "03_世界观",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_005:CHAPTER:0001",
+      "BOOK_005:CHAPTER:0020",
+      "BOOK_005:CHAPTER:0021",
+      "BOOK_005:CHAPTER:0029",
+      "BOOK_005:CHAPTER:0040",
+      "BOOK_005:CHAPTER:0102"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "PARTIAL",
+    "CURRENT_COMPATIBILITY": "NOT_SELECTED",
+    "reason": "校园觉醒登记解释权容易把职业复出变能力身份悬疑",
+    "original_parameters_not_source_facts": false,
+    "selected_component_snapshot": {
+      "chain_id": "WB:RULE:BOOK005:001",
+      "completeness": "partial",
+      "rule_statement": "觉醒检测与能力登记把超常表现纳入学校和官方可管理的身份流程，检测结果会影响训练、排名、保密和后续调查。",
+      "scope": "高中觉醒典礼、学生训练和官方能力评估场景；更广泛社会适用范围UNKNOWN",
+      "scarcity": "可被可靠解释、登记和验证的能力信息，以及安全训练和官方注意力",
+      "resource_flow": "学生在觉醒典礼/训练中暴露表现，学校与官方进行检测、排名、复盘和登记；被验证的异常可获得训练、保护、任务或岗位入口，具体资源分配规则UNKNOWN",
+      "interests_and_institutions": "学校需要维持教学和纪律秩序，官方需要建立异常档案并控制风险；江寒的非标准表现使两套解释发生冲突",
+      "constraints": "学生必须接受公共考核、纪律和保密安排；能力登记可能低估真实作用；主角不能仅凭自述跳过检测与训练",
+      "conflict_engine": "同一行为在学生/教师公共视角与官方异常评估中含义不同，造成社死、排名、保密和监控冲突",
+      "plot_entry": "觉醒典礼、低等级登记、训练测试和官方岗位把主角从校园笑柄逐步推入制度化异常任务",
+      "information_ownership": "学校掌握现场纪律与学生记录，官方掌握调查、档案和保护决策，江寒掌握独特预见体验；三方解释不一致",
+      "map_or_region_effect": "从校园课堂/训练馆到官方实训和任务现场，进入更高风险区域需要训练与官方安排；正式权限门槛UNKNOWN",
+      "recurring_threat": "觉醒者的异常能力会在灾害、训练或任务中产生难以归类的风险，制度每次核验都可能引发新的公开后果",
+      "emotion_overlay_links": [
+        {
+          "emotion_record_id": "BOOK_005:EMOTION:0001",
+          "function": "觉醒前的校园公共视角先把异常行动解释为社死与病症"
+        },
+        {
+          "emotion_record_id": "BOOK_005:EMOTION:0020",
+          "function": "能力等级/登记认知与主角自我理解出现反差"
+        },
+        {
+          "emotion_record_id": "BOOK_005:EMOTION:0040",
+          "function": "训练测试把异常体验转成可观察验证"
+        },
+        {
+          "emotion_record_id": "BOOK_005:EMOTION:0102",
+          "function": "制度最终把被嘲笑的能力转成官方岗位入口"
+        }
+      ],
+      "evidence_refs": [
+        "BOOK_005:CHAPTER:0001",
+        "BOOK_005:CHAPTER:0020",
+        "BOOK_005:CHAPTER:0021",
+        "BOOK_005:CHAPTER:0029",
+        "BOOK_005:CHAPTER:0040",
+        "BOOK_005:CHAPTER:0102"
+      ],
+      "unknowns": [
+        "觉醒检测是否覆盖所有公民、正式等级如何运行及登记对法律身份的完整影响UNKNOWN",
+        "除江寒外的常规觉醒者晋升和资源分配规则UNKNOWN"
+      ]
+    }
+  },
+  {
+    "module": "04",
+    "decision": "ADOPT",
+    "record_id": "CS:BOOK:BOOK_009",
+    "book_id": "BOOK_009",
+    "book_title": "高武：看不起器物灵性，炎系器物灵性呢",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/04_修炼体系/per_book/BOOK_009.jsonl",
+    "line": 1,
+    "component_path": "/skill_proficiency",
+    "package_file_sha256": "4df32b297d499270e874c54011d4be6c24027619a888dcee1100219b4ac1088f",
+    "git_blob_row_sha256": "fb89d50dba075394de2383f7d57ee62f9eead9f451dbc85c87880cfc98a72095",
+    "source_map": [
+      {
+        "package_path": "DNA素材/04_修炼体系/per_book/BOOK_009.jsonl",
+        "source_path": "books/BOOK_009/04_修炼体系/per_book/BOOK_009.jsonl",
+        "source_sha256": "4df32b297d499270e874c54011d4be6c24027619a888dcee1100219b4ac1088f",
+        "source_line": 1,
+        "book_id": "BOOK_009",
+        "record_id": "CS:BOOK:BOOK_009",
+        "module": "04_修炼体系",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_009:CHAPTER:0007",
+      "BOOK_009:CHAPTER:0009",
+      "BOOK_009:CHAPTER:0010",
+      "BOOK_009:CHAPTER:0017",
+      "BOOK_009:CHAPTER:0033",
+      "BOOK_009:CHAPTER:0049",
+      "BOOK_009:CHAPTER:0034",
+      "BOOK_009:CHAPTER:0043",
+      "BOOK_009:CHAPTER:0057",
+      "BOOK_009:CHAPTER:0059",
+      "BOOK_009:CHAPTER:0060",
+      "BOOK_009:CHAPTER:0061"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "ADAPTABLE",
+    "reason": "获得/练习/验证分离，迁移训练流程，不采用火系器物体系",
+    "original_parameters_not_source_facts": true,
+    "selected_component_snapshot": {
+      "skill_events": [
+        {
+          "skill_id": "SK:01",
+          "name_in_book": "基础近身刀技",
+          "state_transitions": [
+            {
+              "from_state": "obtained",
+              "trigger_or_training": "学校训练与公开考核反复练习",
+              "to_state": "practiced",
+              "visible_validation": "公开考核中完成近身控制与格挡",
+              "evidence_refs": [
+                "BOOK_009:CHAPTER:0007",
+                "BOOK_009:CHAPTER:0009",
+                "BOOK_009:CHAPTER:0010"
+              ],
+              "unknowns": []
+            }
+          ],
+          "hard_limits": [
+            "受熟练度、体力与境界限制"
+          ],
+          "costs": [
+            "训练时间与体力消耗"
+          ],
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0007",
+            "BOOK_009:CHAPTER:0010"
+          ],
+          "unknowns": []
+        },
+        {
+          "skill_id": "SK:02",
+          "name_in_book": "高温火系功法（抽象）",
+          "state_transitions": [
+            {
+              "from_state": "learning",
+              "trigger_or_training": "训练与奖励资源推动高温输出练习",
+              "to_state": "proficient",
+              "visible_validation": "在高阶战斗中稳定维持高温区域压制",
+              "evidence_refs": [
+                "BOOK_009:CHAPTER:0017",
+                "BOOK_009:CHAPTER:0033",
+                "BOOK_009:CHAPTER:0049"
+              ],
+              "unknowns": []
+            }
+          ],
+          "hard_limits": [
+            "受精神承受、环境与误伤风险限制"
+          ],
+          "costs": [
+            "体力、精神负担和附带破坏"
+          ],
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0017",
+            "BOOK_009:CHAPTER:0033",
+            "BOOK_009:CHAPTER:0049"
+          ],
+          "unknowns": []
+        },
+        {
+          "skill_id": "SK:03",
+          "name_in_book": "火焰位移步法",
+          "state_transitions": [
+            {
+              "from_state": "learning",
+              "trigger_or_training": "训练营技法学习与实战追击",
+              "to_state": "practiced",
+              "visible_validation": "在高温输出间完成追击、闪避和落点调整",
+              "evidence_refs": [
+                "BOOK_009:CHAPTER:0034",
+                "BOOK_009:CHAPTER:0043"
+              ],
+              "unknowns": []
+            }
+          ],
+          "hard_limits": [
+            "受体力、熟练度与战场空间限制"
+          ],
+          "costs": [
+            "持续体力消耗"
+          ],
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0034",
+            "BOOK_009:CHAPTER:0043"
+          ],
+          "unknowns": []
+        },
+        {
+          "skill_id": "SK:04",
+          "name_in_book": "终极形态条件化技法",
+          "state_transitions": [
+            {
+              "from_state": "learning",
+              "trigger_or_training": "战争生死危机与器物灵性认可触发",
+              "to_state": "proficient",
+              "visible_validation": "终局战中短时完成高阶目标击破",
+              "evidence_refs": [
+                "BOOK_009:CHAPTER:0057",
+                "BOOK_009:CHAPTER:0059",
+                "BOOK_009:CHAPTER:0060",
+                "BOOK_009:CHAPTER:0061"
+              ],
+              "unknowns": [
+                "长期代价UNKNOWN"
+              ]
+            }
+          ],
+          "hard_limits": [
+            "具体持续时间、冷却与代价UNKNOWN"
+          ],
+          "costs": [
+            "战场环境、精神负担与失控风险"
+          ],
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0057",
+            "BOOK_009:CHAPTER:0061"
+          ],
+          "unknowns": [
+            "长期代价UNKNOWN"
+          ]
+        }
+      ],
+      "proficiency_boundaries": [
+        "技能获得与实战验证分开记录",
+        "原IP招式名不得迁移为planner-facing技能"
+      ]
+    }
+  },
+  {
+    "module": "04",
+    "decision": "REJECT",
+    "record_id": "CS:BOOK:BOOK_008",
+    "book_id": "BOOK_008",
+    "book_title": "青梅是天命之女？可我既是天命！",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/04_修炼体系/per_book/BOOK_008.jsonl",
+    "line": 1,
+    "component_path": "/realm_system",
+    "package_file_sha256": "f2513e71477057ce3d96ad81190dab41eaa75eb2c7015dd9e836ecffff1e88ac",
+    "git_blob_row_sha256": "7506b0841f33646121796777d744a096268400e22fb8ff877077e1daf6aedb64",
+    "source_map": [
+      {
+        "package_path": "DNA素材/04_修炼体系/per_book/BOOK_008.jsonl",
+        "source_path": "books/BOOK_008/04_修炼体系/per_book/BOOK_008.jsonl",
+        "source_sha256": "f2513e71477057ce3d96ad81190dab41eaa75eb2c7015dd9e836ecffff1e88ac",
+        "source_line": 1,
+        "book_id": "BOOK_008",
+        "record_id": "CS:BOOK:BOOK_008",
+        "module": "04_修炼体系",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_008:CHAPTER:0001",
+      "BOOK_008:CHAPTER:0026",
+      "BOOK_008:CHAPTER:0008",
+      "BOOK_008:CHAPTER:0027",
+      "BOOK_008:CHAPTER:0037",
+      "BOOK_008:CHAPTER:0061",
+      "BOOK_008:CHAPTER:0010",
+      "BOOK_008:CHAPTER:0006",
+      "BOOK_008:CHAPTER:0059",
+      "BOOK_008:CHAPTER:0075",
+      "BOOK_008:CHAPTER:0022",
+      "BOOK_008:CHAPTER:0035",
+      "BOOK_008:CHAPTER:0080",
+      "BOOK_008:CHAPTER:0082"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "PARTIAL",
+    "CURRENT_COMPATIBILITY": "NOT_SELECTED",
+    "reason": "欲力/神血/神武强耦合，不适配损伤康复的身体构筑",
+    "original_parameters_not_source_facts": false,
+    "selected_component_snapshot": {
+      "realm_order": [
+        {
+          "realm_id": "CS:REALM:008:1",
+          "name_in_book": "一境·醒血",
+          "order": 1,
+          "stage_difference": "醒血后进入破限者起始等阶；对应一境游秽。",
+          "direct_evidence_refs": [
+            "BOOK_008:CHAPTER:0001",
+            "BOOK_008:CHAPTER:0026"
+          ],
+          "evidence_refs": [
+            "BOOK_008:CHAPTER:0001",
+            "BOOK_008:CHAPTER:0026"
+          ],
+          "unknowns": []
+        },
+        {
+          "realm_id": "CS:REALM:008:2",
+          "name_in_book": "二境·铸兵",
+          "order": 2,
+          "stage_difference": "凝聚神武；对应二境凶秽，神武雏形尚未完全定型。",
+          "direct_evidence_refs": [
+            "BOOK_008:CHAPTER:0008",
+            "BOOK_008:CHAPTER:0027"
+          ],
+          "evidence_refs": [
+            "BOOK_008:CHAPTER:0008",
+            "BOOK_008:CHAPTER:0027"
+          ],
+          "unknowns": []
+        },
+        {
+          "realm_id": "CS:REALM:008:3",
+          "name_in_book": "三境·命级",
+          "order": 3,
+          "stage_difference": "欲力浸润周身、褪凡并勾连神武意志；对应三境大秽。",
+          "direct_evidence_refs": [
+            "BOOK_008:CHAPTER:0001",
+            "BOOK_008:CHAPTER:0037",
+            "BOOK_008:CHAPTER:0061"
+          ],
+          "evidence_refs": [
+            "BOOK_008:CHAPTER:0037"
+          ],
+          "unknowns": []
+        },
+        {
+          "realm_id": "CS:REALM:008:4",
+          "name_in_book": "四境·冕级",
+          "order": 4,
+          "stage_difference": "神武意象融入神魂，形成血煞；对应四境煞秽。",
+          "direct_evidence_refs": [
+            "BOOK_008:CHAPTER:0001",
+            "BOOK_008:CHAPTER:0010",
+            "BOOK_008:CHAPTER:0037"
+          ],
+          "evidence_refs": [
+            "BOOK_008:CHAPTER:0010",
+            "BOOK_008:CHAPTER:0037"
+          ],
+          "unknowns": []
+        },
+        {
+          "realm_id": "CS:REALM:008:5",
+          "name_in_book": "五境·臻级",
+          "order": 5,
+          "stage_difference": "高阶战力层级，教官/战渊带队者直接可见；对应五境祸秽。",
+          "direct_evidence_refs": [
+            "BOOK_008:CHAPTER:0006",
+            "BOOK_008:CHAPTER:0059",
+            "BOOK_008:CHAPTER:0075"
+          ],
+          "evidence_refs": [
+            "BOOK_008:CHAPTER:0059",
+            "BOOK_008:CHAPTER:0075"
+          ],
+          "unknowns": [
+            "五境阶段差异UNKNOWN"
+          ]
+        },
+        {
+          "realm_id": "CS:REALM:008:6",
+          "name_in_book": "六境·皇座",
+          "order": 6,
+          "stage_difference": "战略级高阶序列；对应六境王秽，突破和稳定差异UNKNOWN。",
+          "direct_evidence_refs": [
+            "BOOK_008:CHAPTER:0006",
+            "BOOK_008:CHAPTER:0026"
+          ],
+          "evidence_refs": [
+            "BOOK_008:CHAPTER:0006",
+            "BOOK_008:CHAPTER:0026"
+          ],
+          "unknowns": [
+            "六境直接战斗验证不足"
+          ]
+        },
+        {
+          "realm_id": "CS:REALM:008:7",
+          "name_in_book": "七境·天灾",
+          "order": 7,
+          "stage_difference": "最高已命名等阶；神孽按七阶天灾级描述，对应七境龙秽。",
+          "direct_evidence_refs": [
+            "BOOK_008:CHAPTER:0001",
+            "BOOK_008:CHAPTER:0022",
+            "BOOK_008:CHAPTER:0026"
+          ],
+          "evidence_refs": [
+            "BOOK_008:CHAPTER:0001",
+            "BOOK_008:CHAPTER:0022"
+          ],
+          "unknowns": [
+            "七境突破条件UNKNOWN"
+          ]
+        }
+      ],
+      "transition_events": [
+        {
+          "event_id": "CS:REALM_CHANGE:008:01",
+          "person_id": "SHI_YUQING",
+          "before": "未醒血",
+          "trigger_or_condition": "S级神血因子危机中醒血并吸收欲气",
+          "after": "二境·铸兵",
+          "change_type": "formal_realm_change",
+          "direct_evidence_refs": [
+            "BOOK_008:CHAPTER:0008"
+          ],
+          "costs_or_risks": [
+            "精神侵蚀/失控风险UNKNOWN"
+          ],
+          "unknowns": []
+        },
+        {
+          "event_id": "CS:REALM_CHANGE:008:02",
+          "person_id": "YAN_CI",
+          "before": "三境·命级",
+          "trigger_or_condition": "叩冕准备加灾隙实战完成突破",
+          "after": "四境·冕级",
+          "change_type": "formal_realm_change",
+          "direct_evidence_refs": [
+            "BOOK_008:CHAPTER:0035",
+            "BOOK_008:CHAPTER:0037"
+          ],
+          "costs_or_risks": [
+            "完整突破代价UNKNOWN"
+          ],
+          "unknowns": []
+        },
+        {
+          "event_id": "CS:REALM_CHANGE:008:03",
+          "person_id": "SHI_YUQING",
+          "before": "二境/三境门槛",
+          "trigger_or_condition": "戏阙后积累与共鸣达到门槛",
+          "after": "三境·命级",
+          "change_type": "formal_realm_change",
+          "direct_evidence_refs": [
+            "BOOK_008:CHAPTER:0080",
+            "BOOK_008:CHAPTER:0082"
+          ],
+          "costs_or_risks": [
+            "始解放大情绪"
+          ],
+          "unknowns": []
+        }
+      ],
+      "break_conditions": [
+        "一境醒血",
+        "二境凝聚神武",
+        "三境需要神武意志连接",
+        "四境需要神武意象入魂形成血煞",
+        "五境以上UNKNOWN"
+      ],
+      "realm_limits": [
+        "一→二、二→三、四→五差距被明示为显著门槛",
+        "击杀/装备/权限不能单独证明境界"
+      ],
+      "unknowns": [
+        "完整突破公式与第86章后状态UNKNOWN"
+      ]
+    }
+  },
+  {
+    "module": "05",
+    "decision": "ADOPT",
+    "record_id": "CF:BOOK:BOOK_005",
+    "book_id": "BOOK_005",
+    "book_title": "你管这叫精神病？这分明是先知！",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/05_人物功能与标签/per_book/BOOK_005.jsonl",
+    "line": 1,
+    "component_path": "/relationship_engines/0",
+    "package_file_sha256": "c5713e79403c44a96d04372939fbd83ddd26efe364788ddb8c247c8139433133",
+    "git_blob_row_sha256": "77056008391d776799b4715e8397c85750c5467c99673e6739b9568024269bec",
+    "source_map": [
+      {
+        "package_path": "DNA素材/05_人物功能与标签/per_book/BOOK_005.jsonl",
+        "source_path": "books/BOOK_005/05_人物功能/per_book/BOOK_005.jsonl",
+        "source_sha256": "c5713e79403c44a96d04372939fbd83ddd26efe364788ddb8c247c8139433133",
+        "source_line": 1,
+        "book_id": "BOOK_005",
+        "record_id": "CF:BOOK:BOOK_005",
+        "module": "05_人物功能与标签",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_005:CHAPTER:0035",
+      "BOOK_005:CHAPTER:0053",
+      "BOOK_005:CHAPTER:0071",
+      "BOOK_005:CHAPTER:0079",
+      "BOOK_005:CHAPTER:0085"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "ADAPTABLE",
+    "reason": "信息不能替代独立执行者，改造为复测/停止权/付费合作",
+    "original_parameters_not_source_facts": true,
+    "selected_component_snapshot": {
+      "engine_id": "CF:005:RE1",
+      "relation_id": "REL:楚月-江寒",
+      "relation_sides": [
+        "楚月",
+        "江寒"
+      ],
+      "engine_type": "complementary_ability",
+      "sustaining_condition": "江寒只能提供不完整时序/方向，楚月拥有前线执行与记录能力，且双方持续被安排在同一预警或实训现场",
+      "recurring_plot_generation": "预警记录→现场验证→楚月战斗/保护→江寒更新判断与关系信任",
+      "observable_outputs": [
+        "记录异常",
+        "提前警戒",
+        "共同避险/反击",
+        "信任与道谢"
+      ],
+      "engine_state": "recurring",
+      "evidence_refs": [
+        "BOOK_005:CHAPTER:0035",
+        "BOOK_005:CHAPTER:0053",
+        "BOOK_005:CHAPTER:0071",
+        "BOOK_005:CHAPTER:0079",
+        "BOOK_005:CHAPTER:0085"
+      ],
+      "unknowns": []
+    }
+  },
+  {
+    "module": "05",
+    "decision": "REJECT",
+    "record_id": "DA:RELATIONSHIP:BOOK_017:002",
+    "book_id": "BOOK_017",
+    "book_title": null,
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/05_人物功能与标签/derived/relationship_engine_assets.jsonl",
+    "line": 14,
+    "component_path": "/",
+    "package_file_sha256": "a72f925ad00e11a8bfdc86b934e77c8927ac5f93736aac9bd2a4e02c8b4e2acc",
+    "git_blob_row_sha256": "79a6d81e6b949a8b9bd4bcdd7fbb546cfacbdc89d7477009d3e06f12fee21dfd",
+    "source_map": [
+      {
+        "package_path": "DNA素材/05_人物功能与标签/derived/relationship_engine_assets.jsonl",
+        "source_path": "books/BOOK_017/05_人物功能与标签/derived/relationship_engine_assets.jsonl",
+        "source_sha256": "63d52f218096c24b21944382d88365dfab9fa3d17fc8169c086c36aed9dfddb0",
+        "source_line": 2,
+        "book_id": "BOOK_017",
+        "record_id": "DA:RELATIONSHIP:BOOK_017:002",
+        "module": "05_人物功能与标签",
+        "record_type": "derived_asset",
+        "eligibility_basis": "QA_PASS_DERIVED_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_017:CHAPTER:0564",
+      "BOOK_017:CHAPTER:1218",
+      "BOOK_017:CHAPTER:1229"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "NOT_SELECTED",
+    "reason": "高位秘密血脉牵引不适配普通职业合作，避免现有项目秘密女主拓扑",
+    "original_parameters_not_source_facts": false,
+    "selected_component_snapshot": {
+      "record_type": "derived_asset",
+      "schema_version": 2,
+      "record_id": "DA:RELATIONSHIP:BOOK_017:002",
+      "legacy_record_id": "CF:RE:BOOK_017:002",
+      "status": "candidate",
+      "book_id": "BOOK_017",
+      "view": "relationship_engine_assets",
+      "engine_name": "程实×红霖：秘密-并肩双线发动机",
+      "sides": [
+        "程实",
+        "红霖"
+      ],
+      "engine_type": "mystery_bond",
+      "binding_reason": "并肩作战的实战绑定+红霖身份（=芙拉卓尔=【繁荣】之女，ch564/1218/1229）作为长期悬念的持续牵引",
+      "first_exchange": "早期试炼中的战力互补合作，程实察觉红霖的来历有与其自身谎言债同构的隐匿结构",
+      "shared_interest": "对抗神明层的操控；在队伍内维持可彼此交付后背的战力核心",
+      "conflicting_interest": "信息不对等：红霖的【繁荣】血脉立场与程实的【欺诈】债务在神庭层级存在阵营性张力",
+      "information_boundary": "身份揭穿节奏由红霖单方掌控（ch564→ch1218→ch1229 分阶段揭示），程实的应对构成另一方主动选择",
+      "active_choices": [
+        "红霖：选择在关键时刻以身份明牌换队伍生机",
+        "程实：在知晓身份后主动调整隐瞒策略的边界，将秘密纳入而非排除于信任",
+        "双方：在阵营张力公开化时以战场行为而非表态完成站队"
+      ],
+      "progression_states": [
+        "战力互补的队友→互有保留的搭档→身份揭穿后的重新签约→阵营张力下的并肩者"
+      ],
+      "break_condition": "【繁荣】阵营利益与程实主线正面冲突且无回旋空间——文本内以分阶段揭穿规避了硬破裂",
+      "reconciliation_condition": "以共同作战成果重置信息差带来的不安",
+      "replaceability": "identity_bound：身份悬念与【繁荣】权柄的双重不可替代，任何替代者同时失去战力位与悬念引擎",
+      "protagonist_interface": "红霖为程实提供体系内正规战力天花板与『被欺骗对象主动选择相信』的镜像：她的每次知情选择都在回答『谎言之外还有什么』",
+      "evidence_refs": [
+        "BOOK_017:CHAPTER:0564",
+        "BOOK_017:CHAPTER:1218",
+        "BOOK_017:CHAPTER:1229"
+      ],
+      "unknowns": [],
+      "confidence": "MEDIUM",
+      "qa_status": "PASS"
+    }
+  },
+  {
+    "module": "06",
+    "decision": "ADOPT",
+    "record_id": "PL:BOOK:BOOK_009",
+    "book_id": "BOOK_009",
+    "book_title": "高武：看不起器物灵性，炎系器物灵性呢",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/06_主线与支线/per_book/BOOK_009.jsonl",
+    "line": 1,
+    "component_path": "/plotlines/1",
+    "package_file_sha256": "3be5b46de0c763edb2129c80c31e7f59a0a0aa927b5f770cf6a6fa2a1ae0f991",
+    "git_blob_row_sha256": "06e64ed55e6a36c1ab2cde07e0627b8d16bdd3e58ac52cb4d612f7b04af7d15b",
+    "source_map": [
+      {
+        "package_path": "DNA素材/06_主线与支线/per_book/BOOK_009.jsonl",
+        "source_path": "books/BOOK_009/06_剧情线/per_book/BOOK_009.jsonl",
+        "source_sha256": "3be5b46de0c763edb2129c80c31e7f59a0a0aa927b5f770cf6a6fa2a1ae0f991",
+        "source_line": 1,
+        "book_id": "BOOK_009",
+        "record_id": "PL:BOOK:BOOK_009",
+        "module": "06_主线与支线",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_009:CHAPTER:0026",
+      "BOOK_009:CHAPTER:0034",
+      "BOOK_009:CHAPTER:0038",
+      "BOOK_009:CHAPTER:0043",
+      "BOOK_009:CHAPTER:0044",
+      "BOOK_009:CHAPTER:0028",
+      "BOOK_009:CHAPTER:0045"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "ADAPTABLE",
+    "reason": "战果先经资源取舍变可部署能力，再开启义务；移除积分清零与训练营",
+    "original_parameters_not_source_facts": true,
+    "selected_component_snapshot": {
+      "line_identity": {
+        "line_id": "PL009-02",
+        "line_label": "训练营积分投资与中央特训准入",
+        "line_scope": "26-44",
+        "line_purpose": "追踪战果如何经积分选择转化为技能、境界、同伴资源与下一阶段权限",
+        "line_kind": "service",
+        "evidence_refs": [
+          "BOOK_009:CHAPTER:0026",
+          "BOOK_009:CHAPTER:0034",
+          "BOOK_009:CHAPTER:0038",
+          "BOOK_009:CHAPTER:0043",
+          "BOOK_009:CHAPTER:0044"
+        ],
+        "unknowns": []
+      },
+      "trigger": {
+        "trigger_id": "PL009-02-T",
+        "actual_start_event": "联合特训营用积分为住宿、治疗、训练和能力资源统一标价并设置淘汰",
+        "chapter_or_stage": "26",
+        "start_mode": "new",
+        "evidence_refs": [
+          "BOOK_009:CHAPTER:0026"
+        ],
+        "unknowns": []
+      },
+      "goals": [
+        {
+          "goal_id": "PL009-02-G1",
+          "goal_statement": "在积分清零和淘汰前补足能力短板并取得中央特训准入",
+          "subject": "主角",
+          "phase_scope": "26-44",
+          "success_condition": "完成技能、修炼环境和破境资源投资并进入中央特训营",
+          "goal_status": "paid",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0034",
+            "BOOK_009:CHAPTER:0043",
+            "BOOK_009:CHAPTER:0044"
+          ],
+          "unknowns": []
+        }
+      ],
+      "resistances": [
+        {
+          "resistance_id": "PL009-02-R1",
+          "resistance_type": "资源/淘汰",
+          "operation": "生活与治疗持续扣分、禁止近距组队、阶段末积分清零",
+          "target_goal_id": "PL009-02-G1",
+          "phase_scope": "26-44",
+          "observable_effect": "迫使主角在安全消费、能力投资和高风险猎杀之间持续取舍",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0026",
+            "BOOK_009:CHAPTER:0028",
+            "BOOK_009:CHAPTER:0043"
+          ],
+          "unknowns": []
+        }
+      ],
+      "nodes": [
+        {
+          "node_id": "PL009-02-N1",
+          "node_type": "资源换档",
+          "before_state": "只有战果积分且能力结构单一",
+          "node_event": "优先兑换身法、训练环境、破境丹和火属性资源，并将剩余积分支援同伴",
+          "after_state": "形成技能组合、突破五阶并保住队伍准入",
+          "line_effect": "战果从记分结果变成下一阶段可部署能力",
+          "phase_scope": "30-44",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0034",
+            "BOOK_009:CHAPTER:0038",
+            "BOOK_009:CHAPTER:0043",
+            "BOOK_009:CHAPTER:0044"
+          ],
+          "unknowns": []
+        }
+      ],
+      "choices": [
+        {
+          "choice_id": "PL009-02-C1",
+          "decision_maker": "主角",
+          "available_paths": [
+            "保留积分并选择低风险生活",
+            "把积分投入技能、环境、突破和同伴"
+          ],
+          "chosen_action": "选择高转化率的能力投资并在清零前分配剩余资源",
+          "rejected_or_foregone_alternative": "把积分只用于舒适与保守续存",
+          "choice_effect": "个人突破五阶、同伴保持竞争力，但积分余额被主动压低",
+          "phase_scope": "30-43",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0034",
+            "BOOK_009:CHAPTER:0043"
+          ],
+          "unknowns": []
+        }
+      ],
+      "costs": [
+        {
+          "cost_id": "PL009-02-K1",
+          "caused_by_choice_or_node": "PL009-02-C1",
+          "cost_type": "消耗/伤势",
+          "actual_cost": "积分、体力、真气、睡眠和受伤风险持续消耗",
+          "downstream_constraint": "资源必须在清零前兑现，已购能力还需后续实战验证",
+          "phase_scope": "26-44",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0028",
+            "BOOK_009:CHAPTER:0038",
+            "BOOK_009:CHAPTER:0043"
+          ],
+          "unknowns": []
+        }
+      ],
+      "payoffs": [
+        {
+          "payoff_id": "PL009-02-P1",
+          "prior_goal_ids": [
+            "PL009-02-G1"
+          ],
+          "prior_promise_or_unresolved_question": "训练营积分能否真正变成可部署成长",
+          "payoff_result": "主角形成能力组合、突破五阶并取得中央特训入口",
+          "payoff_state": "paid",
+          "is_line_payoff": true,
+          "phase_scope": "43-44",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0043",
+            "BOOK_009:CHAPTER:0044"
+          ],
+          "unknowns": []
+        }
+      ],
+      "state_changes": [
+        {
+          "state_change_id": "PL009-02-S1",
+          "caused_by_payoff_or_failure": "PL009-02-P1",
+          "changed_domains": [
+            "power",
+            "resource",
+            "permission",
+            "map"
+          ],
+          "before_state": "训练营积分竞争者",
+          "after_state": "具备多项能力并获准进入前线中央特训的五阶战力",
+          "line_effect": "个人资源循环转入公共战争场景",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0043",
+            "BOOK_009:CHAPTER:0044"
+          ],
+          "unknowns": []
+        }
+      ],
+      "next_entries": [
+        {
+          "next_entry_id": "PL009-02-E1",
+          "source_state_change_id": "PL009-02-S1",
+          "entry_type": "task",
+          "opened_goal_or_task": "在中央特训与前线任务中验证新构筑",
+          "opened_resistance": "真实伤亡、军功义务和高阶兽潮",
+          "opened_choice": "如何在公共后果下使用高破坏能力",
+          "target_line_id": "PL009-03",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0044",
+            "BOOK_009:CHAPTER:0045"
+          ],
+          "unknowns": []
+        }
+      ],
+      "line_lifecycle": {
+        "current_state": "paid",
+        "state_history": [
+          {
+            "state": "active",
+            "trigger_or_reason": "积分规则和淘汰开始运行",
+            "phase_scope": "26-42",
+            "evidence_refs": [
+              "BOOK_009:CHAPTER:0026",
+              "BOOK_009:CHAPTER:0038"
+            ],
+            "unknowns": []
+          },
+          {
+            "state": "paid",
+            "trigger_or_reason": "突破并获得中央特训准入",
+            "phase_scope": "43-44",
+            "evidence_refs": [
+              "BOOK_009:CHAPTER:0043",
+              "BOOK_009:CHAPTER:0044"
+            ],
+            "unknowns": []
+          }
+        ],
+        "unknowns": []
+      },
+      "parent_child_relations": [
+        {
+          "parent_line_id": "PL009-01",
+          "child_line_id": "PL009-02",
+          "relation_type": "service",
+          "how_child_affects_parent": "把证明有价值转成可部署的技能与境界组合",
+          "child_completion_effect": "打开中央特训和前线入口但不等于总主线完成",
+          "pause_relationship": "子线在中央营切图后完成，主线继续",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0026",
+            "BOOK_009:CHAPTER:0044"
+          ],
+          "unknowns": []
+        }
+      ],
+      "protagonist_interface": {
+        "choices": "安全续存或高风险能力投资",
+        "resources": "积分、技能、训练环境、破境丹与队友资源",
+        "risks": "淘汰、伤势、积分清零和投资失效",
+        "goals": "把战果转为能力并取得下一阶段准入",
+        "evidence_refs": [
+          "BOOK_009:CHAPTER:0026",
+          "BOOK_009:CHAPTER:0034",
+          "BOOK_009:CHAPTER:0043"
+        ],
+        "unknowns": [],
+        "cognition_information": "读懂价目、清零窗口和自身构筑短板",
+        "relationships": "以资源支援维持同伴的阶段竞争力",
+        "action_window": "积分清零前的26-44章"
+      },
+      "adjacent_interfaces": {
+        "arc_structure": [
+          "AR:BOOK:BOOK_009"
+        ],
+        "plot_mechanism": [
+          "PM:BOOK:BOOK_009"
+        ],
+        "worldbuilding": [
+          "WB:BOOK:BOOK_009"
+        ],
+        "cultivation": [
+          "CS:BOOK:BOOK_009"
+        ],
+        "golden_finger": [
+          "GF:BOOK:BOOK_009"
+        ],
+        "chapter_emotion": [
+          "BOOK_009:EMOTION:0026",
+          "BOOK_009:EMOTION:0043",
+          "BOOK_009:EMOTION:0044"
+        ],
+        "character_function": [
+          "CF:BOOK:BOOK_009"
+        ],
+        "opening": [
+          "OP:BOOK:BOOK_009"
+        ]
+      },
+      "evidence_refs": [
+        "BOOK_009:CHAPTER:0026",
+        "BOOK_009:CHAPTER:0034",
+        "BOOK_009:CHAPTER:0038",
+        "BOOK_009:CHAPTER:0043",
+        "BOOK_009:CHAPTER:0044"
+      ],
+      "unknowns": []
+    }
+  },
+  {
+    "module": "06",
+    "decision": "REJECT",
+    "record_id": "PL:BOOK:BOOK_007",
+    "book_id": "BOOK_007",
+    "book_title": "猎魔人小姐，我真不是血族",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/06_主线与支线/per_book/BOOK_007.jsonl",
+    "line": 1,
+    "component_path": "/plotlines/0",
+    "package_file_sha256": "9a416896cce486e4a64b5d44e34f297120bef1817ccf82f8fd84e02051d919c0",
+    "git_blob_row_sha256": "cefd894666b02fdf53becdb953e4c5c760dc86f29981c6264615d7dc360de7da",
+    "source_map": [
+      {
+        "package_path": "DNA素材/06_主线与支线/per_book/BOOK_007.jsonl",
+        "source_path": "books/BOOK_007/06_剧情线/per_book/BOOK_007.jsonl",
+        "source_sha256": "9a416896cce486e4a64b5d44e34f297120bef1817ccf82f8fd84e02051d919c0",
+        "source_line": 1,
+        "book_id": "BOOK_007",
+        "record_id": "PL:BOOK:BOOK_007",
+        "module": "06_主线与支线",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_007:CHAPTER:0001",
+      "BOOK_007:CHAPTER:0003",
+      "BOOK_007:CHAPTER:0006",
+      "BOOK_007:CHAPTER:0010"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "PARTIAL",
+    "CURRENT_COMPATIBILITY": "NOT_SELECTED",
+    "reason": "身份逃亡在开篇吞掉公开工作目标",
+    "original_parameters_not_source_facts": false,
+    "selected_component_snapshot": {
+      "line_identity": {
+        "line_id": "PL:LINE:BOOK007:01",
+        "line_label": "身份逃亡线",
+        "line_scope": "1-10",
+        "line_purpose": "在永宁街封锁和猎魔人追捕中存活，避免身份立即公开",
+        "line_kind": "main",
+        "evidence_refs": [
+          "BOOK_007:CHAPTER:0001"
+        ],
+        "unknowns": []
+      },
+      "trigger": {
+        "trigger_id": "PL:TRIGGER:BOOK007:01",
+        "actual_start_event": "身份逃亡线由冻结源中永宁街封锁与猎魔人搜捕触发",
+        "chapter_or_stage": "1-10",
+        "start_mode": "new",
+        "evidence_refs": [
+          "BOOK_007:CHAPTER:0001"
+        ],
+        "unknowns": []
+      },
+      "goals": [
+        {
+          "goal_id": "PL:GOAL:BOOK007:01",
+          "goal_statement": "在永宁街封锁和猎魔人追捕中存活，避免身份立即公开",
+          "subject": "陆舟",
+          "phase_scope": "1-10",
+          "success_condition": "阶段阻力被处理并产生后续状态",
+          "goal_status": "paid",
+          "evidence_refs": [
+            "BOOK_007:CHAPTER:0001"
+          ],
+          "unknowns": []
+        }
+      ],
+      "resistances": [
+        {
+          "resistance_id": "PL:RESISTANCE:BOOK007:01",
+          "resistance_type": "person",
+          "operation": "猎魔人追捕、街区封锁与血族暴露风险收紧",
+          "target_goal_id": "PL:GOAL:BOOK007:01",
+          "phase_scope": "1-10",
+          "observable_effect": "迫使陆舟改变路线、暴露能力或承担更高身份与战斗风险",
+          "evidence_refs": [
+            "BOOK_007:CHAPTER:0001"
+          ],
+          "unknowns": []
+        }
+      ],
+      "nodes": [
+        {
+          "node_id": "PL:NODE:BOOK007:01:01",
+          "node_type": "start",
+          "before_state": "身份逃亡线由冻结源中永宁街封锁与猎魔人搜捕触发",
+          "node_event": "封锁启动，陆舟从便利店日常转入身份逃亡",
+          "after_state": "封锁启动，陆舟从便利店日常转入身份逃亡",
+          "line_effect": "改变当前目标、可用资源、阵营位置或下一行动入口。",
+          "phase_scope": "1",
+          "evidence_refs": [
+            "BOOK_007:CHAPTER:0001"
+          ],
+          "unknowns": []
+        },
+        {
+          "node_id": "PL:NODE:BOOK007:01:02",
+          "node_type": "turn",
+          "before_state": "封锁启动，陆舟从便利店日常转入身份逃亡",
+          "node_event": "方月瑶以圣水和猎魔手段验证其异常",
+          "after_state": "方月瑶以圣水和猎魔手段验证其异常",
+          "line_effect": "改变当前目标、可用资源、阵营位置或下一行动入口。",
+          "phase_scope": "3",
+          "evidence_refs": [
+            "BOOK_007:CHAPTER:0003"
+          ],
+          "unknowns": []
+        },
+        {
+          "node_id": "PL:NODE:BOOK007:01:03",
+          "node_type": "turn",
+          "before_state": "方月瑶以圣水和猎魔手段验证其异常",
+          "node_event": "追杀升级，陆舟用血族能力反杀并承担暴露风险",
+          "after_state": "追杀升级，陆舟用血族能力反杀并承担暴露风险",
+          "line_effect": "改变当前目标、可用资源、阵营位置或下一行动入口。",
+          "phase_scope": "6",
+          "evidence_refs": [
+            "BOOK_007:CHAPTER:0006"
+          ],
+          "unknowns": []
+        },
+        {
+          "node_id": "PL:NODE:BOOK007:01:04",
+          "node_type": "payoff",
+          "before_state": "追杀升级，陆舟用血族能力反杀并承担暴露风险",
+          "node_event": "逃出局部封锁并取得血月卷轴入口",
+          "after_state": "逃出局部封锁并取得血月卷轴入口",
+          "line_effect": "改变当前目标、可用资源、阵营位置或下一行动入口。",
+          "phase_scope": "10",
+          "evidence_refs": [
+            "BOOK_007:CHAPTER:0010"
+          ],
+          "unknowns": []
+        }
+      ],
+      "choices": [
+        {
+          "choice_id": "PL:CHOICE:BOOK007:01",
+          "decision_maker": "陆舟",
+          "available_paths": [
+            "暂时撤离并隐藏信息",
+            "主动追查并利用当前敌对网络"
+          ],
+          "chosen_action": "主动以能力突破追捕而非继续躲藏",
+          "rejected_or_foregone_alternative": "撤离会放弃当前情报、资源或救援窗口",
+          "choice_effect": "身份更深暴露但获得继续追查线索",
+          "phase_scope": "1-10",
+          "evidence_refs": [
+            "BOOK_007:CHAPTER:0001"
+          ],
+          "unknowns": []
+        }
+      ],
+      "costs": [
+        {
+          "cost_id": "PL:COST:BOOK007:01",
+          "caused_by_choice_or_node": "PL:CHOICE:BOOK007:01",
+          "cost_type": "identity",
+          "actual_cost": "暴露血族能力并承担追捕、伤势、资源消耗或关系风险",
+          "downstream_constraint": "后续行动需处理身份泄露、敌方升级或资源消耗限制",
+          "phase_scope": "1-10",
+          "evidence_refs": [
+            "BOOK_007:CHAPTER:0001"
+          ],
+          "unknowns": []
+        }
+      ],
+      "payoffs": [
+        {
+          "payoff_id": "PL:PAYOFF:BOOK007:01",
+          "prior_goal_ids": [
+            "PL:GOAL:BOOK007:01"
+          ],
+          "prior_promise_or_unresolved_question": "前段留下的逃亡、身份或组织威胁问题",
+          "payoff_result": "逃出生存并取得血月卷轴位置线索",
+          "payoff_state": "paid",
+          "is_line_payoff": true,
+          "phase_scope": "1-10",
+          "evidence_refs": [
+            "BOOK_007:CHAPTER:0001"
+          ],
+          "unknowns": []
+        }
+      ],
+      "state_changes": [
+        {
+          "state_change_id": "PL:STATE:BOOK007:01",
+          "caused_by_payoff_or_failure": "PL:PAYOFF:BOOK007:01",
+          "changed_domains": [
+            "goal",
+            "resource",
+            "identity",
+            "risk",
+            "situation"
+          ],
+          "before_state": "被封锁、被追捕且身份未公开",
+          "after_state": "完成反杀并拿到新的组织线索",
+          "line_effect": "改变目标优先级、资源和敌我风险结构",
+          "evidence_refs": [
+            "BOOK_007:CHAPTER:0001"
+          ],
+          "unknowns": []
+        }
+      ],
+      "next_entries": [
+        {
+          "next_entry_id": "PL:ENTRY:BOOK007:01",
+          "source_state_change_id": "PL:STATE:BOOK007:01",
+          "entry_type": "goal",
+          "opened_goal_or_task": "追查血月卷轴与血族网络",
+          "opened_resistance": "新的组织敌对方、身份风险或未闭合核心目标",
+          "opened_choice": "继续追查、合作或转向防守的取舍",
+          "target_line_id": "UNKNOWN",
+          "evidence_refs": [
+            "BOOK_007:CHAPTER:0001"
+          ],
+          "unknowns": []
+        }
+      ],
+      "line_lifecycle": {
+        "current_state": "redirected",
+        "state_history": [
+          {
+            "state": "active",
+            "trigger_or_reason": "触发事件建立可追踪目标",
+            "phase_scope": "1-10",
+            "evidence_refs": [
+              "BOOK_007:CHAPTER:0001"
+            ],
+            "unknowns": []
+          }
+        ],
+        "unknowns": []
+      },
+      "parent_child_relations": [],
+      "protagonist_interface": {
+        "goals": "在永宁街封锁和猎魔人追捕中存活，避免身份立即公开",
+        "choices": "主动以能力突破追捕而非继续躲藏",
+        "resources": "获得或消耗血族资源、奇物、情报或组织权限",
+        "risks": "身份暴露、追捕、越阶战斗和未确认高阶敌人风险上升",
+        "cognition_information": "确认部分血族网络、猎魔组织或核心敌人事实，未知机制保留",
+        "relationships": "与方月瑶及猎魔阵营的合作/敌对边界变化",
+        "action_window": "当前选择打开追查或潜入窗口，同时关闭低风险隐藏路径",
+        "evidence_refs": [
+          "BOOK_007:CHAPTER:0001"
+        ],
+        "unknowns": []
+      },
+      "adjacent_interfaces": {
+        "character_function": [],
+        "plot_mechanism": [],
+        "opening": [],
+        "cultivation": [],
+        "worldbuilding": [],
+        "golden_finger": [],
+        "arc_structure": [],
+        "chapter_emotion": []
+      },
+      "evidence_refs": [
+        "BOOK_007:CHAPTER:0001",
+        "BOOK_007:CHAPTER:0003",
+        "BOOK_007:CHAPTER:0006",
+        "BOOK_007:CHAPTER:0010"
+      ],
+      "unknowns": []
+    }
+  },
+  {
+    "module": "07",
+    "decision": "ADOPT",
+    "record_id": "OP:BOOK:BOOK_002",
+    "book_id": "BOOK_002",
+    "book_title": "一毛一天修为，我靠直播氪穿宇宙",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/07_开篇/per_book/BOOK_002.jsonl",
+    "line": 1,
+    "component_path": "/selling_point_proof/0",
+    "package_file_sha256": "7c83002ccf5baf73dd4c447865a3d5aab1238ddf4c4871cbcd395824c95c1f55",
+    "git_blob_row_sha256": "a01e67060f263614cae560b2ff01f744ff29d6ab5ab7d828c23c72e85a194da4",
+    "source_map": [
+      {
+        "package_path": "DNA素材/07_开篇/per_book/BOOK_002.jsonl",
+        "source_path": "books/BOOK_002/07_开篇/per_book/BOOK_002.jsonl",
+        "source_sha256": "7c83002ccf5baf73dd4c447865a3d5aab1238ddf4c4871cbcd395824c95c1f55",
+        "source_line": 1,
+        "book_id": "BOOK_002",
+        "record_id": "OP:BOOK:BOOK_002",
+        "module": "07_开篇",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_002:CHAPTER:0003"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "ADAPTABLE",
+    "reason": "三章内实际操作卖点，用奖金结算和行动后果核验，不借氪金",
+    "original_parameters_not_source_facts": true,
+    "selected_component_snapshot": {
+      "proof_id": "OP:SP1",
+      "selling_point": "固定小额氪金驱动高武成长",
+      "proof_event": "低额投入带来可观察的修为变化",
+      "observable_result": "主角获得继续投入与公开竞争的现实优势",
+      "what_it_proves": "系统不是口头设定而是可操作循环",
+      "proof_window": 3,
+      "evidence_refs": [
+        "BOOK_002:CHAPTER:0003"
+      ],
+      "unknowns": []
+    }
+  },
+  {
+    "module": "07",
+    "decision": "REJECT",
+    "record_id": "OP:BOOK:BOOK_001",
+    "book_id": "BOOK_001",
+    "book_title": "高武：从临时工到武镇周天！",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/07_开篇/per_book/BOOK_001.jsonl",
+    "line": 1,
+    "component_path": "/entry/0",
+    "package_file_sha256": "ff0a2924a07d7cfc3d2521501ed3d41fe046b860ddb47aaeac801b817cca0489",
+    "git_blob_row_sha256": "161088aac8b0a9f611f592d4f6a3799e010dbd60a6458e8ce88aeb909a38a88a",
+    "source_map": [
+      {
+        "package_path": "DNA素材/07_开篇/per_book/BOOK_001.jsonl",
+        "source_path": "books/BOOK_001/07_开篇/per_book/BOOK_001.jsonl",
+        "source_sha256": "ff0a2924a07d7cfc3d2521501ed3d41fe046b860ddb47aaeac801b817cca0489",
+        "source_line": 1,
+        "book_id": "BOOK_001",
+        "record_id": "OP:BOOK:BOOK_001",
+        "module": "07_开篇",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_001:CHAPTER:0001"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "NOT_SELECTED",
+    "reason": "审讯/能力身份/家庭低位转场会靠近已有临时工与研究救援开局",
+    "original_parameters_not_source_facts": false,
+    "selected_component_snapshot": {
+      "entry_id": "OP:ENTRY:1",
+      "reader_entry_mechanism": "mixed",
+      "entry_event_or_scene": "江云在审讯室被追问何时成为武者，现实治安场景中暴露出武者规则。",
+      "created_problem_anomaly_desire_risk_or_promise": "他必须解释异常能力，同时面对身份暴露与家中生计压力。",
+      "continued_expectation": "读者等待他如何利用新出现的玉碟和气血力量脱离低位。",
+      "applicable_window": 3,
+      "evidence_refs": [
+        "BOOK_001:CHAPTER:0001"
+      ],
+      "unknowns": []
+    }
+  },
+  {
+    "module": "08",
+    "decision": "ADOPT",
+    "record_id": "AR:BOOK:BOOK_009",
+    "book_id": "BOOK_009",
+    "book_title": "高武器物灵性成长与前线战争结构",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/08_篇章结构/per_book/BOOK_009.jsonl",
+    "line": 1,
+    "component_path": "/arcs/1",
+    "package_file_sha256": "44b35820c36d0ba995b1dd598a3b1c984245814f69340770773a20b93fee7bb7",
+    "git_blob_row_sha256": "3ab1efec91efaf4cb534ca1a5054564fdbefed8700befd2c57df8abe727b8bcf",
+    "source_map": [
+      {
+        "package_path": "DNA素材/08_篇章结构/per_book/BOOK_009.jsonl",
+        "source_path": "books/BOOK_009/08_篇章结构/per_book/BOOK_009.jsonl",
+        "source_sha256": "44b35820c36d0ba995b1dd598a3b1c984245814f69340770773a20b93fee7bb7",
+        "source_line": 1,
+        "book_id": "BOOK_009",
+        "record_id": "AR:BOOK:BOOK_009",
+        "module": "08_篇章结构",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_009:CHAPTER:0013",
+      "BOOK_009:CHAPTER:0025"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "ADAPTABLE",
+    "reason": "一次表现经正式结果变持续资源，再开启新责任；改为职业合同而非校际选拔",
+    "original_parameters_not_source_facts": true,
+    "selected_component_snapshot": {
+      "arc_identity": {
+        "arc_id": "AR:ARC:BOOK_009:SELECTION",
+        "arc_label": "检测与联合选拔",
+        "arc_scope": "11-25",
+        "arc_purpose": "把单次公开反转扩展为制度化筛选，证明主角能从评级进入更高竞争层",
+        "arc_kind": "main",
+        "parent_arc_id": "UNKNOWN",
+        "evidence_refs": [
+          "BOOK_009:CHAPTER:0013",
+          "BOOK_009:CHAPTER:0025"
+        ],
+        "unknowns": [
+          "第62章之后结构未知"
+        ]
+      },
+      "arc_boundary": [
+        {
+          "boundary_id": "AR:BOUNDARY:BOOK_009:SELECTION",
+          "before_structure": "校园认知反转与同龄对抗",
+          "after_structure": "训练营资格与资源循环",
+          "triggering_change": "联合检测和选拔结果结算",
+          "chapter_or_stage_scope": "11-25",
+          "structural_difference": "从校园证明转为制度化名额和积分竞争",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0013",
+            "BOOK_009:CHAPTER:0025"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_goal": [
+        {
+          "goal_id": "AR:GOAL:BOOK_009:SELECTION",
+          "primary_goal_or_structural_task": "通过联合选拔和积分竞争取得训练营资格",
+          "serves_or_organizes": [
+            "联合检测",
+            "校际选拔",
+            "积分与名额"
+          ],
+          "phase_scope": "11-25",
+          "completion_condition": "进入训练营或中央训练入口",
+          "invalidation_or_failure_condition": "在联合竞争中无法维持战果或失去名额",
+          "goal_status": "resolved",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0013",
+            "BOOK_009:CHAPTER:0025"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_pressure": [
+        {
+          "pressure_id": "AR:PRESSURE:BOOK_009:SELECTION",
+          "pressure_source_or_type": "联合选拔制度与名额稀缺",
+          "operation": "以检测、对战、积分和排名分配训练入口",
+          "affected_targets": [
+            "主角",
+            "联合选拔者",
+            "学校与选拔体系"
+          ],
+          "observable_effect": "主角必须持续把技能验证转换为积分和准入",
+          "phase_scope": "11-25",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0013",
+            "BOOK_009:CHAPTER:0025"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_progression": [
+        {
+          "progression_id": "AR:PROG:BOOK_009:SELECTION",
+          "before_stage_state": "个人认知反转",
+          "progression_step": "参加联合选拔、对抗更强同龄单位并换取名额",
+          "after_stage_state": "获得训练营资格与资源循环",
+          "structural_effect": "从情绪证明转为制度化成长",
+          "phase_scope": "11-25",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0013",
+            "BOOK_009:CHAPTER:0025"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_turning_points": [
+        {
+          "turning_point_id": "AR:TURN:BOOK_009:SELECTION",
+          "turning_event": "联合选拔结算并取得训练入口",
+          "before_direction_or_priority": "只追求校园认可",
+          "after_direction_or_priority": "优先争取训练名额与资源",
+          "structural_effect": "打开训练营及更高技能学习",
+          "phase_scope": "11-25",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0013",
+            "BOOK_009:CHAPTER:0025"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_climax_or_resolution": [
+        {
+          "resolution_id": "AR:RES:BOOK_009:SELECTION",
+          "climax_or_resolution_event": "联合选拔完成并发放训练资格",
+          "resolution_outcome": "resolved",
+          "resolved_or_unresolved_structure": "制度筛选目标阶段完成",
+          "affected_arc_goal_ids": [
+            "AR:GOAL:BOOK_009:SELECTION"
+          ],
+          "phase_scope": "11-25",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0013",
+            "BOOK_009:CHAPTER:0025"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_state_change": [
+        {
+          "state_change_id": "AR:STATE:BOOK_009:SELECTION",
+          "caused_by_resolution_or_turning_point": "AR:RES:BOOK_009:SELECTION",
+          "changed_domains": [
+            "资格",
+            "资源",
+            "地图权限"
+          ],
+          "before_global_state": "主角战果停留在校园竞争层",
+          "after_global_state": "获得训练营和更高强度训练资源",
+          "structural_effect": "把主角送入训练与技能构筑阶段",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0013",
+            "BOOK_009:CHAPTER:0025"
+          ],
+          "unknowns": []
+        }
+      ],
+      "next_arc_entry": [
+        {
+          "entry_id": "AR:ENTRY:BOOK_009:SELECTION",
+          "source_state_change_id": "AR:STATE:BOOK_009:SELECTION",
+          "opened_next_arc_goal_or_task": "进入训练营并面对教官规则与高阶凶兽",
+          "opened_pressure_or_risk": "训练资源竞争、体能消耗与选拔压力",
+          "opened_map_permission_or_question": "训练营、积分兑换和中央特训候选",
+          "next_arc_reference": "AR:ARC:BOOK_009:TRAINING",
+          "entry_reason": "联合选拔的制度结果必须开启新资源循环",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0013",
+            "BOOK_009:CHAPTER:0025"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_function": [
+        {
+          "function_id": "AR:FUNC:BOOK_009:SELECTION",
+          "structural_function": "transition",
+          "function_description": "把校园战果转译成训练营资源入口",
+          "affected_global_expectation": "主角在更强规则中继续证明构筑",
+          "phase_scope": "11-25",
+          "evidence_refs": [
+            "BOOK_009:CHAPTER:0013",
+            "BOOK_009:CHAPTER:0025"
+          ],
+          "unknowns": []
+        }
+      ],
+      "nested_structure": [],
+      "arc_lifecycle": {
+        "current_state": "resolved",
+        "state_history": [
+          {
+            "state": "active",
+            "trigger_or_reason": "阶段入口开启并产生阶段目标",
+            "phase_scope": "11-25",
+            "evidence_refs": [
+              "BOOK_009:CHAPTER:0013",
+              "BOOK_009:CHAPTER:0025"
+            ],
+            "unknowns": []
+          },
+          {
+            "state": "resolved",
+            "trigger_or_reason": "阶段目标获得可见战果并切入下一阶段",
+            "phase_scope": "11-25",
+            "evidence_refs": [
+              "BOOK_009:CHAPTER:0013",
+              "BOOK_009:CHAPTER:0025"
+            ],
+            "unknowns": []
+          }
+        ],
+        "unknowns": [
+          "第62章之后结构未知"
+        ]
+      },
+      "adjacent_interfaces": {
+        "plotline": [
+          "PL:BOOK:BOOK_009"
+        ],
+        "opening": [
+          "OP:BOOK:BOOK_009"
+        ],
+        "character_function": [
+          "CF:BOOK:BOOK_009"
+        ],
+        "chapter_emotion": [
+          "BOOK_009:EMOTION:0008",
+          "BOOK_009:EMOTION:0019",
+          "BOOK_009:EMOTION:0043",
+          "BOOK_009:EMOTION:0062"
+        ],
+        "worldbuilding": [
+          "WB:BOOK:BOOK_009"
+        ],
+        "cultivation": [
+          "CS:BOOK:BOOK_009"
+        ],
+        "golden_finger": [
+          "GF:BOOK:BOOK_009"
+        ],
+        "plot_mechanism": [
+          "PM:BOOK:BOOK_009"
+        ]
+      }
+    }
+  },
+  {
+    "module": "08",
+    "decision": "REJECT",
+    "record_id": "AR:BOOK:BOOK_002",
+    "book_id": "BOOK_002",
+    "book_title": "一毛一天修为，我靠直播氪穿宇宙",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/08_篇章结构/per_book/BOOK_002.jsonl",
+    "line": 1,
+    "component_path": "/arcs/1",
+    "package_file_sha256": "4f51faecb84f34c733be3e624a3842fbefcce7f963cfa8576e734572833185d9",
+    "git_blob_row_sha256": "6d586d7e40531248c87e584dfdb09510dc6ebc29af8a004a92fe12baee20dc45",
+    "source_map": [
+      {
+        "package_path": "DNA素材/08_篇章结构/per_book/BOOK_002.jsonl",
+        "source_path": "books/BOOK_002/08_篇章结构/per_book/BOOK_002.jsonl",
+        "source_sha256": "4f51faecb84f34c733be3e624a3842fbefcce7f963cfa8576e734572833185d9",
+        "source_line": 1,
+        "book_id": "BOOK_002",
+        "record_id": "AR:BOOK:BOOK_002",
+        "module": "08_篇章结构",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_002:CHAPTER:0026",
+      "BOOK_002:CHAPTER:0032",
+      "BOOK_002:CHAPTER:0039",
+      "BOOK_002:CHAPTER:0050",
+      "BOOK_002:CHAPTER:0052",
+      "BOOK_002:CHAPTER:0054",
+      "BOOK_002:CHAPTER:0056"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "NOT_SELECTED",
+    "reason": "考试状元认证不是职业服务的多用途成果，也会将全书导向校园",
+    "original_parameters_not_source_facts": false,
+    "selected_component_snapshot": {
+      "arc_identity": {
+        "arc_id": "AR:ARC:BOOK_002_ARC02",
+        "arc_label": "考试排名与状元资格",
+        "arc_scope": "21-50",
+        "arc_purpose": "把系统成长放进学校和高考评价体系，以公开成绩换制度认可",
+        "arc_kind": "main",
+        "parent_arc_id": "NONE",
+        "evidence_refs": [
+          "BOOK_002:CHAPTER:0026",
+          "BOOK_002:CHAPTER:0032",
+          "BOOK_002:CHAPTER:0039",
+          "BOOK_002:CHAPTER:0050"
+        ],
+        "unknowns": []
+      },
+      "arc_boundary": [
+        {
+          "boundary_id": "AR02:B1",
+          "before_structure": "主角只有直播层面的局部验证",
+          "after_structure": "成绩、排名和社会评价成为新的公开结算器",
+          "triggering_change": "高考与学校排名把修为转成统一可比较指标",
+          "chapter_or_stage_scope": "21-50",
+          "structural_difference": "个人成长进入制度评价并产生名校与商业关注",
+          "evidence_refs": [
+            "BOOK_002:CHAPTER:0026",
+            "BOOK_002:CHAPTER:0032",
+            "BOOK_002:CHAPTER:0039",
+            "BOOK_002:CHAPTER:0050"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_goal": [
+        {
+          "goal_id": "AR02:G1",
+          "primary_goal_or_structural_task": "在考试中公开证明修为优势并取得状元级成绩",
+          "serves_or_organizes": [
+            "高考主线",
+            "学校认知更新",
+            "商业关注入口"
+          ],
+          "phase_scope": "21-50",
+          "completion_condition": "成绩和名次得到学校或社会公开确认",
+          "invalidation_or_failure_condition": "优势无法转换成有效成绩或资格被制度门槛阻断",
+          "goal_status": "resolved",
+          "evidence_refs": [
+            "BOOK_002:CHAPTER:0026",
+            "BOOK_002:CHAPTER:0032",
+            "BOOK_002:CHAPTER:0050"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_pressure": [
+        {
+          "pressure_id": "AR02:P1",
+          "pressure_source_or_type": "考试规则与旁观者质疑",
+          "operation": "把主角成长压缩到可公开核验的成绩与排名",
+          "affected_targets": [
+            "林渊",
+            "学校师生",
+            "潜在合作方"
+          ],
+          "observable_effect": "林渊选择参加公开测试并承受实力暴露后的关注",
+          "phase_scope": "21-50",
+          "evidence_refs": [
+            "BOOK_002:CHAPTER:0026",
+            "BOOK_002:CHAPTER:0032",
+            "BOOK_002:CHAPTER:0039"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_progression": [
+        {
+          "progression_id": "AR02:PR1",
+          "before_stage_state": "直播收益已成立但身份与制度权限有限",
+          "progression_step": "通过校内与高考节点持续公开成绩",
+          "after_stage_state": "状元级结果打开更高教育和商业资源入口",
+          "structural_effect": "主角从普通学生转为被学校、平台和合作方重新定价的对象",
+          "phase_scope": "21-50",
+          "evidence_refs": [
+            "BOOK_002:CHAPTER:0026",
+            "BOOK_002:CHAPTER:0032",
+            "BOOK_002:CHAPTER:0039",
+            "BOOK_002:CHAPTER:0050"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_turning_points": [
+        {
+          "turning_point_id": "AR02:T1",
+          "turning_event": "考试成绩使此前直播中的异常成长获得制度认证",
+          "before_direction_or_priority": "优先通过直播获得现金",
+          "after_direction_or_priority": "同时经营成绩、资格和商业价值",
+          "structural_effect": "商业代言与裂缝实战线具备可信入口",
+          "phase_scope": "32-50",
+          "evidence_refs": [
+            "BOOK_002:CHAPTER:0032",
+            "BOOK_002:CHAPTER:0039",
+            "BOOK_002:CHAPTER:0050"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_climax_or_resolution": [
+        {
+          "resolution_id": "AR02:R1",
+          "climax_or_resolution_event": "全国考试结果确认并形成状元级公开认知",
+          "resolution_outcome": "resolved",
+          "resolved_or_unresolved_structure": "考试验证完成，最终名校选择与更高地图仍待推进",
+          "affected_arc_goal_ids": [
+            "AR02:G1"
+          ],
+          "phase_scope": "50",
+          "evidence_refs": [
+            "BOOK_002:CHAPTER:0050"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_state_change": [
+        {
+          "state_change_id": "AR02:S1",
+          "caused_by_resolution_or_turning_point": "AR02:R1",
+          "changed_domains": [
+            "身份",
+            "权限",
+            "关系",
+            "资源"
+          ],
+          "before_global_state": "成长优势主要由直播观众见证",
+          "after_global_state": "制度成绩让学校和商业方正式认可林渊",
+          "structural_effect": "允许主角以商业合作补现金并进入裂缝实战",
+          "evidence_refs": [
+            "BOOK_002:CHAPTER:0039",
+            "BOOK_002:CHAPTER:0050"
+          ],
+          "unknowns": []
+        }
+      ],
+      "next_arc_entry": [
+        {
+          "entry_id": "AR02:E1",
+          "source_state_change_id": "AR02:S1",
+          "opened_next_arc_goal_or_task": "接受商业合作并在二阶裂缝验证实战价值",
+          "opened_pressure_or_risk": "合作审视、裂缝危险与直播曝光叠加",
+          "opened_map_permission_or_question": "二阶裂缝及名校招生关注",
+          "next_arc_reference": "AR:ARC:BOOK_002_ARC03",
+          "entry_reason": "成绩带来的关注必须通过实战继续兑现",
+          "evidence_refs": [
+            "BOOK_002:CHAPTER:0052",
+            "BOOK_002:CHAPTER:0054",
+            "BOOK_002:CHAPTER:0056"
+          ],
+          "unknowns": []
+        }
+      ],
+      "arc_function": [
+        {
+          "function_id": "AR02:F1",
+          "structural_function": "validate",
+          "function_description": "把金手指成长从私人收益升级为制度承认的公开身份变化",
+          "affected_global_expectation": "读者期待成绩如何换成更高地图与资源",
+          "phase_scope": "21-50",
+          "evidence_refs": [
+            "BOOK_002:CHAPTER:0032",
+            "BOOK_002:CHAPTER:0050"
+          ],
+          "unknowns": []
+        }
+      ],
+      "nested_structure": [],
+      "arc_lifecycle": {
+        "current_state": "resolved",
+        "state_history": [
+          {
+            "state": "active",
+            "trigger_or_reason": "考试竞争开始承接修为增长",
+            "phase_scope": "21-49",
+            "evidence_refs": [
+              "BOOK_002:CHAPTER:0026",
+              "BOOK_002:CHAPTER:0032",
+              "BOOK_002:CHAPTER:0039"
+            ],
+            "unknowns": []
+          },
+          {
+            "state": "resolved",
+            "trigger_or_reason": "公开考试结果确认主角成绩与资格",
+            "phase_scope": "50",
+            "evidence_refs": [
+              "BOOK_002:CHAPTER:0050"
+            ],
+            "unknowns": []
+          }
+        ],
+        "unknowns": []
+      },
+      "adjacent_interfaces": {
+        "plotline": [
+          "PL:LINE:PL001",
+          "PL:LINE:PL002"
+        ],
+        "opening": [
+          "OP:BOOK:BOOK_002"
+        ],
+        "character_function": [
+          "CF:BOOK:BOOK_002"
+        ],
+        "chapter_emotion": [
+          "BOOK_002:EMOTION:0032",
+          "BOOK_002:EMOTION:0050"
+        ],
+        "worldbuilding": [
+          "WB:BOOK:BOOK_002"
+        ],
+        "cultivation": [
+          "CS:BOOK:BOOK_002"
+        ],
+        "golden_finger": [
+          "GF:BOOK:BOOK_002"
+        ],
+        "plot_mechanism": [
+          "PM:BOOK_002:M2"
+        ]
+      }
+    }
+  },
+  {
+    "module": "09",
+    "decision": "ADOPT",
+    "record_id": "PM:BOOK:BOOK_012",
+    "book_id": "BOOK_012",
+    "book_title": "十日终焉",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/09_剧情机制/per_book/BOOK_012.jsonl",
+    "line": 1,
+    "component_path": "/mechanisms/6",
+    "package_file_sha256": "eaedff3e8943bdda193c71b4a1e91b6fda45d85c7aa72da8e1dcebb4e2083aa0",
+    "git_blob_row_sha256": "c44be4f2f06227bf7f93acaa8ffb3651b59b3194e9bee479d2111a6647fbd1f1",
+    "source_map": [
+      {
+        "package_path": "DNA素材/09_剧情机制/per_book/BOOK_012.jsonl",
+        "source_path": "books/BOOK_012/09_剧情机制/per_book/BOOK_012.jsonl",
+        "source_sha256": "eaedff3e8943bdda193c71b4a1e91b6fda45d85c7aa72da8e1dcebb4e2083aa0",
+        "source_line": 1,
+        "book_id": "BOOK_012",
+        "record_id": "PM:BOOK:BOOK_012",
+        "module": "09_剧情机制",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_012:CHAPTER:0001",
+      "BOOK_012:CHAPTER:0010",
+      "BOOK_012:CHAPTER:0020",
+      "BOOK_012:CHAPTER:0230",
+      "BOOK_012:CHAPTER:0274",
+      "BOOK_012:CHAPTER:0275",
+      "BOOK_012:CHAPTER:0749",
+      "BOOK_012:CHAPTER:0066",
+      "BOOK_012:CHAPTER:0100"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "ADAPTABLE",
+    "reason": "观察/区分性试探/修正假说，改为真实变招和留退路；不读心",
+    "original_parameters_not_source_facts": true,
+    "selected_component_snapshot": {
+      "mechanism_identity": {
+        "mechanism_id": "PM:MECHANISM:007",
+        "mechanism_label": "行为侧写：从行动残差反推身份与规则",
+        "mechanism_description": "不依赖证词，从对手与同伴的行为模式、异常举动与选择残差中反推其真实身份、立场或未公布的规则内容",
+        "reusable_operation": "同一结构反复运转：记录异常行为→建立假设集→设计诱导性行为测试→根据反应收敛假设→以最小代价锁定结论",
+        "applicability_scope": "适用于身份隐藏类游戏（说谎者及变体）、裁判立场存疑的对局、伪装渗透场景",
+        "core_invariants": [
+          "行为模式具有稳定性与区分度",
+          "主角有机会设计并观察测试"
+        ],
+        "excluded_surface_labels": [
+          "游戏",
+          "比赛",
+          "考试"
+        ],
+        "distinction_boundary": "与PM4的区别：PM4用物理量验证既有陈述，本机制在没有可计算量时从零构建假设。",
+        "evidence_refs": [
+          "BOOK_012:CHAPTER:0001",
+          "BOOK_012:CHAPTER:0010",
+          "BOOK_012:CHAPTER:0020",
+          "BOOK_012:CHAPTER:0230"
+        ],
+        "unknowns": []
+      },
+      "trigger_conditions": [
+        {
+          "condition_id": "PM:TRIGGER:013",
+          "condition_kind": "necessary",
+          "condition_description": "关键信息（身份/规则/立场）不可直接询问获得",
+          "source_state": "证词不可信或缺失",
+          "trigger_observation": "主角转向观察行为而非听话",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0001",
+            "BOOK_012:CHAPTER:0010"
+          ],
+          "unknowns": []
+        },
+        {
+          "condition_id": "PM:TRIGGER:014",
+          "condition_kind": "enabling",
+          "condition_description": "存在可设计测试的交互窗口",
+          "source_state": "游戏允许玩家间互动",
+          "trigger_observation": "主角布置诱导情境并观察反应",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0010",
+            "BOOK_012:CHAPTER:0020"
+          ],
+          "unknowns": []
+        }
+      ],
+      "actors_and_roles": [
+        {
+          "actor_role_id": "PM:ROLE:019",
+          "actor_reference": "P1齐夏（侧写者）",
+          "mechanism_role": "试探",
+          "actual_operation": "建立行为档案、设计测试、收敛假设",
+          "response_or_dependency": "依赖目标的情绪稳定性与其行为区分度",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0010",
+            "BOOK_012:CHAPTER:0020"
+          ],
+          "unknowns": []
+        },
+        {
+          "actor_role_id": "PM:ROLE:020",
+          "actor_reference": "被侧写目标",
+          "mechanism_role": "阻断",
+          "actual_operation": "试图控制行为表现避免暴露",
+          "response_or_dependency": "高压情境下行为控制失灵成为侧写突破口",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0010"
+          ],
+          "unknowns": []
+        }
+      ],
+      "inputs": [
+        {
+          "input_id": "PM:INPUT:014",
+          "input_kind": "information",
+          "input_description": "目标的历史行为记录与异常点",
+          "required_or_optional": "required",
+          "consumed_or_retained": "retained",
+          "provided_by_or_source": "持续观察",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0010"
+          ],
+          "unknowns": []
+        },
+        {
+          "input_id": "PM:INPUT:015",
+          "input_kind": "time",
+          "input_description": "设计测试所需的交互机会",
+          "required_or_optional": "optional",
+          "consumed_or_retained": "consumed",
+          "provided_by_or_source": "游戏流程中的自由交互时段",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0020"
+          ],
+          "unknowns": []
+        }
+      ],
+      "operations": [
+        {
+          "operation_id": "PM:OPERATION:019",
+          "order_or_dependency": "1",
+          "operation": "记录并归类异常行为，生成候选假设",
+          "required_input_or_state": "PM:INPUT:014",
+          "resulting_intermediate_state": "假设集建立",
+          "depends_on_operation_ids": [],
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0010"
+          ],
+          "unknowns": []
+        },
+        {
+          "operation_id": "PM:OPERATION:020",
+          "order_or_dependency": "2",
+          "operation": "设计最小代价的区分性测试（一句话/一个动作即可区分假设）",
+          "required_input_or_state": "PM:INPUT:015",
+          "resulting_intermediate_state": "获得区分性证据",
+          "depends_on_operation_ids": [
+            "PM:OPERATION:019"
+          ],
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0010",
+            "BOOK_012:CHAPTER:0020"
+          ],
+          "unknowns": []
+        },
+        {
+          "operation_id": "PM:OPERATION:021",
+          "order_or_dependency": "3",
+          "operation": "收敛假设并以行动验证最终结论",
+          "required_input_or_state": "PM:OPERATION:020完成",
+          "resulting_intermediate_state": "身份/规则结论锁定",
+          "depends_on_operation_ids": [
+            "PM:OPERATION:020"
+          ],
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0020",
+            "BOOK_012:CHAPTER:0230"
+          ],
+          "unknowns": []
+        }
+      ],
+      "decision_points": [
+        {
+          "decision_id": "PM:DECISION:007",
+          "decision_maker": "P1齐夏",
+          "decision_context": "测试本身可能惊动目标导致证据湮灭",
+          "available_paths": [
+            "长期潜伏观察等待自然暴露",
+            "立即测试抢先锁定结论",
+            "视目标警觉度选择：对高警觉目标用自然观察，对低警觉目标用诱导测试"
+          ],
+          "chosen_or_observed_path": "视目标警觉度选择：对高警觉目标用自然观察，对低警觉目标用诱导测试",
+          "path_consequence": "平衡证据质量与暴露风险",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0010",
+            "BOOK_012:CHAPTER:0020"
+          ],
+          "unknowns": []
+        }
+      ],
+      "constraints": [
+        {
+          "constraint_id": "PM:CONSTRAINT:009",
+          "constraint_kind": "time",
+          "constraint_operation": "游戏时限压缩观察窗口，行为样本量不足",
+          "affected_step_or_role": "PM:OPERATION:019",
+          "observable_effect": "结论常带概率表述，主角预留误判后手",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0010"
+          ],
+          "unknowns": []
+        }
+      ],
+      "escalation_logic": [
+        {
+          "escalation_id": "PM:ESCALATION:007",
+          "before_pressure_or_state": "侧写对象为单场游戏内的玩家",
+          "escalation_change": "侧写对象扩展到裁判与生肖（其行为暴露规则偏好与弱点）",
+          "after_pressure_or_state": "行为侧写成为解读系统本身的方法",
+          "structural_effect": "从识人技术升级为对抗设计者的情报学",
+          "trigger_or_reason": "对手层级上升",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0274",
+            "BOOK_012:CHAPTER:0275",
+            "BOOK_012:CHAPTER:0749"
+          ],
+          "unknowns": []
+        }
+      ],
+      "outputs": [
+        {
+          "output_id": "PM:OUTPUT:008",
+          "output_kind": "information",
+          "output": "关于身份/立场/隐藏规则的高置信结论",
+          "observable_evidence": "后续事件验证侧写结论",
+          "affected_targets": [
+            "游戏策略",
+            "队伍安全"
+          ],
+          "payoff_relation": "part_of_payoff",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0020",
+            "BOOK_012:CHAPTER:0230"
+          ],
+          "unknowns": []
+        }
+      ],
+      "state_transition": [
+        {
+          "state_transition_id": "PM:STATE:007",
+          "before_state": "关键身份/规则未知，队伍在信息黑暗中行动",
+          "mechanism_run_or_result": "侧写收敛",
+          "after_state": "黑暗中的对手被映射为已知模型",
+          "changed_domains": [
+            "cognition",
+            "risk"
+          ],
+          "observable_consequence": "队伍策略从被动防御转为针对性布局",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0020",
+            "BOOK_012:CHAPTER:0230"
+          ],
+          "unknowns": []
+        }
+      ],
+      "repeatability": {
+        "repeatability_status": "supported",
+        "evidence_basis": "multiple_observed_instances",
+        "repeat_conditions": [
+          "目标行为有区分度",
+          "存在观察或测试窗口",
+          "主角拥有行为档案"
+        ],
+        "reset_retain_or_reacquire": [
+          "行为档案跨场保留并持续更新",
+          "每场需重新设计测试"
+        ],
+        "core_invariants": [
+          "行为记录+区分性测试+假设收敛"
+        ],
+        "reusable_scope": "全书身份类与裁判类对局（1-20说谎者系、610、644及身份隐藏关键词高命中章节）",
+        "repeatability_evidence_refs": [
+          "BOOK_012:CHAPTER:0001",
+          "BOOK_012:CHAPTER:0010",
+          "BOOK_012:CHAPTER:0020",
+          "BOOK_012:CHAPTER:0230",
+          "BOOK_012:CHAPTER:0610",
+          "BOOK_012:CHAPTER:0644"
+        ],
+        "unknowns": []
+      },
+      "variation_points": [
+        {
+          "variation_id": "PM:VARIATION:008",
+          "variable_domain": "actor",
+          "what_can_change": "目标类型：说谎玩家/伪装裁判/渗透队友/神级对手",
+          "invariant_preserved": "行为残差揭示真相",
+          "effect_on_repetition": "目标层级变化改变侧写所需样本与精度",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0010",
+            "BOOK_012:CHAPTER:0230",
+            "BOOK_012:CHAPTER:0749"
+          ],
+          "unknowns": []
+        }
+      ],
+      "failure_modes": [
+        {
+          "failure_mode_id": "PM:FAILURE:008",
+          "failure_condition": "目标是高段位伪装者，行为表现与真实身份系统性脱钩",
+          "break_point": "PM:OPERATION:020 区分性测试失灵",
+          "effect": "侧写给出错误结论并误导队伍布局",
+          "recoverability_or_next_state": "引入PM4物证计算交叉验证；接受错误并止损",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0020",
+            "BOOK_012:CHAPTER:0230"
+          ],
+          "unknowns": []
+        }
+      ],
+      "payoff_path": [
+        {
+          "payoff_path_id": "PM:PAYOFF:007",
+          "prior_pressure_promise_or_choice": "'证词不可信'的世界共识（开局即确立）",
+          "operation_ids": [
+            "PM:OPERATION:019",
+            "PM:OPERATION:020",
+            "PM:OPERATION:021"
+          ],
+          "decision_ids": [
+            "PM:DECISION:007"
+          ],
+          "payoff_or_recovery_result": "每次侧写成功都兑现'行为比语言诚实'的承诺",
+          "visible_payoff_evidence": "被识破者的暴露场面",
+          "state_or_expectation_effect": "读者建立'主角看人不靠听靠看'的信任",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0001",
+            "BOOK_012:CHAPTER:0010",
+            "BOOK_012:CHAPTER:0020",
+            "BOOK_012:CHAPTER:0230"
+          ],
+          "unknowns": []
+        }
+      ],
+      "observed_instances": [
+        {
+          "instance_id": "PM:INSTANCE:BOOK_012:007_001",
+          "book_id": "BOOK_012",
+          "chapter_or_stage_scope": "第1-10章",
+          "instance_summary": "说谎者局中记录异常行为并设计区分性测试反推身份",
+          "mechanism_candidate_relation": "supports",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0001",
+            "BOOK_012:CHAPTER:0010"
+          ],
+          "unknowns": []
+        },
+        {
+          "instance_id": "PM:INSTANCE:BOOK_012:007_002",
+          "book_id": "BOOK_012",
+          "chapter_or_stage_scope": "第20章",
+          "instance_summary": "以最小代价测试收敛假设锁定目标真实立场",
+          "mechanism_candidate_relation": "supports",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0020"
+          ],
+          "unknowns": []
+        },
+        {
+          "instance_id": "PM:INSTANCE:BOOK_012:007_003",
+          "book_id": "BOOK_012",
+          "chapter_or_stage_scope": "第230章",
+          "instance_summary": "对胁迫方与裁判型角色复用行为侧写获取情报",
+          "mechanism_candidate_relation": "supports",
+          "evidence_refs": [
+            "BOOK_012:CHAPTER:0230"
+          ],
+          "unknowns": []
+        }
+      ],
+      "unknowns": [],
+      "confidence": "HIGH",
+      "adjacent_interfaces": {
+        "character_function": [],
+        "arc_structure": [],
+        "plotline": [],
+        "opening": [],
+        "cultivation": [],
+        "worldbuilding": [
+          {
+            "record_id": "WB:BOOK:BOOK_012",
+            "interface_type": "世界规则链（十日周期/双死轮回/生肖对赌）为本机制的可复用运行提供制度依据",
+            "evidence_refs": [
+              "BOOK_012:CHAPTER:0066",
+              "BOOK_012:CHAPTER:0100",
+              "BOOK_012:CHAPTER:0749"
+            ],
+            "note": "机制在该规则环境下跨章节复现",
+            "unknowns": []
+          }
+        ],
+        "golden_finger": [],
+        "chapter_emotion": []
+      }
+    }
+  },
+  {
+    "module": "09",
+    "decision": "REJECT",
+    "record_id": "PM:BOOK:BOOK_016",
+    "book_id": "BOOK_016",
+    "book_title": "异兽迷城",
+    "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+    "package_path": "DNA素材/09_剧情机制/per_book/BOOK_016.jsonl",
+    "line": 1,
+    "component_path": "/mechanisms/2",
+    "package_file_sha256": "24b25994169d66309596110ce3857bd3db16e793cd7c1b9685fe15d41b86411e",
+    "git_blob_row_sha256": "53c0adac0916a35989804c138e84e38872cd8e2818a73f2175a24a5d5dd58275",
+    "source_map": [
+      {
+        "package_path": "DNA素材/09_剧情机制/per_book/BOOK_016.jsonl",
+        "source_path": "books/BOOK_016/09_剧情机制/per_book/BOOK_016.jsonl",
+        "source_sha256": "24b25994169d66309596110ce3857bd3db16e793cd7c1b9685fe15d41b86411e",
+        "source_line": 1,
+        "book_id": "BOOK_016",
+        "record_id": "PM:BOOK:BOOK_016",
+        "module": "09_剧情机制",
+        "record_type": "per_book",
+        "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+      }
+    ],
+    "evidence_refs": [
+      "BOOK_016:CHAPTER:0142",
+      "BOOK_016:CHAPTER:0170",
+      "BOOK_016:CHAPTER:1057",
+      "BOOK_016:CHAPTER:1216",
+      "BOOK_016:CHAPTER:1220",
+      "BOOK_016:CHAPTER:0620"
+    ],
+    "source_status": "candidate",
+    "SOURCE_QA": "PASS",
+    "INTERFACE_READINESS": "READY",
+    "CURRENT_COMPATIBILITY": "NOT_SELECTED",
+    "reason": "窃取/永久吸收他人天赋破坏只修自己的有限成长",
+    "original_parameters_not_source_facts": false,
+    "selected_component_snapshot": {
+      "mechanism_identity": {
+        "mechanism_id": "PM:MECHANISM:003",
+        "mechanism_label": "天赋窃取-复制吸收对抗引擎",
+        "mechanism_description": "麒麟以万象2（8级）在交手中短暂窃取他人天赋并立即反用；高阳方以复制/无限进化把交手接触转化为永久吸收。窃取=临时剥夺，复制=永久增益，两者构成规则级军备竞赛",
+        "reusable_operation": "接触→识别对方天赋→窃取/复制→3秒级窗口内反用或吸收→天赋回归/永久入库",
+        "applicability_scope": "全书高阶战斗（0170-1220）；适用于持有可转移天赋的觉醒者交手",
+        "core_invariants": [
+          "窃取有秒级时限",
+          "复制需接触或近身观察",
+          "被窃者天赋自动回归",
+          "吸收的基础能量永久保留"
+        ],
+        "excluded_surface_labels": [
+          "抢装备",
+          "夺宝",
+          "学习技能"
+        ],
+        "distinction_boundary": "与夺宝不同：目标的天赋本身在交手中被临时改写所有权；与拜师学艺不同：复制不需要对方同意与教学",
+        "evidence_refs": [
+          "BOOK_016:CHAPTER:0142",
+          "BOOK_016:CHAPTER:0170",
+          "BOOK_016:CHAPTER:1057"
+        ],
+        "unknowns": []
+      },
+      "observed_instances": [
+        {
+          "instance_id": "PM:INST:BOOK_016:003_001",
+          "book_id": "BOOK_016",
+          "chapter_or_stage_scope": "第170章前后",
+          "instance_summary": "高阳对复制能力的探索与应用测试",
+          "mechanism_candidate_relation": "supports",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:0170"
+          ],
+          "unknowns": []
+        },
+        {
+          "instance_id": "PM:INST:BOOK_016:003_002",
+          "book_id": "BOOK_016",
+          "chapter_or_stage_scope": "第1057章",
+          "instance_summary": "麒麟窃取青灵【雷电】【金属】与斗虎【杀人专家】，3秒级窗口内反手攻击；青灵以【无限进化】永久吸收其基础能量并加速反击",
+          "mechanism_candidate_relation": "supports",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "instance_id": "PM:INST:BOOK_016:003_003",
+          "book_id": "BOOK_016",
+          "chapter_or_stage_scope": "第142/1216章",
+          "instance_summary": "复制天赋在队伍战斗中的持续使用（0142/1216）",
+          "mechanism_candidate_relation": "supports",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:0142",
+            "BOOK_016:CHAPTER:1216"
+          ],
+          "unknowns": []
+        }
+      ],
+      "trigger_conditions": [
+        {
+          "condition_id": "PM:TRG:3-1",
+          "condition_kind": "necessary",
+          "condition_description": "高阶觉醒者近身交手",
+          "source_state": "能力差距不足以秒杀",
+          "trigger_observation": "CH1057麒麟与青灵的巅峰单挑",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "condition_id": "PM:TRG:3-2",
+          "condition_kind": "necessary",
+          "condition_description": "持有万象2（窃取）或复制类天赋",
+          "source_state": "麒麟天赋库/高阳天赋库",
+          "trigger_observation": "CH1057窃取链；CH170复制探索",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:0170",
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        }
+      ],
+      "actors_and_roles": [
+        {
+          "actor_role_id": "PM:ROLE:3-1",
+          "actor_reference": "窃取方（麒麟）",
+          "mechanism_role": "改变条件",
+          "actual_operation": "解除防御→窃取→立即反用",
+          "response_or_dependency": "依赖对方下一步可预判",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "actor_role_id": "PM:ROLE:3-2",
+          "actor_reference": "被窃/复制方（青灵、高阳）",
+          "mechanism_role": "响应",
+          "actual_operation": "在窗口内承受并寻找反制",
+          "response_or_dependency": "无限进化把损失转化为永久增益",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        }
+      ],
+      "inputs": [
+        {
+          "input_id": "PM:IN:3-1",
+          "input_kind": "rule",
+          "input_description": "万象2窃取与复制规则",
+          "required_or_optional": "required",
+          "consumed_or_retained": "retained",
+          "provided_by_or_source": "麒麟天赋库/高阳复制体系",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:0142",
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "input_id": "PM:IN:3-2",
+          "input_kind": "time",
+          "input_description": "3秒级窃取窗口",
+          "required_or_optional": "required",
+          "consumed_or_retained": "consumed",
+          "provided_by_or_source": "交手节奏",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "input_id": "PM:IN:3-3",
+          "input_kind": "information",
+          "input_description": "对方下一步战斗思路的预判",
+          "required_or_optional": "required",
+          "consumed_or_retained": "consumed",
+          "provided_by_or_source": "交手中观察",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        }
+      ],
+      "operations": [
+        {
+          "operation_id": "OP3-1",
+          "order_or_dependency": "1",
+          "operation": "近身接触并识别目标天赋",
+          "required_input_or_state": "交手开始",
+          "resulting_intermediate_state": "目标天赋清单确定",
+          "depends_on_operation_ids": [],
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "operation_id": "OP3-2",
+          "order_or_dependency": "2",
+          "operation": "解除自身防御天赋以腾出窃取位",
+          "required_input_or_state": "双天赋位约束",
+          "resulting_intermediate_state": "暂时失去【铁人】防御",
+          "depends_on_operation_ids": [
+            "OP3-1"
+          ],
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "operation_id": "OP3-3",
+          "order_or_dependency": "3",
+          "operation": "窃取并立即反用（雷入唐刀/以对方刀意攻击）",
+          "required_input_or_state": "OP3-2的窗口",
+          "resulting_intermediate_state": "目标短时失去天赋且遭己方攻击",
+          "depends_on_operation_ids": [
+            "OP3-1",
+            "OP3-2"
+          ],
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "operation_id": "OP3-4",
+          "order_or_dependency": "4",
+          "operation": "被窃方天赋回归；复制方吸收基础能量永久增益",
+          "required_input_or_state": "窗口结束",
+          "resulting_intermediate_state": "攻防恢复且复制方变强",
+          "depends_on_operation_ids": [
+            "OP3-3"
+          ],
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        }
+      ],
+      "decision_points": [
+        {
+          "decision_id": "PM:DEC:3-1",
+          "decision_maker": "P10麒麟",
+          "decision_context": "窗口极短且需放弃防御",
+          "available_paths": [
+            "保留防御稳扎稳打",
+            "弃防御换窃取反打"
+          ],
+          "chosen_or_observed_path": "弃防御换窃取反打",
+          "path_consequence": "断指重伤但重创青灵",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "decision_id": "PM:DEC:3-2",
+          "decision_maker": "P2青灵",
+          "decision_context": "天赋被窃的瞬间",
+          "available_paths": [
+            "远程拉扯等回归",
+            "近身强攻以伤换伤"
+          ],
+          "chosen_or_observed_path": "近身强攻以伤换伤",
+          "path_consequence": "永久吸收麒麟基础能量，速度永久提升",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        }
+      ],
+      "constraints": [
+        {
+          "constraint_id": "PM:CON:3-1",
+          "constraint_kind": "rule",
+          "constraint_operation": "窃取时长3秒级且窃取位有限",
+          "affected_step_or_role": "OP3-3",
+          "observable_effect": "窃取必须与预判配合否则浪费",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "constraint_id": "PM:CON:3-2",
+          "constraint_kind": "rule",
+          "constraint_operation": "无限进化吸收需承受伤害过程",
+          "affected_step_or_role": "OP3-4",
+          "observable_effect": "复制收益以受创为代价",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        }
+      ],
+      "escalation_logic": [
+        {
+          "escalation_id": "PM:ESC:3-1",
+          "before_pressure_or_state": "单一天赋对单一天赋的窃取",
+          "escalation_change": "终局多天赋库对多天赋库",
+          "after_pressure_or_state": "全谱系规则战",
+          "structural_effect": "军备竞赛推向穷举与反穷举",
+          "trigger_or_reason": "高阶战斗普及化",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:0170",
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        }
+      ],
+      "outputs": [
+        {
+          "output_id": "PM:OUT:3-1",
+          "output_kind": "result",
+          "output": "窗口内击伤/击杀",
+          "observable_evidence": "CH1057青灵重伤",
+          "affected_targets": [
+            "P10麒麟",
+            "P2青灵"
+          ],
+          "payoff_relation": "not_established",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "output_id": "PM:OUT:3-2",
+          "output_kind": "resource",
+          "output": "永久吸收的基础能量与复制入库",
+          "observable_evidence": "青灵速度永久提升/高阳天赋库扩张",
+          "affected_targets": [
+            "P2青灵",
+            "P1高阳"
+          ],
+          "payoff_relation": "part_of_payoff",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057",
+            "BOOK_016:CHAPTER:0142"
+          ],
+          "unknowns": []
+        }
+      ],
+      "state_transition": [
+        {
+          "state_transition_id": "PM:ST:3-1",
+          "before_state": "双方战力按静态天赋库对比",
+          "mechanism_run_or_result": "窃取-复制对抗运行",
+          "after_state": "战力对比按交手表现动态重写",
+          "changed_domains": [
+            "resource"
+          ],
+          "observable_consequence": "固定配置不再是可靠战力评估",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:0142",
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        }
+      ],
+      "repeatability": {
+        "repeatability_status": "supported",
+        "evidence_basis": "multiple_observed_instances",
+        "repeat_conditions": [
+          "近身交手",
+          "双方持有可转移天赋",
+          "窗口内决策正确"
+        ],
+        "reset_retain_or_reacquire": [
+          "天赋自动回归",
+          "吸收收益永久保留"
+        ],
+        "core_invariants": [
+          "秒级窗口",
+          "接触依赖",
+          "回归保底"
+        ],
+        "reusable_scope": "全部高阶战斗",
+        "repeatability_evidence_refs": [
+          "BOOK_016:CHAPTER:0142",
+          "BOOK_016:CHAPTER:0170",
+          "BOOK_016:CHAPTER:1057",
+          "BOOK_016:CHAPTER:1216"
+        ],
+        "unknowns": []
+      },
+      "variation_points": [
+        {
+          "variation_id": "PM:VAR:3-1",
+          "variable_domain": "resource",
+          "what_can_change": "窃取对象从单一天赋到整个天赋库",
+          "invariant_preserved": "窗口时限不变",
+          "effect_on_repetition": "终局战以穷举对方库为策略",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        },
+        {
+          "variation_id": "PM:VAR:3-2",
+          "variable_domain": "output",
+          "what_can_change": "被窃天赋可被反用攻击原主",
+          "invariant_preserved": "回归保底不变",
+          "effect_on_repetition": "产生『死于自己天赋』的特殊威胁",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        }
+      ],
+      "failure_modes": [
+        {
+          "failure_mode_id": "PM:FAIL:3-1",
+          "failure_condition": "对方行动不可预判或天赋不可转移",
+          "break_point": "OP3-3",
+          "effect": "窃取落空且防御位已弃",
+          "recoverability_or_next_state": "拉开距离重整（CH1057麒麟的幽灵领域即补救）",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:1057"
+          ],
+          "unknowns": []
+        }
+      ],
+      "payoff_path": [
+        {
+          "payoff_path_id": "PM:PAY:3-1",
+          "prior_pressure_promise_or_choice": "前期复制/吸收体系的持续积累（CH142-1216）",
+          "operation_ids": [
+            "OP3-1",
+            "OP3-4"
+          ],
+          "decision_ids": [
+            "PM:DEC:3-2"
+          ],
+          "payoff_or_recovery_result": "高阳方在终局以机制对机制破解窃取流",
+          "visible_payoff_evidence": "CH1220终局会战结果",
+          "state_or_expectation_effect": "规则级克制关系完成结算",
+          "evidence_refs": [
+            "BOOK_016:CHAPTER:0142",
+            "BOOK_016:CHAPTER:1057",
+            "BOOK_016:CHAPTER:1216",
+            "BOOK_016:CHAPTER:1220"
+          ],
+          "unknowns": []
+        }
+      ],
+      "adjacent_interfaces": {
+        "plotline": [
+          {
+            "record_id": "PL:BOOK:BOOK_016",
+            "interface_type": "主线终局对抗的规则核心",
+            "evidence_refs": [
+              "BOOK_016:CHAPTER:1057",
+              "BOOK_016:CHAPTER:1220"
+            ],
+            "note": "见06 LINE:001 NODE:006",
+            "unknowns": []
+          }
+        ],
+        "arc_structure": [],
+        "opening": [],
+        "character_function": [
+          {
+            "record_id": "CF:BOOK:BOOK_016",
+            "interface_type": "CF:ENGINE:007先知-复制对抗发动机",
+            "evidence_refs": [
+              "BOOK_016:CHAPTER:0620",
+              "BOOK_016:CHAPTER:1057"
+            ],
+            "note": "见05专项",
+            "unknowns": []
+          }
+        ],
+        "chapter_emotion": [],
+        "worldbuilding": [],
+        "cultivation": [
+          {
+            "record_id": "CS:BOOK:BOOK_016",
+            "interface_type": "天赋体系的转移规则",
+            "evidence_refs": [
+              "BOOK_016:CHAPTER:0142",
+              "BOOK_016:CHAPTER:1057"
+            ],
+            "note": "见04 techniques",
+            "unknowns": []
+          }
+        ],
+        "golden_finger": [
+          {
+            "record_id": "GF:BOOK:BOOK_016",
+            "interface_type": "复制接口为幸运系统的组合能力",
+            "evidence_refs": [
+              "BOOK_016:CHAPTER:0170"
+            ],
+            "note": "见02 combination_interfaces",
+            "unknowns": []
+          }
+        ]
+      }
+    }
+  }
+]

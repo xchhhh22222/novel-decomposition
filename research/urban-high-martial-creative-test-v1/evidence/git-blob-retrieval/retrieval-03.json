@@ -1,0 +1,126 @@
+{
+  "query": "压迫 资源 资格 职业 城市 交易",
+  "modules": [
+    "worldbuilding"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 5,
+  "results": [
+    {
+      "record_id": "WB:BOOK:BOOK_017",
+      "record_type": "per_book",
+      "module": "worldbuilding",
+      "book_id": "BOOK_017",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/03_世界观/per_book/BOOK_017.jsonl",
+      "line": 1,
+      "title": "诸神在【源初】造物主压迫下强行降临现实，把世界改造成【信仰游戏】：全人类意识被侵占，必须择神而信，世界被切成无数碎片，资源与生存空间全部经由试炼分配；神明可陨落、权柄可分食融合，甚至神明是可被批量生产的（_ch995-997）。",
+      "score": 36.18,
+      "why": [
+        "标题:压迫",
+        "标题:资源",
+        "正文:资格",
+        "正文:职业",
+        "正文:城市",
+        "正文:交易"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "诸神在【源初】造物主压迫下强行降临现实，把世界改造成【信仰游戏】：全人类意识被侵占，必须择神而信，世界被切成无数碎片，资源与生存空间全部经由试炼分配；神明可陨落、权柄可分食融合，甚至神明是可被批量生产的（_ch995-997）。"
+    },
+    {
+      "record_id": "WB:BOOK:BOOK_005",
+      "record_type": "per_book",
+      "module": "worldbuilding",
+      "book_id": "BOOK_005",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/03_世界观/per_book/BOOK_005.jsonl",
+      "line": 1,
+      "title": "冻结源呈现的是一个现代城市社会：高中生在公开觉醒/检测体系中接触异能，同时灵妖、灾害与空间裂隙可以进入日常区域；官方机构负责调查、核验、封控和把异常纳入任务系统。核心前提由第1章觉醒典礼、第6/12章官方调查、第24章校园风险处置和第112-116章裂隙任务共同支持。",
+      "score": 24.09,
+      "why": [
+        "正文:资源",
+        "正文:资格",
+        "标题:城市",
+        "正文:交易"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "冻结源呈现的是一个现代城市社会：高中生在公开觉醒/检测体系中接触异能，同时灵妖、灾害与空间裂隙可以进入日常区域；官方机构负责调查、核验、封控和把异常纳入任务系统。核心前提由第1章觉醒典礼、第6/12章官方调查、第24章校园风险处置和第112-116章裂隙任务共同支持。"
+    },
+    {
+      "record_id": "WB:BOOK:BOOK_006",
+      "record_type": "per_book",
+      "module": "worldbuilding",
+      "book_id": "BOOK_006",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/03_世界观/per_book/BOOK_006.jsonl",
+      "line": 1,
+      "title": "全民高中觉醒个人神域；神明经营眷族、建筑、资源与信仰，并通过公共神域、残域和镜像试炼参与竞争。",
+      "score": 23.64,
+      "why": [
+        "标题:资源",
+        "正文:资格",
+        "正文:职业",
+        "正文:交易"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "全民高中觉醒个人神域；神明经营眷族、建筑、资源与信仰，并通过公共神域、残域和镜像试炼参与竞争。"
+    },
+    {
+      "record_id": "WB:BOOK:BOOK_002",
+      "record_type": "per_book",
+      "module": "worldbuilding",
+      "book_id": "BOOK_002",
+      "schema_version": 2,
+      "confidence": "HIGH",
+      "qa_status": "PASS",
+      "path": "DNA素材/03_世界观/per_book/BOOK_002.jsonl",
+      "line": 1,
+      "title": "现代高武社会把气血、境界、裂缝和妖兽战果制度化；林渊绑定现金兑换修为系统后，以直播把高风险战斗变成可变现的公众内容。",
+      "score": 20.64,
+      "why": [
+        "正文:资源",
+        "正文:资格",
+        "正文:城市"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "现代高武社会把气血、境界、裂缝和妖兽战果制度化；林渊绑定现金兑换修为系统后，以直播把高风险战斗变成可变现的公众内容。"
+    },
+    {
+      "record_id": "WB:BOOK:BOOK_014",
+      "record_type": "per_book",
+      "module": "worldbuilding",
+      "book_id": "BOOK_014",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/03_世界观/per_book/BOOK_014.jsonl",
+      "line": 1,
+      "title": "百余年前克系存在（三柱神与阿撒托斯阴影）入侵，'迷雾'降世吞没全球，人类蜷缩于据点城市（大夏为最强堡垒）；诸神与神国真实存在（埃及/北欧/希腊/印度/天庭/神欲天堂），神明依托宇宙意志与法则诞生；禁墟者、魔法师与神明共同构成力量层；克系神明曾被半步升维的耶兰得重伤并封印于月球，随时间推移迷雾削弱至原浓度不到2%（E1…",
+      "score": 15.55,
+      "why": [
+        "正文:压迫",
+        "正文:资源",
+        "标题:城市"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "百余年前克系存在（三柱神与阿撒托斯阴影）入侵，'迷雾'降世吞没全球，人类蜷缩于据点城市（大夏为最强堡垒）；诸神与神国真实存在（埃及/北欧/希腊/印度/天庭/神欲天堂），神明依托宇宙意志与法则诞生；禁墟者、魔法师与神明共同构成力量层；克系神明曾被半步升维的耶兰得重伤并封印于月球，随时间推移迷雾削弱至原浓度不到2%（E1890），克系三柱神陆续苏醒并推动最终灭世与反灭世战争"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

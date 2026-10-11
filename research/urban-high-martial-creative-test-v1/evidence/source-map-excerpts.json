@@ -1,0 +1,178 @@
+[
+  {
+    "package_path": "DNA素材/02_金手指/per_book/BOOK_002.jsonl",
+    "source_path": "books/BOOK_002/02_金手指/per_book/BOOK_002.jsonl",
+    "source_sha256": "9001dc6ccd730a902397c2f54f78197e512a0512abe5885b0cd6688cd1e5e37d",
+    "source_line": 1,
+    "book_id": "BOOK_002",
+    "record_id": "GF:BOOK_002",
+    "module": "02_金手指",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/02_金手指/per_book/BOOK_005.jsonl",
+    "source_path": "books/BOOK_005/02_金手指/per_book/BOOK_005.jsonl",
+    "source_sha256": "450c250f6984c0d42d17f380a3f18adf935415dfdb379c4afa414b29f49ced02",
+    "source_line": 1,
+    "book_id": "BOOK_005",
+    "record_id": "GF:BOOK_005",
+    "module": "02_金手指",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/03_世界观/per_book/BOOK_002.jsonl",
+    "source_path": "books/BOOK_002/03_世界观/per_book/BOOK_002.jsonl",
+    "source_sha256": "fdce0ef9b1311a06cf15cd4bdb6960063b707527ee63bf0a01974e22f95693cd",
+    "source_line": 1,
+    "book_id": "BOOK_002",
+    "record_id": "WB:BOOK:BOOK_002",
+    "module": "03_世界观",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/03_世界观/per_book/BOOK_005.jsonl",
+    "source_path": "books/BOOK_005/03_世界观/per_book/BOOK_005.jsonl",
+    "source_sha256": "1aedaee00903a1006635e49af8c6f48f1f1eeaf66f2677818fd7ed265ec06a6a",
+    "source_line": 1,
+    "book_id": "BOOK_005",
+    "record_id": "WB:BOOK:BOOK_005",
+    "module": "03_世界观",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/04_修炼体系/per_book/BOOK_008.jsonl",
+    "source_path": "books/BOOK_008/04_修炼体系/per_book/BOOK_008.jsonl",
+    "source_sha256": "f2513e71477057ce3d96ad81190dab41eaa75eb2c7015dd9e836ecffff1e88ac",
+    "source_line": 1,
+    "book_id": "BOOK_008",
+    "record_id": "CS:BOOK:BOOK_008",
+    "module": "04_修炼体系",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/04_修炼体系/per_book/BOOK_009.jsonl",
+    "source_path": "books/BOOK_009/04_修炼体系/per_book/BOOK_009.jsonl",
+    "source_sha256": "4df32b297d499270e874c54011d4be6c24027619a888dcee1100219b4ac1088f",
+    "source_line": 1,
+    "book_id": "BOOK_009",
+    "record_id": "CS:BOOK:BOOK_009",
+    "module": "04_修炼体系",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/05_人物功能与标签/derived/relationship_engine_assets.jsonl",
+    "source_path": "books/BOOK_017/05_人物功能与标签/derived/relationship_engine_assets.jsonl",
+    "source_sha256": "63d52f218096c24b21944382d88365dfab9fa3d17fc8169c086c36aed9dfddb0",
+    "source_line": 2,
+    "book_id": "BOOK_017",
+    "record_id": "DA:RELATIONSHIP:BOOK_017:002",
+    "module": "05_人物功能与标签",
+    "record_type": "derived_asset",
+    "eligibility_basis": "QA_PASS_DERIVED_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/05_人物功能与标签/per_book/BOOK_005.jsonl",
+    "source_path": "books/BOOK_005/05_人物功能/per_book/BOOK_005.jsonl",
+    "source_sha256": "c5713e79403c44a96d04372939fbd83ddd26efe364788ddb8c247c8139433133",
+    "source_line": 1,
+    "book_id": "BOOK_005",
+    "record_id": "CF:BOOK:BOOK_005",
+    "module": "05_人物功能与标签",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/06_主线与支线/per_book/BOOK_007.jsonl",
+    "source_path": "books/BOOK_007/06_剧情线/per_book/BOOK_007.jsonl",
+    "source_sha256": "9a416896cce486e4a64b5d44e34f297120bef1817ccf82f8fd84e02051d919c0",
+    "source_line": 1,
+    "book_id": "BOOK_007",
+    "record_id": "PL:BOOK:BOOK_007",
+    "module": "06_主线与支线",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/06_主线与支线/per_book/BOOK_009.jsonl",
+    "source_path": "books/BOOK_009/06_剧情线/per_book/BOOK_009.jsonl",
+    "source_sha256": "3be5b46de0c763edb2129c80c31e7f59a0a0aa927b5f770cf6a6fa2a1ae0f991",
+    "source_line": 1,
+    "book_id": "BOOK_009",
+    "record_id": "PL:BOOK:BOOK_009",
+    "module": "06_主线与支线",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/07_开篇/per_book/BOOK_001.jsonl",
+    "source_path": "books/BOOK_001/07_开篇/per_book/BOOK_001.jsonl",
+    "source_sha256": "ff0a2924a07d7cfc3d2521501ed3d41fe046b860ddb47aaeac801b817cca0489",
+    "source_line": 1,
+    "book_id": "BOOK_001",
+    "record_id": "OP:BOOK:BOOK_001",
+    "module": "07_开篇",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/07_开篇/per_book/BOOK_002.jsonl",
+    "source_path": "books/BOOK_002/07_开篇/per_book/BOOK_002.jsonl",
+    "source_sha256": "7c83002ccf5baf73dd4c447865a3d5aab1238ddf4c4871cbcd395824c95c1f55",
+    "source_line": 1,
+    "book_id": "BOOK_002",
+    "record_id": "OP:BOOK:BOOK_002",
+    "module": "07_开篇",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/08_篇章结构/per_book/BOOK_002.jsonl",
+    "source_path": "books/BOOK_002/08_篇章结构/per_book/BOOK_002.jsonl",
+    "source_sha256": "4f51faecb84f34c733be3e624a3842fbefcce7f963cfa8576e734572833185d9",
+    "source_line": 1,
+    "book_id": "BOOK_002",
+    "record_id": "AR:BOOK:BOOK_002",
+    "module": "08_篇章结构",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/08_篇章结构/per_book/BOOK_009.jsonl",
+    "source_path": "books/BOOK_009/08_篇章结构/per_book/BOOK_009.jsonl",
+    "source_sha256": "44b35820c36d0ba995b1dd598a3b1c984245814f69340770773a20b93fee7bb7",
+    "source_line": 1,
+    "book_id": "BOOK_009",
+    "record_id": "AR:BOOK:BOOK_009",
+    "module": "08_篇章结构",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/09_剧情机制/per_book/BOOK_012.jsonl",
+    "source_path": "books/BOOK_012/09_剧情机制/per_book/BOOK_012.jsonl",
+    "source_sha256": "eaedff3e8943bdda193c71b4a1e91b6fda45d85c7aa72da8e1dcebb4e2083aa0",
+    "source_line": 1,
+    "book_id": "BOOK_012",
+    "record_id": "PM:BOOK:BOOK_012",
+    "module": "09_剧情机制",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  },
+  {
+    "package_path": "DNA素材/09_剧情机制/per_book/BOOK_016.jsonl",
+    "source_path": "books/BOOK_016/09_剧情机制/per_book/BOOK_016.jsonl",
+    "source_sha256": "24b25994169d66309596110ce3857bd3db16e793cd7c1b9685fe15d41b86411e",
+    "source_line": 1,
+    "book_id": "BOOK_016",
+    "record_id": "PM:BOOK:BOOK_016",
+    "module": "09_剧情机制",
+    "record_type": "per_book",
+    "eligibility_basis": "QA_PASS_PER_BOOK_ELIGIBLE"
+  }
+]

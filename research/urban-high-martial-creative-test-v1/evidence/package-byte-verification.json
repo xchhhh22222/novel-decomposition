@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "checker": "existing verify_shared_dna_package_integrity",
+  "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+  "artifact_count": 127,
+  "violations": [],
+  "manifest_sha256": "0a8d7c64145d7e54c87a81db7449cb03f89a2a87e8e7395d10af1592dd2ea76e",
+  "checkout_attempt": "FAIL: CRLF mismatch; retained",
+  "archive_attempt": "FAIL: archive EOL conversion; retained",
+  "final_export": "existing export_package uses git show bytes; no hash bypass",
+  "literary_approval": "NOT_GRANTED"
+}

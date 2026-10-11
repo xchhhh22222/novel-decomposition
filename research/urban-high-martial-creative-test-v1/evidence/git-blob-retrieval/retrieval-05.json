@@ -1,0 +1,130 @@
+{
+  "query": "信任 利益 冲突 独立 合作 选择",
+  "modules": [
+    "character_function"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 5,
+  "results": [
+    {
+      "record_id": "CF:BOOK:BOOK_013",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_013",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_013.jsonl",
+      "line": 1,
+      "title": "我不是戏神",
+      "score": 27.09,
+      "why": [
+        "正文:信任",
+        "正文:冲突",
+        "正文:独立",
+        "正文:合作",
+        "正文:选择"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "P1 P2 P3 P4；以剧场演出逻辑解题与作战：把每次危机经营成'剧目'拉高观众期待值再赌命抽奖（第10-46章起步），以【千面】换脸混入敌方（第41章连杀钱凡一队），以【审判庭】远狙简长生（第80章），晋八阶以【破壁】…；信息侦察与预判核心：'红心感应'（期待值异动预警）被队友当作雷达使用——简长生'我都快以为他是雷达成精了'，队伍按其预警即时转移（第926章）"
+    },
+    {
+      "record_id": "CF:BOOK:BOOK_005",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_005",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_005.jsonl",
+      "line": 1,
+      "title": "你管这叫精神病？这分明是先知！",
+      "score": 26.0,
+      "why": [
+        "正文:信任",
+        "正文:冲突",
+        "正文:独立",
+        "正文:合作",
+        "正文:选择"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "楚月 赵莹莹 欧阳倩 谢凝霜；先记录并复核江寒对情人坡、时间点和攻击路径的异常描述，随后把预警转成现场警戒和战斗判断；用月刃提前接战、规避和引导灵妖，并在江寒失控释放时调整位置以保护自己与同学"
+    },
+    {
+      "record_id": "CF:BOOK:BOOK_008",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_008",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_008.jsonl",
+      "line": 1,
+      "title": "青梅是天命之女？可我既是天命！",
+      "score": 25.55,
+      "why": [
+        "正文:信任",
+        "正文:冲突",
+        "正文:独立",
+        "正文:合作",
+        "正文:选择"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "YAN_CI SHI_YUQING QIN_XIAOTANG BAILI_KE；用记忆与系统反馈改写事件；从受保护者转为觉醒共战者"
+    },
+    {
+      "record_id": "CF:BOOK:BOOK_012",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_012",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_012.jsonl",
+      "line": 1,
+      "title": "十日终焉",
+      "score": 21.0,
+      "why": [
+        "正文:信任",
+        "正文:独立",
+        "正文:合作",
+        "正文:选择"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "P1 P2 P3 P4；以规则漏洞与行为证据解题并主持队伍存亡：说谎者局以氧耗计算揭穿全员已死（0008-0010）、寻道局时态陷阱加注赌命（0032）、策动胁迫楚天秋交出道（0235）、终局以「永恒」困杀天龙并造桃源（1…；主动向队友输出世界观推断（轮回结构、合同解读、生肖目的同构），把「解题」升级为阵营战争纲领"
+    },
+    {
+      "record_id": "DA:RELATIONSHIP:BOOK_017:002",
+      "record_type": "derived_asset",
+      "module": "character_function",
+      "book_id": "BOOK_017",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/derived/relationship_engine_assets.jsonl",
+      "line": 14,
+      "title": "",
+      "score": 20.73,
+      "why": [
+        "正文:信任",
+        "正文:利益",
+        "正文:冲突",
+        "正文:合作",
+        "正文:选择"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": ""
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

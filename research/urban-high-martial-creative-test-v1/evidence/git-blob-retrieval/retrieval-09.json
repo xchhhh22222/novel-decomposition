@@ -1,0 +1,123 @@
+{
+  "query": "智斗 验证 反制 利益 风险",
+  "modules": [
+    "plot_mechanism"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 5,
+  "results": [
+    {
+      "record_id": "PM:BOOK:BOOK_012",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_012",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_012.jsonl",
+      "line": 1,
+      "title": "十日终焉",
+      "score": 24.33,
+      "why": [
+        "正文:验证",
+        "正文:反制",
+        "正文:利益",
+        "正文:风险"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_012:CHAPTER:0001 BOOK_012:CHAPTER:0010 BOOK_012:CHAPTER:0020 BOOK_012:CHAPTER:0031 BOOK_012:CHAPTER:0032 BOOK_012:CHAPTER:0100 BOOK_012:CHAPTER:0120 BOOK_012:CHAPTER:0224 BOOK_012:CHAPTER:0230 BOOK_012:CHAPTER:0235 BOOK_012:CHAPTER:0274 BOOK_012:CHAPTER:0610 BOOK_012:CHAPTE…"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_004",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_004",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_004.jsonl",
+      "line": 1,
+      "title": "全民法宝：我的人皇幡无限进化！",
+      "score": 19.33,
+      "why": [
+        "正文:验证",
+        "正文:反制",
+        "正文:风险"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_004:CHAPTER:0002 BOOK_004:CHAPTER:0024 BOOK_004:CHAPTER:0041 BOOK_004:CHAPTER:0063 BOOK_004:CHAPTER:0067 BOOK_004:CHAPTER:0075"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_016",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_016",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_016.jsonl",
+      "line": 1,
+      "title": "异兽迷城",
+      "score": 18.0,
+      "why": [
+        "正文:验证",
+        "正文:反制",
+        "正文:利益",
+        "正文:风险"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_016:CHAPTER:0003 BOOK_016:CHAPTER:0015 BOOK_016:CHAPTER:0016 BOOK_016:CHAPTER:0027 BOOK_016:CHAPTER:0030 BOOK_016:CHAPTER:0034 BOOK_016:CHAPTER:0036 BOOK_016:CHAPTER:0045 BOOK_016:CHAPTER:0058 BOOK_016:CHAPTER:0091 BOOK_016:CHAPTER:0139 BOOK_016:CHAPTER:0214 BOOK_016:CHAPTE…"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_015",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_015",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_015.jsonl",
+      "line": 1,
+      "title": "一天获得一个超能力的我不懂恋爱",
+      "score": 17.67,
+      "why": [
+        "正文:验证",
+        "正文:利益",
+        "正文:风险"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_015:CHAPTER:0001 BOOK_015:CHAPTER:0033 BOOK_015:CHAPTER:0037 BOOK_015:CHAPTER:0053 BOOK_015:CHAPTER:0078 BOOK_015:CHAPTER:0091 BOOK_015:CHAPTER:0098 BOOK_015:CHAPTER:0105 BOOK_015:CHAPTER:0111 BOOK_015:CHAPTER:0136"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_011",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_011",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_011.jsonl",
+      "line": 1,
+      "title": "诡舍",
+      "score": 16.0,
+      "why": [
+        "正文:验证",
+        "正文:反制",
+        "正文:风险"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_011:CHAPTER:0001-1002"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

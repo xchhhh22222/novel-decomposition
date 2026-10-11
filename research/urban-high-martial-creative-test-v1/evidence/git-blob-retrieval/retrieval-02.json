@@ -1,0 +1,116 @@
+{
+  "query": "逆袭 成本 反馈 修正 训练 消耗",
+  "modules": [
+    "golden_finger"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 5,
+  "results": [
+    {
+      "record_id": "GF:BOOK_005",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_005",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_005.jsonl",
+      "line": 1,
+      "title": "异常片段预见—主动试探—现实验证—未来改写",
+      "score": 17.09,
+      "why": [
+        "正文:成本",
+        "正文:训练",
+        "正文:消耗"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 高风险事件、环境或空间异常，以及江寒接收到的视觉/感官未来片段；部分片段由场景或药物状态触发，稳定触发条件UNKNOWN process 江寒先经历不完整的未来结果或失败分支，再按自身理解试探、逃生或提醒；现实行动会改变条件并使结果分叉，官方/队友随后将片段与现场对照 output 提前获得灾害、攻击轨迹、路线、异常物或行动结果的信息差，经现实验证后转为避险、救援、任务协同、官方权限与认知变化"
+    },
+    {
+      "record_id": "GF:BOOK_017",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_017",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_017.jsonl",
+      "line": 1,
+      "title": "谎言→认知操控→概念成真/身份替换→以骗破局",
+      "score": 10.09,
+      "why": [
+        "正文:成本",
+        "正文:消耗"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 他人的相信、既有身份与规则文本、试炼中广泛流传的共识 process 谎如昨日/欺骗大师伪造身份与谎言→献往虚无的祭品把被广泛承认的编造物变为真实存在→愚戏之唇强制说谎→共沐神恩把治疗变成武器 output 敌人自我瓦解、试炼规则被反向利用、资源与情报入账、神明层面的欺瞒"
+    },
+    {
+      "record_id": "GF:BOOK_008",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_008",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_008.jsonl",
+      "line": 1,
+      "title": "公开行动—关注反馈—任务/形态收益",
+      "score": 8.55,
+      "why": [
+        "标题:反馈"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 公开行动、观众关注与系统任务 process 系统把关注与任务反馈接入战斗和剧情选择 output 人气/任务反馈、武器形态与成长入口，上限UNKNOWN"
+    },
+    {
+      "record_id": "GF:BOOK_015",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_015",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_015.jsonl",
+      "line": 1,
+      "title": "每日新能力发放+能力库累积+单启用",
+      "score": 8.55,
+      "why": [
+        "正文:成本",
+        "正文:消耗"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 新的一天醒来（初始触发：对聋哑老婆婆的善意帮助）；当日场景与使用对象 process 每日随机发放一个新超能力进入能力库；使用时同时只能启用一种，越强大的能力越耗费精神；奇葩/无用能力以'不如圆神'梗消化 output 多样化超能力产物：信息类（偷听心声/看最坏的事/查高考成绩/知职业）、时空类（时间暂停/梦境控制/平行世界观测）、感知类（透视/听懂动物语言）、躯体类（身体强化/治愈/灵活双手）、技能类（完美演唱/投篮百分百/复制字体）"
+    },
+    {
+      "record_id": "GF:BOOK_002",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_002",
+      "schema_version": 1,
+      "confidence": "HIGH",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_002.jsonl",
+      "line": 1,
+      "title": "现金输入→等价时间修为→公开战斗/直播变现循环",
+      "score": 8.09,
+      "why": [
+        "正文:成本",
+        "正文:消耗"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "input 充值金额、直播礼物折现或赌局/带货收入 process 按固定比例将可用现金直接兑换为对应年限修为，修为即时沉淀为气血/境界收益 output 气血、武道境界、战斗表现与继续吸引打赏的公开结果"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}
