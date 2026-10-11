@@ -1,0 +1,222 @@
+{
+  "status": "GITHUB_READBACK_PASS",
+  "verified_payload_commit": "0085991576bdbe80a0d350b38d71c1e07a94c228",
+  "branch": "codex/nova-eight-stage1-20261011",
+  "repository": "xchhhh22222/novel-decomposition",
+  "method": "GitHub API recursive tree (not truncated) + fresh bare filtered clone + each 30 delivery blobs SHA256; no reuse of publishing checkout object store",
+  "checks": [
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/README.md",
+      "git_blob_sha": "a79a6ad1fc768dbbd0ab916c67464d003b5db8e9",
+      "sha256": "a6b751bb61955c7c1d2d6c8f1e40d6fe782d54a0f5e93c453ceb2396fb2c41ce",
+      "bytes": 5090,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/books/N8_01.md",
+      "git_blob_sha": "26d7346899784d6549c7c8a3bbfdca014222c58b",
+      "sha256": "85d2a146ae38590e7ddf212c55d13e8e3ed87606f47cb180ec5ffbe510ee41d8",
+      "bytes": 10632,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/books/N8_02.md",
+      "git_blob_sha": "c8096af0bfeb55dfb5098bc0fe88253f0e19bfa4",
+      "sha256": "828c15cab9c70e5543c256f3accb11e32b7da0e53a60fe0c111511f8e548099b",
+      "bytes": 12320,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/books/N8_03.md",
+      "git_blob_sha": "5ae4545da5f83f81e5826817608f06e924c9b6d7",
+      "sha256": "fb4c42815e84d5da3d66392bf8fbb3c62f77e9636e8b486310da6de7d5a90b7a",
+      "bytes": 10097,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/books/N8_04.md",
+      "git_blob_sha": "9c6ca34fe2582e4e61057004bf5c44b8fc3331a9",
+      "sha256": "0e8ed4e654fb69cd3f7805d2c59ee71ce242d57f033943a79c1c53b32b00fca1",
+      "bytes": 10083,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/books/N8_05.md",
+      "git_blob_sha": "db5e63cf8ee072a3ffd9027a749acf88e4c74044",
+      "sha256": "cd61bd3c758d77cef706e0543f997cede289fd05c60c3374c09a24cf318f8090",
+      "bytes": 8915,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/books/N8_06.md",
+      "git_blob_sha": "d7ac174a4305416c927a2197592453db55b6ce2e",
+      "sha256": "b9033e93d11e0ea5ca08b1be755f56b977d1cdff4b48cacce3424b0fa97e7f0d",
+      "bytes": 9810,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/books/N8_07.md",
+      "git_blob_sha": "4c8b84071b918fa5af17a8886316e91a496af34b",
+      "sha256": "88254030fab21d92020922ff4cf6a7c0dc06ea3c8507468a3bad98a080903194",
+      "bytes": 9307,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/books/N8_08.md",
+      "git_blob_sha": "014a31968ad3b913eca04b457510f3d1f33b6b84",
+      "sha256": "e1fafb5c00f2ffe3404e0ac2c3ae7b0dcf4060569566767cbec4b052c2c2a94c",
+      "bytes": 9963,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/candidates-and-dedup.md",
+      "git_blob_sha": "1dda7af315194865a1bb5ec131bb9160bc2f7d1c",
+      "sha256": "4607c332ab64750a73131c4a24848b7e9148cddbd3544798ff8e331706d96815",
+      "bytes": 12100,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/comparison.md",
+      "git_blob_sha": "1ed2d7aef2362448b949c5b7e74b8732b08457af",
+      "sha256": "55e7f612a44a49f33402899989da51b51675e2ca656aab87c0fd45faeaddf0e0",
+      "bytes": 11393,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/artifact-manifest.json",
+      "git_blob_sha": "fab27b34badb855d2a0bbe2a0714ea7e4c1efbc3",
+      "sha256": "b067ba9ca3dd97989d4058ba5dcb8b4dea198aead964d6b4e751a0536da43025",
+      "bytes": 4362,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/chapter-source-index.jsonl",
+      "git_blob_sha": "c3c1111b4522886278ab73a7b745702ca4f55d86",
+      "sha256": "7099a6c405f1c6a22444e2879cda929dbb9f75f45f1a230412d415446cc55f10",
+      "bytes": 156033,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/dedup-frozen-integrity-after.json",
+      "git_blob_sha": "68cc800ceaeda834921cf883f372ef881c6793c8",
+      "sha256": "db18c39bbe5afd0913114791e9388cab6480dd98d1aa2361721f3cc05152f214",
+      "bytes": 43482,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/dedup-frozen-integrity-before.json",
+      "git_blob_sha": "e840b5f3d58b308fefd63e29206ceb6b94cd10c3",
+      "sha256": "2cbf453f6c26edd206548560a78f4254d2d0eb4a64a4e99555ac77c280868e60",
+      "bytes": 32206,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/dedup-search-A-dna.txt",
+      "git_blob_sha": "96649ee7275295252ffd6b3c704fe687de1c82ed",
+      "sha256": "e337e734ba160f876978c18737f6fbb973618b6cedf8724319a5050fb78641e4",
+      "bytes": 5285,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/dedup-search-A-legacy.txt",
+      "git_blob_sha": "13543772a19959e73d2ba5ee781b9dac2bc12a37",
+      "sha256": "f70a0df195a73ded6ede8cb9c8f0258f36a7b9c6f02bd43832f041fae91270d6",
+      "bytes": 6962,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/dedup-search-B-dna.txt",
+      "git_blob_sha": "0a35293111c73de83ddba292cf09ee2c88babb4f",
+      "sha256": "95aa2aeb6e71d91f8e063120eeea1a7561a94ac948647af59b1a30aeb1c2469e",
+      "bytes": 5376,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/dedup-search-B-legacy.txt",
+      "git_blob_sha": "3dbe76877f9df59ec1ff6747e65702a747254c7d",
+      "sha256": "fddb88de70b5c49ba2d8f9ae7d50c66f76d24b678b53a79ea40d8acec178fe88",
+      "bytes": 7613,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/dedup-search-C-dna.txt",
+      "git_blob_sha": "bc4642254b3bfc8e925df542dbb6b9514abf5ca6",
+      "sha256": "18d085a86c77411ff76470aa8b93a5dfe850f2202177b3a2aeaf433c955cc34e",
+      "bytes": 5739,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/dedup-search-C-legacy.txt",
+      "git_blob_sha": "d52ea1984aa00f23bd70b04bef235b4d0c826ea8",
+      "sha256": "32c770290f29f48d52df1dc69f1f63e0d0ba0bf70c0c73f95ef374de117198cd",
+      "bytes": 8285,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/dedup-search-D-dna.txt",
+      "git_blob_sha": "349372139a4f3a64ad77cfc9be86eca1a9abd1f1",
+      "sha256": "11f49d80045974a4761d6b743be5ba34e0704b6e4092b97c41e6389bde66402f",
+      "bytes": 5478,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/dedup-search-D-legacy.txt",
+      "git_blob_sha": "3e3884e5236b988efd99bd80b5544ae9fe602ed2",
+      "sha256": "31e2a092cd1c847770fdd67364f12610d37823301fad10246195e0455530af50",
+      "bytes": 6756,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/material-read-receipts.json",
+      "git_blob_sha": "9fa196a04a15f98abbca6662b10f282b1e25e42a",
+      "sha256": "0155ed9b41a6fcb9d4b39f9b3d19b4fcd2b1b31d8e470c16bba5e690b390c265",
+      "bytes": 6418,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/qa-report.json",
+      "git_blob_sha": "6aba1934eeb7d993a268a8376dfc5dd0f9bdd1a5",
+      "sha256": "126f369724006074cc65b025e248c5207c584c423ae01e039905e2960ebb7c7c",
+      "bytes": 1587,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/read-scope.json",
+      "git_blob_sha": "d62edba49752a7654bc4ee07ee0caa4a3c46dc70",
+      "sha256": "4797e51c69c381aa8b2f6ce57c36d5c19e4a6b6956a5a6c43fc88804537d1f9d",
+      "bytes": 6912,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/source-verification.json",
+      "git_blob_sha": "6eb7fceee453973564ff6646b94430b3926efaac",
+      "sha256": "c72dc28305a29a1ec3fde8bf3550dbc4065cffea895f0f047397d54b67de5c8a",
+      "bytes": 10394,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/verify_research.py",
+      "git_blob_sha": "c8fd2dd6d784c7126fa5ffaafa583d03e7cd5669",
+      "sha256": "465675a7b0c19def7c51c91debe70e7e521b6f213147895207fb4fa8d1155b66",
+      "bytes": 4444,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/evidence/version-comparison.json",
+      "git_blob_sha": "eb039ff0731ffa0ddf4193c61fea3fd026bb5ef0",
+      "sha256": "d40a1ba2bc954e34a8bb1efe424494948377adc03bed228becc12a40f3fd6da5",
+      "bytes": 38362,
+      "remote_readback_match": true
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/source-verification.md",
+      "git_blob_sha": "ba75ec64c160df46c224eb67ac16b1ffc71bb78f",
+      "sha256": "999682251ae5d9edc611fb046827dfb09415875c9b34d5dd711e1461085d98fb",
+      "bytes": 6863,
+      "remote_readback_match": true
+    }
+  ],
+  "next_stage_started": false,
+  "material_promotion_run": false,
+  "receipt_note": "This receipt is a subsequent metadata-only commit; the 30 delivery blobs verified here remain unchanged."
+}
