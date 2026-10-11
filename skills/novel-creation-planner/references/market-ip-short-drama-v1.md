@@ -90,6 +90,12 @@ market_ip_dual_v1/
 `IP_SIGNING_PREDICTION=NOT_ESTABLISHED`；
 `PRODUCTION_PROMOTION=NOT_RUN`。
 
+## 5. 官方短剧向IP计划作为政策证据（不可冒充榜单）
+
+番茄于 2026-01-22 发布“文启剧燃｜番茄小说×短剧版权中心首届短剧向IP联合征文活动”，**都市男频赛道明确包含都市高武**；其公开规则对参赛状态、篇幅及相关时限另有要求，**2026-05-31 截稿与签约期限已经过去**。因此本次只能作为平台重视短剧向IP的历史政策/题材证据，不能告知用户现在仍可报名，不能用它推断 2026-10 当下的获改编概率。来源：https://fanqienovel.com/writer/zone/article/7595564497767514174 。
+
+短故事的IP储备计划与**长篇都市高武**的选书、篇幅和改编路径不相同；不要把两者的投稿条件或奖项混用。仍应另行查当期官方征稿和签约条款；没有当前政策依据则记 `CURRENT_PROGRAM=NOT_VERIFIED`。
+
 参考入口（不是实时版权排名证据）：
 - 番茄排行：https://fanqienovel.com/rank
 - 番茄作者版权专区：https://fanqienovel.com/writer/zone/copyright
