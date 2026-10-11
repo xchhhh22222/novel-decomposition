@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "verified_content_commit": "9567dc2af18925fb294189b6bf5bd1130a7b6947",
+  "remote_branch": "research/urban-high-martial-creative-test-v1",
+  "remote_ref_sha": "9567dc2af18925fb294189b6bf5bd1130a7b6947",
+  "method": "Fresh bare object database; git fetch from GitHub URL without alternates/local objects, git show actual UTF-8 blobs; compare complete bytes",
+  "remote_object_database": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\urban-creative-remote-fzbzcsqf",
+  "failed_attempt": "gh api unavailable: GitHub CLI is not logged in; no token access or login attempted; Git HTTPS credential flow succeeded",
+  "files": [
+    {
+      "path": "README.md",
+      "git_blob_sha": "41dfda801ab3470620ee0daa33bc473ffc520889",
+      "byte_length": 1346,
+      "sha256": "5726a7d7203a508ec94a0d82e3d6d6b5c037b03dd8e17546afed7121358c8918",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/README.md"
+    },
+    {
+      "path": "novel-concept.md",
+      "git_blob_sha": "f944b43e882d371d281e59f84415a9aa45d47e52",
+      "byte_length": 13029,
+      "sha256": "9d6b1b7eec9d86c780b7fa8addf81bf1082426bc7fa5c1390a1cdd3e2135706a",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/novel-concept.md"
+    },
+    {
+      "path": "material-selection-report.md",
+      "git_blob_sha": "d1fbcf66dae845014361da7b6ccd42fdc413778c",
+      "byte_length": 15166,
+      "sha256": "b5a8e504db57cba025194189434445019210457c6e1c64749cc23ab8c5a9f1f2",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/material-selection-report.md"
+    },
+    {
+      "path": "emotion-arc-plan.md",
+      "git_blob_sha": "fb12a19a1199918ff9ebacfe389b02b0908574ce",
+      "byte_length": 9022,
+      "sha256": "2b456d706a5cdd4130f737c5f27e4de806a3f2493a1462c8e1e64f6109c336cc",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/emotion-arc-plan.md"
+    },
+    {
+      "path": "chapter-01.md",
+      "git_blob_sha": "191551f056328d3495ffd369a70cf0129c91d52c",
+      "byte_length": 9211,
+      "sha256": "3569b7c22514dce9a2bb5b8dda9267fcfcddf8e5ea8a412b82287d7a38e38db5",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/chapter-01.md",
+      "han_count": 2540,
+      "opening_read_back": [
+        "# 第一章 这一拳值六千",
+        "“挨满三轮，两千四。打中他一下，再加六千。”"
+      ],
+      "ending_read_back": "“我能站起来试两步吗？”"
+    },
+    {
+      "path": "chapter-02.md",
+      "git_blob_sha": "5acaf38e9ae0b44c423dfbe0238584367d11a102",
+      "byte_length": 9178,
+      "sha256": "b17fe8189c85ecb88dbd745961b5f8898917da5b0e141e989de9ad13e36922ee",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/chapter-02.md",
+      "han_count": 2514,
+      "opening_read_back": [
+        "# 第二章 半寸之外",
+        "姚苇用手指按住乔砚的鞋尖。"
+      ],
+      "ending_read_back": "他决定把最后一次重演，留给后退。"
+    },
+    {
+      "path": "chapter-03.md",
+      "git_blob_sha": "c7129625a0471fb6e13726c811b1bdc2ba3aba29",
+      "byte_length": 9954,
+      "sha256": "f76e0a874f5d09b9875fbfee6dc7c6c3148250b347d31d97a68d4fc0760563d5",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/chapter-03.md",
+      "han_count": 2712,
+      "opening_read_back": [
+        "# 第三章 钱到账了",
+        "最后二十秒休息，乔砚没有站起来。"
+      ],
+      "ending_read_back": "“明天几点？”"
+    },
+    {
+      "path": "chapters-04-10-outline.md",
+      "git_blob_sha": "e6d812cd0fa56ef12360575202edf5ad62e96563",
+      "byte_length": 13680,
+      "sha256": "ec85204d53f9b85496c8392160b354b5bc8b47a5a2836b29b40f361dfef53b8b",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/chapters-04-10-outline.md"
+    },
+    {
+      "path": "chapters-11-100-plan.md",
+      "git_blob_sha": "8ec6a6e2cb855d2b3818a3cda13740e814a9e5a1",
+      "byte_length": 19953,
+      "sha256": "8717ed4a0785f894a9de42e3cb2c40a3ac978070c57c0278fc83c78484c5472a",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/chapters-11-100-plan.md"
+    },
+    {
+      "path": "creative-test-report.md",
+      "git_blob_sha": "77e58b0167fec73e3d6fc0eda94eb8ae2fedbbac",
+      "byte_length": 4912,
+      "sha256": "4a3d396e76d9196030e1134af94af0a29720e2a55262429236b71dbc4f913e17",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/creative-test-report.md"
+    },
+    {
+      "path": "evidence/material-selection.json",
+      "git_blob_sha": "7c5776f1567a259c13794baf76eb96e63156b273",
+      "byte_length": 109814,
+      "sha256": "b104e3b25608ebba7d43317cafd20cdae164db6136d424a3fbbda4822a7f6b42",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/evidence/material-selection.json"
+    },
+    {
+      "path": "evidence/delivery-check.json",
+      "git_blob_sha": "e4d24a1bf3fdb47335ebdc11e4b893b32ca61b2c",
+      "byte_length": 1490,
+      "sha256": "398e7f6f88364a44bb99d02c43f507d982752957a32eae40803db483c93f4960",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/evidence/delivery-check.json"
+    },
+    {
+      "path": "evidence/usage-log.jsonl",
+      "git_blob_sha": "beb3526dbe2cea73de7be8263360d0faac12cf10",
+      "byte_length": 2765,
+      "sha256": "f32168631790a4a57d39043544bfaf9e1d9c1d231491ffbe23f5647200b2eefb",
+      "remote_read_back": "MATCH",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/9567dc2af18925fb294189b6bf5bd1130a7b6947/research/urban-high-martial-creative-test-v1/evidence/usage-log.jsonl"
+    }
+  ],
+  "diff_scope": "research directory only",
+  "changed_file_count": 65,
+  "quality_approval": "NOT_GRANTED",
+  "followup_metadata_commit": "This record may be committed after the verified content commit; final branch tip reported separately to avoid a self-referential SHA."
+}
