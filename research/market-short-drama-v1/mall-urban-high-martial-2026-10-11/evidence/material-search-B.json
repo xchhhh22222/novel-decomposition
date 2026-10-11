@@ -1,0 +1,269 @@
+{
+  "query": "紧张 智斗 信息 误判 反杀 代价",
+  "modules": [
+    "character_function",
+    "golden_finger",
+    "plot_mechanism"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 12,
+  "results": [
+    {
+      "record_id": "PM:BOOK:BOOK_012",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_012",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_012.jsonl",
+      "line": 1,
+      "title": "十日终焉",
+      "score": 18.09,
+      "why": [
+        "正文:信息",
+        "正文:误判",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_012:CHAPTER:0001 BOOK_012:CHAPTER:0010 BOOK_012:CHAPTER:0020 BOOK_012:CHAPTER:0031 BOOK_012:CHAPTER:0032 BOOK_012:CHAPTER:0100 BOOK_012:CHAPTER:0120 BOOK_012:CHAPTER:0224 BOOK_012:CHAPTER:0230 BOOK_012:CHAPTER:0235 BOOK_012:CHAPTER:0274 BOOK_012:CHAPTER:0610 BOOK_012:CHAPTE…"
+    },
+    {
+      "record_id": "GF:BOOK_007",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_007",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_007.jsonl",
+      "line": 1,
+      "title": "吸收/操控血液—受伤重构—战力与追踪权限扩张",
+      "score": 17.64,
+      "why": [
+        "正文:信息",
+        "正文:反杀",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 血族血液、可吸收目标与当前伤势/战斗环境 process 陆舟以血液操控、吸收、血奴与身体重构应对攻击；是否存在独立系统界面UNKNOWN output 恢复、血液武装、血奴追踪、位阶/战力变化与局部信息优势"
+    },
+    {
+      "record_id": "PM:BOOK_017:001",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_017",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_017.jsonl",
+      "line": 1,
+      "title": "诸神愚戏：可复用剧情机制集",
+      "score": 17.55,
+      "why": [
+        "正文:信息",
+        "正文:反杀",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_017:CHAPTER:0008 BOOK_017:CHAPTER:0140 BOOK_017:CHAPTER:0300 BOOK_017:CHAPTER:0620 BOOK_017:CHAPTER:1000 BOOK_017:CHAPTER:1364"
+    },
+    {
+      "record_id": "GF:BOOK_005",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_005",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_005.jsonl",
+      "line": 1,
+      "title": "异常片段预见—主动试探—现实验证—未来改写",
+      "score": 17.09,
+      "why": [
+        "正文:信息",
+        "正文:误判",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 高风险事件、环境或空间异常，以及江寒接收到的视觉/感官未来片段；部分片段由场景或药物状态触发，稳定触发条件UNKNOWN process 江寒先经历不完整的未来结果或失败分支，再按自身理解试探、逃生或提醒；现实行动会改变条件并使结果分叉，官方/队友随后将片段与现场对照 output 提前获得灾害、攻击轨迹、路线、异常物或行动结果的信息差，经现实验证后转为避险、救援、任务协同、官方权限与认知变化"
+    },
+    {
+      "record_id": "CF:BOOK:BOOK_005",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_005",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_005.jsonl",
+      "line": 1,
+      "title": "你管这叫精神病？这分明是先知！",
+      "score": 15.55,
+      "why": [
+        "正文:信息",
+        "正文:误判",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "楚月 赵莹莹 欧阳倩 谢凝霜；先记录并复核江寒对情人坡、时间点和攻击路径的异常描述，随后把预警转成现场警戒和战斗判断；用月刃提前接战、规避和引导灵妖，并在江寒失控释放时调整位置以保护自己与同学"
+    },
+    {
+      "record_id": "GF:BOOK_016",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_016",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_016.jsonl",
+      "line": 1,
+      "title": "濒死激活的系统外挂：被动天赋『幸运』产幸运点→属性加点+付费随机领悟天赋→复制类天赋借力滚雪球",
+      "score": 14.64,
+      "why": [
+        "正文:信息",
+        "正文:误判",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 存活时间（每存活60分钟+1幸运点）与危险遭遇（危险程度触发收益倍增：2倍/100倍/300倍/5000倍）；危险是最大的输入资源 process 系统面板结算幸运点→主角选择加点六大属性或支付幸运点『领悟新天赋』（随机成功，失败即扣点，成功后下次费用翻倍：30→60→120…）；系统只解释主角已『探索』到的信息，未探索区域一律隐藏（BOOK_016:CHAPTER:0003） output 永久属性值（体力/耐力/力量/敏捷/精神/魅力/运气）、多天赋库（幸运199→复制18→识谎者→火焰→幻影…最终成为天赋最多的觉醒者）、以及天赋间的组…"
+    },
+    {
+      "record_id": "CF:BOOK:BOOK_003",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_003",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_003.jsonl",
+      "line": 1,
+      "title": "全民英雄协会：开局招募一拳光头",
+      "score": 14.55,
+      "why": [
+        "正文:紧张",
+        "正文:信息",
+        "正文:误判"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "江离 方乐乐 姜画意 楚鱼；用知识差把抽卡和结晶转为协会战力；把协会系统与公共任务、结算连接"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_013",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_013",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_013.jsonl",
+      "line": 1,
+      "title": "我不是戏神",
+      "score": 14.0,
+      "why": [
+        "正文:信息",
+        "正文:反杀",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_013:CHAPTER:0001 BOOK_013:CHAPTER:0010 BOOK_013:CHAPTER:0016 BOOK_013:CHAPTER:0045 BOOK_013:CHAPTER:0046 BOOK_013:CHAPTER:0058 BOOK_013:CHAPTER:0074 BOOK_013:CHAPTER:0080 BOOK_013:CHAPTER:0096 BOOK_013:CHAPTER:0097 BOOK_013:CHAPTER:0397 BOOK_013:CHAPTER:0826 BOOK_013:CHAPTE…"
+    },
+    {
+      "record_id": "DA:ABILITY:BOOK_017:003",
+      "record_type": "derived_asset",
+      "module": "golden_finger",
+      "book_id": "BOOK_017",
+      "schema_version": 2,
+      "confidence": "HIGH",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/derived/ability_assets.jsonl",
+      "line": 27,
+      "title": "【献往虚无的祭品】+【众生相】+【共沐神恩】",
+      "score": 12.09,
+      "why": [
+        "正文:信息",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "BOOK_017:CHAPTER:0008 BOOK_017:CHAPTER:0140 BOOK_017:CHAPTER:0342"
+    },
+    {
+      "record_id": "CF:BOOK:BOOK_014",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_014",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_014.jsonl",
+      "line": 1,
+      "title": "我在精神病院学斩神",
+      "score": 12.0,
+      "why": [
+        "正文:信息",
+        "正文:反杀",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "P1 P2 P3 P4；以多体系能力与代理身份推进斩神主线：觉醒→夜幕→总司令→三法则合一；关键决策均为代价决策（血祭/遗忘/寿命）；布局者功能：与林七夜联手设局从未输（姑苏贝尔克兰德/团灭克系/终局阿撒托斯局E2020）"
+    },
+    {
+      "record_id": "CF:BOOK:BOOK_016",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_016",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_016.jsonl",
+      "line": 1,
+      "title": "异兽迷城",
+      "score": 12.0,
+      "why": [
+        "正文:信息",
+        "正文:反杀",
+        "正文:代价"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "P1 P2 P3 P4；约会夜反杀李薇薇救高阳，随后封口、布防（破坏监控）、夜访训示——把新人拖入觉醒者生存规则的执行者；以『只关心升级』的纯粹变强目标与高阳的隐藏式变强互为镜像；招募抉择中公开声明『跟着斗虎可以继续变强』的优先级"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_010",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_010",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_010.jsonl",
+      "line": 1,
+      "title": "超能：我有一面复刻镜",
+      "score": 12.0,
+      "why": [
+        "正文:紧张",
+        "正文:信息",
+        "正文:误判"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_010:CHAPTER:0003 BOOK_010:CHAPTER:0004 BOOK_010:CHAPTER:0009 BOOK_010:CHAPTER:0059 BOOK_010:CHAPTER:0081 BOOK_010:CHAPTER:0087 BOOK_010:CHAPTER:0246 BOOK_010:CHAPTER:0247 BOOK_010:CHAPTER:0248 BOOK_010:CHAPTER:0326 BOOK_010:CHAPTER:0491 BOOK_010:CHAPTER:0540 BOOK_010:CHAPTE…"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

@@ -1,0 +1,281 @@
+{
+  "query": "燃 团队 合作 认可 资源 成长 兑现",
+  "modules": [
+    "arc_structure",
+    "character_function",
+    "plotline"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 12,
+  "results": [
+    {
+      "record_id": "AR:BOOK:BOOK_002",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_002",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_002.jsonl",
+      "line": 1,
+      "title": "一毛一天修为，我靠直播氪穿宇宙",
+      "score": 31.5,
+      "why": [
+        "正文:合作",
+        "正文:认可",
+        "正文:资源",
+        "正文:成长",
+        "正文:兑现"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "1-20 一毛规则验证与直播开环；21-50 考试排名与状元资格；51-76 商业合作与二阶裂缝实战"
+    },
+    {
+      "record_id": "CF:BOOK:BOOK_008",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_008",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_008.jsonl",
+      "line": 1,
+      "title": "青梅是天命之女？可我既是天命！",
+      "score": 27.5,
+      "why": [
+        "正文:团队",
+        "正文:合作",
+        "正文:认可",
+        "正文:资源",
+        "正文:成长"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "YAN_CI SHI_YUQING QIN_XIAOTANG BAILI_KE；用记忆与系统反馈改写事件；从受保护者转为觉醒共战者"
+    },
+    {
+      "record_id": "AR:BOOK:BOOK_008",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_008",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_008.jsonl",
+      "line": 1,
+      "title": "青梅是天命之女？可我既是天命！",
+      "score": 27.0,
+      "why": [
+        "正文:团队",
+        "正文:认可",
+        "正文:资源",
+        "正文:成长",
+        "正文:兑现"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "1-10 终焉预知与疯人院救援；11-22 救援余波与学院转移；23-47 白泽学院资格与资源兑现"
+    },
+    {
+      "record_id": "AR:BOOK:BOOK_009",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_009",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_009.jsonl",
+      "line": 1,
+      "title": "高武器物灵性成长与前线战争结构",
+      "score": 27.0,
+      "why": [
+        "正文:认可",
+        "正文:资源",
+        "标题:成长",
+        "正文:兑现"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "1-10 校园低评反转；11-25 检测与联合选拔；26-44 训练营与中央特训"
+    },
+    {
+      "record_id": "PL:BOOK:BOOK_002",
+      "record_type": "per_book",
+      "module": "plotline",
+      "book_id": "BOOK_002",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/06_主线与支线/per_book/BOOK_002.jsonl",
+      "line": 1,
+      "title": "一毛一天修为，我靠直播氪穿宇宙",
+      "score": 24.5,
+      "why": [
+        "正文:合作",
+        "正文:认可",
+        "正文:资源",
+        "正文:兑现"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "BOOK_002:CHAPTER:0001 BOOK_002:CHAPTER:0050 BOOK_002:CHAPTER:0076 BOOK_002:CHAPTER:0100 BOOK_002:CHAPTER:0124 BOOK_002:CHAPTER:0135"
+    },
+    {
+      "record_id": "CF:BOOK:BOOK_009",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_009",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_009.jsonl",
+      "line": 1,
+      "title": "高武：看不起器物灵性，炎系器物灵性呢",
+      "score": 21.5,
+      "why": [
+        "正文:团队",
+        "正文:认可",
+        "正文:资源",
+        "正文:成长"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "主角 关键女竞争者 高评级同伴 雷电挑战者；先承受公开嘲笑，再以纯武道与冰系形态证明低评级标签不能代替实战；以高评级兽魂反馈和肉身承伤展示普通成长路线，并在训练中承担队友位置"
+    },
+    {
+      "record_id": "PL:BOOK:BOOK_004",
+      "record_type": "per_book",
+      "module": "plotline",
+      "book_id": "BOOK_004",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/06_主线与支线/per_book/BOOK_004.jsonl",
+      "line": 1,
+      "title": "全民法宝：我的人皇幡无限进化！",
+      "score": 20.5,
+      "why": [
+        "正文:认可",
+        "正文:资源",
+        "正文:成长",
+        "正文:兑现"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_004:CHAPTER:0001 BOOK_004:CHAPTER:0076 BOOK_004:CHAPTER:0040 BOOK_004:CHAPTER:0041 BOOK_004:CHAPTER:0056 BOOK_004:CHAPTER:0061"
+    },
+    {
+      "record_id": "AR:BOOK:BOOK_003",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_003",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_003.jsonl",
+      "line": 1,
+      "title": "全民英雄协会：开局招募一拳光头",
+      "score": 19.5,
+      "why": [
+        "正文:资源",
+        "正文:成长",
+        "正文:兑现"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "1-8 觉醒与初始招募；9-32 助理任务与无限城；33-66 多英雄与黑暗大陆"
+    },
+    {
+      "record_id": "AR:BOOK:BOOK_006",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_006",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_006.jsonl",
+      "line": 1,
+      "title": "全民神祇：我的神域有点不对劲",
+      "score": 19.0,
+      "why": [
+        "正文:合作",
+        "正文:资源",
+        "正文:成长"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "1-11 觉醒与保底机制成型；12-24 资源底盘与文明职业化；25-34 半神残域月考"
+    },
+    {
+      "record_id": "AR:BOOK:BOOK_017",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_017",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_017.jsonl",
+      "line": 1,
+      "title": "诸神愚戏",
+      "score": 19.0,
+      "why": [
+        "正文:团队",
+        "正文:认可",
+        "正文:资源",
+        "正文:成长"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "1-31 新手试炼与入局；32-139 命途确认与规则深潜；140-341 祈愿试炼与神明层初探"
+    },
+    {
+      "record_id": "AR:BOOK:BOOK_007",
+      "record_type": "per_book",
+      "module": "arc_structure",
+      "book_id": "BOOK_007",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_007.jsonl",
+      "line": 1,
+      "title": "猎魔人小姐，我真不是血族",
+      "score": 18.5,
+      "why": [
+        "正文:合作",
+        "正文:资源",
+        "正文:成长"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "1-10 永宁街身份逃亡；11-40 血月卷轴与张家血族网络；41-74 福寿区与黑鹰帮"
+    },
+    {
+      "record_id": "PL:BOOK:BOOK_006",
+      "record_type": "per_book",
+      "module": "plotline",
+      "book_id": "BOOK_006",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/06_主线与支线/per_book/BOOK_006.jsonl",
+      "line": 1,
+      "title": "全民神祇：我的神域有点不对劲",
+      "score": 18.5,
+      "why": [
+        "正文:合作",
+        "正文:资源",
+        "正文:成长"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_006:CHAPTER:0001 BOOK_006:CHAPTER:0074"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

@@ -1,0 +1,262 @@
+{
+  "query": "爽 震撼 反差 认可 验证 反杀",
+  "modules": [
+    "cultivation_system",
+    "golden_finger",
+    "opening",
+    "worldbuilding"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 12,
+  "results": [
+    {
+      "record_id": "CS:BOOK:BOOK_005",
+      "record_type": "per_book",
+      "module": "cultivation_system",
+      "book_id": "BOOK_005",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_005.jsonl",
+      "line": 1,
+      "title": "你管这叫精神病？这分明是先知！",
+      "score": 14.2,
+      "why": [
+        "正文:爽",
+        "正文:认可",
+        "正文:验证"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_005:CHAPTER:0001 BOOK_005:CHAPTER:0020 BOOK_005:CHAPTER:0037 BOOK_005:CHAPTER:0040 BOOK_005:CHAPTER:0054 BOOK_005:CHAPTER:0055 BOOK_005:CHAPTER:0075 BOOK_005:CHAPTER:0085 BOOK_005:CHAPTER:0092 BOOK_005:CHAPTER:0102 BOOK_005:CHAPTER:0104 BOOK_005:CHAPTER:0111 BOOK_005:CHAPTE…"
+    },
+    {
+      "record_id": "WB:BOOK:BOOK_005",
+      "record_type": "per_book",
+      "module": "worldbuilding",
+      "book_id": "BOOK_005",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/03_世界观/per_book/BOOK_005.jsonl",
+      "line": 1,
+      "title": "冻结源呈现的是一个现代城市社会：高中生在公开觉醒/检测体系中接触异能，同时灵妖、灾害与空间裂隙可以进入日常区域；官方机构负责调查、核验、封控和把异常纳入任务系统。核心前提由第1章觉醒典礼、第6/12章官方调查、第24章校园风险处置和第112-116章裂隙任务共同支持。",
+      "score": 14.2,
+      "why": [
+        "正文:反差",
+        "正文:认可",
+        "正文:验证"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "冻结源呈现的是一个现代城市社会：高中生在公开觉醒/检测体系中接触异能，同时灵妖、灾害与空间裂隙可以进入日常区域；官方机构负责调查、核验、封控和把异常纳入任务系统。核心前提由第1章觉醒典礼、第6/12章官方调查、第24章校园风险处置和第112-116章裂隙任务共同支持。"
+    },
+    {
+      "record_id": "GF:BOOK_007",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_007",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_007.jsonl",
+      "line": 1,
+      "title": "吸收/操控血液—受伤重构—战力与追踪权限扩张",
+      "score": 13.2,
+      "why": [
+        "正文:验证",
+        "正文:反杀"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 血族血液、可吸收目标与当前伤势/战斗环境 process 陆舟以血液操控、吸收、血奴与身体重构应对攻击；是否存在独立系统界面UNKNOWN output 恢复、血液武装、血奴追踪、位阶/战力变化与局部信息优势"
+    },
+    {
+      "record_id": "DA:ABILITY:BOOK_015:007",
+      "record_type": "derived_asset",
+      "module": "golden_finger",
+      "book_id": "BOOK_015",
+      "schema_version": 2,
+      "confidence": "HIGH",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/derived/ability_assets.jsonl",
+      "line": 4,
+      "title": "平行世界（观测）",
+      "score": 12.2,
+      "why": [
+        "正文:爽",
+        "正文:反差",
+        "正文:验证"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "BOOK_015:CHAPTER:0030 BOOK_015:CHAPTER:0032 BOOK_015:CHAPTER:0105 BOOK_015:CHAPTER:0135"
+    },
+    {
+      "record_id": "CS:BOOK:BOOK_009",
+      "record_type": "per_book",
+      "module": "cultivation_system",
+      "book_id": "BOOK_009",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_009.jsonl",
+      "line": 1,
+      "title": "高武：看不起器物灵性，炎系器物灵性呢",
+      "score": 11.6,
+      "why": [
+        "正文:认可",
+        "正文:验证"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_009:CHAPTER:0001 BOOK_009:CHAPTER:0010 BOOK_009:CHAPTER:0028 BOOK_009:CHAPTER:0043 BOOK_009:CHAPTER:0054 BOOK_009:CHAPTER:0062"
+    },
+    {
+      "record_id": "OP:BOOK:BOOK_004",
+      "record_type": "per_book",
+      "module": "opening",
+      "book_id": "BOOK_004",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/07_开篇/per_book/BOOK_004.jsonl",
+      "line": 1,
+      "title": "全民法宝：我的人皇幡无限进化！",
+      "score": 11.6,
+      "why": [
+        "正文:反差",
+        "正文:验证"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "BOOK_004:CHAPTER:0001 BOOK_004:CHAPTER:0003 BOOK_004:CHAPTER:0005 BOOK_004:CHAPTER:0006 BOOK_004:CHAPTER:0010"
+    },
+    {
+      "record_id": "GF:BOOK_015",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_015",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_015.jsonl",
+      "line": 1,
+      "title": "每日新能力发放+能力库累积+单启用",
+      "score": 11.0,
+      "why": [
+        "正文:爽",
+        "正文:验证"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 新的一天醒来（初始触发：对聋哑老婆婆的善意帮助）；当日场景与使用对象 process 每日随机发放一个新超能力进入能力库；使用时同时只能启用一种，越强大的能力越耗费精神；奇葩/无用能力以'不如圆神'梗消化 output 多样化超能力产物：信息类（偷听心声/看最坏的事/查高考成绩/知职业）、时空类（时间暂停/梦境控制/平行世界观测）、感知类（透视/听懂动物语言）、躯体类（身体强化/治愈/灵活双手）、技能类（完美演唱/投篮百分百/复制字体）"
+    },
+    {
+      "record_id": "CS:BOOK:BOOK_007",
+      "record_type": "per_book",
+      "module": "cultivation_system",
+      "book_id": "BOOK_007",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_007.jsonl",
+      "line": 1,
+      "title": "猎魔人小姐，我真不是血族",
+      "score": 10.6,
+      "why": [
+        "正文:验证",
+        "正文:反杀"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_007:CHAPTER:0001 BOOK_007:CHAPTER:0005 BOOK_007:CHAPTER:0006 BOOK_007:CHAPTER:0026 BOOK_007:CHAPTER:0030 BOOK_007:CHAPTER:0066 BOOK_007:CHAPTER:0069 BOOK_007:CHAPTER:0073 BOOK_007:CHAPTER:0074 BOOK_007:CHAPTER:0100 BOOK_007:CHAPTER:0105 BOOK_007:CHAPTER:0110 BOOK_007:CHAPTE…"
+    },
+    {
+      "record_id": "CS:BOOK:BOOK_013",
+      "record_type": "per_book",
+      "module": "cultivation_system",
+      "book_id": "BOOK_013",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_013.jsonl",
+      "line": 1,
+      "title": "我不是戏神",
+      "score": 10.2,
+      "why": [
+        "正文:认可",
+        "正文:验证"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_013:CHAPTER:0001 BOOK_013:CHAPTER:0005 BOOK_013:CHAPTER:0006 BOOK_013:CHAPTER:0010 BOOK_013:CHAPTER:0011 BOOK_013:CHAPTER:0016 BOOK_013:CHAPTER:0018 BOOK_013:CHAPTER:0023 BOOK_013:CHAPTER:0034 BOOK_013:CHAPTER:0038 BOOK_013:CHAPTER:0039 BOOK_013:CHAPTER:0040 BOOK_013:CHAPTE…"
+    },
+    {
+      "record_id": "CS:BOOK:BOOK_002",
+      "record_type": "per_book",
+      "module": "cultivation_system",
+      "book_id": "BOOK_002",
+      "schema_version": 2,
+      "confidence": "HIGH",
+      "qa_status": "PASS",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_002.jsonl",
+      "line": 1,
+      "title": "一毛一天修为，我靠直播氪穿宇宙",
+      "score": 10.0,
+      "why": [
+        "正文:震撼",
+        "正文:验证"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "BOOK_002:CHAPTER:0001 BOOK_002:CHAPTER:0007 BOOK_002:CHAPTER:0032 BOOK_002:CHAPTER:0050 BOOK_002:CHAPTER:0079 BOOK_002:CHAPTER:0093 BOOK_002:CHAPTER:0117 BOOK_002:CHAPTER:0126 BOOK_002:CHAPTER:0135"
+    },
+    {
+      "record_id": "OP:BOOK:BOOK_003",
+      "record_type": "per_book",
+      "module": "opening",
+      "book_id": "BOOK_003",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/07_开篇/per_book/BOOK_003.jsonl",
+      "line": 1,
+      "title": "全民英雄协会：开局招募一拳光头",
+      "score": 9.6,
+      "why": [
+        "正文:反差",
+        "正文:验证"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "BOOK_003:CHAPTER:0001 BOOK_003:CHAPTER:0002 BOOK_003:CHAPTER:0003 BOOK_003:CHAPTER:0005 BOOK_003:CHAPTER:0006 BOOK_003:CHAPTER:0008 BOOK_003:CHAPTER:0009 BOOK_003:CHAPTER:0010"
+    },
+    {
+      "record_id": "OP:BOOK:BOOK_009",
+      "record_type": "per_book",
+      "module": "opening",
+      "book_id": "BOOK_009",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/07_开篇/per_book/BOOK_009.jsonl",
+      "line": 1,
+      "title": "高武器物灵性开篇",
+      "score": 9.0,
+      "why": [
+        "正文:认可",
+        "正文:验证"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_009:CHAPTER:0001 BOOK_009:CHAPTER:0010 BOOK_009:CHAPTER:0020"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

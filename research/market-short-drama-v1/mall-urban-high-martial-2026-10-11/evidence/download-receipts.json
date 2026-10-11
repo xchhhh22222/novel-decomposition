@@ -1,0 +1,1282 @@
+[
+  {
+    "book_id": "7276384138653862966",
+    "title": "我不是戏神",
+    "author": "三九音域",
+    "downloaded_at": "2026-10-11T02:38:35.809047+00:00",
+    "requested_range": [
+      1,
+      10
+    ],
+    "chapters": [
+      {
+        "item_id": "7276663560427471412",
+        "title": "第1章 戏鬼回家",
+        "order": 1,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7276663560427471412",
+        "status": "COMPLETE",
+        "characters": 2191,
+        "sha256": "a9fa06dcc215701b89b4e5206245e17dcc7cdc763d09326d99f6ca3e3a1736e4",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7276826981654921789",
+        "title": "第2章 我们在看着你",
+        "order": 2,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7276826981654921789",
+        "status": "COMPLETE",
+        "characters": 2569,
+        "sha256": "84b6bc98649740843afa10b2eebdb240f68619fb6a67b44f9822757b78e19e26",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7277563721739108875",
+        "title": "第3章 灾厄",
+        "order": 3,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7277563721739108875",
+        "status": "COMPLETE",
+        "characters": 2643,
+        "sha256": "b958050a68b98553e72e3d707b288f254cfbf059d575198ad333c061188cda36",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7277919377109090871",
+        "title": "第4章 它们存在",
+        "order": 4,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7277919377109090871",
+        "status": "COMPLETE",
+        "characters": 2052,
+        "sha256": "8056dd12ace06c3837196808fb442fb3edcd2fbdef67cadb149b61bdaec8c921",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7278135486026416676",
+        "title": "第5章 灰界",
+        "order": 5,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7278135486026416676",
+        "status": "COMPLETE",
+        "characters": 2602,
+        "sha256": "8512969e58e15fb9e0ee8e8cb4b171a0a73fdd322ddbc497a72c36c3222b6b3d",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7278881764896932363",
+        "title": "第6章 《陈氏编导法则》",
+        "order": 6,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7278881764896932363",
+        "status": "COMPLETE",
+        "characters": 2265,
+        "sha256": "0289e951baaf2f6c4809ec47eb8c5965b13f5c8dc609fb953799a2a14fb906d4",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7279025795580822079",
+        "title": "第7章 全区封锁",
+        "order": 7,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7279025795580822079",
+        "status": "COMPLETE",
+        "characters": 2101,
+        "sha256": "9c2c13897f27d3e8e99cfa6a4047e32caaad6ace1b85b0acc10b3c6ad2054b1b",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7279336444009972265",
+        "title": "第8章 杀局",
+        "order": 8,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7279336444009972265",
+        "status": "COMPLETE",
+        "characters": 3444,
+        "sha256": "9d4bddf2c219c096c708dfff40f3c62895230fe58701353fffea4ce02cb3abef",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7279621195799101952",
+        "title": "第9章 爸，我饿",
+        "order": 9,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7279621195799101952",
+        "status": "COMPLETE",
+        "characters": 2442,
+        "sha256": "6f7fa80da0f795c7a8bf950a614a02954ad34131eb80088a2661081947b0062c",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7279789152608977470",
+        "title": "第10章 “观众”",
+        "order": 10,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7279789152608977470",
+        "status": "COMPLETE",
+        "characters": 2367,
+        "sha256": "d331c7fb77d9b6ef94212da01663d8708800d864119a93d55c2220db46f8fe8f",
+        "unresolved_pua": 0
+      }
+    ],
+    "complete_chapters": 10,
+    "local_only_sample_sha256": "de3ef3278817a1810bb62c45b22d5680a5fd13e24b0e3cd9a7d7dd4b66d3147a",
+    "local_source_path": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\mall-urban-high-martial-20261011\\local-originals\\7276384138653862966",
+    "raw_prose_committed": false,
+    "decoder_version": "dc027189e0ba4cd",
+    "tls_verification": true
+  },
+  {
+    "book_id": "6982529841564224526",
+    "title": "我在精神病院学斩神",
+    "author": "三九音域",
+    "downloaded_at": "2026-10-11T02:38:49.010607+00:00",
+    "requested_range": [
+      1,
+      10
+    ],
+    "chapters": [
+      {
+        "item_id": "6982735801973113351",
+        "title": "第1章 黑缎缠目",
+        "order": 1,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/6982735801973113351",
+        "status": "COMPLETE",
+        "characters": 3572,
+        "sha256": "7c6af2efd9e317cb69d735c72361897e19b726563faf499aaee6dcd224d53173",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "6982736217976603143",
+        "title": "第2章 月亮上的天使",
+        "order": 2,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/6982736217976603143",
+        "status": "COMPLETE",
+        "characters": 2386,
+        "sha256": "4f9953be9cdde8030f0a8d60246411e2c516e23e80115727684a802c3d3ca3fa",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "6982736679454900749",
+        "title": "第3章 敲门",
+        "order": 3,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/6982736679454900749",
+        "status": "COMPLETE",
+        "characters": 2395,
+        "sha256": "6a6dc40663c51559326c3201e8dad92a879fc2778292eeb1e1ec1ff83408c42c",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "6982737121052361246",
+        "title": "第4章 生还日",
+        "order": 4,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/6982737121052361246",
+        "status": "COMPLETE",
+        "characters": 2522,
+        "sha256": "551f69d8e01f96a1ff12c0b3c46c2b8e27e99d64dbc83af1c215bd7fe23086eb",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "6982737622254748174",
+        "title": "第5章 无戒空域",
+        "order": 5,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/6982737622254748174",
+        "status": "COMPLETE",
+        "characters": 2148,
+        "sha256": "2e6da02a8c19926601bc85dc059e8274695c44863ab4a8367ae2055dc6e718e6",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "6982738923638391326",
+        "title": "第6章 鬼面人",
+        "order": 6,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/6982738923638391326",
+        "status": "COMPLETE",
+        "characters": 2299,
+        "sha256": "6b037c34c497130235428bf725218478138b6dde05f5560cd8ed83bda3b1b11f",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "6982739457606681118",
+        "title": "第7章 我想活",
+        "order": 7,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/6982739457606681118",
+        "status": "COMPLETE",
+        "characters": 2047,
+        "sha256": "b86f6e14be1492165b0daa4832ca8b009c58c3f4e98557c0ede74a0ee0ea056a",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "6982740616090223117",
+        "title": "第8章 祂的眼",
+        "order": 8,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/6982740616090223117",
+        "status": "COMPLETE",
+        "characters": 2248,
+        "sha256": "cf8f38912fa6a5d6dede6fbbd82522d1a18d51ea5bea948df632331ae7bcfb5f",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "6982741132186747399",
+        "title": "第9章 半截杖",
+        "order": 9,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/6982741132186747399",
+        "status": "COMPLETE",
+        "characters": 2511,
+        "sha256": "15822157a0d84f84956dedb1bd2ffa13b641c5e5e22ce3122b360cecfcf60344",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "6982758195982926373",
+        "title": "第10章 月下直刀",
+        "order": 10,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/6982758195982926373",
+        "status": "COMPLETE",
+        "characters": 2865,
+        "sha256": "a88c7a944a799e5ffe43a2bee9b868420185b725d05ceb9eb3b1729bd33ec021",
+        "unresolved_pua": 0
+      }
+    ],
+    "complete_chapters": 10,
+    "local_only_sample_sha256": "a69aa4078d5af2135127ca09bbe4abdf8fdf6872de6c95a64ef9f16fc5f426c8",
+    "local_source_path": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\mall-urban-high-martial-20261011\\local-originals\\6982529841564224526",
+    "raw_prose_committed": false,
+    "decoder_version": "dc027189e0ba4cd",
+    "tls_verification": true
+  },
+  {
+    "book_id": "7644040936980220953",
+    "title": "我都宇宙之主了，你们还在地球？",
+    "author": "吒牛",
+    "downloaded_at": "2026-10-11T02:39:01.569265+00:00",
+    "requested_range": [
+      1,
+      10
+    ],
+    "chapters": [
+      {
+        "item_id": "7644520827156709913",
+        "title": "第1章 小辈展示机制，中辈展示数值，老登直接开挂",
+        "order": 1,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7644520827156709913",
+        "status": "COMPLETE",
+        "characters": 1547,
+        "sha256": "263c7b74cb5fc24f123a5a1997b26d5ecbcd5e2f07908c99d439e05360af835f",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7644979457366704665",
+        "title": "第2章 内容已失效，该视频已被删除或设为私密。",
+        "order": 2,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7644979457366704665",
+        "status": "COMPLETE",
+        "characters": 3144,
+        "sha256": "200dda00cf5c0ca0523e5a8a3de5c25f430142e9aba79cce754783996db869c6",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7645355205973770777",
+        "title": "第3章 快跑，有大恐怖！",
+        "order": 3,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7645355205973770777",
+        "status": "COMPLETE",
+        "characters": 2535,
+        "sha256": "15451412aeca4d18213f4a8f91b2ecda416fc0c50bf62bcd37ba15783194c270",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7645389678731870745",
+        "title": "第4章 灵猴拜天",
+        "order": 4,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7645389678731870745",
+        "status": "COMPLETE",
+        "characters": 2070,
+        "sha256": "7dfe489079eba98b9cdc3a0895c6eb0188d93d326790dcd7ff54096578912493",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7645721505426309657",
+        "title": "第5章 【天赋：你的命就是我的命】",
+        "order": 5,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7645721505426309657",
+        "status": "COMPLETE",
+        "characters": 3124,
+        "sha256": "c77453243d16acbe971147491db01b2f56df2aea351fe130b8e61d969251c8aa",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7646137916317516313",
+        "title": "第6章 自杀yes，他杀no！",
+        "order": 6,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7646137916317516313",
+        "status": "COMPLETE",
+        "characters": 2276,
+        "sha256": "97e77f17025acaccfc2174622775e73ac06c574a8a96434479dbbac04337cb29",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7646173254767346201",
+        "title": "第7章 刚刚砍死我的那两刀好帅，我想学这个！",
+        "order": 7,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7646173254767346201",
+        "status": "COMPLETE",
+        "characters": 2445,
+        "sha256": "94369e517c04e0cac662ba77985de079555b5b5d9113ce1a9ad503a8da9f643d",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7646250407387202073",
+        "title": "第8章 我的钱，那都是我的钱！",
+        "order": 8,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7646250407387202073",
+        "status": "COMPLETE",
+        "characters": 2067,
+        "sha256": "fefa6a294a8e7cb51cefddc2e131164ac114ec8644411a5240dfec44fa3f6ba5",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7646312050192302617",
+        "title": "第9章 感觉自己越来越像个BUG了",
+        "order": 9,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7646312050192302617",
+        "status": "COMPLETE",
+        "characters": 3164,
+        "sha256": "cf2d230399ddd956a734aadb61d7c0de5d1be52926362918c7a0bf73158b2743",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7646436369367040537",
+        "title": "第10章 修炼之法",
+        "order": 10,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7646436369367040537",
+        "status": "COMPLETE",
+        "characters": 1923,
+        "sha256": "26687f6dde88789bbf5595704f78ee247ab901783a5d610358186246ebfdb2fc",
+        "unresolved_pua": 0
+      }
+    ],
+    "complete_chapters": 10,
+    "local_only_sample_sha256": "c4cdb6e11af30d0576cd8f32999eed4a621af8d1828b052c469cdd133debf434",
+    "local_source_path": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\mall-urban-high-martial-20261011\\local-originals\\7644040936980220953",
+    "raw_prose_committed": false,
+    "decoder_version": "dc027189e0ba4cd",
+    "tls_verification": true
+  },
+  {
+    "book_id": "7592279900040465433",
+    "title": "我操作的少女正在成为旧日之主",
+    "author": "陷阵营营长",
+    "downloaded_at": "2026-10-11T02:39:14.160631+00:00",
+    "requested_range": [
+      1,
+      10
+    ],
+    "chapters": [
+      {
+        "item_id": "7600783039009915417",
+        "title": "第1章 我游戏的退出键呢？！",
+        "order": 1,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7600783039009915417",
+        "status": "COMPLETE",
+        "characters": 2818,
+        "sha256": "5cea80634895ad306304db54ee7c778b803e11ff9a9fc5b1bc44fbef3219a130",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7601087627936154136",
+        "title": "第2章 打怪升级不是最基本设定？",
+        "order": 2,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7601087627936154136",
+        "status": "COMPLETE",
+        "characters": 2952,
+        "sha256": "578a5426a7ec66d60950b775081ebcecdf07f81e1481d0b06de87ae0e47a51b2",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7601088140350079512",
+        "title": "第3章 神才拥有的权柄",
+        "order": 3,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7601088140350079512",
+        "status": "COMPLETE",
+        "characters": 3433,
+        "sha256": "b38bb660e7195ebb129bfea89819fe0ef6afc7761bc64fc95ca0f5922ed9e464",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7601088452913791512",
+        "title": "第4章 老资历装完，该她善后了",
+        "order": 4,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7601088452913791512",
+        "status": "COMPLETE",
+        "characters": 2522,
+        "sha256": "178465a8ca9409606175069c585bd92d2a499fafcccbbec06c8d63a5d593aa63",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7602227771120566809",
+        "title": "第5章 交易，其实我是个好邪神",
+        "order": 5,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7602227771120566809",
+        "status": "COMPLETE",
+        "characters": 2322,
+        "sha256": "faa3dedbf6bb0d3204465a499c6b966f665f0ad0d9123f565983793c8bd104a4",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7603424265949430334",
+        "title": "第6章 当内城的傲慢碰到老资历",
+        "order": 6,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7603424265949430334",
+        "status": "COMPLETE",
+        "characters": 3392,
+        "sha256": "1643c79cad86de9e1514dabdb1c59c9e621eaa33cfd84e5fe275a6ebfb853ce7",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7603436941802996286",
+        "title": "第7章 狂徒，侵入式金属中毒",
+        "order": 7,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7603436941802996286",
+        "status": "COMPLETE",
+        "characters": 2706,
+        "sha256": "96d1f20e08a3143ef8a358d529270cfa9cbdec69f4b45dab8755dc1acb38ffe0",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7604620202130539032",
+        "title": "第8章 熟悉的戴罪立功环节",
+        "order": 8,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7604620202130539032",
+        "status": "COMPLETE",
+        "characters": 2284,
+        "sha256": "a83cb7c91aacacd9a23896ac8a66546783a287e07f87a279f7c1bdb4644ac2ad",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7604836389267456536",
+        "title": "第9章 杀戮机器，宛若游龙",
+        "order": 9,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7604836389267456536",
+        "status": "COMPLETE",
+        "characters": 2551,
+        "sha256": "0b9dbabfab2d8fef1518ff1c2095b0f1d541864c68a07602fa74f20b6f7371f3",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7616384046603436568",
+        "title": "第10章 神通广大的贵妇人",
+        "order": 10,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7616384046603436568",
+        "status": "COMPLETE",
+        "characters": 2341,
+        "sha256": "04318188c986c21d204805d5118468a24ac0ce6aba46dd619241e4cea19edf01",
+        "unresolved_pua": 0
+      }
+    ],
+    "complete_chapters": 10,
+    "local_only_sample_sha256": "28385a17a4a531446fdfd8cc8e8745bc1a9f0ef929bd52e22180416c08cd2b2b",
+    "local_source_path": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\mall-urban-high-martial-20261011\\local-originals\\7592279900040465433",
+    "raw_prose_committed": false,
+    "decoder_version": "dc027189e0ba4cd",
+    "tls_verification": true
+  },
+  {
+    "book_id": "7504849932138859545",
+    "title": "时停起手，邪神也得给我跪下！",
+    "author": "六个葫芦",
+    "downloaded_at": "2026-10-11T02:39:29.563062+00:00",
+    "requested_range": [
+      1,
+      10
+    ],
+    "chapters": [
+      {
+        "item_id": "7504850255494529561",
+        "title": "第1章 好消息时间静止，坏消息一分钟",
+        "order": 1,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7504850255494529561",
+        "status": "COMPLETE",
+        "characters": 2701,
+        "sha256": "1de14ea0669b3ca90c6787c0f22ac28a87b84b5ec8c9ae6eb5a08ea7af20d267",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7505314909077373465",
+        "title": "第2章 废土尽头谁为峰？",
+        "order": 2,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7505314909077373465",
+        "status": "COMPLETE",
+        "characters": 2324,
+        "sha256": "2db1643bb50b42e64a8100f4fb7843b3ca6caac78bd56e8256d747a84d4f43ef",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7505316279348101657",
+        "title": "第3章 命运轮盘必胜法",
+        "order": 3,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7505316279348101657",
+        "status": "COMPLETE",
+        "characters": 2476,
+        "sha256": "5fd4a85eac4c6cde39f7f3c137f6e1bea9f283b6dbd4261fa9a97fad1a7d3a2f",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7505316996943200793",
+        "title": "第4章 六颗子弹，我赌它哑火！",
+        "order": 4,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7505316996943200793",
+        "status": "COMPLETE",
+        "characters": 2628,
+        "sha256": "3683054e429e50f35f3688c6e8dc14a9d655ef15e3c34f3bf5ffd56522893301",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7505317327001354777",
+        "title": "第5章 之前你叫我小白，我不挑你理",
+        "order": 5,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7505317327001354777",
+        "status": "COMPLETE",
+        "characters": 2293,
+        "sha256": "ccda59f4fee6d1471a82eb41d6b29dc496e3be7ea53d5f2bb2167e86db02b2a3",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7505317891324002841",
+        "title": "第6章 做人最重要的当然是忘本啊！",
+        "order": 6,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7505317891324002841",
+        "status": "COMPLETE",
+        "characters": 2533,
+        "sha256": "ae2c4268a960339731fb3d6d7b7b7e87b8a5fa87248c79c7b492ffa47b922f64",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7505318692339581465",
+        "title": "第7章 魔术手李右",
+        "order": 7,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7505318692339581465",
+        "status": "COMPLETE",
+        "characters": 2377,
+        "sha256": "5da8e3a63f7f46ad65d3b7a5448dbbf380036f53a5453ffbba66d77a107f9cbe",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7505319438086849049",
+        "title": "第8章 哪来这么多老话！？",
+        "order": 8,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7505319438086849049",
+        "status": "COMPLETE",
+        "characters": 2149,
+        "sha256": "bfa8287e086b771e2a3b7812e85cc315954ef4f252b1e5adc0e91e8f3e87a72d",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7505319765406122521",
+        "title": "第9章 白野还在开枪！？",
+        "order": 9,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7505319765406122521",
+        "status": "COMPLETE",
+        "characters": 2266,
+        "sha256": "72b265a2139a3bd5a5632280ff12f9b5e7dfaacfdba5ab5426d7af161860bc80",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7506074318242071064",
+        "title": "第10章 不是，你玩什么命啊？",
+        "order": 10,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7506074318242071064",
+        "status": "COMPLETE",
+        "characters": 2161,
+        "sha256": "632d80bb90a221bbdecd80afb26ef0a77aecf8bad5997149ecb249a6694e61a8",
+        "unresolved_pua": 0
+      }
+    ],
+    "complete_chapters": 10,
+    "local_only_sample_sha256": "1f26dca20f22c06aaa5bac93ae662d87c5e4bfd578677866c10a2a0b540b3f1d",
+    "local_source_path": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\mall-urban-high-martial-20261011\\local-originals\\7504849932138859545",
+    "raw_prose_committed": false,
+    "decoder_version": "dc027189e0ba4cd",
+    "tls_verification": true
+  },
+  {
+    "book_id": "7346057588347259929",
+    "title": "序列：吃神者",
+    "author": "不要大脑要小脑",
+    "downloaded_at": "2026-10-11T02:39:42.756924+00:00",
+    "requested_range": [
+      1,
+      10
+    ],
+    "chapters": [
+      {
+        "item_id": "7346057893600313881",
+        "title": "第1章 暗世纪元，觉醒吃神者序列",
+        "order": 1,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7346057893600313881",
+        "status": "COMPLETE",
+        "characters": 3267,
+        "sha256": "2f2d89a4ab0c5698243a937302117dc2448db5577e4b7400c70e0d53a81f5d87",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7346058525887447577",
+        "title": "第2章 双喜临门",
+        "order": 2,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7346058525887447577",
+        "status": "COMPLETE",
+        "characters": 5507,
+        "sha256": "a95f32c91d26a0594497b402dbfc598bd09b849790ee3b95070596e91178ae2b",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7346253106734170649",
+        "title": "第3章 变强的契机，饕餮盛宴",
+        "order": 3,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7346253106734170649",
+        "status": "COMPLETE",
+        "characters": 5395,
+        "sha256": "959c2015ce913c66774a0a18a6ac98e3885bacb2d53382dee890cb820947a5e4",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7346253519671804441",
+        "title": "第4章 实力提升！",
+        "order": 4,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7346253519671804441",
+        "status": "COMPLETE",
+        "characters": 3494,
+        "sha256": "021ae3645d40fff6bd5b6b0a507308b4bf5cd9c69e818c776f946a9a009e68c1",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7346368608324305433",
+        "title": "第5章 受阻",
+        "order": 5,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7346368608324305433",
+        "status": "COMPLETE",
+        "characters": 3261,
+        "sha256": "1c68e7cac647e70bc0cdf3f5fc119e2a52f2b4a89de63f4b3326687b0392bd19",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7346368737248805401",
+        "title": "第6章 序列晋升",
+        "order": 6,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7346368737248805401",
+        "status": "COMPLETE",
+        "characters": 2976,
+        "sha256": "ee54609bfc14b3c622a8cdf5f02f95bb22b48f5b17c6da7b247a19a709c649a7",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7346368859743453721",
+        "title": "第7章 被迫第一次动手",
+        "order": 7,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7346368859743453721",
+        "status": "COMPLETE",
+        "characters": 4297,
+        "sha256": "8d5eaef4225052d8be65432df170f6060bb4a8f33c03a310d9e6a1216a3fd90e",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7346369136496214553",
+        "title": "第8章 寻找那人的踪迹",
+        "order": 8,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7346369136496214553",
+        "status": "COMPLETE",
+        "characters": 3785,
+        "sha256": "0c2f560ee499a45689b3d6f5de55dcc32835eab08a7a5ad7eb75ee6431941f19",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7346626046566875673",
+        "title": "第9章 网吧查询",
+        "order": 9,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7346626046566875673",
+        "status": "COMPLETE",
+        "characters": 3655,
+        "sha256": "5a54aff8d4166cf98149f423d87a0d7fade294afc958ff9f18791aa2abb21edb",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7346626298833289753",
+        "title": "第10章 网吧的突袭",
+        "order": 10,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7346626298833289753",
+        "status": "COMPLETE",
+        "characters": 3331,
+        "sha256": "c1b1007484a5a9983d8dba3189fa3c031203457cd446d171273255123d328bc0",
+        "unresolved_pua": 0
+      }
+    ],
+    "complete_chapters": 10,
+    "local_only_sample_sha256": "5816fc04df92b5295270b0e57ea015071318bf8e127ce45782e75410d98cf5b0",
+    "local_source_path": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\mall-urban-high-martial-20261011\\local-originals\\7346057588347259929",
+    "raw_prose_committed": false,
+    "decoder_version": "dc027189e0ba4cd",
+    "tls_verification": true
+  },
+  {
+    "book_id": "7421167583522458648",
+    "title": "大一实习，你跑去749收容怪物",
+    "author": "我爱罗的沙",
+    "downloaded_at": "2026-10-11T02:39:55.754006+00:00",
+    "requested_range": [
+      1,
+      10
+    ],
+    "chapters": [
+      {
+        "item_id": "7421167850074669592",
+        "title": "第1章 等了二十年的金手指，终于有能用的希望了",
+        "order": 1,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7421167850074669592",
+        "status": "COMPLETE",
+        "characters": 2483,
+        "sha256": "de7aba30ae9b957a2d64cc327445c5c489ac21c5a32223351daec5a8e21b97cb",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7421168086167863832",
+        "title": "第2章 收容南山顽石，得斤车之道无物不斩",
+        "order": 2,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7421168086167863832",
+        "status": "COMPLETE",
+        "characters": 2269,
+        "sha256": "b2b9bb39bed748d727598fdb6bcf64fe82114640c63e997fc3a6b1a8957358c9",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7421168352808157720",
+        "title": "第3章 再杀怪物罔象，得忘形之谓，天人合一",
+        "order": 3,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7421168352808157720",
+        "status": "COMPLETE",
+        "characters": 2367,
+        "sha256": "f476daf2180b0d6cf1840dc5b982503377745d83036e7b6960b0eb3427dae382",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7421168675345924632",
+        "title": "第4章 749上门，七险三金的工作待遇",
+        "order": 4,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7421168675345924632",
+        "status": "COMPLETE",
+        "characters": 2288,
+        "sha256": "9fd7bfe74048efb3230b1cebc03d444799f94cb523ab1de5149aadcd6ac4abb3",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7421168911481045528",
+        "title": "第5章 加入749，我要马上考核",
+        "order": 5,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7421168911481045528",
+        "status": "COMPLETE",
+        "characters": 2332,
+        "sha256": "20bded915062c1bbbb259610049ee757f3cc5c31344702dc8ada72989a963728",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7421169119887622680",
+        "title": "第6章 最贱就要挨打，绝对不会惯着你",
+        "order": 6,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7421169119887622680",
+        "status": "COMPLETE",
+        "characters": 2508,
+        "sha256": "4498ac52aa3d5e255b80f54a35e4675c7194d1a060c3c1f04613d7290ec217c7",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7421169387651990040",
+        "title": "第7章 考核会场乱杀，难度实在太低",
+        "order": 7,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7421169387651990040",
+        "status": "COMPLETE",
+        "characters": 2253,
+        "sha256": "bd4f3556e85f3eb586e1af5d0809e4961f3c12f6736a0514ea4e9cd3427bb4b7",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7421169556950893080",
+        "title": "第8章 天人合一，buff叠满，一天走完别人一年",
+        "order": 8,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7421169556950893080",
+        "status": "COMPLETE",
+        "characters": 2305,
+        "sha256": "1f154bb98f525c569e05bce51dd77cf65ca502401c24c989b3b02f88234d83ce",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7421169823184339480",
+        "title": "第9章 第一个任务，灭门惨案，黑老太太",
+        "order": 9,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7421169823184339480",
+        "status": "COMPLETE",
+        "characters": 2452,
+        "sha256": "592f7d8b5bf2aa6bc044c9c74868e6cf09e86f7bdecbe81ec915e9ea9913f0bf",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7421170019846849048",
+        "title": "第10章 招募辅调，前往任务",
+        "order": 10,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7421170019846849048",
+        "status": "COMPLETE",
+        "characters": 2335,
+        "sha256": "5bfb39bf7f4c0ad7ab146e3747d043e8718c800d7ca84e3fa45b49fb86d3b046",
+        "unresolved_pua": 0
+      }
+    ],
+    "complete_chapters": 10,
+    "local_only_sample_sha256": "4a871d41fa8d48eeef6ea1bac24e9d996b0e90fe2ae9cad5363cef548199cd09",
+    "local_source_path": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\mall-urban-high-martial-20261011\\local-originals\\7421167583522458648",
+    "raw_prose_committed": false,
+    "decoder_version": "dc027189e0ba4cd",
+    "tls_verification": true
+  },
+  {
+    "book_id": "7644794897249094718",
+    "title": "全民神祇时代：我的词条每日刷新",
+    "author": "些许风霜过去",
+    "downloaded_at": "2026-10-11T02:40:08.458114+00:00",
+    "requested_range": [
+      1,
+      10
+    ],
+    "chapters": [
+      {
+        "item_id": "7644999731671728702",
+        "title": "第1章 小天才，未激活的X级天赋！",
+        "order": 1,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7644999731671728702",
+        "status": "COMPLETE",
+        "characters": 2258,
+        "sha256": "87274f0390c27d41053d023dcb0dcc3efbc260155d4f5fd283876f6b44dad9d4",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7645545937795809854",
+        "title": "第2章 每天都能刷新一个随机天赋？",
+        "order": 2,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7645545937795809854",
+        "status": "COMPLETE",
+        "characters": 2610,
+        "sha256": "12f271b52888f62ee75ef38b9dcb3ae9d10f1857d05b480c6d32643b53048c40",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7645706146367406654",
+        "title": "第3章 播种粮食，蛮牛炼体术！",
+        "order": 3,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7645706146367406654",
+        "status": "COMPLETE",
+        "characters": 2305,
+        "sha256": "c5ad4f4f68c9fe87f7d507a80c081566cfb48c5c8dbb03b89b0dc0a325c91f59",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7645970257294672446",
+        "title": "第4章 石乳竹，A级词条万物生长！",
+        "order": 4,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7645970257294672446",
+        "status": "COMPLETE",
+        "characters": 2283,
+        "sha256": "8d8284ff70bbb562fb988432f6bb8782baad632186333b766a80ef495994480c",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7646098420100252222",
+        "title": "第5章 神国和神明之间的关系，高考分数体系",
+        "order": 5,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7646098420100252222",
+        "status": "COMPLETE",
+        "characters": 2435,
+        "sha256": "96832f30b9966bf8fd228667074822a8a6aaf255356ffc79a88c464c8a1a2ba4",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7646349272486052414",
+        "title": "第6章 石人眷属，十年高速发展",
+        "order": 6,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7646349272486052414",
+        "status": "COMPLETE",
+        "characters": 2361,
+        "sha256": "ab829e36aae0b2235c9a62b7c61a1b3daf4e5c70b30d9e7d1c29aaa7dba17c9d",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7646420080749724222",
+        "title": "第7章 S级词条【基建狂魔】，投入一阶生灵",
+        "order": 7,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7646420080749724222",
+        "status": "COMPLETE",
+        "characters": 2545,
+        "sha256": "494cc5ee90f2784ac297536f9bb6befdd8b159e735e808532fa3d764f77496d0",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7646660266498736702",
+        "title": "第8章 半神父母鼎力相助，世界资源暴涨！",
+        "order": 8,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7646660266498736702",
+        "status": "COMPLETE",
+        "characters": 2233,
+        "sha256": "92dd45aa221742964e19665eab04f5b3032c81a6a3a262c761bc6f205a733430",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7646724965017862718",
+        "title": "第9章 大肆种植，真神客人",
+        "order": 9,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7646724965017862718",
+        "status": "COMPLETE",
+        "characters": 2400,
+        "sha256": "f5f89f1089e7aee8c9feed0e64a3f359efe88b5ce9dbacce5435ac3e45e469a9",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7647038359461691966",
+        "title": "第10章 来自精英班学生的内部消息",
+        "order": 10,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7647038359461691966",
+        "status": "COMPLETE",
+        "characters": 2594,
+        "sha256": "050d032bb39b138222bed5d2bc6c31361357d0e7ee55368e54ae8bc1e6cc5002",
+        "unresolved_pua": 0
+      }
+    ],
+    "complete_chapters": 10,
+    "local_only_sample_sha256": "68c030fb640d059d17ae7111fabddddc01e7935c8ca76367728b837cdec6c7c8",
+    "local_source_path": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\mall-urban-high-martial-20261011\\local-originals\\7644794897249094718",
+    "raw_prose_committed": false,
+    "decoder_version": "dc027189e0ba4cd",
+    "tls_verification": true
+  },
+  {
+    "book_id": "7631863518148430873",
+    "title": "穿越神祇：我提取词条碾压诸神",
+    "author": "夏弥的幻想",
+    "downloaded_at": "2026-10-11T02:40:23.529438+00:00",
+    "requested_range": [
+      1,
+      10
+    ],
+    "chapters": [
+      {
+        "item_id": "7632953259069555225",
+        "title": "第1章 ：表面哭唧唧，背地觉醒sss级神级天赋",
+        "order": 1,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7632953259069555225",
+        "status": "COMPLETE",
+        "characters": 2598,
+        "sha256": "7bee70cbf88736a7f2bfb41c004e99f9984dba0e40b45a39789e6c3e40b83647",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7632986032371155481",
+        "title": "第2章 ：万物皆可取，从一块破石头开始",
+        "order": 2,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7632986032371155481",
+        "status": "COMPLETE",
+        "characters": 2795,
+        "sha256": "84a52eeae79b74f2e07c5d5d89ef53ce59a822105650c308a6f19fea401b7434",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7632996500498285081",
+        "title": "第3章 ：食之无味的毒瘤，全是我叠词条的宝库",
+        "order": 3,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7632996500498285081",
+        "status": "COMPLETE",
+        "characters": 2483,
+        "sha256": "8866d8e956d1c8cbee3c4ed9914abbd06f86609407fed0604d1dc781429c5a5e",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7633005349632475673",
+        "title": "第4章 ：天赋暴种！50信仰白嫖极品沸血！",
+        "order": 4,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7633005349632475673",
+        "status": "COMPLETE",
+        "characters": 2770,
+        "sha256": "d59376dfdac00b148c3e7ebd761fa9048c31af85043fdbab3290bd6e2f9206a3",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7633034371733127705",
+        "title": "第5章 ：一夜神域反哺，单手挑飞重物，肉身狂飙！",
+        "order": 5,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7633034371733127705",
+        "status": "COMPLETE",
+        "characters": 2955,
+        "sha256": "99471a06afe2104b9117b02a44da37491c41c6b031bcdb44656ff91bd8d8ae7d",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7633045127887340057",
+        "title": "第6章 ：眷族互殴下死手，竟意外触发战争信仰",
+        "order": 6,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7633045127887340057",
+        "status": "COMPLETE",
+        "characters": 2288,
+        "sha256": "5150905ae3442b2f07d10e2e03780fc7fb96bc5aaa9582f291217a6cf776f94b",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7633055622719619609",
+        "title": "第7章 ：别人眼里的生态灾难？我的完美磨刀石！",
+        "order": 7,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7633055622719619609",
+        "status": "COMPLETE",
+        "characters": 2918,
+        "sha256": "288d9f938550a440d7c0edcc703b2d3aea1d6a44301ccdb650371ea00b04660a",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7633063550713348633",
+        "title": "第8章 ：黑色倒卖高纯毒晶，一把狂赚3万巨款！",
+        "order": 8,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7633063550713348633",
+        "status": "COMPLETE",
+        "characters": 3011,
+        "sha256": "f60df90a979c23ac639011532b0e27b26b78f2ea810d3ca4c0d8575e049c4a25",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7633075167819743769",
+        "title": "第9章 ：拿2万买我当炮灰？你也配！",
+        "order": 9,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7633075167819743769",
+        "status": "COMPLETE",
+        "characters": 2732,
+        "sha256": "c21e54e3b3fc57814fa88093f94aa9c8e15bce3f39e9313e6054f3f1e090fb26",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7633320608549306905",
+        "title": "第10章 ：豪掷3万巨款一键开启，5年时间加速",
+        "order": 10,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7633320608549306905",
+        "status": "COMPLETE",
+        "characters": 2881,
+        "sha256": "c5ee006211164884f59eef894a9561a972df4829f9d420a4db91b3f3d0f4fc2e",
+        "unresolved_pua": 0
+      }
+    ],
+    "complete_chapters": 10,
+    "local_only_sample_sha256": "acf7ddad2ed0c35ca97f75c12473ebea6d654b6cb8ef2def9d4ed71a745e6e73",
+    "local_source_path": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\mall-urban-high-martial-20261011\\local-originals\\7631863518148430873",
+    "raw_prose_committed": false,
+    "decoder_version": "dc027189e0ba4cd",
+    "tls_verification": true
+  },
+  {
+    "book_id": "7462405945180572697",
+    "title": "你们刷怪啊，刷我干嘛！",
+    "author": "喜欢吃橘子",
+    "downloaded_at": "2026-10-11T02:40:36.362309+00:00",
+    "requested_range": [
+      1,
+      10
+    ],
+    "chapters": [
+      {
+        "item_id": "7462405977984221721",
+        "title": "第1章 怎么吃都不饱",
+        "order": 1,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7462405977984221721",
+        "status": "COMPLETE",
+        "characters": 2144,
+        "sha256": "b17543c7899abcaeaacc8f5233d713507fcf6390791c70c113a6cabf174f49d7",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7462409292394529305",
+        "title": "第2章 吃饱的办法",
+        "order": 2,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7462409292394529305",
+        "status": "COMPLETE",
+        "characters": 2690,
+        "sha256": "4ec1047b20ee0ef23a686981f7e72a6f67bff01e87a12b7c655a44699b027bb3",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7462411300702781977",
+        "title": "第3章 同类，到处都是同类",
+        "order": 3,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7462411300702781977",
+        "status": "COMPLETE",
+        "characters": 2339,
+        "sha256": "9edfc61a39c261c096f016304467e09eb36c4498b61ded9c17c9ac8a726db2aa",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7463841557976711705",
+        "title": "第4章 一起掠食的同伴",
+        "order": 4,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7463841557976711705",
+        "status": "COMPLETE",
+        "characters": 3693,
+        "sha256": "220150f2144f8d56429702b0c5ddacbd466c806d6be0a2fd8419dbcf2d6f440e",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7464201439980569113",
+        "title": "第5章 被异魔死死缠上了",
+        "order": 5,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7464201439980569113",
+        "status": "COMPLETE",
+        "characters": 3275,
+        "sha256": "809c4e5f65995cc0aff864e22dc4bc2b1b069f41ca916475d78c8a87f9e65324",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7466418818089222681",
+        "title": "第6章 公交危机",
+        "order": 6,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7466418818089222681",
+        "status": "COMPLETE",
+        "characters": 2559,
+        "sha256": "ac698763c23ecb0c2a055f5b54253312c46a68eab67c4ba8500d3751edb0566e",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7466465369587188249",
+        "title": "第7章 危险女友",
+        "order": 7,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7466465369587188249",
+        "status": "COMPLETE",
+        "characters": 3214,
+        "sha256": "91f0fe2a0ebf80a58d76b9c078e86ffdccaafc7ad28376fc2ac2de4b96309fad",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7467066201013764633",
+        "title": "第8章 谁给你的自信对我这么有信心",
+        "order": 8,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7467066201013764633",
+        "status": "COMPLETE",
+        "characters": 2441,
+        "sha256": "4d54a8c7640b93edaec2faa19f6cebe9deba27761b02f59301ddc132c7fe29ee",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7467544580515185176",
+        "title": "第9章 鱼嘴里冲出的东西",
+        "order": 9,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7467544580515185176",
+        "status": "COMPLETE",
+        "characters": 2339,
+        "sha256": "d9f1107b40e690fa0decc561e77a3312ea271f380037f11b64d9986a4a78ce2c",
+        "unresolved_pua": 0
+      },
+      {
+        "item_id": "7467929873898553881",
+        "title": "第10章 首位觉醒者亮相",
+        "order": 10,
+        "locked": false,
+        "source_url": "https://fanqienovel.com/reader/7467929873898553881",
+        "status": "COMPLETE",
+        "characters": 2316,
+        "sha256": "6a4be6c97b31ad9becef7aca719dd4befbea2bfe9ba4e000614f4135fdc87568",
+        "unresolved_pua": 0
+      }
+    ],
+    "complete_chapters": 10,
+    "local_only_sample_sha256": "d8c300b0bc5d1bc077eaaaa39884148bf8a981ef5e91133712d6f85b9b4f95fc",
+    "local_source_path": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\都市高武大纲文件创作\\.runs\\mall-urban-high-martial-20261011\\local-originals\\7462405945180572697",
+    "raw_prose_committed": false,
+    "decoder_version": "dc027189e0ba4cd",
+    "tls_verification": true
+  }
+]

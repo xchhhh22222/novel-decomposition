@@ -1,0 +1,287 @@
+{
+  "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+  "module_count": 8,
+  "record_count": 10,
+  "records": [
+    {
+      "concepts": "A,C",
+      "record_id": "GF:BOOK_015",
+      "path": "DNA素材/02_金手指/per_book/BOOK_015.jsonl",
+      "line": 1,
+      "json_pointer": "/",
+      "read_scope": "FULL_ROW",
+      "file_sha256": "e775ec814d2574461b5146faca06cb5304720becae1b11226dc58e9f40001150",
+      "selected_unit_sha256": "8c084d0fdc507d70844950d7340375932bdc88cd563918e9f64274833a8bfdd6",
+      "qa_status": "PASS",
+      "status": "candidate",
+      "evidence_refs": [
+        "BOOK_015:CHAPTER:0001",
+        "BOOK_015:CHAPTER:0002",
+        "BOOK_015:CHAPTER:0005",
+        "BOOK_015:CHAPTER:0006",
+        "BOOK_015:CHAPTER:0007",
+        "BOOK_015:CHAPTER:0015",
+        "BOOK_015:CHAPTER:0030",
+        "BOOK_015:CHAPTER:0033",
+        "BOOK_015:CHAPTER:0037",
+        "BOOK_015:CHAPTER:0041",
+        "BOOK_015:CHAPTER:0059",
+        "BOOK_015:CHAPTER:0062",
+        "BOOK_015:CHAPTER:0078",
+        "BOOK_015:CHAPTER:0082",
+        "BOOK_015:CHAPTER:0083",
+        "BOOK_015:CHAPTER:0088",
+        "BOOK_015:CHAPTER:0089",
+        "BOOK_015:CHAPTER:0096",
+        "BOOK_015:CHAPTER:0104",
+        "BOOK_015:CHAPTER:0136"
+      ],
+      "parent_unknowns": [
+        "发放者'阿超'的真实身份（文本内为作者自嘲化身梗，机制层无解释）",
+        "能力起源机制仅有谜语级线索（'超能力和这个世界都取决于你的心'CH82/L14805；CH83穿越回1940遇少女期温若怜）",
+        "每日发放是否随主角心智/愿望偏置：CH12/L4509'祈祷明天一定要觉醒一个适合学习的超能力'暗示愿望可能影响发放，但无直接验证",
+        "结局'一切都是梦'对能力真实性的最终定性：作者自述结局临时赶工（CH136末作者按），谜团线未完整回收",
+        "CH119立定跳远3.3米未注明当日能力或是否复用身体强化"
+      ],
+      "source_url": "https://github.com/xchhhh22222/nova-material-library/blob/1e10e6e3ffb70eda94a400073155fd89db724ce9/packages/shared-dna-library/v1.0.0/DNA素材/02_金手指/per_book/BOOK_015.jsonl"
+    },
+    {
+      "concepts": "A",
+      "record_id": "WB:BOOK:BOOK_005",
+      "path": "DNA素材/03_世界观/per_book/BOOK_005.jsonl",
+      "line": 1,
+      "json_pointer": "/rule_chains/1",
+      "read_scope": "PARENT_CONTEXT_AND_RULE_CHAINS",
+      "file_sha256": "1aedaee00903a1006635e49af8c6f48f1f1eeaf66f2677818fd7ed265ec06a6a",
+      "selected_unit_sha256": "c43a5b64f1792ca354c0631acc00b9590546d29eb590ac8c7c37220292b7f338",
+      "qa_status": "PASS",
+      "status": "candidate",
+      "evidence_refs": [
+        "BOOK_005:CHAPTER:0006",
+        "BOOK_005:CHAPTER:0009",
+        "BOOK_005:CHAPTER:0013",
+        "BOOK_005:CHAPTER:0024",
+        "BOOK_005:CHAPTER:0054",
+        "BOOK_005:CHAPTER:0070",
+        "BOOK_005:CHAPTER:0085",
+        "BOOK_005:CHAPTER:0112",
+        "BOOK_005:CHAPTER:0116"
+      ],
+      "parent_unknowns": [
+        "异能、灵妖/异兽、灾害与空间裂隙的统一世界成因、层级和地域分布UNKNOWN",
+        "异能局及学校系统的法律隶属、组织规模、部门结构与资源配额UNKNOWN",
+        "普通公众对异能、裂隙和官方保密的知情范围与舆论治理UNKNOWN",
+        "觉醒检测与登记是否覆盖全社会、不同能力者的普遍成长/晋升规则UNKNOWN",
+        "星髓、药物、异常物和裂隙资源的生成、交易、归属、消耗和回流UNKNOWN",
+        "地图开放的完整权限门槛、裂隙稳定性、生态与关闭方式UNKNOWN",
+        "光点/灵能弹、回收亲和与预见是否属于同一能力体系UNKNOWN"
+      ],
+      "source_url": "https://github.com/xchhhh22222/nova-material-library/blob/1e10e6e3ffb70eda94a400073155fd89db724ce9/packages/shared-dna-library/v1.0.0/DNA素材/03_世界观/per_book/BOOK_005.jsonl"
+    },
+    {
+      "concepts": "A",
+      "record_id": "CS:BOOK:BOOK_009",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_009.jsonl",
+      "line": 1,
+      "json_pointer": "/",
+      "read_scope": "FULL_ROW",
+      "file_sha256": "4df32b297d499270e874c54011d4be6c24027619a888dcee1100219b4ac1088f",
+      "selected_unit_sha256": "54e34f4376ab4371987b89f15a2eb13c82a926d5e491ba23ec0d46d4033baafe",
+      "qa_status": "PASS",
+      "status": "candidate",
+      "evidence_refs": [
+        "BOOK_009:CHAPTER:0001",
+        "BOOK_009:CHAPTER:0010",
+        "BOOK_009:CHAPTER:0028",
+        "BOOK_009:CHAPTER:0043",
+        "BOOK_009:CHAPTER:0054",
+        "BOOK_009:CHAPTER:0062"
+      ],
+      "parent_unknowns": [
+        "源文未完整交代通用境界突破条件、武魂与武技换算",
+        "终极形态的长期代价UNKNOWN"
+      ],
+      "source_url": "https://github.com/xchhhh22222/nova-material-library/blob/1e10e6e3ffb70eda94a400073155fd89db724ce9/packages/shared-dna-library/v1.0.0/DNA素材/04_修炼体系/per_book/BOOK_009.jsonl"
+    },
+    {
+      "concepts": "A",
+      "record_id": "OP:BOOK:BOOK_004",
+      "path": "DNA素材/07_开篇/per_book/BOOK_004.jsonl",
+      "line": 1,
+      "json_pointer": "/selling_point_proof/0",
+      "read_scope": "OPENING_RELEVANT_FIELDS",
+      "file_sha256": "4c06e9efcb1879c24ace9f82c7d7fe861895d0a9c074eea71e6e70731a7ecb71",
+      "selected_unit_sha256": "3ff67dcb6a75d3e63a0bd1b28f798622d8932e33deb13712eeed359c60b32518",
+      "qa_status": "PASS",
+      "status": "candidate",
+      "evidence_refs": [
+        "BOOK_004:CHAPTER:0003",
+        "BOOK_004:CHAPTER:0005"
+      ],
+      "parent_unknowns": [],
+      "source_url": "https://github.com/xchhhh22222/nova-material-library/blob/1e10e6e3ffb70eda94a400073155fd89db724ce9/packages/shared-dna-library/v1.0.0/DNA素材/07_开篇/per_book/BOOK_004.jsonl"
+    },
+    {
+      "concepts": "B",
+      "record_id": "GF:BOOK_005",
+      "path": "DNA素材/02_金手指/per_book/BOOK_005.jsonl",
+      "line": 1,
+      "json_pointer": "/",
+      "read_scope": "FULL_ROW",
+      "file_sha256": "450c250f6984c0d42d17f380a3f18adf935415dfdb379c4afa414b29f49ced02",
+      "selected_unit_sha256": "cc8f05d13f2c45fdef6a235004412a8ea64e5543ea0fa60968e18bcf0dfe9414",
+      "qa_status": "PASS",
+      "status": "candidate",
+      "evidence_refs": [
+        "BOOK_005:CHAPTER:0001",
+        "BOOK_005:CHAPTER:0002",
+        "BOOK_005:CHAPTER:0003",
+        "BOOK_005:CHAPTER:0012",
+        "BOOK_005:CHAPTER:0013",
+        "BOOK_005:CHAPTER:0015",
+        "BOOK_005:CHAPTER:0024",
+        "BOOK_005:CHAPTER:0025",
+        "BOOK_005:CHAPTER:0035",
+        "BOOK_005:CHAPTER:0038",
+        "BOOK_005:CHAPTER:0040",
+        "BOOK_005:CHAPTER:0054",
+        "BOOK_005:CHAPTER:0058",
+        "BOOK_005:CHAPTER:0071",
+        "BOOK_005:CHAPTER:0075",
+        "BOOK_005:CHAPTER:0085",
+        "BOOK_005:CHAPTER:0092",
+        "BOOK_005:CHAPTER:0102",
+        "BOOK_005:CHAPTER:0109",
+        "BOOK_005:CHAPTER:0110",
+        "BOOK_005:CHAPTER:0112",
+        "BOOK_005:CHAPTER:0116",
+        "BOOK_005:EMOTION:0001",
+        "BOOK_005:EMOTION:0012",
+        "BOOK_005:EMOTION:0013",
+        "BOOK_005:EMOTION:0024",
+        "BOOK_005:EMOTION:0040",
+        "BOOK_005:EMOTION:0054",
+        "BOOK_005:EMOTION:0075",
+        "BOOK_005:EMOTION:0092",
+        "BOOK_005:EMOTION:0102",
+        "BOOK_005:EMOTION:0116"
+      ],
+      "parent_unknowns": [
+        "源文没有给真实异能一个稳定正式名称；‘垃圾回收’是登记/误解名称，是否与预见完全同一规则UNKNOWN",
+        "预见时间窗、最大距离、触发频率、冷却、主动控制程度与能否储存/回放未量化",
+        "基础光点、灵能弹、回收亲和等输出是否是预见的同一输出层，或另一个未命名能力，UNKNOWN",
+        "药物/星髓与预见的普遍因果关系未证实；第46章只支持一次关联",
+        "是否存在独立系统界面、技能树、固定资源消耗或最终上限未见明确证据",
+        "第116章之后的规则成长、收益归属与上限UNKNOWN"
+      ],
+      "source_url": "https://github.com/xchhhh22222/nova-material-library/blob/1e10e6e3ffb70eda94a400073155fd89db724ce9/packages/shared-dna-library/v1.0.0/DNA素材/02_金手指/per_book/BOOK_005.jsonl"
+    },
+    {
+      "concepts": "B",
+      "record_id": "CF:BOOK:BOOK_005",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_005.jsonl",
+      "line": 1,
+      "json_pointer": "/relationship_engines/0",
+      "read_scope": "FULL_SELECTED_UNIT_WITH_PARENT_QA_UNKNOWN",
+      "file_sha256": "c5713e79403c44a96d04372939fbd83ddd26efe364788ddb8c247c8139433133",
+      "selected_unit_sha256": "954d409093619fce07b4b833bd1ab4ae490bc6e1967b071ccfcbb8f9513770cc",
+      "qa_status": "PASS",
+      "status": "candidate",
+      "evidence_refs": [
+        "BOOK_005:CHAPTER:0035",
+        "BOOK_005:CHAPTER:0053",
+        "BOOK_005:CHAPTER:0071",
+        "BOOK_005:CHAPTER:0079",
+        "BOOK_005:CHAPTER:0085"
+      ],
+      "parent_unknowns": [
+        "楚月、赵莹莹、欧阳倩在116章后的长期路线未知",
+        "谢凝霜、顾鹿缺少足够跨阶段独立目标与选择证据",
+        "周成业仅有86-90章单阶段问责行动，不支持长线反派结论",
+        "江寒预见与光点/灵能弹/登记名的统一机制仍由02记录为UNKNOWN，本专项仅作接口引用"
+      ],
+      "source_url": "https://github.com/xchhhh22222/nova-material-library/blob/1e10e6e3ffb70eda94a400073155fd89db724ce9/packages/shared-dna-library/v1.0.0/DNA素材/05_人物功能与标签/per_book/BOOK_005.jsonl"
+    },
+    {
+      "concepts": "B",
+      "record_id": "PM:BOOK:BOOK_012",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_012.jsonl",
+      "line": 1,
+      "json_pointer": "/mechanisms/6",
+      "read_scope": "FULL_SELECTED_UNIT_WITH_PARENT_QA_UNKNOWN",
+      "file_sha256": "eaedff3e8943bdda193c71b4a1e91b6fda45d85c7aa72da8e1dcebb4e2083aa0",
+      "selected_unit_sha256": "35a69b148c05e9071862a94e3f5fc446226c1dc4b1f1eaeaf811d55a967556d7",
+      "qa_status": "PASS",
+      "status": "candidate",
+      "evidence_refs": [],
+      "parent_unknowns": [
+        "760-1350章未精读，机制在该区间的运行实例仅由关键词命中与终局窗口间接支撑",
+        "PM3面具类型学与PM5自指问题因样本受精读限制标记为partial repeatability",
+        "第1358章尾部混入非本书内容，机制分析已按内容边界截断"
+      ],
+      "source_url": "https://github.com/xchhhh22222/nova-material-library/blob/1e10e6e3ffb70eda94a400073155fd89db724ce9/packages/shared-dna-library/v1.0.0/DNA素材/09_剧情机制/per_book/BOOK_012.jsonl"
+    },
+    {
+      "concepts": "C",
+      "record_id": "CF:BOOK:BOOK_008",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_008.jsonl",
+      "line": 1,
+      "json_pointer": "/relationship_engines/0",
+      "read_scope": "FULL_SELECTED_UNIT_WITH_PARENT_QA_UNKNOWN",
+      "file_sha256": "4e1bc6c8a6f98284bf9b640c50d5433d2a09631979d4428a0047a48c03623d51",
+      "selected_unit_sha256": "cdde14dc07cad2dd37e3374878ed2e9aa523326c841881ee05713b0e9cdec311",
+      "qa_status": "PASS",
+      "status": "candidate",
+      "evidence_refs": [
+        "BOOK_008:CHAPTER:0007",
+        "BOOK_008:CHAPTER:0085"
+      ],
+      "parent_unknowns": [
+        "第86章后人物功能UNKNOWN"
+      ],
+      "source_url": "https://github.com/xchhhh22222/nova-material-library/blob/1e10e6e3ffb70eda94a400073155fd89db724ce9/packages/shared-dna-library/v1.0.0/DNA素材/05_人物功能与标签/per_book/BOOK_008.jsonl"
+    },
+    {
+      "concepts": "C",
+      "record_id": "PL:BOOK:BOOK_002",
+      "path": "DNA素材/06_主线与支线/per_book/BOOK_002.jsonl",
+      "line": 1,
+      "json_pointer": "/plotlines/1",
+      "read_scope": "FULL_SELECTED_UNIT_WITH_PARENT_QA_UNKNOWN",
+      "file_sha256": "e12dd16a719fac976ed137bd2dcb52d1b465741159c63cf1c5af13b02fc32c53",
+      "selected_unit_sha256": "7d58aee6bc8d91152aa4eaaf4570f21d6c3a9b079de6c12e85edaa1e1b7809ad",
+      "qa_status": "PASS",
+      "status": "candidate",
+      "evidence_refs": [
+        "BOOK_002:CHAPTER:0012",
+        "BOOK_002:CHAPTER:0026",
+        "BOOK_002:CHAPTER:0032",
+        "BOOK_002:CHAPTER:0050",
+        "BOOK_002:CHAPTER:0076"
+      ],
+      "parent_unknowns": [],
+      "source_url": "https://github.com/xchhhh22222/nova-material-library/blob/1e10e6e3ffb70eda94a400073155fd89db724ce9/packages/shared-dna-library/v1.0.0/DNA素材/06_主线与支线/per_book/BOOK_002.jsonl"
+    },
+    {
+      "concepts": "C",
+      "record_id": "AR:BOOK:BOOK_009",
+      "path": "DNA素材/08_篇章结构/per_book/BOOK_009.jsonl",
+      "line": 1,
+      "json_pointer": "/arcs/2",
+      "read_scope": "FULL_SELECTED_UNIT_WITH_PARENT_QA_UNKNOWN",
+      "file_sha256": "44b35820c36d0ba995b1dd598a3b1c984245814f69340770773a20b93fee7bb7",
+      "selected_unit_sha256": "479b17cd23736c56b934c9bfc1a0184009918c89a41d756b23cbf3c3c7566d65",
+      "qa_status": "PASS",
+      "status": "candidate",
+      "evidence_refs": [
+        "BOOK_009:CHAPTER:0031",
+        "BOOK_009:CHAPTER:0043",
+        "BOOK_009:CHAPTER:0044"
+      ],
+      "parent_unknowns": [
+        "第62章之后的结构未知"
+      ],
+      "source_url": "https://github.com/xchhhh22222/nova-material-library/blob/1e10e6e3ffb70eda94a400073155fd89db724ce9/packages/shared-dna-library/v1.0.0/DNA素材/08_篇章结构/per_book/BOOK_009.jsonl"
+    }
+  ]
+}

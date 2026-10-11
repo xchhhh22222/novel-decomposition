@@ -1,0 +1,17 @@
+{
+  "status": "PASS_STRUCTURAL_AND_PROVENANCE_CHECKS",
+  "semantic_review": "SELF_REVIEW_COMPLETE_INDEPENDENT_REVIEW_PENDING",
+  "candidate_count": 40,
+  "identity_verified": 40,
+  "reader_display_verified": 32,
+  "reader_display_unknown": 8,
+  "selected_books": 10,
+  "read_and_analyzed_chapters": 100,
+  "local_text_hashes_match": 100,
+  "material_modules": 8,
+  "material_records": 10,
+  "frozen_artifacts_hashes_match": 127,
+  "frozen_manifest_equals_git": true,
+  "full_book_download": "NOT_RUN_PENDING_APPROVAL",
+  "original_prose_in_delivery": false
+}
