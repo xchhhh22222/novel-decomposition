@@ -18,9 +18,9 @@ description: V1.2 兼容 + Emotion-First 创作模式：从读者承诺和因果
 - 用户要求从简要读者情绪直接生成并比较结构候选，且存在已审核的 Emotion Arc V2 派生包时，继续读取 [references/emotion-story-bridge.md](references/emotion-story-bridge.md)。必须先检索真实 EL/EW/MA/AH，再由语义编排器提出候选、由确定性入口核验来源/状态/合同/02–09 节点使用；不得退回写死情绪线，也不得把机器门当创作质量结论。
 - **用户明确要求 Phase 1 Emotion-First Skill 研究工作流时**，读取 [references/emotion-first-workflow-v1.md](references/emotion-first-workflow-v1.md)。模型必须从用户短 brief 自行形成 sparse 输入，并执行 `scripts/emotion_first_workflow_v1.py prepare` → 独立 legacy/enhanced 模型编排 → `finalize`；不得要求用户预写完整 `semantic-composition.json`。此入口目前只支持现有高武 `DOWN/DOWN/UP` / 四维要求研究契约，仍须材料来源审计和宏弧 PAID 兑现见证检查；生成候选仍为 `candidate/HOLD`、不能写小说正文或改正式 Planner。
 
-- **用户目标为番茄都市高武 + 短剧/版权改编时（研究实验）**，优先读取 [references/market-ip-short-drama-v1.md](references/market-ip-short-drama-v1.md) 与 [references/short-drama-opening-v1.md](references/short-drama-opening-v1.md)；使用版权榜/IP证据池 Top10 + 都市高武新书榜 Top10 的**双池**采样，不合并成一个旧版 Top10。版权榜官方接口若未核实则必须 `COPYRIGHT_RANK_UNVERIFIED`，不得将巅峰榜、版权专区或第三方转载伪装为版权榜，不得据此宣称签约/流量预测成立。原创方案先作视听化金手指可理解性、超凡力量可见性、情绪性人物行动与节奏 A/B 测试，产物只限研究分支，不覆盖已验收小说 A 版。
+- **用户目标为番茄都市高武 + 短剧/IP改编研究时**，先读取 [references/market-ip-short-drama-v1.md](references/market-ip-short-drama-v1.md) 与 [references/short-drama-opening-v1.md](references/short-drama-opening-v1.md)。双样本池是【番茄版权商城「好书」展示顺序10部不同原著小说】+【番茄都市高武新书榜官方前10名】，分别取得合法正文并研究金手指早期强兑现、视听冲突、人物情绪和长期因果；商城「好书」不能虚构成官方“版权榜排名”，不可用旧版权改编公告代替，不得宣称更容易签约。新证据只在研究分支，既有小说 A 版不修改。
 - 需要扫榜、筛书、获取前10章：读取 [references/execution-pipeline.md](references/execution-pipeline.md)。
-- **需要开新书的实时赛道学习：必须读取 [references/market-benchmark.md](references/market-benchmark.md)。**一般题材保留原 V1.2 单榜流程；番茄都市高武+版权/短剧改编研究目标改用双池侧车，不得将20项塞入旧版 `top10` 验证契约；版权榜不可核实时必须保留真实缺口而不是伪造榜单。
+- **需要开新书的实时赛道学习**：读取 [references/market-benchmark.md](references/market-benchmark.md)；常规题材保留原V1.2单榜流程，番茄都市高武+短剧/IP改编按上述商城好书池和高武新书榜双池sidecar研究，不得将20项填入原验证器的10项字段。
 - `market-opening-synthesis.md` 仅作为旧版轻量开篇横评参考，不再定义 V1.2 标准流程。
 - 需要创造金手指、人物关系、世界观、修炼和资源循环：读取 [references/creation-kernel.md](references/creation-kernel.md)。
 - 需要规划前300章：读取 [references/architecture-300.md](references/architecture-300.md)。
