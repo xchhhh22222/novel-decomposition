@@ -57,8 +57,8 @@
 6. 一次小兑现 + 更大、不同性质的下一问题。
 
 每个节拍标：
-- \`scene/location\`、\`characters\`、\`visible_action\`、\`stake\`、\`emotion_before_after\`、\`decision\`、\`state_change\`、\`next_watch_reason\`;
-- 如需视效，\`live_action_vfx_cost_risk\` 与 \`animated_drama_fit\` 分开。
+- `scene/location`、`characters`、`visible_action`、`stake`、`emotion_before_after`、`decision`、`state_change`、`next_watch_reason`;
+- 如需视效，`live_action_vfx_cost_risk` 与 `animated_drama_fit` 分开。
 - 动作要**一眼明白“我差一点够到、这次够到了”**，不凭九行步法讲解或脑内解说撑戏。
 - 每个新场景必须提供新威胁、新选择、新结果三者之一；重复训练镜头若不改变现场条件、关系或资源，应蒙太奇或压缩。
 - “视觉短剧化”是信息转换效率，不是机械每三百字一个耳光/反转；小高潮必须偿还之前建立的期待。
@@ -74,7 +74,7 @@
 
 ## 双版本盲读试验（研究）
 
-**A 固定为** \`research/urban-high-martial-creative-test-v1/chapter-01.md\` 等三章已交付正文；不可覆盖。B 在另一个研究目录生成“第1章 + 第2–3章节拍表”，保留乔砚、伤势、败招回响、收入合同与人物可见事实，同时可局部重排场景（必须记录变更的因果）。
+**A 固定为** `research/urban-high-martial-creative-test-v1/chapter-01.md` 等三章已交付正文；不可覆盖。B 在另一个研究目录生成“第1章 + 第2–3章节拍表”，保留乔砚、伤势、败招回响、收入合同与人物可见事实，同时可局部重排场景（必须记录变更的因果）。
 
 先让读者不看素材来源、不看模型评价，分别回答：
 - 能否用**一句人话**描述主角能力和即刻代价？
@@ -86,4 +86,4 @@
 
 可记录首次吸引时点、规则理解正确性、重读次数、后续点击意愿（读者主动报告），不捏造真实平台完读率或播放量。B 无改进或破坏了A的可信度时应保留A；短剧化不是绝对优越。
 
-**必要输出：** \`opening_AB_readability_report.md\`、\`B_chapter01.md\`、\`B_chapters02_03_scene_beats.md\`、\`market_dual_research_status.json\`。人工批准前不替换A，且不更新production。
+**必要输出：** `opening_AB_readability_report.md`、`B_chapter01.md`、`B_chapters02_03_scene_beats.md`、`market_dual_research_status.json`。人工批准前不替换A，且不更新production。
