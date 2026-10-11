@@ -1,6 +1,6 @@
 # 创作实战测试报告
 
-日期2026-10-11。研究分支research/urban-high-martial-creative-test-v1。代码母提交9ef17befd7508e69c6b7898206c579b08b86ed11，素材冻结1e10e6e3ffb70eda94a400073155fd89db724ce9。最终提交与远端回读结果由提交后evidence/remote-verification.json提供；不预写或伪造最终SHA。
+日期2026-10-11。研究分支research/urban-high-martial-creative-test-v1。代码母提交9ef17befd7508e69c6b7898206c579b08b86ed11，素材冻结1e10e6e3ffb70eda94a400073155fd89db724ce9。正文交付提交与远端逐文件回读结果见evidence/remote-verification.json；该记录随后作为元数据提交，因此最终分支完整SHA由Git日志与最终交付消息提供，不构造自指SHA。
 
 推荐书名《高武：这一拳，我练过》。右臂受损的职业陪练只能重演自己的败招，需现实训练与他人合作，把一次命中奖金变成能拒绝独占合同的生计。主角成年，无学生/武考/系统任务必选框架。
 
