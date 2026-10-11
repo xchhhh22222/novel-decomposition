@@ -1,5 +1,7 @@
 # 番茄版权改编公开案例 · 首轮扫榜证据（2026-10-11）
 
+> **SUPERSEDED FOR USER'S CURRENT REQUEST (2026-10-11)**：本文件记录的是番茄官网版权改编“公告”而非用户指定的【番茄版权商城 → 好书】栏目。其8本作品不得作为新实测的主样本，也不得称为“好书前10”。准确商城入口：https://mall.fanqiecopyright.com/pc/index 。本文件只作为历史辅助IP公告证据。新的采样规则以 skills/novel-creation-planner/references/market-ip-short-drama-v1.md 为准，商城好书页面的实时书目尚未验证。
+
 状态：**PRE_SCAN_VERIFIED_METADATA_ONLY / FIRST_10_CHAPTERS_NOT_READ**。
 
 ## 一、定义与来源
