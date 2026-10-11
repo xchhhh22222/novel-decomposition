@@ -1,0 +1,33 @@
+{
+  "status": "STRUCTURAL_AND_SOURCE_CHECKS_PASS",
+  "source_blobs": 8,
+  "chapter_index_rows": 160,
+  "new_chapter_rows": 80,
+  "normalized_equal_first_ten": 79,
+  "semantic_self_review": "COMPLETE_WITH_LISTED_GAPS",
+  "independent_review": "PENDING_GPT6",
+  "prior_qa_status": "structural PASS; semantic SELF_REVIEW_COMPLETE_INDEPENDENT_REVIEW_PENDING",
+  "source_commit": "718d853c01c165b4caa0bd0cd812311081578fe9",
+  "analysis_base": "f71f6457b14ca682b0b0834f55b52257f15b30b6",
+  "candidate_status": "3 variants pending independent review; no new production card",
+  "frozen_hash_guard": "127/127 before-after identical; matches prior fixed receipt",
+  "manual_checks": [
+    "plans vs actual results separated",
+    "old ability vs new ability separated",
+    "narrator facts vs protagonist inference separated",
+    "side-character victories not assigned to protagonist",
+    "same-object emotion debt and visible reactions checked",
+    "open loops and unresolved promises retained",
+    "known number/wording inconsistencies retained",
+    "reference events and permanent powers not mapped into frozen novel facts"
+  ],
+  "stage_stop": true,
+  "promotion_run": false,
+  "formal_schema_validation": "NOT_APPLICABLE: custom isolated research Markdown and evidence receipts; not formal suite candidate JSONL",
+  "limitations": [
+    "no semantic verification beyond ordinal20",
+    "no external independent semantic review",
+    "no real reader measurements or production cost quotes",
+    "prior ten-chapter semantic conclusions reused, not all freshly independently audited"
+  ]
+}

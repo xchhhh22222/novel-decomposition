@@ -1,0 +1,139 @@
+{
+  "query": "资源跃迁 产出 转化 清洗 负面 嫁接 生产",
+  "modules": [
+    "cultivation_system",
+    "golden_finger",
+    "plot_mechanism"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 6,
+  "results": [
+    {
+      "record_id": "PM:BOOK:BOOK_006",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_006",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_006.jsonl",
+      "line": 1,
+      "title": "全民神祇：我的神域有点不对劲",
+      "score": 12.4,
+      "why": [
+        "正文:产出",
+        "正文:生产"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_006:CHAPTER:0010 BOOK_006:CHAPTER:0020 BOOK_006:CHAPTER:0029 BOOK_006:CHAPTER:0043 BOOK_006:CHAPTER:0064 BOOK_006:CHAPTER:0073"
+    },
+    {
+      "record_id": "GF:BOOK:BOOK_006",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_006",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_006.jsonl",
+      "line": 1,
+      "title": "扩大样本基数/筛选变异/保底定向高价值目标",
+      "score": 10.8,
+      "why": [
+        "正文:产出",
+        "正文:转化",
+        "正文:生产"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 神域内未启灵动植物的生长、繁衍与外界刺激 process 随机变异累计次数；五千次可指定目标随机变异，一万次可指定目标必定良性变异 output 新灵植、灵兽、生产资产、战斗能力或失败样本"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_013",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_013",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_013.jsonl",
+      "line": 1,
+      "title": "我不是戏神",
+      "score": 10.8,
+      "why": [
+        "正文:产出",
+        "正文:转化"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_013:CHAPTER:0001 BOOK_013:CHAPTER:0010 BOOK_013:CHAPTER:0016 BOOK_013:CHAPTER:0045 BOOK_013:CHAPTER:0046 BOOK_013:CHAPTER:0058 BOOK_013:CHAPTER:0074 BOOK_013:CHAPTER:0080 BOOK_013:CHAPTER:0096 BOOK_013:CHAPTER:0097 BOOK_013:CHAPTER:0397 BOOK_013:CHAPTER:0826 BOOK_013:CHAPTE…"
+    },
+    {
+      "record_id": "CS:BOOK:BOOK_007",
+      "record_type": "per_book",
+      "module": "cultivation_system",
+      "book_id": "BOOK_007",
+      "schema_version": 2,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/04_修炼体系/per_book/BOOK_007.jsonl",
+      "line": 1,
+      "title": "猎魔人小姐，我真不是血族",
+      "score": 10.4,
+      "why": [
+        "正文:产出",
+        "正文:转化"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_007:CHAPTER:0001 BOOK_007:CHAPTER:0005 BOOK_007:CHAPTER:0006 BOOK_007:CHAPTER:0026 BOOK_007:CHAPTER:0030 BOOK_007:CHAPTER:0066 BOOK_007:CHAPTER:0069 BOOK_007:CHAPTER:0073 BOOK_007:CHAPTER:0074 BOOK_007:CHAPTER:0100 BOOK_007:CHAPTER:0105 BOOK_007:CHAPTER:0110 BOOK_007:CHAPTE…"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_012",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_012",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_012.jsonl",
+      "line": 1,
+      "title": "十日终焉",
+      "score": 10.4,
+      "why": [
+        "正文:产出",
+        "正文:转化"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_012:CHAPTER:0001 BOOK_012:CHAPTER:0010 BOOK_012:CHAPTER:0020 BOOK_012:CHAPTER:0031 BOOK_012:CHAPTER:0032 BOOK_012:CHAPTER:0100 BOOK_012:CHAPTER:0120 BOOK_012:CHAPTER:0224 BOOK_012:CHAPTER:0230 BOOK_012:CHAPTER:0235 BOOK_012:CHAPTER:0274 BOOK_012:CHAPTER:0610 BOOK_012:CHAPTE…"
+    },
+    {
+      "record_id": "GF:BOOK_004",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_004",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_004.jsonl",
+      "line": 1,
+      "title": "把宿主承受或持有之物供养给绑定目标→目标获得万倍结果",
+      "score": 10.2,
+      "why": [
+        "正文:转化",
+        "正文:负面"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 宿主可支配的修炼资源、负面状态、灵魂/材料、功德或雷霆 process 选择一个可供养对象并绑定接收目标，宿主份额被消耗或剥离，接收目标获得万倍强化 output 身体净化、本命幡进阶、阴兵/血魔军团成长或法宝储备增强"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

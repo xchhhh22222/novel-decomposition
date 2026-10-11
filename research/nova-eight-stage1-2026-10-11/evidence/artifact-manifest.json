@@ -1,0 +1,121 @@
+{
+  "scope": "research-only; excludes manifest itself and later publication receipt",
+  "artifacts": {
+    "books/N8_01.md": {
+      "sha256": "85d2a146ae38590e7ddf212c55d13e8e3ed87606f47cb180ec5ffbe510ee41d8",
+      "bytes": 10632
+    },
+    "books/N8_02.md": {
+      "sha256": "828c15cab9c70e5543c256f3accb11e32b7da0e53a60fe0c111511f8e548099b",
+      "bytes": 12320
+    },
+    "books/N8_03.md": {
+      "sha256": "fb4c42815e84d5da3d66392bf8fbb3c62f77e9636e8b486310da6de7d5a90b7a",
+      "bytes": 10097
+    },
+    "books/N8_04.md": {
+      "sha256": "0e8ed4e654fb69cd3f7805d2c59ee71ce242d57f033943a79c1c53b32b00fca1",
+      "bytes": 10083
+    },
+    "books/N8_05.md": {
+      "sha256": "cd61bd3c758d77cef706e0543f997cede289fd05c60c3374c09a24cf318f8090",
+      "bytes": 8915
+    },
+    "books/N8_06.md": {
+      "sha256": "b9033e93d11e0ea5ca08b1be755f56b977d1cdff4b48cacce3424b0fa97e7f0d",
+      "bytes": 9810
+    },
+    "books/N8_07.md": {
+      "sha256": "88254030fab21d92020922ff4cf6a7c0dc06ea3c8507468a3bad98a080903194",
+      "bytes": 9307
+    },
+    "books/N8_08.md": {
+      "sha256": "e1fafb5c00f2ffe3404e0ac2c3ae7b0dcf4060569566767cbec4b052c2c2a94c",
+      "bytes": 9963
+    },
+    "candidates-and-dedup.md": {
+      "sha256": "4607c332ab64750a73131c4a24848b7e9148cddbd3544798ff8e331706d96815",
+      "bytes": 12100
+    },
+    "comparison.md": {
+      "sha256": "55e7f612a44a49f33402899989da51b51675e2ca656aab87c0fd45faeaddf0e0",
+      "bytes": 11393
+    },
+    "evidence/chapter-source-index.jsonl": {
+      "sha256": "7099a6c405f1c6a22444e2879cda929dbb9f75f45f1a230412d415446cc55f10",
+      "bytes": 156033
+    },
+    "evidence/dedup-frozen-integrity-after.json": {
+      "sha256": "db18c39bbe5afd0913114791e9388cab6480dd98d1aa2361721f3cc05152f214",
+      "bytes": 43482
+    },
+    "evidence/dedup-frozen-integrity-before.json": {
+      "sha256": "2cbf453f6c26edd206548560a78f4254d2d0eb4a64a4e99555ac77c280868e60",
+      "bytes": 32206
+    },
+    "evidence/dedup-search-A-dna.txt": {
+      "sha256": "e337e734ba160f876978c18737f6fbb973618b6cedf8724319a5050fb78641e4",
+      "bytes": 5285
+    },
+    "evidence/dedup-search-A-legacy.txt": {
+      "sha256": "f70a0df195a73ded6ede8cb9c8f0258f36a7b9c6f02bd43832f041fae91270d6",
+      "bytes": 6962
+    },
+    "evidence/dedup-search-B-dna.txt": {
+      "sha256": "95aa2aeb6e71d91f8e063120eeea1a7561a94ac948647af59b1a30aeb1c2469e",
+      "bytes": 5376
+    },
+    "evidence/dedup-search-B-legacy.txt": {
+      "sha256": "fddb88de70b5c49ba2d8f9ae7d50c66f76d24b678b53a79ea40d8acec178fe88",
+      "bytes": 7613
+    },
+    "evidence/dedup-search-C-dna.txt": {
+      "sha256": "18d085a86c77411ff76470aa8b93a5dfe850f2202177b3a2aeaf433c955cc34e",
+      "bytes": 5739
+    },
+    "evidence/dedup-search-C-legacy.txt": {
+      "sha256": "32c770290f29f48d52df1dc69f1f63e0d0ba0bf70c0c73f95ef374de117198cd",
+      "bytes": 8285
+    },
+    "evidence/dedup-search-D-dna.txt": {
+      "sha256": "11f49d80045974a4761d6b743be5ba34e0704b6e4092b97c41e6389bde66402f",
+      "bytes": 5478
+    },
+    "evidence/dedup-search-D-legacy.txt": {
+      "sha256": "31e2a092cd1c847770fdd67364f12610d37823301fad10246195e0455530af50",
+      "bytes": 6756
+    },
+    "evidence/material-read-receipts.json": {
+      "sha256": "0155ed9b41a6fcb9d4b39f9b3d19b4fcd2b1b31d8e470c16bba5e690b390c265",
+      "bytes": 6418
+    },
+    "evidence/qa-report.json": {
+      "sha256": "126f369724006074cc65b025e248c5207c584c423ae01e039905e2960ebb7c7c",
+      "bytes": 1587
+    },
+    "evidence/read-scope.json": {
+      "sha256": "4797e51c69c381aa8b2f6ce57c36d5c19e4a6b6956a5a6c43fc88804537d1f9d",
+      "bytes": 6912
+    },
+    "evidence/source-verification.json": {
+      "sha256": "c72dc28305a29a1ec3fde8bf3550dbc4065cffea895f0f047397d54b67de5c8a",
+      "bytes": 10394
+    },
+    "evidence/verify_research.py": {
+      "sha256": "465675a7b0c19def7c51c91debe70e7e521b6f213147895207fb4fa8d1155b66",
+      "bytes": 4444
+    },
+    "evidence/version-comparison.json": {
+      "sha256": "d40a1ba2bc954e34a8bb1efe424494948377adc03bed228becc12a40f3fd6da5",
+      "bytes": 38362
+    },
+    "README.md": {
+      "sha256": "a6b751bb61955c7c1d2d6c8f1e40d6fe782d54a0f5e93c453ceb2396fb2c41ce",
+      "bytes": 5090
+    },
+    "source-verification.md": {
+      "sha256": "999682251ae5d9edc611fb046827dfb09415875c9b34d5dd711e1461085d98fb",
+      "bytes": 6863
+    }
+  }
+}

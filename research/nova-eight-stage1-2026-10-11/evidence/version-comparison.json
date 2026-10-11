@@ -1,0 +1,810 @@
+[
+  {
+    "research_id": "N8_01",
+    "book_id": "7631863518148430873",
+    "author": "夏弥的幻想",
+    "source_title": "别人氪金造神，我捡垃圾缝合天灾",
+    "previous_title": "穿越神祇：我提取词条碾压诸神",
+    "first_ten_checks": [
+      {
+        "chapter": 1,
+        "old_title": "第1章 ：表面哭唧唧，背地觉醒sss级神级天赋",
+        "new_title": "：表面哭唧唧，背地觉醒sss级神级天赋",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "611427e81b38c496bfeeb0e3ccfcab2254bd3b67d21662d89b6490f961106570",
+        "new_normalized_sha256": "611427e81b38c496bfeeb0e3ccfcab2254bd3b67d21662d89b6490f961106570",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 2,
+        "old_title": "第2章 ：万物皆可取，从一块破石头开始",
+        "new_title": "：万物皆可取，从一块破石头开始",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "5d5ec34995f4f85523a42b36dd3733e77b00d2c9f2acb30269dcf082bf824ead",
+        "new_normalized_sha256": "5d5ec34995f4f85523a42b36dd3733e77b00d2c9f2acb30269dcf082bf824ead",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 3,
+        "old_title": "第3章 ：食之无味的毒瘤，全是我叠词条的宝库",
+        "new_title": "：食之无味的毒瘤，全是我叠词条的宝库",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "75accce22e6f20ce0f29155bb0cf366545048fdfd380727945a9766116a94652",
+        "new_normalized_sha256": "75accce22e6f20ce0f29155bb0cf366545048fdfd380727945a9766116a94652",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 4,
+        "old_title": "第4章 ：天赋暴种！50信仰白嫖极品沸血！",
+        "new_title": "：天赋暴种！50信仰白嫖极品沸血！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "4af255bd8b4d79041cb66ea9992dca7cc7955716360a5c96cef0fb99fdc8422c",
+        "new_normalized_sha256": "4af255bd8b4d79041cb66ea9992dca7cc7955716360a5c96cef0fb99fdc8422c",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 5,
+        "old_title": "第5章 ：一夜神域反哺，单手挑飞重物，肉身狂飙！",
+        "new_title": "：一夜神域反哺，单手挑飞重物，肉身狂飙！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "e33531ab2dcc98fe0175e158c35fc6ebaf037bea99ce7c73e1aa3e8f4d5878ba",
+        "new_normalized_sha256": "e33531ab2dcc98fe0175e158c35fc6ebaf037bea99ce7c73e1aa3e8f4d5878ba",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 6,
+        "old_title": "第6章 ：眷族互殴下死手，竟意外触发战争信仰",
+        "new_title": "：眷族互殴下死手，竟意外触发战争信仰",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "e4a9f9bc7dea59a0a3ca1cdbc79746c23c8cb8458ee9abfd9ae354aa4d0c925d",
+        "new_normalized_sha256": "e4a9f9bc7dea59a0a3ca1cdbc79746c23c8cb8458ee9abfd9ae354aa4d0c925d",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 7,
+        "old_title": "第7章 ：别人眼里的生态灾难？我的完美磨刀石！",
+        "new_title": "：别人眼里的生态灾难？我的完美磨刀石！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "db942b884ff629abc79e7fd7bf6ded8d31ccda608ca4bee4e8e3a90ba6948fa8",
+        "new_normalized_sha256": "db942b884ff629abc79e7fd7bf6ded8d31ccda608ca4bee4e8e3a90ba6948fa8",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 8,
+        "old_title": "第8章 ：黑色倒卖高纯毒晶，一把狂赚3万巨款！",
+        "new_title": "：黑色倒卖高纯毒晶，一把狂赚3万巨款！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "ecd64345a88a1059a4ac68cc9dde49b992cd856cb2d0d8264832e705fdc3f3cd",
+        "new_normalized_sha256": "ecd64345a88a1059a4ac68cc9dde49b992cd856cb2d0d8264832e705fdc3f3cd",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 9,
+        "old_title": "第9章 ：拿2万买我当炮灰？你也配！",
+        "new_title": "：拿2万买我当炮灰？你也配！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "410875b55b9c1adfcd9ec76f02f44d832c6c8df67d682cc3895d7839fa7e8775",
+        "new_normalized_sha256": "410875b55b9c1adfcd9ec76f02f44d832c6c8df67d682cc3895d7839fa7e8775",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 10,
+        "old_title": "第10章 ：豪掷3万巨款一键开启，5年时间加速",
+        "new_title": "：豪掷3万巨款一键开启，5年时间加速",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "5aa35ed0705e34fca4df04e0f851283929ea10582fe5a0d7454ed25734057c3f",
+        "new_normalized_sha256": "5aa35ed0705e34fca4df04e0f851283929ea10582fe5a0d7454ed25734057c3f",
+        "similarity_ratio": 1.0
+      }
+    ],
+    "equal_content_chapters": 10,
+    "identity_basis": "book_id + author + ten normalized chapter contents; not filename inference"
+  },
+  {
+    "research_id": "N8_02",
+    "book_id": "7421167583522458648",
+    "author": "我爱罗的沙",
+    "source_title": "大一实习，你跑去749收容怪物",
+    "previous_title": "大一实习，你跑去749收容怪物",
+    "first_ten_checks": [
+      {
+        "chapter": 1,
+        "old_title": "第1章 等了二十年的金手指，终于有能用的希望了",
+        "new_title": "等了二十年的金手指，终于有能用的希望了",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "86395ff5ca41128a58438ef18fd4ed3a0f04300e8215ebd7bda32bb36e33ed7a",
+        "new_normalized_sha256": "86395ff5ca41128a58438ef18fd4ed3a0f04300e8215ebd7bda32bb36e33ed7a",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 2,
+        "old_title": "第2章 收容南山顽石，得斤车之道无物不斩",
+        "new_title": "收容南山顽石，得斤车之道无物不斩",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "14fc15d79b90e0ee077d5381e882ce0789d251dcb9e641883c59c6d403b2377e",
+        "new_normalized_sha256": "14fc15d79b90e0ee077d5381e882ce0789d251dcb9e641883c59c6d403b2377e",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 3,
+        "old_title": "第3章 再杀怪物罔象，得忘形之谓，天人合一",
+        "new_title": "再杀怪物罔象，得忘形之谓，天人合一",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "5fa1bcd1a4c41aca465aa5c5eb66bcf653176cf0dcee2a720d50007673330026",
+        "new_normalized_sha256": "5fa1bcd1a4c41aca465aa5c5eb66bcf653176cf0dcee2a720d50007673330026",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 4,
+        "old_title": "第4章 749上门，七险三金的工作待遇",
+        "new_title": "749上门，七险三金的工作待遇",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "b390eac5cac7848e1ce4e8d6cb69ba71224a0242f5d456d2ea205de0f6c88f27",
+        "new_normalized_sha256": "b390eac5cac7848e1ce4e8d6cb69ba71224a0242f5d456d2ea205de0f6c88f27",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 5,
+        "old_title": "第5章 加入749，我要马上考核",
+        "new_title": "加入749，我要马上考核",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "59500228117a8aa07585e7279c5eeac608492ec8745237e2eac7fcf3f905869c",
+        "new_normalized_sha256": "59500228117a8aa07585e7279c5eeac608492ec8745237e2eac7fcf3f905869c",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 6,
+        "old_title": "第6章 最贱就要挨打，绝对不会惯着你",
+        "new_title": "最贱就要挨打，绝对不会惯着你",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "83df239dacc58af254a5459ed3b58a4a881579fab5096627a991014838a1e3aa",
+        "new_normalized_sha256": "83df239dacc58af254a5459ed3b58a4a881579fab5096627a991014838a1e3aa",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 7,
+        "old_title": "第7章 考核会场乱杀，难度实在太低",
+        "new_title": "考核会场乱杀，难度实在太低",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "7bc97ea26d85226266c75e6a2849ecfcdd7ca595befbc7e63896ccf2efabe5a9",
+        "new_normalized_sha256": "7bc97ea26d85226266c75e6a2849ecfcdd7ca595befbc7e63896ccf2efabe5a9",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 8,
+        "old_title": "第8章 天人合一，buff叠满，一天走完别人一年",
+        "new_title": "天人合一，buff叠满，一天走完别人一年",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "3a821e04750875b6ed3fcb3a3896fbc3e65c6642426bcdf105ac368fc033966c",
+        "new_normalized_sha256": "3a821e04750875b6ed3fcb3a3896fbc3e65c6642426bcdf105ac368fc033966c",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 9,
+        "old_title": "第9章 第一个任务，灭门惨案，黑老太太",
+        "new_title": "第一个任务，灭门惨案，黑老太太",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "f07c2650b5b1147275c9486f07ddf8871bbe81f0bbabe4ba67152e4a7d23b151",
+        "new_normalized_sha256": "f07c2650b5b1147275c9486f07ddf8871bbe81f0bbabe4ba67152e4a7d23b151",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 10,
+        "old_title": "第10章 招募辅调，前往任务",
+        "new_title": "招募辅调，前往任务",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "d7f79907860cf6c6aca5bfa0848bbf99558bd24824ed5a3abe0d2988ca4b4d29",
+        "new_normalized_sha256": "d7f79907860cf6c6aca5bfa0848bbf99558bd24824ed5a3abe0d2988ca4b4d29",
+        "similarity_ratio": 1.0
+      }
+    ],
+    "equal_content_chapters": 10,
+    "identity_basis": "book_id + author + ten normalized chapter contents; not filename inference"
+  },
+  {
+    "research_id": "N8_03",
+    "book_id": "7592279900040465433",
+    "author": "陷阵营营长",
+    "source_title": "待我拼好身体，旧日重临人间",
+    "previous_title": "我操作的少女正在成为旧日之主",
+    "first_ten_checks": [
+      {
+        "chapter": 1,
+        "old_title": "第1章 我游戏的退出键呢？！",
+        "new_title": "我游戏的退出键呢？！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "77fa03122386084b96b798b2e91282f4bd16ec7a55d2123b8f513291c8af40e2",
+        "new_normalized_sha256": "77fa03122386084b96b798b2e91282f4bd16ec7a55d2123b8f513291c8af40e2",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 2,
+        "old_title": "第2章 打怪升级不是最基本设定？",
+        "new_title": "打怪升级不是最基本设定？",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "6a7d5f6d720311d1d0462afc9f7e44ce2870870f224b17dbff4382793b2403ff",
+        "new_normalized_sha256": "6a7d5f6d720311d1d0462afc9f7e44ce2870870f224b17dbff4382793b2403ff",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 3,
+        "old_title": "第3章 神才拥有的权柄",
+        "new_title": "神才拥有的权柄",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "8fc310a80fa3249d8c80a7e180220e2617f9ce316db4cb8ac42ae15d4d33ef7b",
+        "new_normalized_sha256": "8fc310a80fa3249d8c80a7e180220e2617f9ce316db4cb8ac42ae15d4d33ef7b",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 4,
+        "old_title": "第4章 老资历装完，该她善后了",
+        "new_title": "老资历装完，该她善后了",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "46c8a2d809d0c2d318d849fd20efbd88cbe05df73367e1e63fe90dd4d66df6ef",
+        "new_normalized_sha256": "46c8a2d809d0c2d318d849fd20efbd88cbe05df73367e1e63fe90dd4d66df6ef",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 5,
+        "old_title": "第5章 交易，其实我是个好邪神",
+        "new_title": "交易，其实我是个好邪神",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "69a0810c9dfd571ea81546a36400f597e24a1235608e414c8ef17ea7426715d5",
+        "new_normalized_sha256": "69a0810c9dfd571ea81546a36400f597e24a1235608e414c8ef17ea7426715d5",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 6,
+        "old_title": "第6章 当内城的傲慢碰到老资历",
+        "new_title": "当内城的傲慢碰到老资历",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "eec2eac5236173810235c938f81c578562d7d9b143e06781846fca55aba4b437",
+        "new_normalized_sha256": "eec2eac5236173810235c938f81c578562d7d9b143e06781846fca55aba4b437",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 7,
+        "old_title": "第7章 狂徒，侵入式金属中毒",
+        "new_title": "狂徒，侵入式金属中毒",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "0ac2183eeba9489ff73ce47cc5847cbd4d6d5149da33296dd528b81c71b047b6",
+        "new_normalized_sha256": "0ac2183eeba9489ff73ce47cc5847cbd4d6d5149da33296dd528b81c71b047b6",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 8,
+        "old_title": "第8章 熟悉的戴罪立功环节",
+        "new_title": "熟悉的戴罪立功环节",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "4ed962e0ccabfbdd88a47323f6888fa382cf7eed295ee064088add6cffb2a072",
+        "new_normalized_sha256": "4ed962e0ccabfbdd88a47323f6888fa382cf7eed295ee064088add6cffb2a072",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 9,
+        "old_title": "第9章 杀戮机器，宛若游龙",
+        "new_title": "杀戮机器，宛若游龙",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "ebb88bd9da024ad0ea99449096dd2ed42df5d0a2c0c970e681e463d5cffbafd5",
+        "new_normalized_sha256": "ebb88bd9da024ad0ea99449096dd2ed42df5d0a2c0c970e681e463d5cffbafd5",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 10,
+        "old_title": "第10章 神通广大的贵妇人",
+        "new_title": "神通广大的贵妇人",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "cc6c22a118d724f87f953167c49906638d9271c43cc97f2bb3405d73eab53d94",
+        "new_normalized_sha256": "cc6c22a118d724f87f953167c49906638d9271c43cc97f2bb3405d73eab53d94",
+        "similarity_ratio": 1.0
+      }
+    ],
+    "equal_content_chapters": 10,
+    "identity_basis": "book_id + author + ten normalized chapter contents; not filename inference"
+  },
+  {
+    "research_id": "N8_04",
+    "book_id": "7644794897249094718",
+    "author": "些许风霜过去",
+    "source_title": "每天一个新词条，还能融合？",
+    "previous_title": "全民神祇时代：我的词条每日刷新",
+    "first_ten_checks": [
+      {
+        "chapter": 1,
+        "old_title": "第1章 小天才，未激活的X级天赋！",
+        "new_title": "小天才，未激活的X级天赋！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "d203a1442282d07fc54cce80c8ee8e28b4faa872bf2b64fcb0a389b29731cc79",
+        "new_normalized_sha256": "d203a1442282d07fc54cce80c8ee8e28b4faa872bf2b64fcb0a389b29731cc79",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 2,
+        "old_title": "第2章 每天都能刷新一个随机天赋？",
+        "new_title": "每天都能刷新一个随机天赋？",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "f77d980cb9f309c342f1b76776ad8ad836d53e24d31413ed96f237e575a3ca10",
+        "new_normalized_sha256": "f77d980cb9f309c342f1b76776ad8ad836d53e24d31413ed96f237e575a3ca10",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 3,
+        "old_title": "第3章 播种粮食，蛮牛炼体术！",
+        "new_title": "播种粮食，蛮牛炼体术！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "536c5915e7e327eb3c0e5837a8043d73f078c9144dc4adea384cec06c316af83",
+        "new_normalized_sha256": "536c5915e7e327eb3c0e5837a8043d73f078c9144dc4adea384cec06c316af83",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 4,
+        "old_title": "第4章 石乳竹，A级词条万物生长！",
+        "new_title": "石乳竹，A级词条万物生长！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "c4514ceb951d7347cc144cb466d36f1fed729332be65f10ebb70da7b928bd959",
+        "new_normalized_sha256": "c4514ceb951d7347cc144cb466d36f1fed729332be65f10ebb70da7b928bd959",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 5,
+        "old_title": "第5章 神国和神明之间的关系，高考分数体系",
+        "new_title": "神国和神明之间的关系，高考分数体系",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "709a7370c80a52a87d533a50d638297a1718acc308e697f71da23714c8259636",
+        "new_normalized_sha256": "709a7370c80a52a87d533a50d638297a1718acc308e697f71da23714c8259636",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 6,
+        "old_title": "第6章 石人眷属，十年高速发展",
+        "new_title": "石人眷属，十年高速发展",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "cde6da9feefcf3a5d14faa71fb3b6dffee6046595008e1bc6ecc259ffdfb6f8c",
+        "new_normalized_sha256": "cde6da9feefcf3a5d14faa71fb3b6dffee6046595008e1bc6ecc259ffdfb6f8c",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 7,
+        "old_title": "第7章 S级词条【基建狂魔】，投入一阶生灵",
+        "new_title": "S级词条【基建狂魔】，投入一阶生灵",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "345ab97f2130bf4728034de735b2df7f2a349e91073e9d8b1b73a3e1dee43ab7",
+        "new_normalized_sha256": "345ab97f2130bf4728034de735b2df7f2a349e91073e9d8b1b73a3e1dee43ab7",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 8,
+        "old_title": "第8章 半神父母鼎力相助，世界资源暴涨！",
+        "new_title": "半神父母鼎力相助，世界资源暴涨！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "9237b53c399ef21ffe5931c1da062c12ce1fabc419338bd73e3fa43c08227970",
+        "new_normalized_sha256": "9237b53c399ef21ffe5931c1da062c12ce1fabc419338bd73e3fa43c08227970",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 9,
+        "old_title": "第9章 大肆种植，真神客人",
+        "new_title": "大肆种植，真神客人",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "df57a917654ce179f06703680ae5c0dbe633d0db8ec375a11181b492a93148ab",
+        "new_normalized_sha256": "df57a917654ce179f06703680ae5c0dbe633d0db8ec375a11181b492a93148ab",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 10,
+        "old_title": "第10章 来自精英班学生的内部消息",
+        "new_title": "来自精英班学生的内部消息",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "0f8cbe4fc7c5b23f72314fc207f2da753070115d323ad0d13d5d77a9a049f503",
+        "new_normalized_sha256": "0f8cbe4fc7c5b23f72314fc207f2da753070115d323ad0d13d5d77a9a049f503",
+        "similarity_ratio": 1.0
+      }
+    ],
+    "equal_content_chapters": 10,
+    "identity_basis": "book_id + author + ten normalized chapter contents; not filename inference"
+  },
+  {
+    "research_id": "N8_05",
+    "book_id": "7462405945180572697",
+    "author": "喜欢吃橘子",
+    "source_title": "神序001，参见！",
+    "previous_title": "你们刷怪啊，刷我干嘛！",
+    "first_ten_checks": [
+      {
+        "chapter": 1,
+        "old_title": "第1章 怎么吃都不饱",
+        "new_title": "怎么吃都不饱",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "5bab2feca2bdce3a7667cc1dec9bb9db358ec53b95fbbc081e128bef50938e17",
+        "new_normalized_sha256": "5bab2feca2bdce3a7667cc1dec9bb9db358ec53b95fbbc081e128bef50938e17",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 2,
+        "old_title": "第2章 吃饱的办法",
+        "new_title": "吃饱的办法",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "4bbdcaf4fdc710c9a5fa28ca7e691e6a048de14ca5f3be1299537eb6efe85ed5",
+        "new_normalized_sha256": "4bbdcaf4fdc710c9a5fa28ca7e691e6a048de14ca5f3be1299537eb6efe85ed5",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 3,
+        "old_title": "第3章 同类，到处都是同类",
+        "new_title": "同类，到处都是同类",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "2a9ffb9ca3d962ae35f63d3df6947dfc48804b18329efe07446a150ce6e09bc8",
+        "new_normalized_sha256": "2a9ffb9ca3d962ae35f63d3df6947dfc48804b18329efe07446a150ce6e09bc8",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 4,
+        "old_title": "第4章 一起掠食的同伴",
+        "new_title": "一起掠食的同伴",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "9303dcdaf47687f2a279cd5f58f168dded6da3eb10142bcf357dabafa151cb06",
+        "new_normalized_sha256": "9303dcdaf47687f2a279cd5f58f168dded6da3eb10142bcf357dabafa151cb06",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 5,
+        "old_title": "第5章 被异魔死死缠上了",
+        "new_title": "被异魔死死缠上了",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "ff939409dddd0e017bba8c7b1cbb6b38d51f08e62fd5800bfc2074e897b5ffbb",
+        "new_normalized_sha256": "ff939409dddd0e017bba8c7b1cbb6b38d51f08e62fd5800bfc2074e897b5ffbb",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 6,
+        "old_title": "第6章 公交危机",
+        "new_title": "公交危机",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "2d11c6bc7aea494fa7eedab3f5575602e400d72b122b6d6ee555ff86c2ac8599",
+        "new_normalized_sha256": "2d11c6bc7aea494fa7eedab3f5575602e400d72b122b6d6ee555ff86c2ac8599",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 7,
+        "old_title": "第7章 危险女友",
+        "new_title": "危险女友",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "07c3045b148f0053e989e8b3d3df6604d55010f89ba47f11f4bbba3233a51075",
+        "new_normalized_sha256": "07c3045b148f0053e989e8b3d3df6604d55010f89ba47f11f4bbba3233a51075",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 8,
+        "old_title": "第8章 谁给你的自信对我这么有信心",
+        "new_title": "谁给你的自信对我这么有信心",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "591d58a6c8242da05b39728b93af686f3421bed4140d2267ad3d5a41d8952948",
+        "new_normalized_sha256": "591d58a6c8242da05b39728b93af686f3421bed4140d2267ad3d5a41d8952948",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 9,
+        "old_title": "第9章 鱼嘴里冲出的东西",
+        "new_title": "鱼嘴里冲出的东西",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "7caab3646dfc1e07515311b210f4b7cb61c94f210fcad7237d812e360721d11e",
+        "new_normalized_sha256": "7caab3646dfc1e07515311b210f4b7cb61c94f210fcad7237d812e360721d11e",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 10,
+        "old_title": "第10章 首位觉醒者亮相",
+        "new_title": "首位觉醒者亮相",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "4729b33219fe2cd1c6f938902bbd7d9185dec2f26c7b63e0206ba3577bd63cac",
+        "new_normalized_sha256": "4729b33219fe2cd1c6f938902bbd7d9185dec2f26c7b63e0206ba3577bd63cac",
+        "similarity_ratio": 1.0
+      }
+    ],
+    "equal_content_chapters": 10,
+    "identity_basis": "book_id + author + ten normalized chapter contents; not filename inference"
+  },
+  {
+    "research_id": "N8_06",
+    "book_id": "7504849932138859545",
+    "author": "六个葫芦",
+    "source_title": "时停时停时停时停时停时停时停！",
+    "previous_title": "时停起手，邪神也得给我跪下！",
+    "first_ten_checks": [
+      {
+        "chapter": 1,
+        "old_title": "第1章 好消息时间静止，坏消息一分钟",
+        "new_title": "好消息时间静止，坏消息一分钟",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "a050ecebadfa7dae8d8aa65056facee65adb5763b8e0f35398ba30ea28d0030c",
+        "new_normalized_sha256": "a050ecebadfa7dae8d8aa65056facee65adb5763b8e0f35398ba30ea28d0030c",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 2,
+        "old_title": "第2章 废土尽头谁为峰？",
+        "new_title": "废土尽头谁为峰？",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "cbb242241c7a088eb602854856b485d00d203c534ee261865b1737094ac1c93c",
+        "new_normalized_sha256": "cbb242241c7a088eb602854856b485d00d203c534ee261865b1737094ac1c93c",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 3,
+        "old_title": "第3章 命运轮盘必胜法",
+        "new_title": "命运轮盘必胜法",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "a3b3b7e6364895563d155e324fdce644da7a84a04012bcbd5cbe23392ed08212",
+        "new_normalized_sha256": "a3b3b7e6364895563d155e324fdce644da7a84a04012bcbd5cbe23392ed08212",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 4,
+        "old_title": "第4章 六颗子弹，我赌它哑火！",
+        "new_title": "六颗子弹，我赌它哑火！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "43f3ae57d113bfcdd5a776c55fd8db2ac103455ae295518a43b58bba174cc788",
+        "new_normalized_sha256": "43f3ae57d113bfcdd5a776c55fd8db2ac103455ae295518a43b58bba174cc788",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 5,
+        "old_title": "第5章 之前你叫我小白，我不挑你理",
+        "new_title": "之前你叫我小白，我不挑你理",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "5264c204c83216b3d01f6836a4a4047602bd0489c4e89dc8acebcb0a7b15a83d",
+        "new_normalized_sha256": "5264c204c83216b3d01f6836a4a4047602bd0489c4e89dc8acebcb0a7b15a83d",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 6,
+        "old_title": "第6章 做人最重要的当然是忘本啊！",
+        "new_title": "做人最重要的当然是忘本啊！",
+        "normalized_content_equal": false,
+        "old_normalized_sha256": "1561ef5c3ab705cb4d4161f49070bd81168b4badc653f93cf2b112bc0a0f7f1b",
+        "new_normalized_sha256": "f6bb0c6b8f0b37d9c43e6ae0f972c89442d47985ac707d8229acf47c72c18222",
+        "similarity_ratio": 0.99917
+      },
+      {
+        "chapter": 7,
+        "old_title": "第7章 魔术手李右",
+        "new_title": "魔术手李右",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "4ec3b0d7220662258049aa44d2cd6dd15d98eb1ba2815cba49e7513f6dd7bb87",
+        "new_normalized_sha256": "4ec3b0d7220662258049aa44d2cd6dd15d98eb1ba2815cba49e7513f6dd7bb87",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 8,
+        "old_title": "第8章 哪来这么多老话！？",
+        "new_title": "哪来这么多老话！？",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "fb0bf54f357781cbfc4f6c889be57649d7c8c6c89fad662349c9c493ed0e7ee2",
+        "new_normalized_sha256": "fb0bf54f357781cbfc4f6c889be57649d7c8c6c89fad662349c9c493ed0e7ee2",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 9,
+        "old_title": "第9章 白野还在开枪！？",
+        "new_title": "白野还在开枪！？",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "68d0844e977edfb15049dc8d336c22a46a942058474590cfe64bf5250d328878",
+        "new_normalized_sha256": "68d0844e977edfb15049dc8d336c22a46a942058474590cfe64bf5250d328878",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 10,
+        "old_title": "第10章 不是，你玩什么命啊？",
+        "new_title": "不是，你玩什么命啊？",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "0065166283fd446e9fd3a9b580952de0b502cdcbb08e8112b4439636f25675e1",
+        "new_normalized_sha256": "0065166283fd446e9fd3a9b580952de0b502cdcbb08e8112b4439636f25675e1",
+        "similarity_ratio": 1.0
+      }
+    ],
+    "equal_content_chapters": 9,
+    "identity_basis": "book_id + author + ten normalized chapter contents; not filename inference"
+  },
+  {
+    "research_id": "N8_07",
+    "book_id": "7346057588347259929",
+    "author": "不要大脑要小脑",
+    "source_title": "序列：吃神者",
+    "previous_title": "序列：吃神者",
+    "first_ten_checks": [
+      {
+        "chapter": 1,
+        "old_title": "第1章 暗世纪元，觉醒吃神者序列",
+        "new_title": "暗世纪元，觉醒吃神者序列",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "f712a920be748819b5df1d11a6994c3a9026df28bce93adafd660f672192348e",
+        "new_normalized_sha256": "f712a920be748819b5df1d11a6994c3a9026df28bce93adafd660f672192348e",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 2,
+        "old_title": "第2章 双喜临门",
+        "new_title": "双喜临门",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "b12c802a84ef76fc4acf881e36db54222dcbdba4e6aec02a8e65186435d5565e",
+        "new_normalized_sha256": "b12c802a84ef76fc4acf881e36db54222dcbdba4e6aec02a8e65186435d5565e",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 3,
+        "old_title": "第3章 变强的契机，饕餮盛宴",
+        "new_title": "变强的契机，饕餮盛宴",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "fee614005265f819003e8defc656cce0be0f569f8f3548608046d4d35fbb159f",
+        "new_normalized_sha256": "fee614005265f819003e8defc656cce0be0f569f8f3548608046d4d35fbb159f",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 4,
+        "old_title": "第4章 实力提升！",
+        "new_title": "实力提升！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "601ac560c6cb1f5a8a8fac04540fb983e0547e761a1dfafbc51d140173028b81",
+        "new_normalized_sha256": "601ac560c6cb1f5a8a8fac04540fb983e0547e761a1dfafbc51d140173028b81",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 5,
+        "old_title": "第5章 受阻",
+        "new_title": "受阻",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "5b36051b12bc55c292205c2a35969c27d5a9fb7094aebb828a43945af80cd535",
+        "new_normalized_sha256": "5b36051b12bc55c292205c2a35969c27d5a9fb7094aebb828a43945af80cd535",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 6,
+        "old_title": "第6章 序列晋升",
+        "new_title": "序列晋升",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "69508160c2003b9721ffa382d58707ad617cbdbed133b6bffe2d16c25832544d",
+        "new_normalized_sha256": "69508160c2003b9721ffa382d58707ad617cbdbed133b6bffe2d16c25832544d",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 7,
+        "old_title": "第7章 被迫第一次动手",
+        "new_title": "被迫第一次动手",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "a461287b71839e8f771e1ece507db74eb9d69220b94cb01984013ee60af4deb1",
+        "new_normalized_sha256": "a461287b71839e8f771e1ece507db74eb9d69220b94cb01984013ee60af4deb1",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 8,
+        "old_title": "第8章 寻找那人的踪迹",
+        "new_title": "寻找那人的踪迹",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "1d913265a7727407abda789b8f9f6388de021330709e8979d0fe1b9327fdc01b",
+        "new_normalized_sha256": "1d913265a7727407abda789b8f9f6388de021330709e8979d0fe1b9327fdc01b",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 9,
+        "old_title": "第9章 网吧查询",
+        "new_title": "网吧查询",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "e31cd4b7612569596d57819b1580d2b96d8e5810c6412a9b3b82336bc9440828",
+        "new_normalized_sha256": "e31cd4b7612569596d57819b1580d2b96d8e5810c6412a9b3b82336bc9440828",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 10,
+        "old_title": "第10章 网吧的突袭",
+        "new_title": "网吧的突袭",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "b45a345e48d3e30b8c5c26a8aa4ed41e22e36ed60f640c3818bd89a3ebbe22b0",
+        "new_normalized_sha256": "b45a345e48d3e30b8c5c26a8aa4ed41e22e36ed60f640c3818bd89a3ebbe22b0",
+        "similarity_ratio": 1.0
+      }
+    ],
+    "equal_content_chapters": 10,
+    "identity_basis": "book_id + author + ten normalized chapter contents; not filename inference"
+  },
+  {
+    "research_id": "N8_08",
+    "book_id": "7644040936980220953",
+    "author": "吒牛",
+    "source_title": "自然开景玄元妙有混沌太初大天尊",
+    "previous_title": "我都宇宙之主了，你们还在地球？",
+    "first_ten_checks": [
+      {
+        "chapter": 1,
+        "old_title": "第1章 小辈展示机制，中辈展示数值，老登直接开挂",
+        "new_title": "小辈展示机制，中辈展示数值，老登直接开挂",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "810f9b24e341bba9745ecfde14b7a7d19e055b46ee187ac31b999e0aeb375eb8",
+        "new_normalized_sha256": "810f9b24e341bba9745ecfde14b7a7d19e055b46ee187ac31b999e0aeb375eb8",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 2,
+        "old_title": "第2章 内容已失效，该视频已被删除或设为私密。",
+        "new_title": "内容已失效，该视频已被删除或设为私密。",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "c878644f63ffc11ff4035e8b5d212032bc79bc404f8d1f130d130f86acc75899",
+        "new_normalized_sha256": "c878644f63ffc11ff4035e8b5d212032bc79bc404f8d1f130d130f86acc75899",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 3,
+        "old_title": "第3章 快跑，有大恐怖！",
+        "new_title": "快跑，有大恐怖！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "b03f4a6d1b596815644fcd23c81192a2eecd5a910de16b2e3ae490122a85de75",
+        "new_normalized_sha256": "b03f4a6d1b596815644fcd23c81192a2eecd5a910de16b2e3ae490122a85de75",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 4,
+        "old_title": "第4章 灵猴拜天",
+        "new_title": "灵猴拜天",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "ab73c224ac8c60125cd9b6579c8b53ba90a688fbe467197e9be5d5f9e0386abc",
+        "new_normalized_sha256": "ab73c224ac8c60125cd9b6579c8b53ba90a688fbe467197e9be5d5f9e0386abc",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 5,
+        "old_title": "第5章 【天赋：你的命就是我的命】",
+        "new_title": "【天赋：你的命就是我的命】",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "9dc084f8713d9a08f52cb17c8682c97fe0be444823a194bdb5463bfd78c25a21",
+        "new_normalized_sha256": "9dc084f8713d9a08f52cb17c8682c97fe0be444823a194bdb5463bfd78c25a21",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 6,
+        "old_title": "第6章 自杀yes，他杀no！",
+        "new_title": "自杀yes，他杀no！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "b6cf82c42fb0e6a5a4834c95d6a363ffa512f3dcced8afb5b2460ac8aa3e4618",
+        "new_normalized_sha256": "b6cf82c42fb0e6a5a4834c95d6a363ffa512f3dcced8afb5b2460ac8aa3e4618",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 7,
+        "old_title": "第7章 刚刚砍死我的那两刀好帅，我想学这个！",
+        "new_title": "刚刚砍死我的那两刀好帅，我想学这个！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "f3760e4e6f6d0e3ff3c246d77314c27d166ac99f6dfc069dac81f5ceed9d3c61",
+        "new_normalized_sha256": "f3760e4e6f6d0e3ff3c246d77314c27d166ac99f6dfc069dac81f5ceed9d3c61",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 8,
+        "old_title": "第8章 我的钱，那都是我的钱！",
+        "new_title": "我的钱，那都是我的钱！",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "27cf83e3a8b0649c941d0ed95972252ced17e8b6bf7048ba8a22770cd8ee6f42",
+        "new_normalized_sha256": "27cf83e3a8b0649c941d0ed95972252ced17e8b6bf7048ba8a22770cd8ee6f42",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 9,
+        "old_title": "第9章 感觉自己越来越像个BUG了",
+        "new_title": "感觉自己越来越像个BUG了",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "e3c1d191f1dea8ec134d9e06d6a5940557c58c79b56ad8a67b03249df7b5b996",
+        "new_normalized_sha256": "e3c1d191f1dea8ec134d9e06d6a5940557c58c79b56ad8a67b03249df7b5b996",
+        "similarity_ratio": 1.0
+      },
+      {
+        "chapter": 10,
+        "old_title": "第10章 修炼之法",
+        "new_title": "修炼之法",
+        "normalized_content_equal": true,
+        "old_normalized_sha256": "c7e47cc1deede2602e0c12ab2f81c09e705b06334df2241002cc3876da8d293d",
+        "new_normalized_sha256": "c7e47cc1deede2602e0c12ab2f81c09e705b06334df2241002cc3876da8d293d",
+        "similarity_ratio": 1.0
+      }
+    ],
+    "equal_content_chapters": 10,
+    "identity_basis": "book_id + author + ten normalized chapter contents; not filename inference"
+  }
+]

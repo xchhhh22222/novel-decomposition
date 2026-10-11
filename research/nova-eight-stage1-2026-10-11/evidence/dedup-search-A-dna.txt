@@ -1,0 +1,136 @@
+{
+  "query": "紧张 选择验证 限时 能力边界 补流程 窗口",
+  "modules": [
+    "golden_finger",
+    "plot_mechanism"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 6,
+  "results": [
+    {
+      "record_id": "PM:BOOK:BOOK_009",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_009",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_009.jsonl",
+      "line": 1,
+      "title": "能力约束下的公开验证—资源升级机制",
+      "score": 15.12,
+      "why": [
+        "正文:限时",
+        "正文:能力边界",
+        "正文:窗口"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_009:CHAPTER:0010 BOOK_009:CHAPTER:0028 BOOK_009:CHAPTER:0048 BOOK_009:CHAPTER:0061"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_010",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_010",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_010.jsonl",
+      "line": 1,
+      "title": "超能：我有一面复刻镜",
+      "score": 9.38,
+      "why": [
+        "正文:紧张",
+        "正文:窗口"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_010:CHAPTER:0003 BOOK_010:CHAPTER:0004 BOOK_010:CHAPTER:0009 BOOK_010:CHAPTER:0059 BOOK_010:CHAPTER:0081 BOOK_010:CHAPTER:0087 BOOK_010:CHAPTER:0246 BOOK_010:CHAPTER:0247 BOOK_010:CHAPTER:0248 BOOK_010:CHAPTER:0326 BOOK_010:CHAPTER:0491 BOOK_010:CHAPTER:0540 BOOK_010:CHAPTE…"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_016",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_016",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_016.jsonl",
+      "line": 1,
+      "title": "异兽迷城",
+      "score": 9.0,
+      "why": [
+        "正文:限时",
+        "正文:窗口"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_016:CHAPTER:0003 BOOK_016:CHAPTER:0015 BOOK_016:CHAPTER:0016 BOOK_016:CHAPTER:0027 BOOK_016:CHAPTER:0030 BOOK_016:CHAPTER:0034 BOOK_016:CHAPTER:0036 BOOK_016:CHAPTER:0045 BOOK_016:CHAPTER:0058 BOOK_016:CHAPTER:0091 BOOK_016:CHAPTER:0139 BOOK_016:CHAPTER:0214 BOOK_016:CHAPTE…"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_004",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_004",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_004.jsonl",
+      "line": 1,
+      "title": "全民法宝：我的人皇幡无限进化！",
+      "score": 7.12,
+      "why": [
+        "正文:窗口"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_004:CHAPTER:0002 BOOK_004:CHAPTER:0024 BOOK_004:CHAPTER:0041 BOOK_004:CHAPTER:0063 BOOK_004:CHAPTER:0067 BOOK_004:CHAPTER:0075"
+    },
+    {
+      "record_id": "GF:BOOK_015",
+      "record_type": "per_book",
+      "module": "golden_finger",
+      "book_id": "BOOK_015",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/02_金手指/per_book/BOOK_015.jsonl",
+      "line": 1,
+      "title": "每日新能力发放+能力库累积+单启用",
+      "score": 6.38,
+      "why": [
+        "正文:选择验证",
+        "正文:窗口"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "input 新的一天醒来（初始触发：对聋哑老婆婆的善意帮助）；当日场景与使用对象 process 每日随机发放一个新超能力进入能力库；使用时同时只能启用一种，越强大的能力越耗费精神；奇葩/无用能力以'不如圆神'梗消化 output 多样化超能力产物：信息类（偷听心声/看最坏的事/查高考成绩/知职业）、时空类（时间暂停/梦境控制/平行世界观测）、感知类（透视/听懂动物语言）、躯体类（身体强化/治愈/灵活双手）、技能类（完美演唱/投篮百分百/复制字体）"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_002",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_002",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_002.jsonl",
+      "line": 1,
+      "title": "一毛一天修为，我靠直播氪穿宇宙",
+      "score": 6.38,
+      "why": [
+        "正文:窗口"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "BOOK_002:CHAPTER:0001 BOOK_002:CHAPTER:0003 BOOK_002:CHAPTER:0050 BOOK_002:CHAPTER:0076 BOOK_002:CHAPTER:0100 BOOK_002:CHAPTER:0124"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

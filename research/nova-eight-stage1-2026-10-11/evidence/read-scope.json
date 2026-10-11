@@ -1,0 +1,259 @@
+{
+  "new_full_read": [
+    {
+      "research_id": "N8_01",
+      "chapters": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "research_id": "N8_02",
+      "chapters": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "research_id": "N8_03",
+      "chapters": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "research_id": "N8_04",
+      "chapters": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "research_id": "N8_05",
+      "chapters": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "research_id": "N8_06",
+      "chapters": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "research_id": "N8_07",
+      "chapters": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "research_id": "N8_08",
+      "chapters": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    }
+  ],
+  "reused_analysis_chapters": "1-10 for each of eight; pinned prior commit",
+  "computational_version_comparison": "80 full chapter bodies; 79 normalized equal, N8_06 chapter 6 insertion marker",
+  "additional_reproducible_raw_spot_checks": [
+    {
+      "research_id": "N8_01",
+      "chapter": 1,
+      "character_offset_start": 182,
+      "character_offset_end_exclusive": 832,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "0aa2983868caf58dc8571234b1b75b0eae13438587b4a42fc19a55ce3a9cda85"
+    },
+    {
+      "research_id": "N8_01",
+      "chapter": 4,
+      "character_offset_start": 253,
+      "character_offset_end_exclusive": 903,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "ca4e25cae49c2ec15e07319214ca3ca121ea53def0c0d8323975c2c0af6f949a"
+    },
+    {
+      "research_id": "N8_02",
+      "chapter": 1,
+      "character_offset_start": 0,
+      "character_offset_end_exclusive": 650,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "901dbd821ce4dfc8a70f19957a30e8d110bc7ff44778fc07193e4d86fa78d6d8"
+    },
+    {
+      "research_id": "N8_02",
+      "chapter": 4,
+      "character_offset_start": 1023,
+      "character_offset_end_exclusive": 1673,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "25ec40c617f8ca152664dc0f0bdd6d1703dee3b8046c530941ea0c809816c5f9"
+    },
+    {
+      "research_id": "N8_03",
+      "chapter": 1,
+      "character_offset_start": 426,
+      "character_offset_end_exclusive": 1076,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "550e0eb956237d362e93862a6158d1a5ec7cc17be88ded5df810d4bccfc96649"
+    },
+    {
+      "research_id": "N8_03",
+      "chapter": 4,
+      "character_offset_start": 311,
+      "character_offset_end_exclusive": 961,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "75a59971fd95f1a1bb0172d8a37b58e5556c73f3250691121cebd2cdbee30631"
+    },
+    {
+      "research_id": "N8_04",
+      "chapter": 1,
+      "character_offset_start": 0,
+      "character_offset_end_exclusive": 650,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "bfbb334942001e5f79f173ffba29afa525cb9f336417dd11691d123e906d60bf"
+    },
+    {
+      "research_id": "N8_04",
+      "chapter": 4,
+      "character_offset_start": 440,
+      "character_offset_end_exclusive": 1090,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "c1d544de6d3f5e64ec5140bba42061649b9a0293b4474a4a14c77744e32998e9"
+    },
+    {
+      "research_id": "N8_05",
+      "chapter": 1,
+      "character_offset_start": 0,
+      "character_offset_end_exclusive": 650,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "fe2cd5fa76de89bb0e2fa611edb933b462ff548a8a5fad2d3c6d9d034a0561a4"
+    },
+    {
+      "research_id": "N8_05",
+      "chapter": 4,
+      "character_offset_start": 0,
+      "character_offset_end_exclusive": 650,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "fd3618cc1a81c73c6dfd5dd96d182d73e881399a8a115b54cea575a86979ff89"
+    },
+    {
+      "research_id": "N8_06",
+      "chapter": 1,
+      "character_offset_start": 83,
+      "character_offset_end_exclusive": 733,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "fcc625d4b729eaccde80fbef5747cc7085da32c0ca68b92496fb54465da79d97"
+    },
+    {
+      "research_id": "N8_06",
+      "chapter": 4,
+      "character_offset_start": 1563,
+      "character_offset_end_exclusive": 2213,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "31454966d407f9f61abd1d0a92bfe42d607ff71f49d9927e2365cbd04cb53773"
+    },
+    {
+      "research_id": "N8_07",
+      "chapter": 1,
+      "character_offset_start": 287,
+      "character_offset_end_exclusive": 937,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "920829c401e704163f5b438bd557e476cea50f693991a2dbe6632904ba9c3864"
+    },
+    {
+      "research_id": "N8_07",
+      "chapter": 4,
+      "character_offset_start": 271,
+      "character_offset_end_exclusive": 921,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "850c01d8ec913b69142cd33c1262c30e8c9665c67e056078aa91e91d5a4822cd"
+    },
+    {
+      "research_id": "N8_08",
+      "chapter": 1,
+      "character_offset_start": 0,
+      "character_offset_end_exclusive": 650,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "c58077cb6bbe4d2c12d9e36f04e545e031ec136800062e8aa551eb2f70073518"
+    },
+    {
+      "research_id": "N8_08",
+      "chapter": 4,
+      "character_offset_start": 1756,
+      "character_offset_end_exclusive": 2095,
+      "read_mode": "targeted raw-content window; not a full reread",
+      "source_body_sha256": "e70ac4c4dcc8896fe105aaa766431a9bc76581e94077838ecb9f88eb788d0a0a"
+    }
+  ],
+  "no_semantic_read_after_20": true,
+  "full_file_scan": "strict decoding, heading numbering and exact body hashing; not semantic research",
+  "excluded_source_bodies_read": 0
+}

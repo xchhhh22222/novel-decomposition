@@ -1,0 +1,144 @@
+{
+  "query": "智斗 掌控 证据 权限 交易 威慑",
+  "modules": [
+    "character_function",
+    "plot_mechanism",
+    "plotline"
+  ],
+  "components": [],
+  "component_mode": false,
+  "include_per_book": true,
+  "max_per_book": 2,
+  "returned": 6,
+  "results": [
+    {
+      "record_id": "PM:BOOK:BOOK_012",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_012",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_012.jsonl",
+      "line": 1,
+      "title": "十日终焉",
+      "score": 18.0,
+      "why": [
+        "正文:证据",
+        "正文:交易",
+        "正文:威慑"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_012:CHAPTER:0001 BOOK_012:CHAPTER:0010 BOOK_012:CHAPTER:0020 BOOK_012:CHAPTER:0031 BOOK_012:CHAPTER:0032 BOOK_012:CHAPTER:0100 BOOK_012:CHAPTER:0120 BOOK_012:CHAPTER:0224 BOOK_012:CHAPTER:0230 BOOK_012:CHAPTER:0235 BOOK_012:CHAPTER:0274 BOOK_012:CHAPTER:0610 BOOK_012:CHAPTE…"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_014",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_014",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_014.jsonl",
+      "line": 1,
+      "title": "我在精神病院学斩神",
+      "score": 16.0,
+      "why": [
+        "正文:掌控",
+        "正文:证据",
+        "正文:威慑"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "BOOK_014:CHAPTER:0026 BOOK_014:CHAPTER:0074 BOOK_014:CHAPTER:0153 BOOK_014:CHAPTER:0543 BOOK_014:CHAPTER:0752 BOOK_014:CHAPTER:1660 BOOK_014:CHAPTER:1723 BOOK_014:CHAPTER:1780 BOOK_014:CHAPTER:1945 BOOK_014:CHAPTER:1978 BOOK_014:CHAPTER:2013"
+    },
+    {
+      "record_id": "CF:BOOK:BOOK_012",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_012",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_012.jsonl",
+      "line": 1,
+      "title": "十日终焉",
+      "score": 15.0,
+      "why": [
+        "正文:掌控",
+        "正文:证据",
+        "正文:交易",
+        "正文:威慑"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "P1 P2 P3 P4；以规则漏洞与行为证据解题并主持队伍存亡：说谎者局以氧耗计算揭穿全员已死（0008-0010）、寻道局时态陷阱加注赌命（0032）、策动胁迫楚天秋交出道（0235）、终局以「永恒」困杀天龙并造桃源（1…；主动向队友输出世界观推断（轮回结构、合同解读、生肖目的同构），把「解题」升级为阵营战争纲领"
+    },
+    {
+      "record_id": "HEROINE:BOOK_005:楚月",
+      "record_type": "heroine_character",
+      "module": "character_function",
+      "book_id": "BOOK_005",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/derived/heroine/BOOK_005.jsonl",
+      "line": 1,
+      "title": "楚月｜月刃前线验证者与核心小队战斗搭档",
+      "score": 13.09,
+      "why": [
+        "正文:证据",
+        "正文:权限",
+        "正文:交易"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "维持年级前列与觉醒者成长路线，完成核心实训并把异常预警转成可执行的现场判断；她的行动并不以获得江寒好感为目的。"
+    },
+    {
+      "record_id": "PM:BOOK:BOOK_002",
+      "record_type": "per_book",
+      "module": "plot_mechanism",
+      "book_id": "BOOK_002",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_002.jsonl",
+      "line": 1,
+      "title": "一毛一天修为，我靠直播氪穿宇宙",
+      "score": 13.09,
+      "why": [
+        "正文:证据",
+        "正文:权限"
+      ],
+      "usage_status": "ADAPTABLE",
+      "supporting_book_count": null,
+      "summary": "BOOK_002:CHAPTER:0001 BOOK_002:CHAPTER:0003 BOOK_002:CHAPTER:0050 BOOK_002:CHAPTER:0076 BOOK_002:CHAPTER:0100 BOOK_002:CHAPTER:0124"
+    },
+    {
+      "record_id": "CF:BOOK:BOOK_017",
+      "record_type": "per_book",
+      "module": "character_function",
+      "book_id": "BOOK_017",
+      "schema_version": 1,
+      "confidence": "MEDIUM",
+      "qa_status": "PASS",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_017.jsonl",
+      "line": 1,
+      "title": "诸神愚戏",
+      "score": 13.0,
+      "why": [
+        "正文:证据",
+        "正文:交易",
+        "正文:威慑"
+      ],
+      "usage_status": "ADAPTABLE_WITH_GAPS",
+      "supporting_book_count": null,
+      "summary": "PERSON_01 PERSON_02 PERSON_03 PERSON_04；以谎言构造剧本使试炼内所有玩家/怪物/神明按其设计行动，从而破局、收割资源或反向猎杀；以谎言敏感+欺骗大师构成的全知感知，在每次组局中成为事实上的信息枢纽，决定队友的知情与误信"
+    }
+  ],
+  "library_mode": "VERSIONED_PACKAGE",
+  "library_status": "ACTIVE_SHARED_LIBRARY",
+  "package_version": "1.0.0"
+}

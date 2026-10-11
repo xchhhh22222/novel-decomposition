@@ -1,0 +1,152 @@
+{
+  "frozen_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+  "frozen_artifact_integrity": "127/127 matches manifest",
+  "legacy_library": "D:\\Users\\wanxincheng\\Documents\\ChatGPT\\网文创作公共资产\\素材库",
+  "reads": [
+    {
+      "group": "A",
+      "library_kind": "legacy",
+      "path": "套路素材/战斗/TR_BATTLE_032_限时竞速穿越封锁.md",
+      "sha256": "dff2e0e66cc56dccf40575764437dac922f5ce9a6a7053182095cf432b4aad1a",
+      "read_scope": "FULL",
+      "parent_metadata_read": false,
+      "applied_to_production": false
+    },
+    {
+      "group": "A",
+      "library_kind": "legacy",
+      "path": "套路素材/人物关系/TR_RELATION_024_最小暴露通过审查.md",
+      "sha256": "47416228af040afdd16f2edb3596d40883e5b056ae42363d04362bf81043fcad",
+      "read_scope": "FULL",
+      "parent_metadata_read": false,
+      "applied_to_production": false
+    },
+    {
+      "group": "A",
+      "library_kind": "dna",
+      "path": "DNA素材/02_金手指/per_book/BOOK_015.jsonl",
+      "sha256": "e775ec814d2574461b5146faca06cb5304720becae1b11226dc58e9f40001150",
+      "read_scope": "FULL_ROW",
+      "parent_metadata_read": true,
+      "applied_to_production": false,
+      "record_id": "GF:BOOK_015",
+      "parent_qa_status": "PASS",
+      "parent_unknowns": [
+        "发放者'阿超'的真实身份（文本内为作者自嘲化身梗，机制层无解释）",
+        "能力起源机制仅有谜语级线索（'超能力和这个世界都取决于你的心'CH82/L14805；CH83穿越回1940遇少女期温若怜）",
+        "每日发放是否随主角心智/愿望偏置：CH12/L4509'祈祷明天一定要觉醒一个适合学习的超能力'暗示愿望可能影响发放，但无直接验证",
+        "结局'一切都是梦'对能力真实性的最终定性：作者自述结局临时赶工（CH136末作者按），谜团线未完整回收",
+        "CH119立定跳远3.3米未注明当日能力或是否复用身体强化"
+      ]
+    },
+    {
+      "group": "A",
+      "library_kind": "dna",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_009.jsonl",
+      "sha256": "fa6302bccf89f79b1e7c466808ec697ae46ef7c456b2148c79c82b29adacd079",
+      "read_scope": "/mechanisms/0",
+      "parent_metadata_read": true,
+      "applied_to_production": false,
+      "record_id": "PM:BOOK:BOOK_009",
+      "parent_qa_status": "PASS",
+      "parent_unknowns": [
+        "第62章之后的复用状态未知"
+      ]
+    },
+    {
+      "group": "B",
+      "library_kind": "legacy",
+      "path": "套路素材/资源/TR_RESOURCE_021_超上限知识商品化变现.md",
+      "sha256": "eb3ba5c503ede526e5a8c69254cd539f0d37d09e981c2362b16e345e5e40ce33",
+      "read_scope": "FULL",
+      "parent_metadata_read": false,
+      "applied_to_production": false
+    },
+    {
+      "group": "B",
+      "library_kind": "legacy",
+      "path": "套路素材/资源/TR_RESOURCE_017_倍数返还型金手指_敌方投入反哺主角.md",
+      "sha256": "5511bf9970d84aed833480a5212387c374e5354135cadd4453b61bf09dbd5132",
+      "read_scope": "FULL",
+      "parent_metadata_read": false,
+      "applied_to_production": false
+    },
+    {
+      "group": "B",
+      "library_kind": "dna",
+      "path": "DNA素材/02_金手指/per_book/BOOK_006.jsonl",
+      "sha256": "d95897b62db6f875dd014167e0799b7ad5137aaae858fa89fa57668b004c2be4",
+      "read_scope": "FULL_ROW",
+      "parent_metadata_read": true,
+      "applied_to_production": false,
+      "record_id": "GF:BOOK:BOOK_006",
+      "parent_qa_status": "PASS",
+      "parent_unknowns": [
+        "第74章以后发展未知"
+      ]
+    },
+    {
+      "group": "C",
+      "library_kind": "legacy",
+      "path": "套路素材/人物关系/TR_RELATION_020_共担极限验证信任.md",
+      "sha256": "8a3293aada52d680976b085c58f90e2c0107fc2788c7baa2151dafe621c7421c",
+      "read_scope": "FULL",
+      "parent_metadata_read": false,
+      "applied_to_production": false
+    },
+    {
+      "group": "C",
+      "library_kind": "legacy",
+      "path": "套路素材/人物关系/TR_RELATION_019_代价让渡换协同反哺.md",
+      "sha256": "33a4790a51a672c0e2fe842d4f198cafcc8e60ee433356113aeb06f3aff1cb0b",
+      "read_scope": "FULL",
+      "parent_metadata_read": false,
+      "applied_to_production": false
+    },
+    {
+      "group": "C",
+      "library_kind": "dna",
+      "path": "DNA素材/05_人物功能与标签/per_book/BOOK_005.jsonl",
+      "sha256": "c5713e79403c44a96d04372939fbd83ddd26efe364788ddb8c247c8139433133",
+      "read_scope": "/relationship_engines/3",
+      "parent_metadata_read": true,
+      "applied_to_production": false,
+      "record_id": "CF:BOOK:BOOK_005",
+      "parent_qa_status": "PASS",
+      "parent_unknowns": [
+        "楚月、赵莹莹、欧阳倩在116章后的长期路线未知",
+        "谢凝霜、顾鹿缺少足够跨阶段独立目标与选择证据",
+        "周成业仅有86-90章单阶段问责行动，不支持长线反派结论",
+        "江寒预见与光点/灵能弹/登记名的统一机制仍由02记录为UNKNOWN，本专项仅作接口引用"
+      ]
+    },
+    {
+      "group": "D",
+      "library_kind": "legacy",
+      "path": "套路素材/资源/TR_RESOURCE_003_独有筹码明牌谈判索取超额资源.md",
+      "sha256": "b43b0e90b5cca75432e1242ac16f38831acdcc42e2028973f0f56dcfdb18865d",
+      "read_scope": "FULL",
+      "parent_metadata_read": false,
+      "applied_to_production": false
+    },
+    {
+      "group": "D",
+      "library_kind": "dna",
+      "path": "DNA素材/09_剧情机制/per_book/BOOK_012.jsonl",
+      "sha256": "eaedff3e8943bdda193c71b4a1e91b6fda45d85c7aa72da8e1dcebb4e2083aa0",
+      "read_scope": "/mechanisms/7",
+      "parent_metadata_read": true,
+      "applied_to_production": false,
+      "record_id": "PM:BOOK:BOOK_012",
+      "parent_qa_status": "PASS",
+      "parent_unknowns": [
+        "760-1350章未精读，机制在该区间的运行实例仅由关键词命中与终局窗口间接支撑",
+        "PM3面具类型学与PM5自指问题因样本受精读限制标记为partial repeatability",
+        "第1358章尾部混入非本书内容，机制分析已按内容边界截断"
+      ]
+    }
+  ],
+  "read_only": true,
+  "not_a_new_source_novel_read": true,
+  "rejected_copy": "nova-v1.7.0-shared-dna-readonly: CRLF byte hashes did not match; used existing exact-LF export; no frozen files changed"
+}
