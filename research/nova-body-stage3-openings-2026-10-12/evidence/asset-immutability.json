@@ -1,0 +1,41 @@
+{
+  "frozen_material_commit": "1e10e6e3ffb70eda94a400073155fd89db724ce9",
+  "groups": [
+    {
+      "kind": "dna",
+      "file_count": 127,
+      "missing": [],
+      "uncompared_package_build_metadata": [
+        "manifest.json",
+        "package-integrity-audit.json",
+        "retrieval-smoke-report.json"
+      ],
+      "changed": [],
+      "comparison": "Covered content hashes match immutable snapshot established in stage2; package build metadata excluded by the original content snapshot",
+      "snapshot_map_sha256": "5a1a9991f0eb13fd40cdb39e8b760591b8a679e27662d568831e19e641817a68"
+    },
+    {
+      "kind": "legacy",
+      "file_count": 1100,
+      "missing": [],
+      "uncompared_package_build_metadata": [],
+      "changed": [],
+      "comparison": "Covered content hashes match immutable snapshot established in stage2; package build metadata excluded by the original content snapshot",
+      "snapshot_map_sha256": "28682fdaf88d857e8d4d1e6fec91b3d5bee3d7d9d941b80ae2d67d7ea1b3449f"
+    },
+    {
+      "kind": "arc",
+      "file_count": 10,
+      "missing": [],
+      "uncompared_package_build_metadata": [],
+      "changed": [],
+      "comparison": "Covered content hashes match immutable snapshot established in stage2; package build metadata excluded by the original content snapshot",
+      "snapshot_map_sha256": "5b7284564a2dfa834af66a4e7335ee11b38db461006c9c61a590f0043070edfb"
+    }
+  ],
+  "repository_guard": "All tracked files outside new research prefix must equal accepted baseline; verified by verifier and remote readback",
+  "old_ABC_byte_hash_match": true,
+  "production_promotion": "NOT_RUN",
+  "schema_changed": false,
+  "source_changed": false
+}

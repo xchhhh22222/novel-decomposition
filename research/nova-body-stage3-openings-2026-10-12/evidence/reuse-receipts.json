@@ -1,0 +1,223 @@
+{
+  "accepted_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+  "report_references": [
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/books/N8_03.md",
+      "accepted_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "sha256": "fb4c42815e84d5da3d66392bf8fbb3c62f77e9636e8b486310da6de7d5a90b7a",
+      "scope": "Accepted structural evidence reused; report sections used as needed; no new raw1-50 decomposition",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-eight-stage1-2026-10-11/books/N8_03.md"
+    },
+    {
+      "path": "research/nova-eight-stage1-2026-10-11/candidates-and-dedup.md",
+      "accepted_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "sha256": "4607c332ab64750a73131c4a24848b7e9148cddbd3544798ff8e331706d96815",
+      "scope": "Accepted structural evidence reused; report sections used as needed; no new raw1-50 decomposition",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-eight-stage1-2026-10-11/candidates-and-dedup.md"
+    },
+    {
+      "path": "research/nova-three-stage2-2026-10-12/books/N8_03.md",
+      "accepted_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "sha256": "cc4e202119b94f1b896f1b4f56e78903e3c78d9c0db436d0973946ab7d11902a",
+      "scope": "Accepted structural evidence reused; report sections used as needed; no new raw1-50 decomposition",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-three-stage2-2026-10-12/books/N8_03.md"
+    },
+    {
+      "path": "research/nova-three-stage2-2026-10-12/books/N8_06.md",
+      "accepted_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "sha256": "7bc9b6c8d4b9e7d2762fdf7562ff0f7284f7f990e8c45f97a51663daf437be6a",
+      "scope": "Accepted structural evidence reused; report sections used as needed; no new raw1-50 decomposition",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-three-stage2-2026-10-12/books/N8_06.md"
+    },
+    {
+      "path": "research/nova-three-stage2-2026-10-12/books/N8_01.md",
+      "accepted_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "sha256": "f29f2c93eee1d1c1673d85b929313a058147e72667f3dc3f06f48f497a93f28b",
+      "scope": "Accepted structural evidence reused; report sections used as needed; no new raw1-50 decomposition",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-three-stage2-2026-10-12/books/N8_01.md"
+    },
+    {
+      "path": "research/nova-three-stage2-2026-10-12/cross-book-comparison.md",
+      "accepted_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "sha256": "dc9c89de400053d6dfe9a0ba740a55b1143d1c73f29afed4893c25663f4917bf",
+      "scope": "Accepted structural evidence reused; report sections used as needed; no new raw1-50 decomposition",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-three-stage2-2026-10-12/cross-book-comparison.md"
+    },
+    {
+      "path": "research/nova-three-stage2-2026-10-12/cross-book-emotion-fusion.md",
+      "accepted_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "sha256": "53a5230bc81404cf7168a8b6f482793997a9554dea156042c8f6cd90e0ffbf83",
+      "scope": "Accepted structural evidence reused; report sections used as needed; no new raw1-50 decomposition",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-three-stage2-2026-10-12/cross-book-emotion-fusion.md"
+    },
+    {
+      "path": "research/nova-three-stage2-2026-10-12/fusion-candidate-cards.md",
+      "accepted_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "sha256": "9279b21e9fce99b44920c79ef990f90a21c5e860a02a7802cf785d62f259a896",
+      "scope": "Accepted structural evidence reused; report sections used as needed; no new raw1-50 decomposition",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-three-stage2-2026-10-12/fusion-candidate-cards.md"
+    },
+    {
+      "path": "research/nova-three-stage2-2026-10-12/evidence/material-read-receipts.json",
+      "accepted_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "sha256": "10288c0edff79d3ce3c8e42e948fd40e59ddf6b82f4cfcca459efb5c42bd4098",
+      "scope": "Accepted structural evidence reused; report sections used as needed; no new raw1-50 decomposition",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-three-stage2-2026-10-12/evidence/material-read-receipts.json"
+    },
+    {
+      "path": "research/nova-three-stage2-2026-10-12/evidence/input-freeze.json",
+      "accepted_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "sha256": "f94987a43b6a7862b29134c847875f2ea52f4086ccc5935201c2f2697525333e",
+      "scope": "Accepted structural evidence reused; report sections used as needed; no new raw1-50 decomposition",
+      "url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-three-stage2-2026-10-12/evidence/input-freeze.json"
+    }
+  ],
+  "task_b_chapter_evidence": [
+    {
+      "research_id": "N8_06",
+      "chapter": 27,
+      "title": "没人比我更懂谦卑",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L3496",
+      "body_sha256": "951f61c540b62ad35ed015fa71e8bcaab3ec1919ff8f1d1b518b68a9ae375531",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_06",
+      "chapter": 33,
+      "title": "我让你们走了吗？",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L4228",
+      "body_sha256": "21abbe73788cb33305eaca99fbb2d3013870ef0524f3d7c707e31cacb6a3318c",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_06",
+      "chapter": 35,
+      "title": "会说话就多说点",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L4454",
+      "body_sha256": "b3f19947a054a4c078ede60efe459fd9753f459d883e56efcff7e7361079bf56",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_06",
+      "chapter": 42,
+      "title": "装高手",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L5320",
+      "body_sha256": "b201ff0dbbd79246229789db04e5bdd455165e72d6f60454fde0f30b70b924a5",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_06",
+      "chapter": 45,
+      "title": "气血武道",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L5692",
+      "body_sha256": "bf6249e758ad145e92b303eb83026c94815db78cd15bb2b1f05b2bd7fa2dda0b",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_01",
+      "chapter": 29,
+      "title": "：强压地精嗜血本能，展现神级统治力",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L6970",
+      "body_sha256": "7fb57f494c2677ac1a03313923ce5d2ca355271d299a2a37fe2c7a15bae9eb0b",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_01",
+      "chapter": 32,
+      "title": "：红雾污染区，带薪休假罢了",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L7692",
+      "body_sha256": "8a443fdbb10f8723383c75f387906a7f00a995c8aa3685fd5fa8a75fb9d48f5e",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_01",
+      "chapter": 34,
+      "title": "：拿极危污染源当边角料，守卫看麻了",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L8104",
+      "body_sha256": "ab284fca1c449835614a230a565de0eb1e1b4161b1b9eac8a0a98192175a4f83",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_01",
+      "chapter": 35,
+      "title": "：铂金级建筑，在我这里只能当养料",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L8324",
+      "body_sha256": "ecad1c1eed67fc36c1743b5b8b02e323b5bd7fabc816117e399fdd73386a8f23",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_01",
+      "chapter": 43,
+      "title": "：酒局秒变掐魅现场？抱歉，我这里地狱",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L10164",
+      "body_sha256": "763a7b5ce9cc3a7461936e091ef2491a47b17a9d2596851f85b8b55bb13eac1b",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_03",
+      "chapter": 23,
+      "title": "据点来人，背锅的人选",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L3615",
+      "body_sha256": "4ea266adf2ce1795212a37c1a78fa14f1bc12f2eb3f30778ccb3a1908f560971",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_03",
+      "chapter": 24,
+      "title": "这是可以说的吗？",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L3779",
+      "body_sha256": "cd14d12a0af724be10b8f84c816805b39377cd9b3983fe0185ceed2033e861e0",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_03",
+      "chapter": 30,
+      "title": "魔手佛心，念头通达",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L4715",
+      "body_sha256": "eb89c0e35705c6bd28ae293e42813b325c0898d2cc51b6831002da75b75f8aaa",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_03",
+      "chapter": 43,
+      "title": "赫赫威名，你到底用我的身体干什么了？！",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L6777",
+      "body_sha256": "f4632c1f7613fb9443cff8abdf4b42276590e693939a97aa2a719bb201b255bd",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_03",
+      "chapter": 44,
+      "title": "你的攻击性我认可了",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L6943",
+      "body_sha256": "807dc5c65541639858470333206ebb2b89f46db356321a0a031d98bee656d754",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    },
+    {
+      "research_id": "N8_03",
+      "chapter": 49,
+      "title": "人设的神奇效果",
+      "evidence_url": "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L7687",
+      "body_sha256": "48dc3006bb7c47b3f34cfc9207633a0f519c7f7edf8c9d6d17a277d1fe7c8587",
+      "accepted_research_commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+      "new_semantic_read_this_run": false
+    }
+  ],
+  "material_dedup": "Reuse accepted stage2 conclusions/receipts only; no new mother cards, active recall, formal material writes or promotion",
+  "task_a_raw51_100_not_used_as_accepted_task_b_input": true
+}

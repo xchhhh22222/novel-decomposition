@@ -1,0 +1,19 @@
+{
+  "machine_scope_status": "CHECKS_PASSED",
+  "semantic_research_acceptance": "PENDING_INDEPENDENT_REVIEW",
+  "creative_opening_quality": "PENDING_AUTHOR_REVIEW",
+  "new_chapters": 50,
+  "new_characters": 114330,
+  "prior_chapters_reused": 50,
+  "old_experiment_sections_unchanged": 3,
+  "new_opening_candidates": [
+    "D",
+    "E",
+    "F"
+  ],
+  "outside_prefix_changes": [],
+  "raw_source_files_published": 0,
+  "material_promotion": "HOLD",
+  "full_book_decomposition": "NOT_RUN",
+  "limitations": "Structural checks do not establish semantic correctness, reader response, literary quality or full numeric consistency."
+}

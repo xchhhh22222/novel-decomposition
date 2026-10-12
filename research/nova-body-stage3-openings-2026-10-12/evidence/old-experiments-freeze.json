@@ -1,0 +1,30 @@
+{
+  "commit": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+  "path": "research/nova-three-stage2-2026-10-12/cross-book-emotion-fusion.md",
+  "file_sha256": "53a5230bc81404cf7168a8b6f482793997a9554dea156042c8f6cd90e0ffbf83",
+  "sections": [
+    {
+      "label": "### 实验A：受限操作窗口，核心情绪是“我知道该把优势用在哪一步”",
+      "start_line": 64,
+      "end_line": 79,
+      "section_sha256_lf": "1536078aabbe868892f6656ebd2162d137f7a688cd8f6234d4d9f19d03bf7288",
+      "immutable_url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-three-stage2-2026-10-12/cross-book-emotion-fusion.md#L64"
+    },
+    {
+      "label": "### 实验B：有限产能分配，核心情绪是“变强的收益终于能改变别人生活”",
+      "start_line": 80,
+      "end_line": 95,
+      "section_sha256_lf": "d24384cea98ce28ab8c5fafcb83c723f4c2685bbcc9e00e87cb72b156457e470",
+      "immutable_url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-three-stage2-2026-10-12/cross-book-emotion-fusion.md#L80"
+    },
+    {
+      "label": "### 实验C：知情合作，核心情绪是“我认可你的选择，却不能替你决定”",
+      "start_line": 96,
+      "end_line": 111,
+      "section_sha256_lf": "510ba1040305b3c09030b27d98eb0ff33c12f02ac33c2c4fd8bd02775320926a",
+      "immutable_url": "https://github.com/xchhhh22222/novel-decomposition/blob/0f250ea375c61aaa7e9693924a89657a37618a3e/research/nova-three-stage2-2026-10-12/cross-book-emotion-fusion.md#L96"
+    }
+  ],
+  "operation": "REFERENCE_ONLY_NO_OVERWRITE",
+  "old_scores_do_not_approve_new_experiments": true
+}

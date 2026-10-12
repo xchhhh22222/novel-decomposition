@@ -1,0 +1,4 @@
+{
+  "status": "PENDING_REMOTE_READBACK",
+  "note": "Filled only after independent remote byte readback; excluded from content manifest to avoid circular commit hash"
+}

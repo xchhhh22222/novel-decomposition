@@ -1,0 +1,89 @@
+{
+  "hash_method": "SHA256 exact UTF8 LF bytes",
+  "excluded": [
+    "evidence/artifact-manifest.json",
+    "evidence/publication-verification.json"
+  ],
+  "files": [
+    {
+      "path": "body-51-100.md",
+      "bytes": 48731,
+      "sha256": "314fd3f81063c62a795d10628b1d8f49b695fd9d49b15e0cf3d321971693be12"
+    },
+    {
+      "path": "emotion-arc-contracts.md",
+      "bytes": 8233,
+      "sha256": "6ab6c95d736814cec8a7b73ad152110ac1a53d85012aaa620aff173ffa789bb2"
+    },
+    {
+      "path": "evidence/asset-immutability.json",
+      "bytes": 1683,
+      "sha256": "ed011ebaa09617ada8ed5c438342725a818936804954d7eec8281892fc10669b"
+    },
+    {
+      "path": "evidence/chapter-source-index.jsonl",
+      "bytes": 42862,
+      "sha256": "258a11d65aa09111082de419de60e630ccafaf1f7f9d2ce99f124ab8471f0eaf"
+    },
+    {
+      "path": "evidence/input-freeze.json",
+      "bytes": 1872,
+      "sha256": "8a8e7052dc09cbc0c4b77d5e07de74a7ac7002305a6999ca0732f75fd06853ed"
+    },
+    {
+      "path": "evidence/old-experiments-freeze.json",
+      "bytes": 1726,
+      "sha256": "3388c00aad1045377a8ba7eb909d49519d99c1c8eae97e49b9f497f2e6c6d82e"
+    },
+    {
+      "path": "evidence/qa-report.json",
+      "bytes": 628,
+      "sha256": "62d6a76070c0e8a94a06dcc94c78691dac42ad544aa7adddacb25369f46f0cb1"
+    },
+    {
+      "path": "evidence/reading-log.jsonl",
+      "bytes": 32489,
+      "sha256": "e7017d5d0e028145285ea52170b7f6d374c6fb066476a8155a900c959af79610"
+    },
+    {
+      "path": "evidence/reuse-receipts.json",
+      "bytes": 15791,
+      "sha256": "12334fd826ff37f45127f4b85f5856d70bda1d7275f50cb1da64c262758a4173"
+    },
+    {
+      "path": "evidence/reused-body-1-50-index.jsonl",
+      "bytes": 51261,
+      "sha256": "df16379eec3e8c639188171405d220023a7738cd26c043a0cc7b22023b8d509d"
+    },
+    {
+      "path": "evidence/verify_research.py",
+      "bytes": 4077,
+      "sha256": "7e8925bf679214c21c45ea2f866568955d1446cedb6851a4717a5f0f9e1df507"
+    },
+    {
+      "path": "high-burst-opening-experiments.md",
+      "bytes": 17345,
+      "sha256": "7fae5de127cc27727b8fa6f4269b7c28176b8ec3380235f8e16bb3dd40a18d6e"
+    },
+    {
+      "path": "obligations-and-findings.md",
+      "bytes": 9849,
+      "sha256": "ab5ee7288e8a67c1999d7cee476d475c1c458297ae8f8b78863254c3d3df3e86"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3303,
+      "sha256": "8b23640f1af456fcb41d4f67b90ff273b6ba182b1ddf82677faabc35811b2b8d"
+    },
+    {
+      "path": "usage-lineage-1-100.md",
+      "bytes": 8409,
+      "sha256": "19ac72206fb0e7f4616d0c194b483ca34df63a20bf7977f802f62641ccf3f102"
+    },
+    {
+      "path": "verification-and-gaps.md",
+      "bytes": 3489,
+      "sha256": "7e3dc16b68c12f6201f32367a0fe97b7c703821a34b849cb48a6a80eaf64e889"
+    }
+  ]
+}
