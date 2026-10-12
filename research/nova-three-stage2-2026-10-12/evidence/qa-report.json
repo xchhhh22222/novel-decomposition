@@ -1,0 +1,92 @@
+{
+  "deterministic_status": "PASS",
+  "new_chapters": 90,
+  "new_books": 3,
+  "prior_chapters_reused": 60,
+  "source_body_index_checks": [
+    {
+      "book": "N8_01",
+      "source_file_sha256": "27921a8f60dd806d555906798870315e3e334bf81d4953b73a188ea1104c8f60",
+      "indexed_chapters_checked": 50,
+      "semantic_new_reads": 30
+    },
+    {
+      "book": "N8_03",
+      "source_file_sha256": "d870a946c3693447fc6ec2ab562181c0a60ef6f2ca44ec8d66ded76429786bba",
+      "indexed_chapters_checked": 50,
+      "semantic_new_reads": 30
+    },
+    {
+      "book": "N8_06",
+      "source_file_sha256": "107dc899db271ffeb5f6aae06d050c42a58bcded8643e658b292bd33b2dc94b5",
+      "indexed_chapters_checked": 50,
+      "semantic_new_reads": 30
+    }
+  ],
+  "json_files_parsed": 15,
+  "relative_links_checked": 37,
+  "scope_only_new_research_directory": true,
+  "branch": "codex/nova-three-stage2-20261012",
+  "baseline": "95ccb616fd7c157c2376b938fb6f8f3ef7fdd0c5",
+  "source_commit": "718d853c01c165b4caa0bd0cd812311081578fe9",
+  "raw_text_published": false,
+  "semantic_review": "SELF_REVIEW_COMPLETED_WITH_EXPLICIT_GAPS",
+  "independent_review": "PENDING",
+  "material_promotion": "NOT_RUN",
+  "production": "HOLD",
+  "known_unknowns_do_not_receive_machine_pass": true,
+  "asset_immutability": [
+    {
+      "asset_group": "frozen_dna",
+      "files_checked": 127,
+      "before_inventory_sha256": "a221345ce952713610a45c6af346b354ac30519585ba604d231ace45ac8a5ba0",
+      "after_inventory_sha256": "a221345ce952713610a45c6af346b354ac30519585ba604d231ace45ac8a5ba0",
+      "changed_files": [],
+      "status": "UNCHANGED",
+      "semantic_all_cards_read": false
+    },
+    {
+      "asset_group": "legacy_assets",
+      "files_checked": 1100,
+      "before_inventory_sha256": "94691edb35956bc82fb9a89af1fa46aac89dee727b18458a90fa0257783d6c66",
+      "after_inventory_sha256": "94691edb35956bc82fb9a89af1fa46aac89dee727b18458a90fa0257783d6c66",
+      "changed_files": [],
+      "status": "UNCHANGED",
+      "semantic_all_cards_read": false
+    },
+    {
+      "asset_group": "emotion_research",
+      "files_checked": 10,
+      "before_inventory_sha256": "448ede1f7ddb8145dc70d8f2f7220476629b33ff4c56c8d3c0774616673e46b9",
+      "after_inventory_sha256": "448ede1f7ddb8145dc70d8f2f7220476629b33ff4c56c8d3c0774616673e46b9",
+      "changed_files": [],
+      "status": "UNCHANGED",
+      "semantic_all_cards_read": false
+    }
+  ],
+  "targeted_prior_source_rechecks": [
+    {
+      "book": "N8_06",
+      "chapters": [
+        15,
+        16
+      ],
+      "source_lines": [
+        2018,
+        2174
+      ],
+      "read_scope": "budget statements and in-chapter timing mentions, not a new decomposition",
+      "outcome": "UNKNOWN 30-second difference"
+    }
+  ],
+  "self_semantic_checks": [
+    "old ability / new product / new condition / public growth / resources / relationship attribution separated",
+    "actor control distinguished; chapter50 unresolved attribution retained",
+    "forecast / estimate / planned income separated from actual delivery",
+    "independent choices and visible outcomes required for emotional payoff",
+    "three interface classes include evidence and counterfactuals",
+    "original experiments remove original characters/powers/event chains; major settings remain candidates"
+  ],
+  "review_gate": "PASS_WITH_EXPLICIT_SOURCE_GAPS_FOR_RESEARCH_ONLY",
+  "stop": "STOP_FOR_INDEPENDENT_REVIEW"
+}

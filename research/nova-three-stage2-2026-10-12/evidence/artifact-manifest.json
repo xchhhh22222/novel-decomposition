@@ -1,0 +1,124 @@
+{
+  "content_hash_algorithm": "sha256 of UTF-8 LF bytes",
+  "excluded_self_or_publication_receipt": [
+    "evidence/artifact-manifest.json",
+    "evidence/publication-verification.json"
+  ],
+  "artifacts": [
+    {
+      "path": "books/N8_01.md",
+      "sha256": "f29f2c93eee1d1c1673d85b929313a058147e72667f3dc3f06f48f497a93f28b",
+      "bytes": 36249
+    },
+    {
+      "path": "books/N8_03.md",
+      "sha256": "cc4e202119b94f1b896f1b4f56e78903e3c78d9c0db436d0973946ab7d11902a",
+      "bytes": 35587
+    },
+    {
+      "path": "books/N8_06.md",
+      "sha256": "7bc9b6c8d4b9e7d2762fdf7562ff0f7284f7f990e8c45f97a51663daf437be6a",
+      "bytes": 32830
+    },
+    {
+      "path": "cross-book-comparison.md",
+      "sha256": "dc9c89de400053d6dfe9a0ba740a55b1143d1c73f29afed4893c25663f4917bf",
+      "bytes": 14794
+    },
+    {
+      "path": "cross-book-emotion-fusion.md",
+      "sha256": "3da0aed8e8bd25946fbb0d52af47e8dde79d0d4235a167274d13cb39f257eebb",
+      "bytes": 37502
+    },
+    {
+      "path": "evidence/asset-immutability.json",
+      "sha256": "016007524ddb6e60569d2d35e8e7f329fc4ac05adeb4be8964e614af50f1e8ed",
+      "bytes": 1272
+    },
+    {
+      "path": "evidence/chapter-source-index.jsonl",
+      "sha256": "4685901ed82a7fd17062da897e8c1eeda07510076322ffaf5af07c1ef284d93c",
+      "bytes": 77885
+    },
+    {
+      "path": "evidence/dedup-recall-F1-dna.json",
+      "sha256": "0a3e9519680bd2ce5f2816252e6156c355960dbe18871a386267f61904d4c7d2",
+      "bytes": 6526
+    },
+    {
+      "path": "evidence/dedup-recall-F1-legacy.json",
+      "sha256": "96c48705ebe49f0aa366ff072686dc51eab66a151e3c2399ebf9de631d22a023",
+      "bytes": 8586
+    },
+    {
+      "path": "evidence/dedup-recall-F2-dna.json",
+      "sha256": "75177e84709b6eaf39d8f8b0a532bbc2970f2fa0cee599238a933abba323d7a1",
+      "bytes": 7045
+    },
+    {
+      "path": "evidence/dedup-recall-F2-legacy.json",
+      "sha256": "2f6d52c308e0559c776ae654c3801c3f497f469adec34995fded7960be6fdeee",
+      "bytes": 8626
+    },
+    {
+      "path": "evidence/dedup-recall-F3-dna.json",
+      "sha256": "742518acc4d4f8007672ca30e6e9963b1426ace8661a670e699318543314ef9c",
+      "bytes": 7519
+    },
+    {
+      "path": "evidence/dedup-recall-F3-legacy.json",
+      "sha256": "784db60e3a776f6004d9bffc8b149fc9990fc0ecadbb116f2318a4769482cc7f",
+      "bytes": 8877
+    },
+    {
+      "path": "evidence/input-freeze.json",
+      "sha256": "f94987a43b6a7862b29134c847875f2ea52f4086ccc5935201c2f2697525333e",
+      "bytes": 4305
+    },
+    {
+      "path": "evidence/material-read-receipts.json",
+      "sha256": "10288c0edff79d3ce3c8e42e948fd40e59ddf6b82f4cfcca459efb5c42bd4098",
+      "bytes": 7672
+    },
+    {
+      "path": "evidence/qa-report.json",
+      "sha256": "e655720c61a74c350bfbf550802bfd1c6e790a5946d386bb865e1625cf3e7d0f",
+      "bytes": 3417
+    },
+    {
+      "path": "evidence/reading-log.jsonl",
+      "sha256": "0269d7f8efd24d128d8efa74831dda4950a355a8fee0386bdba25e93278a7823",
+      "bytes": 59058
+    },
+    {
+      "path": "evidence/reused-chapter-index.jsonl",
+      "sha256": "c590bfa7f92c899cca831897a9e6aa543dd3a43e78b950e5038280f0c4b0211b",
+      "bytes": 66084
+    },
+    {
+      "path": "evidence/uncertainty-register.json",
+      "sha256": "9d9f69ebef8ead985d0d5b2d50578df16216b3aaf072276676711e78f84f45b5",
+      "bytes": 29158
+    },
+    {
+      "path": "evidence/verify_research.py",
+      "sha256": "a9396b4e5be67cd91467db124835d63eb36a6b5ea790aeef99a54310401accc8",
+      "bytes": 4892
+    },
+    {
+      "path": "fusion-candidate-cards.md",
+      "sha256": "edf10b41e317e8bc4fb134be6cbc1f7664a3df1a270ff0656819e378caf54268",
+      "bytes": 20530
+    },
+    {
+      "path": "README.md",
+      "sha256": "fe7afbb3672ce4c249a7cc40ccb8830c209e741d711869bee58252a6d321e07d",
+      "bytes": 3433
+    },
+    {
+      "path": "verification-and-gaps.md",
+      "sha256": "0c83be3993ad311e53afe763c8e2eb793e3fa1f890785c7c04d9d689837885ba",
+      "bytes": 3167
+    }
+  ]
+}

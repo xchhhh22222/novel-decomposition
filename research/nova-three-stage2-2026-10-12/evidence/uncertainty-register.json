@@ -1,0 +1,434 @@
+{
+  "issues": [
+    {
+      "id": "T01",
+      "book": "N8_06",
+      "book_id": "7504849932138859545",
+      "chapters": [
+        15,
+        16
+      ],
+      "problem": "4分40秒→4分10秒，未见可核30秒支出",
+      "handling": "Targeted source lines 2018/2174 rechecked; no invented debit",
+      "status": "UNKNOWN",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L1960",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L2086"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "T02",
+      "book": "N8_06",
+      "book_id": "7504849932138859545",
+      "chapters": [
+        27,
+        30,
+        35,
+        38,
+        45
+      ],
+      "problem": "局部余额可算，不证明完整账；搜身是否含昨夜30秒未知，2:57→2:49仅8秒推算",
+      "handling": "Local arithmetic support only; inference separated",
+      "status": "PARTIAL",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L3496",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L3832",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L4454",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L4842",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L5692"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "T03",
+      "book": "N8_06",
+      "book_id": "7504849932138859545",
+      "chapters": [
+        35,
+        37,
+        39,
+        40
+      ],
+      "problem": "蛇/狼/树非主角胜利引来；被毁防护是主角行动造成；树停止袭击可能走出范围",
+      "handling": "Distinguish external arrival and caused vulnerability; alternative explanation retained",
+      "status": "PARTIAL",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L4454",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L4712",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L4962",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L5084"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "T04",
+      "book": "N8_06",
+      "book_id": "7504849932138859545",
+      "chapters": [
+        43
+      ],
+      "problem": "两样本推回血单次上限，不能证明累计力量封顶",
+      "handling": "Attribute to protagonist inference, not universal verified cap",
+      "status": "INFERENCE",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L5442"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "T05",
+      "book": "N8_06",
+      "book_id": "7504849932138859545",
+      "chapters": [
+        44,
+        48,
+        50
+      ],
+      "problem": "支票/参到手不等于兑现/服用，50入口未开、U盘/觉醒/入城未付",
+      "handling": "No planned benefit posted as achieved",
+      "status": "OPEN_PROMISE",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L5558",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L6012",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%E6%97%B6%E5%81%9C%EF%BC%81%20-%20%E5%85%AD%E4%B8%AA%E8%91%AB%E8%8A%A6.txt#L6266"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "R01",
+      "book": "N8_01",
+      "book_id": "7631863518148430873",
+      "chapters": [
+        22,
+        24
+      ],
+      "problem": "185万扣8%应170.2万，文170.6万/终端176000，24余额20余万",
+      "handling": "Sale/reinvestment observed; exact proceeds unknown",
+      "status": "CONFLICT",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L5108",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L5582"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "R02",
+      "book": "N8_01",
+      "book_id": "7631863518148430873",
+      "chapters": [
+        24,
+        28
+      ],
+      "problem": "1001赋予后变2000/几千头目，精确教学覆盖不明",
+      "handling": "Keep granted count separate from later unaligned narration",
+      "status": "CONFLICT",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L5582",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L6654"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "R03",
+      "book": "N8_01",
+      "book_id": "7631863518148430873",
+      "chapters": [
+        27,
+        30
+      ],
+      "problem": "强制征召铁律与星海不得接受军方调令条款口径未解释",
+      "handling": "No invented legal exception",
+      "status": "UNKNOWN",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L6416",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L7282"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "R04",
+      "book": "N8_01",
+      "book_id": "7631863518148430873",
+      "chapters": [
+        29,
+        30
+      ],
+      "problem": "兵数4.5万/4.7万，排名8→17→结算12未给回升细节",
+      "handling": "12th civilian-first, not overall champion/top10 access",
+      "status": "CONFLICT",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L6970",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L7282"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "R05",
+      "book": "N8_01",
+      "book_id": "7631863518148430873",
+      "chapters": [
+        33,
+        35
+      ],
+      "problem": "钻石瘟疫光环输入→史诗厄难毒体输出，完整等级映射不明",
+      "handling": "New product under old operation, not asserted permission upgrade",
+      "status": "UNKNOWN",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L7894",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L8324"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "R06",
+      "book": "N8_01",
+      "book_id": "7631863518148430873",
+      "chapters": [
+        34,
+        41
+      ],
+      "problem": "父已安置/疗痛/义肢/生活改善，神格真神复原未获",
+      "handling": "Partial family payoff; divine crystal future obligation",
+      "status": "OPEN_PROMISE",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L8104",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L9728"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "R07",
+      "book": "N8_01",
+      "book_id": "7631863518148430873",
+      "chapters": [
+        35,
+        37,
+        43,
+        46
+      ],
+      "problem": "100%良性/永动/精神反抗轻破弱化约束，但外域污染与猪损耗仍真",
+      "handling": "No general costless safe-sharing abstraction",
+      "status": "BOUNDARY_DOWNGRADE",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L8324",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L8756",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L10164",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L10862"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "R08",
+      "book": "N8_01",
+      "book_id": "7631863518148430873",
+      "chapters": [
+        38,
+        47,
+        48,
+        49,
+        50
+      ],
+      "problem": "暴君8米/6米/10米，6万/5万兵，三炮台后十几炮台未齐",
+      "handling": "Record differences, no fabricated losses/regrowth",
+      "status": "CONFLICT",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L9034",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L11118",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L11354",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L11592",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L11896"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "R09",
+      "book": "N8_01",
+      "book_id": "7631863518148430873",
+      "chapters": [
+        38,
+        39,
+        41,
+        46,
+        49,
+        50
+      ],
+      "problem": "定金/父转账实到；库存与全账不齐；猪包买/分流保级/榜奖未全部兑现",
+      "handling": "Do not turn industrial plans into cash profits",
+      "status": "PARTIAL",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L9034",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L9294",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L9728",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L10862",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L11592",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%88%AB%E4%BA%BA%E6%B0%AA%E9%87%91%E9%80%A0%E7%A5%9E%EF%BC%8C%E6%88%91%E6%8D%A1%E5%9E%83%E5%9C%BE%E7%BC%9D%E5%90%88%E5%A4%A9%E7%81%BE%20-%20%E5%A4%8F%E5%BC%A5%E7%9A%84%E5%B9%BB%E6%83%B3.txt#L11896"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "D01",
+      "book": "N8_03",
+      "book_id": "7592279900040465433",
+      "chapters": [
+        19,
+        24
+      ],
+      "problem": "19隐藏状态未说明，24未再进入",
+      "handling": "Do not assign later wins to controlled hidden skill",
+      "status": "UNKNOWN",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L2987",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L3779"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "D02",
+      "book": "N8_03",
+      "book_id": "7592279900040465433",
+      "chapters": [
+        20,
+        27,
+        48
+      ],
+      "problem": "20旧记录21级，27夜杀起点22，后29→30明示；补升节点未核",
+      "handling": "Keep origin level wording separate",
+      "status": "UNKNOWN",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L3127",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L4263",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L7535"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "D03",
+      "book": "N8_03",
+      "book_id": "7592279900040465433",
+      "chapters": [
+        31,
+        33
+      ],
+      "problem": "地底暴动提前与城灭相关，徐明确因果不一定",
+      "handling": "No invented kill-leader-causes-earthquake explanation",
+      "status": "UNKNOWN",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L4853",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L5131"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "D04",
+      "book": "N8_03",
+      "book_id": "7592279900040465433",
+      "chapters": [
+        32,
+        33,
+        40,
+        43
+      ],
+      "problem": "32限时有效，33睡眠不限时/40绕精神压迫，43睡满回SAN；长期代价未知",
+      "handling": "New conditions weaken constraint; no invented immunity to physical harm",
+      "status": "BOUNDARY_DOWNGRADE",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L5007",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L5131",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L6321",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L6777"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "D05",
+      "book": "N8_03",
+      "book_id": "7592279900040465433",
+      "chapters": [
+        35,
+        36
+      ],
+      "problem": "先知不回电话被徐解读为默许，未直接确认",
+      "handling": "Political inference not certified authorization from teacher",
+      "status": "INFERENCE",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L5505",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L5707"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "D06",
+      "book": "N8_03",
+      "book_id": "7592279900040465433",
+      "chapters": [
+        42,
+        43,
+        44,
+        45,
+        49
+      ],
+      "problem": "夜间替接任务/立名声未事前知情，后来愿进不回溯所有授权",
+      "handling": "Benefits, awareness, authorization and responsibility separate",
+      "status": "PARTIAL",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L6611",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L6777",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L6943",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L7093",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L7687"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "D07",
+      "book": "N8_03",
+      "book_id": "7592279900040465433",
+      "chapters": [
+        45,
+        46
+      ],
+      "problem": "倒数到零无事，稍后地震，徐说经验不确定",
+      "handling": "Do not repeat bystanders claim of precise prophecy as fact",
+      "status": "INFERENCE_WITH_COUNTEREVIDENCE",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L7093",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L7261"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "D08",
+      "book": "N8_03",
+      "book_id": "7592279900040465433",
+      "chapters": [
+        48,
+        49
+      ],
+      "problem": "30级体魄非三级职位认证；49回忆第二据点误作第三据点",
+      "handling": "Do not silently rewrite original",
+      "status": "CONFLICT",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L7535",
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L7687"
+      ],
+      "resolved_by_model_invention": false
+    },
+    {
+      "id": "D09",
+      "book": "N8_03",
+      "book_id": "7592279900040465433",
+      "chapters": [
+        50
+      ],
+      "problem": "提议接管但末攻未明示切换，人物死亡/爆破/矿底真相未完成",
+      "handling": "Control attribution UNKNOWN and cycle remains open",
+      "status": "UNKNOWN",
+      "source_links": [
+        "https://github.com/xchhhh22222/nova-source-books/blob/718d853c01c165b4caa0bd0cd812311081578fe9/%E5%BE%85%E6%88%91%E6%8B%BC%E5%A5%BD%E8%BA%AB%E4%BD%93%EF%BC%8C%E6%97%A7%E6%97%A5%E9%87%8D%E4%B8%B4%E4%BA%BA%E9%97%B4%20-%20%E9%99%B7%E9%98%B5%E8%90%A5%E8%90%A5%E9%95%BF.txt#L7843"
+      ],
+      "resolved_by_model_invention": false
+    }
+  ],
+  "independent_review": "PENDING"
+}
