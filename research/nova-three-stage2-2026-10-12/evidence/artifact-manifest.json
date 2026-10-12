@@ -27,8 +27,8 @@
     },
     {
       "path": "cross-book-emotion-fusion.md",
-      "sha256": "3da0aed8e8bd25946fbb0d52af47e8dde79d0d4235a167274d13cb39f257eebb",
-      "bytes": 37502
+      "sha256": "53a5230bc81404cf7168a8b6f482793997a9554dea156042c8f6cd90e0ffbf83",
+      "bytes": 37514
     },
     {
       "path": "evidence/asset-immutability.json",
@@ -82,7 +82,7 @@
     },
     {
       "path": "evidence/qa-report.json",
-      "sha256": "e655720c61a74c350bfbf550802bfd1c6e790a5946d386bb865e1625cf3e7d0f",
+      "sha256": "ff10003374eda4370db25f93d8d96b5a5b903e46132c1916676b04054b044943",
       "bytes": 3417
     },
     {
@@ -107,8 +107,8 @@
     },
     {
       "path": "fusion-candidate-cards.md",
-      "sha256": "edf10b41e317e8bc4fb134be6cbc1f7664a3df1a270ff0656819e378caf54268",
-      "bytes": 20530
+      "sha256": "9279b21e9fce99b44920c79ef990f90a21c5e860a02a7802cf785d62f259a896",
+      "bytes": 20539
     },
     {
       "path": "README.md",
