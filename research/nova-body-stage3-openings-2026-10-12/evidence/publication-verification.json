@@ -1,4 +1,146 @@
 {
-  "status": "PENDING_REMOTE_READBACK",
-  "note": "Filled only after independent remote byte readback; excluded from content manifest to avoid circular commit hash"
+  "status": "VERIFIED_REMOTE_CONTENT",
+  "verified_content_commit": "1a98358538ea8a7f0d604790058d1507f41d0cc0",
+  "accepted_baseline": "0f250ea375c61aaa7e9693924a89657a37618a3e",
+  "branch": "codex/nova-body-stage3-openings-20261012",
+  "verified_at_utc": "2026-10-12T06:20:14.924575+00:00",
+  "github_subtree_sha": "4cda53a0a48f83749c7f6229402d3fc230e01d45",
+  "github_tree_not_truncated": true,
+  "remote_files_exact_byte_match": 18,
+  "unchanged_baseline_tracked_files": 481,
+  "outside_research_changes": [],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3303,
+      "sha256": "8b23640f1af456fcb41d4f67b90ff273b6ba182b1ddf82677faabc35811b2b8d",
+      "git_blob_sha": "f50c2181e914bee409acbf731a66fc2d7d6b695d",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "body-51-100.md",
+      "bytes": 48731,
+      "sha256": "314fd3f81063c62a795d10628b1d8f49b695fd9d49b15e0cf3d321971693be12",
+      "git_blob_sha": "e2640462786516cb560eefe4aaaf70a18d1927e9",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "emotion-arc-contracts.md",
+      "bytes": 8233,
+      "sha256": "6ab6c95d736814cec8a7b73ad152110ac1a53d85012aaa620aff173ffa789bb2",
+      "git_blob_sha": "7f18341c29d4e22feeba5b0a6d6494971b63c498",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "evidence/artifact-manifest.json",
+      "bytes": 2760,
+      "sha256": "c2634b2e6eeac840583cf41181137b4921040aa15e8c744abf8a677e5a048851",
+      "git_blob_sha": "652d29c503ce41234af519dab4da9a8795267caf",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "evidence/asset-immutability.json",
+      "bytes": 1683,
+      "sha256": "ed011ebaa09617ada8ed5c438342725a818936804954d7eec8281892fc10669b",
+      "git_blob_sha": "6b1fb6b462ff046677c67c0bb827f1aaf08124d4",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "evidence/chapter-source-index.jsonl",
+      "bytes": 42862,
+      "sha256": "258a11d65aa09111082de419de60e630ccafaf1f7f9d2ce99f124ab8471f0eaf",
+      "git_blob_sha": "e9370452e39d1b792251c3010d13df2c247bfdee",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "evidence/input-freeze.json",
+      "bytes": 1872,
+      "sha256": "8a8e7052dc09cbc0c4b77d5e07de74a7ac7002305a6999ca0732f75fd06853ed",
+      "git_blob_sha": "d37ba44efb5336786ebbaaf1fe69efac803876c8",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "evidence/old-experiments-freeze.json",
+      "bytes": 1726,
+      "sha256": "3388c00aad1045377a8ba7eb909d49519d99c1c8eae97e49b9f497f2e6c6d82e",
+      "git_blob_sha": "d4a04f2a863ed32e7d4b93f8d75ad9fe1168d8b4",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "evidence/publication-verification.json",
+      "bytes": 168,
+      "sha256": "76793009a49b30e01c888a8b14899d3211149792fa97cd60fc4a214825ee80d4",
+      "git_blob_sha": "03c67103dee8c9c4c462f61de10c4fcf77a66404",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "evidence/qa-report.json",
+      "bytes": 628,
+      "sha256": "62d6a76070c0e8a94a06dcc94c78691dac42ad544aa7adddacb25369f46f0cb1",
+      "git_blob_sha": "73d14cfe32603758658be84696c73d88fa4faff6",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "evidence/reading-log.jsonl",
+      "bytes": 32489,
+      "sha256": "e7017d5d0e028145285ea52170b7f6d374c6fb066476a8155a900c959af79610",
+      "git_blob_sha": "5c1eecf976b7f9145ccb332d8d766ffc20994430",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "evidence/reuse-receipts.json",
+      "bytes": 15791,
+      "sha256": "12334fd826ff37f45127f4b85f5856d70bda1d7275f50cb1da64c262758a4173",
+      "git_blob_sha": "89cbd1c5cbf4851b9c6decb01f049ce9cfcf8a14",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "evidence/reused-body-1-50-index.jsonl",
+      "bytes": 51261,
+      "sha256": "df16379eec3e8c639188171405d220023a7738cd26c043a0cc7b22023b8d509d",
+      "git_blob_sha": "4852c18feb95fc10a6d55f914a3f3deaa39d0b09",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "evidence/verify_research.py",
+      "bytes": 4077,
+      "sha256": "7e8925bf679214c21c45ea2f866568955d1446cedb6851a4717a5f0f9e1df507",
+      "git_blob_sha": "9eb20a5c4600a7230cd1e91dda294994ff6b7414",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "high-burst-opening-experiments.md",
+      "bytes": 17345,
+      "sha256": "7fae5de127cc27727b8fa6f4269b7c28176b8ec3380235f8e16bb3dd40a18d6e",
+      "git_blob_sha": "64671d7e97d8b25a9660b0c7e9a35e35356fd33e",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "obligations-and-findings.md",
+      "bytes": 9849,
+      "sha256": "ab5ee7288e8a67c1999d7cee476d475c1c458297ae8f8b78863254c3d3df3e86",
+      "git_blob_sha": "263c5e89c3cb01baf2428caf13f04df05144a660",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "usage-lineage-1-100.md",
+      "bytes": 8409,
+      "sha256": "19ac72206fb0e7f4616d0c194b483ca34df63a20bf7977f802f62641ccf3f102",
+      "git_blob_sha": "7fac94259de26d64a1c79b01a564ae6d149914f6",
+      "remote_exact_byte_match": true
+    },
+    {
+      "path": "verification-and-gaps.md",
+      "bytes": 3489,
+      "sha256": "7e3dc16b68c12f6201f32367a0fe97b7c703821a34b849cb48a6a80eaf64e889",
+      "git_blob_sha": "c283f767ecb17071cf8123dffdbce1c3a53988a9",
+      "remote_exact_byte_match": true
+    }
+  ],
+  "method": "GitHub API subtree blob/size metadata plus independent bare clone git-show exact byte SHA256 and Git blob SHA1; compare all old tracked blob/mode identities with accepted baseline",
+  "final_receipt_commit_note": "This receipt is published in a subsequent metadata-only commit; its final remote bytes and branch tip are checked separately, avoiding self-referential SHA",
+  "semantic_acceptance": "PENDING_INDEPENDENT_REVIEW",
+  "creative_opening_quality": "PENDING_AUTHOR_REVIEW",
+  "material_promotion": "HOLD",
+  "full_book_decomposition": "NOT_RUN"
 }
